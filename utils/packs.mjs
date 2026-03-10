@@ -6,6 +6,8 @@ import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import { compilePack, extractPack } from "@foundryvtt/foundryvtt-cli";
 
+const TARGET_DND5E_VERSION = "5.2.5";
+
 
 /**
  * Folder where the compiled compendium packs should be located relative to the
@@ -81,7 +83,7 @@ function cleanEffects(data) {
 	];
 	function blacklisted(key) {
 		if (key_blacklist.includes(key)) return true;
-		for (const k in key_blacklist_re) if (k.match(key)) return true;
+		for (const re of key_blacklist_re) if (re.test(key)) return true;
 		return false;
 	}
 	const key_whitelist = [
@@ -98,12 +100,12 @@ function cleanEffects(data) {
 	];
 	function whitelisted(key) {
 		if (key_whitelist.includes(key)) return true;
-		for (const k in key_whitelist_re) if (k.match(key)) return true;
+		for (const re of key_whitelist_re) if (re.test(key)) return true;
 		return false;
 	}
 
 	const hasAdvancements = data.advancement !== undefined;
-	if (hasAdvancements) for (const effect in data.effects) {
+	if (hasAdvancements) for (const effect of data.effects) {
 		effect.changes = effect.changes.filter(change => !blacklisted(change.key));
 	}
 	data.effects = data.effects.filter(effect => effect.changes.length || !effect.transfer);
@@ -113,7 +115,7 @@ function cleanEffects(data) {
 			return acc;
 		}, []);
 		if (non_whitelisted.length) {
-			logger.info(`Item ${data.name1} still has non whitelisted effects:`);
+			logger.info(`Item ${data.name} still has non whitelisted effects:`);
 			logger.info(non_whitelisted)
 		}
 	}
@@ -252,7 +254,7 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 	if ( !forceConvert && (data._stats?.systemId !== "sw5e") ) return false;
 
 	if ( data._stats?.systemId ) data._stats.systemId = "dnd5e";
-	if ( data._stats?.systemVersion ) data._stats.systemVersion = "3.3.1";
+	if ( data._stats?.systemVersion ) data._stats.systemVersion = TARGET_DND5E_VERSION;
 	if ( data._stats?.lastModifiedBy ) data._stats.lastModifiedBy = "sw5ebuilder00000";
 
 	if ( data.system?._propertyValues ) {
@@ -302,7 +304,7 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 	if ( data.effects ) cleanEffects(data);
 	if ( data.img ) data.img = cleanImage(data.img);
 	if ( data.icon ) data.icon = cleanImage(data.icon);
-	if ( data.texture ) data.texture = cleanImage(data.texture);
+	if ( data.texture?.src ) data.texture.src = cleanImage(data.texture.src);
 
 	return true;
 }
@@ -611,7 +613,7 @@ function transformName(entry, packName) {
 		case "lightweapons":
 		case "enhanceditems":
 		case "explosives":
-		case "modification":
+		case "modifications":
 		case "starshipequipment":
 		case "starshipmodifications":
 		case "starshipweapons":
@@ -663,11 +665,11 @@ function transformName(entry, packName) {
 			else if (entry.system.level === 0) subfolder = "at-will";
 			else subfolder = `level-${entry.system.level}`;
 			break;
-		case "maneuver":
+		case "maneuvers":
 			subfolder = entry.system.type.value;
 			break;
 		// actors
-		case "fistorcodex":
+		case "fistoscodex":
 		case "monsters":
 		case "monsters_temp":
 			subfolder = entry.system.details.type.value;

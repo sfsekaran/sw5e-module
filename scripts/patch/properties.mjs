@@ -13,19 +13,23 @@ const capitalize = text => text.charAt(0).toUpperCase() + text.slice(1);
 function patchSheet() {
 	Hooks.on("renderItemSheet5e", (app, html, data) => {
 		if (app.item.type !== "weapon" && app.item.type !== "equipment") return;
-		const tabDetails = html.querySelectorAll('.tab.details')[0];
+		const root = html instanceof HTMLElement ? html : html?.[0] ?? html;
+		const tabDetails = root?.querySelector('.tab.details');
+		if ( !tabDetails ) return;
 		const fieldset = tabDetails.firstElementChild;
+		if ( !fieldset ) return;
 		const wpDiv = Array.from(fieldset.querySelectorAll('div')).find(div => {
 			const label = div.querySelector('label');
 			const itemTypeName = capitalize(app.item.type);
 			return label && label.textContent.trim() === `${itemTypeName} Properties`;
 		});
+		if ( !wpDiv ) return;
 		const wpLabel = wpDiv.firstElementChild.cloneNode(true);
 
-		const properties = new Set(data.properties.options.map(p=>p.value));
+		const properties = new Set((data.properties?.options ?? []).map(p => p.value));
 		const numericProperties = new Set([...properties].filter(key => CONFIG.DND5E.itemProperties[key]?.type === "Number"));
-		const boolProperties = properties.difference(numericProperties);
-		const itemProperties = app.item.system.properties;
+		const boolProperties = new Set([...properties].filter(key => !numericProperties.has(key)));
+		const itemProperties = new Set(app.item.system.properties ?? []);
 
 		wpDiv.innerHTML = "";
 		{
@@ -73,7 +77,7 @@ function patchSheet() {
 				const spanNode = document.createElement("span");
 				const textNode = document.createTextNode(config.label);
 				spanNode.appendChild(textNode);
-				labelNode.appendChild(textNode);
+				labelNode.appendChild(spanNode);
 
 				const inputNode = document.createElement("input");
 				inputNode.setAttribute("type", "text");

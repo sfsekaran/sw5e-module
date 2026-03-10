@@ -1,5 +1,11 @@
 import { getBestAbility } from "./../utils.mjs";
 
+const PRECALCULATED_SPELLCASTING_KEY = "sw5e-preCalculatedSpellcastingClasses";
+
+function getHtmlRoot(html) {
+	return html instanceof HTMLElement ? html : html?.[0] ?? html;
+}
+
 // dataModels file adds:
 // - maneuverData dataModel
 // - super field to CreatureTemplate
@@ -105,7 +111,7 @@ function prepareSuperiority() {
 		const rollData = _this.getRollData();
 
 		const { attributes, superiority } = _this.system;
-		const base = 8 + attributes.prof ?? 0;
+		const base = 8 + (attributes.prof ?? 0);
 
 		// TODO: Add rules
 		// // Simplified forcecasting rule
@@ -163,8 +169,11 @@ function showPowercastingStats() {
 
 function patchItemSheet() {
 	Hooks.on("renderItemSheet5e", (app, html, data) => {
-		html.querySelectorAll(`select[name|='system.spellcasting.progression']`).forEach((el, idx) => {
+		const root = getHtmlRoot(html);
+		if ( !root || !app.item?.system?.spellcasting ) return;
+		root.querySelectorAll(`select[name|='system.spellcasting.progression']`).forEach((el, idx) => {
 			const root = el.parentNode.parentNode;
+			if ( !root?.nextElementSibling ) return;
 			const selectedValue = app.item.system.spellcasting.superiorityProgression;
 			const div = document.createElement("div");
 			div.setAttribute("class", "form-group");
@@ -198,11 +207,11 @@ function patchItemSheet() {
 
 function patchPowerAbilityScore() {
 	Hooks.on('sw5e.preActor5e.spellcastingClasses', function (_this, ...args) {
-		_this['sw5e-preCalculatedSpellcastingClasses2'] = _this._spellcastingClasses !== undefined;
+		_this[PRECALCULATED_SPELLCASTING_KEY] = _this._spellcastingClasses !== undefined;
 	});
 	Hooks.on('sw5e.Actor5e.spellcastingClasses', function (_this, result, config, ...args) {
-		const preCalculated = _this['sw5e-preCalculatedSpellcastingClasses2'] = _this._spellcastingClasses !== undefined;
-		delete _this['sw5e-preCalculatedSpellcastingClasses2'];
+		const preCalculated = _this[PRECALCULATED_SPELLCASTING_KEY];
+		delete _this[PRECALCULATED_SPELLCASTING_KEY];
 
 		if (preCalculated) return;
 		for (const [identifier, cls] of Object.entries(_this.classes)) {
@@ -288,8 +297,10 @@ function addSuperiorityScaleValues() {
 }
 
 function addCompendiumBrowserTab() {
-	const tabs = game.dnd5e.applications.CompendiumBrowser.TABS;
+	const tabs = game.dnd5e?.applications?.CompendiumBrowser?.TABS;
+	if ( !tabs?.length || tabs.some(i => i.tab === "maneuvers") ) return;
 	const idx = tabs.findIndex(i => i.tab === "spells");
+	if ( idx === -1 ) return;
 	tabs.splice(idx+1, 0, {
 		tab: "maneuvers",
 		label: "TYPES.Item.sw5e.maneuverPl",

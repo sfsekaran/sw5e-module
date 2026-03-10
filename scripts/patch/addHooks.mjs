@@ -1,7 +1,17 @@
 const DEBUG = false;
 
+function registerHook(id, callback, mode='WRAPPER') {
+	try {
+		libWrapper.register('sw5e', id, callback, mode);
+		return true;
+	} catch(err) {
+		console.warn(`SW5E | Skipping incompatible wrapper target '${id}'.`, err);
+		return false;
+	}
+}
+
 function addHook(id, hookID) {
-	libWrapper.register('sw5e', id, function (wrapped, ...args) {
+	registerHook(id, function (wrapped, ...args) {
 		if (DEBUG) console.debug(`libWrapper hook '${id}' start`);
 		const allowed = Hooks.call('sw5e.pre' + (hookID ?? id), this, ...args);
 		if (allowed === false) return;
@@ -10,11 +20,11 @@ function addHook(id, hookID) {
 		Hooks.call('sw5e.' + (hookID ?? id), this, result, config, ...args);
 		if (DEBUG) console.debug(`libWrapper hook '${id}' end`);
 		return config.result;
-	}, 'WRAPPER');
+	});
 }
 
 function addHookAsync(id, hookID) {
-	libWrapper.register('sw5e', id, async function (wrapped, ...args) {
+	registerHook(id, async function (wrapped, ...args) {
 		if (DEBUG) console.debug(`libWrapper hook '${id}' start`);
 		const allowed = Hooks.call('sw5e.pre' + (hookID ?? id), this, ...args);
 		if (allowed === false) return;
@@ -23,7 +33,7 @@ function addHookAsync(id, hookID) {
 		Hooks.call('sw5e.' + (hookID ?? id), this, result, config, ...args);
 		if (DEBUG) console.debug(`libWrapper hook '${id}' end`);
 		return config.result;
-	}, 'WRAPPER');
+	});
 }
 
 export function addHooks() {

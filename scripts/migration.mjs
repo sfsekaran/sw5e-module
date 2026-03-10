@@ -39,7 +39,8 @@ export const migrateWorld = async function() {
 	for ( const [actor, valid] of actors ) {
 		try {
 			const flags = { persistSourceMigration: false };
-			const source = valid ? actor.toObject() : game.data.actors.find(a => a._id === actor.id);
+			const source = valid ? actor.toObject() : getInvalidDocumentSource(game.actors, actor.id, "actors");
+			if ( !source ) continue;
 			let updateData = migrateActorData(source, migrationData, flags, { actorUuid: actor.uuid });
 			if ( !foundry.utils.isEmpty(updateData) ) {
 				console.log(`Migrating Actor document ${actor.name}`);
@@ -62,7 +63,8 @@ export const migrateWorld = async function() {
 	for ( const [item, valid] of items ) {
 		try {
 			const flags = { persistSourceMigration: false };
-			const source = valid ? item.toObject() : game.data.items.find(i => i._id === item.id);
+			const source = valid ? item.toObject() : getInvalidDocumentSource(game.items, item.id, "items");
+			if ( !source ) continue;
 			let updateData = migrateItemData(source, migrationData, flags);
 			if ( !foundry.utils.isEmpty(updateData) ) {
 				console.log(`Migrating Item document ${item.name}`);
@@ -333,7 +335,7 @@ export function migrateItemData(item, migrationData, flags={}) {
 export const migrateEffectData = function(effect, migrationData, { parent }={}) {
 	const updateData = {};
 	_migrateImage(effect, updateData);
-	_cleanEffect(effect, updateData);
+	_cleanEffect(effect, updateData, parent);
 	return updateData;
 };
 
@@ -401,6 +403,14 @@ export const getMigrationData = async function() {
 	return data;
 };
 
+function getInvalidDocumentSource(collection, id, legacyKey) {
+	const invalid = collection.getInvalid?.(id);
+	const source = invalid?._source ? foundry.utils.deepClone(invalid._source) : invalid?.toObject?.();
+	if ( source ) return source;
+	const legacy = game.data?.[legacyKey]?.find?.(doc => doc._id === id);
+	return legacy ? foundry.utils.deepClone(legacy) : null;
+}
+
 /* -------------------------------------------- */
 /*  Low level migration utilities
 /* -------------------------------------------- */
@@ -434,7 +444,7 @@ function _migrateImage(objectData, updateData) {
  * @private
  */
 function _migrateObjectFlags(objectData, updateData) {
-	if (objectData.flags["sw5e-module-test"]) {
+	if (objectData.flags?.["sw5e-module-test"]) {
 		updateData["flags.sw5e"] = objectData.flags["sw5e-module-test"];
 		updateData["flags.-=sw5e-module-test"] = null;
 	}
@@ -449,8 +459,8 @@ function _migrateObjectFlags(objectData, updateData) {
  * @returns {object}               The updateData to apply
  * @private
  */
-function _cleanEffect(effect, updateData) {
-	const hasAdvancements = effect.parent?.advancement !== undefined;
+function _cleanEffect(effect, updateData, parent) {
+	const hasAdvancements = parent?.system?.advancement !== undefined || parent?.advancement !== undefined;
 	if (!hasAdvancements) return updateData;
 
 	const key_blacklist = [
@@ -464,7 +474,7 @@ function _cleanEffect(effect, updateData) {
 	];
 	function blacklisted(key) {
 		if (key_blacklist.includes(key)) return true;
-		for (const k in key_blacklist_re) if (k.match(key)) return true;
+		for (const re of key_blacklist_re) if (re.test(key)) return true;
 		return false;
 	}
 
@@ -609,10 +619,13 @@ function _migrateItemProperties(itemData, updateData) {
 
 	if ( itemData.system?.properties && (itemData.type in propertyChanges) ) {
 		let changed = false;
-		const newProperties = data.system.properties.map(k => {
-			if (k in propertyChanges[data.type]) {
+		const properties = itemData.system.properties instanceof Set
+			? Array.from(itemData.system.properties)
+			: itemData.system.properties;
+		const newProperties = properties.map(k => {
+			if (k in propertyChanges[itemData.type]) {
 				changed = true;
-				return propertyChanges[data.type][k];
+				return propertyChanges[itemData.type][k];
 			}
 			return k;
 		});
@@ -681,7 +694,9 @@ function _migrateAdvancements(itemData, updateData) {
 function _migrateWeaponData(itemData, updateData) {
 	if (itemData.type !== "weapon") return updateData;
 
-	if (["martialB", "simpleB", "exoticB"].includes(itemData.system.type.value)) updateData["system.type.value"] += "L";
+	if (["martialB", "simpleB", "exoticB"].includes(itemData.system?.type?.value)) {
+		updateData["system.type.value"] = `${itemData.system.type.value}L`;
+	}
 
 	return updateData;
 }

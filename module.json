@@ -1,9 +1,9 @@
 {
   "id": "sw5e",
   "title": "SW5E",
-  "description": "Test",
+  "description": "Implementation of SW5E as a module for the dnd5e system.",
   "version": "#{VERSION}#",
-  "library": "false",
+  "library": false,
   "manifestPlusVersion": "1.2.3",
   "compatibility": {
     "minimum": 13,
@@ -24,7 +24,7 @@
         "type": "system",
         "compatibility": {
           "minimum": "5.0.0",
-          "verified": "5.1.10"
+          "verified": "5.2.5"
         }
       }
     ],
@@ -796,6 +796,31 @@
       "lang": "en",
       "name": "English",
       "path": "languages/en.json"
+    },
+    {
+      "lang": "de",
+      "name": "German",
+      "path": "languages/de.json"
+    },
+    {
+      "lang": "es",
+      "name": "Spanish",
+      "path": "languages/es.json"
+    },
+    {
+      "lang": "fr",
+      "name": "French",
+      "path": "languages/fr.json"
+    },
+    {
+      "lang": "it",
+      "name": "Italian",
+      "path": "languages/it.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Portuguese (Brazil)",
+      "path": "languages/pt_BR.json"
     }
   ],
   "url": "#{URL}#",

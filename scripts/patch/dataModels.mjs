@@ -154,7 +154,7 @@ export function patchDataModels() {
 		const result = wrapped(...args);
 		changeProficiency(result, "weapon");
 		return result;
-	});
+	}, 'WRAPPER');
 
 	Object.assign(CONFIG.Item.dataModels, dataModels.item.config);
 	const types = Object.keys(game.modules.get("sw5e").documentTypes.Item).map(t => `sw5e.${t}`);

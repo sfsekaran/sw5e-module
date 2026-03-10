@@ -1,5 +1,11 @@
 import { getBestAbility } from "./../utils.mjs";
 
+const PRECALCULATED_SPELLCASTING_KEY = "sw5e-preCalculatedSpellcastingClasses";
+
+function getHtmlRoot(html) {
+	return html instanceof HTMLElement ? html : html?.[0] ?? html;
+}
+
 // dataModels file adds:
 // - powercasting field to CreatureTemplate
 // - spellcasting.force/techProgression to ClassData and SubclassData
@@ -125,7 +131,7 @@ function preparePowercasting() {
 		const rollData = _this.getRollData();
 
 		const { attributes, powercasting } = _this.system;
-		const base = 8 + attributes.prof ?? 0;
+		const base = 8 + (attributes.prof ?? 0);
 		const lvl = Number(_this.system.details?.level ?? _this.system.details.cr ?? 0);
 
 		// TODO: Add rules
@@ -152,9 +158,9 @@ function preparePowercasting() {
 		// Set Force and tech bonus points for PC Actors
 		for (const [castType, typeConfig] of Object.entries(CONFIG.DND5E.powerCasting)) {
 			const cast = _this.system.powercasting[castType];
-			const castSource = _this._source.system.powercasting[castType];
+			const castSource = _this._source?.system?.powercasting?.[castType];
 
-			if (castSource.points.max !== null) continue;
+			if (!castSource || castSource.points?.max !== null) continue;
 			if (cast.level === 0) continue;
 
 			if (ability[castType]?.mod) cast.points.max += ability[castType].mod;
@@ -181,9 +187,12 @@ function makeProgOption(config) {
 
 function showPowercastingStats() {
 	Hooks.on("renderBaseActorSheet", function (app, html, context, options) {
+		const root = getHtmlRoot(html);
+		if ( !root || !context?.actor ) return;
 		const actorItems = context.actor.toObject().items;
 		const actorAbilities = context.actor.system.abilities;
-		const powercastingCardsSection = html.querySelector(`section.tab[data-tab="spells"] section.top`);
+		const powercastingCardsSection = root.querySelector(`section.tab[data-tab="spells"] section.top`);
+		if ( !powercastingCardsSection ) return;
 		const dndSpellcastingCards = powercastingCardsSection.querySelectorAll("div.spellcasting.card:not(.sw5e)");
 		dndSpellcastingCards.forEach(card => card.remove());
 
@@ -316,8 +325,11 @@ function showPowercastingStats() {
 
 function patchItemSheet() {
 	Hooks.on("renderItemSheet5e", (app, html, data) => {
-		html.querySelectorAll(`select[name|='system.spellcasting.progression']`).forEach((el, idx) => {
+		const root = getHtmlRoot(html);
+		if ( !root || !app.item?.system?.spellcasting ) return;
+		root.querySelectorAll(`select[name|='system.spellcasting.progression']`).forEach((el, idx) => {
 			const root = el.parentNode.parentNode;
+			if ( !root?.nextElementSibling ) return;
 			for (const castType of ["Tech", "Force"]) {
 				const selectedValue = app.item.system.spellcasting[`${castType.toLowerCase()}Progression`];
 				const div = document.createElement("div");
@@ -353,11 +365,11 @@ function patchItemSheet() {
 
 function patchPowerAbilityScore() {
 	Hooks.on('sw5e.preActor5e.spellcastingClasses', function (_this, ...args) {
-		_this['sw5e-preCalculatedSpellcastingClasses2'] = _this._spellcastingClasses !== undefined;
+		_this[PRECALCULATED_SPELLCASTING_KEY] = _this._spellcastingClasses !== undefined;
 	});
 	Hooks.on('sw5e.Actor5e.spellcastingClasses', function (_this, result, config, ...args) {
-		const preCalculated = _this['sw5e-preCalculatedSpellcastingClasses'] = _this._spellcastingClasses !== undefined;
-		delete _this['sw5e-preCalculatedSpellcastingClasses'];
+		const preCalculated = _this[PRECALCULATED_SPELLCASTING_KEY];
+		delete _this[PRECALCULATED_SPELLCASTING_KEY];
 
 		if (preCalculated) return;
 		for (const [identifier, cls] of Object.entries(_this.classes)) for (const castType of ["force", "tech"]) {
@@ -381,13 +393,15 @@ function patchPowerAbilityScore() {
 		if (_this.ability) return;
 		for (const [castType, typeConfig] of Object.entries(CONFIG.DND5E.powerCasting)) {
 			if (_this.school in typeConfig.schools) {
-				config.result = new Set(typeConfig.schools[_this.school].attr);
+				const attrs = typeConfig.schools[_this.school].attr;
+				config.result = new Set(Array.isArray(attrs) ? attrs : [attrs]);
 				return;
 			}
 		}
 	});
 	Hooks.on('sw5e.SpellData._typeAbilityMod', function (_this, result, config, ...args) {
-		config.result = getBestAbility(_this.parent.actor, _this.availableAbilities).id ?? _this.availableAbilities.first() ?? "int";
+		const availableAbilities = Array.from(_this.availableAbilities ?? []);
+		config.result = getBestAbility(_this.parent.actor, availableAbilities).id ?? availableAbilities[0] ?? "int";
 	});
 }
 
@@ -543,6 +557,8 @@ function makePowerPointsConsumable() {
 function showPowercastingBar() {
 	const { simplifyBonus } = dnd5e.utils;
 	Hooks.on("renderActorSheetV2", async (app, html, data) => {
+		const root = getHtmlRoot(html);
+		if ( !root ) return;
 		if (data.actor.type != "character" && data.actor.type != "npc") {
 			return;
 		}
@@ -550,7 +566,7 @@ function showPowercastingBar() {
 		let sidebarClasses = '.sidebar .stats'
 		let append = true;
 
-		if (app.classList.value.includes('tidy5e-sheet')) {
+		if (root.classList?.contains('tidy5e-sheet')) {
 			// Tidy5e specific handling
 			sidebarClasses = '.attributes .side-panel';
 			append = false;
@@ -588,10 +604,12 @@ function showPowercastingBar() {
 
 				container.append(renderedHtml);
 
+				const sidebar = $(sidebarClasses, root);
+				if ( !sidebar.length ) continue;
 				if (append) {
-					$(sidebarClasses, html).append(container);
+					sidebar.append(container);
 				} else {
-					$(sidebarClasses, html).prepend(container);
+					sidebar.prepend(container);
 				}
 
 				//				$(hpHTML).after(castingHTMLMeter);
