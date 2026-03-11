@@ -1,5 +1,6 @@
 import * as dataModels from "./../data/_module.mjs";
 import { ItemSheetSW5E } from "./../applications/item-sheet.mjs";
+import { getModule, getModuleId } from "../module-support.mjs";
 
 const { NumberField, SchemaField, SetField, StringField } = foundry.data.fields;
 
@@ -136,27 +137,28 @@ function changeProficiency(result, type) {
 
 export function patchDataModels() {
 	// Powercasting
-	libWrapper.register('sw5e', 'dnd5e.dataModels.item.ClassData.defineSchema', addProgression, 'WRAPPER');
-	libWrapper.register('sw5e', 'dnd5e.dataModels.item.SubclassData.defineSchema', addProgression, 'WRAPPER');
-	libWrapper.register('sw5e', 'dnd5e.dataModels.actor.CreatureTemplate.defineSchema', function (wrapped, ...args) {
+	libWrapper.register(getModuleId(), 'dnd5e.dataModels.item.ClassData.defineSchema', addProgression, 'WRAPPER');
+	libWrapper.register(getModuleId(), 'dnd5e.dataModels.item.SubclassData.defineSchema', addProgression, 'WRAPPER');
+	libWrapper.register(getModuleId(), 'dnd5e.dataModels.actor.CreatureTemplate.defineSchema', function (wrapped, ...args) {
 		const result = wrapped(...args);
 		addPowercasting(result);
 		addSuperiority(result);
 		changeProficiency(result, "creature");
 		return result;
 	}, 'WRAPPER');
-	libWrapper.register('sw5e', 'dnd5e.dataModels.item.ToolData.defineSchema', function (wrapped, ...args) {
+	libWrapper.register(getModuleId(), 'dnd5e.dataModels.item.ToolData.defineSchema', function (wrapped, ...args) {
 		const result = wrapped(...args);
 		changeProficiency(result, "tool");
 		return result;
 	}, 'WRAPPER');
-	libWrapper.register('sw5e', 'dnd5e.dataModels.item.WeaponData.defineSchema', function (wrapped, ...args) {
+	libWrapper.register(getModuleId(), 'dnd5e.dataModels.item.WeaponData.defineSchema', function (wrapped, ...args) {
 		const result = wrapped(...args);
 		changeProficiency(result, "weapon");
 		return result;
 	}, 'WRAPPER');
 
 	Object.assign(CONFIG.Item.dataModels, dataModels.item.config);
-	const types = Object.keys(game.modules.get("sw5e").documentTypes.Item).map(t => `sw5e.${t}`);
+	const module = getModule();
+	const types = Object.keys(module?.documentTypes?.Item ?? {}).map(t => `sw5e.${t}`);
 	// DocumentSheetConfig.registerSheet(Item, "sw5e.maneuver", ItemSheetSW5E, { types, makeDefault: true });
 }

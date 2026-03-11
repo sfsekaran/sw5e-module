@@ -1,4 +1,5 @@
 import { getBestAbility } from "./../utils.mjs";
+import { getModulePath } from "../module-support.mjs";
 
 const PRECALCULATED_SPELLCASTING_KEY = "sw5e-preCalculatedSpellcastingClasses";
 
@@ -599,7 +600,7 @@ function showPowercastingBar() {
 
 				let container = $('<div class="meter-group"></div>');
 
-				const templateFile = "modules/sw5e/templates/powercasting-sheet-tracker.hbs";
+				const templateFile = getModulePath("templates/powercasting-sheet-tracker.hbs");
 				const renderedHtml = await foundry.applications.handlebars.renderTemplate(templateFile, templateData);
 
 				container.append(renderedHtml);

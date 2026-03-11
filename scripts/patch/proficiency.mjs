@@ -1,10 +1,12 @@
+import { getModuleId, HOOKS_NAMESPACE } from "../module-support.mjs";
+
 function adjustProficiencyObject() {
-	libWrapper.register('sw5e', 'dnd5e.documents.Proficiency.prototype.flat', function (wrapped, ...args) {
+	libWrapper.register(getModuleId(), 'dnd5e.documents.Proficiency.prototype.flat', function (wrapped, ...args) {
 		this.multiplier = Math.min(this.multiplier, 2);
 		return wrapped(...args);
 	}, 'MIXED' );
 
-	libWrapper.register('sw5e', 'dnd5e.documents.Proficiency.prototype.dice', function (wrapped, ...args) {
+	libWrapper.register(getModuleId(), 'dnd5e.documents.Proficiency.prototype.dice', function (wrapped, ...args) {
 		this.multiplier = Math.min(this.multiplier, 2);
 		return wrapped(...args);
 	}, 'MIXED' );
@@ -17,9 +19,9 @@ function adjustProficiencyObject() {
 
 function registerProficiencyOverride(id, handler, mode='OVERRIDE') {
 	try {
-		libWrapper.register('sw5e', id, handler, mode);
+		libWrapper.register(getModuleId(), id, handler, mode);
 	} catch(err) {
-		console.warn(`SW5E | Skipping incompatible proficiency wrapper target '${id}'.`, err);
+		console.warn(`${HOOKS_NAMESPACE.toUpperCase()} | Skipping incompatible proficiency wrapper target '${id}'.`, err);
 	}
 }
 

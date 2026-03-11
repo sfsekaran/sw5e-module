@@ -1,3 +1,5 @@
+import { getModulePath } from "./module-support.mjs";
+
 /**
  * Define a set of template paths to pre-load. Pre-loaded templates are compiled and cached for fast access when
  * rendering. These paths will also be available as Handlebars partials by using the file name
@@ -7,7 +9,7 @@
 async function preloadHandlebarsTemplates() {
 	const partials = [
 		// Item Sheet Partials
-		"modules/sw5e/templates/items/details/details-maneuver.hbs",
+		getModulePath("templates/items/details/details-maneuver.hbs"),
 	];
 
 	const paths = {};

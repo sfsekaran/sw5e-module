@@ -1,11 +1,13 @@
+import { getModuleId, HOOKS_NAMESPACE } from "../module-support.mjs";
+
 const DEBUG = false;
 
 function registerHook(id, callback, mode='WRAPPER') {
 	try {
-		libWrapper.register('sw5e', id, callback, mode);
+		libWrapper.register(getModuleId(), id, callback, mode);
 		return true;
 	} catch(err) {
-		console.warn(`SW5E | Skipping incompatible wrapper target '${id}'.`, err);
+		console.warn(`${HOOKS_NAMESPACE.toUpperCase()} | Skipping incompatible wrapper target '${id}'.`, err);
 		return false;
 	}
 }
@@ -13,11 +15,11 @@ function registerHook(id, callback, mode='WRAPPER') {
 function addHook(id, hookID) {
 	registerHook(id, function (wrapped, ...args) {
 		if (DEBUG) console.debug(`libWrapper hook '${id}' start`);
-		const allowed = Hooks.call('sw5e.pre' + (hookID ?? id), this, ...args);
+		const allowed = Hooks.call(`${HOOKS_NAMESPACE}.pre` + (hookID ?? id), this, ...args);
 		if (allowed === false) return;
 		const result = wrapped(...args);
 		const config = { result };
-		Hooks.call('sw5e.' + (hookID ?? id), this, result, config, ...args);
+		Hooks.call(`${HOOKS_NAMESPACE}.` + (hookID ?? id), this, result, config, ...args);
 		if (DEBUG) console.debug(`libWrapper hook '${id}' end`);
 		return config.result;
 	});
@@ -26,11 +28,11 @@ function addHook(id, hookID) {
 function addHookAsync(id, hookID) {
 	registerHook(id, async function (wrapped, ...args) {
 		if (DEBUG) console.debug(`libWrapper hook '${id}' start`);
-		const allowed = Hooks.call('sw5e.pre' + (hookID ?? id), this, ...args);
+		const allowed = Hooks.call(`${HOOKS_NAMESPACE}.pre` + (hookID ?? id), this, ...args);
 		if (allowed === false) return;
 		const result = await wrapped(...args);
 		const config = { result };
-		Hooks.call('sw5e.' + (hookID ?? id), this, result, config, ...args);
+		Hooks.call(`${HOOKS_NAMESPACE}.` + (hookID ?? id), this, result, config, ...args);
 		if (DEBUG) console.debug(`libWrapper hook '${id}' end`);
 		return config.result;
 	});

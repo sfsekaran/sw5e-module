@@ -1,3 +1,5 @@
+import { getModulePath } from "../module-support.mjs";
+
 export function patchConfig(config, strict = true) {
 	const preLocalize = game.dnd5e.utils.preLocalize;
 
@@ -1676,7 +1678,7 @@ export function patchConfig(config, strict = true) {
 		},
 		ion: {
 			label: "SW5E.DamageIon",
-			icon: "modules/sw5e/icons/svg/damage/ion.svg",
+			icon: getModulePath("icons/svg/damage/ion.svg"),
 			// reference: "", // TODO
 			color: new Color(0x1E90FF)
 		},
@@ -1918,7 +1920,7 @@ export function patchConfig(config, strict = true) {
 		...config.conditionTypes,
 		corroded: {
 			name: "SW5E.ConCorroded",
-			img: "modules/sw5e/icons/svg/conditions/corroded.svg",
+			img: getModulePath("icons/svg/conditions/corroded.svg"),
 			reference: "Compendium.sw5e.conditions.JournalEntry.eyo6JvadhVCWr4xD.JournalEntryPage.WZcSCaBuYZjNJ4LG"
 		},
 		ignited: {
@@ -1928,12 +1930,12 @@ export function patchConfig(config, strict = true) {
 		},
 		shocked: {
 			name: "SW5E.ConShocked",
-			img: "modules/sw5e/icons/svg/conditions/shocked.svg",
+			img: getModulePath("icons/svg/conditions/shocked.svg"),
 			reference: "Compendium.sw5e.conditions.JournalEntry.HBSJojgAGu9Gsctd.JournalEntryPage.0000000000000000"
 		},
 		slowed: {
 			name: "SW5E.ConSlowed",
-			img: "modules/sw5e/icons/svg/conditions/slowed.svg",
+			img: getModulePath("icons/svg/conditions/slowed.svg"),
 			reference: "Compendium.sw5e.conditions.JournalEntry.ZhAPlYd3gQ2KgbzV.JournalEntryPage.GTgBAVw76eIKJGEL",
 			levels: 4,
 			speedReduction: [
@@ -1957,7 +1959,7 @@ export function patchConfig(config, strict = true) {
 		},
 		weakened: {
 			name: "SW5E.ConWeakened",
-			img: "modules/sw5e/icons/svg/conditions/weakened.svg",
+			img: getModulePath("icons/svg/conditions/weakened.svg"),
 			reference: "Compendium.sw5e.conditions.JournalEntry.ffDhL5tDJ8lD07uN.JournalEntryPage.xGHbrLsJf1B5Gmtd"
 		}
 	};

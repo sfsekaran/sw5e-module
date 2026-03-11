@@ -1,3 +1,5 @@
+import { getModule, getModulePath, SETTINGS_NAMESPACE } from "./module-support.mjs";
+
 /**
  * Checks if the world needs migrating.
  * @returns {boolean}      Wheter migration is needed or not.
@@ -5,11 +7,12 @@
 export const needsMigration = function() {
 	// Determine whether a system migration is required and feasible
 	if (!game.user.isGM) return false;
-	const cv = game.settings.get("sw5e", "moduleMigrationVersion");
+	const cv = game.settings.get(SETTINGS_NAMESPACE, "moduleMigrationVersion");
 	const totalDocuments = game.actors.size + game.scenes.size + game.items.size;
-	const sw5eModule = game.modules.get("sw5e");
+	const sw5eModule = getModule();
+	if ( !sw5eModule ) return false;
 	if (!cv && totalDocuments === 0) {
-		if (sw5eModule.version !== "#{VERSION}#") game.settings.set("sw5e", "moduleMigrationVersion", sw5eModule.version);
+		if (sw5eModule.version !== "#{VERSION}#") game.settings.set(SETTINGS_NAMESPACE, "moduleMigrationVersion", sw5eModule.version);
 		return false;
 	}
 	if (cv && !foundry.utils.isNewerVersion(sw5eModule.flags.needsMigrationVersion, cv)) return false;
@@ -28,7 +31,7 @@ export const needsMigration = function() {
  * @returns {Promise}      A Promise which resolves once the migration is completed
  */
 export const migrateWorld = async function() {
-	const version = game.modules.get("sw5e").version;
+	const version = getModule()?.version ?? game.system.version ?? "";
 	ui.notifications.info(game.i18n.format("MIGRATION.sw5eBegin", {version}), {permanent: true});
 
 	const migrationData = await getMigrationData();
@@ -161,8 +164,8 @@ export const migrateWorld = async function() {
 	}
 
 	// Set the migration as complete
-	const moduleVersion = game.modules.get("sw5e").version;
-	if (moduleVersion !== "#{VERSION}#") game.settings.set("sw5e", "moduleMigrationVersion", moduleVersion);
+	const moduleVersion = getModule()?.version ?? version;
+	if (moduleVersion !== "#{VERSION}#") game.settings.set(SETTINGS_NAMESPACE, "moduleMigrationVersion", moduleVersion);
 	ui.notifications.info(game.i18n.format("MIGRATION.sw5eComplete", { version }), { permanent: true });
 };
 
@@ -426,8 +429,8 @@ function _migrateImage(objectData, updateData) {
 	for (const prop of ["img", "icon", "texture.src", "prototypeToken.texture.src"]) {
 		const path = foundry.utils.getProperty(objectData, prop);
 
-		let newPath = path?.replace("systems/sw5e/packs/Icons", "modules/sw5e/icons/packs");
-		newPath = newPath?.replace("modules/sw5e-module-test/icons/", "modules/sw5e/icons/");
+		let newPath = path?.replace("systems/sw5e/packs/Icons", getModulePath("icons/packs"));
+		newPath = newPath?.replace("modules/sw5e-module-test/icons/", `${getModulePath("icons")}/`);
 		if (newPath !== path) {
 			updateData[prop] = newPath;
 			console.log("Changed img path for item", objectData.name, "old", path, "new", newPath);
