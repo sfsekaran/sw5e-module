@@ -2,6 +2,9 @@ import { getModulePath } from "../module-support.mjs";
 
 export function patchConfig(config, strict = true) {
 	const preLocalize = game.dnd5e.utils.preLocalize;
+	config.spellcasting ??= {};
+	config.spellcasting.preparationModes ??= {};
+	const defaultSpellImg = config.spellcasting?.spell?.img ?? "";
 
 	// Default Abilities
 	config.defaultAbilities.hullPoints = "con";
@@ -1696,7 +1699,7 @@ export function patchConfig(config, strict = true) {
 		delete config.damageTypes.radiant;
 	}
 	// Powercasting
-	config.spellPreparationModes.powerCasting = {
+	config.spellcasting.preparationModes.powerCasting = {
 		label: "SW5E.Powercasting.Label",
 		usesPoints: true,
 		upcast: true,
@@ -1704,7 +1707,7 @@ export function patchConfig(config, strict = true) {
 	config.powerCasting = {
 		force: {
 			label: "SW5E.Powercasting.Force.Label",
-			img: config.spellcasting.spell.img,
+			img: defaultSpellImg,
 			attr: ["wis", "cha"],
 			focus: {
 				label: "SW5E.Powercasting.Force.Focus",
@@ -1765,7 +1768,7 @@ export function patchConfig(config, strict = true) {
 		},
 		tech: {
 			label: "SW5E.Powercasting.Tech.Label",
-			img: config.spellcasting.spell.img,
+			img: defaultSpellImg,
 			attr: ["int"],
 			focus: {
 				label: "SW5E.Powercasting.Tech.Focus",
@@ -1831,7 +1834,7 @@ export function patchConfig(config, strict = true) {
 	// Superiority
 	config.superiority = {
 		label: "SW5E.Superiority.Label",
-		img: config.spellcasting.spell.img,
+		img: defaultSpellImg,
 		// focus: {
 		// 	label: "SW5E.Superiority.Focus",
 		// 	id: "superiorityfocus",

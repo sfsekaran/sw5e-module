@@ -1,5 +1,5 @@
 {
-  "id": "sw5e",
+  "id": "sw5e-module",
   "title": "SW5E",
   "description": "Implementation of SW5E as a module for the dnd5e system.",
   "version": "#{VERSION}#",
