@@ -430,6 +430,7 @@ function _migrateImage(objectData, updateData) {
 		const path = foundry.utils.getProperty(objectData, prop);
 
 		let newPath = path?.replace("systems/sw5e/packs/Icons", getModulePath("icons/packs"));
+		newPath = newPath?.replace("modules/sw5e/icons/", `${getModulePath("icons")}/`);
 		newPath = newPath?.replace("modules/sw5e-module-test/icons/", `${getModulePath("icons")}/`);
 		if (newPath !== path) {
 			updateData[prop] = newPath;

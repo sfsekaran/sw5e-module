@@ -4,7 +4,9 @@ import { patchKeen } from "./properties/keen.mjs";
 import { patchReload } from "./properties/reload.mjs";
 
 function addHelper() {
-	dnd5e.dataModels.ItemDataModel.prototype.getProperty = function (prop) {
+	const ItemDataModel = dnd5e.dataModels.abstract?.ItemDataModel;
+	if ( !ItemDataModel ) return;
+	ItemDataModel.prototype.getProperty = function (prop) {
 		return getFlag(this?.parent, `properties.${prop}`);
 	};
 }

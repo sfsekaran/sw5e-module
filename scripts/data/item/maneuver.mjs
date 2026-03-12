@@ -1,6 +1,6 @@
 import { getBestAbility } from "./../../utils.mjs";
 
-const { ItemDataModel } = globalThis.dnd5e.dataModels;
+const { ItemDataModel } = globalThis.dnd5e.dataModels.abstract;
 const { ActivitiesTemplate, ItemDescriptionTemplate, ItemTypeTemplate, ItemTypeField } = globalThis.dnd5e.dataModels.item;
 const { ActivationField, DurationField, RangeField, TargetField } = globalThis.dnd5e.dataModels.shared;
 

@@ -13,7 +13,7 @@ To install and use the sw5e module for Foundry Virtual Tabletop, simply paste th
 
 https://github.com/sw5e-foundry/sw5e-module/releases/latest/download/module.json
 
-If you wish to manually install the module, clone or extract it into the `Data/modules/sw5e` folder. You may do this by cloning the repository or downloading a zip archive from the Releases Page.
+If you wish to manually install the module, clone or extract it into the `Data/modules/sw5e-module` folder. You may do this by cloning the repository or downloading a zip archive from the Releases Page.
 
 ## Changelog
 

@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "^1.0.0-rc.4",
+    "classic-level": "^1.4.1",
     "fancy-log": "^2.0.0",
     "yargs": "^17.7.2"
   }

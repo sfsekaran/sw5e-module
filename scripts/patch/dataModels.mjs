@@ -160,5 +160,5 @@ export function patchDataModels() {
 	Object.assign(CONFIG.Item.dataModels, dataModels.item.config);
 	const module = getModule();
 	const types = Object.keys(module?.documentTypes?.Item ?? {}).map(t => `sw5e.${t}`);
-	// DocumentSheetConfig.registerSheet(Item, "sw5e.maneuver", ItemSheetSW5E, { types, makeDefault: true });
+	foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, getModuleId(), ItemSheetSW5E, { types, makeDefault: true });
 }

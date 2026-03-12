@@ -4,9 +4,56 @@ import logger from "fancy-log";
 import path from "path";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import { compilePack, extractPack } from "@foundryvtt/foundryvtt-cli";
+import { extractPack } from "@foundryvtt/foundryvtt-cli";
+import { ClassicLevel } from "classic-level";
 
 const TARGET_DND5E_VERSION = "5.2.5";
+
+const HIERARCHY = {
+	actors: {
+		items: [],
+		effects: []
+	},
+	cards: {
+		cards: []
+	},
+	combats: {
+		combatants: []
+	},
+	delta: {
+		items: [],
+		effects: []
+	},
+	items: {
+		effects: []
+	},
+	journal: {
+		pages: []
+	},
+	playlists: {
+		sounds: []
+	},
+	regions: {
+		behaviors: []
+	},
+	tables: {
+		results: []
+	},
+	tokens: {
+		delta: {}
+	},
+	scenes: {
+		drawings: [],
+		tokens: [],
+		lights: [],
+		notes: [],
+		regions: [],
+		sounds: [],
+		templates: [],
+		tiles: [],
+		walls: []
+	}
+};
 
 
 /**
@@ -122,8 +169,9 @@ function cleanEffects(data) {
 }
 
 function cleanImage(path) {
-		path = path?.replace("systems/sw5e/packs/Icons", "modules/sw5e/icons/packs");
-		path = path?.replace("modules/sw5e-module-test/icons/packs", "modules/sw5e/icons/packs");
+		path = path?.replace("systems/sw5e/packs/Icons", "modules/sw5e-module/icons/packs");
+		path = path?.replace("modules/sw5e/icons/packs", "modules/sw5e-module/icons/packs");
+		path = path?.replace("modules/sw5e-module-test/icons/packs", "modules/sw5e-module/icons/packs");
 		return path;
 }
 
@@ -440,9 +488,86 @@ async function compilePacks(packName) {
 		const src = path.join(PACK_SRC, folder.name);
 		const dest = path.join(PACK_DEST, folder.name);
 		logger.info(`Compiling pack ${folder.name}`);
-		await compilePack(src, dest, { recursive: true, log: true, transformEntry: cleanPackEntry });
+		await compileClassicLevelSafe(src, dest, { recursive: true, log: true, transformEntry: cleanPackEntry });
 	}
 }
+
+async function compileClassicLevelSafe(src, dest, { recursive=false, log=false, transformEntry }={}) {
+	const files = findSourceFiles(src, { recursive });
+
+	fs.mkdirSync(dest, { recursive: true });
+
+	const db = new ClassicLevel(dest, { keyEncoding: "utf8", valueEncoding: "json" });
+	await db.open();
+	const seenKeys = new Set();
+	const packDoc = applyHierarchy(async (doc, collection) => {
+		const key = doc._key;
+		delete doc._key;
+		if ( seenKeys.has(key) ) {
+			throw new Error(`An entry with key '${key}' was already packed and would be overwritten by this entry.`);
+		}
+		seenKeys.add(key);
+		const value = structuredClone(doc);
+		await mapHierarchy(value, collection, embeddedDoc => embeddedDoc._id);
+		await db.put(key, value);
+	});
+
+	for ( const file of files ) {
+		try {
+			const contents = fs.readFileSync(file, "utf8");
+			const doc = JSON.parse(contents);
+			const [, collection] = doc._key.split("!");
+			if ( await transformEntry?.(doc) === false ) continue;
+			await packDoc(doc, collection);
+			if ( log ) console.log(`Packed ${doc._id}${doc.name ? ` (${doc.name})` : ""}`);
+		} catch ( err ) {
+			if ( log ) console.error(`Failed to pack ${file}. See error below.`);
+			throw err;
+		}
+	}
+
+	await db.close();
+}
+
+function applyHierarchy(fn) {
+	const apply = async (doc, collection, options={}) => {
+		const newOptions = await fn(doc, collection, options);
+		for ( const [embeddedCollectionName, type] of Object.entries(HIERARCHY[collection] ?? {}) ) {
+			const embeddedValue = doc[embeddedCollectionName];
+			if ( Array.isArray(type) && Array.isArray(embeddedValue) ) {
+				for ( const embeddedDoc of embeddedValue ) await apply(embeddedDoc, embeddedCollectionName, newOptions);
+			} else if ( embeddedValue ) {
+				await apply(embeddedValue, embeddedCollectionName, newOptions);
+			}
+		}
+	};
+	return apply;
+}
+
+async function mapHierarchy(doc, collection, fn) {
+	for ( const [embeddedCollectionName, type] of Object.entries(HIERARCHY[collection] ?? {}) ) {
+		const embeddedValue = doc[embeddedCollectionName];
+		if ( Array.isArray(type) ) {
+			doc[embeddedCollectionName] = Array.isArray(embeddedValue) ? embeddedValue.map(entry => fn(entry, embeddedCollectionName)) : [];
+		} else {
+			doc[embeddedCollectionName] = embeddedValue ? await fn(embeddedValue, embeddedCollectionName) : null;
+		}
+	}
+}
+
+function findSourceFiles(root, { recursive=false }={}) {
+	const files = [];
+	for ( const entry of fs.readdirSync(root, { withFileTypes: true }) ) {
+		const name = path.join(root, entry.name);
+		if ( entry.isDirectory() && recursive ) {
+			files.push(...findSourceFiles(name, { recursive }));
+			continue;
+		}
+		if ( entry.isFile() && path.extname(name) === ".json" ) files.push(name);
+	}
+	return files;
+}
+
 
 
 /* ----------------------------------------- */
