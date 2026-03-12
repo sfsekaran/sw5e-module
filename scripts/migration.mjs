@@ -504,7 +504,10 @@ function _migrateDescriptionLinks(itemData, updateData) {
 	for ( const prop of ["system.description.value", "system.description.chat"] ) {
 		const text = foundry.utils.getProperty(itemData, prop);
 		if ( typeof text !== "string" ) continue;
-		const normalized = normalizeCompendiumReferences(text, { moduleId });
+		let normalized = normalizeCompendiumReferences(text, { moduleId });
+		normalized = normalized.replace(/systems\/sw5e\/packs\/Icons/g, getModulePath("icons/packs"));
+		normalized = normalized.replace(/modules\/sw5e\/icons\/packs/g, getModulePath("icons/packs"));
+		normalized = normalized.replace(/modules\/sw5e-module-test\/icons\/packs/g, getModulePath("icons/packs"));
 		if ( normalized !== text ) updateData[prop] = normalized;
 	}
 

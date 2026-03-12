@@ -303,6 +303,14 @@ function cleanImage(path) {
 		return path;
 }
 
+function cleanHtmlImagePaths(text) {
+	if ( typeof text !== "string" ) return text;
+	return text
+		.replace(/systems\/sw5e\/packs\/Icons/g, "modules/sw5e-module/icons/packs")
+		.replace(/modules\/sw5e\/icons\/packs/g, "modules/sw5e-module/icons/packs")
+		.replace(/modules\/sw5e-module-test\/icons\/packs/g, "modules/sw5e-module/icons/packs");
+}
+
 /**
  * Convert an entry from the sw5e system format.
  * @param {object} data                           Data for a single entry to convert.
@@ -527,7 +535,8 @@ function cleanPackEntry(data, { clearSourceId=true, ownership=0, forceConvert=tr
 	if ( data.effects ) data.effects.forEach(i => cleanPackEntry(i, { clearSourceId: false, forceConvert }));
 	if ( data.items ) data.items.forEach(i => cleanPackEntry(i, { clearSourceId: false, forceConvert }));
 	if ( data.pages ) data.pages.forEach(i => cleanPackEntry(i, { ownership: -1, forceConvert }));
-	if ( data.system?.description?.value ) data.system.description.value = cleanString(data.system.description.value);
+	if ( data.system?.description?.value ) data.system.description.value = cleanHtmlImagePaths(cleanString(data.system.description.value));
+	if ( data.system?.description?.chat ) data.system.description.chat = cleanHtmlImagePaths(cleanString(data.system.description.chat));
 	if ( data.label ) data.label = cleanString(data.label);
 	if ( data.name ) data.name = cleanString(data.name);
 }
