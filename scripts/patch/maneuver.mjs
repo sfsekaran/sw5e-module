@@ -1,6 +1,16 @@
 import { getBestAbility } from "./../utils.mjs";
+import { getModuleType, getModuleTypeCandidates, isModuleType, normalizeModuleType } from "../module-support.mjs";
 
 const PRECALCULATED_SPELLCASTING_KEY = "sw5e-preCalculatedSpellcastingClasses";
+const MANEUVER_TYPE = getModuleType("maneuver");
+
+function getActorManeuvers(actor) {
+	return getModuleTypeCandidates("maneuver").flatMap(type => actor.itemTypes?.[type] ?? []);
+}
+
+function capitalize(text) {
+	return text ? text.charAt(0).toUpperCase() + text.slice(1) : text;
+}
 
 function getHtmlRoot(html) {
 	return html instanceof HTMLElement ? html : html?.[0] ?? html;
@@ -82,7 +92,7 @@ function prepareSuperiority() {
 				}
 
 				// Calculate known maneuvers
-				for (const pwr of _this.itemTypes?.['sw5e.maneuver'] ?? []) {
+				for (const pwr of getActorManeuvers(_this) ?? []) {
 					const { properties } = pwr?.system ?? {};
 					if (properties?.has("freeLearn")) continue;
 					obj.maneuversKnownCur++;
@@ -221,60 +231,58 @@ function patchPowerAbilityScore() {
 }
 
 function patchPowerbooks() {
-	/*
 	Hooks.on('sw5e.ActorSheet5e._prepareSpellbook', function (_this, powerbook, config, ...args) {
-		const [context, spells] = args;
+		const [context] = args;
+		const spellbook = config.result ?? powerbook ?? {};
+		const columns = Object.values(spellbook)[0]?.columns ?? [];
 
-		// Format a powerbook entry for a certain indexed level
-		const registerSection = (sl, i, label, dataset) => {
-			if (powerbook.find(section => section.order === i)) return;
-			const section = {
-				order: i,
-				label: label,
+		// Register a maneuver section using the modern dnd5e spellbook shape.
+		const registerSection = (key, order, label, dataset) => {
+			if ( key in spellbook ) return spellbook[key];
+			const section = spellbook[key] = {
+				label: game.i18n.localize(label),
+				columns,
+				order,
 				usesSlots: false,
-				canCreate: _this.actor.isOwner,
-				canPrepare: false,
-				spells: [],
-				uses: 0,
-				slots: 0,
-				override: 0,
-				dataset: {type: "maneuver", ...dataset},
-				prop: sl,
-				editable: context.editable
+				id: key,
+				slot: key,
+				items: [],
+				minWidth: 220,
+				draggable: true,
+				dataset: { type: MANEUVER_TYPE, ...dataset }
 			};
-			powerbook.push(section);
 			return section;
 		};
 
 		const superiorityBook = {};
 		const superData = _this.actor.system.superiority;
 		let idx = 1000;
-		if (superData.level !== 0) {
+		if (superData?.level) {
 			for (const type of Object.keys(CONFIG.DND5E.superiority.types)) {
-				const section = registerSection(`maneuvers-${type}`, idx++, `SW5E.Superiority.Type.${type.capitalize()}.Label`, {'type.value': type});
+				const section = registerSection(`maneuvers-${type}`, idx++, `SW5E.Superiority.Type.${capitalize(type)}.Label`, { "type.value": type });
 				superiorityBook[type] = section;
 			}
 		}
 
 		// Iterate over every maneuver item, adding maneuvers to the powerbook by section
-		context.actor.itemTypes['sw5e.maneuver'].forEach(maneuver => {
+		getActorManeuvers(context.actor).forEach(maneuver => {
 			const type = maneuver.system.type.value || "general";
-			const mt = `maneuver-${type}`;
+			const key = `maneuvers-${type}`;
 
 			// Sections for maneuvers which the caster "should not" have, but maneuver items exist for
 			if (!superiorityBook[type]) {
-				const section = registerSection(mt, idx++, `SW5E.Superiority.Type.${type.capitalize()}.Label`, {'type.value': type});
+				const section = registerSection(key, idx++, `SW5E.Superiority.Type.${capitalize(type)}.Label`, { "type.value": type });
 				superiorityBook[type] = section;
 			}
 
 			// Add the maneuver to the relevant heading
-			superiorityBook[type].spells.push(maneuver);
+			superiorityBook[type].items.push(maneuver);
 		});
 
-		// Sort the powerbook by section level
-		config.result = powerbook.sort((a, b) => a.order - b.order);
+		config.result = Object.fromEntries(
+			Object.entries(spellbook).sort(([, a], [, b]) => (a.order ?? 0) - (b.order ?? 0))
+		);
 	});
-	*/
 }
 
 function recoverSuperiorityDice() {
@@ -303,10 +311,25 @@ function addCompendiumBrowserTab() {
 	if ( idx === -1 ) return;
 	tabs.splice(idx+1, 0, {
 		tab: "maneuvers",
-		label: "TYPES.Item.sw5e.maneuverPl",
+		label: "TYPES.Item.sw5e-module.maneuverPl",
 		icon: "fas fa-tablet",
 		documentClass: "Item",
-		types: ["sw5e.maneuver"]
+		types: getModuleTypeCandidates("maneuver")
+	});
+}
+
+function normalizeManeuverDropType() {
+	Hooks.on("sw5e.preItem5e.fromDropData", (_cls, data) => {
+		if ( !data ) return;
+		if ( data.type ) data.type = normalizeModuleType(data.type, "maneuver");
+		if ( data.data?.type ) data.data.type = normalizeModuleType(data.data.type, "maneuver");
+	});
+}
+
+function excludeManeuversFromFeatures() {
+	Hooks.on("sw5e.BaseActorSheet._assignItemCategories", (_this, result, config, item) => {
+		if ( !isModuleType(item?.type, "maneuver") ) return;
+		config.result = new Set();
 	});
 }
 
@@ -320,4 +343,6 @@ export function patchManeuver() {
 	showPowercastingStats();
 	makeSuperiorityDiceConsumable();
 	addCompendiumBrowserTab();
+	normalizeManeuverDropType();
+	excludeManeuversFromFeatures();
 }

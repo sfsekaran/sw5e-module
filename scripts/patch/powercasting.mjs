@@ -1,5 +1,5 @@
 import { getBestAbility } from "./../utils.mjs";
-import { getModulePath } from "../module-support.mjs";
+import { getModulePath, isModuleType } from "../module-support.mjs";
 
 const PRECALCULATED_SPELLCASTING_KEY = "sw5e-preCalculatedSpellcastingClasses";
 
@@ -248,7 +248,7 @@ function showPowercastingStats() {
 
 		const actorPowers = actorItems.filter(item => item.type === "spell");
 		const actorClasses = actorItems.filter(item => item.type === "class");
-		const actorManeuvers = actorItems.filter(item => item.type === "sw5e.maneuver");
+		const actorManeuvers = actorItems.filter(item => isModuleType(item.type, "maneuver"));
 
 		// Verification
 		const hasSuperiority = (

@@ -11,6 +11,8 @@
 	"TYPES.Item.spellPl": "Powers",
 	"TYPES.Item.subclass": "Archetype",
 	"TYPES.Item.subclassPl": "Archetypes",
+	"TYPES.Item.sw5e-module.maneuver": "Maneuver",
+	"TYPES.Item.sw5e-module.maneuverPl": "Maneuvers",
 	"TYPES.Item.sw5e.maneuver": "Maneuver",
 	"TYPES.Item.sw5e.maneuverPl": "Maneuvers",
 	"TYPES.JournalEntryPage.spells": "Power List",

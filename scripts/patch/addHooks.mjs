@@ -48,6 +48,7 @@ export function addHooks() {
 	addHook('dnd5e.documents.Actor5e.prototype.spellcastingClasses', 'Actor5e.spellcastingClasses');
 	// Item5e Hooks
 	addHook('dnd5e.documents.Item5e.prototype.spellcasting', 'Item5e.spellcasting');
+	addHookAsync('dnd5e.documents.Item5e.fromDropData', 'Item5e.fromDropData');
 
 	//-----------------//
 	// DataModel Hooks //
@@ -66,7 +67,8 @@ export function addHooks() {
 
 	// ActorSheet5e Hooks
 	// addHook('dnd5e.applications.actor.ActorSheet5e.prototype._onDropSpell', 'ActorSheet5e._onDropSpell');
-	// addHook('dnd5e.applications.actor.ActorSheet5e.prototype._prepareSpellbook', 'ActorSheet5e._prepareSpellbook');
+	addHook('dnd5e.applications.actor.BaseActorSheet.prototype._assignItemCategories', 'BaseActorSheet._assignItemCategories');
+	addHook('dnd5e.applications.actor.BaseActorSheet.prototype._prepareSpellbook', 'ActorSheet5e._prepareSpellbook');
 	// addHookAsync('dnd5e.applications.actor.ActorSheet5e.prototype.getData', 'ActorSheet5eCharacter.getData');
 	// ItemSheet5e Hooks
 	// ?

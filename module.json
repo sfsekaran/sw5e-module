@@ -409,7 +409,7 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["sw5e.maneuver"]
+          "types": ["sw5e-module.maneuver"]
         }
       }
     },

@@ -1,6 +1,6 @@
 import * as dataModels from "./../data/_module.mjs";
 import { ItemSheetSW5E } from "./../applications/item-sheet.mjs";
-import { getModule, getModuleId } from "../module-support.mjs";
+import { getModule, getModuleId, getModuleTypeCandidates } from "../module-support.mjs";
 
 const { NumberField, SchemaField, SetField, StringField } = foundry.data.fields;
 
@@ -159,6 +159,6 @@ export function patchDataModels() {
 
 	Object.assign(CONFIG.Item.dataModels, dataModels.item.config);
 	const module = getModule();
-	const types = Object.keys(module?.documentTypes?.Item ?? {}).map(t => `sw5e.${t}`);
+	const types = Object.keys(module?.documentTypes?.Item ?? {}).flatMap(getModuleTypeCandidates);
 	foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, getModuleId(), ItemSheetSW5E, { types, makeDefault: true });
 }

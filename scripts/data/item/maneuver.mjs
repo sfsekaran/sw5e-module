@@ -145,7 +145,7 @@ export default class ManeuverData extends ItemDataModel.mixin(ItemDescriptionTem
 		TargetField.prepareData.call(this, rollData, labels);
 
 		const Proficiency = game.dnd5e.documents.Proficiency;
-		// This isnt done by the Item5e._prepareProficiency because `sw5e.maneuver` is not on the list of types with proficiency.
+		// This custom maneuver subtype is not handled by Item5e's built-in proficiency preparation.
 		if (!this.parent.actor?.system?.attributes?.prof) this.prof = new Proficiency(0, 0);
 		else this.prof = new Proficiency(this.parent.actor.system.attributes.prof, this.proficiencyMultiplier ?? 0);
 	}
