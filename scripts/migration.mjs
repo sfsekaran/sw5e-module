@@ -434,7 +434,11 @@ function getInvalidDocumentSource(collection, id, legacyKey) {
  * @private
  */
 function _migrateImage(objectData, updateData) {
-	for (const prop of ["img", "icon", "texture.src", "prototypeToken.texture.src"]) {
+	const props = ["img", "texture.src", "prototypeToken.texture.src"];
+	// ActiveEffect5e#icon is deprecated since Foundry v12 (migrated to img); avoid accessing it.
+	const isEffect = objectData?.documentName === "ActiveEffect" || (objectData?.changes && Array.isArray(objectData.changes));
+	if ( !isEffect ) props.push("icon");
+	for (const prop of props) {
 		const path = foundry.utils.getProperty(objectData, prop);
 
 		let newPath = path?.replace("systems/sw5e/packs/Icons", getModulePath("icons/packs"));

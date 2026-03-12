@@ -3,6 +3,8 @@ import { getModuleType, getModuleTypeCandidates, isModuleType, normalizeModuleTy
 
 const PRECALCULATED_SPELLCASTING_KEY = "sw5e-preCalculatedSpellcastingClasses";
 const MANEUVER_TYPE = getModuleType("maneuver");
+const SUPERIORITY_SYNC_KEY = "sw5eSuperioritySync";
+const SUPERIORITY_SYNC_PROMISE_KEY = "sw5eSuperioritySyncPromise";
 
 function getActorManeuvers(actor) {
 	return getModuleTypeCandidates("maneuver").flatMap(type => actor.itemTypes?.[type] ?? []);
@@ -10,6 +12,34 @@ function getActorManeuvers(actor) {
 
 function capitalize(text) {
 	return text ? text.charAt(0).toUpperCase() + text.slice(1) : text;
+}
+
+function clampResourceValue(value, max) {
+	const numericValue = Number.isFinite(Number(value)) ? Number(value) : 0;
+	const numericMax = Math.max(0, Number.isFinite(Number(max)) ? Number(max) : 0);
+	return Math.min(Math.max(numericValue, 0), numericMax);
+}
+
+function queueSuperioritySync(actor, updateData) {
+	if ( !actor?.update || foundry.utils.isEmpty(updateData) ) return;
+
+	const pendingUpdate = actor[SUPERIORITY_SYNC_KEY]
+		? foundry.utils.mergeObject(actor[SUPERIORITY_SYNC_KEY], updateData, { inplace: false })
+		: updateData;
+	actor[SUPERIORITY_SYNC_KEY] = pendingUpdate;
+	if ( actor[SUPERIORITY_SYNC_PROMISE_KEY] ) return;
+
+	actor[SUPERIORITY_SYNC_PROMISE_KEY] = Promise.resolve()
+		.then(async () => {
+			const pending = actor[SUPERIORITY_SYNC_KEY];
+			delete actor[SUPERIORITY_SYNC_KEY];
+			if ( foundry.utils.isEmpty(pending) ) return;
+			const canPersistUpdate = actor.id && actor.collection?.has?.(actor.id) && !actor.isToken;
+			if ( canPersistUpdate ) await actor.update(pending, { render: false });
+			else actor.updateSource?.(pending);
+		})
+		.catch(err => console.error("SW5E | Failed to synchronize superiority resource.", err))
+		.finally(() => delete actor[SUPERIORITY_SYNC_PROMISE_KEY]);
 }
 
 function getHtmlRoot(html) {
@@ -42,6 +72,8 @@ function prepareSuperiority() {
 	Hooks.on('sw5e.preActor5e._prepareSpellcasting', function (_this, result, config, ...args) {
 		if (!_this.system.superiority) return;
 		const isNPC = _this.type === "npc";
+		const sourceSuperiority = _this._source?.system?.superiority ?? {};
+		const superiorityFlags = _this.flags?.sw5e?.superiority ?? {};
 
 		// Prepare base progression data
 		const charProgression = ["superiority"].reduce((obj, superType) => {
@@ -110,11 +142,40 @@ function prepareSuperiority() {
 
 			// Apply the calculated values to the sheet
 			const target = _this.system.superiority;
+			const sourceKnown = sourceSuperiority.known ?? {};
+			const sourceDice = sourceSuperiority.dice ?? {};
+			const effectiveKnownMax = sourceKnown.max ?? obj.maneuversKnownMax;
+			const effectiveDiceMax = sourceDice.max ?? obj.diceCount;
+			const effectiveDie = sourceSuperiority.die ?? obj.diceSize;
+			const effectiveLevel = sourceSuperiority.level ?? obj.casterLevel;
+			const sourceCurrentValue = Number.isFinite(Number(sourceDice.value)) ? Number(sourceDice.value) : null;
+			const previousMax = Number.isFinite(Number(superiorityFlags.diceMax)) ? Number(superiorityFlags.diceMax) : null;
+			const missingProgressData = [sourceDice.max, sourceSuperiority.die, sourceSuperiority.level].every(value => value == null);
+			let effectiveCurrentValue = sourceCurrentValue;
+
+			if ( effectiveDiceMax <= 0 ) effectiveCurrentValue = 0;
+			else if ( sourceCurrentValue == null ) effectiveCurrentValue = effectiveDiceMax;
+			else if ( (previousMax == null) && (sourceCurrentValue === 0) && missingProgressData ) {
+				// Existing actors from the broken state had no persisted superiority resource, only the default zero value.
+				effectiveCurrentValue = effectiveDiceMax;
+			} else if ( (previousMax != null) && (previousMax !== effectiveDiceMax) ) {
+				// Preserve spent dice while still granting newly gained dice on level-up.
+				effectiveCurrentValue = clampResourceValue(sourceCurrentValue + (effectiveDiceMax - previousMax), effectiveDiceMax);
+			} else {
+				effectiveCurrentValue = clampResourceValue(sourceCurrentValue, effectiveDiceMax);
+			}
+
 			target.known.value = obj.maneuversKnownCur;
-			target.known.max ??= obj.maneuversKnownMax;
-			target.dice.max ??= obj.diceCount;
-			target.die ??= obj.diceSize;
-			target.level ??= obj.casterLevel;
+			target.known.max = effectiveKnownMax;
+			target.dice.max = effectiveDiceMax;
+			target.dice.value = effectiveCurrentValue;
+			target.die = effectiveDie;
+			target.level = effectiveLevel;
+
+			const updateData = {};
+			if ( previousMax !== effectiveDiceMax ) updateData["flags.sw5e.superiority.diceMax"] = effectiveDiceMax;
+			if ( sourceCurrentValue !== effectiveCurrentValue ) updateData["system.superiority.dice.value"] = effectiveCurrentValue;
+			queueSuperioritySync(_this, updateData);
 		}
 
 		const { simplifyBonus } = dnd5e.utils;

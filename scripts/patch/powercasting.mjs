@@ -7,6 +7,15 @@ function getHtmlRoot(html) {
 	return html instanceof HTMLElement ? html : html?.[0] ?? html;
 }
 
+function formatSuperiorityPool(superiority) {
+	const dice = superiority?.dice ?? {};
+	const current = Number.isFinite(Number(dice.value)) ? Number(dice.value) : 0;
+	const max = Number.isFinite(Number(dice.max)) ? Number(dice.max) : 0;
+	const die = Number.isFinite(Number(superiority?.die)) ? Number(superiority.die) : 0;
+	if ( !max || !die ) return null;
+	return `${current}/${max}d${die}`;
+}
+
 // dataModels file adds:
 // - powercasting field to CreatureTemplate
 // - spellcasting.force/techProgression to ClassData and SubclassData
@@ -192,6 +201,8 @@ function showPowercastingStats() {
 		if ( !root || !context?.actor ) return;
 		const actorItems = context.actor.toObject().items;
 		const actorAbilities = context.actor.system.abilities;
+		const superiorityData = context.actor.system.superiority;
+		const superiorityPool = formatSuperiorityPool(superiorityData);
 		const powercastingCardsSection = root.querySelector(`section.tab[data-tab="spells"] section.top`);
 		if ( !powercastingCardsSection ) return;
 		const dndSpellcastingCards = powercastingCardsSection.querySelectorAll("div.spellcasting.card:not(.sw5e)");
@@ -218,7 +229,7 @@ function showPowercastingStats() {
 					}
 				}
 				return greater.name;
-			}},
+			}, getResource: () => superiorityPool},
 			{ name: "Superiority (Physical)", getAbility: () => {
 				const physicalAbilities = ["str", "dex", "con"];
 				const greater = {name: physicalAbilities[0], value: actorAbilities[physicalAbilities[0]].value};
@@ -230,7 +241,7 @@ function showPowercastingStats() {
 					}
 				}
 				return greater.name;
-			}},
+			}, getResource: () => superiorityPool},
 			{ name: "Superiority (General)", getAbility: () => {
 				const allAbilities = ["str", "dex", "con", "int", "wis", "cha"];
 				const greater = {name: allAbilities[0], value: actorAbilities[allAbilities[0]].value};
@@ -242,7 +253,7 @@ function showPowercastingStats() {
 					}
 				}
 				return greater.name;
-			}},
+			}, getResource: () => superiorityPool},
 		];
 		const techcastingCard = { name: "Techcasting", getAbility: () => "int" };
 
@@ -252,7 +263,9 @@ function showPowercastingStats() {
 
 		// Verification
 		const hasSuperiority = (
-			actorClasses.some(clss => clss.system.identifier === "scholar") || actorManeuvers.length > 0
+			actorClasses.some(clss => clss.system?.spellcasting?.superiorityProgression && (clss.system.spellcasting.superiorityProgression !== "none"))
+			|| actorManeuvers.length > 0
+			|| (superiorityData?.level > 0)
 		);
 		const hasForcecasting = (
 			actorClasses.some(clss => ["consular", "guardian", "sentinel"].includes(clss.system.identifier))
@@ -275,6 +288,7 @@ function showPowercastingStats() {
 			const powercastingCard = document.createElement("div");
 			powercastingCard.classList.add("spellcasting", "card", "sw5e");
 			const ability = powercasting.getAbility();
+			const resource = powercasting.getResource?.();
 			powercastingCard.dataset.ability = ability;
 			const powercastingAttackWithSymbol = actorAbilities[ability].attack >= 0 ? `+${actorAbilities[ability].attack}` : actorAbilities[ability].attack;
 			powercastingCard.innerHTML = `
@@ -282,6 +296,11 @@ function showPowercastingStats() {
 					<h3>${powercasting.name}</h3>
 				</div>
 				<div class="info">
+					${resource ? `
+					<div class="resource">
+						<span class="label">${game.i18n.localize("SW5E.Superiority.Dice.Label")}</span>
+						<span class="value">${resource}</span>
+					</div>` : ""}
 					<div class="ability">
 						<span class="label">Ability</span>
 						<span class="value">${ability.toUpperCase()}</span>
