@@ -1,8 +1,15 @@
 export const HOOKS_NAMESPACE = "sw5e";
 export const SETTINGS_NAMESPACE = "sw5e";
 
-const MODULE_ID_CANDIDATES = ["sw5e", "sw5e-module"];
 const LEGACY_MODULE_ID = "sw5e";
+const TEST_MODULE_ID = "sw5e-module-test";
+export const CANONICAL_MODULE_ID = "sw5e-module";
+const MODULE_ID_CANDIDATES = [CANONICAL_MODULE_ID, LEGACY_MODULE_ID];
+const COMPENDIUM_MODULE_ID_CANDIDATES = [CANONICAL_MODULE_ID, LEGACY_MODULE_ID, TEST_MODULE_ID];
+
+function escapeRegex(text) {
+	return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
 
 export function getModuleId() {
 	const fromUrl = import.meta.url.match(/\/modules\/([^/]+)\//)?.[1];
@@ -45,4 +52,16 @@ export function isModuleType(type, subtype) {
 export function normalizeModuleType(type, subtype) {
 	if ( !isModuleType(type, subtype) ) return type;
 	return getModuleType(subtype);
+}
+
+export function normalizeCompendiumUuid(uuid, { moduleId=getModuleId() }={}) {
+	if ( typeof uuid !== "string" ) return uuid;
+	const moduleIds = COMPENDIUM_MODULE_ID_CANDIDATES.map(escapeRegex).join("|");
+	return uuid.replace(new RegExp(`^Compendium\\.(${moduleIds})\\.`), `Compendium.${moduleId}.`);
+}
+
+export function normalizeCompendiumReferences(text, { moduleId=getModuleId() }={}) {
+	if ( typeof text !== "string" ) return text;
+	const moduleIds = COMPENDIUM_MODULE_ID_CANDIDATES.map(escapeRegex).join("|");
+	return text.replace(new RegExp(`Compendium\\.(${moduleIds})\\.`, "g"), `Compendium.${moduleId}.`);
 }

@@ -8,6 +8,7 @@ import { extractPack } from "@foundryvtt/foundryvtt-cli";
 import { ClassicLevel } from "classic-level";
 
 const TARGET_DND5E_VERSION = "5.2.5";
+const CANONICAL_MODULE_ID = "sw5e-module";
 
 const HIERARCHY = {
 	actors: {
@@ -168,6 +169,133 @@ function cleanEffects(data) {
 	}
 }
 
+function normalizeCompendiumUuid(uuid, { moduleId=CANONICAL_MODULE_ID }={}) {
+	if ( typeof uuid !== "string" ) return uuid;
+	return uuid.replace(/^Compendium\.(sw5e-module-test|sw5e|sw5e-module)\./, `Compendium.${moduleId}.`);
+}
+
+function normalizeCompendiumReferences(data, { moduleId=CANONICAL_MODULE_ID }={}) {
+	if ( typeof data === "string" ) {
+		return data.replace(/Compendium\.(sw5e-module-test|sw5e|sw5e-module)\./g, `Compendium.${moduleId}.`);
+	}
+
+	if ( Array.isArray(data) ) {
+		for ( let i = 0; i < data.length; i += 1 ) data[i] = normalizeCompendiumReferences(data[i], { moduleId });
+		return data;
+	}
+
+	if ( data && (typeof data === "object") ) {
+		for ( const [key, value] of Object.entries(data) ) data[key] = normalizeCompendiumReferences(value, { moduleId });
+	}
+
+	return data;
+}
+
+function normalizeAdvancementLink(item, field, moduleId=CANONICAL_MODULE_ID) {
+	if ( typeof item === "string" ) {
+		if ( item === "languages:standard:basic" ) return { item: "languages:standard:common", changed: true };
+		const normalizedUuid = normalizeCompendiumUuid(item, { moduleId });
+		if ( field === "pool" && normalizedUuid.startsWith("Compendium.") ) return { item: { uuid: normalizedUuid }, changed: true };
+		if ( field === "items" && normalizedUuid.startsWith("Compendium.") ) return { item: { uuid: normalizedUuid, optional: false }, changed: true };
+		return { item: normalizedUuid, changed: normalizedUuid !== item };
+	}
+
+	if ( !item || (typeof item !== "object") ) return { item, changed: false };
+
+	let changed = false;
+	if ( item.uuid ) {
+		const normalizedUuid = normalizeCompendiumUuid(item.uuid, { moduleId });
+		if ( normalizedUuid !== item.uuid ) {
+			item.uuid = normalizedUuid;
+			changed = true;
+		}
+	}
+	if ( (field === "items") && item.uuid?.startsWith("Compendium.") && (item.optional === undefined) ) {
+		item.optional = false;
+		changed = true;
+	}
+	return { item, changed };
+}
+
+function normalizeItemChoiceValue(value, moduleId=CANONICAL_MODULE_ID) {
+	if ( !value || (typeof value !== "object") ) return { value, changed: false };
+	let changed = false;
+
+	if ( value.added && (typeof value.added === "object") ) {
+		for ( const added of Object.values(value.added) ) {
+			if ( !added || (typeof added !== "object") ) continue;
+			for ( const [key, uuid] of Object.entries(added) ) {
+				if ( typeof uuid !== "string" ) continue;
+				const normalizedUuid = normalizeCompendiumUuid(uuid, { moduleId });
+				if ( normalizedUuid !== uuid ) {
+					added[key] = normalizedUuid;
+					changed = true;
+				}
+			}
+		}
+	}
+
+	return { value, changed };
+}
+
+function normalizeSubclassValue(value, moduleId=CANONICAL_MODULE_ID) {
+	if ( !value || (typeof value !== "object") ) return { value: {}, changed: true };
+
+	if ( value.document || value.uuid ) {
+		const normalizedValue = { ...value };
+		let changed = false;
+		if ( typeof normalizedValue.uuid === "string" ) {
+			const normalizedUuid = normalizeCompendiumUuid(normalizedValue.uuid, { moduleId });
+			if ( normalizedUuid !== normalizedValue.uuid ) {
+				normalizedValue.uuid = normalizedUuid;
+				changed = true;
+			}
+		}
+		return { value: normalizedValue, changed };
+	}
+
+	for ( const added of Object.values(value.added ?? {}) ) {
+		if ( !added || (typeof added !== "object") ) continue;
+		const [document, uuid] = Object.entries(added)[0] ?? [];
+		if ( !document ) continue;
+		return {
+			value: {
+				document,
+				...(typeof uuid === "string" ? { uuid: normalizeCompendiumUuid(uuid, { moduleId }) } : {})
+			},
+			changed: true
+		};
+	}
+
+	return { value: {}, changed: Object.keys(value).length > 0 };
+}
+
+function normalizeAdvancements(data, moduleId=CANONICAL_MODULE_ID) {
+	if ( !data.system?.advancement ) return;
+
+	for ( const adv of data.system.advancement ) {
+		for ( const field of ["pool", "items", "grants"] ) {
+			if ( !adv?.configuration?.[field] ) continue;
+			adv.configuration[field] = adv.configuration[field].map(item => normalizeAdvancementLink(item, field, moduleId).item);
+		}
+
+		if ( (data.type === "class") && (adv.type === "ItemChoice")
+			&& ["archetype", "subclass"].includes(adv.configuration?.type) ) {
+			adv.type = "Subclass";
+			adv.configuration = {};
+			adv.value = normalizeSubclassValue(adv.value, moduleId).value;
+			continue;
+		}
+
+		if ( adv.type === "Subclass" ) {
+			adv.value = normalizeSubclassValue(adv.value, moduleId).value;
+			continue;
+		}
+
+		if ( adv.type === "ItemChoice" ) adv.value = normalizeItemChoiceValue(adv.value, moduleId).value;
+	}
+}
+
 function cleanImage(path) {
 		path = path?.replace("systems/sw5e/packs/Icons", "modules/sw5e-module/icons/packs");
 		path = path?.replace("modules/sw5e/icons/packs", "modules/sw5e-module/icons/packs");
@@ -324,14 +452,6 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 		});
 	}
 
-	if ( data.system?.advancement ) for ( const adv of data.system.advancement ) {
-		for (const field of ["pool", "items"]) {
-			if ( adv?.configuration?.[field] ) for ( const item of adv.configuration[field] ) {
-				if ( item.uuid) item.uuid = item.uuid.replace("Compendium.sw5e-module-test.", "Compendium.sw5e.");
-			}
-		}
-	}
-
 	if ( data.type === "power" ) data.type = "spell";
 	if ( data.type === "species" ) data.type = "race";
 	if ( data.type === "archetype" ) data.type = "subclass";
@@ -353,6 +473,8 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 	if ( data.img ) data.img = cleanImage(data.img);
 	if ( data.icon ) data.icon = cleanImage(data.icon);
 	if ( data.texture?.src ) data.texture.src = cleanImage(data.texture.src);
+	normalizeCompendiumReferences(data);
+	normalizeAdvancements(data);
 
 	return true;
 }

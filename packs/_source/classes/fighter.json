@@ -601,7 +601,7 @@
             "subtype": "",
             "type": ""
           },
-          "type": "archetype",
+          "type": "subclass",
           "spell": null
         },
         "title": "Fighter Specialties",

@@ -682,7 +682,7 @@
             "subtype": "",
             "type": ""
           },
-          "type": "archetype",
+          "type": "subclass",
           "spell": null
         },
         "title": "Operative Practices",

@@ -1,4 +1,11 @@
-import { getModule, getModulePath, SETTINGS_NAMESPACE } from "./module-support.mjs";
+import {
+	getModule,
+	getModuleId,
+	getModulePath,
+	normalizeCompendiumReferences,
+	normalizeCompendiumUuid,
+	SETTINGS_NAMESPACE
+} from "./module-support.mjs";
 
 /**
  * Checks if the world needs migrating.
@@ -310,6 +317,7 @@ export const migrateActorData = function(actor, migrationData, flags={}, { actor
 export function migrateItemData(item, migrationData, flags={}) {
 	const updateData = {};
 	_migrateImage(item, updateData);
+	_migrateDescriptionLinks(item, updateData);
 	_migrateObjectFlags(item, updateData);
 	_migrateItemProperties(item, updateData);
 	_migrateSpellScaling(item, updateData);
@@ -485,6 +493,114 @@ function _cleanEffect(effect, updateData, parent) {
 	const newChanges = effect.changes.filter(change => !blacklisted(change.key));
 	if (newChanges.length !== effect.changes.length) updateData["changes"] = newChanges;
 	return updateData;
+}
+
+function _migrateDescriptionLinks(itemData, updateData) {
+	const moduleId = getModuleId();
+	for ( const prop of ["system.description.value", "system.description.chat"] ) {
+		const text = foundry.utils.getProperty(itemData, prop);
+		if ( typeof text !== "string" ) continue;
+		const normalized = normalizeCompendiumReferences(text, { moduleId });
+		if ( normalized !== text ) updateData[prop] = normalized;
+	}
+
+	return updateData;
+}
+
+function _normalizeAdvancementLink(item, field, moduleId) {
+	if ( typeof item === "string" ) {
+		if ( item === "languages:standard:basic" ) return { item: "languages:standard:common", changed: true };
+		const normalizedUuid = normalizeCompendiumUuid(item, { moduleId });
+		if ( field === "pool" && normalizedUuid.startsWith("Compendium.") ) {
+			return { item: { uuid: normalizedUuid }, changed: true };
+		}
+		if ( field === "items" && normalizedUuid.startsWith("Compendium.") ) {
+			return { item: { uuid: normalizedUuid, optional: false }, changed: true };
+		}
+		return { item: normalizedUuid, changed: normalizedUuid !== item };
+	}
+
+	if ( !item || (typeof item !== "object") ) return { item, changed: false };
+
+	let changed = false;
+	if ( item.uuid ) {
+		const normalizedUuid = normalizeCompendiumUuid(item.uuid, { moduleId });
+		if ( normalizedUuid !== item.uuid ) {
+			item.uuid = normalizedUuid;
+			changed = true;
+		}
+	}
+	if ( (field === "items") && (item.uuid?.startsWith("Compendium.")) && (item.optional === undefined) ) {
+		item.optional = false;
+		changed = true;
+	}
+	return { item, changed };
+}
+
+function _normalizeItemChoiceValue(value, moduleId) {
+	if ( !value || (typeof value !== "object") ) return { value, changed: false };
+	let changed = false;
+
+	if ( value.added && (typeof value.added === "object") ) {
+		for ( const added of Object.values(value.added) ) {
+			if ( !added || (typeof added !== "object") ) continue;
+			for ( const [key, uuid] of Object.entries(added) ) {
+				if ( typeof uuid !== "string" ) continue;
+				const normalizedUuid = normalizeCompendiumUuid(uuid, { moduleId });
+				if ( normalizedUuid !== uuid ) {
+					added[key] = normalizedUuid;
+					changed = true;
+				}
+			}
+		}
+	}
+
+	if ( value.replaced && (typeof value.replaced === "object") ) {
+		for ( const replaced of Object.values(value.replaced) ) {
+			if ( !replaced || (typeof replaced !== "object") ) continue;
+			if ( typeof replaced.replacement === "string" ) {
+				const normalizedUuid = normalizeCompendiumUuid(replaced.replacement, { moduleId });
+				if ( normalizedUuid !== replaced.replacement ) {
+					replaced.replacement = normalizedUuid;
+					changed = true;
+				}
+			}
+		}
+	}
+
+	return { value, changed };
+}
+
+function _normalizeSubclassValue(value, moduleId) {
+	if ( !value || (typeof value !== "object") ) return { value: {}, changed: true };
+
+	if ( value.document || value.uuid ) {
+		const normalizedValue = { ...value };
+		let changed = false;
+		if ( typeof normalizedValue.uuid === "string" ) {
+			const normalizedUuid = normalizeCompendiumUuid(normalizedValue.uuid, { moduleId });
+			if ( normalizedUuid !== normalizedValue.uuid ) {
+				normalizedValue.uuid = normalizedUuid;
+				changed = true;
+			}
+		}
+		return { value: normalizedValue, changed };
+	}
+
+	for ( const added of Object.values(value.added ?? {}) ) {
+		if ( !added || (typeof added !== "object") ) continue;
+		const [document, uuid] = Object.entries(added)[0] ?? [];
+		if ( !document ) continue;
+		return {
+			value: {
+				document,
+				...(typeof uuid === "string" ? { uuid: normalizeCompendiumUuid(uuid, { moduleId }) } : {})
+			},
+			changed: true
+		};
+	}
+
+	return { value: {}, changed: Object.keys(value).length > 0 };
 }
 
 /**
@@ -665,21 +781,41 @@ function _migrateAdvancements(itemData, updateData) {
 	if (itemData.system.advancement === undefined) return updateData;
 
 	let changed = false;
+	const moduleId = getModuleId();
 	for (const adv of itemData.system.advancement) {
 		for (const field of ["pool", "items", "grants"]) {
-			if (adv?.configuration?.[field]) {
-				adv.configuration[field] = adv.configuration[field].map(item => {
-					if (item.uuid) {
-						if (item.uuid.search("Compendium.sw5e-module-test.") !== -1) {
-							item.uuid = item.uuid.replace("Compendium.sw5e-module-test.", "Compendium.sw5e.");
-							changed = true;
-						}
-					} else if (item === "languages:standard:basic") {
-						item = "languages:standard:common";
-						changed = true;
-					}
-					return item;
-				});
+			if ( !adv?.configuration?.[field] ) continue;
+			adv.configuration[field] = adv.configuration[field].map(item => {
+				const normalized = _normalizeAdvancementLink(item, field, moduleId);
+				changed ||= normalized.changed;
+				return normalized.item;
+			});
+		}
+
+		if ( (itemData.type === "class") && (adv.type === "ItemChoice")
+			&& ["archetype", "subclass"].includes(adv.configuration?.type) ) {
+			adv.type = "Subclass";
+			adv.configuration = {};
+			const normalizedValue = _normalizeSubclassValue(adv.value, moduleId);
+			adv.value = normalizedValue.value;
+			changed = true;
+			continue;
+		}
+
+		if ( adv.type === "Subclass" ) {
+			const normalizedValue = _normalizeSubclassValue(adv.value, moduleId);
+			if ( normalizedValue.changed ) {
+				adv.value = normalizedValue.value;
+				changed = true;
+			}
+			continue;
+		}
+
+		if ( adv.type === "ItemChoice" ) {
+			const normalizedValue = _normalizeItemChoiceValue(adv.value, moduleId);
+			if ( normalizedValue.changed ) {
+				adv.value = normalizedValue.value;
+				changed = true;
 			}
 		}
 	}

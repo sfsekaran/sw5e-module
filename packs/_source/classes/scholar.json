@@ -663,7 +663,7 @@
             "subtype": "",
             "type": ""
           },
-          "type": "archetype",
+          "type": "subclass",
           "spell": null
         },
         "title": "Academic Pursuits",

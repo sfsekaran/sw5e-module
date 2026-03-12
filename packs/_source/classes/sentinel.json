@@ -574,7 +574,7 @@
             "subtype": "",
             "type": ""
           },
-          "type": "archetype",
+          "type": "subclass",
           "spell": null
         },
         "title": "Sentinel Callings",
