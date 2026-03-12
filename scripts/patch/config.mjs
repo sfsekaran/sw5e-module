@@ -1,9 +1,11 @@
-import { getModulePath } from "../module-support.mjs";
+import { getModulePath, normalizeCompendiumUuid } from "../module-support.mjs";
 
 export function patchConfig(config, strict = true) {
 	const preLocalize = game.dnd5e.utils.preLocalize;
+	const getConditionReference = reference => normalizeCompendiumUuid(reference);
 	config.spellcasting ??= {};
 	config.spellcasting.preparationModes ??= {};
+	config.spellcasting.powerCasting ??= {};
 	const defaultSpellImg = config.spellcasting?.spell?.img ?? "";
 
 	// Default Abilities
@@ -1699,6 +1701,13 @@ export function patchConfig(config, strict = true) {
 		delete config.damageTypes.radiant;
 	}
 	// Powercasting
+	Object.assign(config.spellcasting.powerCasting, {
+		label: "SW5E.Powercasting.Label",
+		img: defaultSpellImg,
+		usesPoints: true,
+		upcast: true,
+		prepares: true
+	});
 	config.spellcasting.preparationModes.powerCasting = {
 		label: "SW5E.Powercasting.Label",
 		usesPoints: true,
@@ -1924,22 +1933,22 @@ export function patchConfig(config, strict = true) {
 		corroded: {
 			name: "SW5E.ConCorroded",
 			img: getModulePath("icons/svg/conditions/corroded.svg"),
-			reference: "Compendium.sw5e.conditions.JournalEntry.eyo6JvadhVCWr4xD.JournalEntryPage.WZcSCaBuYZjNJ4LG"
+			reference: getConditionReference("Compendium.sw5e.conditions.JournalEntry.eyo6JvadhVCWr4xD.JournalEntryPage.WZcSCaBuYZjNJ4LG")
 		},
 		ignited: {
 			name: "SW5E.ConIgnited",
 			img: config.conditionTypes.burning.img,
-			reference: "Compendium.sw5e.conditions.JournalEntry.SqRuG6FvP1Lutzvq.JournalEntryPage.CduLkVFKbfzSVEq8"
+			reference: getConditionReference("Compendium.sw5e.conditions.JournalEntry.SqRuG6FvP1Lutzvq.JournalEntryPage.CduLkVFKbfzSVEq8")
 		},
 		shocked: {
 			name: "SW5E.ConShocked",
 			img: getModulePath("icons/svg/conditions/shocked.svg"),
-			reference: "Compendium.sw5e.conditions.JournalEntry.HBSJojgAGu9Gsctd.JournalEntryPage.0000000000000000"
+			reference: getConditionReference("Compendium.sw5e.conditions.JournalEntry.HBSJojgAGu9Gsctd.JournalEntryPage.0000000000000000")
 		},
 		slowed: {
 			name: "SW5E.ConSlowed",
 			img: getModulePath("icons/svg/conditions/slowed.svg"),
-			reference: "Compendium.sw5e.conditions.JournalEntry.ZhAPlYd3gQ2KgbzV.JournalEntryPage.GTgBAVw76eIKJGEL",
+			reference: getConditionReference("Compendium.sw5e.conditions.JournalEntry.ZhAPlYd3gQ2KgbzV.JournalEntryPage.GTgBAVw76eIKJGEL"),
 			levels: 4,
 			speedReduction: [
 				{
@@ -1963,7 +1972,7 @@ export function patchConfig(config, strict = true) {
 		weakened: {
 			name: "SW5E.ConWeakened",
 			img: getModulePath("icons/svg/conditions/weakened.svg"),
-			reference: "Compendium.sw5e.conditions.JournalEntry.ffDhL5tDJ8lD07uN.JournalEntryPage.xGHbrLsJf1B5Gmtd"
+			reference: getConditionReference("Compendium.sw5e.conditions.JournalEntry.ffDhL5tDJ8lD07uN.JournalEntryPage.xGHbrLsJf1B5Gmtd")
 		}
 	};
 	config.conditionEffects = {

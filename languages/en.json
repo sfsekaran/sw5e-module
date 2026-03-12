@@ -30,7 +30,7 @@
 		"SpellList": {
 			"DropHint": "Drop powers or folders of powers here to add to the list",
 			"Type": {
-				"Label": "Spell List Type"
+				"Label": "Power List Type"
 			},
 			"UnlinkedSpells": {
 				"Label": "Unlinked Powers",
@@ -105,7 +105,9 @@
 	"DND5E.SpellAbilitySet": "Set as Primary Powercasting Ability",
 	"DND5E.SpellAdd": "Add Power",
 	"DND5E.SpellCantrip": "At-Will",
+	"DND5E.SpellCastTime": "Power Casting Time",
 	"DND5E.SpellCastConsume": "Consume Power Slot?",
+	"DND5E.SpellCastUpcast": "Cast at Higher Power Level",
 	"DND5E.SpellCastNoSlots": "You have no available {level} power slots with which to cast {name}",
 	"DND5E.SpellCastNoSlotsLeft": "You have no available power slots with which to cast {name}!",
 	"DND5E.SpellcasterLevel": "Powercaster Level",
@@ -121,10 +123,19 @@
 	"DND5E.SpellLevel": "Power Level",
 	"DND5E.SpellLevels": "Power Levels",
 	"DND5E.SpellLevel0": "At-Will",
+	"DND5E.SpellLevel1": "1st Power Level",
+	"DND5E.SpellLevel2": "2nd Power Level",
+	"DND5E.SpellLevel3": "3rd Power Level",
+	"DND5E.SpellLevel4": "4th Power Level",
+	"DND5E.SpellLevel5": "5th Power Level",
+	"DND5E.SpellLevel6": "6th Power Level",
+	"DND5E.SpellLevel7": "7th Power Level",
+	"DND5E.SpellLevel8": "8th Power Level",
+	"DND5E.SpellLevel9": "9th Power Level",
 	"DND5E.SpellMaterials": "Powercasting Materials",
 	"DND5E.SpellName": "Power Name",
 	"DND5E.SpellPrepInnate": "Innate Powercasting",
-	"DND5E.SpellPreparation": "Power Preparation",
+	"DND5E.SpellPreparation.Method": "Power Casting Method",
 	"DND5E.SpellPreparationMode": "Power Preparation Mode",
 	"DND5E.SpellProgression": "Power Progression",
 	"DND5E.SpellsSearch": "Search powers",
@@ -138,6 +149,7 @@
 	"DND5E.SpellSlotsN.one": "{n}st Level Slots",
 	"DND5E.SpellSlotsN.two": "{n}nd Level Slots",
 	"DND5E.SpellSlotsN.few": "{n}rd Level Slots",
+	"DND5E.SpellSlotsN.other": "{n}th Power Levels",
 	"DND5E.SpellSlotsConfig": "Configure Power Slots",
 	"DND5E.SpellTag": "Power Tag",
 	"DND5E.SpellTarget": "Power Target",
@@ -718,6 +730,8 @@
 	"SW5E.GrandMastery": "Grand Mastery",
 	"SW5E.Powercasting": {
 		"Label": "Powercasting",
+		"NoLevelsAvailable": "You have no available cast levels with which to cast {name}.",
+		"NoPoints": "You do not have enough {resource} to cast {name} at any available level.",
 		"Force": {
 			"Label": "Forcecasting",
 			"Focus": "Focus Generator",

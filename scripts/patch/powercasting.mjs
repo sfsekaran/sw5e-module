@@ -16,6 +16,126 @@ function formatSuperiorityPool(superiority) {
 	return `${current}/${max}d${die}`;
 }
 
+function getPowercastingTypeFromItem(item) {
+	return item?.system?.school === "tec" ? "tech" : "force";
+}
+
+function getPowerPointCost(item, activity, castLevel) {
+	const powercastingType = getPowercastingTypeFromItem(item);
+	const targetPath = `powercasting.${powercastingType}.points.value`;
+	const activityTarget = activity?.consumption?.targets?.find(target =>
+		target?.type === "attribute" && target?.target === targetPath
+	);
+	const baseCostValue = activityTarget?.value ?? item?.system?.consume?.amount ?? 0;
+	const baseCost = Number.isFinite(Number(baseCostValue)) ? Number(baseCostValue) : 0;
+	const itemLevel = Number.isFinite(Number(item?.system?.level)) ? Number(item.system.level) : 0;
+	const selectedLevel = Number.isFinite(Number(castLevel)) ? Number(castLevel) : itemLevel;
+	return baseCost + Math.max(0, selectedLevel - itemLevel);
+}
+
+function isSw5ePowerData(itemData) {
+	if ( itemData?.type !== "spell" ) return false;
+	const school = itemData?.system?.school;
+	if ( school && Object.values(CONFIG.DND5E.powerCasting).some(castType => school in (castType?.schools ?? {})) ) return true;
+
+	const consumeTarget = itemData?.system?.consume?.target;
+	if ( typeof consumeTarget === "string" && /^powercasting\.(force|tech)\.points\.value$/.test(consumeTarget) ) return true;
+
+	const activityTargets = Object.values(itemData?.system?.activities ?? {}).flatMap(activity => activity?.consumption?.targets ?? []);
+	return activityTargets.some(target =>
+		target?.type === "attribute" && /^powercasting\.(force|tech)\.points\.value$/.test(target?.target ?? "")
+	);
+}
+
+function getDroppedPowerNormalizationUpdates(itemData) {
+	if ( !isSw5ePowerData(itemData) ) return null;
+
+	return {
+		"system.method": "powerCasting",
+		"system.prepared": true
+	};
+}
+
+function normalizeDroppedPowerData(itemData) {
+	const updates = getDroppedPowerNormalizationUpdates(itemData);
+	if ( !updates ) return itemData;
+
+	itemData.system ??= {};
+	itemData.system.method = updates["system.method"];
+	itemData.system.prepared = updates["system.prepared"];
+	return itemData;
+}
+
+function normalizeRawDroppedPowerData(dropData) {
+	if ( !dropData || (typeof dropData !== "object") ) return dropData;
+	normalizeDroppedPowerData(dropData);
+	if ( dropData.data && (typeof dropData.data === "object") ) normalizeDroppedPowerData(dropData.data);
+	return dropData;
+}
+
+function getNumericValue(value) {
+	const numeric = Number(value);
+	return Number.isFinite(numeric) ? numeric : null;
+}
+
+function getLegacyPowerPoints(actor, castType) {
+	return actor?._source?.system?.[castType]?.points ?? actor?.system?.[castType]?.points ?? {};
+}
+
+function getPowercastingMountPoint(root, actorType) {
+	const sidebar = root.querySelector(".sidebar .stats");
+	const hpButton = root.querySelector('[data-action="hitPoints"]');
+	const hpGroup = hpButton?.closest(".meter-group");
+	if ( actorType === "npc" ) {
+		return {
+			container: hpGroup?.parentElement ?? sidebar,
+			reference: hpGroup,
+			insertAfter: !!hpGroup,
+			append: !hpGroup
+		};
+	}
+
+	if ( root.classList?.contains("tidy5e-sheet") ) {
+		return {
+			container: root.querySelector(".attributes .side-panel"),
+			reference: null,
+			insertAfter: false,
+			append: false
+		};
+	}
+
+	return {
+		container: sidebar,
+		reference: null,
+		insertAfter: false,
+		append: true
+	};
+}
+
+function reconcileNpcPowerPool(actor, castType, computedMax) {
+	const sourcePoints = actor?._source?.system?.powercasting?.[castType]?.points ?? {};
+	const legacyPoints = getLegacyPowerPoints(actor, castType);
+
+	const sourceMax = getNumericValue(sourcePoints.max);
+	const sourceValue = getNumericValue(sourcePoints.value);
+	const legacyMax = getNumericValue(legacyPoints.max);
+	const legacyValue = getNumericValue(legacyPoints.value);
+	const computedPoolMax = Math.max(0, getNumericValue(computedMax) ?? 0);
+
+	const effectiveMax = [sourceMax, legacyMax, computedPoolMax]
+		.find(value => value != null && value > 0) ?? 0;
+
+	let effectiveValue = effectiveMax;
+	if ( sourceValue != null && sourceMax != null && sourceMax > 0 ) effectiveValue = sourceValue;
+	else if ( legacyValue != null ) effectiveValue = legacyValue;
+	else if ( sourceValue != null && effectiveMax === 0 ) effectiveValue = sourceValue;
+
+	return {
+		max: effectiveMax,
+		value: Math.min(Math.max(getNumericValue(effectiveValue) ?? 0, 0), effectiveMax)
+	};
+}
+
 // dataModels file adds:
 // - powercasting field to CreatureTemplate
 // - spellcasting.force/techProgression to ClassData and SubclassData
@@ -35,6 +155,26 @@ function adjustItemSpellcastingGetter() {
 			if (subclassPC !== "none") result[castType] = subclassPC;
 			else result[castType] = classPC;
 		}
+	});
+}
+
+function normalizeDroppedPowerDefaults() {
+	Hooks.on("sw5e.preItem5e.fromDropData", (_cls, data) => {
+		normalizeRawDroppedPowerData(data);
+	});
+
+	Hooks.on("sw5e.Item5e.fromDropData", (_cls, result, config, ...args) => {
+		if ( !result ) return;
+		config.result = normalizeDroppedPowerData(result);
+	});
+
+	// The modern DnD5e drop pipeline no longer exposes a dedicated sheet _onDropSpell method.
+	// Enforce the final method on actor-owned SW5E powers at creation time instead.
+	Hooks.on("preCreateItem", (document, data) => {
+		if ( document?.parent?.documentName !== "Actor" ) return;
+		const updates = getDroppedPowerNormalizationUpdates(data);
+		if ( !updates ) return;
+		document.updateSource(updates);
 	});
 }
 
@@ -65,7 +205,7 @@ function preparePowercasting() {
 				const level = _this.system.details?.[`power${castType.capitalize()}Level`];
 				if (level) {
 					obj.classes = 1;
-					obj.points = level * typeConfig.obj.full.powerPoints;
+					obj.points = level * (typeConfig.progression.full?.powerPoints ?? 0);
 					obj.casterLevel = level;
 					obj.maxClassLevel = level;
 					obj.maxClassProg = "full";
@@ -97,7 +237,7 @@ function preparePowercasting() {
 
 				// Calculate known powers
 				for (const pwr of _this.itemTypes?.spell ?? []) {
-					const { preparation, properties, school } = pwr?.system ?? {};
+					const { properties, school } = pwr?.system ?? {};
 					if (properties?.has("freeLearn")) continue;
 					if (school in CONFIG.DND5E.powerCasting[castType].schools) obj.powersKnownCur++;
 				}
@@ -130,11 +270,21 @@ function preparePowercasting() {
 			// Apply the calculated values to the sheet
 			const target = _this.system.powercasting[castType];
 			target.known.value = obj.powersKnownCur;
-			target.known.max ??= obj.powersKnownMax;
-			target.level ??= obj.casterLevel;
-			target.limit ??= obj.limit;
-			target.maxPowerLevel ??= obj.maxPowerLevel;
-			target.points.max ??= obj.points;
+			if ( isNPC ) {
+				const reconciledPool = reconcileNpcPowerPool(_this, castType, obj.points);
+				target.known.max = obj.powersKnownMax;
+				target.level = obj.casterLevel;
+				target.limit = obj.limit;
+				target.maxPowerLevel = obj.maxPowerLevel;
+				target.points.max = reconciledPool.max;
+				target.points.value = reconciledPool.value;
+			} else {
+				target.known.max ??= obj.powersKnownMax;
+				target.level ??= obj.casterLevel;
+				target.limit ??= obj.limit;
+				target.maxPowerLevel ??= obj.maxPowerLevel;
+				target.points.max ??= obj.points;
+			}
 		}
 
 		const { simplifyBonus } = dnd5e.utils;
@@ -426,90 +576,97 @@ function patchPowerAbilityScore() {
 }
 
 function patchPowerbooks() {
-	/*
 	Hooks.on('sw5e.ActorSheet5e._prepareSpellbook', function (_this, powerbook, config, ...args) {
-		const [context, spells] = args;
+		const spellbook = config.result ?? powerbook ?? {};
+		const columns = Object.values(spellbook)[0]?.columns ?? [];
+		const reassignedPowers = [];
+		const maxOrder = Object.values(spellbook).reduce((highest, section) => Math.max(highest, section?.order ?? 0), 0);
+		const powerOrderBase = maxOrder + 1;
 
-		// Format a powerbook entry for a certain indexed level
-		const registerSection = (sl, i, label) => {
-			if (powerbook.find(section => section.order === i)) return;
-			powerbook.push({
-				order: i,
-				label: label,
+		const registerSection = (key, order, label, dataset) => {
+			if ( key in spellbook ) return spellbook[key];
+			const section = spellbook[key] = {
+				label: game.i18n.localize(label),
+				columns,
+				order,
 				usesSlots: false,
-				canCreate: _this.actor.isOwner,
-				canPrepare: (context.actor.type === "character") && (i >= 1),
-				spells: [],
-				uses: 0,
-				slots: 0,
-				override: 0,
-				dataset: { type: "spell", level: i, preparationMode: "powerCasting" },
-				prop: sl,
-				editable: context.editable
-			});
+				id: key,
+				slot: key,
+				items: [],
+				minWidth: 220,
+				draggable: true,
+				dataset: { type: "spell", method: "powerCasting", ...dataset }
+			};
+			return section;
 		};
 
-		for (const [castType, typeConfig] of Object.entries(CONFIG.DND5E.powerCasting)) {
-			const castData = _this.actor.system.powercasting[castType];
-			if (castData.level === 0) continue;
-			for (let lvl = 0; lvl <= castData.maxPowerLevel; lvl++) registerSection(`spell${lvl}`, lvl, CONFIG.DND5E.spellLevels[lvl]);
+		for (const [key, section] of Object.entries(spellbook)) {
+			if ( !Array.isArray(section?.items) ) continue;
+			section.items = section.items.filter(item => {
+				if ( item?.type !== "spell" || item?.system?.method !== "powerCasting" ) return true;
+				reassignedPowers.push(item);
+				return false;
+			});
+
+			if ( section.items.length === 0 && ((section?.dataset?.method === "powerCasting") || (key === "powerCasting")) ) {
+				delete spellbook[key];
+			}
 		}
 
-		// Sort the powerbook by section level
-		config.result = powerbook.sort((a, b) => a.order - b.order);
+		for (const power of reassignedPowers) {
+			const level = getNumericValue(power?.system?.level) ?? 0;
+			const sectionKey = level <= 0 ? "powercasting-atwill" : `powercasting-level-${level}`;
+			const label = level <= 0 ? "DND5E.SpellLevel0" : `DND5E.SpellLevel${level}`;
+			const sectionOrder = powerOrderBase + Math.max(level, 0);
+			const section = registerSection(sectionKey, sectionOrder, label, { level: String(Math.max(level, 0)) });
+			section.items.push(power);
+		}
+
+		config.result = Object.fromEntries(
+			Object.entries(spellbook).sort(([, a], [, b]) => (a.order ?? 0) - (b.order ?? 0))
+		);
 	});
-
-	Hooks.on('sw5e.ActorSheet5e._onDropSpell', function (_this, result, config, ...args) {
-		const itemData = args[0];
-		const prep = itemData.system.preparation;
-
-		if (prep.mode !== "innate") return;
-
-		// Determine the section it is dropped on, if any.
-		let header = _this._event.target.closest(".items-header"); // Dropped directly on the header.
-		if (!header) {
-			const list = _this._event.target.closest(".item-list"); // Dropped inside an existing list.
-			header = list?.previousElementSibling;
-		}
-
-		const { level, preparationMode } = header?.closest("[data-level]")?.dataset ?? {};
-
-		// Determine if the actor is a powercaster.
-		const isCaster = Object.values(_this.actor.system.powercasting).reduce(((acc, obj) => acc || !!obj.level), false);
-
-		// Case 1: Drop a cantrip.
-		if (itemData.system.level === 0) {
-			const modes = CONFIG.DND5E.spellPreparationModes;
-			if (!preparationMode && isCaster) prep.mode = "powerCasting";
-		}
-
-		// Case 2: Drop a leveled spell in a section without a mode.
-		else if ((level === "0") || !preparationMode) {
-			if (_this.document.type !== "npc") prep.mode = "powerCasting";
-		}
-	});
-	*/
 }
 
 function patchAbilityUseDialog() {
 	Hooks.on('sw5e.ActivityUsageDialog._prepareScalingContext', function (_this, result, config, ...args) {
 		const context = config.result;
 
-		if (_this.activity.requiresSpellSlot && (_this.config.scaling !== false) && (_this.item.system.preparation.mode === "powerCasting")) {
+		if (_this.activity.requiresSpellSlot && (_this.config.scaling !== false) && (_this.item.system.method === "powerCasting")) {
 			if (context.notes.length >= 1) {
 				const note = context.notes[context.notes.length - 1];
 				if (note.type === "warn" && note.message.startsWith("You have no available")) context.notes.pop();
 			}
-			const powercastingType = _this.item.system.school === "tec" ? "tech" : "force";
+			const powercastingType = getPowercastingTypeFromItem(_this.item);
 			const powercasting = _this.actor.system.powercasting[powercastingType];
+			if ( !powercasting ) return;
 
-			const minimumLevel = _this.item.system.level ?? 1;
-			const maximumLevel = powercasting.maxPowerLevel;
+			const minimumLevel = getNumericValue(_this.item.system.level) ?? 1;
+			const maximumLevel = getNumericValue(powercasting.maxPowerLevel) ?? 0;
+			const currentPoints = Number.isFinite(Number(powercasting.points?.value)) ? Number(powercasting.points.value) : 0;
+			const limit = Number.isFinite(Number(powercasting.limit)) ? Number(powercasting.limit) : 0;
+			if ( maximumLevel < minimumLevel ) {
+				context.notes.push({
+					type: "warn",
+					message: game.i18n.format("SW5E.Powercasting.NoLevelsAvailable", {
+						name: _this.item.name
+					})
+				});
+				return;
+			}
 
 			const spellSlotOptions = Array.from({ length: maximumLevel - minimumLevel + 1 }, (v, i) => {
 				const lvl = i + minimumLevel;
 				const label = game.i18n.localize(`DND5E.SpellLevel${lvl}`);
-				return { value: lvl, label, disabled: powercasting.used.has(lvl) };
+				const cost = getPowerPointCost(_this.item, _this.activity, lvl);
+				const alreadyUsed = limit > 0 && lvl >= limit && powercasting.used.has(lvl);
+				return {
+					value: lvl,
+					label,
+					cost,
+					affordable: cost <= currentPoints,
+					disabled: alreadyUsed || (cost > currentPoints)
+				};
 			});
 
 			if (spellSlotOptions) context.spellSlots = {
@@ -519,15 +676,23 @@ function patchAbilityUseDialog() {
 				options: spellSlotOptions
 			};
 
-			if (!spellSlotOptions.some(o => !o.disabled)) context.notes.push({
-				type: "warn", message: game.i18n.format("DND5E.SpellCastNoSlotsLeft", {
-					name: _this.item.name
-				})
-			});
+			if (!spellSlotOptions.some(o => !o.disabled)) {
+				const messageKey = spellSlotOptions.some(o => o.affordable)
+					? "SW5E.Powercasting.NoLevelsAvailable"
+					: "SW5E.Powercasting.NoPoints";
+				const pointNamespace = powercastingType === "tech" ? "Tech" : "Force";
+				context.notes.push({
+					type: "warn",
+					message: game.i18n.format(messageKey, {
+						name: _this.item.name,
+						resource: game.i18n.localize(`SW5E.Powercasting.${pointNamespace}.Point.Label`)
+					})
+				});
+			}
 		}
 	});
 	Hooks.on('sw5e.ActivityUsageDialog._prepareSubmitData', function (_this, result, config, ...args) {
-		if (_this.item.system.preparation?.mode !== "powerCasting") return;
+		if (_this.item.system.method !== "powerCasting") return;
 
 		const submitData = result;
 		if (foundry.utils.hasProperty(submitData, "spell.slot")) {
@@ -537,9 +702,10 @@ function patchAbilityUseDialog() {
 		}
 	});
 	Hooks.on('dnd5e.activityConsumption', function (activity, usageConfig, messageConfig, updates) {
-		if (activity?.item?.type !== "spell" || activity?.item?.system?.preparation?.mode !== "powerCasting") return;
-		const powercastingType = activity?.item?.system?.school === "tec" ? "tech" : "force";
+		if (activity?.item?.type !== "spell" || activity?.item?.system?.method !== "powerCasting") return;
+		const powercastingType = getPowercastingTypeFromItem(activity.item);
 		const powercasting = activity?.actor?.system?.powercasting?.[powercastingType];
+		if ( !powercasting ) return;
 		const level = usageConfig?.spell?.slot ?? 0;
 		if (level >= powercasting.limit) {
 			powercasting.used.add(level);
@@ -582,17 +748,13 @@ function showPowercastingBar() {
 		if (data.actor.type != "character" && data.actor.type != "npc") {
 			return;
 		}
-
-		let sidebarClasses = '.sidebar .stats'
-		let append = true;
-
-		if (root.classList?.contains('tidy5e-sheet')) {
-			// Tidy5e specific handling
-			sidebarClasses = '.attributes .side-panel';
-			append = false;
-		}
+		root.querySelectorAll(".sw5e-powercasting-meter").forEach(node => node.remove());
 
 		const powerCasting = data.actor.system.powercasting;
+		const mountPoint = getPowercastingMountPoint(root, data.actor.type);
+		const mountContainer = mountPoint.container;
+		if ( !mountContainer ) return;
+		let insertReference = mountPoint.reference;
 
 		// Add meters for the tech and force powercasting values. This 
 		// will be added right after the hit points meter.
@@ -613,37 +775,36 @@ function showPowercastingBar() {
 					'tempmax': tempmax,
 					'tempmaxSign': (tempmax > 0) ? 'temp-positive' : (tempmax < 0) ? 'temp-negative' : '',
 					'effectiveMax': max + tempmax,
-					'pct': (value / max) * 100,
+					'pct': max > 0 ? (value / max) * 100 : 0,
 					'bonus': game.dnd5e.utils.formatNumber(tempmax, { signDisplay: "always" })
 				};
 
-				let container = $('<div class="meter-group"></div>');
+				let container = $('<div class="meter-group sw5e-powercasting-meter"></div>');
 
 				const templateFile = getModulePath("templates/powercasting-sheet-tracker.hbs");
 				const renderedHtml = await foundry.applications.handlebars.renderTemplate(templateFile, templateData);
 
 				container.append(renderedHtml);
-
-				const sidebar = $(sidebarClasses, root);
-				if ( !sidebar.length ) continue;
-				if (append) {
-					sidebar.append(container);
+				const containerElement = container[0];
+				if ( mountPoint.insertAfter && insertReference?.parentElement ) {
+					insertReference.insertAdjacentElement("afterend", containerElement);
+					insertReference = containerElement;
+				} else if ( mountPoint.append ) {
+					mountContainer.append(containerElement);
 				} else {
-					sidebar.prepend(container);
+					mountContainer.prepend(containerElement);
 				}
-
-				//				$(hpHTML).after(castingHTMLMeter);
-				//				const statsHTML = $(hpHTML.parentNode);
-
-				// Editable Only Listeners
-				//				if (app.isEditable) {
-				//					statsHTML.find(`.meter > .${castType}-points`).on("click", event => _toggleEditPoints(castType, event, true));
-				//					statsHTML.find(`.meter > .${castType}-points > input`).on("blur", event => _toggleEditPoints(castType, event, false));
-				//					// Input focus and update
-				//					const inputs = statsHTML.find("input");
-				//					inputs.focus(ev => ev.currentTarget.select());
-				//					inputs.addBack().find('[type="text"][data-dtype="Number"]').change(app._onChangeInputDelta.bind(app));
-				//				}
+				if (app.isEditable) {
+					const pointBar = containerElement.querySelector(`.progress.${castType}-points`);
+					const currentInput = pointBar?.querySelector('input[name$=".points.value"]');
+					const inputs = containerElement.querySelectorAll('[type="text"][data-dtype="Number"]');
+					pointBar?.addEventListener("click", event => _toggleEditPoints(castType, event, true));
+					currentInput?.addEventListener("blur", event => _toggleEditPoints(castType, event, false));
+					inputs.forEach(input => {
+						input.addEventListener("focus", ev => ev.currentTarget.select());
+						input.addEventListener("change", app._onChangeInputDelta.bind(app));
+					});
+				}
 			}
 		}
 	});
@@ -667,6 +828,7 @@ function _toggleEditPoints(pointType, event, edit) {
 
 export function patchPowercasting() {
 	adjustItemSpellcastingGetter();
+	normalizeDroppedPowerDefaults();
 	patchItemSheet();
 	patchPowerAbilityScore();
 	patchPowerbooks();

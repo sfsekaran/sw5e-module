@@ -13,7 +13,7 @@ function registerHook(id, callback, mode='WRAPPER') {
 }
 
 function addHook(id, hookID) {
-	registerHook(id, function (wrapped, ...args) {
+	return registerHook(id, function (wrapped, ...args) {
 		if (DEBUG) console.debug(`libWrapper hook '${id}' start`);
 		const allowed = Hooks.call(`${HOOKS_NAMESPACE}.pre` + (hookID ?? id), this, ...args);
 		if (allowed === false) return;
@@ -26,7 +26,7 @@ function addHook(id, hookID) {
 }
 
 function addHookAsync(id, hookID) {
-	registerHook(id, async function (wrapped, ...args) {
+	return registerHook(id, async function (wrapped, ...args) {
 		if (DEBUG) console.debug(`libWrapper hook '${id}' start`);
 		const allowed = Hooks.call(`${HOOKS_NAMESPACE}.pre` + (hookID ?? id), this, ...args);
 		if (allowed === false) return;
@@ -66,7 +66,6 @@ export function addHooks() {
 	//-------------------//
 
 	// ActorSheet5e Hooks
-	// addHook('dnd5e.applications.actor.ActorSheet5e.prototype._onDropSpell', 'ActorSheet5e._onDropSpell');
 	addHook('dnd5e.applications.actor.BaseActorSheet.prototype._assignItemCategories', 'BaseActorSheet._assignItemCategories');
 	addHook('dnd5e.applications.actor.BaseActorSheet.prototype._prepareSpellbook', 'ActorSheet5e._prepareSpellbook');
 	// addHookAsync('dnd5e.applications.actor.ActorSheet5e.prototype.getData', 'ActorSheet5eCharacter.getData');
