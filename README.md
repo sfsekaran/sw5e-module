@@ -15,6 +15,22 @@ https://github.com/sw5e-foundry/sw5e-module/releases/latest/download/module.json
 
 If you wish to manually install the module, clone or extract it into the `Data/modules/sw5e-module` folder. You may do this by cloning the repository or downloading a zip archive from the Releases Page.
 
+## Local Development
+
+This repository is the editable source for the `sw5e-module` Foundry module. For local work, use Foundry VTT `13.351`, the `dnd5e` system `5.2.5`, and the `lib-wrapper` module.
+
+If your local repository is linked into Foundry's `Data/modules/sw5e-module` folder with a junction or symlink, most code and template changes can be tested by refreshing Foundry after you save your edits.
+
+Compendium content is different:
+
+- Edit the source JSON in `packs/_source/`
+- Rebuild the generated compendium databases with `npm run build:db`
+- Reload Foundry and verify the updated compendium entries in your test world
+
+The `packs/` folder is generated output and should not be edited by hand. The source of truth is `packs/_source/`.
+
+For a plain-English walkthrough of what is safe to edit, when to rebuild, and what information to include when reporting a bug or requesting a change, see [docs/local-setup.md](docs/local-setup.md).
+
 ## Changelog
 
 ### [1.2.8] - 2025-12-14
