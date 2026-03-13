@@ -46,6 +46,10 @@ The `packs/` folder is generated output and should not be edited by hand. The so
 
 For a plain-English walkthrough of what is safe to edit, when to rebuild, and a copy/paste template for reporting a bug or requesting a change, see [docs/local-setup.md](docs/local-setup.md).
 
+## Developer Documentation
+
+For a contributor-focused overview of the repo layout, runtime entrypoints, compendium build pipeline, and release packaging, see [docs/developer-guide.md](docs/developer-guide.md).
+
 ## Changelog
 
 ### [1.2.8] - 2025-12-14
