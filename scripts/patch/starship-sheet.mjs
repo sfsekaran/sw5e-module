@@ -241,38 +241,52 @@ function categorizeStarshipItems(actor) {
 	const groups = {
 		size: {
 			label: localizeOrFallback("TYPES.Item.starshipsizePl", "Starship Size"),
+			description: "Review the ship frame and preserved size profile data that shapes how this vessel is classified.",
 			items: [],
-			defaultTab: STOCK_CARGO_TAB_ID
+			defaultTab: STOCK_CARGO_TAB_ID,
+			browsePack: null
 		},
 		actions: {
 			label: localizeOrFallback("SW5E.Feature.StarshipAction.Label", "Starship Actions"),
+			description: "Use the ship's bridge and tactical actions here, then jump to cargo if you need the stock management tools.",
 			items: [],
-			defaultTab: STOCK_CARGO_TAB_ID
+			defaultTab: STOCK_CARGO_TAB_ID,
+			browsePack: "starshipactions"
 		},
 		roles: {
 			label: localizeOrFallback("SW5E.Feature.Deployment.Label", "Crew Roles"),
+			description: "Crew role items and deployments live here so you can review stations and swap assignments more quickly.",
 			items: [],
-			defaultTab: STOCK_CARGO_TAB_ID
+			defaultTab: STOCK_CARGO_TAB_ID,
+			browsePack: "deployments"
 		},
 		features: {
 			label: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"),
+			description: "Passive systems, structural traits, and ship-specific features are grouped here for quick browsing.",
 			items: [],
-			defaultTab: STOCK_CARGO_TAB_ID
+			defaultTab: STOCK_CARGO_TAB_ID,
+			browsePack: "starshipfeatures"
 		},
 		equipment: {
 			label: localizeOrFallback("SW5E.Equipment", "Equipment"),
+			description: "Installed gear and support systems stay together here so replacements are easier to compare.",
 			items: [],
-			defaultTab: STOCK_CARGO_TAB_ID
+			defaultTab: STOCK_CARGO_TAB_ID,
+			browsePack: "starshipequipment"
 		},
 		modifications: {
 			label: localizeOrFallback("TYPES.Item.starshipmodPl", "Modifications"),
+			description: "Track upgrade slots and installed modifications, then open the pack browser to swap parts in and out.",
 			items: [],
-			defaultTab: STOCK_CARGO_TAB_ID
+			defaultTab: STOCK_CARGO_TAB_ID,
+			browsePack: "starshipmodifications"
 		},
 		weapons: {
 			label: localizeOrFallback("SW5E.Weapon", "Weapons"),
+			description: "Weapon rows stay action-oriented here so you can roll, inspect, or replace installed batteries quickly.",
 			items: [],
-			defaultTab: STOCK_CARGO_TAB_ID
+			defaultTab: STOCK_CARGO_TAB_ID,
+			browsePack: "starshipweapons"
 		}
 	};
 
@@ -539,6 +553,19 @@ async function useStarshipItem(item) {
 	item.sheet?.render(true);
 }
 
+function openCompendiumPack(packId) {
+	if ( !packId ) return;
+	const pack = game.packs?.get(`sw5e-module.${packId}`)
+		?? game.packs?.find(entry => entry.collection?.endsWith(`.${packId}`));
+
+	if ( !pack ) {
+		ui.notifications.warn(`Could not find the ${packId} compendium pack.`);
+		return;
+	}
+
+	pack.render(true);
+}
+
 async function renderStarshipLayer(app, html, data) {
 	const actor = data.actor ?? app.actor;
 	if ( !isSw5eStarshipActor(actor) ) return;
@@ -651,6 +678,11 @@ async function renderStarshipLayer(app, html, data) {
 
 		if ( action === "open-tab" ) {
 			activateSheetTab(root, app, actionNode.dataset.tab);
+			return;
+		}
+
+		if ( action === "open-pack" ) {
+			openCompendiumPack(actionNode.dataset.pack);
 		}
 	};
 

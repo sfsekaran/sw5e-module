@@ -62,10 +62,20 @@
         <header class="sw5e-starship-group-header">
           <div class="sw5e-starship-group-title">
             <h3>{{label}}</h3>
-            <p>Browse here first, then use the row actions to open details and jump deeper into the stock sheet when available.</p>
+            <p>{{description}}</p>
           </div>
           <div class="sw5e-starship-group-tools">
             <span class="sw5e-starship-group-count">{{count}}</span>
+            {{#if browsePack}}
+              <button
+                type="button"
+                class="sw5e-starship-group-link sw5e-starship-group-link-secondary"
+                data-sw5e-action="open-pack"
+                data-pack="{{browsePack}}"
+              >
+                Browse Pack
+              </button>
+            {{/if}}
             {{#if supportsSheetNavigation}}
               <button
                 type="button"
@@ -97,7 +107,14 @@
                 {{/if}}
 
                 <div class="sw5e-starship-item-copy">
-                  <strong class="sw5e-starship-item-name">{{name}}</strong>
+                  <button
+                    type="button"
+                    class="sw5e-starship-item-name-button"
+                    data-sw5e-action="open-item"
+                    data-item-id="{{id}}"
+                  >
+                    {{name}}
+                  </button>
                   {{#if meta}}
                     <span class="sw5e-starship-item-meta">{{meta}}</span>
                   {{/if}}
