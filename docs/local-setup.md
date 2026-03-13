@@ -142,3 +142,29 @@ When asking for help with this repo, include:
 - whether the problem happens in a plain `dnd5e` world with only `lib-wrapper` and this module enabled
 
 That information usually saves a lot of time and avoids guesswork.
+
+## How To Ask For A Change
+
+You can paste this into chat and fill it in:
+
+```text
+Type of request: bugfix / feature / compendium update / UI change
+
+What I want changed:
+
+Where it shows up in Foundry:
+
+What I expected to happen:
+
+What happened instead:
+
+Files or compendium entries involved, if known:
+
+Did I run `npm run build:db` after changing compendium data? yes / no / not sure
+
+Does this still happen with only `dnd5e`, `lib-wrapper`, and `sw5e-module` enabled? yes / no / not sure
+
+Anything else that seems relevant:
+```
+
+If you are not sure about some answers, that is fine. Even partial information is usually enough to get started.

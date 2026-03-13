@@ -9,9 +9,24 @@ Current target compatibility: Foundry VTT `13` with `dnd5e` `5.2.5`.
 
 ## Installation
 
-To install and use the sw5e module for Foundry Virtual Tabletop, simply paste the following URL into the Install Module dialog on the Setup menu of the application.
+This module is not listed on Foundry's website or in the in-app Module Repository because it contains homebrew content.
+
+### Install The Latest Release
+
+If you want the newest release, open Foundry's `Install Module` window and paste this URL into the `Manifest URL` box at the bottom:
 
 https://github.com/sw5e-foundry/sw5e-module/releases/latest/download/module.json
+
+### Install A Specific Release
+
+If you want a specific version instead of the latest one:
+
+1. Open the [Releases page](https://github.com/sw5e-foundry/sw5e-module/releases).
+2. Open the release you want to install.
+3. Copy the link to that release's `module.json` artifact.
+4. In Foundry, open `Add-on Modules` -> `Install Module`.
+5. Paste the link into the `Manifest URL` box at the bottom of the window.
+6. Click install.
 
 If you wish to manually install the module, clone or extract it into the `Data/modules/sw5e-module` folder. You may do this by cloning the repository or downloading a zip archive from the Releases Page.
 
@@ -29,7 +44,7 @@ Compendium content is different:
 
 The `packs/` folder is generated output and should not be edited by hand. The source of truth is `packs/_source/`.
 
-For a plain-English walkthrough of what is safe to edit, when to rebuild, and what information to include when reporting a bug or requesting a change, see [docs/local-setup.md](docs/local-setup.md).
+For a plain-English walkthrough of what is safe to edit, when to rebuild, and a copy/paste template for reporting a bug or requesting a change, see [docs/local-setup.md](docs/local-setup.md).
 
 ## Changelog
 
