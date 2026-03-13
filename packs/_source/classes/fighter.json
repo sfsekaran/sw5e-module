@@ -352,11 +352,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.ey3X8gw845wlsp28",
+              "uuid": "Compendium.sw5e-module.classfeatures.ey3X8gw845wlsp28",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.mrFQ2l9wzPmfb0dv",
+              "uuid": "Compendium.sw5e-module.classfeatures.mrFQ2l9wzPmfb0dv",
               "optional": false
             }
           ],
@@ -373,11 +373,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.xLtohqChteKV2564",
+              "uuid": "Compendium.sw5e-module.classfeatures.xLtohqChteKV2564",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.6DoNOdDSRNvjTVmo",
+              "uuid": "Compendium.sw5e-module.classfeatures.6DoNOdDSRNvjTVmo",
               "optional": false
             }
           ],
@@ -394,11 +394,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.PpwSwjWSlOARJyk6",
+              "uuid": "Compendium.sw5e-module.classfeatures.PpwSwjWSlOARJyk6",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.tWugmEinnqu8mESB",
+              "uuid": "Compendium.sw5e-module.classfeatures.tWugmEinnqu8mESB",
               "optional": false
             }
           ],
@@ -415,7 +415,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.6oInSSCQn3zDmjDi",
+              "uuid": "Compendium.sw5e-module.classfeatures.6oInSSCQn3zDmjDi",
               "optional": false
             }
           ],
@@ -432,7 +432,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.DWwrLeysfW2VPx3m",
+              "uuid": "Compendium.sw5e-module.classfeatures.DWwrLeysfW2VPx3m",
               "optional": false
             }
           ],
@@ -449,7 +449,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.Q7qPuL7FOn0DQWtD",
+              "uuid": "Compendium.sw5e-module.classfeatures.Q7qPuL7FOn0DQWtD",
               "optional": false
             }
           ],
@@ -466,7 +466,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.0L38TGkU8ViI7klt",
+              "uuid": "Compendium.sw5e-module.classfeatures.0L38TGkU8ViI7klt",
               "optional": false
             }
           ],
@@ -502,28 +502,28 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.XjTMABFQ4s8CSoeP"
+              "uuid": "Compendium.sw5e-module.invocations.XjTMABFQ4s8CSoeP"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.IbfD1BvoQxb4xUb7"
+              "uuid": "Compendium.sw5e-module.invocations.IbfD1BvoQxb4xUb7"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.fQEw0CE6SdGlG8Kx"
+              "uuid": "Compendium.sw5e-module.invocations.fQEw0CE6SdGlG8Kx"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.28yHWNxteJQVXUIu"
+              "uuid": "Compendium.sw5e-module.invocations.28yHWNxteJQVXUIu"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.uTCoA6aAKyZ50JWe"
+              "uuid": "Compendium.sw5e-module.invocations.uTCoA6aAKyZ50JWe"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.cctwVh1zcte0ss50"
+              "uuid": "Compendium.sw5e-module.invocations.cctwVh1zcte0ss50"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.s97q3lgnX4dH1pGr"
+              "uuid": "Compendium.sw5e-module.invocations.s97q3lgnX4dH1pGr"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.kIVu8iapeGO5eWzt"
+              "uuid": "Compendium.sw5e-module.invocations.kIVu8iapeGO5eWzt"
             }
           ],
           "restriction": {
@@ -544,72 +544,10 @@
       },
       {
         "_id": "sw5e24ic00000000",
-        "configuration": {
-          "allowDrops": true,
-          "choices": {
-            "3": {
-              "count": 1,
-              "replacement": false
-            }
-          },
-          "pool": [
-            {
-              "uuid": "Compendium.sw5e.archetypes.3WEDJ9aje4WwK0b1"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.ZxZIxuRgZGwmbqjo"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.9Jn2XBZYoWAH2JQR"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.Ayxbhs6ruoY7Z5ob"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.pvyvyWl3ij5b0HAM"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.vSVMYgksB6ufATIK"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.CiOp71RlWtYdyBPi"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.D847Oc3BCSbSdBIF"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.AjQlu5orqGkxLmpc"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.BGIYzeSUkzZBa4Sq"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.9f42qUr5X4XtJqF5"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.A4u1vnQHssjTs3r7"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.yUx9ULyHJ85dUe1v"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.27M1azt4WBz5Vmwy"
-            }
-          ],
-          "restriction": {
-            "level": "",
-            "subtype": "",
-            "type": ""
-          },
-          "type": "subclass",
-          "spell": null
-        },
+        "configuration": {},
         "title": "Fighter Specialties",
-        "type": "ItemChoice",
-        "value": {
-          "added": {},
-          "replaced": {}
-        },
+        "type": "Subclass",
+        "value": {},
         "hint": "Different fighters choose different approaches to perfecting their fighting prowess. The fighter specialty you choose to emulate reflects your approach. Your specialty grants you features at 3rd, 7th, 10th, 15th, and 18th level."
       }
     ],
@@ -626,7 +564,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493961822,
     "modifiedTime": 1732453663682,

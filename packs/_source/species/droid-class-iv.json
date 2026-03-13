@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Droid-ClassIv.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Droid-ClassIv.webp",
   "system": {
     "description": {
       "value": "<h2>Appearance</h2>\n<p>Class IV droids are typically human-like in both shape and size, though there are many advanced models (such as droidekas) that forgo this standardization. They are usually colored to match their affiliation, though personally owned class IV droids might not be. Certain models of class IV droids, such as the HK-series, are made to look like class III droids to disguise their martial nature.</p>\n<h2>Utility</h2>\n<p>Class IV droids are programmed for military and security purposes. Such droids tend to perform tasks of violence or combat might be expected. Almost all class IV droids carry weapons. Armed combat droids are among the first droids ever created. Security, gladiator, battle, and assassin droids are all class IV droids.</p>\n<h2>Names</h2>\n<p>Droids are typically called by their designation, given to them when they are created, or some affectation given to them by their owner. Often this affectation is a play on their designation. Occasionally, noteworthy droids will earn monikers based on their accomplishments.</p>\n<p><strong>Designations (Names).</strong> K-2SO (Kay-Tuesso), PZ-99 (Peezee-Ninety-Nine), VL-44 (Vee-El Forty-Four)</p>",
@@ -47,63 +47,63 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.WHxn5b2c6rjmqf2X",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.WHxn5b2c6rjmqf2X",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Xi1SvlBNBJgwKd4U",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Xi1SvlBNBJgwKd4U",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.2ghh6UK5CvyQvFls",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.2ghh6UK5CvyQvFls",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.xYWuokIqrmhjzoXB",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.xYWuokIqrmhjzoXB",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.iXtd7qKDgsijVszh",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.iXtd7qKDgsijVszh",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.5YhQiTLheAUFpW9z",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.5YhQiTLheAUFpW9z",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.pVGZdVeO8VxFCjkk",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.pVGZdVeO8VxFCjkk",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.cODiEAxnH5jNNfqF",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.cODiEAxnH5jNNfqF",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ItFsqHuvwUpKl8IL",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ItFsqHuvwUpKl8IL",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.qEEHtXxxcjLGSmnH",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.qEEHtXxxcjLGSmnH",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.9bxeB4lYeGNDP3DF",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.9bxeB4lYeGNDP3DF",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.BlsewW5SQzgiyUFw",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.BlsewW5SQzgiyUFw",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.evLmUHOZ0RDzBycn",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.evLmUHOZ0RDzBycn",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.4J03YEeKSV544sjW",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.4J03YEeKSV544sjW",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.4CATFPoA8foYQebn",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.4CATFPoA8foYQebn",
               "optional": false
             }
           ],
@@ -269,7 +269,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Droid%20Class%20IV.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Droid%20Class%20IV.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -284,7 +284,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732412596409,

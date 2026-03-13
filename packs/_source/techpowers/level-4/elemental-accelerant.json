@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/ElementalAccelerant.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/ElementalAccelerant.webp",
   "system": {
     "description": {
       "value": "<p>Choose one creature you can see and one damage type: acid, cold, fire, lightning, or sonic. The target must make a Constitution saving throw. If it fails, the first time on each turn when it takes damage of the chosen type, it takes an extra [[/r 2d6]] damage of it. The target also loses resistance to the type until the power ends.</p>\n<p><strong><em>Overcharge Tech.</em></strong> You can target one additional creature for each slot level above 4th. The creatures must be within 30 feet of each other when you target them.</p>",
@@ -106,8 +106,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "condition": "",
@@ -171,7 +171,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "zyut2Xw2wnEq8VDr",
@@ -182,7 +182,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

@@ -2,7 +2,7 @@
   "_id": "JhX8qXjrDL3pCRmF",
   "name": "Reinforced Armor",
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Starship%20Equipment/ReinforcedArmor.webp",
+  "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/ReinforcedArmor.webp",
   "effects": [
     {
       "_id": "lZtTUpAfXnUIPiuz",
@@ -36,7 +36,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e.starshiparmor.JhX8qXjrDL3pCRmF",
+      "origin": "Compendium.sw5e-module.starshiparmor.JhX8qXjrDL3pCRmF",
       "transfer": true,
       "flags": {
         "core": {
@@ -57,7 +57,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Starship%20Equipment/ReinforcedArmor.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/ReinforcedArmor.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -219,7 +219,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674494017105,
     "modifiedTime": 1720552913091,

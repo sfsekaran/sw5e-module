@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Togorian.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Togorian.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>The Togorian people are a feline warrior species native to the planet Togoria. They are large, heavy-framed bipeds, with retractable claws on their hands and feet. Female Togorians grow up to 7 feet tall, while adult males can reach up to 9 feet. They're covered in gray-white, black, brown, or orange fur, often with colorful spots or stripes. </p>\n<h2>Society and Culture</h2>\n<p>Togorians have a unique cultural division between their sexes. They evolved as nomadic hunters of creatures like the bist and etelo, surviving on the wilderness as apex predators. As time went on, a rift in their society developed between the two sexes. Males were drawn to continue their lifestyle as nomads and hunters for their people, while females tended to prefer remaining in permanent camps and contributed the vast majority of their species technological developments. This division has continued into modern times, with males continuing their nomadic traditions and females frequently preferring to stay in villages and cities. Males visit their mates for about a month each year, but otherwise the sexes live completely separate lives. Whether in spite of this separation of the sexes, or because of it, Togorians are typically monogamous and devoted to their chosen mates.</p>\n<h2>Names</h2>\n<p>Togorian names tend to be short and primal-sounding. Female names tend to include softer consonants and more vowels, while male names are typically harsher. Togorians do not use surnames.</p>\n<p><strong>Male Names.</strong>  Mezgraf, Mlatar, Morto, Mrrov, Torr</p>\n<p><strong>Female Names.</strong> Coelle, Elotis, H'sishi, Kra'ake, Rrowv</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.XrXScKQUpFAyrwFJ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.XrXScKQUpFAyrwFJ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.g7PW9tGTyrHgBY6R",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.g7PW9tGTyrHgBY6R",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.7YblyUD4xNecpW3q",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.7YblyUD4xNecpW3q",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.SK5GtS5UiAfrqUXd",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.SK5GtS5UiAfrqUXd",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.gNzQ0mRcuvuNKh1G",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.gNzQ0mRcuvuNKh1G",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.lapMPeEnDXer31OK",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.lapMPeEnDXer31OK",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.DGQXqQh4Dt8hWMyp",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.DGQXqQh4Dt8hWMyp",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.IGFmNkXXu1yBd77v",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.IGFmNkXXu1yBd77v",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.t8KdvwjCvqeiEMYt",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.t8KdvwjCvqeiEMYt",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.FDzwW6SgBTxLE8jO",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.FDzwW6SgBTxLE8jO",
               "optional": false
             }
           ],
@@ -227,7 +227,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Togorian.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Togorian.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -242,7 +242,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304724772,

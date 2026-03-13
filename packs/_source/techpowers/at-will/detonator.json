@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/Detonator.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Detonator.webp",
   "system": {
     "description": {
       "value": "<p>You launch a detonator at a creature. Make a ranged tech attack against a creature you can see within range. On a hit, the target takes [[/r 1d6]] fire damage, and each creature within 5 feet of the target must make a Dexterity saving throw or take [[/r 1d4]] fire damage.</p>\n<p>This power's damage increases by one die when you reach 5th level ([[/r 2d6]]/[[/r 2d4]]), 11th level ([[/r 3d6]]/[[/r 3d4]]), and 17th level ([[/r 4d6]]/[[/r 4d4]]).</p>",
@@ -113,8 +113,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0attack00000": {
+    "activities": [
+      {
         "_id": "sw5e0attack00000",
         "activation": {
           "condition": "",
@@ -179,7 +179,7 @@
         },
         "type": "attack"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "UBxeJ7w4Rkoeezs4",
@@ -190,7 +190,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

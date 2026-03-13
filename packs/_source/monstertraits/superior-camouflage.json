@@ -1,7 +1,7 @@
 {
   "name": "Superior Camouflage",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Monster%20Traits/Superior%20Camouflage.webp",
+  "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Superior%20Camouflage.webp",
   "effects": [
     {
       "_id": "Pwq0j7VG4ePDGAWl",
@@ -63,7 +63,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/monsters/227_-_Officer_2C_Junior/avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/227_-_Officer_2C_Junior/avatar.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -221,7 +221,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1669757714140,
     "modifiedTime": 1720368816603,

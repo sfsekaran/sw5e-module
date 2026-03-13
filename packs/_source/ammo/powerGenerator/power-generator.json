@@ -2,7 +2,7 @@
   "_id": "yeyBmy7LpYNzP5GN",
   "name": "Power generator",
   "type": "consumable",
-  "img": "modules/sw5e/icons/packs/Ammunition/PowerGenerator.webp",
+  "img": "modules/sw5e-module/icons/packs/Ammunition/PowerGenerator.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -111,7 +111,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493956757,
     "modifiedTime": 1720368678642,

@@ -1,7 +1,7 @@
 {
   "name": "Corporate Employee",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/292_-_Corporate_Employee/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/292_-_Corporate_Employee/Avatar.webp",
   "items": [
     {
       "_id": "NTM5Zjk0MGEzYWQ1",
@@ -9,7 +9,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/292_-_Corporate_Employee/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/292_-_Corporate_Employee/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -120,7 +120,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/292_-_Corporate_Employee/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/292_-_Corporate_Employee/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -231,7 +231,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/292_-_Corporate_Employee/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/292_-_Corporate_Employee/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -380,13 +380,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.gOVe5Qv8Bwkn9gAf"
+          "sourceId": "Compendium.sw5e-module.techpowers.gOVe5Qv8Bwkn9gAf"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/AcidSplash.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/AcidSplash.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -489,7 +489,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.gOVe5Qv8Bwkn9gAf",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.gOVe5Qv8Bwkn9gAf",
         "duplicateSource": null
       },
       "_key": "!actors.items!SgbJCWIza7qpz1Ta.9fLneCldVmtOV3i4"
@@ -501,13 +501,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.UACmTGjhcYjQyLj3"
+          "sourceId": "Compendium.sw5e-module.techpowers.UACmTGjhcYjQyLj3"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/Electroshock.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Electroshock.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -605,7 +605,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.UACmTGjhcYjQyLj3",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.UACmTGjhcYjQyLj3",
         "duplicateSource": null
       },
       "_key": "!actors.items!SgbJCWIza7qpz1Ta.VukFdo2Yp8IOpeLs"
@@ -617,13 +617,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.98p1OVwAvz2sbes5"
+          "sourceId": "Compendium.sw5e-module.techpowers.98p1OVwAvz2sbes5"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/PoisonSpray.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/PoisonSpray.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -726,7 +726,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.98p1OVwAvz2sbes5",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.98p1OVwAvz2sbes5",
         "duplicateSource": null
       },
       "_key": "!actors.items!SgbJCWIza7qpz1Ta.DIw3oEk5RPXawKO7"
@@ -738,7 +738,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.T9yaDZKiKSX8zFud"
+          "sourceId": "Compendium.sw5e-module.techpowers.T9yaDZKiKSX8zFud"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -747,7 +747,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/TemporaryBoost.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/TemporaryBoost.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -845,7 +845,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.T9yaDZKiKSX8zFud",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.T9yaDZKiKSX8zFud",
         "duplicateSource": null
       },
       "_key": "!actors.items!SgbJCWIza7qpz1Ta.jxgx624pJW93xuy4"
@@ -857,13 +857,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.KQXx0PfcNGX8uuIj"
+          "sourceId": "Compendium.sw5e-module.techpowers.KQXx0PfcNGX8uuIj"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/KoltoPack.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/KoltoPack.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -966,7 +966,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.KQXx0PfcNGX8uuIj",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.KQXx0PfcNGX8uuIj",
         "duplicateSource": null
       },
       "_key": "!actors.items!SgbJCWIza7qpz1Ta.ReGWKtsn5zQPrmyL"
@@ -978,13 +978,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.1zfQEQMJqirKT6tR"
+          "sourceId": "Compendium.sw5e-module.techpowers.1zfQEQMJqirKT6tR"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/Overload.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Overload.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1087,7 +1087,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.1zfQEQMJqirKT6tR",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.1zfQEQMJqirKT6tR",
         "duplicateSource": null
       },
       "_key": "!actors.items!SgbJCWIza7qpz1Ta.icsgwjMrpkAdmdCx"
@@ -1099,7 +1099,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.b0T7rxNgDtGx3mwh"
+          "sourceId": "Compendium.sw5e-module.techpowers.b0T7rxNgDtGx3mwh"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -1108,7 +1108,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/StacktheDeck.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/StacktheDeck.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1206,7 +1206,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.b0T7rxNgDtGx3mwh",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.b0T7rxNgDtGx3mwh",
         "duplicateSource": null
       },
       "_key": "!actors.items!SgbJCWIza7qpz1Ta.5xydmGFUdfYgoji9"
@@ -1218,13 +1218,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.PUxPBzpy9TcUbVvh"
+          "sourceId": "Compendium.sw5e-module.techpowers.PUxPBzpy9TcUbVvh"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/TracerBolt.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/TracerBolt.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1327,7 +1327,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.PUxPBzpy9TcUbVvh",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.PUxPBzpy9TcUbVvh",
         "duplicateSource": null
       },
       "_key": "!actors.items!SgbJCWIza7qpz1Ta.Cld5C45mmf0UdQPz"
@@ -1339,7 +1339,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.QIbRAvOjWgTFkX7r"
+          "sourceId": "Compendium.sw5e-module.techpowers.QIbRAvOjWgTFkX7r"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -1348,7 +1348,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/Electromesh.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Electromesh.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1446,7 +1446,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.QIbRAvOjWgTFkX7r",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.QIbRAvOjWgTFkX7r",
         "duplicateSource": null
       },
       "_key": "!actors.items!SgbJCWIza7qpz1Ta.WYYZez7T09h35oIA"
@@ -1458,13 +1458,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.Iw1Hx4qsVyB1ewVR"
+          "sourceId": "Compendium.sw5e-module.techpowers.Iw1Hx4qsVyB1ewVR"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/MirrorImage.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/MirrorImage.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1562,7 +1562,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.Iw1Hx4qsVyB1ewVR",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.Iw1Hx4qsVyB1ewVR",
         "duplicateSource": null
       },
       "_key": "!actors.items!SgbJCWIza7qpz1Ta.gfmoyScWC4Us0OJ2"
@@ -2261,7 +2261,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493968821,
     "modifiedTime": 1720552737753,

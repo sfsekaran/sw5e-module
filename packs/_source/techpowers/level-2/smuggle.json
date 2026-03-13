@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/Smuggle.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Smuggle.webp",
   "system": {
     "description": {
       "value": "<p>You dampen sound and light and dull the scent from creatures in your vicinity. For the duration, each creature you choose within 30 feet of you has a +10 bonus to Dexterity (Stealth) checks and can't be tracked except by enhanced means while within this radius. You can choose yourself as well. A creature that receives this bonus leaves behind no traces of its passage.</p>",
@@ -101,8 +101,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -143,7 +143,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "2gDma5c07nOUFa1B",
@@ -154,7 +154,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

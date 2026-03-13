@@ -219,11 +219,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.OBlzHWiHNoPMpQG9",
+              "uuid": "Compendium.sw5e-module.classfeatures.OBlzHWiHNoPMpQG9",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.qNvcODTcxVtFhwHF",
+              "uuid": "Compendium.sw5e-module.classfeatures.qNvcODTcxVtFhwHF",
               "optional": false
             }
           ],
@@ -240,11 +240,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.1dcnnju3Pw7uz3WX",
+              "uuid": "Compendium.sw5e-module.classfeatures.1dcnnju3Pw7uz3WX",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.Rkeqzwdy1u70ReDg",
+              "uuid": "Compendium.sw5e-module.classfeatures.Rkeqzwdy1u70ReDg",
               "optional": false
             }
           ],
@@ -261,11 +261,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.t3UEHRDOMZPqqpxG",
+              "uuid": "Compendium.sw5e-module.classfeatures.t3UEHRDOMZPqqpxG",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.nF3FKSnOMrPr2zmi",
+              "uuid": "Compendium.sw5e-module.classfeatures.nF3FKSnOMrPr2zmi",
               "optional": false
             }
           ],
@@ -282,7 +282,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.SRvdjRxU3cpcEdcw",
+              "uuid": "Compendium.sw5e-module.classfeatures.SRvdjRxU3cpcEdcw",
               "optional": false
             }
           ],
@@ -314,37 +314,37 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.l6r2xjQ4ftBkaDCU"
+              "uuid": "Compendium.sw5e-module.invocations.l6r2xjQ4ftBkaDCU"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.nNaCGENXLdNxWsc7"
+              "uuid": "Compendium.sw5e-module.invocations.nNaCGENXLdNxWsc7"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Br3t5Qr0d4pICbRt"
+              "uuid": "Compendium.sw5e-module.invocations.Br3t5Qr0d4pICbRt"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.xTNeUGySNOMf1vsn"
+              "uuid": "Compendium.sw5e-module.invocations.xTNeUGySNOMf1vsn"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.MtblQq9G89qcuT9X"
+              "uuid": "Compendium.sw5e-module.invocations.MtblQq9G89qcuT9X"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Sf8QOGRJD88Cmz4c"
+              "uuid": "Compendium.sw5e-module.invocations.Sf8QOGRJD88Cmz4c"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.gT1aqimUikc5i39u"
+              "uuid": "Compendium.sw5e-module.invocations.gT1aqimUikc5i39u"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.m503Y6EEX9mPDaUq"
+              "uuid": "Compendium.sw5e-module.invocations.m503Y6EEX9mPDaUq"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.MdzZoiQTUaU2ZwJz"
+              "uuid": "Compendium.sw5e-module.invocations.MdzZoiQTUaU2ZwJz"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.q6bdreMoj6s1U24H"
+              "uuid": "Compendium.sw5e-module.invocations.q6bdreMoj6s1U24H"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.qzLGJzsu87gPBBQG"
+              "uuid": "Compendium.sw5e-module.invocations.qzLGJzsu87gPBBQG"
             }
           ],
           "restriction": {
@@ -365,66 +365,10 @@
       },
       {
         "_id": "sw5e16ic00000000",
-        "configuration": {
-          "allowDrops": true,
-          "choices": {
-            "3": {
-              "count": 1,
-              "replacement": false
-            }
-          },
-          "pool": [
-            {
-              "uuid": "Compendium.sw5e.archetypes.XYrBlYfB8UWtfffp"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.8Gg31M23AP6ETX8N"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.LxjjR7L0AtBYbfOC"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.bC6icCMCk6quP19r"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.yI7XY7sgitPhEMxS"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.SusnFelt3zuLetoj"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.tSroJrVHQ7TBG2uH"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.iOvFgRQ73iBl9xHX"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.USe4w93UJ8VN0Ese"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.IRUqnk89Nio6y3Ed"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.61riK6l2zP6h2eaG"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.QKnOhSPnDRPeAntU"
-            }
-          ],
-          "restriction": {
-            "level": "",
-            "subtype": "",
-            "type": ""
-          },
-          "type": "subclass",
-          "spell": null
-        },
+        "configuration": {},
         "title": "Consular Traditions",
-        "type": "ItemChoice",
-        "value": {
-          "added": {},
-          "replaced": {}
-        },
+        "type": "Subclass",
+        "value": {},
         "hint": "Different consulars select different traditions, called Ways, to follow as they hone their powers. Your tradition grants you features at 3rd, 6th, 10th, 14th, and 18th level."
       }
     ],
@@ -442,7 +386,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493961825,
     "modifiedTime": 1732453663682,

@@ -315,11 +315,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.AGNoaKsGxlc276qv",
+              "uuid": "Compendium.sw5e-module.classfeatures.AGNoaKsGxlc276qv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.ck9f8sKVbhB6S4di",
+              "uuid": "Compendium.sw5e-module.classfeatures.ck9f8sKVbhB6S4di",
               "optional": false
             }
           ],
@@ -336,11 +336,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.SZHiVKoVz7176B07",
+              "uuid": "Compendium.sw5e-module.classfeatures.SZHiVKoVz7176B07",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.pAVn06LQeCw6dLJt",
+              "uuid": "Compendium.sw5e-module.classfeatures.pAVn06LQeCw6dLJt",
               "optional": false
             }
           ],
@@ -357,11 +357,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.vXzXE8x75rjyq56U",
+              "uuid": "Compendium.sw5e-module.classfeatures.vXzXE8x75rjyq56U",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.lYSJOc81sMhbpfSE",
+              "uuid": "Compendium.sw5e-module.classfeatures.lYSJOc81sMhbpfSE",
               "optional": false
             }
           ],
@@ -378,7 +378,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.Hh1XR8YvJZLcD1Pm",
+              "uuid": "Compendium.sw5e-module.classfeatures.Hh1XR8YvJZLcD1Pm",
               "optional": false
             }
           ],
@@ -395,7 +395,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.vJyaoVAzhzpowWD8",
+              "uuid": "Compendium.sw5e-module.classfeatures.vJyaoVAzhzpowWD8",
               "optional": false
             }
           ],
@@ -412,7 +412,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.Dxysqok8UKhgvVai",
+              "uuid": "Compendium.sw5e-module.classfeatures.Dxysqok8UKhgvVai",
               "optional": false
             }
           ],
@@ -429,7 +429,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.7P9odvqB70JlZVMa",
+              "uuid": "Compendium.sw5e-module.classfeatures.7P9odvqB70JlZVMa",
               "optional": false
             }
           ],
@@ -478,25 +478,25 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.CYxQ9FGhaivegbEO"
+              "uuid": "Compendium.sw5e-module.invocations.CYxQ9FGhaivegbEO"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.1lN9mFM3BudYI1HH"
+              "uuid": "Compendium.sw5e-module.invocations.1lN9mFM3BudYI1HH"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.YYpw7KqqyAfb00zQ"
+              "uuid": "Compendium.sw5e-module.invocations.YYpw7KqqyAfb00zQ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.47ZTWZ8C7lHNFw5A"
+              "uuid": "Compendium.sw5e-module.invocations.47ZTWZ8C7lHNFw5A"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.jAuscmQHeQcJG8W6"
+              "uuid": "Compendium.sw5e-module.invocations.jAuscmQHeQcJG8W6"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.b9Rdij1v4qbiT9qQ"
+              "uuid": "Compendium.sw5e-module.invocations.b9Rdij1v4qbiT9qQ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Y7qLWJvDLKpah4CY"
+              "uuid": "Compendium.sw5e-module.invocations.Y7qLWJvDLKpah4CY"
             }
           ],
           "restriction": {
@@ -517,72 +517,10 @@
       },
       {
         "_id": "sw5e23ic00000000",
-        "configuration": {
-          "allowDrops": true,
-          "choices": {
-            "3": {
-              "count": 1,
-              "replacement": false
-            }
-          },
-          "pool": [
-            {
-              "uuid": "Compendium.sw5e.archetypes.YgIJacJUsc2MSQ7C"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.Zw2G0DDXo3uaDN4r"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.qXYcepno6c5cYqZC"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.HT7t6njBrKPe6dB1"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.tte2PRr3ou7adFjZ"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.Mgp8Eo9BqTJtu6s6"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.MzyAyoDzy2DBadru"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.odCsSvAG0Tmn6AoK"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.9FkoSl6i5rQwWnLk"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.pU28YNzK3zCzxIPv"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.SZB325oKrWryDexC"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.Yt9gDW1G5GDaVAJd"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.5gfIN2jExDwxmY15"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.XKpKuW4WGO0M31co"
-            }
-          ],
-          "restriction": {
-            "level": "",
-            "subtype": "",
-            "type": ""
-          },
-          "type": "subclass",
-          "spell": null
-        },
+        "configuration": {},
         "title": "Guardian Foci",
-        "type": "ItemChoice",
-        "value": {
-          "added": {},
-          "replaced": {}
-        },
+        "type": "Subclass",
+        "value": {},
         "hint": "Different guardians focus on different lightsaber styles, called Forms, as they hone their powers. Your focus grants you features at 3rd, 7th, 15th, and 20th level."
       }
     ],
@@ -600,7 +538,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493961817,
     "modifiedTime": 1732453663682,

@@ -1,7 +1,7 @@
 {
   "name": "Disguised Features",
-  "type": "starshipmod",
-  "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
+  "type": "loot",
+  "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Universal.webp",
   "effects": [
     {
       "_id": "fkveRRoLEwZjwcjY",
@@ -23,7 +23,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e.starshipmodifications.wX4ehbjOpZfW31uI",
+      "origin": "Compendium.sw5e-module.starshipmodifications.wX4ehbjOpZfW31uI",
       "transfer": true,
       "flags": {
         "core": {
@@ -45,120 +45,139 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Universal.webp",
       "type": "base",
       "system": {},
       "_key": "!items.effects!PiSB8RA8toRyqrBE.fkveRRoLEwZjwcjY"
     }
   ],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "sw5e": {
+      "legacyStarshipMod": {
+        "description": {
+          "value": "<section id=\"introduction-modifying-a-starship-droid-brain-mark-i\" style=\"box-sizing:border-box;-webkit-print-color-adjust:exact;display:contents\"></section>\n<p>You modify your ship to more easily disguise and/or hide installed modifications and equipment. Your ship is proficiently equipped for Charisma (Swindle) checks. If your ship is already proficiently equipped, it is instead considered expertly equipped.</p>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "requirements": "",
+        "source": "",
+        "quantity": 1,
+        "weight": 0,
+        "price": {
+          "value": 0,
+          "denomination": "gp"
+        },
+        "attunement": 0,
+        "equipped": false,
+        "rarity": "",
+        "identified": false,
+        "isCargo": false,
+        "activation": {
+          "type": "",
+          "cost": null,
+          "condition": ""
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "cover": null,
+        "crewed": false,
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": null,
+          "long": null,
+          "units": ""
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": null,
+          "recovery": ""
+        },
+        "consume": {
+          "type": "",
+          "target": null,
+          "amount": null
+        },
+        "ability": null,
+        "actionType": "",
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "recharge": {
+          "charged": false,
+          "value": null
+        },
+        "grade": {
+          "value": 0
+        },
+        "baseCost": {
+          "value": null
+        },
+        "prerequisites": {
+          "value": ""
+        },
+        "free": {
+          "slot": false,
+          "suite": false
+        },
+        "armor": {
+          "type": "",
+          "value": null,
+          "dex": null
+        },
+        "proficient": false,
+        "properties": [],
+        "attributes": {
+          "dr": ""
+        },
+        "strength": null,
+        "stealth": false,
+        "type": {
+          "value": "Universal"
+        }
+      }
+    }
+  },
   "system": {
     "description": {
       "value": "<section id=\"introduction-modifying-a-starship-droid-brain-mark-i\" style=\"box-sizing:border-box;-webkit-print-color-adjust:exact;display:contents\"></section>\n<p>You modify your ship to more easily disguise and/or hide installed modifications and equipment. Your ship is proficiently equipped for Charisma (Swindle) checks. If your ship is already proficiently equipped, it is instead considered expertly equipped.</p>",
       "chat": "",
       "unidentified": ""
     },
-    "requirements": "",
-    "source": "",
+    "source": {},
     "quantity": 1,
     "weight": 0,
     "price": {
       "value": 0,
       "denomination": "gp"
     },
-    "attunement": 0,
-    "equipped": false,
     "rarity": "",
-    "identified": false,
-    "isCargo": false,
-    "activation": {
-      "type": "",
-      "cost": null,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": ""
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": ""
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": ""
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null
-    },
-    "ability": null,
-    "actionType": "",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "recharge": {
-      "charged": false,
-      "value": null
-    },
-    "grade": {
-      "value": 0
-    },
-    "baseCost": {
-      "value": null
-    },
-    "prerequisites": {
-      "value": ""
-    },
-    "free": {
-      "slot": false,
-      "suite": false
-    },
-    "armor": {
-      "type": "",
-      "value": null,
-      "dex": null
-    },
-    "proficient": false,
-    "properties": [],
-    "attributes": {
-      "dr": ""
-    },
-    "strength": null,
-    "stealth": false,
-    "type": {
-      "value": "Universal"
-    }
+    "identified": false
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674494018759,
     "modifiedTime": 1706199587744,

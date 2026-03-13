@@ -2,7 +2,7 @@
   "_id": "lfbHaiCvlK8VdP3V",
   "name": "Sharpshooter Practice",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/SharpshooterPractice.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/SharpshooterPractice.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.EPofIsN2oSX6uzQ6",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.EPofIsN2oSX6uzQ6",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.OtPFxtcX0Jl6C0pV",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.OtPFxtcX0Jl6C0pV",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.SW97VK7ioAknT184",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.SW97VK7ioAknT184",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.pMSjuBGHp7lChFdw",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.pMSjuBGHp7lChFdw",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.YMrYuotaa5g9xhKB",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.YMrYuotaa5g9xhKB",
               "optional": false
             }
           ],
@@ -130,7 +130,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959768,
     "modifiedTime": 1732304669482,

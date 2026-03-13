@@ -15,7 +15,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Bonus.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Bonus.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Prerequisite:</strong> Armor</em></p>\n<p>Your modified armor gains an integrated grappling harpoon set into your gauntlet. With this harpoon, you can make a ranged weapon attack with a range of 30/60. On a hit, it deals [[/r 1d6]] kinetic damage. This attack can target a surface, object, or creature.</p>\n<p>A creature struck by this attack is impaled by the harpoon. As an action, a creature can attempt to remove the harpoon. Removing the harpoon requires a Strength check. While the harpoon is stuck in the target, you are connected to the target by a 60 foot cable.</p>\n<p>While the harpoon is deployed, you can use your bonus action to activate the reel, pulling yourself to the location if the target is larger than you. A creature or object your size or smaller is pulled to you. Alternatively, you can opt to release the cable (no action required).</p>\n<p>Once you've used this feature, you can't use it again until you recover and reinsert the harpoon as an action.</p>",
@@ -36,8 +36,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "type": "bonus"
@@ -79,7 +79,7 @@
         },
         "type": "damage"
       }
-    },
+    ],
     "identifier": "grappling-harpoon",
     "enchant": {},
     "prerequisites": {
@@ -98,7 +98,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

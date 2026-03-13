@@ -1,7 +1,7 @@
 {
   "name": "Villainous Exhaustion",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Monster%20Traits/Villainous%20Exhaustion.webp",
+  "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Villainous%20Exhaustion.webp",
   "effects": [
     {
       "origin": "Item.aF5Om3bLECgQY4fI",
@@ -144,7 +144,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1669754707123,
     "modifiedTime": 1720368816259,

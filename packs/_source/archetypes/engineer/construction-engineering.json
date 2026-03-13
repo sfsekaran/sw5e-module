@@ -2,7 +2,7 @@
   "_id": "f7POhRSg0x4UXp1i",
   "name": "Construction Engineering",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/ConstructionEngineering.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/ConstructionEngineering.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ktQfMH5Yt4sjWtCf",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ktQfMH5Yt4sjWtCf",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.efnftfI2h5rwSuZI",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.efnftfI2h5rwSuZI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.CIhtAVNI1zSGCuCC",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.CIhtAVNI1zSGCuCC",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.OOGH2EyLvZodWT2Y",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.OOGH2EyLvZodWT2Y",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.CSAxlh0rqViHbixT",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.CSAxlh0rqViHbixT",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.2xW5zzabk25ItSJS",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.2xW5zzabk25ItSJS",
               "optional": false
             }
           ],
@@ -129,7 +129,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959765,
     "modifiedTime": 1732304669439,

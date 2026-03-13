@@ -2,7 +2,7 @@
   "_id": "roFtZBQryEKA1WlJ",
   "name": "Mastermind Technique",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/MastermindTechnique.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/MastermindTechnique.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.VKL4s3L46zJwKrQ3",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.VKL4s3L46zJwKrQ3",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.SpcKTAe4Vje803U5",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.SpcKTAe4Vje803U5",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Tab0PheZbRvNPIco",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Tab0PheZbRvNPIco",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.hEtaCq4DRAre5lt3",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.hEtaCq4DRAre5lt3",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.8z9FXsEARlNTDuDY",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.8z9FXsEARlNTDuDY",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959776,
     "modifiedTime": 1732304669596,

@@ -2,7 +2,7 @@
   "_id": "oI5bBVBU0ybvrtTT",
   "name": "Acquisitions Practice",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/AcquisitionsPractice.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/AcquisitionsPractice.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.tfOBQeWmhNbj2Nky",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.tfOBQeWmhNbj2Nky",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.csKBdYxYUMYo5a50",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.csKBdYxYUMYo5a50",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.2L7yS1JaNDJAsWpE",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.2L7yS1JaNDJAsWpE",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.F0qhMOUePezPSeNz",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.F0qhMOUePezPSeNz",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.0QBWeM5Z0iSgUShC",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.0QBWeM5Z0iSgUShC",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959770,
     "modifiedTime": 1732304669517,

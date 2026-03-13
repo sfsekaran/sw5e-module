@@ -49,8 +49,8 @@
       "revision": 1,
       "rules": "2024"
     },
-    "activities": {
-      "sw5e1save0000000": {
+    "activities": [
+      {
         "_id": "sw5e1save0000000",
         "activation": {
           "type": "action"
@@ -94,7 +94,7 @@
         },
         "type": "save"
       }
-    },
+    ],
     "properties": [
       "auto",
       "burst",
@@ -168,7 +168,7 @@
     }
   },
   "type": "weapon",
-  "img": "modules/sw5e/icons/packs/Martial%20Blasters/IonCannon.webp",
+  "img": "modules/sw5e-module/icons/packs/Martial%20Blasters/IonCannon.webp",
   "effects": [],
   "_id": "1BGl0Qy3bz3MgSBD",
   "folder": null,
@@ -180,7 +180,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433881093,
     "modifiedTime": 1739121083882,
     "lastModifiedBy": "dnd5ebuilder0000"

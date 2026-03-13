@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/OPRT-ARCH-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/OPRT-ARCH-Action.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Gunslinger Practice:</strong> 3rd, 5th, 9th, 13th, and 17th level</em></p>\n<p>You learn to quickly move into cover when under fire. Once per round, when you are the target of a ranged attack, or you are subjected to an effect that allows you to make a Dexterity saving throw, and there is cover within 10 feet of you, you can move up to 10 feet (no action required). You must end this movement in cover.</p>\n<p>You can use this feature twice. You gain an additional use at 5th, 9th, 13th, and 17th level. You regain all expended uses when you complete a long rest.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "special"
@@ -136,7 +136,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -146,7 +146,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288495920,
     "modifiedTime": 1739121092781,

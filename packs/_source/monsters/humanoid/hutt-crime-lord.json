@@ -1,7 +1,7 @@
 {
   "name": "Hutt Crime Lord",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
   "items": [
     {
       "_id": "NmMwZDIwNDA0OTlh",
@@ -9,7 +9,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -120,7 +120,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -231,7 +231,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -342,7 +342,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -453,7 +453,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -564,7 +564,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -675,7 +675,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -897,7 +897,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1045,7 +1045,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1193,7 +1193,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1341,7 +1341,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1452,7 +1452,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1563,7 +1563,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1679,7 +1679,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/205_-_Hutt_Crime_Lord/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1796,7 +1796,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.xAgbr9pfUcwf2FjB"
+          "sourceId": "Compendium.sw5e-module.techpowers.xAgbr9pfUcwf2FjB"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -1805,7 +1805,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/AssesstheSituation.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/AssesstheSituation.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1903,7 +1903,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.xAgbr9pfUcwf2FjB",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.xAgbr9pfUcwf2FjB",
         "duplicateSource": null
       },
       "_key": "!actors.items!bwQ4LEXSXRTGhPAx.WQhhyDgb3ejqgWm3"
@@ -1915,13 +1915,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.c17MNNJ8FplU5Txm"
+          "sourceId": "Compendium.sw5e-module.techpowers.c17MNNJ8FplU5Txm"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/AbsorbEnergy.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/AbsorbEnergy.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2024,7 +2024,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.c17MNNJ8FplU5Txm",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.c17MNNJ8FplU5Txm",
         "duplicateSource": null
       },
       "_key": "!actors.items!bwQ4LEXSXRTGhPAx.n7emGmmwUFyhjtNg"
@@ -2036,13 +2036,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.Rygvn8mB2NySWQ2s"
+          "sourceId": "Compendium.sw5e-module.techpowers.Rygvn8mB2NySWQ2s"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/ElementofSurprise.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/ElementofSurprise.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2145,7 +2145,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.Rygvn8mB2NySWQ2s",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.Rygvn8mB2NySWQ2s",
         "duplicateSource": null
       },
       "_key": "!actors.items!bwQ4LEXSXRTGhPAx.fYPfU61HTaJttNvU"
@@ -2157,13 +2157,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.1IaNYJjpFj6tGXpD"
+          "sourceId": "Compendium.sw5e-module.techpowers.1IaNYJjpFj6tGXpD"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/FabricateTrap.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/FabricateTrap.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2261,7 +2261,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.1IaNYJjpFj6tGXpD",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.1IaNYJjpFj6tGXpD",
         "duplicateSource": null
       },
       "_key": "!actors.items!bwQ4LEXSXRTGhPAx.26akTGemos2ZmEDU"
@@ -2273,13 +2273,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.bp55Q4R0gBpd0FiM"
+          "sourceId": "Compendium.sw5e-module.techpowers.bp55Q4R0gBpd0FiM"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/OilSlick.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/OilSlick.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2382,7 +2382,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.bp55Q4R0gBpd0FiM",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.bp55Q4R0gBpd0FiM",
         "duplicateSource": null
       },
       "_key": "!actors.items!bwQ4LEXSXRTGhPAx.dMF5JwJCbKd68rY3"
@@ -2394,7 +2394,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.d8xd9jPHRHF0WEgv"
+          "sourceId": "Compendium.sw5e-module.techpowers.d8xd9jPHRHF0WEgv"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -2403,7 +2403,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/Smuggle.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Smuggle.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2501,7 +2501,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.d8xd9jPHRHF0WEgv",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.d8xd9jPHRHF0WEgv",
         "duplicateSource": null
       },
       "_key": "!actors.items!bwQ4LEXSXRTGhPAx.d6z7CkkFs4CqmBuZ"
@@ -2513,7 +2513,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.b0T7rxNgDtGx3mwh"
+          "sourceId": "Compendium.sw5e-module.techpowers.b0T7rxNgDtGx3mwh"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -2522,7 +2522,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/StacktheDeck.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/StacktheDeck.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2620,7 +2620,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.b0T7rxNgDtGx3mwh",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.b0T7rxNgDtGx3mwh",
         "duplicateSource": null
       },
       "_key": "!actors.items!bwQ4LEXSXRTGhPAx.TAI6eSxaUbd0VrH9"
@@ -2632,7 +2632,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.RzBnmCbTfv3atGv3"
+          "sourceId": "Compendium.sw5e-module.techpowers.RzBnmCbTfv3atGv3"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -2641,7 +2641,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/TacticalBarrier.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/TacticalBarrier.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2739,7 +2739,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.RzBnmCbTfv3atGv3",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.RzBnmCbTfv3atGv3",
         "duplicateSource": null
       },
       "_key": "!actors.items!bwQ4LEXSXRTGhPAx.UieKSPM1DTcVYcHH"
@@ -2751,13 +2751,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.vo6OJqBxuOiyMyxX"
+          "sourceId": "Compendium.sw5e-module.techpowers.vo6OJqBxuOiyMyxX"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/KoltoCloud.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/KoltoCloud.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2860,7 +2860,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.vo6OJqBxuOiyMyxX",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.vo6OJqBxuOiyMyxX",
         "duplicateSource": null
       },
       "_key": "!actors.items!bwQ4LEXSXRTGhPAx.zOMinJ4bzTmqaMEy"
@@ -2872,7 +2872,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.4koE44WAkEHVTwET"
+          "sourceId": "Compendium.sw5e-module.techpowers.4koE44WAkEHVTwET"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -2881,7 +2881,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/TacticalAdvantage.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/TacticalAdvantage.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2979,7 +2979,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.4koE44WAkEHVTwET",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.4koE44WAkEHVTwET",
         "duplicateSource": null
       },
       "_key": "!actors.items!bwQ4LEXSXRTGhPAx.CyO4qXfY4fyRE9Is"
@@ -3685,7 +3685,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984302,
     "modifiedTime": 1720552773611,

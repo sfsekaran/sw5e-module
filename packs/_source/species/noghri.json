@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Noghri.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Noghri.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Noghri are a primitive humanoid species hailed from the planet Honoghr with steely gray-blue skin that are renowned assassins. A natural gift for stealth and hand-to-hand combat, Noghri are efficient killing machines with their rending claws and strong olfactory sense that can often determine familial lineage. Their smaller size belies their ruthlessness and potent hunting skills.</p>\n<h2>Society and Culture</h2>\n<p>Noghri culture relies heavily on honor, with society being clan-based, revolving around the Dukha, a community center in each village. The greatest strength of the Noghri stems from their loyalty and secrecy; when a Noghri takes a job, they always fulfill it, even if it would result in their death. As such, they make exceptional, albeit expensive bodyguards.</p>\n<p>Noghri are loathe to fight with weapons larger than small daggers, believing combat to be a personal celebration to be sullied by use of heavier weapons. As such, it is rare (though not impossible) to see a Noghri wielding a weapon larger than their forearm.</p>\n<p>Each Noghri clan village centers around the Dukha, with each clan being led by a Dynast. The Dukha is inhabited by the clan's Maitrakh, who functions as the storyteller, spiritual leader, and lore keep of the clan.</p>\n<h2>Names</h2>\n<p>Noghri names vary from short to long, with female names being typically softer. Surnames are clan-based.</p>\n<p><strong>Male Names.</strong> Cakhmaim, Ezrakh, Khabarakh, Rukh</p>\n<p><strong>Female Names.</strong> Cilnaas, Edvir, Kahr'corvh, Meewalh</p>\n<p><strong>Surnames.</strong> Bakh'tor, Eikh'mir, Hakh'khar, Khim'bar</p>",
@@ -47,47 +47,47 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.AJe83Ld4FcJ3YG9e",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.AJe83Ld4FcJ3YG9e",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.eiGlAGB9NzIBnihx",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.eiGlAGB9NzIBnihx",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.FPn58vGHi7sBTpzV",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.FPn58vGHi7sBTpzV",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.6nO09BmxItXU5wFy",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.6nO09BmxItXU5wFy",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.B0lLlqpYWUxY1Boa",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.B0lLlqpYWUxY1Boa",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Zot0onFKhEr1STyb",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Zot0onFKhEr1STyb",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.OQFLTzH8hE6jSQtE",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.OQFLTzH8hE6jSQtE",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Hgcx2QXWyMjanlEh",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Hgcx2QXWyMjanlEh",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.pqjLB7FtUApV6Kk1",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.pqjLB7FtUApV6Kk1",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.sqLKta0rgH25nPl7",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.sqLKta0rgH25nPl7",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.JMINEBxqckbDa9CV",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.JMINEBxqckbDa9CV",
               "optional": false
             }
           ],
@@ -213,10 +213,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.KrhqL2dbdh6LPvYf.ActiveEffect.osToSGRyw3lDaFpz"
+          "sourceId": "Compendium.sw5e-module.species.Item.KrhqL2dbdh6LPvYf.ActiveEffect.osToSGRyw3lDaFpz"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.KrhqL2dbdh6LPvYf",
+      "origin": "Compendium.sw5e-module.species.Item.KrhqL2dbdh6LPvYf",
       "name": "Keen Smell",
       "description": "",
       "statuses": [],
@@ -230,7 +230,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Noghri.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Noghri.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -245,7 +245,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304724881,

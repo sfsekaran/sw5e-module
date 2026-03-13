@@ -1,7 +1,7 @@
 {
   "name": "Maalraas",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/089_-_Maalraas/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/089_-_Maalraas/Avatar.webp",
   "items": [
     {
       "_id": "N2Q3ZDJiMTRiNTk4",
@@ -9,7 +9,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/089_-_Maalraas/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/089_-_Maalraas/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -120,7 +120,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/089_-_Maalraas/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/089_-_Maalraas/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -231,7 +231,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/089_-_Maalraas/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/089_-_Maalraas/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -342,7 +342,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/089_-_Maalraas/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/089_-_Maalraas/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -490,7 +490,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/089_-_Maalraas/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/089_-_Maalraas/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -639,7 +639,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.i1N033vPzDom3Kpj"
+          "sourceId": "Compendium.sw5e-module.forcepowers.i1N033vPzDom3Kpj"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -746,7 +746,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.i1N033vPzDom3Kpj",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.i1N033vPzDom3Kpj",
         "duplicateSource": null
       },
       "_key": "!actors.items!KM2qPj98B47rFOJq.tuQD1K1LWDx89T8l"
@@ -1443,7 +1443,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984138,
     "modifiedTime": 1720552768366,

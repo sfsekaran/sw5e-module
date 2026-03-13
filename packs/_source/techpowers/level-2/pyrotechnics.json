@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/Pyrotechnics.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Pyrotechnics.webp",
   "system": {
     "description": {
       "value": "<p>Choose an area of unenhanced flame that you can see and that fits within a 5-foot cube within range. You can extinguish the fire in that area, and you create either fireworks or smoke when you do so.</p>\n<p><strong><em>Fireworks.</em></strong> The target explodes with a dazzling display of colors. Each creature within 10 feet of the target must succeed on a Constitution saving throw or become blinded until the end of your next turn.</p>\n<p><strong><em>Smoke.</em></strong> Thick black smoke spreads out from the target in a 20-foot radius, moving around corners. The area of the smoke is heavily obscured. The smoke persists for 1 minute or until a strong wind disperses it.</p>",
@@ -99,8 +99,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "condition": "",
@@ -147,7 +147,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "iQVGFAmDoSWXL38N",
@@ -158,7 +158,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

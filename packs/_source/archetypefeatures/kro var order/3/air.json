@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/MNK-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/MNK-ARCH-Passive.webp",
   "system": {
     "description": {
       "value": "<p>Your whistling weapon has the returning property, the thrown property with a range of 20/60, and deals sonic damage on a hit. Additionally, when you hit a creature with the weapon, it is deafened until the end of its next turn.</p>",
@@ -104,7 +104,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288495960,
     "modifiedTime": 1729984341403,

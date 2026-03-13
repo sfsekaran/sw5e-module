@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Pantoran.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Pantoran.webp",
   "system": {
     "description": {
       "value": "<p>You can speak, read, and write Galactic Basic and Pantoran. Pantoran comprises many dialects that prevent clear communication, a vestige of the feudal culture of the planet's past. Because of the difficulties of operating a planetary government with so many different languages, the Assembly established Galactic Basic as the official language of their people as a means of unifying the planet.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "languages",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1730433988012,
     "lastModifiedBy": "dnd5ebuilder0000"

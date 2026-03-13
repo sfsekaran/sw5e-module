@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Passive.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Prerequisite:</strong> Armor</em></p>\n<p>You reduce the weight of your modified armor's bulk and increase the power to joints. If the armor has a Strength requirement, you ignore it. The modified armor's weight is reduced by 15 lbs. While wearing your modified armor your speed increases by 10 feet. This applies to all movement speeds you have while wearing your armor.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "accelerated-movement",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1730433983637,
     "lastModifiedBy": "dnd5ebuilder0000"

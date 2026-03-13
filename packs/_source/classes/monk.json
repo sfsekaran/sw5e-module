@@ -384,11 +384,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.xLRbVvyf6SZqI0IR",
+              "uuid": "Compendium.sw5e-module.classfeatures.xLRbVvyf6SZqI0IR",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.oZApI8GlhbASPGO8",
+              "uuid": "Compendium.sw5e-module.classfeatures.oZApI8GlhbASPGO8",
               "optional": false
             }
           ],
@@ -405,11 +405,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.bdi8Z3rZZGkQVSEc",
+              "uuid": "Compendium.sw5e-module.classfeatures.bdi8Z3rZZGkQVSEc",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.yIs1spX5tGcjpoA0",
+              "uuid": "Compendium.sw5e-module.classfeatures.yIs1spX5tGcjpoA0",
               "optional": false
             }
           ],
@@ -426,15 +426,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.j3MilBSO0RDAKpK1",
+              "uuid": "Compendium.sw5e-module.classfeatures.j3MilBSO0RDAKpK1",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.4Ff9Vf3RcIKutLAY",
+              "uuid": "Compendium.sw5e-module.classfeatures.4Ff9Vf3RcIKutLAY",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.8vTlVwgsujIvk9mn",
+              "uuid": "Compendium.sw5e-module.classfeatures.8vTlVwgsujIvk9mn",
               "optional": false
             }
           ],
@@ -451,7 +451,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.VA6oFF0teIsE1gcI",
+              "uuid": "Compendium.sw5e-module.classfeatures.VA6oFF0teIsE1gcI",
               "optional": false
             }
           ],
@@ -468,11 +468,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.MZPn1mydA645VDDE",
+              "uuid": "Compendium.sw5e-module.classfeatures.MZPn1mydA645VDDE",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.eYYdXnO1zUk4XpFW",
+              "uuid": "Compendium.sw5e-module.classfeatures.eYYdXnO1zUk4XpFW",
               "optional": false
             }
           ],
@@ -489,7 +489,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.FA0638Swi8vJIPUk",
+              "uuid": "Compendium.sw5e-module.classfeatures.FA0638Swi8vJIPUk",
               "optional": false
             }
           ],
@@ -506,11 +506,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.kIGVBSr0fq6o00Iq",
+              "uuid": "Compendium.sw5e-module.classfeatures.kIGVBSr0fq6o00Iq",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.BRxLHkDX9NfN35WG",
+              "uuid": "Compendium.sw5e-module.classfeatures.BRxLHkDX9NfN35WG",
               "optional": false
             }
           ],
@@ -527,7 +527,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.Y4d7NX1lWQiLdVFn",
+              "uuid": "Compendium.sw5e-module.classfeatures.Y4d7NX1lWQiLdVFn",
               "optional": false
             }
           ],
@@ -544,7 +544,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.bwKnBonjwJc5c2Kx",
+              "uuid": "Compendium.sw5e-module.classfeatures.bwKnBonjwJc5c2Kx",
               "optional": false
             }
           ],
@@ -561,7 +561,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.xHiGKhyvu88g5Ixh",
+              "uuid": "Compendium.sw5e-module.classfeatures.xHiGKhyvu88g5Ixh",
               "optional": false
             }
           ],
@@ -578,7 +578,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.h4WPdGXUliSHbSWW",
+              "uuid": "Compendium.sw5e-module.classfeatures.h4WPdGXUliSHbSWW",
               "optional": false
             }
           ],
@@ -595,7 +595,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.z517Qm5VFOUCEYyk",
+              "uuid": "Compendium.sw5e-module.classfeatures.z517Qm5VFOUCEYyk",
               "optional": false
             }
           ],
@@ -670,58 +670,58 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.zAQj8scLkdEAfVZg"
+              "uuid": "Compendium.sw5e-module.invocations.zAQj8scLkdEAfVZg"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.y49CrNAo5DdZ5XZb"
+              "uuid": "Compendium.sw5e-module.invocations.y49CrNAo5DdZ5XZb"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.0IE3MsZWeoPHFCbm"
+              "uuid": "Compendium.sw5e-module.invocations.0IE3MsZWeoPHFCbm"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.KVp5vc4BmWkxtR3D"
+              "uuid": "Compendium.sw5e-module.invocations.KVp5vc4BmWkxtR3D"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Tlhzsx5RvgvgjU3s"
+              "uuid": "Compendium.sw5e-module.invocations.Tlhzsx5RvgvgjU3s"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.2AkFYLsNl7wGM9LA"
+              "uuid": "Compendium.sw5e-module.invocations.2AkFYLsNl7wGM9LA"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.3qC0tMtVtXGqlDGZ"
+              "uuid": "Compendium.sw5e-module.invocations.3qC0tMtVtXGqlDGZ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Y5ypYs9CDCYW6Thf"
+              "uuid": "Compendium.sw5e-module.invocations.Y5ypYs9CDCYW6Thf"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.5c3MM1QqE1v7dD7J"
+              "uuid": "Compendium.sw5e-module.invocations.5c3MM1QqE1v7dD7J"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Ov2baOEChu6p4ll2"
+              "uuid": "Compendium.sw5e-module.invocations.Ov2baOEChu6p4ll2"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Z05ZVZox98Q2cEfa"
+              "uuid": "Compendium.sw5e-module.invocations.Z05ZVZox98Q2cEfa"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.xwzJSYG10qHRZz6E"
+              "uuid": "Compendium.sw5e-module.invocations.xwzJSYG10qHRZz6E"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.gao0NzuA00u9iswq"
+              "uuid": "Compendium.sw5e-module.invocations.gao0NzuA00u9iswq"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.z23EVSK1dN2RBsPh"
+              "uuid": "Compendium.sw5e-module.invocations.z23EVSK1dN2RBsPh"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.BpPAfejZENlFucXQ"
+              "uuid": "Compendium.sw5e-module.invocations.BpPAfejZENlFucXQ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.ATzUsvExqInQJzmU"
+              "uuid": "Compendium.sw5e-module.invocations.ATzUsvExqInQJzmU"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.ZNCW0goQ9DyQIQBb"
+              "uuid": "Compendium.sw5e-module.invocations.ZNCW0goQ9DyQIQBb"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.1JL0DY2aquuH3Xgn"
+              "uuid": "Compendium.sw5e-module.invocations.1JL0DY2aquuH3Xgn"
             }
           ],
           "restriction": {
@@ -742,69 +742,10 @@
       },
       {
         "_id": "sw5e30ic00000000",
-        "configuration": {
-          "allowDrops": true,
-          "choices": {
-            "3": {
-              "count": 1,
-              "replacement": false
-            }
-          },
-          "pool": [
-            {
-              "uuid": "Compendium.sw5e.archetypes.wvPuhcodhAtABFOh"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.rZ4XP73OtMBVNm1I"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.Tf9wjN7r5BHbXWTL"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.hc7HaVpTXqQMSsyO"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.2OkP7LUU87OQrvmv"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.gnKE0zDdVRS7Lor7"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.dFbijHHWkFz1VIKx"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.W8kBwnXKWmvXB4My"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.L6OSpZ967QvVxhfd"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.MQm8qCUgy5ln4L8B"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.QoehwZJ0393tfpO8"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.UJqZNuqSlZ1UCquY"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.qrHsv2kIAuh551eP"
-            }
-          ],
-          "restriction": {
-            "level": "",
-            "subtype": "",
-            "type": ""
-          },
-          "type": "subclass",
-          "spell": null
-        },
+        "configuration": {},
         "title": "Monastic Orders",
-        "type": "ItemChoice",
-        "value": {
-          "added": {},
-          "replaced": {}
-        },
+        "type": "Subclass",
+        "value": {},
         "hint": "Orders of monastic pursuit are common in the locales scattered across the galaxy. Each order is based in a specific culture and is mutually exclusive, despite relying on the same basic techniques. Your order grants you features at 3rd, 6th, 11th, and 17th level."
       }
     ],
@@ -821,7 +762,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493961826,
     "modifiedTime": 1732453663682,

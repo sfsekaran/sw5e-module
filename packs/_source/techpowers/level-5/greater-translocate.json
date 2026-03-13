@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/GreaterTranslocate.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/GreaterTranslocate.webp",
   "system": {
     "description": {
       "value": "<p>Your form shimmers in a holographic configuration, and then collapses. You teleport up to 60 feet to an unoccupied space that you can see. On each of your turns before the power ends, you can use a bonus action to teleport in this way again.</p>",
@@ -101,8 +101,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -143,7 +143,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "nLDKCWOGBT0drLpY",
@@ -154,7 +154,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

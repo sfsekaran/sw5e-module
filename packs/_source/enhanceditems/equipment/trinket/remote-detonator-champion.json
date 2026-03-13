@@ -34,8 +34,8 @@
       "revision": 1,
       "rules": "2024"
     },
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "action"
@@ -61,7 +61,7 @@
         },
         "type": "utility"
       }
-    },
+    ],
     "armor": {
       "value": null,
       "dex": null,
@@ -96,7 +96,7 @@
     "proficient": null
   },
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/RemoteDetonator.webp",
+  "img": "modules/sw5e-module/icons/packs/Weapon%20or%20Armor%20Accessory/RemoteDetonator.webp",
   "effects": [],
   "_id": "2obTA3H6nIAmleVK",
   "folder": null,
@@ -108,7 +108,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433915469,
     "modifiedTime": 1739121086510,
     "lastModifiedBy": "dnd5ebuilder0000"

@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCT-ARCH-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCT-ARCH-Action.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Triage Technique:</strong> 7th, 9th, 13th, and 17th level</em></p>\n<p>Your application of medicine does not interfere with your own ability to recover from injuries. When you restore hit points or grant temporary hit points to another creature with a tech power or class feature, you recover the same amount of hit points or gain the same number of temporary hit points. </p>\n<p>You can use this feature three times. You gain an additional use at 9th, 13th, and 17th level. You regain all expended uses when you complete a long rest.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "special"
@@ -126,7 +126,7 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -136,7 +136,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288495981,
     "modifiedTime": 1739121092781,

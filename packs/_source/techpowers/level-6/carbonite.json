@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/Carbonite.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Carbonite.webp",
   "system": {
     "description": {
       "value": "<p>You attempt to freeze one creature that you can see within range into carbonite. The creature must make a Constitution saving throw. On a failed save, it is restrained as its flesh begins to harden. On a successful save, the creature isn't affected. </p>\n<p>A creature restrained by this power must make another Constitution saving throw at the end of each of its turns. If it successfully saves against this power three times, the power ends. If it fails its saves three times, it is turned to stone and subjected to the petrified condition for the duration. The successes and failures don't need to be consecutive; keep track of both until the target collects three of a kind.</p>\n<p>If the creature is physically broken while frozen in carbonite, it suffers from similar deformities if it reverts to its original state.</p>\n<p>If you maintain your concentration on this power for the entire possible duration, the creature is frozen in carbonite until the effect is removed.</p>",
@@ -101,8 +101,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "condition": "",
@@ -150,7 +150,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "YMtMNaj9UoH1wzlH",
@@ -161,7 +161,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

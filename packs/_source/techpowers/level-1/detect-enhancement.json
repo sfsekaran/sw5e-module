@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/DetectEnhancement.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/DetectEnhancement.webp",
   "system": {
     "description": {
       "value": "<p>For the duration, you sense the presence of any enhancements within 30 feet of you. If you sense an enhancement in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears an enhancement.</p>\n<p>The power is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.</p>",
@@ -101,8 +101,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -143,7 +143,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "NPMinsoTCEkqg9dl",
@@ -154,7 +154,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

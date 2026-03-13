@@ -15,7 +15,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCLR-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCLR-Action.webp",
   "system": {
     "description": {
       "value": "<p>Your medication and treatments are known to be untested and unstable. Immediately after you use a maneuver that causes a creature to regain hit points or gain temporary hit points, you can choose to roll on the Side Effects table to the right. The condition or effect lasts until the creature completes a long rest, or you use this feature again.</p>\n<p>You can use this feature twice. You gain an additional use at 5th, 9th, 13th, and 17th level. You regain all expended uses when you finish a short or long rest.</p>",
@@ -36,8 +36,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "special"
@@ -61,7 +61,7 @@
         },
         "type": "utility"
       }
-    },
+    ],
     "identifier": "experimental-treatments",
     "enchant": {},
     "prerequisites": {
@@ -80,7 +80,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

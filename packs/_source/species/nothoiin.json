@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Nothoiin.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Nothoiin.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Near-humans possessing golden, flaky skin, nothoiins feature fair to brown hair with brown eyes and typically have physical heights and builds common to humans.  Nothoiins' appearance has earned their species the nickname of \"Goldskins.\"</p>\n<h2>Society and Culture</h2>\n<p>Although nothoiins hail from their eponymous homeworld and star system in the Anoat Sector, they are ubiquitous throughout the Greater Javin Region and Corporate Sectors.  Their history of interstellar exploration and colonization was facilitated by their species' natural spacefaring abilities in both piloting and navigation and necessitated by their home planet's periodically harsh, dry climate.  Droughts on Nothoiin can last for decades, and the wildfires they foster have served as one of the primary factors behind the limited development of the planet's economy beyond the ur-diamond mining industry, which produces the system's chief export.  </p>\n<p>Large-scale emigration from Nothoiin has led members of its native species to seek careers as pilots, navigators, and operatives in numerous criminal enterprises.  Various nothoiin colonies have given rise to a number of different governmental systems running the gamut from representative democracies to autocracies.</p>\n<h2>Names</h2>\n<p>Nothoiin typically receive a gendered given name and a familial surname.</p>\n<p><strong>Male Names.</strong> Amrosio, Jado, Kosimas, Troov</p>\n<p><strong>Female Names.</strong> Elayah, Giranti, Lorinah, Sil</p>\n<p><strong>Surnames.</strong> Caban, Mordu, Plintus, Starstrider</p>",
@@ -47,51 +47,51 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.V6IzgyIOhEWyXYw4",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.V6IzgyIOhEWyXYw4",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Dl6dbZ7rHqj4x4lq",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Dl6dbZ7rHqj4x4lq",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.YUyV2nnXIlxmTbmj",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.YUyV2nnXIlxmTbmj",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.csP1lFVGhshuHjZu",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.csP1lFVGhshuHjZu",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.epAkJOBIBBqSYgSl",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.epAkJOBIBBqSYgSl",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.yeDNTB9u3Hn0hEEz",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.yeDNTB9u3Hn0hEEz",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.7RJevABxGOgce12f",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.7RJevABxGOgce12f",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.kGkaPOeKigNjaTIn",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.kGkaPOeKigNjaTIn",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.NeK1mX7PnBqGbzBD",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.NeK1mX7PnBqGbzBD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.QTrpbpXcr5E0FVPZ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.QTrpbpXcr5E0FVPZ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.cPFshbnScKEBPfJz",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.cPFshbnScKEBPfJz",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.bJ2aE9wvdiSeANK5",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.bJ2aE9wvdiSeANK5",
               "optional": false
             }
           ],
@@ -210,7 +210,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304724855,

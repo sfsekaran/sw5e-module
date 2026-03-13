@@ -2,7 +2,7 @@
   "_id": "Mgp8Eo9BqTJtu6s6",
   "name": "Ataru Form",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/AtaruForm.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/AtaruForm.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.O6eB0N7MDGaEUWzB",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.O6eB0N7MDGaEUWzB",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.RKjHaIE5W6h9okyV",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.RKjHaIE5W6h9okyV",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.UHBl6VfFeqsByyEX",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.UHBl6VfFeqsByyEX",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.pSIYfBgzCCVYDmII",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.pSIYfBgzCCVYDmII",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.dQcSiWpPxD1zSSE1",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.dQcSiWpPxD1zSSE1",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Aic1hLLhk3cIH4QI",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Aic1hLLhk3cIH4QI",
               "optional": false
             }
           ],
@@ -113,7 +113,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959740,
     "modifiedTime": 1732304669059,

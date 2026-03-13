@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/VerticalManeuvering.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/VerticalManeuvering.webp",
   "system": {
     "description": {
       "value": "<p>If you cast this power as a reaction, your fall is stopped, and you remain aloft. For the duration, as long as you are within 30 feet of a solid surface, you have a flying speed of 40 feet. In addition, you can't be knocked prone, and you have advantage on saving throws made against effects that would push you or pull you. When the power ends, you are gently lowered to the ground, if you are within 30 feet of it.</p>",
@@ -101,8 +101,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "when you are falling and within 30 feet of a solid surface",
@@ -143,7 +143,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "CxXoFciMTLIEPF4R",
@@ -154,7 +154,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

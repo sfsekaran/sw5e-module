@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Weequay.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Weequay.webp",
   "system": {
     "description": {
       "value": "<p>You can speak, read, and write Galactic Basic and Sriluurian. You can communicate with other Weequay within 30 feet without speaking through use of pheromones. Force attuned individuals can detect the communication but can't understand it.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "languages",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1730433988012,
     "lastModifiedBy": "dnd5ebuilder0000"

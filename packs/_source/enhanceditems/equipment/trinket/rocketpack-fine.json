@@ -2,7 +2,7 @@
   "_id": "s0JJOriL3mcggEDi",
   "name": "Rocketpack (Fine)",
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Rocketpack.webp",
+  "img": "modules/sw5e-module/icons/packs/Weapon%20or%20Armor%20Accessory/Rocketpack.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -164,8 +164,8 @@
     "attuned": false,
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "bonus"
@@ -191,14 +191,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493964985,
     "modifiedTime": 1739121086510,

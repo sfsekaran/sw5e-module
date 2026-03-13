@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/ParalyzeCreature.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/ParalyzeCreature.webp",
   "system": {
     "description": {
       "value": "<p>You emit a paralyzing dart at a creature that you can see within range. The target must succeed on a Constitution saving throw or be poisoned for the duration. While poisoned in this way, the target is paralyzed. At the end of each of its turns, the target can make another Constitution saving throw. On a success, the power ends on the target.</p>\n<p><strong><em>Overcharge Tech.</em></strong> When you cast this power using a tech slot of 6th level or higher, you can target one additional creature for each slot level above 5th. The creatures must be within 30 feet of each other when you target them.</p>",
@@ -101,8 +101,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "condition": "",
@@ -150,7 +150,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "5Npp1Tslz2TCzJrh",
@@ -161,7 +161,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

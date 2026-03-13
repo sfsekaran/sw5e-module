@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCLR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCLR-Passive.webp",
   "system": {
     "description": {
       "value": "<p>You have advantage on Wisdom (Perception) checks and Intelligence (Investigation) checks to locate any secret doors or traps, and you have resistance to damage dealt by traps.</p>\n<p>Additionally, you can use your Sage Advice feature to teach friendly creatures about various types of traps, following the same rules of that feature. When you do so, the chosen creatures have resistance to damage dealt by traps.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "dungeon-explorer",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1730433983637,
     "lastModifiedBy": "dnd5ebuilder0000"

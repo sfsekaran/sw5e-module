@@ -2,7 +2,7 @@
   "_id": "QXG3qUY1UcprheG5",
   "name": "Heroism",
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Force%20Powers/Heroism.webp",
+  "img": "modules/sw5e-module/icons/packs/Force%20Powers/Heroism.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -115,8 +115,8 @@
     },
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0heal0000000": {
+    "activities": [
+      {
         "_id": "sw5e0heal0000000",
         "activation": {
           "condition": "",
@@ -169,14 +169,14 @@
           ]
         }
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493979229,
     "modifiedTime": 1739121089377,

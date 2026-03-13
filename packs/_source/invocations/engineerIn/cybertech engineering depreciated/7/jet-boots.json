@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Bonus.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Bonus.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Prerequisite:</strong> 7th level</em></p>\n<p>You find tune your augmented boots to give you temporary, limited flight. Activating or deactivating the boots requires a bonus action and, while active, you have a flying speed of 30 feet. </p>\n<p>The rocket boots last for 1 minute before deactivating. Once the boots have been activated, they can't be activated again until you finish a short or long rest.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "bonus"
@@ -127,7 +127,7 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -137,7 +137,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288497262,
     "modifiedTime": 1739121094709,

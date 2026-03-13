@@ -1,7 +1,7 @@
 {
   "name": "Stintaril",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/124_-_Stintaril/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/124_-_Stintaril/Avatar.webp",
   "items": [
     {
       "name": "Keen Smell",
@@ -1061,7 +1061,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984617,
     "modifiedTime": 1720552779678,

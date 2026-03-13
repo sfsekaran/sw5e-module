@@ -15,7 +15,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Karkarodon.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Karkarodon.webp",
   "system": {
     "description": {
       "value": "<p>Your sharp teeth are a natural weapon, which you can use to make unarmed strikes. Additionally, your unarmed strikes deal [[/r 1d6]] kinetic damage. Lastly, as a bonus action, you can perform a special bite attack. On a hit, the target suffers the attack's normal effects, you gain temporary hit points equal to your Constitution modifier (minimum of 1), and you can't use this trait again until you finish a short or long rest.</p>",
@@ -36,8 +36,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0heal0000000": {
+    "activities": [
+      {
         "_id": "sw5e0heal0000000",
         "activation": {
           "type": "bonus"
@@ -73,7 +73,7 @@
         },
         "type": "heal"
       }
-    },
+    ],
     "identifier": "bite",
     "enchant": {},
     "prerequisites": {
@@ -92,7 +92,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1739121096233,
     "lastModifiedBy": "dnd5ebuilder0000"

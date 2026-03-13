@@ -1,7 +1,7 @@
 {
   "name": "Amphibious",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Monster%20Traits/Amphibious.webp",
+  "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Amphibious.webp",
   "system": {
     "description": {
       "value": "<p><span style=\"font-family:'Open Sans', sans-serif\">The {creature} can breathe air and water</span></p>",
@@ -96,7 +96,7 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1669745231483,
     "modifiedTime": 1720368816432,

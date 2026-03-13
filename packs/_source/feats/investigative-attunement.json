@@ -2,11 +2,11 @@
   "_id": "hnuTCyZGmYSNBvM1",
   "name": "Investigative Attunement",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/InvestigativeAttunement.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/InvestigativeAttunement.webp",
   "effects": [
     {
       "name": "Investigative Attunement",
-      "origin": "Compendium.sw5e.feats.Item.hnuTCyZGmYSNBvM1",
+      "origin": "Compendium.sw5e-module.feats.Item.hnuTCyZGmYSNBvM1",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -41,7 +41,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Feats/InvestigativeAttunement.webp",
+      "img": "modules/sw5e-module/icons/packs/Feats/InvestigativeAttunement.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -149,7 +149,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966816,
     "modifiedTime": 1730434333068,

@@ -1,7 +1,7 @@
 {
   "name": "Whirlpool (Costs 2 Actions)",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Monster%20Traits/Whirlpool.webp",
+  "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Whirlpool.webp",
   "effects": [],
   "flags": {},
   "system": {
@@ -101,7 +101,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1669755563699,
     "modifiedTime": 1720368816049,

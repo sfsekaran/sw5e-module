@@ -2,7 +2,7 @@
   "_id": "q5XpHt4TEi7JY4IM",
   "name": "Arrow, Electroshock",
   "type": "consumable",
-  "img": "modules/sw5e/icons/packs/Ammunition/Arrow-Electroshock.webp",
+  "img": "modules/sw5e-module/icons/packs/Ammunition/Arrow-Electroshock.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -116,8 +116,8 @@
     "enchantment": null,
     "summons": null,
     "magicalBonus": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -164,14 +164,14 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493956753,
     "modifiedTime": 1739121088254,

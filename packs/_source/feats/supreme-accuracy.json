@@ -2,11 +2,11 @@
   "_id": "m6W6X7kF1BP6YFoa",
   "name": "Supreme Accuracy",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/SupremeAccuracy.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/SupremeAccuracy.webp",
   "effects": [
     {
       "name": "Supreme Accuracy",
-      "origin": "Compendium.sw5e.feats.Item.m6W6X7kF1BP6YFoa",
+      "origin": "Compendium.sw5e-module.feats.Item.m6W6X7kF1BP6YFoa",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -41,7 +41,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Feats/SupremeAccuracy.webp",
+      "img": "modules/sw5e-module/icons/packs/Feats/SupremeAccuracy.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -149,7 +149,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966826,
     "modifiedTime": 1730434333168,

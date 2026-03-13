@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Ewok.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Ewok.webp",
   "system": {
     "description": {
       "value": "<p>Ewoks are used to making do with less. You can spend 1 hour, which you can do over the course of a short rest, crafting a weapon out of loose materials. You can craft any simple kinetic weapon, but the weapon's damage suffers a -1 penalty.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "crude-weapon-specialists",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1730433988012,
     "lastModifiedBy": "dnd5ebuilder0000"

@@ -2,7 +2,7 @@
   "_id": "xeUu9uKAzf6hL4C5",
   "name": "Stealthy Pattern (Favored)",
   "type": "modification",
-  "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
+  "img": "modules/sw5e-module/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -111,7 +111,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493999843,
     "modifiedTime": 1720368868134,

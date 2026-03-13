@@ -46,7 +46,7 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "13.350",
         "createdTime": null,
         "modifiedTime": 1760749055569,
@@ -63,7 +63,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "13.350",
     "createdTime": 1720368729318,
     "modifiedTime": 1738435205039,

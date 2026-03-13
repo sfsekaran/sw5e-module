@@ -1,7 +1,7 @@
 {
   "name": "Nightsister Hunter",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
   "items": [
     {
       "_id": "MmQ3NjBmMTFiM2E3",
@@ -14,7 +14,7 @@
           "order": 149
         }
       },
-      "img": "modules/sw5e/icons/packs/Monster%20Traits/Cunning%20Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Cunning%20Action.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -125,7 +125,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -236,7 +236,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -347,7 +347,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -458,7 +458,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -569,7 +569,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -680,7 +680,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/Monster%20Traits/Multiattack.webp",
+      "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Multiattack.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -791,7 +791,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -939,7 +939,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1087,7 +1087,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1235,7 +1235,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1346,7 +1346,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1457,7 +1457,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/386_-_Nightsister_Hunter/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1569,7 +1569,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.or5ZY4T4t1wJJ5ad"
+          "sourceId": "Compendium.sw5e-module.forcepowers.or5ZY4T4t1wJJ5ad"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
@@ -1673,7 +1673,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.or5ZY4T4t1wJJ5ad",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.or5ZY4T4t1wJJ5ad",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.ag1Asg8Fu8PN90pK"
@@ -1685,7 +1685,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.i1N033vPzDom3Kpj"
+          "sourceId": "Compendium.sw5e-module.forcepowers.i1N033vPzDom3Kpj"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -1792,7 +1792,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.i1N033vPzDom3Kpj",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.i1N033vPzDom3Kpj",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.uFMsixIMUBa7v5VZ"
@@ -1804,7 +1804,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.TLEOcYzzQWvAOWsT"
+          "sourceId": "Compendium.sw5e-module.forcepowers.TLEOcYzzQWvAOWsT"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -1813,7 +1813,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/Darkness.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/Darkness.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1911,7 +1911,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.TLEOcYzzQWvAOWsT",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.TLEOcYzzQWvAOWsT",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.O4RRVy1PIe9o45ZT"
@@ -1923,7 +1923,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.vRl7zVJ9XwndAme3"
+          "sourceId": "Compendium.sw5e-module.forcepowers.vRl7zVJ9XwndAme3"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -1932,7 +1932,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/DarkShear.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/DarkShear.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2030,7 +2030,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.vRl7zVJ9XwndAme3",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.vRl7zVJ9XwndAme3",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.VkVMydZ3WDnsswKh"
@@ -2042,13 +2042,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.XizLBCti6XKTlkmM"
+          "sourceId": "Compendium.sw5e-module.forcepowers.XizLBCti6XKTlkmM"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/DarkSideTendrils.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/DarkSideTendrils.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2151,7 +2151,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.XizLBCti6XKTlkmM",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.XizLBCti6XKTlkmM",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.pwA6J8njj36pDpoJ"
@@ -2163,7 +2163,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.KCVdYOoxu0kfkSCn"
+          "sourceId": "Compendium.sw5e-module.forcepowers.KCVdYOoxu0kfkSCn"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -2172,7 +2172,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/Affliction.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/Affliction.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2270,7 +2270,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.KCVdYOoxu0kfkSCn",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.KCVdYOoxu0kfkSCn",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.AzJaU7OXx6QgvA6t"
@@ -2282,7 +2282,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.sTszdhW4ezpqddJ8"
+          "sourceId": "Compendium.sw5e-module.forcepowers.sTszdhW4ezpqddJ8"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
@@ -2391,7 +2391,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.sTszdhW4ezpqddJ8",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.sTszdhW4ezpqddJ8",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.rTkslFR9Bhijel8p"
@@ -2403,13 +2403,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.ecDdTd9MW0z4h8Hb"
+          "sourceId": "Compendium.sw5e-module.forcepowers.ecDdTd9MW0z4h8Hb"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/SapVitality.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/SapVitality.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2512,7 +2512,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.ecDdTd9MW0z4h8Hb",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.ecDdTd9MW0z4h8Hb",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.iUES39IktOW80p6P"
@@ -2524,7 +2524,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.Jnzj1Relpil0dKs9"
+          "sourceId": "Compendium.sw5e-module.forcepowers.Jnzj1Relpil0dKs9"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -2533,7 +2533,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/Hex.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/Hex.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2636,7 +2636,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.Jnzj1Relpil0dKs9",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.Jnzj1Relpil0dKs9",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.Q5eHm7YYSDxIrsYA"
@@ -2648,7 +2648,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.Vsnr0aVZQIcRD0Ed"
+          "sourceId": "Compendium.sw5e-module.forcepowers.Vsnr0aVZQIcRD0Ed"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
@@ -2752,7 +2752,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.Vsnr0aVZQIcRD0Ed",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.Vsnr0aVZQIcRD0Ed",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.48eNjuJBWXRSweXy"
@@ -2764,7 +2764,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.haGnWeBa6QhTG9Dh"
+          "sourceId": "Compendium.sw5e-module.forcepowers.haGnWeBa6QhTG9Dh"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -2773,7 +2773,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/Fear.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/Fear.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2871,7 +2871,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.haGnWeBa6QhTG9Dh",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.haGnWeBa6QhTG9Dh",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.myYrLIracjgRrovk"
@@ -2883,13 +2883,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.maQoLsCcelDb2hWJ"
+          "sourceId": "Compendium.sw5e-module.forcepowers.maQoLsCcelDb2hWJ"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/Slow.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/Slow.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -2987,7 +2987,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.maQoLsCcelDb2hWJ",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.maQoLsCcelDb2hWJ",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.Rhsquaie7OClBILT"
@@ -2999,13 +2999,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.kNiT2BD3eIgE1zys"
+          "sourceId": "Compendium.sw5e-module.forcepowers.kNiT2BD3eIgE1zys"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/Force%20Push.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/Force%20Push.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -3108,7 +3108,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.kNiT2BD3eIgE1zys",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.kNiT2BD3eIgE1zys",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.LQxhwrLEUaqYO9mV"
@@ -3120,13 +3120,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.L8CJ1QEXfKztMyCX"
+          "sourceId": "Compendium.sw5e-module.forcepowers.L8CJ1QEXfKztMyCX"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/Enfeeble.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/Enfeeble.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -3229,7 +3229,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.L8CJ1QEXfKztMyCX",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.L8CJ1QEXfKztMyCX",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.ELwTj3NBhaR3zjAV"
@@ -3241,7 +3241,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.b2MvrTaXlisYe2A4"
+          "sourceId": "Compendium.sw5e-module.forcepowers.b2MvrTaXlisYe2A4"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -3250,7 +3250,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/AffectMind.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/AffectMind.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -3348,7 +3348,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.b2MvrTaXlisYe2A4",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.b2MvrTaXlisYe2A4",
         "duplicateSource": null
       },
       "_key": "!actors.items!XFzHGjR34lQ70yAl.VtKDRSwVn88QFpIg"
@@ -4047,7 +4047,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493968862,
     "modifiedTime": 1720552738896,

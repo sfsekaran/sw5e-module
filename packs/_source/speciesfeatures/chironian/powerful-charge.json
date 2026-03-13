@@ -15,7 +15,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Chironian.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Chironian.webp",
   "system": {
     "description": {
       "value": "<p>If you move at least 10 feet in a straight line before hitting with a melee weapon attack, you can attempt to trip the target prone as part of the same attack. Once you use this trait, you can't use it again until you finish a short or long rest.</p>",
@@ -36,8 +36,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "special"
@@ -61,7 +61,7 @@
         },
         "type": "utility"
       }
-    },
+    ],
     "identifier": "powerful-charge",
     "enchant": {},
     "prerequisites": {
@@ -80,7 +80,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1739121096233,
     "lastModifiedBy": "dnd5ebuilder0000"

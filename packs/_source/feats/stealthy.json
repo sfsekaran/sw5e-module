@@ -2,7 +2,7 @@
   "_id": "26Ds7w8yALtifDq1",
   "name": "Stealthy",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/Stealthy.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/Stealthy.webp",
   "effects": [
     {
       "_id": "UsFD1hC8pag7Ek5j",
@@ -47,7 +47,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Feats/Stealthy.webp",
+      "img": "modules/sw5e-module/icons/packs/Feats/Stealthy.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -155,7 +155,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966750,
     "modifiedTime": 1730434332368,

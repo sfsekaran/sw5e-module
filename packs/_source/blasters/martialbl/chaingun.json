@@ -50,8 +50,8 @@
       "revision": 1,
       "rules": "2024"
     },
-    "activities": {
-      "sw5e1save0000000": {
+    "activities": [
+      {
         "_id": "sw5e1save0000000",
         "activation": {
           "type": "action"
@@ -88,7 +88,7 @@
         "target": {},
         "type": "save"
       }
-    },
+    ],
     "properties": [
       "auto",
       "rapid",
@@ -163,7 +163,7 @@
     }
   },
   "type": "weapon",
-  "img": "modules/sw5e/icons/packs/Martial%20Blasters/Chaingun.webp",
+  "img": "modules/sw5e-module/icons/packs/Martial%20Blasters/Chaingun.webp",
   "effects": [],
   "_id": "7p0nNFUBhl4bZouX",
   "folder": null,
@@ -175,7 +175,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433881093,
     "modifiedTime": 1739121083882,
     "lastModifiedBy": "dnd5ebuilder0000"

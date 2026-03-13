@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCLR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCLR-Passive.webp",
   "system": {
     "description": {
       "value": "<p>If you or any friendly creatures you can touch regain hit points by spending one or more Hit Dice at the end of a short rest, each of those creatures regain [[/r 1d4]] extra hit points.</p>\n<p>This die increases when you reach certain levels in this class: [[/r 1d6]] at 5th level, [[/r 1d8]] at 9th level, [[/r 1d10]] at 13th level, and to [[/r 1d12]] at 17th level.</p>",
@@ -34,8 +34,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0heal0000000": {
+    "activities": [
+      {
         "_id": "sw5e0heal0000000",
         "activation": {
           "type": "action"
@@ -70,7 +70,7 @@
         },
         "type": "heal"
       }
-    },
+    ],
     "identifier": "tend-the-wounded",
     "enchant": {},
     "prerequisites": {
@@ -89,7 +89,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

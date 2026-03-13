@@ -2,7 +2,7 @@
   "_id": "ZlkbPjRCVsgvoB7I",
   "name": "Mandalorian Shuk'orok",
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Enhanced%20Items/MandalorianShukOrok.webp",
+  "img": "modules/sw5e-module/icons/packs/Enhanced%20Items/MandalorianShukOrok.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -159,7 +159,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493964771,
     "modifiedTime": 1730434227401,

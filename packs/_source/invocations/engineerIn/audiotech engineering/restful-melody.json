@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Passive.webp",
   "system": {
     "description": {
       "value": "<p>Over the course of a short rest, you can play a rejuvenating song to assist in the recovery of your allies. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest, each of those creatures regains an extra [[/r 1d6]] hit points.</p>\n<p>The extra hit points increase when you reach certain levels in this class: to [[/r 1d8]] at 9th level, to 1d 10 at 13th level, and to [[/r 1d12]] at 17th level.</p>",
@@ -34,8 +34,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0heal0000000": {
+    "activities": [
+      {
         "_id": "sw5e0heal0000000",
         "activation": {
           "type": "action"
@@ -70,7 +70,7 @@
         },
         "type": "heal"
       }
-    },
+    ],
     "identifier": "restful-melody",
     "enchant": {},
     "prerequisites": {
@@ -89,7 +89,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

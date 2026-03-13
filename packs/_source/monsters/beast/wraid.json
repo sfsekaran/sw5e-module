@@ -1,7 +1,7 @@
 {
   "name": "Wraid",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/139_-_Wraid/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/139_-_Wraid/Avatar.webp",
   "items": [
     {
       "_id": "NjMxNWNmZDRjOTZm",
@@ -9,7 +9,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/139_-_Wraid/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/139_-_Wraid/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -236,7 +236,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/139_-_Wraid/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/139_-_Wraid/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -384,7 +384,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/139_-_Wraid/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/139_-_Wraid/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1218,7 +1218,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984225,
     "modifiedTime": 1720552771159,

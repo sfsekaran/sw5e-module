@@ -227,7 +227,7 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["deployment"]
+          "types": ["feat"]
         }
       }
     },
@@ -513,7 +513,7 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["starship"]
+          "types": ["vehicle"]
         }
       }
     },
@@ -591,7 +591,7 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["starship"]
+          "types": ["feat"]
         }
       }
     },
@@ -835,7 +835,7 @@
     }
   ],
   "flags": {
-    "needsMigrationVersion": "0.18",
+    "needsMigrationVersion": "0.20",
     "compatibleMigrationVersion": "0"
   }
 }

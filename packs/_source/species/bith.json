@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Bith.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Bith.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Bith are craniopods with pale pink, yellow, or green skin, large heads, large lidless eyes, toeless feet, and long fingers. Their thumb and small finger were both fully opposable. The bith's internal systems are different from most humanoids, as the bith have only one lung, and exhale through their skin. Bith also lack a proper nose, instead having highly sensitive olfactory organs hidden in the skin-flaps of their cheeks.</p>\n<p>The other bith senses are also acute. Bith can sense the tonal qualities of sound as well as other species sensed colors. Their eyes, as big as a Menahuun's, can see microscopic details of nearby objects, but are extremely nearsighted as a result. An interesting side effect of their incredible sensors is the effect of sonic grenades, or screamers, on them. It is described as causing their heads to explode. Similarly, bith have high manual dexterity which helps them manipulate fine tools, though their physical prowess with gross motor skills was only average.</p>\n<h2>Society and Culture</h2>\n<p>Bith are one of the galaxy's most ancient civilizations, with a history going back millions of years. This antiquity garners respect in certain quarters, such as among the Gree, who gave them more respect than other, \"younger\" species. Their society is highly regimented, with everything from mate selection to political leadership controlled by sophisticated computer programs.</p>\n<h2>Names</h2>\n<p>Bith names are quite diverse. Some names look complicated and difficult to pronounce, while others are quite simple. </p>\n<p><strong>Male Names.</strong> Fedu, Jenkiss, Kabadons, Ph'teumkiass </p>\n<p><strong>Female Names.</strong> Duhia, F'hubama, R'hothal, Thidus </p>\n<p><strong>Surnames.</strong> D'intes, Hern, K'sarorn, Nimum, Rumo</p>",
@@ -47,51 +47,51 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Z7z1emxZvZscX5CN",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Z7z1emxZvZscX5CN",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ZXaYuRCIU8SJxJMM",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ZXaYuRCIU8SJxJMM",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.8HAV6Ox6FWLdYscJ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.8HAV6Ox6FWLdYscJ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.jyQ3Hk1DQ09NaBiD",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.jyQ3Hk1DQ09NaBiD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.DiFJrpZu1vMypFz8",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.DiFJrpZu1vMypFz8",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.VJ01DX9sqml8agYy",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.VJ01DX9sqml8agYy",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.qyyl9oRnGI8EJTZ2",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.qyyl9oRnGI8EJTZ2",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.seNRJ4TVlIjESYiz",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.seNRJ4TVlIjESYiz",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ZutKKApGDMyMGUpW",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ZutKKApGDMyMGUpW",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.wkzv6fs6XjNi1rWj",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.wkzv6fs6XjNi1rWj",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.rM4fBgjBSTtkX2pH",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.rM4fBgjBSTtkX2pH",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.7g5s0hu03dgRw8Ke",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.7g5s0hu03dgRw8Ke",
               "optional": false
             }
           ],
@@ -221,10 +221,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.6tVXIOLALv7F5F4k.ActiveEffect.064LQEqCktTG9phA"
+          "sourceId": "Compendium.sw5e-module.species.Item.6tVXIOLALv7F5F4k.ActiveEffect.064LQEqCktTG9phA"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.6tVXIOLALv7F5F4k",
+      "origin": "Compendium.sw5e-module.species.Item.6tVXIOLALv7F5F4k",
       "name": "Detail Oriented - within 5 feet",
       "description": "",
       "statuses": [],
@@ -238,7 +238,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Bith.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Bith.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -268,10 +268,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.6tVXIOLALv7F5F4k.ActiveEffect.064LQEqCktTG9phA"
+          "sourceId": "Compendium.sw5e-module.species.Item.6tVXIOLALv7F5F4k.ActiveEffect.064LQEqCktTG9phA"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.6tVXIOLALv7F5F4k",
+      "origin": "Compendium.sw5e-module.species.Item.6tVXIOLALv7F5F4k",
       "name": "Keen Hearing and Smell",
       "description": "",
       "statuses": [],
@@ -285,7 +285,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Bith.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Bith.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -300,7 +300,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725514,

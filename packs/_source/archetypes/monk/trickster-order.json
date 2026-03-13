@@ -2,7 +2,7 @@
   "_id": "UJqZNuqSlZ1UCquY",
   "name": "Trickster Order",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/TricksterOrder.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/TricksterOrder.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,7 +29,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.iFyPNVa8WuaCHsMd",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.iFyPNVa8WuaCHsMd",
               "optional": false
             }
           ],
@@ -46,7 +46,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.pFk2J0WRFv0fcy08",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.pFk2J0WRFv0fcy08",
               "optional": false
             }
           ],
@@ -63,7 +63,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.KyvGuAtpEHp2rQTg",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.KyvGuAtpEHp2rQTg",
               "optional": false
             }
           ],
@@ -80,7 +80,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.WtSaGz0yfKeuVPZQ",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.WtSaGz0yfKeuVPZQ",
               "optional": false
             }
           ],
@@ -121,7 +121,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959750,
     "modifiedTime": 1732304669219,

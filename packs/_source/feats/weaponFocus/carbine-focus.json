@@ -2,11 +2,11 @@
   "_id": "NVg0sxmTSLXP8xJ9",
   "name": "Carbine Focus",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/CarbineFocus.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/CarbineFocus.webp",
   "effects": [
     {
       "name": "Carbine Focus",
-      "origin": "Compendium.sw5e.feats.Item.NVg0sxmTSLXP8xJ9",
+      "origin": "Compendium.sw5e-module.feats.Item.NVg0sxmTSLXP8xJ9",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -149,8 +149,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -184,14 +184,14 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966790,
     "modifiedTime": 1739121097153,

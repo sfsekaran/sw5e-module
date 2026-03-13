@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Aleena.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Aleena.webp",
   "system": {
     "description": {
       "value": "<p>You can take the Disengage or Hide action as a bonus action on each of its turns.</p>",
@@ -34,8 +34,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "bonus"
@@ -59,7 +59,7 @@
         },
         "type": "utility"
       }
-    },
+    ],
     "identifier": "nimble-escape",
     "enchant": {},
     "prerequisites": {
@@ -78,7 +78,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1739121096233,
     "lastModifiedBy": "dnd5ebuilder0000"

@@ -2,7 +2,7 @@
   "_id": "z0L4BB8paHS2eV3m",
   "name": "Frenzied Approach",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/FrenziedApproach.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/FrenziedApproach.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.l5vfYRFvCWoTbcpv",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.l5vfYRFvCWoTbcpv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.4rYFYNq25QmWn0N2",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.4rYFYNq25QmWn0N2",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.4PEXkYT9cwVAsCEm",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.4PEXkYT9cwVAsCEm",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.tEVh58kiI7VKmor0",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.tEVh58kiI7VKmor0",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.0NxbCrcn4Ty81wWf",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.0NxbCrcn4Ty81wWf",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959786,
     "modifiedTime": 1732304669745,

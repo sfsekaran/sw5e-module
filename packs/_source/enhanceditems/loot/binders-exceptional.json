@@ -40,7 +40,7 @@
     "properties": []
   },
   "type": "loot",
-  "img": "modules/sw5e/icons/packs/Utility/Binders.webp",
+  "img": "modules/sw5e-module/icons/packs/Utility/Binders.webp",
   "effects": [],
   "_id": "N1hBlrP6UBIcEu53",
   "folder": null,
@@ -52,7 +52,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433915469,
     "modifiedTime": 1730434218842,
     "lastModifiedBy": "dnd5ebuilder0000"

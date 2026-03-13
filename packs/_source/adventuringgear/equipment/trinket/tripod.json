@@ -2,7 +2,7 @@
   "_id": "IWseEGTvs3qENU8b",
   "name": "Tripod",
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Tripod.webp",
+  "img": "modules/sw5e-module/icons/packs/Weapon%20or%20Armor%20Accessory/Tripod.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -161,7 +161,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493956133,
     "modifiedTime": 1727354894206,

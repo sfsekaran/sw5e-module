@@ -1,7 +1,7 @@
 {
   "name": "Trooper, Shore",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/041_-_Trooper_2C_Shore/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/041_-_Trooper_2C_Shore/Avatar.webp",
   "items": [
     {
       "_id": "MDdhMThmY2E0MDUz",
@@ -178,7 +178,7 @@
           "teleDist": 30
         }
       },
-      "img": "modules/sw5e/icons/packs/monsters/041_-_Trooper_2C_Shore/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/041_-_Trooper_2C_Shore/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -326,7 +326,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/041_-_Trooper_2C_Shore/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/041_-_Trooper_2C_Shore/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -532,7 +532,7 @@
           "teleDist": 30
         }
       },
-      "img": "modules/sw5e/icons/packs/monsters/041_-_Trooper_2C_Shore/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/041_-_Trooper_2C_Shore/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -650,7 +650,7 @@
       "_id": "AXeBiEaJL9pVFX0V",
       "name": "Battle armor",
       "type": "equipment",
-      "img": "modules/sw5e/icons/packs/Armor/PHB/BattleArmor.webp",
+      "img": "modules/sw5e-module/icons/packs/Armor/PHB/BattleArmor.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -810,7 +810,7 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": 1674493960313,
         "modifiedTime": 1674582004871,
@@ -1514,7 +1514,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984133,
     "modifiedTime": 1720552768170,

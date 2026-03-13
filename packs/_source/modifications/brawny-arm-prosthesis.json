@@ -8,7 +8,7 @@
     }
   },
   "type": "modification",
-  "img": "modules/sw5e/icons/packs/Modifications/CyberneticMod.webp",
+  "img": "modules/sw5e-module/icons/packs/Modifications/CyberneticMod.webp",
   "effects": [],
   "system": {
     "description": {
@@ -110,7 +110,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1673970648616,
     "modifiedTime": 1720368839157,

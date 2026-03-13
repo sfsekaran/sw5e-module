@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCLR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCLR-Passive.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Prerequisite:</strong> Size Small or smaller beast</em></p>\n<p>Rather than a single beast companion, you instead control multiple beasts that function as a swarm. Your beast companion gains the following benefits:</p>\n<ul>\n<li>Its effective size increases by two categories (from Tiny to Medium or Small to Large).</li>\n<li>Its hit points increase by an amount equal to twice its level + 2.</li>\n<li>It can only be mounted by creatures at least three size categories smaller than it, instead of one.</li>\n<li>It can occupy another creature's space and vice versa, and it can move through any opening large enough for a creature two size categories smaller than it.</li>\n<li>While it is above half its hit point maximum, when it takes the Attack action, it can make an additional attack. If the creature has the Extra Attack feature, this attack is in addition to the attack granted by that feature.</li></ul>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "the-more-the-merrier",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1730434304883,
     "lastModifiedBy": "dnd5ebuilder0000"

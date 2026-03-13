@@ -2,7 +2,7 @@
   "_id": "1xihjITntU4T6OfP",
   "name": "Artificer Engineering",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/ArtificerEngineering.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/ArtificerEngineering.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.wH3nQugJ2IRpvwn0",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.wH3nQugJ2IRpvwn0",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.fg3RcbfPcrM3qEvx",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.fg3RcbfPcrM3qEvx",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.JcTBEgOPZKDHv4Kk",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.JcTBEgOPZKDHv4Kk",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ngkilkFnGa9bvYPe",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ngkilkFnGa9bvYPe",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.NqkOB6YZfthk3RhW",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.NqkOB6YZfthk3RhW",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.anG6PYbYVwOsIPCc",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.anG6PYbYVwOsIPCc",
               "optional": false
             }
           ],
@@ -148,70 +148,70 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.N1MqrVB6z8cRmIWX"
+              "uuid": "Compendium.sw5e-module.invocations.N1MqrVB6z8cRmIWX"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.BPFBtkWD0RKPEITL"
+              "uuid": "Compendium.sw5e-module.invocations.BPFBtkWD0RKPEITL"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.4pWcO0OsRziug7Tf"
+              "uuid": "Compendium.sw5e-module.invocations.4pWcO0OsRziug7Tf"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.W6fh25j3AC7bevXH"
+              "uuid": "Compendium.sw5e-module.invocations.W6fh25j3AC7bevXH"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.sfObiRVLEFDvkoLO"
+              "uuid": "Compendium.sw5e-module.invocations.sfObiRVLEFDvkoLO"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.d2Yynsa6QLDwVfgL"
+              "uuid": "Compendium.sw5e-module.invocations.d2Yynsa6QLDwVfgL"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.IqFiTCEVYci4gzYl"
+              "uuid": "Compendium.sw5e-module.invocations.IqFiTCEVYci4gzYl"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.hCChTicybF1r7tRJ"
+              "uuid": "Compendium.sw5e-module.invocations.hCChTicybF1r7tRJ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.iI5dkejW5tFs6ZqZ"
+              "uuid": "Compendium.sw5e-module.invocations.iI5dkejW5tFs6ZqZ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.jCOBrTSonnxvzjWQ"
+              "uuid": "Compendium.sw5e-module.invocations.jCOBrTSonnxvzjWQ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.ic3oXLPo2gimphCe"
+              "uuid": "Compendium.sw5e-module.invocations.ic3oXLPo2gimphCe"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.1DmOm3yYFdEhLFxP"
+              "uuid": "Compendium.sw5e-module.invocations.1DmOm3yYFdEhLFxP"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.UYIudeDzTlFQaOfH"
+              "uuid": "Compendium.sw5e-module.invocations.UYIudeDzTlFQaOfH"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.7v7yocgPoSakCvMe"
+              "uuid": "Compendium.sw5e-module.invocations.7v7yocgPoSakCvMe"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.hzvDQCRxrdccSBfS"
+              "uuid": "Compendium.sw5e-module.invocations.hzvDQCRxrdccSBfS"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.SLo4rTYxxUGUBkSn"
+              "uuid": "Compendium.sw5e-module.invocations.SLo4rTYxxUGUBkSn"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.nurOoILw6W4Q47aa"
+              "uuid": "Compendium.sw5e-module.invocations.nurOoILw6W4Q47aa"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.AFVy87jldNgtLDqc"
+              "uuid": "Compendium.sw5e-module.invocations.AFVy87jldNgtLDqc"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.foFN496BcC88eKUH"
+              "uuid": "Compendium.sw5e-module.invocations.foFN496BcC88eKUH"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.fLUS3NmJmFYmg7Bq"
+              "uuid": "Compendium.sw5e-module.invocations.fLUS3NmJmFYmg7Bq"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.7QTbSDO3YHgUSWws"
+              "uuid": "Compendium.sw5e-module.invocations.7QTbSDO3YHgUSWws"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.5KjViHaVDkRYumeT"
+              "uuid": "Compendium.sw5e-module.invocations.5KjViHaVDkRYumeT"
             }
           ],
           "restriction": {
@@ -242,7 +242,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959706,
     "modifiedTime": 1732304668493,

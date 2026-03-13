@@ -313,11 +313,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.mCxdqUjDPAo38JTt",
+              "uuid": "Compendium.sw5e-module.classfeatures.mCxdqUjDPAo38JTt",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.fGsRWj9oEKcrukw6",
+              "uuid": "Compendium.sw5e-module.classfeatures.fGsRWj9oEKcrukw6",
               "optional": false
             }
           ],
@@ -334,11 +334,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.CBf0Ynl0NuA2z7sl",
+              "uuid": "Compendium.sw5e-module.classfeatures.CBf0Ynl0NuA2z7sl",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.mX2O4be5m3rPokOa",
+              "uuid": "Compendium.sw5e-module.classfeatures.mX2O4be5m3rPokOa",
               "optional": false
             }
           ],
@@ -355,7 +355,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.shyd8NefpiwSPqof",
+              "uuid": "Compendium.sw5e-module.classfeatures.shyd8NefpiwSPqof",
               "optional": false
             }
           ],
@@ -372,7 +372,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.f1XeMafaqejD02MW",
+              "uuid": "Compendium.sw5e-module.classfeatures.f1XeMafaqejD02MW",
               "optional": false
             }
           ],
@@ -386,72 +386,10 @@
       },
       {
         "_id": "sw5e18ic00000000",
-        "configuration": {
-          "allowDrops": true,
-          "choices": {
-            "3": {
-              "count": 1,
-              "replacement": false
-            }
-          },
-          "pool": [
-            {
-              "uuid": "Compendium.sw5e.archetypes.DSaorO1E42ZAoYko"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.ozOP9vSQ4uwXFdGQ"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.TkSzn6cSCBsySMql"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.80auw3hdVYZAXGtr"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.1xihjITntU4T6OfP"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.p5sUTfZ2GnjkmpdC"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.QHBh0MLldjImDdoX"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.4WitHCdI0QiCuS8A"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.DAq5ZmQ6aQ88Q9oI"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.FaKY07usa5nH8I08"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.f7POhRSg0x4UXp1i"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.Y8uZyqAuOWmUZEDP"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.O3vgskHkhroUKBaZ"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.iHC7hyf1Zr3Q4hDF"
-            }
-          ],
-          "restriction": {
-            "level": "",
-            "subtype": "",
-            "type": ""
-          },
-          "type": "subclass",
-          "spell": null
-        },
+        "configuration": {},
         "title": "Engineering Disciplines",
-        "type": "ItemChoice",
-        "value": {
-          "added": {},
-          "replaced": {}
-        },
+        "type": "Subclass",
+        "value": {},
         "hint": "Each discipline focuses on maximizing the personal use of a certain tool. Your discipline grants you features at 3rd, 6th, 14th, and 18th level."
       }
     ],
@@ -469,7 +407,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493961827,
     "modifiedTime": 1732453663682,

@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Killik.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Killik.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Killiks possess a strong chitinous exoskeleton that is glossy and greenish with their carcasses capable of surviving thousands of years of erosion as seen by the colonists of Alderaan. The exoskeleton also contains a number of spiracles which served as their way of breathing. Typically, these Human-sized hive creatures have four arms with each ending in a powerful three-fingered claw. They stand on two stout legs that are capable of leaping great distances. Killiks can communicate with other Killiks through use of pheromones.</p>\n<h2>Society and Culture</h2>\n<p>The Killiks have a communal society, with each and every Killik being in mental contact with another. Due to their hive mind, every Killik nest is virtually one individual. Killiks are also peaceful in nature. Their telepathic connection is capable of extending to other species which includes non-insectoids. A willing creature can submit to this telepathy to become a Joiner. They effectively become another vessel of the hive mind.</p>\n<p>Killiks lose connection to their hive mind at great distances. Those who voluntarily leave the hive mind are referred to as Leavers. It is rare that they are allowed to rejoin their hive without reason.</p>\n<h2>Names</h2>\n<p>Killiks are a hive-mind insectoid that typically don't use names. On the offchance they do, it's usually an incomprehensible series of clicking noises. They are receptive to nicknames given by others.</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.u9HekjgkltYdkgH1",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.u9HekjgkltYdkgH1",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.c4tSfmBn4s7N7LI9",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.c4tSfmBn4s7N7LI9",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Do5jVZp58DGZ0bLk",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Do5jVZp58DGZ0bLk",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.lKafyQ8e1NczhqVR",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.lKafyQ8e1NczhqVR",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.2E9nXOjEwesKLiM2",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.2E9nXOjEwesKLiM2",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.teFuNa21IujkctDU",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.teFuNa21IujkctDU",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.3T74GEc6qLw8QcXv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.3T74GEc6qLw8QcXv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.riGrR9WMmt8bc2vL",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.riGrR9WMmt8bc2vL",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.v87yKtB5QVez4DNx",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.v87yKtB5QVez4DNx",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.gfGoD48MqtoAoV69",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.gfGoD48MqtoAoV69",
               "optional": false
             }
           ],
@@ -211,7 +211,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Killik.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Killik.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -226,7 +226,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725606,

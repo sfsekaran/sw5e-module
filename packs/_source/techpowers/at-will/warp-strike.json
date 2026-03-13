@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/WarpStrike.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/WarpStrike.webp",
   "system": {
     "description": {
       "value": "<p>As part of the action used to cast this power, you must make a melee weapon attack against one creature within your reach, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and you can teleport to an unoccupied space of your choice within 10 feet of you. If you teleport to a space within 5 feet of the target, the target cannot take reactions until the end of its next turn.</p>\n<p>This power's damage increases when you reach higher levels. At 5th level, the melee attack deals an extra [[/r 1d6]] energy damage to the target. This extra energy damage increases to [[/r 2d6]] at 11th level and [[/r 3d6]] at 17th level.</p>",
@@ -99,8 +99,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -127,7 +127,7 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "q01R3ybJCEs8E01B",
@@ -138,7 +138,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

@@ -1,7 +1,7 @@
 {
   "name": "Flesh Raider",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/003_-_Flesh_Raider/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/003_-_Flesh_Raider/Avatar.webp",
   "items": [
     {
       "_id": "NjA1N2YzYTFlMmY2",
@@ -9,7 +9,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/003_-_Flesh_Raider/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/003_-_Flesh_Raider/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -157,7 +157,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/003_-_Flesh_Raider/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/003_-_Flesh_Raider/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -993,7 +993,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984329,
     "modifiedTime": 1720552774570,

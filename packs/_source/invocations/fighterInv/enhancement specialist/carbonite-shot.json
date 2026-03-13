@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/FGTR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/FGTR-Passive.webp",
   "system": {
     "description": {
       "value": "<p>When this shot strikes its target, shards of carbonite wrap around the target. The creature hit by the shot takes an extra [[/r 2d6]] cold damage, it gains 1 slowed level, and it takes [[/r 2d6]] kinetic damage the first time on each turn it moves 1 foot or more without teleporting. The target or any creature that can reach it can use its action to remove the carbonite with a successful Strength (Athletics) check against your Special Ammunition save DC. Otherwise, the carbonite lasts for 1 minute or until you use this option again.</p>\n<p>The cold damage and kinetic damage both increase to [[/r 4d6]] when you reach 18th level in this class.</p>",
@@ -34,8 +34,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "type": "action"
@@ -92,7 +92,7 @@
         },
         "type": "damage"
       }
-    },
+    ],
     "identifier": "carbonite-shot",
     "enchant": {},
     "prerequisites": {
@@ -111,7 +111,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

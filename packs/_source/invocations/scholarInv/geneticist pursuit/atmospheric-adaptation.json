@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCLR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCLR-Passive.webp",
   "system": {
     "description": {
       "value": "<p>You can breathe air and water. When you undergo your mutagenic transformation, you no longer need to breathe, and you can survive up to one hour within the vacuum of space for the duration.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "atmospheric-adaptation",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1730433983637,
     "lastModifiedBy": "dnd5ebuilder0000"

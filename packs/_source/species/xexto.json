@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Xexto.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Xexto.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Xexto are spindly invertebrates with four arms with six fingers and two legs with ten toes. Almond-shaped eyes dominate a small head perched atop a long neck. Their brain is split between two parts of their body; the part located in the skull controls primitive emotions and basic body functions, while another portion in their chest controls higher functions such as creative thinking and logic. It's believed that xexto's body structure and lightning-fast reflexes developed to help them escape predators while pursuing their own prey, there is no question that genetic manipulation forever altered their evolutionary development.</p>\n<h2>Society and Culture</h2>\n<p>Although the Old Republic had long since outlawed experimentation on sentient beings, unscrupulous arkanian geneticists continued to search for primitive sentients on distant planets as fodder for their experiments. One such group found the xexto's forbears- a society of loosely organized hunter-gatherer tribes taking shelter in the trees of Troiken. Independently, they developed technologically advanced civilizations, and were on the verge of attaining interstellar travel when Republic scouts contacted them. Difficult terrain and dangerous predators found on their homeworld have led many Xexto to admire and encourage risk-taking. Despite their thrillseeking nature and willingness to take risks, xexto are generally well mannered and even-tempered. Questioning a Xexto's bravery is one way to make him or her angry. </p>\n<h2>Names</h2>\n<p>Xexto have very unique names, often sounding odd to outsiders. Surnames are familiar but optional.</p>\n<p><strong>First Names.</strong> Babading, Cicity, Gastoro, Maila, Qinla</p>\n<p><strong>Surnames.</strong> Cherum, Hevad, Qatabas, Riived, Serap</p>",
@@ -47,59 +47,59 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.4T3eyn5XgwnhGjcO",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.4T3eyn5XgwnhGjcO",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.GCdkoHm8RwzLzHSU",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.GCdkoHm8RwzLzHSU",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Kk40sx8Nkarct80z",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Kk40sx8Nkarct80z",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.CmhA72bgzfINCjTy",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.CmhA72bgzfINCjTy",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.uHTBGLGQNURqwQNt",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.uHTBGLGQNURqwQNt",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.gXmYF5oDoJsiYKL4",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.gXmYF5oDoJsiYKL4",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.tTtNQGQXXklxMpG3",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.tTtNQGQXXklxMpG3",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.SmbQVGNNGggyOIeK",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.SmbQVGNNGggyOIeK",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.sCXBXWvpJlPUW55P",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.sCXBXWvpJlPUW55P",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ybwvZUYPYTCRVLbc",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ybwvZUYPYTCRVLbc",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.wWcQ7XuW87DZ3BCz",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.wWcQ7XuW87DZ3BCz",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.O761bSWk6QKFDKPF",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.O761bSWk6QKFDKPF",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.m0vc7lzjkuwsooFS",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.m0vc7lzjkuwsooFS",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.8nHpe8TRlkBKlQlx",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.8nHpe8TRlkBKlQlx",
               "optional": false
             }
           ],
@@ -215,7 +215,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304724661,

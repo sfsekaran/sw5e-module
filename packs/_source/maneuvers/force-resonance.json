@@ -1,8 +1,8 @@
 {
   "_id": "FzA54VwDPZHw6CXe",
   "name": "Force Resonance",
-  "type": "sw5e.maneuver",
-  "img": "modules/sw5e/icons/packs/Maneuvers/ForceResonance.webp",
+  "type": "sw5e-module.maneuver",
+  "img": "modules/sw5e-module/icons/packs/Maneuvers/ForceResonance.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -109,8 +109,8 @@
       "value": null,
       "charged": false
     },
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "type": "action"
@@ -171,14 +171,14 @@
         },
         "type": "damage"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493983280,
     "modifiedTime": 1739121090591,

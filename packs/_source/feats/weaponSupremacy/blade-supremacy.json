@@ -2,11 +2,11 @@
   "_id": "PRt3Mf8aQAJuSEW3",
   "name": "Blade Supremacy",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/BladeSupremacy.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/BladeSupremacy.webp",
   "effects": [
     {
       "name": "Blade Supremacy",
-      "origin": "Compendium.sw5e.feats.Item.PRt3Mf8aQAJuSEW3",
+      "origin": "Compendium.sw5e-module.feats.Item.PRt3Mf8aQAJuSEW3",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -161,8 +161,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "bonus"
@@ -195,14 +195,14 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966794,
     "modifiedTime": 1739121097153,

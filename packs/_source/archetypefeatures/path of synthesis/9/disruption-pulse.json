@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SNTL-ARCH-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SNTL-ARCH-Action.webp",
   "system": {
     "description": {
       "value": "<p>As an action, you can send out a 30 foot cone of electromagnetically-charged energy to overload enemy weapons. Each creature within the cone that is wearing or carrying a weapon with electric components must make an Intelligence saving throw. If the weapon is being worn, this save is made with disadvantage. On a failed save, the first attack they attempt to make with that weapon has disadvantage. A creature with multiple weapons must make a separate save for each weapon.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -135,7 +135,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -145,7 +145,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1679683269100,
     "modifiedTime": 1739121092781,

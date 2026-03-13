@@ -2,7 +2,7 @@
   "_id": "HZoMZHR1zsF7xHEY",
   "name": "Alpha-Class Arc Trooper",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
   "items": [
     {
       "_id": "NmM3Yzc0MTk4OTJj",
@@ -10,7 +10,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/Monster%20Traits/Brave.webp",
+      "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Brave.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -105,7 +105,7 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1669838408677,
@@ -121,7 +121,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -237,7 +237,7 @@
           "order": 149
         }
       },
-      "img": "modules/sw5e/icons/packs/Monster%20Traits/Cunning%20Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Cunning%20Action.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -332,7 +332,7 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1669838514925,
@@ -348,7 +348,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -459,7 +459,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -570,7 +570,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/Monster%20Traits/Multiattack.webp",
+      "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Multiattack.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -665,7 +665,7 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1669838390274,
@@ -681,7 +681,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -797,7 +797,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -897,7 +897,7 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1669837711248,
@@ -913,7 +913,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1029,7 +1029,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1140,7 +1140,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1254,7 +1254,7 @@
       "_id": "8RhSS8IuIvjUbRNh",
       "name": "WESTAR-M5 Blaster Rifle",
       "type": "weapon",
-      "img": "modules/sw5e/icons/packs/Martial%20Blasters/BlasterRifle.webp",
+      "img": "modules/sw5e-module/icons/packs/Martial%20Blasters/BlasterRifle.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -1262,7 +1262,7 @@
         "timestamp": "2022-05-14T22:39:42.1367211+00:00",
         "uid": "Weapon.name-blaster_rifle.equipmentCategory-weapon",
         "core": {
-          "sourceId": "Compendium.sw5e.blasters.Nww9kzfPy9D246fg"
+          "sourceId": "Compendium.sw5e-module.blasters.Nww9kzfPy9D246fg"
         }
       },
       "system": {
@@ -1398,12 +1398,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1669833715930,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.blasters.Nww9kzfPy9D246fg",
+        "compendiumSource": "Compendium.sw5e-module.blasters.Nww9kzfPy9D246fg",
         "duplicateSource": null
       },
       "_key": "!actors.items!HZoMZHR1zsF7xHEY.8RhSS8IuIvjUbRNh"
@@ -1412,7 +1412,7 @@
       "_id": "haW8vAHZsNH6NH97",
       "name": "Power cell",
       "type": "consumable",
-      "img": "modules/sw5e/icons/packs/Ammunition/PowerCell.webp",
+      "img": "modules/sw5e-module/icons/packs/Ammunition/PowerCell.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -1420,7 +1420,7 @@
         "timestamp": "2022-05-14T22:39:42.3396312+00:00",
         "uid": "Consumable.name-power_cell.equipmentCategory-ammunition",
         "core": {
-          "sourceId": "Compendium.sw5e.ammo.oeJaLYngzLX0x6Yj"
+          "sourceId": "Compendium.sw5e-module.ammo.oeJaLYngzLX0x6Yj"
         }
       },
       "system": {
@@ -1521,12 +1521,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1669833727237,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.ammo.oeJaLYngzLX0x6Yj",
+        "compendiumSource": "Compendium.sw5e-module.ammo.oeJaLYngzLX0x6Yj",
         "duplicateSource": null
       },
       "_key": "!actors.items!HZoMZHR1zsF7xHEY.haW8vAHZsNH6NH97"
@@ -1535,7 +1535,7 @@
       "_id": "KCPSomhFNeMFLHC6",
       "name": "Hidden blade",
       "type": "weapon",
-      "img": "modules/sw5e/icons/packs/Martial%20Vibroweapons/HiddenBlade.webp",
+      "img": "modules/sw5e-module/icons/packs/Martial%20Vibroweapons/HiddenBlade.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -1543,7 +1543,7 @@
         "timestamp": "2022-05-14T22:39:42.1427196+00:00",
         "uid": "Weapon.name-hidden_blade.equipmentCategory-weapon",
         "core": {
-          "sourceId": "Compendium.sw5e.vibroweapons.cmb8tlOI7j4wnfPi"
+          "sourceId": "Compendium.sw5e-module.vibroweapons.cmb8tlOI7j4wnfPi"
         }
       },
       "system": {
@@ -1683,7 +1683,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.vibroweapons.cmb8tlOI7j4wnfPi",
+        "compendiumSource": "Compendium.sw5e-module.vibroweapons.cmb8tlOI7j4wnfPi",
         "duplicateSource": null
       },
       "_key": "!actors.items!HZoMZHR1zsF7xHEY.KCPSomhFNeMFLHC6"
@@ -1692,7 +1692,7 @@
       "_id": "wOBBl4l5btVOS8hz",
       "name": "Blaster rifle",
       "type": "weapon",
-      "img": "modules/sw5e/icons/packs/Martial%20Blasters/BlasterRifle.webp",
+      "img": "modules/sw5e-module/icons/packs/Martial%20Blasters/BlasterRifle.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -1700,7 +1700,7 @@
         "timestamp": "2022-05-14T22:39:42.1367211+00:00",
         "uid": "Weapon.name-blaster_rifle.equipmentCategory-weapon",
         "core": {
-          "sourceId": "Compendium.sw5e.blasters.Nww9kzfPy9D246fg"
+          "sourceId": "Compendium.sw5e-module.blasters.Nww9kzfPy9D246fg"
         },
         "sw5e": {
           "properties": {
@@ -1847,7 +1847,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.blasters.Nww9kzfPy9D246fg",
+        "compendiumSource": "Compendium.sw5e-module.blasters.Nww9kzfPy9D246fg",
         "duplicateSource": null
       },
       "_key": "!actors.items!HZoMZHR1zsF7xHEY.wOBBl4l5btVOS8hz"
@@ -1856,7 +1856,7 @@
       "_id": "gxZabtCIR4UBdQC1",
       "name": "WESTAR-M5 Grenade launcher",
       "type": "weapon",
-      "img": "modules/sw5e/icons/packs/Martial%20Blasters/GrenadeLauncher.webp",
+      "img": "modules/sw5e-module/icons/packs/Martial%20Blasters/GrenadeLauncher.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -1864,7 +1864,7 @@
         "timestamp": "2022-05-14T22:39:52.2852071+00:00",
         "uid": "Weapon.name-grenade_launcher.equipmentCategory-weapon",
         "core": {
-          "sourceId": "Compendium.sw5e.blasters.1PtYUVAzIi5e2x4H"
+          "sourceId": "Compendium.sw5e-module.blasters.1PtYUVAzIi5e2x4H"
         }
       },
       "system": {
@@ -1995,12 +1995,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1669837637336,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.blasters.1PtYUVAzIi5e2x4H",
+        "compendiumSource": "Compendium.sw5e-module.blasters.1PtYUVAzIi5e2x4H",
         "duplicateSource": null
       },
       "_key": "!actors.items!HZoMZHR1zsF7xHEY.gxZabtCIR4UBdQC1"
@@ -2009,7 +2009,7 @@
       "_id": "QSdrcGkk6rYhYXuI",
       "name": "Grenade, ion",
       "type": "consumable",
-      "img": "modules/sw5e/icons/packs/Explosive/Grenade-Ion.webp",
+      "img": "modules/sw5e-module/icons/packs/Explosive/Grenade-Ion.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -2017,7 +2017,7 @@
         "timestamp": "2022-10-18T11:20:58.4698113+00:00",
         "uid": "Consumable.name-grenade_ion.equipmentCategory-explosive",
         "core": {
-          "sourceId": "Compendium.sw5e.explosives.e9q98fk95j13iWOt"
+          "sourceId": "Compendium.sw5e-module.explosives.e9q98fk95j13iWOt"
         }
       },
       "system": {
@@ -2123,12 +2123,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": 1669837742067,
         "modifiedTime": 1669837854302,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.explosives.e9q98fk95j13iWOt",
+        "compendiumSource": "Compendium.sw5e-module.explosives.e9q98fk95j13iWOt",
         "duplicateSource": null
       },
       "_key": "!actors.items!HZoMZHR1zsF7xHEY.QSdrcGkk6rYhYXuI"
@@ -2137,7 +2137,7 @@
       "_id": "UshsKBNULxOdn0z1",
       "name": "Composite armor",
       "type": "equipment",
-      "img": "modules/sw5e/icons/packs/Armor/PHB/CompositeArmor.webp",
+      "img": "modules/sw5e-module/icons/packs/Armor/PHB/CompositeArmor.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -2297,7 +2297,7 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": 1674493960310,
         "modifiedTime": 1674581996816,
@@ -3006,7 +3006,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493968734,
     "modifiedTime": 1720552735062,

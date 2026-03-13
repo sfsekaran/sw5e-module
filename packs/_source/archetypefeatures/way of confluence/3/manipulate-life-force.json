@@ -2,7 +2,7 @@
   "_id": "DGyp9OsFR66N3s63",
   "name": "Manipulate Life Force",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/CSLR-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/CSLR-ARCH-Passive.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -105,8 +105,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0heal0000000": {
+    "activities": [
+      {
         "_id": "sw5e0heal0000000",
         "activation": {
           "type": "action"
@@ -142,14 +142,14 @@
         },
         "type": "heal"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493957496,
     "modifiedTime": 1739121092781,

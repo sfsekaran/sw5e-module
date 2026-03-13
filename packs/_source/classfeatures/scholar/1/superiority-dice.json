@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCLR-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCLR-Action.webp",
   "system": {
     "description": {
       "value": "<p>You have three superiority dice, which are d4s, and you earn more at higher levels, as shown in the Superiority Dice Quantity column of the scholar table. This die changes as you gain scholar levels, as shown in the Superiority Dice Size column of the scholar table. A superiority die is expended when you use it. </p>\n<p>You regain all of your expended superiority dice when you finish a short or long rest.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "special"
@@ -126,7 +126,7 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -136,7 +136,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288496551,
     "modifiedTime": 1739121094035,

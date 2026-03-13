@@ -2,7 +2,7 @@
   "_id": "7oWGxOFrKD7SMMKJ",
   "name": "Galvanizing Presence",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/GalvanizingPresence.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/GalvanizingPresence.webp",
   "effects": [
     {
       "_id": "oqsKJpSvNVvb4brh",
@@ -41,7 +41,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Feats/GalvanizingPresence.webp",
+      "img": "modules/sw5e-module/icons/packs/Feats/GalvanizingPresence.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -149,8 +149,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "bonus"
@@ -174,14 +174,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966763,
     "modifiedTime": 1739121097153,

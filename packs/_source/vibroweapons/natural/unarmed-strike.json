@@ -19,7 +19,7 @@
     }
   },
   "type": "weapon",
-  "img": "modules/sw5e/icons/packs/Naturals/UnarmedStrike.webp",
+  "img": "modules/sw5e-module/icons/packs/Naturals/UnarmedStrike.webp",
   "system": {
     "description": {
       "value": "",
@@ -156,8 +156,8 @@
     "magicalBonus": null,
     "proficient": null,
     "firingArc": "",
-    "activities": {
-      "sw5e0attack00000": {
+    "activities": [
+      {
         "_id": "sw5e0attack00000",
         "activation": {
           "type": "action"
@@ -187,7 +187,7 @@
         "target": {},
         "type": "attack"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "FCj6NN8vS19NEb9w",
@@ -198,7 +198,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296019804,
     "modifiedTime": 1739121084621,

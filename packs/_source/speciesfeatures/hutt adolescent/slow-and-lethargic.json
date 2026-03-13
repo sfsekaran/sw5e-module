@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Hutt-Adolescent.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Hutt-Adolescent.webp",
   "system": {
     "description": {
       "value": "<p>Hutts are slow and generally incapable of moving quickly. You have disadvantage on Dexterity saving throws, and when determining your bonus to AC from your Dexterity, you can't add more than +3.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "slow-and-lethargic",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1730433988012,
     "lastModifiedBy": "dnd5ebuilder0000"

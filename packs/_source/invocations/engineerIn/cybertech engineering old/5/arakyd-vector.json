@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Passive.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Prerequisite:</strong> 5th level</em></p>\n<p>While using your wristpad as a tech focus, you gain a +1 bonus to tech attack rolls. This bonus increases to +2 at 9th level and +3 at 13th level.</p>",
@@ -105,7 +105,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1698185225687,
     "modifiedTime": 1730434305466,

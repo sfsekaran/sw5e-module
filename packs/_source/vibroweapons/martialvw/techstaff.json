@@ -24,7 +24,7 @@
     }
   },
   "type": "weapon",
-  "img": "modules/sw5e/icons/packs/Martial%20Vibroweapons/Techstaff.webp",
+  "img": "modules/sw5e-module/icons/packs/Martial%20Vibroweapons/Techstaff.webp",
   "system": {
     "description": {
       "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Double ([[/r 2d4]] kinetic)</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>",
@@ -163,8 +163,8 @@
     "magicalBonus": null,
     "proficient": null,
     "firingArc": "",
-    "activities": {
-      "sw5e0attack00000": {
+    "activities": [
+      {
         "_id": "sw5e0attack00000",
         "activation": {
           "type": "action"
@@ -194,7 +194,7 @@
         "target": {},
         "type": "attack"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "THeSyLakA2GQjCDQ",
@@ -205,7 +205,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296019804,
     "modifiedTime": 1739121084621,

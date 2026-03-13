@@ -2,7 +2,7 @@
   "_id": "sqh0smYo8vBLmA61",
   "name": "Addicted Approach",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/AddictedApproach.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/AddictedApproach.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.CKntWLvkT4yeEBoz",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.CKntWLvkT4yeEBoz",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.OScTgUb0TSSZq83i",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.OScTgUb0TSSZq83i",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.A8fbhjrWemYCKBIB",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.A8fbhjrWemYCKBIB",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.j0rh642WBKpFaKQF",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.j0rh642WBKpFaKQF",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.xzRNHB2M2HdOZzr7",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.xzRNHB2M2HdOZzr7",
               "optional": false
             }
           ],
@@ -131,7 +131,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959778,
     "modifiedTime": 1732304669633,

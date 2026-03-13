@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Tarasin.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Tarasin.webp",
   "system": {
     "description": {
       "value": "<p>Tarasins have short spines called sa'tosin that allow them to sense the use of the Force. You are constantly under the effects of the force power <em>sense force</em>, though the power does not require concentration for you.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "satosin-sense",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1730433988012,
     "lastModifiedBy": "dnd5ebuilder0000"

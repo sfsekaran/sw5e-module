@@ -3,9 +3,13 @@ import { patchConfig } from "./patch/config.mjs";
 import { patchDataModels } from "./patch/dataModels.mjs";
 import { patchPacks } from "./patch/packs.mjs";
 import { patchManeuver } from "./patch/maneuver.mjs";
+import { patchMedpac } from "./patch/medpac.mjs";
+import { patchBlasterReload } from "./patch/blaster-reload.mjs";
 import { patchPowercasting } from "./patch/powercasting.mjs";
 import { patchProficiencyInit, patchProficiencyReady } from "./patch/proficiency.mjs";
 import { patchProperties } from "./patch/properties.mjs";
+import { patchStarshipPrepare } from "./patch/starship-prepare.mjs";
+import { patchStarshipSheet } from "./patch/starship-sheet.mjs";
 import * as migrations from "./migration.mjs";
 import { handleTemplates } from "./templates.mjs";
 import { registerModuleSettings } from "./settings.mjs";
@@ -28,9 +32,13 @@ Hooks.once('init', async function() {
 	patchDataModels();
 
 	patchManeuver();
+	patchMedpac();
+	patchBlasterReload();
 	patchPowercasting();
 	patchProficiencyInit();
 	patchProperties();
+	patchStarshipPrepare();
+	patchStarshipSheet();
 });
 
 Hooks.once('ready', async function() {

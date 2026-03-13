@@ -2,7 +2,7 @@
   "_id": "fGsRWj9oEKcrukw6",
   "name": "Potent Aptitude",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Bonus.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Bonus.webp",
   "effects": [
     {
       "_id": "kgjdGZaM7KvRGDlN",
@@ -24,7 +24,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e.classfeatures.fGsRWj9oEKcrukw6",
+      "origin": "Compendium.sw5e-module.classfeatures.fGsRWj9oEKcrukw6",
       "transfer": true,
       "flags": {
         "core": {
@@ -45,7 +45,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Bonus.webp",
+      "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Bonus.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -71,7 +71,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e.classfeatures.fGsRWj9oEKcrukw6",
+      "origin": "Compendium.sw5e-module.classfeatures.fGsRWj9oEKcrukw6",
       "transfer": false,
       "flags": {
         "core": {
@@ -210,8 +210,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "bonus"
@@ -238,14 +238,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493962350,
     "modifiedTime": 1739121094035,

@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Passive.webp",
   "system": {
     "description": {
       "value": "<p>When you roll damage for a power, you can spend 1 additional tech point to reroll a number of the damage dice up to your Intelligence modifier (minimum of one). You must use the new rolls.</p>\n<p>You can use Improved Subroutine even if you have already used a different Subroutine modification during the casting of the power. </p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "improved-subroutine",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1730433983637,
     "lastModifiedBy": "dnd5ebuilder0000"

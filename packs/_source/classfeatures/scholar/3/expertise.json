@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCLR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCLR-Passive.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Scholar:</strong> 3rd and 10th level</em></p>\n<p>Choose two of your skill proficiencies, or one of skill proficiencies and one of your tool proficiencies, or two of your tool proficiencies. You gain expertise in those skills or tools.</p>\n<p>At 10th level, you can choose another two proficiencies (in skills or tools) to gain this benefit.</p>",
@@ -104,7 +104,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288496561,
     "modifiedTime": 1729984342164,

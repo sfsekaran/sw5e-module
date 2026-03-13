@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/Sending.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Sending.webp",
   "system": {
     "description": {
       "value": "<p>You send a short message of twenty-five words or less to a creature with which you are familiar that possesses a commlink. The creature hears the message, recognizes you as the sender if it knows you, and can answer in a like manner immediately. </p>\n<p>You can send the message across any distance and even to other planets, but if the target is on a different planet than you, there is a 5 percent chance that the message doesn't arrive.</p>",
@@ -99,8 +99,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -142,7 +142,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "Kl9YZI3VVRTUGysx",
@@ -153,7 +153,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

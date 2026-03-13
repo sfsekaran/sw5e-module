@@ -2,11 +2,11 @@
   "_id": "vtOGxEhm8vkUY0w6",
   "name": "Cunning Intellect",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/CunningIntellect.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/CunningIntellect.webp",
   "effects": [
     {
       "name": "Cunning Intellect",
-      "origin": "Compendium.sw5e.feats.Item.vtOGxEhm8vkUY0w6",
+      "origin": "Compendium.sw5e-module.feats.Item.vtOGxEhm8vkUY0w6",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -71,7 +71,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Feats/CunningIntellect.webp",
+      "img": "modules/sw5e-module/icons/packs/Feats/CunningIntellect.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -179,7 +179,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966844,
     "modifiedTime": 1730434333375,

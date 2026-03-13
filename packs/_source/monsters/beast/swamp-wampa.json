@@ -1,7 +1,7 @@
 {
   "name": "Swamp Wampa",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/126_-_Swamp_Wampa/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/126_-_Swamp_Wampa/Avatar.webp",
   "items": [
     {
       "_id": "ZWU2Y2Y4ZjFkMjE1",
@@ -9,7 +9,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/126_-_Swamp_Wampa/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/126_-_Swamp_Wampa/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -236,7 +236,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/126_-_Swamp_Wampa/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/126_-_Swamp_Wampa/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -384,7 +384,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/126_-_Swamp_Wampa/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/126_-_Swamp_Wampa/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1218,7 +1218,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984029,
     "modifiedTime": 1720552764349,

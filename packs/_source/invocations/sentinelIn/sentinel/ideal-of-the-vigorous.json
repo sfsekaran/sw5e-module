@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SNTL-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SNTL-Action.webp",
   "system": {
     "description": {
       "value": "<p>When you roll a Hit Die to regain hit points, you may use your Wisdom or Charisma modifier in place of your Constitution modifier when determining the number of hit points you regain.</p>\n<p>Additionally, as an action, you can manifest this ideal in a brief surge of energy. You gain a number of temporary hit points equal to half your sentinel level + your Wisdom or Charisma modifier (your choice, minimum of one).</p>",
@@ -34,8 +34,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "action"
@@ -52,7 +52,7 @@
         "target": {},
         "type": "utility"
       },
-      "sw5e0heal0000000": {
+      {
         "_id": "sw5e0heal0000000",
         "activation": {
           "type": "action"
@@ -88,7 +88,7 @@
         },
         "type": "heal"
       }
-    },
+    ],
     "identifier": "ideal-of-the-vigorous",
     "enchant": {},
     "prerequisites": {
@@ -107,7 +107,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

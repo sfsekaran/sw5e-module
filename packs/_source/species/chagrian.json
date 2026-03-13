@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Chagrian.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Chagrian.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Chagrians are born as tadpoles in clutches of three or more and raised in tubs of water in a family's private home. During this time, their arms, legs, and air-breathing lungs develop. Adult Chagrians are truly amphibious, retaining their ability to breathe underwater while also able to function without difficulty in air. They also possess acute low-light vision.</p>\n<p>The average Chagrian stands taller than a Human. They are distinguished by two fleshy growths protruding from the sides of their heads, which they call lethorns. As they age, the lethorns thicken. Males also sport two horns growing from the top of their skulls. These were once used in underwater duels to attract a mate, and are seen as a sign of the males' strength and virility. Females lack the superior cranial horns, but had more pronounced and longer posterior head plates; these can reach halfway down their back. Chagrians also have very long black forked tongues.</p>\n<h2>Society and Culture</h2>\n<p>As a species, Chagrians are generally peaceful and law-abiding to the point of becoming stoic and obstinate. Many Chagrians are motivated only by basic desires such as sustenance, shelter, and healthcare. Chagrian government ensures that every citizen is cared and provided for, so the standard of living for the poorest Chagrian is high compared to the members of other species. Chagrians who expect violence often wear red.</p>\n<h2>Names</h2>\n<p>Chagrian names have a very melodic tone. Male names are typically shorter than female names. Surnames are familial.</p>\n<p><strong>Male Names.</strong> Bom, Chen, Fiet, Nedd, Touk</p>\n<p><strong>Female Names.</strong>  Chavik, Dabai, Fisil, Oolya, Tinto</p>\n<p><strong>Surnames.</strong> Kassin, Molya, Nigna, Onirali, Treen</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.dsYxRsVdL2w5uUtd",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.dsYxRsVdL2w5uUtd",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Q8xQLd6SP1Txq1B6",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Q8xQLd6SP1Txq1B6",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Y0s3qwXtjHvgyS6F",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Y0s3qwXtjHvgyS6F",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.sAEZvNrONWXJkuJj",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.sAEZvNrONWXJkuJj",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.2u1ApDGG6qxRms8B",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.2u1ApDGG6qxRms8B",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.CDVqPUe0TozPRdUv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.CDVqPUe0TozPRdUv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.JgjlnPTysIWIJhXd",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.JgjlnPTysIWIJhXd",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.slJId4plwASzL4MT",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.slJId4plwASzL4MT",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ctAQhAXLzZvyh5wa",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ctAQhAXLzZvyh5wa",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.yA8KwtUGt5fnCwBc",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.yA8KwtUGt5fnCwBc",
               "optional": false
             }
           ],
@@ -221,7 +221,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Chagrian.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Chagrian.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -236,7 +236,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732412596409,

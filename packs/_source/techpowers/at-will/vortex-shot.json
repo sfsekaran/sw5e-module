@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/VortexShot.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/VortexShot.webp",
   "system": {
     "description": {
       "value": "<p>As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and each Large or smaller creature within 10 feet of the target must succeed on a Strength saving throw or be pulled to the nearest unoccupied space adjacent to the target. </p>\n<p>This power deals additional damage when you reach higher levels. At 5th level, the ranged attack deals an extra [[/r 1d6]] damage. This damage increases by [[/r 1d6]] again at 11th level and 17th level. The damage is the same type as the weapon's damage.</p>",
@@ -99,8 +99,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "condition": "",
@@ -134,7 +134,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "zgIhoD5XSBaGyekP",
@@ -145,7 +145,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

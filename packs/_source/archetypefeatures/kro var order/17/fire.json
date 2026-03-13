@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/MNK-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/MNK-ARCH-Passive.webp",
   "system": {
     "description": {
       "value": "<p>Your flaming weapon sheds bright light in a 10-foot radius and dim light for an additional 10 feet, deals fire damage, and when you hit a creature with it, the creature takes additional damage equal to half your focus ability modifier (minimum of one).</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "type": "action"
@@ -145,7 +145,7 @@
         },
         "type": "damage"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -155,7 +155,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1679609438413,
     "modifiedTime": 1739121092781,

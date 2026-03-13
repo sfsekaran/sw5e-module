@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCT-ARCH-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCT-ARCH-Action.webp",
   "effects": [],
   "system": {
     "description": {
@@ -102,8 +102,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "action"
@@ -128,7 +128,7 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "folder": null,
   "sort": 0,
@@ -137,7 +137,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1667426104146,
     "modifiedTime": 1739121092781,

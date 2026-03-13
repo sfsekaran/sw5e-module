@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Arcona.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Arcona.webp",
   "system": {
     "description": {
       "value": "<p>Arcona are susceptible to spice addiction, and as a result you are taught to identify it from an early age. Additionally, consuming salt can cause them to hallucinate, potentially replicating the effects of spice. Whenever you make an ability check related to identifying salt or spice or seeing whether something contains salt or spice, you have advantage.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "easily-addicted",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1730433988012,
     "lastModifiedBy": "dnd5ebuilder0000"

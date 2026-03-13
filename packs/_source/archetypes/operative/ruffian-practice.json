@@ -2,7 +2,7 @@
   "_id": "MTWzXN3wC6vg7yaF",
   "name": "Ruffian Practice",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/RuffianPractice.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/RuffianPractice.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.rFrna2NtTXeQecXy",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.rFrna2NtTXeQecXy",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ntnQrd9OioT0GBg4",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ntnQrd9OioT0GBg4",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.sEi7GizEJyo5fwWs",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.sEi7GizEJyo5fwWs",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.4pX87Q4lCIMa21vB",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.4pX87Q4lCIMa21vB",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.xkGpjUxmL8wQYEW9",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.xkGpjUxmL8wQYEW9",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959737,
     "modifiedTime": 1732304669034,

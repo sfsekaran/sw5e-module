@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Harch.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Harch.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>The Harch possess a large-fanged mouth between two prominent chelicerae, above which they have six red eyes arranged in a semicircle. The two lowest eyes are larger and roughly twice the size of the four smaller eyes. Harch walk on two legs and have six arms, with the second and third set of arm protruding from behind the first pair rather than directly above or below them. These arms are covered in thick hair and end in three-fingered hands.</p>\n<p>The Harch are distantly related to the Aqualish species and there is much debate among geneticists regarding the relationship between the Harch and the Aqualish Ualaq subspecies. However, the Harch themselves considered such discussions to be obscene.</p>\n<h2>Society and Culture</h2>\n<p>Not much is known about the Harch, as few of them have mingled with the galactic community, preferring to stay on Secundus Ando. Harch that leave the planet tend to have a more aspirant nature than their fellows, and often reach great heights in their chosen professions in the galaxy. Such Harch are considered outliers—most apparently care little for titles.</p>\n<p>Like the Arcona species, female Harch are seen as more domineering and aggressive than their male counterparts. It is not unheard of for a male Harch to raise entire broods of hatchlings alone.</p>\n<h2>Names</h2>\n<p>Harch names are not gender-specific. Harch do not use surnames.</p>\n<p><strong>Names.</strong> Cubach, Quixoch, Trench, Turch</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.t5HRPvKZEAYY6fI3",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.t5HRPvKZEAYY6fI3",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.hYDFuj9KPY4HEk3S",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.hYDFuj9KPY4HEk3S",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.XxB2xOeVcNrPKAHG",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.XxB2xOeVcNrPKAHG",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.bZxmwfzFrdMgEkNE",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.bZxmwfzFrdMgEkNE",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.yEOpMBsW7zylbU1A",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.yEOpMBsW7zylbU1A",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.0us1TCkkcjGbrViI",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.0us1TCkkcjGbrViI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.FB9f4qhggEehsDQJ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.FB9f4qhggEehsDQJ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.lhqT7xX7PeDkIymb",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.lhqT7xX7PeDkIymb",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.t9x5LxBpbIHBPQ6q",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.t9x5LxBpbIHBPQ6q",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.3eTbXn4UG2wGaGkd",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.3eTbXn4UG2wGaGkd",
               "optional": false
             }
           ],
@@ -204,7 +204,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Harch.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Harch.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -219,7 +219,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304726409,

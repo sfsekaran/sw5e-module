@@ -2,7 +2,7 @@
   "_id": "GbB3NiPHq2kyAQMO",
   "name": "Triage Technique",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/TriageTechnique.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/TriageTechnique.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.d2t0mqgfXG8yjtmu",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.d2t0mqgfXG8yjtmu",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.qP6RHh9oFC2swnUp",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.qP6RHh9oFC2swnUp",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.yCQRJebUuRJ8DCDo",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.yCQRJebUuRJ8DCDo",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.bayEAWiTjhqDChpF",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.bayEAWiTjhqDChpF",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.0IfYzyCr3kBPGY9f",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.0IfYzyCr3kBPGY9f",
               "optional": false
             }
           ],
@@ -125,7 +125,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959730,
     "modifiedTime": 1732304668932,

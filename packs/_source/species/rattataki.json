@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Rattataki.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Rattataki.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>The Rattataki are a near-human species characterized by their nimble movements, chalk-white skin and oft-bald heads. Virtually isolated from the rest of the galaxy, the Rattataki developed a violent society on their home planet of Rattatak, which involves extensive gladiatorial combat. </p>\n<h2>Society and Culture</h2>\n<p>While most other inhabitants of Rattatak came from the Unknown Regions, there are a significant number of off-worlder mercenaries who come to Rattatak from time to time, likely to view or participate in gladiatorial combat, only to be stranded there permanently. The remarkably harsh conditions on the planet nearly drove its population to extinction. For eons, the Rattataki constantly battled amongst themselves and their fellow inhabitants (represented primarily by Humans, Zabraks, Siniteens, Vollick, and Weequay) over the planet's limited resources. Despite being nearly completely isolated from the outside galaxy, the Rattataki displayed remarkable initiative and continually created new ways to kill each other.</p>\n<p>Rattataki culture is bloody and unforgiving. Punishment for even the smallest crimes is unnecessarily harsh, which does little to quell that behavior. In fact, Rattataki who are known to commit crimes without being caught are celebrated.</p>\n<h2>Names</h2>\n<p>Rattataki names are harsh sounding and short. Surnames are familial, though many Rattataki abandon them in favor of self-aggrandizing titles.</p>\n<p><strong>Male Names.</strong> Aidus, Charnagus, Karok, Veran</p>\n<p><strong>Female Names.</strong> Amaran, Kassien, Silas, Sraja, Vol</p>\n<p><strong>Surnames.</strong> Anjek, Danvik, Degger, Kolla, Venkorr</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.IlQ65JioJgwB7ioI",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.IlQ65JioJgwB7ioI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.WejqTl389vdRrvXh",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.WejqTl389vdRrvXh",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.bOxxdeTbNxFm1E2Y",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.bOxxdeTbNxFm1E2Y",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.CiEYGFCdGhoTawoZ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.CiEYGFCdGhoTawoZ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.BykNORjQOz2gHetM",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.BykNORjQOz2gHetM",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.AmcQDzUFVIQCkZ6u",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.AmcQDzUFVIQCkZ6u",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.KtqK0g50oz58eIUC",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.KtqK0g50oz58eIUC",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.tcr0lvtZSsoLE7S4",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.tcr0lvtZSsoLE7S4",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.n5FP8cym7n2zI6sD",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.n5FP8cym7n2zI6sD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.pWkMcIYc82X2KTP8",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.pWkMcIYc82X2KTP8",
               "optional": false
             }
           ],
@@ -227,7 +227,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Rattataki.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Rattataki.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -242,7 +242,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304726235,

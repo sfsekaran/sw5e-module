@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Gand.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Gand.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Gand are sentient, stocky humanoids whose insectoid bodies are covered in a chitinous exoskeleton. The natural armor allow the Gand to shrug off injuries that would cripple most other species. The exoskeleton provides extra protection in the clavicle region, which prevented most nerve or pressure-point strikes to the neck and shoulders. In addition, Gands have the remarkable ability to regrow lost limbs. If a Gand is dismembered, it can regrow a lost limb in a few days. </p>\n<h2>Society and Culture</h2>\n<p>Gand society places heavy importance on the achievements of an individual and holds that an individual has no name, and thus no worth, until he or she proves otherwise. The speech patterns of Gands utilize third-person self-reference within each level of identity earned. Young or unproven Gands are all called \"Gand,\" as they are considered merely aspects of the same whole. Major accomplishments earn the use of a family surname. Mastering a skill, such as becoming a findsman, allows for the use of the given name, all with third-person self-reference. This manner of speaking is common within the spoken and written Gand language but is more predominant when a Gand speaks Basic; it is often a source of amusement to outsiders.</p>\n<h2>Names</h2>\n<p>Until a Gand has earned the use of a name, they go simply by the term \"Gand.\" Gand speak in the third person and refer to themselves by name. Often, when a Gand feels shamed, they will stop referring to themselves by their name and revert to calling themselves \"Gand\" until they prove themselves again. Male and female names are not distinct.</p>\n<p><strong>First Names.</strong> C'nyir, Dash, Iglid, Kyuffax, T'rix</p>\n<p><strong>Surname.</strong> Diqlu, Krakee, Praafri, Quudya, Zooq</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.oMWgx7RAXOZu0dyv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.oMWgx7RAXOZu0dyv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.EVZhEqhQlLpRhDM9",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.EVZhEqhQlLpRhDM9",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.sPc4bkjtgZ1pLvDF",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.sPc4bkjtgZ1pLvDF",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.mEwGXRqlwQaZqKFD",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.mEwGXRqlwQaZqKFD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.LD8dtw2OAeMKkLao",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.LD8dtw2OAeMKkLao",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.OQ4DoBpTsok5SQWl",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.OQ4DoBpTsok5SQWl",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Rim0XLUL32bEkzXr",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Rim0XLUL32bEkzXr",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.DJnKB03yf8khju1n",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.DJnKB03yf8khju1n",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.nCrP0c3fDGtHwSCF",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.nCrP0c3fDGtHwSCF",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.1CvrcbCP4WbIHKRQ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.1CvrcbCP4WbIHKRQ",
               "optional": false
             }
           ],
@@ -227,7 +227,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Gand.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Gand.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -242,7 +242,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732412596409,

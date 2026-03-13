@@ -2,7 +2,7 @@
   "_id": "uDUsYzpwanUmZSQe",
   "name": "Slicer Pursuit",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/SlicerPursuit.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/SlicerPursuit.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.kGZL0ubyZRM9aB2c",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.kGZL0ubyZRM9aB2c",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.6k4LOfeCmWigPPRv",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.6k4LOfeCmWigPPRv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.JdDir2xAqh46P4Rm",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.JdDir2xAqh46P4Rm",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Ox1ISzt9vMy71JIb",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Ox1ISzt9vMy71JIb",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.80yruN7q6k2svTUi",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.80yruN7q6k2svTUi",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.aA0DqIU3oPAfqp91",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.aA0DqIU3oPAfqp91",
               "optional": false
             }
           ],
@@ -152,22 +152,22 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.Y1DMN4crCeywBEY3"
+              "uuid": "Compendium.sw5e-module.invocations.Y1DMN4crCeywBEY3"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.2rtCIygasjjA8MqA"
+              "uuid": "Compendium.sw5e-module.invocations.2rtCIygasjjA8MqA"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.WfVI2J2CTw9IhU97"
+              "uuid": "Compendium.sw5e-module.invocations.WfVI2J2CTw9IhU97"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.WxwU8cIHdWtthiDA"
+              "uuid": "Compendium.sw5e-module.invocations.WxwU8cIHdWtthiDA"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.RbMHQL3Nq6lCs9Gd"
+              "uuid": "Compendium.sw5e-module.invocations.RbMHQL3Nq6lCs9Gd"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.BvwBaNNZeT3IkoLm"
+              "uuid": "Compendium.sw5e-module.invocations.BvwBaNNZeT3IkoLm"
             }
           ],
           "restriction": {
@@ -200,7 +200,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959782,
     "modifiedTime": 1732304669685,

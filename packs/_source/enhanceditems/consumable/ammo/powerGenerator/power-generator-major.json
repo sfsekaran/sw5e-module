@@ -2,7 +2,7 @@
   "_id": "O8xiiNqopVOmgKDO",
   "name": "Power Generator (Major)",
   "type": "consumable",
-  "img": "modules/sw5e/icons/packs/Ammunition/PowerGenerator.webp",
+  "img": "modules/sw5e-module/icons/packs/Ammunition/PowerGenerator.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -116,7 +116,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493964659,
     "modifiedTime": 1730434219548,

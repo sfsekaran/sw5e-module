@@ -2,7 +2,7 @@
   "_id": "E3s4Z8jsY2Q4KHHU",
   "name": "Physician Pursuit",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/PhysicianPursuit.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/PhysicianPursuit.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ADu31iAcdO57ggLT",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ADu31iAcdO57ggLT",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.l4baMhJrCvAZQAw2",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.l4baMhJrCvAZQAw2",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.pSbkArj1o3Z7WRCS",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.pSbkArj1o3Z7WRCS",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.hnc259js63blUqkB",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.hnc259js63blUqkB",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.eAem3vy3uo6k4AQE",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.eAem3vy3uo6k4AQE",
               "optional": false
             }
           ],
@@ -156,25 +156,25 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.BvIylg9ZcwFXnbXA"
+              "uuid": "Compendium.sw5e-module.invocations.BvIylg9ZcwFXnbXA"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.SjAKJPuDGqoqivuW"
+              "uuid": "Compendium.sw5e-module.invocations.SjAKJPuDGqoqivuW"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Fsr28zOmUMFk4fR0"
+              "uuid": "Compendium.sw5e-module.invocations.Fsr28zOmUMFk4fR0"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.sGMCzbbIsOKYbYRA"
+              "uuid": "Compendium.sw5e-module.invocations.sGMCzbbIsOKYbYRA"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.hZXmlhPMXAvf96Rl"
+              "uuid": "Compendium.sw5e-module.invocations.hZXmlhPMXAvf96Rl"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.vwNjOmc4gZHMKnYC"
+              "uuid": "Compendium.sw5e-module.invocations.vwNjOmc4gZHMKnYC"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.KYX1DCZ5dAEClP76"
+              "uuid": "Compendium.sw5e-module.invocations.KYX1DCZ5dAEClP76"
             }
           ],
           "restriction": {
@@ -206,7 +206,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959728,
     "modifiedTime": 1732304668887,

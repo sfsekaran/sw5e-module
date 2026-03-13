@@ -2,7 +2,7 @@
   "_id": "wafF3SF4zQBOs34y",
   "name": "Battle armor",
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Armor/PHB/BattleArmor.webp",
+  "img": "modules/sw5e-module/icons/packs/Armor/PHB/BattleArmor.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -170,7 +170,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493960313,
     "modifiedTime": 1729984338601,

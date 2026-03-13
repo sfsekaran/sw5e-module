@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Arcona.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Arcona.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Arcona have anvil-shaped heads, claws, marble-like eyes, and protective skin. Cona is always hot, and has very little water, but the atmosphere is filled with ammonia vapor. Arcona adapted to this environment by eating the ammonia-converting roots of flora as a source of water. Arcona depended on the ammonia to live and, as a result, arcona living offworld have to take ammonia supplements. Despite their large eyes, arcona have very poor eyesight. Their eyes, made up of thousands of photoreceptors, can not detect fine shapes, only seeing blurry objects. To aid this, they have a small sensory organ between their eyes. Often mistaken for their nose, this organ detects heat patterns from living beings. Thus, arcona can recognize things by its heat pattern.</p>\n<p>Arcona are highly susceptible to addiction to spice and common salt, which serves as a hallucinogen with effects resembling that of intoxication. Their eyes shift to gold after prolonged addiction.</p>\n<h2>Society and Culture</h2>\n<p>Arcona normally think of themselves not as individuals but as a collective whole. Largely forsaking individuality, they often refer to themselves as \"we\" even when alone. The arcona live in loose, family-based communities called nests, which are ruled by a Grand Nest. Because arcona are born in nests underground, they obtain a close sense of family living in close quarters with siblings. Males raise the young, since females are typically impulsive thrill-seekers. </p>\n<h2>Names</h2>\n<p>Arcona names are quite diverse, named by their fathers in the nest. Surnames are either familial or nest-based. </p>\n<p><strong>Male Names.</strong> Bijrik, El, Jat, Kazat, Onalol, Shle</p>\n<p><strong>Female Names.</strong> Ak, Cimam, Cuten, He, Madan, Omik</p>\n<p><strong>Surnames.</strong> Cheen, -drell, -faxel, Shran, Takonak, -voll</p>",
@@ -47,51 +47,51 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.QUtnpKTIkVlwVdTh",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.QUtnpKTIkVlwVdTh",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.uuwYkhbq9TW7ra2G",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.uuwYkhbq9TW7ra2G",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Ixiy24d4yKSwPOjb",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Ixiy24d4yKSwPOjb",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.6YWIpicXuWfK39oY",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.6YWIpicXuWfK39oY",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.jRHZxddZKUAKJpmB",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.jRHZxddZKUAKJpmB",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.RRY8ijvY0aH3BKO0",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.RRY8ijvY0aH3BKO0",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.WAsusvVgnRQNq3Tv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.WAsusvVgnRQNq3Tv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.LmNTMXiBXwzBnwds",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.LmNTMXiBXwzBnwds",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.m0teAfyTLVuVrSGJ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.m0teAfyTLVuVrSGJ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.gVanwaFyTapFFmb3",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.gVanwaFyTapFFmb3",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.2AnQuo6xZM1x1LLc",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.2AnQuo6xZM1x1LLc",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.v5stDefAocHTS7oQ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.v5stDefAocHTS7oQ",
               "optional": false
             }
           ],
@@ -226,10 +226,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.KwDQepuVGtneaTTY.ActiveEffect.NGgLg9M06MvvWwAh"
+          "sourceId": "Compendium.sw5e-module.species.Item.KwDQepuVGtneaTTY.ActiveEffect.NGgLg9M06MvvWwAh"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.KwDQepuVGtneaTTY",
+      "origin": "Compendium.sw5e-module.species.Item.KwDQepuVGtneaTTY",
       "name": "Keen Smell",
       "description": "",
       "statuses": [],
@@ -243,7 +243,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Arcona.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Arcona.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -258,7 +258,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304724988,

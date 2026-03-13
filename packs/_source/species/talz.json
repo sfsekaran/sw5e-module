@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Talz.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Talz.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Talz are large, bulky, bipedal creatures, that are covered head to toe in thick white fur, which provides exceptional insulation against their frozen world. Talz have four eyes, which are also adaptations to their native environment. The larger set of eyes are shut during the day, when sunlight reflects off the snow with dazzling brightness—able to blind sensitive optical organs—leaving the smaller set to navigate with. Alternatively, during the deep darkness of their homeworld's moonless night, the larger pair are utilized to provide the Talz with adequate vision. Talz use a small proboscis to eat and communicate, creating high-pitched chirps and buzzes.</p>\n<h2>Society and Culture</h2>\n<p>Talz are a hunter-gatherer, clan-based society. They work in unison, and treat the entire clan as one single familial entity. Resources on Ordo Plutonia are often scarce, which leads to warring among Talz tribes. However, the clans are adept at forming a unified front when they face a common enemy.</p>\n<p>Talz are large, brutal creatures and are often used as guards and enforcers. Sometimes they are taken as slaves, though it's rare; they are rebellious against authority and don't take well to slavery. There are rumors that Talz are captured for scientific experimentation.</p>\n<h2>Names</h2>\n<p>Talz names are fairly gutteral and are characterized by their harsh nature. Female names are typically longer than male names. Surnames are clan-based, though it's rare that a Talz shares them with non-Talz.</p>\n<p><strong>Male Names.</strong> Drak, Fedirk, Imom, Ke, Twift</p>\n<p><strong>Female Names.</strong> Ilnuno, Ontuga, Utrukk, Zimtucc</p>\n<p><strong>Surnames.</strong> Dic, Noetoc, Suptat, Wume, Zapak</p>",
@@ -47,39 +47,39 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.UGnXrkp2O9t6703o",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.UGnXrkp2O9t6703o",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.R2FeRU2wL1R45Inc",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.R2FeRU2wL1R45Inc",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.TG9Doa9OI5PAo6yN",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.TG9Doa9OI5PAo6yN",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.s5ouiXPmhTDYg9aK",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.s5ouiXPmhTDYg9aK",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.qfeCVNNJdAlszqZ9",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.qfeCVNNJdAlszqZ9",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.woMjePUOii3Gj2c2",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.woMjePUOii3Gj2c2",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.UKUNXNs81XDSLnXv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.UKUNXNs81XDSLnXv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.QTFgsBBfVl3pMG8c",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.QTFgsBBfVl3pMG8c",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.M9ctjlYra58N3iII",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.M9ctjlYra58N3iII",
               "optional": false
             }
           ],
@@ -207,7 +207,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Talz.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Talz.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -222,7 +222,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725567,

@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/MNK-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/MNK-ARCH-Passive.webp",
   "system": {
     "description": {
       "value": "<p>Your earthen weapon takes the form of stone, and deals kinetic damage on a hit. Additionally, when you hit a creature with it, you can force the target to make a Strength saving throw. On a failed save, the target is pushed back 5 feet. Lastly, while active, you can use Strength instead of Dexterity when determining your AC, as long as it doesn't already include that modifier.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -135,7 +135,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -145,7 +145,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288495959,
     "modifiedTime": 1739121092781,

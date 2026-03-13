@@ -2,10 +2,10 @@
   "_id": "SRvdjRxU3cpcEdcw",
   "name": "One with the Force",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/CSLR-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/CSLR-Action.webp",
   "effects": [
     {
-      "origin": "Compendium.sw5e.classfeatures.Item.SRvdjRxU3cpcEdcw",
+      "origin": "Compendium.sw5e-module.classfeatures.Item.SRvdjRxU3cpcEdcw",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -47,7 +47,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Class%20Features/CSLR-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Class%20Features/CSLR-Action.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -160,8 +160,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "special"
@@ -185,14 +185,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493962321,
     "modifiedTime": 1739121094035,

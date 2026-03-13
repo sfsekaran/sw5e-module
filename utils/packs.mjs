@@ -6,8 +6,17 @@ import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import { extractPack } from "@foundryvtt/foundryvtt-cli";
 import { ClassicLevel } from "classic-level";
+import {
+	TARGET_DND5E_VERSION,
+	normalizeDnd5eItemSource,
+	normalizeEmbeddedDnd5eItemSources
+} from "../scripts/dnd5e-source-normalization.mjs";
+import {
+	normalizeLegacyStarshipActorData,
+	normalizeLegacyStarshipItemData,
+	normalizeSourceField as sharedNormalizeSourceField
+} from "../scripts/starship-data.mjs";
 
-const TARGET_DND5E_VERSION = "5.2.5";
 const CANONICAL_MODULE_ID = "sw5e-module";
 
 const HIERARCHY = {
@@ -311,6 +320,35 @@ function cleanHtmlImagePaths(text) {
 		.replace(/modules\/sw5e-module-test\/icons\/packs/g, "modules/sw5e-module/icons/packs");
 }
 
+function cloneData(data) {
+	return data === undefined ? undefined : JSON.parse(JSON.stringify(data));
+}
+
+function ensureSw5eFlags(data) {
+	data.flags ??= {};
+	return (data.flags.sw5e ??= {});
+}
+
+function normalizeSourceField(source) {
+	return sharedNormalizeSourceField(source);
+}
+
+function normalizeLegacyVehicleSystem(data) {
+	normalizeLegacyStarshipActorData(data);
+}
+
+function normalizeLegacyDeploymentItem(data) {
+	normalizeLegacyStarshipItemData(data);
+}
+
+function normalizeLegacyStarshipSizeItem(data) {
+	normalizeLegacyStarshipItemData(data);
+}
+
+function normalizeLegacyStarshipModItem(data) {
+	normalizeLegacyStarshipItemData(data);
+}
+
 /**
  * Convert an entry from the sw5e system format.
  * @param {object} data                           Data for a single entry to convert.
@@ -460,6 +498,11 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 		});
 	}
 
+	if ( data.type === "starship" ) normalizeLegacyVehicleSystem(data);
+	if ( data.type === "deployment" ) normalizeLegacyDeploymentItem(data);
+	if ( data.type === "starshipsize" ) normalizeLegacyStarshipSizeItem(data);
+	if ( data.type === "starshipmod" ) normalizeLegacyStarshipModItem(data);
+
 	if ( data.type === "power" ) data.type = "spell";
 	if ( data.type === "species" ) data.type = "race";
 	if ( data.type === "archetype" ) data.type = "subclass";
@@ -468,6 +511,8 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 
 	if ( data.system?.price?.denomination === "gc" ) data.system.price.denomination = "gp";
 	if ( data.system?.save?.scaling === "power" ) data.system.save.scaling = "spell";
+	if ( data.system?.target?.type === "starship" ) data.system.target.type = "";
+	if ( data.system?.attributes?.ac?.calc === "starship" ) data.system.attributes.ac.calc = "flat";
 
 	if ( data.flags?.['sw5e-module-test'] ) {
 		data.flags.sw5e = {
@@ -481,6 +526,8 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 	if ( data.img ) data.img = cleanImage(data.img);
 	if ( data.icon ) data.icon = cleanImage(data.icon);
 	if ( data.texture?.src ) data.texture.src = cleanImage(data.texture.src);
+	normalizeDnd5eItemSource(data);
+	normalizeEmbeddedDnd5eItemSources(data.items);
 	normalizeCompendiumReferences(data);
 	normalizeAdvancements(data);
 
@@ -877,10 +924,13 @@ function transformName(entry, packName) {
 			// foundry type
 			if (["adventuringgear", "enhanceditems"].includes(packName)) parts.add(entry.type);
 			// item type
+			const legacyItemType = entry.system?.type?.value ?? entry.flags?.sw5e?.legacyStarshipMod?.type?.value;
 			if (entry.type !== "loot") parts.add(entry.system?.type?.value?.toLowerCase());
+			else parts.add(legacyItemType?.toLowerCase?.());
 			// item subtype
-			if (entry.system?.type?.subtype === "crossbowBolt") parts.add("bolt");
-			else parts.add(entry.system?.type?.subtype);
+			const legacySubtype = entry.system?.type?.subtype ?? entry.flags?.sw5e?.legacyStarshipMod?.type?.subtype;
+			if (legacySubtype === "crossbowBolt") parts.add("bolt");
+			else parts.add(legacySubtype);
 
 			parts.delete(undefined);
 			parts.delete("");

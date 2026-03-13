@@ -2,7 +2,7 @@
   "_id": "7NNmi7XgKes6CsRW",
   "name": "Focus Generator Chassis (Prototype)",
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Data%20Recording%20and%20Storage/FocusGenerator.webp",
+  "img": "modules/sw5e-module/icons/packs/Data%20Recording%20and%20Storage/FocusGenerator.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -159,7 +159,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493964448,
     "modifiedTime": 1730434208707,

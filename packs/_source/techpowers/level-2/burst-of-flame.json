@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/BurstOfFlame.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/BurstOfFlame.webp",
   "system": {
     "description": {
       "value": "<p>You expel a burst of flame in a line 30 feet long and 5 feet wide, originating from you. Each creature in the line must make a Dexterity saving throw. A creature takes [[/r 3d8]] fire damage on a failed save, or half as much damage on a successful one.</p>\n<p><strong><em>Overcharge Tech.</em></strong> When you cast this power using a tech slot of 3rd level or higher, the damage increases by [[/r 1d8]] for each slot level above 2nd.</p>",
@@ -104,8 +104,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "condition": "",
@@ -167,7 +167,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "81HZUo9EQWhlGp0d",
@@ -178,7 +178,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

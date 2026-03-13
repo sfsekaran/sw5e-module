@@ -2,7 +2,7 @@
   "_id": "eMXpw3HIVMnaNFQ1",
   "name": "Light shield generator",
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Armor/PHB/LightShieldGenerator.webp",
+  "img": "modules/sw5e-module/icons/packs/Armor/PHB/LightShieldGenerator.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -159,7 +159,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493960303,
     "modifiedTime": 1727376479337,

@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/CapacityBoost.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/CapacityBoost.webp",
   "system": {
     "description": {
       "value": "<p>You empower a blaster weapon you are holding. For the duration, you can reload the weapon once on each of your turns without using an action, and as a bonus action on each of your turns you can make one attack with the weapon.</p>\n<p><strong><em>Overcharge Tech.</em></strong> When you cast this power using a tech slot of 5th level or higher, you can make two attacks with your bonus action, instead of one.</p>",
@@ -101,8 +101,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -143,7 +143,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "uYsjujidPJJ6EblO",
@@ -154,7 +154,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

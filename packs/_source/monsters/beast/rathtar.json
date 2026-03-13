@@ -1,7 +1,7 @@
 {
   "name": "Rathtar",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/107_-_Rathtar/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/107_-_Rathtar/Avatar.webp",
   "items": [
     {
       "_id": "ODlmMDhkNWJjMzNl",
@@ -9,7 +9,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/107_-_Rathtar/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/107_-_Rathtar/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -231,7 +231,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/107_-_Rathtar/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/107_-_Rathtar/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -379,7 +379,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/107_-_Rathtar/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/107_-_Rathtar/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -527,7 +527,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/107_-_Rathtar/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/107_-_Rathtar/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -638,7 +638,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/107_-_Rathtar/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/107_-_Rathtar/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1482,7 +1482,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984607,
     "modifiedTime": 1720552779278,

@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/FGTR-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/FGTR-ARCH-Passive.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Fireteam Specialist:</strong> 7th level</em></p>\n<p>When you use your Second Wind feature while your companion is within 10 feet of you, your companion regains hit points and gains temporary hit points equal to your fighter level.</p>\n<p>This radius increases to 30 feet at 11th level, and 60 feet at 17th level. </p>",
@@ -106,8 +106,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0heal0000000": {
+    "activities": [
+      {
         "_id": "sw5e0heal0000000",
         "activation": {
           "type": "action"
@@ -144,7 +144,7 @@
         },
         "type": "heal"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -154,7 +154,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1679609438400,
     "modifiedTime": 1739121092781,

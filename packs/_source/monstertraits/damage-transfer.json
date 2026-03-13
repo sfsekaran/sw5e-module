@@ -1,7 +1,7 @@
 {
   "name": "Damage Transfer",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Monster%20Traits/Damage%20Transfer.webp",
+  "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Damage%20Transfer.webp",
   "effects": [],
   "flags": {
     "timestamp": "2022-05-03T05:14:16.2272935+00:00",
@@ -99,7 +99,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1669755924196,
     "modifiedTime": 1720368815589,

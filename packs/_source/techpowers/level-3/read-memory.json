@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/ReadMemory.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/ReadMemory.webp",
   "system": {
     "description": {
       "value": "<p>You read the memory of an incapacitated droid or construct within range. The target must have its memory core (and/or other appropriate components) intact.</p>\n<p>Until the power ends, you can ask up to five questions. Depending on what it would know or has witnessed, the target provides visual, audio, or text-based data in response. The target can—t provide new information, and can't speculate about future events.</p>",
@@ -99,8 +99,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -141,7 +141,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "B6pszwwXaBM9ofmm",
@@ -152,7 +152,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

@@ -1,7 +1,7 @@
 {
   "name": "Central Computer, Mk I",
-  "type": "starshipmod",
-  "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
+  "type": "loot",
+  "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Universal.webp",
   "effects": [
     {
       "_id": "Okm9jE1Kt0DnKa8e",
@@ -23,7 +23,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e.starshipmodifications.Hh0CyoLWJfZTWedW",
+      "origin": "Compendium.sw5e-module.starshipmodifications.Hh0CyoLWJfZTWedW",
       "transfer": true,
       "flags": {
         "core": {
@@ -45,21 +45,128 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Universal.webp",
       "type": "base",
       "system": {},
       "_key": "!items.effects!PBOCSZUP1KGF3fQx.Okm9jE1Kt0DnKa8e"
     }
   ],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "sw5e": {
+      "legacyStarshipMod": {
+        "description": {
+          "value": "<p>You improve your ship's central computer. Your ship can now take bonus actions granted by modifications.  Additionally, your ship can now take any standard action except the attack action and pilot-only actions.  </p><p>Finally, your ship is expertly equipped for Intelligence (Data) checks and gains advantage on Intelligence (Astrogation) checks.</p>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "requirements": "",
+        "source": {
+          "value": "SotG"
+        },
+        "quantity": 1,
+        "weight": 0,
+        "price": {
+          "value": 0,
+          "denomination": "gp"
+        },
+        "attunement": 0,
+        "equipped": false,
+        "rarity": "",
+        "identified": false,
+        "isCargo": false,
+        "activation": {
+          "type": "",
+          "cost": null,
+          "condition": ""
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "cover": null,
+        "crewed": false,
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": null,
+          "long": null,
+          "units": ""
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": null,
+          "recovery": ""
+        },
+        "consume": {
+          "type": "",
+          "target": null,
+          "amount": null
+        },
+        "ability": null,
+        "actionType": "",
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "recharge": {
+          "charged": false,
+          "value": null
+        },
+        "grade": {
+          "value": 1
+        },
+        "baseCost": {
+          "value": null
+        },
+        "prerequisites": {
+          "value": "Central Computer, Makeshift"
+        },
+        "free": {
+          "slot": false,
+          "suite": false
+        },
+        "armor": {
+          "type": "",
+          "value": null,
+          "dex": null
+        },
+        "proficient": false,
+        "properties": [],
+        "attributes": {
+          "dr": ""
+        },
+        "strength": null,
+        "stealth": false,
+        "type": {
+          "value": "Universal"
+        }
+      }
+    }
+  },
   "system": {
     "description": {
       "value": "<p>You improve your ship's central computer. Your ship can now take bonus actions granted by modifications.  Additionally, your ship can now take any standard action except the attack action and pilot-only actions.  </p><p>Finally, your ship is expertly equipped for Intelligence (Data) checks and gains advantage on Intelligence (Astrogation) checks.</p>",
       "chat": "",
       "unidentified": ""
     },
-    "requirements": "",
     "source": {
       "value": "SotG"
     },
@@ -69,98 +176,12 @@
       "value": 0,
       "denomination": "gp"
     },
-    "attunement": 0,
-    "equipped": false,
     "rarity": "",
-    "identified": false,
-    "isCargo": false,
-    "activation": {
-      "type": "",
-      "cost": null,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": ""
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": ""
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": ""
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null
-    },
-    "ability": null,
-    "actionType": "",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "recharge": {
-      "charged": false,
-      "value": null
-    },
-    "grade": {
-      "value": 1
-    },
-    "baseCost": {
-      "value": null
-    },
-    "prerequisites": {
-      "value": "Central Computer, Makeshift"
-    },
-    "free": {
-      "slot": false,
-      "suite": false
-    },
-    "armor": {
-      "type": "",
-      "value": null,
-      "dex": null
-    },
-    "proficient": false,
-    "properties": [],
-    "attributes": {
-      "dr": ""
-    },
-    "strength": null,
-    "stealth": false,
-    "type": {
-      "value": "Universal"
-    }
+    "identified": false
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674494018645,
     "modifiedTime": 1706199587741,

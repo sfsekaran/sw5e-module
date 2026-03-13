@@ -2,7 +2,7 @@
   "_id": "aniOJe8eRRoL440j",
   "name": "Deadeye Technique",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/DeadeyeTechnique.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/DeadeyeTechnique.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.TIsAJUQXEH32Dfgr",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.TIsAJUQXEH32Dfgr",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.jCmKJKpNwiYatPkA",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.jCmKJKpNwiYatPkA",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.PjOShcmujgdSM6J3",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.PjOShcmujgdSM6J3",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.wYl6cjxwWbdXQKDY",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.wYl6cjxwWbdXQKDY",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.M2bObVPZABsSjW3H",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.M2bObVPZABsSjW3H",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959760,
     "modifiedTime": 1732304669360,

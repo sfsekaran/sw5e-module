@@ -2,7 +2,7 @@
   "_id": "JlBFNmACItJ0vFlP",
   "name": "Crippling Shot",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Deployments/Gunner.webp",
+  "img": "modules/sw5e-module/icons/packs/Deployments/Gunner.webp",
   "effects": [
     {
       "_id": "VV7NiuurLhagmEBw",
@@ -24,7 +24,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e.deploymentfeatures.JlBFNmACItJ0vFlP",
+      "origin": "Compendium.sw5e-module.deploymentfeatures.JlBFNmACItJ0vFlP",
       "transfer": false,
       "flags": {
         "core": {
@@ -45,7 +45,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Deployments/Gunner.webp",
+      "img": "modules/sw5e-module/icons/packs/Deployments/Gunner.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -147,7 +147,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493963429,
     "modifiedTime": 1720368729964,

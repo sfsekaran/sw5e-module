@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/TwiLek.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/TwiLek.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearence</h2>\n<p>Twi'leks are usually thin, although corpulent individuals were known to exist. Twi'leks are omnivores; this diet is essential given that food is scarce on their homeworld, Ryloth. Twi'leks possess multiple stomachs, an unusual trait that enables them to eat almost any food. When traveling off their homeworld, twi'leks rarely refuse food, which frequently leads to obesity among starfarers. Twi'lek society also considers obesity as a sign of influence and success.</p>\n<h2>Society and Culture</h2>\n<p>The natural grace and exotic beauty of the female twi'leks make them a popular target among slave traders. Slavery is the main currency of Ryloth. Some see it as a chance to make money by kidnapping or selling orphaned children, while others see slavery as a way of saving children from growing up in Ryloth's harsh environment. A number of twi'leks believe that slavery is an efficient way to proliferate their species and preserve their culture, as the twi'leks lack their own means of inter-planetary travel. Regardless of how it came about, many twi'leks live as slaves or entertainers and are considered status symbols, especially the females of rarer skin hues. Twi'leks that manage to escape from captivity usually turned to a life of thievery or prostitution, with both genders making use of their powers of seduction.</p>\n<h2>Names</h2>\n<p>Twi'lek names combine their first name and a clan name into a single name, rather than having a separate surname.</p>\n<p><strong>Male Names.</strong> Ecrizsati, Gaj'mogos, Ukelweko</p>\n<p><strong>Female Names.</strong> Arag'mure, Oanicfuba, Unaecripi</p>",
@@ -47,47 +47,47 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.hkgBJKZBSiS1lsvK",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.hkgBJKZBSiS1lsvK",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.aduIhWOaNhzuOuBq",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.aduIhWOaNhzuOuBq",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.IJzt5xEtlYW8MGTx",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.IJzt5xEtlYW8MGTx",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Ka3B8zSDfjHt0lud",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Ka3B8zSDfjHt0lud",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.vbk0WXrElQsALnbV",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.vbk0WXrElQsALnbV",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.0KfjBUqlNkIs6X5I",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.0KfjBUqlNkIs6X5I",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.xhHrW3RqcOdVj7fO",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.xhHrW3RqcOdVj7fO",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ElwnanpV8X0cR0n5",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ElwnanpV8X0cR0n5",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.xCX5djdGYYCUaCAX",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.xCX5djdGYYCUaCAX",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.V5NrHvN54XuHLNnh",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.V5NrHvN54XuHLNnh",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.4zq8nNHwbkPGE763",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.4zq8nNHwbkPGE763",
               "optional": false
             }
           ],
@@ -234,7 +234,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Twi_lek.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Twi_lek.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -249,7 +249,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732412596409,

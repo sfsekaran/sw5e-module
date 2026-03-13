@@ -2,7 +2,7 @@
   "_id": "VdGLqnS8HMmGWoKU",
   "name": "Defensive Tactics",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCT-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCT-ARCH-Passive.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -15,7 +15,7 @@
   },
   "system": {
     "description": {
-      "value": "<p><em><strong>Hunter Technique:</strong> 7th level</em></p>\n<p>You gain one of the following features of your choice. </p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.jfod2jgUrIzoO8kG]{Escape the Horde}</h3>\n<p>Opportunity attacks against you are made with disadvantage.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.XI49sd2DxAGNn4hb]{Multiattack Defense}</h3>\n<p>When a creature hits you with an attack, you gain a +4 bonus to AC against all subsequent attacks made by that creature for the rest of the turn. </p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.PH319Y8tlAAEIEJ9]{Steel Will}</h3>\n<p>You have advantage on saving throws against being frightened.</p>",
+      "value": "<p><em><strong>Hunter Technique:</strong> 7th level</em></p>\n<p>You gain one of the following features of your choice. </p>\n<h3>@UUID[Compendium.sw5e-module.archetypefeatures.Item.jfod2jgUrIzoO8kG]{Escape the Horde}</h3>\n<p>Opportunity attacks against you are made with disadvantage.</p>\n<h3>@UUID[Compendium.sw5e-module.archetypefeatures.Item.XI49sd2DxAGNn4hb]{Multiattack Defense}</h3>\n<p>When a creature hits you with an attack, you gain a +4 bonus to AC against all subsequent attacks made by that creature for the rest of the turn. </p>\n<h3>@UUID[Compendium.sw5e-module.archetypefeatures.Item.PH319Y8tlAAEIEJ9]{Steel Will}</h3>\n<p>You have advantage on saving throws against being frightened.</p>",
       "chat": ""
     },
     "requirements": "Scout (Hunter Technique) 7",
@@ -105,7 +105,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493957790,
     "modifiedTime": 1733252359006,

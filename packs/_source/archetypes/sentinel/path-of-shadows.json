@@ -2,7 +2,7 @@
   "_id": "6dnVRdJAIby4258g",
   "name": "Path of Shadows",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/PathOfShadows.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/PathOfShadows.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.X53YgZevjoDygVam",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.X53YgZevjoDygVam",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ocyh8LZGSDc4trWi",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ocyh8LZGSDc4trWi",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.S8EKDemG7wOzKU7x",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.S8EKDemG7wOzKU7x",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ZXE4BqEuR817CI63",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ZXE4BqEuR817CI63",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.UALQWbDzmp6H8Uiq",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.UALQWbDzmp6H8Uiq",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959714,
     "modifiedTime": 1732304668624,

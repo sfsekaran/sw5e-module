@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/SensorProbe.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/SensorProbe.webp",
   "system": {
     "description": {
       "value": "<p>You create a small, temporary, invisible probe that hovers in the air for the duration. You mentally receive visual information from the probe. It has darkvision out to 30 feet. The eye can look in every direction.</p>\n<p>As an action, you can move the probe up to 30 feet in any direction. There's no limit on how far away from you it can be. A solid barrier blocks the probe's movement, but it can pass through an opening at least 1 inch in diameter.</p>",
@@ -101,8 +101,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -143,7 +143,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "FLCnScBfRf6JIq6T",
@@ -154,7 +154,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

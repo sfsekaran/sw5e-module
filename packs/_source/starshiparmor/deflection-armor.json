@@ -2,7 +2,7 @@
   "_id": "aG6mKPerYCFmkI00",
   "name": "Deflection Armor",
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Starship%20Equipment/DeflectionArmor.webp",
+  "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/DeflectionArmor.webp",
   "effects": [
     {
       "_id": "Dnv7xAqlTy1ofBOO",
@@ -36,7 +36,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e.starshiparmor.aG6mKPerYCFmkI00",
+      "origin": "Compendium.sw5e-module.starshiparmor.aG6mKPerYCFmkI00",
       "transfer": true,
       "flags": {
         "core": {
@@ -57,7 +57,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Starship%20Equipment/DeflectionArmor.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/DeflectionArmor.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -213,7 +213,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674494017108,
     "modifiedTime": 1720552913116,

@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/PoisonSpray.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/PoisonSpray.webp",
   "system": {
     "description": {
       "value": "<p>You extend your hand toward a creature you can see within range and project a puff of noxious gas. The creature must succeed on a Constitution saving throw or take [[/r 1d12]] poison damage. </p>\n<p>This power's damage increases by [[/r 1d12]] when you reach 5th level ([[/r 2d12]]), 11th level ([[/r 3d12]]), and 17th level ([[/r 4d12]]).</p>",
@@ -104,8 +104,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "condition": "",
@@ -153,7 +153,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "k6A6OHZkEECqIP1Q",
@@ -164,7 +164,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

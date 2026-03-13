@@ -2,10 +2,10 @@
   "_id": "qv4Qv2DztxkC39ZA",
   "name": "Brutal Critical",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/BSKR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/BSKR-Passive.webp",
   "effects": [
     {
-      "origin": "Compendium.sw5e.classfeatures.Item.qv4Qv2DztxkC39ZA",
+      "origin": "Compendium.sw5e-module.classfeatures.Item.qv4Qv2DztxkC39ZA",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -41,7 +41,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Class%20Features/BSKR-Passive.webp",
+      "img": "modules/sw5e-module/icons/packs/Class%20Features/BSKR-Passive.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -149,7 +149,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493962387,
     "modifiedTime": 1729984342164,

@@ -6,6 +6,8 @@ import {
 	normalizeCompendiumUuid,
 	SETTINGS_NAMESPACE
 } from "./module-support.mjs";
+import { normalizeDnd5eItemSource } from "./dnd5e-source-normalization.mjs";
+import { normalizeLegacyStarshipActorData, normalizeLegacyStarshipItemData } from "./starship-data.mjs";
 
 /**
  * Checks if the world needs migrating.
@@ -55,7 +57,7 @@ export const migrateWorld = async function() {
 			if ( !foundry.utils.isEmpty(updateData) ) {
 				console.log(`Migrating Actor document ${actor.name}`);
 				if ( flags.persistSourceMigration ) {
-					updateData = foundry.utils.mergeObject(source, updateData, {inplace: false});
+					updateData = mergePersistedMigrationSource(source, updateData);
 				}
 				await actor.update(updateData, {
 					enforceTypes: false, diff: valid && !flags.persistSourceMigration, render: false
@@ -79,7 +81,7 @@ export const migrateWorld = async function() {
 			if ( !foundry.utils.isEmpty(updateData) ) {
 				console.log(`Migrating Item document ${item.name}`);
 				if ( flags.persistSourceMigration ) {
-					updateData = foundry.utils.mergeObject(source, updateData, {inplace: false});
+					updateData = mergePersistedMigrationSource(source, updateData);
 				}
 				await item.update(updateData, {
 					enforceTypes: false, diff: valid && !flags.persistSourceMigration, render: false
@@ -142,7 +144,7 @@ export const migrateWorld = async function() {
 				if ( !foundry.utils.isEmpty(updateData) ) {
 					console.log(`Migrating ActorDelta document ${token.actor.name} [${token.delta.id}] in Scene ${s.name}`);
 					if ( flags.persistSourceMigration ) {
-						updateData = foundry.utils.mergeObject(source, updateData, { inplace: false });
+						updateData = mergePersistedMigrationSource(source, updateData);
 					} else {
 						// Workaround for core issue of bulk updating ActorDelta collections.
 						["items", "effects"].forEach(col => {
@@ -217,7 +219,7 @@ export const migrateCompendium = async function(pack) {
 
 			// Save the entry, if data was changed
 			if ( foundry.utils.isEmpty(updateData) ) continue;
-			if ( flags.persistSourceMigration ) updateData = foundry.utils.mergeObject(source, updateData);
+			if ( flags.persistSourceMigration ) updateData = mergePersistedMigrationSource(source, updateData);
 			await doc.update(updateData, { diff: !flags.persistSourceMigration });
 			console.log(`Migrated ${documentName} document ${doc.name} in Compendium ${pack.collection}`);
 		}
@@ -271,34 +273,52 @@ export const migrateEffects = function(parent, migrationData) {
  */
 export const migrateActorData = function(actor, migrationData, flags={}, { actorUuid }={}) {
 	const updateData = {};
-	_migrateImage(actor, updateData);
-	_migrateObjectFlags(actor, updateData);
+	const migratedActor = applyDocumentMigration(CONFIG.Actor.documentClass, actor);
+	const workingActor = migratedActor.source;
+	let requiresFullSourceMigration = migratedActor.changed || normalizeLegacyStarshipActorData(workingActor);
+
+	_migrateImage(workingActor, updateData);
+	_migrateObjectFlags(workingActor, updateData);
 
 	// Migrate embedded effects
-	if ( actor.effects ) {
-		const effects = migrateEffects(actor, migrationData);
-		if ( effects.length > 0 ) updateData.effects = effects;
+	if ( workingActor.effects ) {
+		const effects = migrateEffects(workingActor, migrationData);
+		if ( effects.length > 0 ) {
+			updateData.effects = effects;
+			applyEmbeddedUpdates(workingActor.effects, effects);
+		}
 	}
+	applyUpdateData(workingActor, updateData);
 
 	// Migrate Owned Items
-	if ( !actor.items ) return updateData;
-	const items = actor.items.reduce((arr, i) => {
+	if ( !workingActor.items ) {
+		if ( requiresFullSourceMigration ) {
+			flags.persistSourceMigration = true;
+			return workingActor;
+		}
+		return updateData;
+	}
+
+	const items = workingActor.items.reduce((arr, i) => {
 		// Migrate the Owned Item
 		const itemData = i instanceof CONFIG.Item.documentClass ? i.toObject() : i;
-		const itemFlags = { persistSourceMigration: false };
+		const itemFlags = { persistSourceMigration: normalizeLegacyStarshipItemData(itemData) };
 		let itemUpdate = migrateItemData(itemData, migrationData, itemFlags);
+		applyUpdateData(itemData, itemUpdate);
 
 		// Update the Owned Item
-		if ( !foundry.utils.isEmpty(itemUpdate) ) {
-			if ( itemFlags.persistSourceMigration ) {
-				itemUpdate = foundry.utils.mergeObject(itemData, itemUpdate, {inplace: false});
-				flags.persistSourceMigration = true;
-			}
+		if ( itemFlags.persistSourceMigration ) requiresFullSourceMigration = true;
+		if ( !foundry.utils.isEmpty(itemUpdate) && !requiresFullSourceMigration ) {
 			arr.push({ ...itemUpdate, _id: itemData._id });
 		}
 
 		return arr;
 	}, []);
+	if ( requiresFullSourceMigration ) {
+		flags.persistSourceMigration = true;
+		return workingActor;
+	}
+
 	if ( items.length > 0 ) updateData.items = items;
 
 	return updateData;
@@ -315,19 +335,37 @@ export const migrateActorData = function(actor, migrationData, flags={}, { actor
  * @returns {object}                The updateData to apply
  */
 export function migrateItemData(item, migrationData, flags={}) {
+	const normalizedItem = foundry.utils.deepClone(item);
+	const normalizedDnd5eItem = normalizeDnd5eItemSource(normalizedItem);
+	const migratedItem = applyDocumentMigration(CONFIG.Item.documentClass, normalizedItem);
+	const workingItem = migratedItem.source;
 	const updateData = {};
-	_migrateImage(item, updateData);
-	_migrateDescriptionLinks(item, updateData);
-	_migrateObjectFlags(item, updateData);
-	_migrateItemProperties(item, updateData);
-	_migrateSpellScaling(item, updateData);
-	_migrateAdvancements(item, updateData);
-	_migrateWeaponData(item, updateData);
+	const requiresFullSourceMigration = normalizedDnd5eItem
+		|| migratedItem.changed
+		|| normalizeLegacyStarshipItemData(workingItem);
+	if ( requiresFullSourceMigration ) flags.persistSourceMigration = true;
+
+	_migrateImage(workingItem, updateData);
+	_migrateDescriptionLinks(workingItem, updateData);
+	_migrateObjectFlags(workingItem, updateData);
+	_migrateItemProperties(workingItem, updateData);
+	_migrateSpellScaling(workingItem, updateData);
+	_migrateAdvancements(workingItem, updateData);
+	_migrateWeaponData(workingItem, updateData);
+	_migrateBlasterAmmoData(workingItem, updateData);
 
 	// Migrate embedded effects
-	if ( item.effects ) {
-		const effects = migrateEffects(item, migrationData);
-		if ( effects.length > 0 ) updateData.effects = effects;
+	if ( workingItem.effects ) {
+		const effects = migrateEffects(workingItem, migrationData);
+		if ( effects.length > 0 ) {
+			updateData.effects = effects;
+			applyEmbeddedUpdates(workingItem.effects, effects);
+		}
+	}
+
+	if ( requiresFullSourceMigration ) {
+		applyUpdateData(workingItem, updateData);
+		return workingItem;
 	}
 
 	return updateData;
@@ -420,6 +458,47 @@ function getInvalidDocumentSource(collection, id, legacyKey) {
 	if ( source ) return source;
 	const legacy = game.data?.[legacyKey]?.find?.(doc => doc._id === id);
 	return legacy ? foundry.utils.deepClone(legacy) : null;
+}
+
+function applyUpdateData(target, updateData) {
+	if ( foundry.utils.isEmpty(updateData) ) return;
+	foundry.utils.mergeObject(target, foundry.utils.expandObject(updateData), { inplace: true });
+}
+
+function applyEmbeddedUpdates(collection, updates=[]) {
+	if ( !Array.isArray(collection) || !updates.length ) return;
+	const updatesById = new Map(updates.map(update => [update._id, update]));
+	for ( const entry of collection ) {
+		const update = updatesById.get(entry._id);
+		if ( update ) applyUpdateData(entry, update);
+	}
+}
+
+function sourcesDiffer(left, right) {
+	return JSON.stringify(left) !== JSON.stringify(right);
+}
+
+function applyDocumentMigration(DocumentClass, source) {
+	const workingSource = foundry.utils.deepClone(source);
+	if ( typeof DocumentClass?.migrateData !== "function" ) return { source: workingSource, changed: false };
+
+	const migrated = DocumentClass.migrateData(workingSource);
+	const migratedSource = (migrated && (typeof migrated === "object")) ? migrated : workingSource;
+	return {
+		source: migratedSource,
+		changed: sourcesDiffer(source, migratedSource)
+	};
+}
+
+function mergePersistedMigrationSource(source, updateData) {
+	const merged = foundry.utils.mergeObject(source, updateData, { inplace: false });
+	if ( updateData.flags?.sw5e?.legacyStarshipActor?.type === "starship" ) {
+		if ( updateData.type ) merged.type = updateData.type;
+		if ( updateData.system ) merged.system = updateData.system;
+		if ( updateData.items ) merged.items = updateData.items;
+		if ( updateData.effects ) merged.effects = updateData.effects;
+	}
+	return merged;
 }
 
 /* -------------------------------------------- */
@@ -845,5 +924,39 @@ function _migrateWeaponData(itemData, updateData) {
 		updateData["system.type.value"] = `${itemData.system.type.value}L`;
 	}
 
+	return updateData;
+}
+
+const BLASTER_AMMO_TYPES = new Set(["powerCell", "cartridge"]);
+
+function _getBlasterAmmoTypes(itemData) {
+	const types = itemData?.system?.ammo?.types;
+	if ( Array.isArray(types) && types.length ) return types;
+	const legacyTypes = itemData?.flags?.sw5e?.reload?.types;
+	return Array.isArray(legacyTypes) ? legacyTypes : [];
+}
+
+function _getBlasterReloadMax(itemData) {
+	const ammoMax = Number(itemData?.system?.ammo?.max);
+	if ( Number.isFinite(ammoMax) && (ammoMax > 0) ) return ammoMax;
+
+	const systemRel = Number(itemData?.system?.properties?.rel ?? itemData?.system?.properties?.ovr);
+	if ( Number.isFinite(systemRel) && (systemRel > 0) ) return systemRel;
+
+	const flagRel = Number(
+		itemData?.flags?.sw5e?.properties?.rel
+		?? itemData?.flags?.sw5e?.properties?.reload
+		?? itemData?.flags?.sw5e?.properties?.ovr
+	);
+	return Number.isFinite(flagRel) && (flagRel > 0) ? flagRel : 0;
+}
+
+function _migrateBlasterAmmoData(itemData, updateData) {
+	if ( itemData.type !== "weapon" ) return updateData;
+	if ( ![null, undefined, ""].includes(itemData?.system?.ammo?.value) ) return updateData;
+	if ( !_getBlasterAmmoTypes(itemData).some(type => BLASTER_AMMO_TYPES.has(type)) ) return updateData;
+
+	const reloadMax = _getBlasterReloadMax(itemData);
+	if ( reloadMax > 0 ) updateData["system.ammo.value"] = reloadMax;
 	return updateData;
 }

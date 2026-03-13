@@ -2,7 +2,7 @@
   "_id": "4ldzxHJd8qW1LGDA",
   "name": "Mechanist Technique",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/MechanistTechnique.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/MechanistTechnique.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.w5dVSh020rm5poaQ",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.w5dVSh020rm5poaQ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.czcAcya6I9K5RRXe",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.czcAcya6I9K5RRXe",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.n61Di59i1v3AHzbe",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.n61Di59i1v3AHzbe",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.eviAtXKewLeaplqC",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.eviAtXKewLeaplqC",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.uXSijgT60H3yg2Ee",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.uXSijgT60H3yg2Ee",
               "optional": false
             }
           ],
@@ -127,7 +127,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959711,
     "modifiedTime": 1732412593736,

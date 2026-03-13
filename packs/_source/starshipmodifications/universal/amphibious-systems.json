@@ -1,7 +1,7 @@
 {
   "name": "Amphibious Systems",
-  "type": "starshipmod",
-  "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
+  "type": "loot",
+  "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Universal.webp",
   "effects": [
     {
       "_id": "B2D0h6bdK0n4Ecwk",
@@ -23,7 +23,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e.starshipmodifications.KWcCCOTTo8UFdxhD",
+      "origin": "Compendium.sw5e-module.starshipmodifications.KWcCCOTTo8UFdxhD",
       "transfer": true,
       "flags": {
         "core": {
@@ -61,21 +61,128 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Universal.webp",
       "type": "base",
       "system": {},
       "_key": "!items.effects!M6qRS3zh0FluJREN.B2D0h6bdK0n4Ecwk"
     }
   ],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "sw5e": {
+      "legacyStarshipMod": {
+        "description": {
+          "value": "<p>This modification allows your ship and all of its systems (including weapons) to function underwater.  Your ship gains a swimming speed equal to half of its normal speed.</p>",
+          "chat": "",
+          "unidentified": ""
+        },
+        "requirements": "",
+        "source": {
+          "value": "SotG"
+        },
+        "quantity": 1,
+        "weight": 0,
+        "price": {
+          "value": 0,
+          "denomination": "gp"
+        },
+        "attunement": 0,
+        "equipped": false,
+        "rarity": "",
+        "identified": false,
+        "isCargo": false,
+        "activation": {
+          "type": "none",
+          "cost": null,
+          "condition": ""
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "cover": null,
+        "crewed": false,
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": null,
+          "long": null,
+          "units": ""
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": "",
+          "recovery": ""
+        },
+        "consume": {
+          "type": "",
+          "target": null,
+          "amount": null
+        },
+        "ability": null,
+        "actionType": "",
+        "attackBonus": 0,
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "recharge": {
+          "charged": false,
+          "value": null
+        },
+        "grade": {
+          "value": 0
+        },
+        "baseCost": {
+          "value": null
+        },
+        "prerequisites": {
+          "value": ""
+        },
+        "free": {
+          "slot": false,
+          "suite": false
+        },
+        "armor": {
+          "type": "",
+          "value": null,
+          "dex": null
+        },
+        "proficient": false,
+        "properties": [],
+        "attributes": {
+          "dr": ""
+        },
+        "strength": null,
+        "stealth": false,
+        "type": {
+          "value": "Universal"
+        }
+      }
+    }
+  },
   "system": {
     "description": {
       "value": "<p>This modification allows your ship and all of its systems (including weapons) to function underwater.  Your ship gains a swimming speed equal to half of its normal speed.</p>",
       "chat": "",
       "unidentified": ""
     },
-    "requirements": "",
     "source": {
       "value": "SotG"
     },
@@ -85,98 +192,12 @@
       "value": 0,
       "denomination": "gp"
     },
-    "attunement": 0,
-    "equipped": false,
     "rarity": "",
-    "identified": false,
-    "isCargo": false,
-    "activation": {
-      "type": "none",
-      "cost": null,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": ""
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": ""
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": ""
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null
-    },
-    "ability": null,
-    "actionType": "",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "recharge": {
-      "charged": false,
-      "value": null
-    },
-    "grade": {
-      "value": 0
-    },
-    "baseCost": {
-      "value": null
-    },
-    "prerequisites": {
-      "value": ""
-    },
-    "free": {
-      "slot": false,
-      "suite": false
-    },
-    "armor": {
-      "type": "",
-      "value": null,
-      "dex": null
-    },
-    "proficient": false,
-    "properties": [],
-    "attributes": {
-      "dr": ""
-    },
-    "strength": null,
-    "stealth": false,
-    "type": {
-      "value": "Universal"
-    }
+    "identified": false
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674494018656,
     "modifiedTime": 1706199587732,

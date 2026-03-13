@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Nikto.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Nikto.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Nikto are reptilian humanoids that are noted for their leathery skin. They hold a limited range of facial expressions because they lack the necessary anatomical infrastructure. Their eyes are covered by a protective membrane, being a thin transparent pellicle that protects their eyes underwater and during windstorms. As a result, they are noted for their \"staring\" eyes and a seemingly blank expression which leads to many underestimating nikto intelligence.</p>\n<h2>Society and Culture</h2>\n<p>Although lacking in personal charisma, nikto posses a single-minded tenacity that makes them excellent followers. Their lives made nikto cunning combatants. Most nikto are content with a life of servitude as in their eyes a life in slavery was preferable to the hardship and toil on their homeworld. Not all nikto work for the hutts though most free members of their kind were formerly enslaved. Whilst nikto are known to escape from their master, most tend to fall into service of another hutt who \"inherited\" them according to custom should their previous employer die. However, some escaped nikto did instead use some opportunities to genuinely become free beings. Any such emancipated nikto have to be constantly on guard as they risked capture by hutt-employed slavers who return their prey to their \"rightful owners\". In addition, they lacked charisma and preferred to follow orders instead of giving them. As a result, the Nikto were most identified with their Hutt masters.</p>\n<h2>Names</h2>\n<p>Nikto names are very complex, hard to pronounce, and harsh sounding. Name length also differs a lot, longer names having apostrophes or dashes. Their names are unisex, with surnames being familiar and optional. </p>\n<p><strong>First Names.</strong> Jydabaum, N'rok'ratu, Sussa, Vydgish</p>\n<p><strong>Surnames.</strong> Gozorc, Irtitt, Qegmarg, Umpluurg</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.TG5cuIVw4qg9YHmK",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.TG5cuIVw4qg9YHmK",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.qk2hwnA0cTQ70yxd",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.qk2hwnA0cTQ70yxd",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.MVO00tAh3hgiOrSB",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.MVO00tAh3hgiOrSB",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.m6GDM2edtP3VRKbP",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.m6GDM2edtP3VRKbP",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.2Cwm5yThLcpJJqcL",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.2Cwm5yThLcpJJqcL",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.TTjH996uAe2vj28Z",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.TTjH996uAe2vj28Z",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.pC36nVEwseBOpnId",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.pC36nVEwseBOpnId",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.OaUgTirFct9sU5vv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.OaUgTirFct9sU5vv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.gGFjNY1kiOmrmSSD",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.gGFjNY1kiOmrmSSD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.thcqtwU9C9c2gPRO",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.thcqtwU9C9c2gPRO",
               "optional": false
             }
           ],
@@ -191,7 +191,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732412596409,

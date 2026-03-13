@@ -2,7 +2,7 @@
   "_id": "BGIYzeSUkzZBa4Sq",
   "name": "Fireteam Specialist (Companion)",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/FireteamSpecialist-Companion.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/FireteamSpecialist-Companion.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.nRPXN56W71K3qzRR",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.nRPXN56W71K3qzRR",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.SuhgRK5K3GqkQXTe",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.SuhgRK5K3GqkQXTe",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.hqwneBmQ52MvlMrT",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.hqwneBmQ52MvlMrT",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.k5FWh0AqBi5j9oTJ",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.k5FWh0AqBi5j9oTJ",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.FoNFPqroVIeF0Dhv",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.FoNFPqroVIeF0Dhv",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.7yiK1oxu1IVvVN0c",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.7yiK1oxu1IVvVN0c",
               "optional": false
             }
           ],
@@ -105,7 +105,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ajGOFD7S4Pl1DUpC",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ajGOFD7S4Pl1DUpC",
               "optional": false
             }
           ],
@@ -152,7 +152,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959721,
     "modifiedTime": 1732304668784,

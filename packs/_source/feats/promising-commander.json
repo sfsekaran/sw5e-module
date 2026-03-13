@@ -2,7 +2,7 @@
   "_id": "Xn45Vu2LMkZYQRHo",
   "name": "Promising Commander",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/PromisingCommander.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/PromisingCommander.webp",
   "effects": [
     {
       "_id": "3NVot0o4OXJ7cilR",
@@ -41,7 +41,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Feats/PromisingCommander.webp",
+      "img": "modules/sw5e-module/icons/packs/Feats/PromisingCommander.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -149,8 +149,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "action"
@@ -176,14 +176,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966803,
     "modifiedTime": 1739121097153,

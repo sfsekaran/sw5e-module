@@ -2,7 +2,7 @@
   "_id": "Ayxbhs6ruoY7Z5ob",
   "name": "Tactical Specialist",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/TacticalSpecialist.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/TacticalSpecialist.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.VaeXx1uqSbb2SA68",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.VaeXx1uqSbb2SA68",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.NtAIiS7Zz4BWuxBq",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.NtAIiS7Zz4BWuxBq",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.TpLT8MuI3KKsljxa",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.TpLT8MuI3KKsljxa",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.5Z3zJmTNI6uyEPNA",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.5Z3zJmTNI6uyEPNA",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.znI7r1ArIIqcmUpf",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.znI7r1ArIIqcmUpf",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.TCBftUhIxww79moU",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.TCBftUhIxww79moU",
               "optional": false
             }
           ],
@@ -105,7 +105,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.RQnRq0u0DbUJcO58",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.RQnRq0u0DbUJcO58",
               "optional": false
             }
           ],
@@ -151,7 +151,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959720,
     "modifiedTime": 1732304668774,

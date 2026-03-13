@@ -2,7 +2,7 @@
   "_id": "CkiWjE5mn0xF1F7k",
   "name": "Bolstering Practice",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/BolsteringPractice.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/BolsteringPractice.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.elR3dhPLS1oM4z7u",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.elR3dhPLS1oM4z7u",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.FOjBpTGHIupbF0Kg",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.FOjBpTGHIupbF0Kg",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.zyemUQyZo4Q6YGvE",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.zyemUQyZo4Q6YGvE",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.UijTpKVNn8MnEpkE",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.UijTpKVNn8MnEpkE",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.aw4P3vsZCfNf5DKc",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.aw4P3vsZCfNf5DKc",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959724,
     "modifiedTime": 1732304668830,

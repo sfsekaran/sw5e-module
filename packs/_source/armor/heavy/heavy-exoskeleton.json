@@ -2,7 +2,7 @@
   "_id": "ggFMzbQrwkGZCoaQ",
   "name": "Heavy exoskeleton",
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Armor/PHB/HeavyExoskeleton.webp",
+  "img": "modules/sw5e-module/icons/packs/Armor/PHB/HeavyExoskeleton.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -170,7 +170,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493960306,
     "modifiedTime": 1729984338601,

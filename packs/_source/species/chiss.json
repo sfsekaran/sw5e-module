@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Chiss.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Chiss.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>The chiss are a near-human species distinguished by their blue skin and glowing red eyes. Genetic analysis indicate that they are an offshoot of humanity, and it is believed that moving underground led to a divergence between them and baseline Humans. Their blue skin, jet black hair and red eyes generally command attention; these features make them physically striking and instantly recognizable.</p>\n<h2>Society and Culture</h2>\n<p>Chiss society is highly structured and ordered with the rule of law being enforced by a group of four affiliations known as the Ruling Families: the Csapla, Nuruodo, Inrokini and Sabosen. These are not biological family groupings but instead different branches of their government. Every chiss claims affiliation to one of the four families, as determined by both tradition and place of birth. The family names are more of a cultural holdover; the bloodlines had grown so co-meddled that any chiss could claim affiliation to any of the ruling families. In spite of the outward impression of calm and order that the chiss like to project to outsiders, there were evidently tensions within the Families; political assassinations are a real part of chiss political life for the Ruling Families.</p>\n<h2>Names</h2>\n<p>A chiss true-name has 3 parts, each separated by an apostrophe. The first part is their family name, the second part is their root name, and the third part is their occupation. Chiss rarely share their true-name with non-chiss, and usually go by their root name. Male and female names do not significantly deviate.</p>\n<p><strong>Names.</strong> Crorcu'ecuk'unist, Dash'esoru'ishur, Jerd'ecer'lonii, Kisk'egauw'eqhi, Marag'aliphil'eduo, Pommo'icuote'nlerme, Vornu'wuzi'lerdim</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.HOboK5KEvj8klrdh",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.HOboK5KEvj8klrdh",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.FcpAlgprAmQekLAP",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.FcpAlgprAmQekLAP",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.WG8z5uRnqfHA2J8n",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.WG8z5uRnqfHA2J8n",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.zZF6Ue3q1pCpyK3X",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.zZF6Ue3q1pCpyK3X",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.VRLSw7G5G5wz9LV7",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.VRLSw7G5G5wz9LV7",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.1XMSAsLstWy7pLFI",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.1XMSAsLstWy7pLFI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.OPzk2p6YCjVKeEMw",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.OPzk2p6YCjVKeEMw",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.3V9tMs88cuLfntyI",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.3V9tMs88cuLfntyI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.yEiCdqsYAOgHet9L",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.yEiCdqsYAOgHet9L",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ArtoDwrTTUURNtNn",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ArtoDwrTTUURNtNn",
               "optional": false
             }
           ],
@@ -231,7 +231,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Chiss.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Chiss.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -246,7 +246,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725381,

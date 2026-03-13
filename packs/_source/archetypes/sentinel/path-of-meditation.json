@@ -2,7 +2,7 @@
   "_id": "vJzeeptKOcyy2A3A",
   "name": "Path of Meditation",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/PathOfMeditation.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/PathOfMeditation.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.jzk3jiTs5K4tXMgT",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.jzk3jiTs5K4tXMgT",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.DzzBvbZTTc1CutJ7",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.DzzBvbZTTc1CutJ7",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.LL8StaGlBvMjxaER",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.LL8StaGlBvMjxaER",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.10fweZVQTNSQtqX8",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.10fweZVQTNSQtqX8",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.gZ3oAi3tQKpvQ7KD",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.gZ3oAi3tQKpvQ7KD",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959782,
     "modifiedTime": 1732304669694,

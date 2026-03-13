@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/AssessTheSituation.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/AssessTheSituation.webp",
   "system": {
     "description": {
       "value": "<p>You take a sensory snapshot of a target within range. Your tech grants you a brief insight into the target's defenses. You have advantage on the next attack roll you make against the target before the end of your next turn.</p>\n<p>This power benefits additional attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level.</p>",
@@ -101,8 +101,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -129,7 +129,7 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "Zrq1CwKjA4GlY6JU",
@@ -140,7 +140,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

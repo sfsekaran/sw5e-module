@@ -2,7 +2,7 @@
   "_id": "hM4iAJm05SAZ5I0h",
   "name": "Circlet of Persistence",
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Enhanced%20Items/CircletOfPersistence.webp",
+  "img": "modules/sw5e-module/icons/packs/Enhanced%20Items/CircletOfPersistence.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -159,8 +159,8 @@
     "attuned": false,
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "special"
@@ -192,14 +192,14 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493964895,
     "modifiedTime": 1739121086510,

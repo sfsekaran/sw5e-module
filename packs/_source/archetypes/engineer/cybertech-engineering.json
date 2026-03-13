@@ -2,7 +2,7 @@
   "_id": "Y8uZyqAuOWmUZEDP",
   "name": "Cybertech Engineering",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/CybertechEngineering.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/CybertechEngineering.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.LOvhhdrch9KFgkIc",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.LOvhhdrch9KFgkIc",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.8odrtKOlTeo4WEsr",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.8odrtKOlTeo4WEsr",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.kxOWjaI2uhux0jSu",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.kxOWjaI2uhux0jSu",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.cxwXHpsjxTOGh3aG",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.cxwXHpsjxTOGh3aG",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.XvUPZ0OWc1KTLgZt",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.XvUPZ0OWc1KTLgZt",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.RhgLSBN7PDwunvA1",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.RhgLSBN7PDwunvA1",
               "optional": false
             }
           ],
@@ -148,103 +148,103 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.pDaeunkidKg5dId9"
+              "uuid": "Compendium.sw5e-module.invocations.pDaeunkidKg5dId9"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.SFB1zJ1530hKnvoa"
+              "uuid": "Compendium.sw5e-module.invocations.SFB1zJ1530hKnvoa"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.0RwKzvhTvCD3UYJW"
+              "uuid": "Compendium.sw5e-module.invocations.0RwKzvhTvCD3UYJW"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.1gVqwPiY34ZQ2jHQ"
+              "uuid": "Compendium.sw5e-module.invocations.1gVqwPiY34ZQ2jHQ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.4xjvDHGcAAO93nKX"
+              "uuid": "Compendium.sw5e-module.invocations.4xjvDHGcAAO93nKX"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.z7NYXQUbsUPTqZwx"
+              "uuid": "Compendium.sw5e-module.invocations.z7NYXQUbsUPTqZwx"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.4wpfKwLGcIRMBvd8"
+              "uuid": "Compendium.sw5e-module.invocations.4wpfKwLGcIRMBvd8"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.BkiLl9b4C3OWBOJE"
+              "uuid": "Compendium.sw5e-module.invocations.BkiLl9b4C3OWBOJE"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.EWohmhy4wewPq66N"
+              "uuid": "Compendium.sw5e-module.invocations.EWohmhy4wewPq66N"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.N4w3EnfDJu1o3tCl"
+              "uuid": "Compendium.sw5e-module.invocations.N4w3EnfDJu1o3tCl"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.ZcXo1o3R9jpdcb6T"
+              "uuid": "Compendium.sw5e-module.invocations.ZcXo1o3R9jpdcb6T"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Tth3J0jLigslzHam"
+              "uuid": "Compendium.sw5e-module.invocations.Tth3J0jLigslzHam"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.AT3fT29pMlC6xSHO"
+              "uuid": "Compendium.sw5e-module.invocations.AT3fT29pMlC6xSHO"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.irQQY0hJFTIdHssg"
+              "uuid": "Compendium.sw5e-module.invocations.irQQY0hJFTIdHssg"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.YLKxFLYBuNL1SA5L"
+              "uuid": "Compendium.sw5e-module.invocations.YLKxFLYBuNL1SA5L"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.3hzzFvtoeQfXHRKs"
+              "uuid": "Compendium.sw5e-module.invocations.3hzzFvtoeQfXHRKs"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.c2hDEK7QDWZaiAPy"
+              "uuid": "Compendium.sw5e-module.invocations.c2hDEK7QDWZaiAPy"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.lsW9DAi1zDC2kWDE"
+              "uuid": "Compendium.sw5e-module.invocations.lsW9DAi1zDC2kWDE"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.lYdE5aVQJ49OnezS"
+              "uuid": "Compendium.sw5e-module.invocations.lYdE5aVQJ49OnezS"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.2VJ4rnL1efgLb5IF"
+              "uuid": "Compendium.sw5e-module.invocations.2VJ4rnL1efgLb5IF"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.PgEODHWP5JkAYu7s"
+              "uuid": "Compendium.sw5e-module.invocations.PgEODHWP5JkAYu7s"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.FtHMsYWwEaO8G36r"
+              "uuid": "Compendium.sw5e-module.invocations.FtHMsYWwEaO8G36r"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.71B7JGyzhFVJTIVZ"
+              "uuid": "Compendium.sw5e-module.invocations.71B7JGyzhFVJTIVZ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.j8IM719XFCvZQD8L"
+              "uuid": "Compendium.sw5e-module.invocations.j8IM719XFCvZQD8L"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.zCCGP0YJLGRRmarJ"
+              "uuid": "Compendium.sw5e-module.invocations.zCCGP0YJLGRRmarJ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.tNIU3Th9HJIXgapY"
+              "uuid": "Compendium.sw5e-module.invocations.tNIU3Th9HJIXgapY"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.FhUfSVTHWvtl5ayZ"
+              "uuid": "Compendium.sw5e-module.invocations.FhUfSVTHWvtl5ayZ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.X4u0O9PxBgBgsKin"
+              "uuid": "Compendium.sw5e-module.invocations.X4u0O9PxBgBgsKin"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.iM7oP11UluoYFn6d"
+              "uuid": "Compendium.sw5e-module.invocations.iM7oP11UluoYFn6d"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.aqiTK2jkLR7veZwT"
+              "uuid": "Compendium.sw5e-module.invocations.aqiTK2jkLR7veZwT"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.H2BPwM1H4YdU9OQQ"
+              "uuid": "Compendium.sw5e-module.invocations.H2BPwM1H4YdU9OQQ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.DgwV4JF5ET2GpbOd"
+              "uuid": "Compendium.sw5e-module.invocations.DgwV4JF5ET2GpbOd"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Yj4TikDgYLBzRgwx"
+              "uuid": "Compendium.sw5e-module.invocations.Yj4TikDgYLBzRgwx"
             }
           ],
           "restriction": {
@@ -275,7 +275,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959755,
     "modifiedTime": 1732304669294,

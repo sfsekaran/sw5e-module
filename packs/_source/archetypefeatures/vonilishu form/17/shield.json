@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/GRDN-ARCH-Reaction.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/GRDN-ARCH-Reaction.webp",
   "system": {
     "description": {
       "value": "<p>When an ally is hit by a weapon attack while within 10 feet of you, you can use your reaction and expend a use of your Channel the Force to attempt to divert the attack. When you do so, the damage the chosen ally takes from the attack is reduced by [[/r 1d10]] + your Wisdom or Charisma modifier (your choice) + your guardian level.</p>\n<p>At 11th level, the chosen ally must be within 30 feet of you to benefit from this feature. At 17th level, the chosen ally must be within 60 feet.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "reaction"
@@ -127,7 +127,7 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -137,7 +137,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288495985,
     "modifiedTime": 1739121092781,

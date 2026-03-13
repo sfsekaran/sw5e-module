@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/CSLR-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/CSLR-ARCH-Passive.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Way of Telekinetics:</strong> 6th, 11th, and 17th level</em></p>\n<p>Your force powers batter and blast your enemies with the strength of a hurricane. When you cast a force power of 1st level or higher that deals force or kinetic damage, one creature of your choice damaged by that power must make a Strength saving throw against your universal force save DC or be knocked prone. </p>\n<p>This feature can affect additional creatures when you reach higher levels: two creatures at 11th level and three creatures at 17th level.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -135,7 +135,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -145,7 +145,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1679609438447,
     "modifiedTime": 1739121092781,

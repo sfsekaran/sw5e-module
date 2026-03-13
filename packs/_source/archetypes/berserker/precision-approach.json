@@ -2,7 +2,7 @@
   "_id": "DOhLhimid3h8Huc7",
   "name": "Precision Approach",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/PrecisionApproach.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/PrecisionApproach.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ZwzEXmXUBSQMarA7",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ZwzEXmXUBSQMarA7",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.aAMTfVpJR1g1Da7x",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.aAMTfVpJR1g1Da7x",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.QGZymJSoQ0q2BiZn",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.QGZymJSoQ0q2BiZn",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.9RlZQaQbXOowxZ3c",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.9RlZQaQbXOowxZ3c",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.p1EP6FF3RmWNr44d",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.p1EP6FF3RmWNr44d",
               "optional": false
             }
           ],
@@ -131,7 +131,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959727,
     "modifiedTime": 1732304668867,

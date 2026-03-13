@@ -50,8 +50,8 @@
       "revision": 1,
       "rules": "2024"
     },
-    "activities": {
-      "sw5e1save0000000": {
+    "activities": [
+      {
         "_id": "sw5e1save0000000",
         "activation": {
           "type": "action"
@@ -87,7 +87,7 @@
         },
         "type": "save"
       }
-    },
+    ],
     "properties": [
       "auto",
       "burst",
@@ -162,7 +162,7 @@
     }
   },
   "type": "weapon",
-  "img": "modules/sw5e/icons/packs/Martial%20Blasters/ShoulderCannon.webp",
+  "img": "modules/sw5e-module/icons/packs/Martial%20Blasters/ShoulderCannon.webp",
   "effects": [],
   "_id": "Kq7tVETK10sMa2zw",
   "folder": null,
@@ -174,7 +174,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433915469,
     "modifiedTime": 1739121086510,
     "lastModifiedBy": "dnd5ebuilder0000"

@@ -2,7 +2,7 @@
   "_id": "tSroJrVHQ7TBG2uH",
   "name": "Way of Manipulation",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/WayOfManipulation.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/WayOfManipulation.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,7 +29,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.rhmJ08V4zvzzdk4M",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.rhmJ08V4zvzzdk4M",
               "optional": false
             }
           ],
@@ -46,7 +46,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.trIB6FMTmPbqfDP5",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.trIB6FMTmPbqfDP5",
               "optional": false
             }
           ],
@@ -63,7 +63,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.OznFKdJhJi4HnBF0",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.OznFKdJhJi4HnBF0",
               "optional": false
             }
           ],
@@ -80,7 +80,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Ekr3UVpdZCU5W24f",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Ekr3UVpdZCU5W24f",
               "optional": false
             }
           ],
@@ -97,7 +97,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.hPn1UOSEPn94LbGV",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.hPn1UOSEPn94LbGV",
               "optional": false
             }
           ],
@@ -122,7 +122,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959780,
     "modifiedTime": 1732304669650,

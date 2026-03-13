@@ -2,7 +2,7 @@
   "name": "Devastator",
   "type": "feat",
   "flags": {},
-  "img": "modules/sw5e/icons/packs/Starship%20Features/Gargantuan.webp",
+  "img": "modules/sw5e-module/icons/packs/Starship%20Features/Gargantuan.webp",
   "effects": [],
   "_id": "s1UWyG0MYtL734cj",
   "system": {
@@ -104,7 +104,7 @@
   "sort": 0,
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674494017975,
     "modifiedTime": 1720552913849,

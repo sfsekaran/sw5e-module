@@ -1,20 +1,20 @@
 {
   "_id": "BZkA48rDJKsKCX3C",
   "name": "YT-1300f Light Freighter",
-  "type": "starship",
+  "type": "vehicle",
   "img": "https://static.wikia.nocookie.net/starwars/images/9/90/Millennium_Falcon_DICE.png?1660046466364",
   "items": [
     {
       "_id": "GLX8BgEXkXRcYM98",
       "name": "Attack Run",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Pilot-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Pilot-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.JThEduUp9ZstS5xv"
+          "sourceId": "Compendium.sw5e-module.starshipactions.JThEduUp9ZstS5xv"
         }
       },
       "system": {
@@ -109,12 +109,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818739,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.JThEduUp9ZstS5xv",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.JThEduUp9ZstS5xv",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.GLX8BgEXkXRcYM98"
@@ -123,13 +123,13 @@
       "_id": "FmlP87gwTMgldUdC",
       "name": "Boost Engines",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Crew-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Crew-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.cbGQLqMVWB7K5RI7"
+          "sourceId": "Compendium.sw5e-module.starshipactions.cbGQLqMVWB7K5RI7"
         }
       },
       "system": {
@@ -224,12 +224,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818739,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.cbGQLqMVWB7K5RI7",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.cbGQLqMVWB7K5RI7",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.FmlP87gwTMgldUdC"
@@ -238,13 +238,13 @@
       "_id": "0wP6A5hPBrL2IaWA",
       "name": "Boost Shields",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Crew-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Crew-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.Jmp4QznVg3PSEK86"
+          "sourceId": "Compendium.sw5e-module.starshipactions.Jmp4QznVg3PSEK86"
         }
       },
       "system": {
@@ -344,12 +344,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818739,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.Jmp4QznVg3PSEK86",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.Jmp4QznVg3PSEK86",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.0wP6A5hPBrL2IaWA"
@@ -358,13 +358,13 @@
       "_id": "KUZloS0lkJd2PiKh",
       "name": "Boost Weapons",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Crew-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Crew-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.S1bwJL9ZutRSvCxS"
+          "sourceId": "Compendium.sw5e-module.starshipactions.S1bwJL9ZutRSvCxS"
         }
       },
       "system": {
@@ -459,12 +459,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818739,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.S1bwJL9ZutRSvCxS",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.S1bwJL9ZutRSvCxS",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.KUZloS0lkJd2PiKh"
@@ -473,13 +473,13 @@
       "_id": "mXZeyKCJiVQnAmGH",
       "name": "Cast a Power",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Crew-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Crew-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.MyIsiNQaVYmuo6oK"
+          "sourceId": "Compendium.sw5e-module.starshipactions.MyIsiNQaVYmuo6oK"
         }
       },
       "system": {
@@ -574,12 +574,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1677699565104,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.MyIsiNQaVYmuo6oK",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.MyIsiNQaVYmuo6oK",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.mXZeyKCJiVQnAmGH"
@@ -588,13 +588,13 @@
       "_id": "LKSCt2Pysil9nmPA",
       "name": "Conceal",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Pilot-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Pilot-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.yT32O9CVWxCk5PKg"
+          "sourceId": "Compendium.sw5e-module.starshipactions.yT32O9CVWxCk5PKg"
         }
       },
       "system": {
@@ -689,12 +689,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818739,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.yT32O9CVWxCk5PKg",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.yT32O9CVWxCk5PKg",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.LKSCt2Pysil9nmPA"
@@ -703,13 +703,13 @@
       "_id": "MxN598rb0efk4J4H",
       "name": "Direct",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Crew-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Crew-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.nZubPOivzWtY5KP6"
+          "sourceId": "Compendium.sw5e-module.starshipactions.nZubPOivzWtY5KP6"
         }
       },
       "system": {
@@ -804,12 +804,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818739,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.nZubPOivzWtY5KP6",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.nZubPOivzWtY5KP6",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.MxN598rb0efk4J4H"
@@ -818,13 +818,13 @@
       "_id": "lSimXoLfsEffVgy5",
       "name": "Dogfight",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Pilot-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Pilot-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.iz9DVRm7QxoNVU0Q"
+          "sourceId": "Compendium.sw5e-module.starshipactions.iz9DVRm7QxoNVU0Q"
         }
       },
       "system": {
@@ -919,12 +919,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818740,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.iz9DVRm7QxoNVU0Q",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.iz9DVRm7QxoNVU0Q",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.lSimXoLfsEffVgy5"
@@ -933,13 +933,13 @@
       "_id": "J3SgnqWN0yxnl8rd",
       "name": "Evade",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Pilot-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Pilot-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.uSjRBX38Wnd57RYl"
+          "sourceId": "Compendium.sw5e-module.starshipactions.uSjRBX38Wnd57RYl"
         }
       },
       "system": {
@@ -1034,12 +1034,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818740,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.uSjRBX38Wnd57RYl",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.uSjRBX38Wnd57RYl",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.J3SgnqWN0yxnl8rd"
@@ -1048,13 +1048,13 @@
       "_id": "pEjfuULUi2iO7CCT",
       "name": "Fire",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Crew-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Crew-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.B8RW0QEq6RoF2kNF"
+          "sourceId": "Compendium.sw5e-module.starshipactions.B8RW0QEq6RoF2kNF"
         }
       },
       "system": {
@@ -1149,12 +1149,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818740,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.B8RW0QEq6RoF2kNF",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.B8RW0QEq6RoF2kNF",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.pEjfuULUi2iO7CCT"
@@ -1163,13 +1163,13 @@
       "_id": "qAExgHyH3Icc2daQ",
       "name": "Fly",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Pilot-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Pilot-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.Q6q2jJrTvOWDr488"
+          "sourceId": "Compendium.sw5e-module.starshipactions.Q6q2jJrTvOWDr488"
         }
       },
       "system": {
@@ -1264,12 +1264,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818740,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.Q6q2jJrTvOWDr488",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.Q6q2jJrTvOWDr488",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.qAExgHyH3Icc2daQ"
@@ -1278,13 +1278,13 @@
       "_id": "2iF5Wmk9G9DUSHcR",
       "name": "Harass",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Pilot-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Pilot-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.fE0uUdSA8JkHduaJ"
+          "sourceId": "Compendium.sw5e-module.starshipactions.fE0uUdSA8JkHduaJ"
         }
       },
       "system": {
@@ -1379,12 +1379,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818740,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.fE0uUdSA8JkHduaJ",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.fE0uUdSA8JkHduaJ",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.2iF5Wmk9G9DUSHcR"
@@ -1393,13 +1393,13 @@
       "_id": "9cVZLBS8a0lk2QPC",
       "name": "Interfere",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Crew-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Crew-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.dp8pkpYsF3vWkvPz"
+          "sourceId": "Compendium.sw5e-module.starshipactions.dp8pkpYsF3vWkvPz"
         }
       },
       "system": {
@@ -1494,12 +1494,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818740,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.dp8pkpYsF3vWkvPz",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.dp8pkpYsF3vWkvPz",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.9cVZLBS8a0lk2QPC"
@@ -1508,13 +1508,13 @@
       "_id": "yrBbceVqQ5a3XWQu",
       "name": "Patch",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Crew-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Crew-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.o6Bt78NCyV0fYf1k"
+          "sourceId": "Compendium.sw5e-module.starshipactions.o6Bt78NCyV0fYf1k"
         }
       },
       "system": {
@@ -1614,12 +1614,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818741,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.o6Bt78NCyV0fYf1k",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.o6Bt78NCyV0fYf1k",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.yrBbceVqQ5a3XWQu"
@@ -1628,13 +1628,13 @@
       "_id": "q0PnjzHsfqZyMTkK",
       "name": "Ram",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Pilot-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Pilot-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.bIpGPTNtTQBB4Oo5"
+          "sourceId": "Compendium.sw5e-module.starshipactions.bIpGPTNtTQBB4Oo5"
         }
       },
       "system": {
@@ -1661,7 +1661,7 @@
           "value": "1",
           "width": null,
           "units": "",
-          "type": "starship",
+          "type": "",
           "prompt": true
         },
         "range": {
@@ -1734,12 +1734,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818741,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.bIpGPTNtTQBB4Oo5",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.bIpGPTNtTQBB4Oo5",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.q0PnjzHsfqZyMTkK"
@@ -1748,13 +1748,13 @@
       "_id": "7B6XOFaj9XvikZY7",
       "name": "Ready",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Crew-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Crew-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.mVCdDe3EB8WBkxJc"
+          "sourceId": "Compendium.sw5e-module.starshipactions.mVCdDe3EB8WBkxJc"
         }
       },
       "system": {
@@ -1849,12 +1849,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1677699565755,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.mVCdDe3EB8WBkxJc",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.mVCdDe3EB8WBkxJc",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.7B6XOFaj9XvikZY7"
@@ -1863,13 +1863,13 @@
       "_id": "aXkGPegH4lDBinOf",
       "name": "Regenerate Shields",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Crew-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Crew-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.qpDYc0VtdAwwu94e"
+          "sourceId": "Compendium.sw5e-module.starshipactions.qpDYc0VtdAwwu94e"
         }
       },
       "system": {
@@ -1969,12 +1969,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818741,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.qpDYc0VtdAwwu94e",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.qpDYc0VtdAwwu94e",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.aXkGPegH4lDBinOf"
@@ -1983,13 +1983,13 @@
       "_id": "nX5AyQVwMYUMkJV4",
       "name": "Search",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Crew-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Crew-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.OmVptlRbP2pvLoGG"
+          "sourceId": "Compendium.sw5e-module.starshipactions.OmVptlRbP2pvLoGG"
         }
       },
       "system": {
@@ -2084,12 +2084,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1677699565877,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.OmVptlRbP2pvLoGG",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.OmVptlRbP2pvLoGG",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.nX5AyQVwMYUMkJV4"
@@ -2098,13 +2098,13 @@
       "_id": "3NoosRn2kpJbPS0D",
       "name": "Use an Object",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Actions/Crew-Action.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Actions/Crew-Action.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipactions.O9t2gB5wl6n86Eh4"
+          "sourceId": "Compendium.sw5e-module.starshipactions.O9t2gB5wl6n86Eh4"
         }
       },
       "system": {
@@ -2199,12 +2199,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1677699565940,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipactions.O9t2gB5wl6n86Eh4",
+        "compendiumSource": "Compendium.sw5e-module.starshipactions.O9t2gB5wl6n86Eh4",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.3NoosRn2kpJbPS0D"
@@ -2212,8 +2212,8 @@
     {
       "_id": "I9QvfFta13iQDCvh",
       "name": "Medium Starship",
-      "type": "starshipsize",
-      "img": "modules/sw5e/icons/packs/Starship%20Features/Medium.webp",
+      "type": "feat",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Features/Medium.webp",
       "effects": [
         {
           "_id": "03piaV2LUUbq80lj",
@@ -2241,7 +2241,7 @@
             "startRound": null,
             "startTurn": null
           },
-          "origin": "Compendium.sw5e.starships.6liD1m4hqKSeS5sp",
+          "origin": "Compendium.sw5e-module.starships.6liD1m4hqKSeS5sp",
           "transfer": true,
           "flags": {
             "core": {
@@ -2262,7 +2262,7 @@
             "compendiumSource": null,
             "duplicateSource": null
           },
-          "img": "modules/sw5e/icons/packs/Starship%20Features/Medium.webp",
+          "img": "modules/sw5e-module/icons/packs/Starship%20Features/Medium.webp",
           "type": "base",
           "system": {},
           "sort": 0,
@@ -2294,7 +2294,7 @@
             "startRound": null,
             "startTurn": null
           },
-          "origin": "Compendium.sw5e.starships.6liD1m4hqKSeS5sp",
+          "origin": "Compendium.sw5e-module.starships.6liD1m4hqKSeS5sp",
           "transfer": true,
           "flags": {
             "core": {
@@ -2315,7 +2315,7 @@
             "compendiumSource": null,
             "duplicateSource": null
           },
-          "img": "modules/sw5e/icons/packs/Starship%20Features/Medium.webp",
+          "img": "modules/sw5e-module/icons/packs/Starship%20Features/Medium.webp",
           "type": "base",
           "system": {},
           "sort": 0,
@@ -2326,7 +2326,63 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starships.6liD1m4hqKSeS5sp"
+          "sourceId": "Compendium.sw5e-module.starships.6liD1m4hqKSeS5sp"
+        },
+        "sw5e": {
+          "legacyStarshipSize": {
+            "description": {
+              "value": "<p>The Freighter shudders with the blasts of cannon fire. Despite its maneuvers, the pilot can't quite shake the pursuit. The technician's efforts to reinforce the shields are failing. The mechanic is pumping the reactor for every scrap of energy it can generate. The operator is frantically making the final few calculations for the jump to hyperspace. Finally, just as the ship's shields dissipate, the pilot makes the gut call, jettisoning the illicit cargo. As it distracts and hampers the followers, the freighter shifts power to the thrusters and quickly flies away.</p>\n<p>As the pirates activate their tractor beam to attempt to capture the weaponless frigate and its exotic wares, the gunboat escort intercedes. It flies in the line of the tractor, breaking the lock on the frigate, and unleashes a volley of cannon fire. The pirates, incapable of withstanding the salvo, drop the tractor beam and retreat.</p>\n<p>As the gunboat pursues to be sure the pirates don't come back for a second bite at the apple, the crew finally locks on target and unleashes a long-range night-stinger missile, putting a permanent end to the pirates' illicit and unwelcome activities.</p>\n<p>The captain invites his guests into his well-stocked cantina. He eyes the opposition as they take in his ship, assessing their reactions and noting their expressions. Fully aware of the effect the opulent room has on the unprepared, he easily stifles his grin and gestures for the starry-eyed vis-itors to sit across from him. He indicates for the server to bring drinks as he casually leans back and puts his feet on the table, confident this deal will go his way. He presses a button on the tiny remote in his hand, causing hidden panels to slide away and reveal his mostly-legal wares. \"So,\" he says, \"just how many of these do you need, and where will I deliver them?\"</p>\n<p>Medium ships are the bread and butter of the closeknit group. They are large enough to accommodate all of the immediate needs of a crew, while at the same time being small enough to feel cozy.</p>",
+              "chat": ""
+            },
+            "source": "[object Object]",
+            "identifier": "medium",
+            "tier": 0,
+            "hullDice": "d8",
+            "hullDiceStart": 5,
+            "hullDiceUsed": 0,
+            "shldDice": "d8",
+            "shldDiceStart": 5,
+            "shldDiceUsed": 0,
+            "advancement": [
+              {
+                "_id": "KhZrCq3wfEGr6L55",
+                "type": "HullPoints",
+                "configuration": {},
+                "value": {
+                  "0": "avg"
+                }
+              },
+              {
+                "_id": "rePOXKTn9bUzaqlq",
+                "type": "ShieldPoints",
+                "configuration": {},
+                "value": {
+                  "0": "avg"
+                }
+              }
+            ],
+            "buildBaseCost": 100000,
+            "buildMinWorkforce": 10,
+            "upgrdCostMult": 2,
+            "upgrdMinWorkforce": 5,
+            "baseSpaceSpeed": 300,
+            "baseTurnSpeed": 200,
+            "crewMinWorkforce": 1,
+            "modBaseCap": 30,
+            "modMaxSuitesBase": 3,
+            "modMaxSuitesMult": 1,
+            "modCostMult": 2,
+            "modMinWorkforce": 4,
+            "hardpointMult": 2,
+            "equipCostMult": 2,
+            "equipMinWorkforce": 2,
+            "cargoCap": 25,
+            "fuelCost": 100,
+            "fuelCap": 30,
+            "foodCap": 120,
+            "size": "med",
+            "startingEquipment": []
+          }
         }
       },
       "system": {
@@ -2334,15 +2390,11 @@
           "value": "<p>The Freighter shudders with the blasts of cannon fire. Despite its maneuvers, the pilot can't quite shake the pursuit. The technician's efforts to reinforce the shields are failing. The mechanic is pumping the reactor for every scrap of energy it can generate. The operator is frantically making the final few calculations for the jump to hyperspace. Finally, just as the ship's shields dissipate, the pilot makes the gut call, jettisoning the illicit cargo. As it distracts and hampers the followers, the freighter shifts power to the thrusters and quickly flies away.</p>\n<p>As the pirates activate their tractor beam to attempt to capture the weaponless frigate and its exotic wares, the gunboat escort intercedes. It flies in the line of the tractor, breaking the lock on the frigate, and unleashes a volley of cannon fire. The pirates, incapable of withstanding the salvo, drop the tractor beam and retreat.</p>\n<p>As the gunboat pursues to be sure the pirates don't come back for a second bite at the apple, the crew finally locks on target and unleashes a long-range night-stinger missile, putting a permanent end to the pirates' illicit and unwelcome activities.</p>\n<p>The captain invites his guests into his well-stocked cantina. He eyes the opposition as they take in his ship, assessing their reactions and noting their expressions. Fully aware of the effect the opulent room has on the unprepared, he easily stifles his grin and gestures for the starry-eyed vis-itors to sit across from him. He indicates for the server to bring drinks as he casually leans back and puts his feet on the table, confident this deal will go his way. He presses a button on the tiny remote in his hand, causing hidden panels to slide away and reveal his mostly-legal wares. \"So,\" he says, \"just how many of these do you need, and where will I deliver them?\"</p>\n<p>Medium ships are the bread and butter of the closeknit group. They are large enough to accommodate all of the immediate needs of a crew, while at the same time being small enough to feel cozy.</p>",
           "chat": ""
         },
-        "source": "[object Object]",
-        "identifier": "medium",
-        "tier": 0,
-        "hullDice": "d8",
-        "hullDiceStart": 5,
-        "hullDiceUsed": 0,
-        "shldDice": "d8",
-        "shldDiceStart": 5,
-        "shldDiceUsed": 0,
+        "source": {},
+        "type": {
+          "value": "starship",
+          "subtype": ""
+        },
         "advancement": [
           {
             "_id": "KhZrCq3wfEGr6L55",
@@ -2360,40 +2412,19 @@
               "0": "avg"
             }
           }
-        ],
-        "buildBaseCost": 100000,
-        "buildMinWorkforce": 10,
-        "upgrdCostMult": 2,
-        "upgrdMinWorkforce": 5,
-        "baseSpaceSpeed": 300,
-        "baseTurnSpeed": 200,
-        "crewMinWorkforce": 1,
-        "modBaseCap": 30,
-        "modMaxSuitesBase": 3,
-        "modMaxSuitesMult": 1,
-        "modCostMult": 2,
-        "modMinWorkforce": 4,
-        "hardpointMult": 2,
-        "equipCostMult": 2,
-        "equipMinWorkforce": 2,
-        "cargoCap": 25,
-        "fuelCost": 100,
-        "fuelCap": 30,
-        "foodCap": 120,
-        "size": "med",
-        "startingEquipment": []
+        ]
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232763,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starships.6liD1m4hqKSeS5sp",
+        "compendiumSource": "Compendium.sw5e-module.starships.6liD1m4hqKSeS5sp",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.I9QvfFta13iQDCvh"
@@ -2401,14 +2432,117 @@
     {
       "_id": "zhYFSCV0v4coeSVM",
       "name": "Backup Hyperdrive",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.1ljWI01OuCXvlJ5H"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.1ljWI01OuCXvlJ5H"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>This modification adds a backup hyperdrive slot on your ship and includes a class 15 hyperdrive. A crew member can switch to or from the backup hyperdrive as an action.</p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": false,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": null
+            },
+            "prerequisites": {
+              "value": "Hyperdrive Slot"
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -2426,103 +2560,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": false,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": null
-        },
-        "prerequisites": {
-          "value": "Hyperdrive Slot"
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232796,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.1ljWI01OuCXvlJ5H",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.1ljWI01OuCXvlJ5H",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.zhYFSCV0v4coeSVM"
@@ -2530,14 +2582,117 @@
     {
       "_id": "H4zJnqQBgbO7OCzo",
       "name": "Comms Package, Premium",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.NdTB1pTCUV2Mrqy8"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.NdTB1pTCUV2Mrqy8"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>This modification augments the native communications on your ship. Crew members can now communicate in real time with any planets, space stations, and starships in the same sector as you as long as they are similarly equipped.</p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": false,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": null
+            },
+            "prerequisites": {
+              "value": ""
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -2555,103 +2710,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": false,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": null
-        },
-        "prerequisites": {
-          "value": ""
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232796,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.NdTB1pTCUV2Mrqy8",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.NdTB1pTCUV2Mrqy8",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.H4zJnqQBgbO7OCzo"
@@ -2659,14 +2732,117 @@
     {
       "_id": "LQfSmBLZobL7qEnl",
       "name": "Hyperdrive Slot",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.7gFSZKE8qzMNC8Dk"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.7gFSZKE8qzMNC8Dk"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>This modification adds a hyperdrive slot on your ship and includes a class 15 hyperdrive.</p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": false,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": 0
+            },
+            "prerequisites": {
+              "value": ""
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -2684,103 +2860,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": false,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": 0
-        },
-        "prerequisites": {
-          "value": ""
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232796,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.7gFSZKE8qzMNC8Dk",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.7gFSZKE8qzMNC8Dk",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.LQfSmBLZobL7qEnl"
@@ -2788,8 +2882,8 @@
     {
       "_id": "3TQkggX6WZ4Uqnan",
       "name": "Navcomputer",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [
         {
           "_id": "mt6FdLS2U2Ov4Eun",
@@ -2811,7 +2905,7 @@
             "startRound": null,
             "startTurn": null
           },
-          "origin": "Compendium.sw5e.starshipmodifications.XOztlHGNYPona2Yp",
+          "origin": "Compendium.sw5e-module.starshipmodifications.XOztlHGNYPona2Yp",
           "transfer": true,
           "flags": {
             "core": {
@@ -2832,7 +2926,7 @@
             "compendiumSource": null,
             "duplicateSource": null
           },
-          "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
+          "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
           "type": "base",
           "system": {},
           "sort": 0,
@@ -2843,7 +2937,110 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.XOztlHGNYPona2Yp"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.XOztlHGNYPona2Yp"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>This modification adds a navcomputer slot on your ship and includes a basic navcomputer.  Your ship is proficiently equipped for Intelligence (Astrogation) checks.  A crew member can use their bonus action to make their Intelligence (Astrogation) check, rather than their action. Your ship can still only make one check per round. </p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": false,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": null
+            },
+            "prerequisites": {
+              "value": ""
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -2861,103 +3058,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": false,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": null
-        },
-        "prerequisites": {
-          "value": ""
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232796,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.XOztlHGNYPona2Yp",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.XOztlHGNYPona2Yp",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.3TQkggX6WZ4Uqnan"
@@ -2965,8 +3080,8 @@
     {
       "_id": "JSV7IGPsdR18w29W",
       "name": "Scanner, Premium",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [
         {
           "_id": "mXkq3VeLP3GEKZir",
@@ -3000,7 +3115,7 @@
             "startRound": null,
             "startTurn": null
           },
-          "origin": "Compendium.sw5e.starshipmodifications.JP7bwXHUbOx4IyY6",
+          "origin": "Compendium.sw5e-module.starshipmodifications.JP7bwXHUbOx4IyY6",
           "transfer": true,
           "flags": {
             "core": {
@@ -3021,7 +3136,7 @@
             "compendiumSource": null,
             "duplicateSource": null
           },
-          "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
+          "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
           "type": "base",
           "system": {},
           "sort": 0,
@@ -3032,7 +3147,110 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.JP7bwXHUbOx4IyY6"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.JP7bwXHUbOx4IyY6"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>This system augments the native radar scanner on your ship. Your ship gains blindsight out to 1,000 feet.</p><p>Additionally, your ship is proficiently equipped for Intelligence (Probe) and Wisdom (Scan) checks.</p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": false,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": 0
+            },
+            "prerequisites": {
+              "value": ""
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -3050,103 +3268,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": false,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": 0
-        },
-        "prerequisites": {
-          "value": ""
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232796,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.JP7bwXHUbOx4IyY6",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.JP7bwXHUbOx4IyY6",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.JSV7IGPsdR18w29W"
@@ -3154,14 +3290,117 @@
     {
       "_id": "Pb0Ik8XbUWj8ZFSk",
       "name": "Tractor Beam",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.vK9Jh00eG1epBmCx"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.vK9Jh00eG1epBmCx"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>This modification adds a tractor beam to a ship, which can be used to grasp and guide vessels and debris.</p>\n<p>As an action, you can activate the tractor beam, which has a range of 600 feet and a limited firing arc, as described in Chapter 9. Each ship or object of your size or smaller within the firing arc must make a Strength saving throw (DC = 8 + ship tier + the ship's Strength modifier). On a failed save, a ship is tractored. An object automatically fails this saving throw. As a bonus action, a player can move a tractored ship in any direction. A ship or object two or more sizes smaller than your ship can be moved up to 200 feet, a ship or object one size category smaller than your ship can be moved up to 100 feet, and a ship or object your size can be moved up to 50 feet. If at the end of this movement the ship or object strikes another ship or object, it must make a Dexterity saving throw. An object automatically fails this saving throw. On a failed save, they both take 1d4 kinetic damage. As <span style=\"font-family:var(--font-primary);font-size:var(--font-size-14)\">an action, a pilot of a tractored ship can repeat the saving throw, ending the effect on a success.</span></p>\n<p>The saving throws are made with disadvantage if the ship is smaller than you.</p>\n<p>If you attempt to tractor a ship or object larger than you, you can choose to gain the tractored condition and move yourself.</p>\n<p>You can end the tractor beam at any time (no action required).</p>\n<p>This feature can be used a number of times equal to your ship's tier (a minimum of once). All expended uses are regained when the ship recharges. If you have more than one Tractor Beam installed, they all share this amount of uses, and each Tractor Beam past the first grants an additional use.</p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": false,
+            "activation": {
+              "type": "action",
+              "cost": 1,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "any",
+              "type": "object",
+              "prompt": true
+            },
+            "range": {
+              "value": 600,
+              "long": null,
+              "units": "ft"
+            },
+            "uses": {
+              "value": 1,
+              "max": "1",
+              "per": "recharge",
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": "",
+              "amount": null,
+              "scale": false
+            },
+            "ability": "",
+            "actionType": "save",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "str",
+              "dc": null,
+              "scaling": "str"
+            },
+            "grade": {
+              "value": 0
+            },
+            "prerequisites": {
+              "value": ""
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -3179,103 +3418,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": false,
-        "activation": {
-          "type": "action",
-          "cost": 1,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "any",
-          "type": "object",
-          "prompt": true
-        },
-        "range": {
-          "value": 600,
-          "long": null,
-          "units": "ft"
-        },
-        "uses": {
-          "value": 1,
-          "max": "1",
-          "per": "recharge",
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": "",
-          "amount": null,
-          "scale": false
-        },
-        "ability": "",
-        "actionType": "save",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "str",
-          "dc": null,
-          "scaling": "str"
-        },
-        "grade": {
-          "value": 0
-        },
-        "prerequisites": {
-          "value": ""
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232797,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.vK9Jh00eG1epBmCx",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.vK9Jh00eG1epBmCx",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.Pb0Ik8XbUWj8ZFSk"
@@ -3283,14 +3440,117 @@
     {
       "_id": "XT66XyrBrAYEKcOB",
       "name": "Escape Pods",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Suite.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Suite.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.377OskezarDUpB8F"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.377OskezarDUpB8F"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>This suite adds escape pods to your ship. Each escape pod comes equipped with emergency rations and supplies that can support four civilians, crew members, or troopers for 1 week, in both hot and cold climates, as described in chapter 5 of the Dungeon Master's Guide. The quantity of escape pods is equal to one-fourth the ship's suite capacity, as shown in the @JournalEntry[Mnvw9iBw8gxgfCXw]{Starship Size Suite Capacity} table.</p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": false,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": 0
+            },
+            "prerequisites": {
+              "value": "Ship size Medium or larger"
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -3308,103 +3568,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": false,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": 0
-        },
-        "prerequisites": {
-          "value": "Ship size Medium or larger"
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232797,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.377OskezarDUpB8F",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.377OskezarDUpB8F",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.XT66XyrBrAYEKcOB"
@@ -3412,14 +3590,117 @@
     {
       "_id": "sByXZw99b0f1LM0m",
       "name": "Storage Compartment",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Suite.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Suite.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.P2gZumGzDl0eQ3fy"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.P2gZumGzDl0eQ3fy"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>This suite increases the cargo capacity on your ship by its base cargo capacity, as shown in the @JournalEntry[pMX6ND1g3oNyo09c]{Starship Size Cargo Capacity} . This suite's Modification Category Base Cost is only 500 cr. </p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": true,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": 0
+            },
+            "prerequisites": {
+              "value": ""
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "Suite",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -3437,103 +3718,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": true,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": 0
-        },
-        "prerequisites": {
-          "value": ""
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "Suite",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232797,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.P2gZumGzDl0eQ3fy",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.P2gZumGzDl0eQ3fy",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.sByXZw99b0f1LM0m"
@@ -3541,14 +3740,117 @@
     {
       "_id": "6Y3SYv7D2ChHSAeK",
       "name": "Living Quarters",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Suite.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Suite.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.NRUhbz7tNTZFfpeo"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.NRUhbz7tNTZFfpeo"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>This suite features separate rooms to house a number of civilians, crew members, or troopers, determined by the ship's size, as well as communal refresher stations (one for every four rooms). Each room comes fully furnished. When a creature completes a long rest involving this suite, their exhaustion level is reduced by 2, instead of only 1.</p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": true,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": 0
+            },
+            "prerequisites": {
+              "value": "Ship size Medium or larger"
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "Suite",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -3566,103 +3868,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": true,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": 0
-        },
-        "prerequisites": {
-          "value": "Ship size Medium or larger"
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "Suite",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232797,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.NRUhbz7tNTZFfpeo",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.NRUhbz7tNTZFfpeo",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.6Y3SYv7D2ChHSAeK"
@@ -3670,14 +3890,117 @@
     {
       "_id": "uUQPwZK9aHJMfyYs",
       "name": "Storage Compartment",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Suite.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Suite.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.P2gZumGzDl0eQ3fy"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.P2gZumGzDl0eQ3fy"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>This suite increases the cargo capacity on your ship by its base cargo capacity, as shown in the @JournalEntry[pMX6ND1g3oNyo09c]{Starship Size Cargo Capacity} . This suite's Modification Category Base Cost is only 500 cr. </p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": true,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": 0
+            },
+            "prerequisites": {
+              "value": ""
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "Suite",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -3695,103 +4018,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": true,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": 0
-        },
-        "prerequisites": {
-          "value": ""
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "Suite",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232797,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.P2gZumGzDl0eQ3fy",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.P2gZumGzDl0eQ3fy",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.uUQPwZK9aHJMfyYs"
@@ -3799,14 +4040,117 @@
     {
       "_id": "jT1iPldGNb44fNuv",
       "name": "Storage Compartment",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Suite.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Suite.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.P2gZumGzDl0eQ3fy"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.P2gZumGzDl0eQ3fy"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>This suite increases the cargo capacity on your ship by its base cargo capacity, as shown in the @JournalEntry[pMX6ND1g3oNyo09c]{Starship Size Cargo Capacity} . This suite's Modification Category Base Cost is only 500 cr. </p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": true,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": 0
+            },
+            "prerequisites": {
+              "value": ""
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "Suite",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -3824,103 +4168,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": true,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": 0
-        },
-        "prerequisites": {
-          "value": ""
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "Suite",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232797,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.P2gZumGzDl0eQ3fy",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.P2gZumGzDl0eQ3fy",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.jT1iPldGNb44fNuv"
@@ -3928,14 +4190,117 @@
     {
       "_id": "7CQFnlVZVju8Gexc",
       "name": "Direct Controller",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.zwMwgi8Ea13EY0uB"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.zwMwgi8Ea13EY0uB"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>You have installed a dedicated gunner station at or about the hardpoint.  A crew member deployed at this station can use their Dexterity modifier instead of the ship's Wisdom modifier for the attack rolls or save DCs of the chosen weapon.</p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": false,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": 0
+            },
+            "prerequisites": {
+              "value": "Primary or Secondary Weapon"
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -3953,103 +4318,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": false,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": 0
-        },
-        "prerequisites": {
-          "value": "Primary or Secondary Weapon"
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232797,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.zwMwgi8Ea13EY0uB",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.zwMwgi8Ea13EY0uB",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.7CQFnlVZVju8Gexc"
@@ -4057,14 +4340,117 @@
     {
       "_id": "krRtObWDtGEq9krZ",
       "name": "Fixed Hardpoint",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.gwH143Rt48TqS1Ps"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.gwH143Rt48TqS1Ps"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>A fixed hardpoint is used to mount a primary, secondary, tertiary, or quaternary weapon. A weapon mounted on a fixed hardpoint has a limited firing arc, as described in chapter 9 and can be fired from any crew station. </p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": true,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": 0
+            },
+            "prerequisites": {
+              "value": ""
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "Weapon",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -4082,103 +4468,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": true,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": 0
-        },
-        "prerequisites": {
-          "value": ""
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "Weapon",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232797,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.gwH143Rt48TqS1Ps",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.gwH143Rt48TqS1Ps",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.krRtObWDtGEq9krZ"
@@ -4186,14 +4490,117 @@
     {
       "_id": "5HonqmgD8G9yRBig",
       "name": "Turret Mounting",
-      "type": "starshipmod",
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
+      "type": "loot",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipmodifications.NmeTEWrdUDF7RVJx"
+          "sourceId": "Compendium.sw5e-module.starshipmodifications.NmeTEWrdUDF7RVJx"
+        },
+        "sw5e": {
+          "legacyStarshipMod": {
+            "description": {
+              "value": "<p>The Turret Mounting is a modification to a Fixed Hardpoint that grants an improved firing arc. The weapon attached to the chosen fixed hardpoint now has an unlimited firing arc in addition to its limited arc, as described in chapter 9.  This hardpoint also installs a dedicated gunner station at or about the hardpoint.  Attacks made utilizing the unlimited firing arc can only be made by a crew member deployed at the dedicated gunner station of the weapon.</p>",
+              "chat": ""
+            },
+            "source": {},
+            "quantity": 1,
+            "weight": {
+              "value": 0,
+              "units": "lb"
+            },
+            "price": {
+              "value": 0,
+              "denomination": "gp"
+            },
+            "attunement": "",
+            "equipped": true,
+            "rarity": "",
+            "identified": true,
+            "activation": {
+              "type": "",
+              "cost": null,
+              "condition": ""
+            },
+            "duration": {
+              "value": "",
+              "units": ""
+            },
+            "cover": null,
+            "crewed": false,
+            "target": {
+              "value": "",
+              "width": null,
+              "units": "",
+              "type": "",
+              "prompt": true
+            },
+            "range": {
+              "value": null,
+              "long": null,
+              "units": ""
+            },
+            "uses": {
+              "value": null,
+              "max": "",
+              "per": null,
+              "recovery": "",
+              "prompt": true
+            },
+            "consume": {
+              "type": "",
+              "target": null,
+              "amount": null,
+              "scale": false
+            },
+            "ability": null,
+            "actionType": "",
+            "chatFlavor": "",
+            "critical": {
+              "threshold": null,
+              "damage": ""
+            },
+            "damage": {
+              "parts": [],
+              "versatile": ""
+            },
+            "formula": "",
+            "save": {
+              "ability": "",
+              "dc": null,
+              "scaling": "spell"
+            },
+            "grade": {
+              "value": 0
+            },
+            "prerequisites": {
+              "value": "Fixed Hardpoint"
+            },
+            "free": {
+              "slot": false,
+              "suite": false
+            },
+            "unidentified": {
+              "description": ""
+            },
+            "type": {
+              "value": "Weapon",
+              "subtype": ""
+            },
+            "attack": {
+              "bonus": "",
+              "flat": false
+            },
+            "container": null,
+            "attuned": false,
+            "enchantment": null,
+            "summons": null,
+            "baseCost": {
+              "value": null
+            }
+          }
         }
       },
       "system": {
@@ -4211,103 +4618,21 @@
           "value": 0,
           "denomination": "gp"
         },
-        "attunement": "",
-        "equipped": true,
         "rarity": "",
         "identified": true,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "grade": {
-          "value": 0
-        },
-        "prerequisites": {
-          "value": "Fixed Hardpoint"
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "unidentified": {
-          "description": ""
-        },
-        "type": {
-          "value": "Weapon",
-          "subtype": ""
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "container": null,
-        "attuned": false,
-        "enchantment": null,
-        "summons": null,
-        "baseCost": {
-          "value": null
-        }
+        "container": null
       },
       "ownership": {
         "default": 0
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232798,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipmodifications.NmeTEWrdUDF7RVJx",
+        "compendiumSource": "Compendium.sw5e-module.starshipmodifications.NmeTEWrdUDF7RVJx",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.5HonqmgD8G9yRBig"
@@ -4316,13 +4641,13 @@
       "_id": "E8uNeeVUSrlxDpBq",
       "name": "Laser cannon",
       "type": "weapon",
-      "img": "modules/sw5e/icons/packs/Starship%20Weapons/Starshipweapon.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Weapons/Starshipweapon.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipweapons.TpLc4yrKS27FW4Jm"
+          "sourceId": "Compendium.sw5e-module.starshipweapons.TpLc4yrKS27FW4Jm"
         },
         "sw5e": {
           "properties": {
@@ -4462,12 +4787,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232798,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipweapons.TpLc4yrKS27FW4Jm",
+        "compendiumSource": "Compendium.sw5e-module.starshipweapons.TpLc4yrKS27FW4Jm",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.E8uNeeVUSrlxDpBq"
@@ -4476,7 +4801,7 @@
       "_id": "cN9j0dF1XQD090JT",
       "name": "Directional Shield",
       "type": "equipment",
-      "img": "modules/sw5e/icons/packs/Starship%20Equipment/DirectionalShield.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/DirectionalShield.webp",
       "effects": [
         {
           "_id": "8DZ792d8qqBQeXNh",
@@ -4528,7 +4853,7 @@
             "startRound": null,
             "startTurn": null
           },
-          "origin": "Compendium.sw5e.starshiparmor.RvtLP3FgKLBYBHSf",
+          "origin": "Compendium.sw5e-module.starshiparmor.RvtLP3FgKLBYBHSf",
           "transfer": true,
           "flags": {
             "core": {
@@ -4549,7 +4874,7 @@
             "compendiumSource": null,
             "duplicateSource": null
           },
-          "img": "modules/sw5e/icons/packs/Starship%20Equipment/DirectionalShield.webp",
+          "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/DirectionalShield.webp",
           "type": "base",
           "system": {},
           "sort": 0,
@@ -4560,7 +4885,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshiparmor.RvtLP3FgKLBYBHSf"
+          "sourceId": "Compendium.sw5e-module.starshiparmor.RvtLP3FgKLBYBHSf"
         }
       },
       "system": {
@@ -4707,12 +5032,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232798,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshiparmor.RvtLP3FgKLBYBHSf",
+        "compendiumSource": "Compendium.sw5e-module.starshiparmor.RvtLP3FgKLBYBHSf",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.cN9j0dF1XQD090JT"
@@ -4721,7 +5046,7 @@
       "_id": "L003kZkcmFM3NGXZ",
       "name": "Deflection Armor",
       "type": "equipment",
-      "img": "modules/sw5e/icons/packs/Starship%20Equipment/DeflectionArmor.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/DeflectionArmor.webp",
       "effects": [
         {
           "_id": "Dnv7xAqlTy1ofBOO",
@@ -4755,7 +5080,7 @@
             "startRound": null,
             "startTurn": null
           },
-          "origin": "Compendium.sw5e.starshiparmor.aG6mKPerYCFmkI00",
+          "origin": "Compendium.sw5e-module.starshiparmor.aG6mKPerYCFmkI00",
           "transfer": true,
           "flags": {
             "core": {
@@ -4776,7 +5101,7 @@
             "compendiumSource": null,
             "duplicateSource": null
           },
-          "img": "modules/sw5e/icons/packs/Starship%20Equipment/DeflectionArmor.webp",
+          "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/DeflectionArmor.webp",
           "type": "base",
           "system": {},
           "sort": 0,
@@ -4787,7 +5112,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshiparmor.aG6mKPerYCFmkI00"
+          "sourceId": "Compendium.sw5e-module.starshiparmor.aG6mKPerYCFmkI00"
         }
       },
       "system": {
@@ -4934,12 +5259,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232798,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshiparmor.aG6mKPerYCFmkI00",
+        "compendiumSource": "Compendium.sw5e-module.starshiparmor.aG6mKPerYCFmkI00",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.L003kZkcmFM3NGXZ"
@@ -4948,13 +5273,13 @@
       "_id": "VPLl7FowxaoVvhkH",
       "name": "Hyperdrive, Class 2",
       "type": "equipment",
-      "img": "modules/sw5e/icons/packs/Starship%20Equipment/Hyperdrive.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/Hyperdrive.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipequipment.7hFjCN43VSv73NIM"
+          "sourceId": "Compendium.sw5e-module.starshipequipment.7hFjCN43VSv73NIM"
         }
       },
       "system": {
@@ -5101,12 +5426,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232798,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipequipment.7hFjCN43VSv73NIM",
+        "compendiumSource": "Compendium.sw5e-module.starshipequipment.7hFjCN43VSv73NIM",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.VPLl7FowxaoVvhkH"
@@ -5115,13 +5440,13 @@
       "_id": "x9ni0StoRCiHo6SD",
       "name": "Direct Power Coupling",
       "type": "equipment",
-      "img": "modules/sw5e/icons/packs/Starship%20Equipment/PowerCoupling.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/PowerCoupling.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipequipment.oqB8RltTDjHnaS1Y"
+          "sourceId": "Compendium.sw5e-module.starshipequipment.oqB8RltTDjHnaS1Y"
         }
       },
       "system": {
@@ -5268,12 +5593,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232798,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipequipment.oqB8RltTDjHnaS1Y",
+        "compendiumSource": "Compendium.sw5e-module.starshipequipment.oqB8RltTDjHnaS1Y",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.x9ni0StoRCiHo6SD"
@@ -5282,13 +5607,13 @@
       "_id": "Ia29JsaJlnR7PvBS",
       "name": "Power Core Reactor",
       "type": "equipment",
-      "img": "modules/sw5e/icons/packs/Starship%20Equipment/Reactor.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/Reactor.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipequipment.UAiau5ZNXVJAJFUn"
+          "sourceId": "Compendium.sw5e-module.starshipequipment.UAiau5ZNXVJAJFUn"
         }
       },
       "system": {
@@ -5435,12 +5760,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232798,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipequipment.UAiau5ZNXVJAJFUn",
+        "compendiumSource": "Compendium.sw5e-module.starshipequipment.UAiau5ZNXVJAJFUn",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.Ia29JsaJlnR7PvBS"
@@ -5449,13 +5774,13 @@
       "_id": "BMKnqhUYAw4ukNTm",
       "name": "Hyperdrive, Class 15",
       "type": "equipment",
-      "img": "modules/sw5e/icons/packs/Starship%20Equipment/Hyperdrive.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/Hyperdrive.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipequipment.InvkgxmcbufkjOUR"
+          "sourceId": "Compendium.sw5e-module.starshipequipment.InvkgxmcbufkjOUR"
         }
       },
       "system": {
@@ -5602,12 +5927,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685838232798,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipequipment.InvkgxmcbufkjOUR",
+        "compendiumSource": "Compendium.sw5e-module.starshipequipment.InvkgxmcbufkjOUR",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.BMKnqhUYAw4ukNTm"
@@ -5616,7 +5941,7 @@
       "_id": "tL6NzVoptTVl9LDQ",
       "name": "Role: Freighter",
       "type": "feat",
-      "img": "modules/sw5e/icons/packs/Starship%20Features/Medium.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Features/Medium.webp",
       "effects": [
         {
           "_id": "qQTMHDrpIch61Q7C",
@@ -5659,7 +5984,7 @@
             "compendiumSource": null,
             "duplicateSource": null
           },
-          "img": "modules/sw5e/icons/packs/Starship%20Features/Small.webp",
+          "img": "modules/sw5e-module/icons/packs/Starship%20Features/Small.webp",
           "type": "base",
           "system": {},
           "sort": 0,
@@ -5670,7 +5995,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.starshipfeatures.VdHmWXHvkK5ZyoWw"
+          "sourceId": "Compendium.sw5e-module.starshipfeatures.VdHmWXHvkK5ZyoWw"
         }
       },
       "system": {
@@ -5765,12 +6090,12 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": null,
         "modifiedTime": 1685837818743,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.starshipfeatures.VdHmWXHvkK5ZyoWw",
+        "compendiumSource": "Compendium.sw5e-module.starshipfeatures.VdHmWXHvkK5ZyoWw",
         "duplicateSource": null
       },
       "_key": "!actors.items!BZkA48rDJKsKCX3C.tL6NzVoptTVl9LDQ"
@@ -5824,7 +6149,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Starship%20Features/Medium.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Features/Medium.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -5877,7 +6202,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Starship%20Features/Medium.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Features/Medium.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -5924,7 +6249,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -5983,7 +6308,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -6060,7 +6385,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Starship%20Equipment/DirectionalShield.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/DirectionalShield.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -6119,7 +6444,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Starship%20Equipment/DeflectionArmor.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/DeflectionArmor.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -6166,7 +6491,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Starship%20Features/Small.webp",
+      "img": "modules/sw5e-module/icons/packs/Starship%20Features/Small.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -6175,61 +6500,624 @@
   ],
   "folder": null,
   "sort": 0,
-  "flags": {},
+  "flags": {
+    "sw5e": {
+      "legacyStarshipActor": {
+        "type": "starship",
+        "system": {
+          "abilities": {
+            "str": {
+              "value": 14,
+              "proficient": 1,
+              "max": null,
+              "bonuses": {
+                "check": "",
+                "save": ""
+              }
+            },
+            "dex": {
+              "value": 14,
+              "proficient": 1,
+              "max": null,
+              "bonuses": {
+                "check": "",
+                "save": ""
+              }
+            },
+            "con": {
+              "value": 13,
+              "proficient": 0,
+              "max": null,
+              "bonuses": {
+                "check": "",
+                "save": ""
+              }
+            },
+            "int": {
+              "value": 10,
+              "proficient": 0,
+              "max": null,
+              "bonuses": {
+                "check": "",
+                "save": ""
+              }
+            },
+            "wis": {
+              "value": 12,
+              "proficient": 0,
+              "max": null,
+              "bonuses": {
+                "check": "",
+                "save": ""
+              }
+            },
+            "cha": {
+              "value": 10,
+              "proficient": 0,
+              "max": null,
+              "bonuses": {
+                "check": "",
+                "save": ""
+              }
+            },
+            "hon": {
+              "value": 10,
+              "proficient": 0,
+              "bonuses": {
+                "check": "",
+                "save": ""
+              },
+              "max": null
+            },
+            "san": {
+              "value": 10,
+              "proficient": 0,
+              "bonuses": {
+                "check": "",
+                "save": ""
+              },
+              "max": null
+            }
+          },
+          "attributes": {
+            "ac": {
+              "flat": null,
+              "calc": "starship",
+              "formula": ""
+            },
+            "hp": {
+              "value": 38,
+              "max": 38,
+              "temp": 38,
+              "tempmax": 38,
+              "bonuses": {
+                "level": "",
+                "overall": "",
+                "templevel": "",
+                "tempoverall": ""
+              }
+            },
+            "init": {
+              "ability": "",
+              "bonus": "0",
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "movement": {
+              "burrow": 0,
+              "climb": 0,
+              "fly": 0,
+              "swim": 0,
+              "walk": 30,
+              "units": "ft",
+              "hover": false
+            },
+            "death": {
+              "failure": 0,
+              "success": 0,
+              "ability": "",
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "deployment": {
+              "pilot": {
+                "value": null,
+                "active": false
+              },
+              "crew": {
+                "items": [],
+                "active": false
+              },
+              "passenger": {
+                "items": [],
+                "active": false
+              },
+              "active": {
+                "value": null
+              }
+            },
+            "systemDamage": 0,
+            "fuel": {
+              "value": 30
+            },
+            "power": {
+              "routing": "none",
+              "central": {
+                "value": 4
+              },
+              "comms": {
+                "value": 0
+              },
+              "engines": {
+                "value": 0
+              },
+              "shields": {
+                "value": 0
+              },
+              "sensors": {
+                "value": 0
+              },
+              "weapons": {
+                "value": 0
+              }
+            },
+            "used": false,
+            "bonuses": {
+              "mwak": {
+                "attack": "",
+                "damage": ""
+              },
+              "rwak": {
+                "attack": "",
+                "damage": ""
+              },
+              "abilities": {
+                "check": "",
+                "save": "",
+                "skill": ""
+              }
+            }
+          },
+          "details": {
+            "biography": {
+              "value": "",
+              "public": ""
+            },
+            "source": "Drake's Shipyard",
+            "starshipsize": null
+          },
+          "traits": {
+            "di": {
+              "value": [],
+              "bypasses": [],
+              "custom": ""
+            },
+            "dr": {
+              "value": [],
+              "bypasses": [],
+              "custom": ""
+            },
+            "dv": {
+              "value": [],
+              "bypasses": [],
+              "custom": ""
+            },
+            "ci": {
+              "value": [],
+              "custom": ""
+            },
+            "sdi": {
+              "value": [],
+              "bypasses": [],
+              "custom": ""
+            },
+            "sdr": {
+              "value": [],
+              "bypasses": [],
+              "custom": ""
+            },
+            "sdv": {
+              "value": [],
+              "bypasses": [],
+              "custom": ""
+            }
+          },
+          "currency": {
+            "gc": 0
+          },
+          "skills": {
+            "ast": {
+              "value": 0,
+              "ability": "int",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "bst": {
+              "value": 0,
+              "ability": "str",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "dat": {
+              "value": 0,
+              "ability": "int",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "hid": {
+              "value": 0,
+              "ability": "dex",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "imp": {
+              "value": 0,
+              "ability": "cha",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "inf": {
+              "value": 0,
+              "ability": "cha",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "man": {
+              "value": 0,
+              "ability": "dex",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "men": {
+              "value": 0,
+              "ability": "cha",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "pat": {
+              "value": 0,
+              "ability": "con",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "prb": {
+              "value": 0,
+              "ability": "int",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "ram": {
+              "value": 0,
+              "ability": "str",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "reg": {
+              "value": 0,
+              "ability": "con",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "scn": {
+              "value": 0,
+              "ability": "wis",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            },
+            "swn": {
+              "value": 0,
+              "ability": "cha",
+              "bonuses": {
+                "check": "",
+                "passive": ""
+              },
+              "roll": {
+                "min": null,
+                "max": null,
+                "mode": 0
+              }
+            }
+          },
+          "favorites": []
+        }
+      }
+    }
+  },
   "system": {
+    "vehicleType": "air",
+    "attributes": {
+      "ac": {
+        "calc": "flat",
+        "flat": 0,
+        "motionless": ""
+      },
+      "actions": {
+        "stations": true
+      },
+      "hp": {
+        "value": 38,
+        "max": 38,
+        "dt": null,
+        "mt": null
+      },
+      "capacity": {
+        "creature": "",
+        "cargo": 25
+      },
+      "movement": {
+        "fly": 300,
+        "units": "ft",
+        "hover": false
+      }
+    },
+    "details": {
+      "source": {
+        "custom": "Drake's Shipyard"
+      }
+    },
+    "traits": {
+      "size": "med",
+      "dimensions": "",
+      "di": {
+        "value": [],
+        "bypasses": [],
+        "custom": ""
+      },
+      "ci": {
+        "value": [],
+        "custom": ""
+      }
+    },
+    "cargo": {
+      "crew": [],
+      "passengers": []
+    },
     "abilities": {
       "str": {
         "value": 14,
         "proficient": 1,
-        "max": null,
+        "max": 0,
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "dex": {
         "value": 14,
         "proficient": 1,
-        "max": null,
+        "max": 0,
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "con": {
         "value": 13,
         "proficient": 0,
-        "max": null,
+        "max": 0,
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "int": {
         "value": 10,
         "proficient": 0,
-        "max": null,
+        "max": 0,
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "wis": {
         "value": 12,
         "proficient": 0,
-        "max": null,
+        "max": 0,
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "cha": {
         "value": 10,
         "proficient": 0,
-        "max": null,
+        "max": 0,
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "hon": {
@@ -6239,7 +7127,23 @@
           "check": "",
           "save": ""
         },
-        "max": null
+        "max": 0,
+        "check": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        }
       },
       "san": {
         "value": 10,
@@ -6248,346 +7152,25 @@
           "check": "",
           "save": ""
         },
-        "max": null
-      }
-    },
-    "attributes": {
-      "ac": {
-        "flat": null,
-        "calc": "starship",
-        "formula": ""
-      },
-      "hp": {
-        "value": 38,
-        "max": 38,
-        "temp": 38,
-        "tempmax": 38,
-        "bonuses": {
-          "level": "",
-          "overall": "",
-          "templevel": "",
-          "tempoverall": ""
-        }
-      },
-      "init": {
-        "ability": "",
-        "bonus": "0",
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "movement": {
-        "burrow": 0,
-        "climb": 0,
-        "fly": 0,
-        "swim": 0,
-        "walk": 30,
-        "units": "ft",
-        "hover": false
-      },
-      "death": {
-        "failure": 0,
-        "success": 0,
-        "ability": "",
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "deployment": {
-        "pilot": {
-          "value": null,
-          "active": false
+        "max": 0,
+        "check": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         },
-        "crew": {
-          "items": [],
-          "active": false
-        },
-        "passenger": {
-          "items": [],
-          "active": false
-        },
-        "active": {
-          "value": null
-        }
-      },
-      "systemDamage": 0,
-      "fuel": {
-        "value": 30
-      },
-      "power": {
-        "routing": "none",
-        "central": {
-          "value": 4
-        },
-        "comms": {
-          "value": 0
-        },
-        "engines": {
-          "value": 0
-        },
-        "shields": {
-          "value": 0
-        },
-        "sensors": {
-          "value": 0
-        },
-        "weapons": {
-          "value": 0
-        }
-      },
-      "used": false,
-      "bonuses": {
-        "mwak": {
-          "attack": "",
-          "damage": ""
-        },
-        "rwak": {
-          "attack": "",
-          "damage": ""
-        },
-        "abilities": {
-          "check": "",
-          "save": "",
-          "skill": ""
+        "save": {
+          "value": 0,
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       }
-    },
-    "details": {
-      "biography": {
-        "value": "",
-        "public": ""
-      },
-      "source": "Drake's Shipyard",
-      "starshipsize": null
-    },
-    "traits": {
-      "di": {
-        "value": [],
-        "bypasses": [],
-        "custom": ""
-      },
-      "dr": {
-        "value": [],
-        "bypasses": [],
-        "custom": ""
-      },
-      "dv": {
-        "value": [],
-        "bypasses": [],
-        "custom": ""
-      },
-      "ci": {
-        "value": [],
-        "custom": ""
-      },
-      "sdi": {
-        "value": [],
-        "bypasses": [],
-        "custom": ""
-      },
-      "sdr": {
-        "value": [],
-        "bypasses": [],
-        "custom": ""
-      },
-      "sdv": {
-        "value": [],
-        "bypasses": [],
-        "custom": ""
-      }
-    },
-    "currency": {
-      "gc": 0
-    },
-    "skills": {
-      "ast": {
-        "value": 0,
-        "ability": "int",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "bst": {
-        "value": 0,
-        "ability": "str",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "dat": {
-        "value": 0,
-        "ability": "int",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "hid": {
-        "value": 0,
-        "ability": "dex",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "imp": {
-        "value": 0,
-        "ability": "cha",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "inf": {
-        "value": 0,
-        "ability": "cha",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "man": {
-        "value": 0,
-        "ability": "dex",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "men": {
-        "value": 0,
-        "ability": "cha",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "pat": {
-        "value": 0,
-        "ability": "con",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "prb": {
-        "value": 0,
-        "ability": "int",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "ram": {
-        "value": 0,
-        "ability": "str",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "reg": {
-        "value": 0,
-        "ability": "con",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "scn": {
-        "value": 0,
-        "ability": "wis",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      },
-      "swn": {
-        "value": 0,
-        "ability": "cha",
-        "bonuses": {
-          "check": "",
-          "passive": ""
-        },
-        "roll": {
-          "min": null,
-          "max": null,
-          "mode": 0
-        }
-      }
-    },
-    "favorites": []
+    }
   },
   "ownership": {
     "default": 0
@@ -6682,7 +7265,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674494006135,
     "modifiedTime": 1720368934394,

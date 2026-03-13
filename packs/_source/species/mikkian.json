@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Mikkian.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Mikkian.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Mikkians are a species of brightly colored humanoids. The mikkians' most distinctive feature are their motile head-tendrils, with the number, form, and pattern varying between individuals. These head-tendrils primarily serve as sensory organs, particularly detecting sound as a replacement for an ear common in other species. Mikkian head-tendrils also could detect other information, such as humidity, temperature, magnetic direction and radiation. This radiation detection can be detected to the extent that mikkians can \"see\" light and dark, although their eyes are still their primary visual organs. </p>\n<h2>Society and Culture</h2>\n<p>Mikkians place kinship and integrity above all. In fact, their honesty can come across as blunt or even rude to other sentients. Conversely, mikkians often have trouble adjusting to the more flexible views of other races. Their complex code of honor encompass all things in life, with a particular insistance on matters of warfare. Although they respect warrior traditions, the Mikkians nevertheless value discipline and honor over victory or physical might.</p>\n<p>Different religious traditions exist among the Mikkians, but belief in the Force plays a central role in all of them. In Mikkian society, their head-tendrils have important cultural significance, and as such tendril-reading is used by Mikkian mystics to predict their future. Every facet of the head-tendril contributes to that meaning.</p>\n<h2>Names</h2>\n<p>Mikkian names are often short and disyllabic, with a melodic quality to them. Mikkians typically don't use surnames, though some may adopt them. </p>\n<p><strong>Male Names.</strong> Cage, Fedlas, Mekko, Sakas </p>\n<p><strong>Female Names.</strong> Beyra, Fenvar, Tiplee, Zelna </p>",
@@ -47,39 +47,39 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.FCP7ndcm2TNkEul6",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.FCP7ndcm2TNkEul6",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.h6ZCGo1pSFh3DztU",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.h6ZCGo1pSFh3DztU",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.GI2mvnvZCqoOorQO",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.GI2mvnvZCqoOorQO",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.MZQw4wchIi4ya4H0",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.MZQw4wchIi4ya4H0",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.SlZLaP4RtReLcsdh",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.SlZLaP4RtReLcsdh",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.8ioleYa3fuZHbFsz",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.8ioleYa3fuZHbFsz",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.9XBvIUXyKv5Gr5K5",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.9XBvIUXyKv5Gr5K5",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Ut98d5BJGkWuAak6",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Ut98d5BJGkWuAak6",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Rw7sAiomiJ3Pz3vH",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Rw7sAiomiJ3Pz3vH",
               "optional": false
             }
           ],
@@ -209,10 +209,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.aWyQIk0yQVEBWiY6.ActiveEffect.2FSlkSzlsfoQSsQs"
+          "sourceId": "Compendium.sw5e-module.species.Item.aWyQIk0yQVEBWiY6.ActiveEffect.2FSlkSzlsfoQSsQs"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.aWyQIk0yQVEBWiY6",
+      "origin": "Compendium.sw5e-module.species.Item.aWyQIk0yQVEBWiY6",
       "name": "Keen Hearing",
       "description": "",
       "statuses": [],
@@ -226,7 +226,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Mikkian.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Mikkian.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -241,7 +241,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725541,

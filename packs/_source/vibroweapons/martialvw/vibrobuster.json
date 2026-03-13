@@ -27,7 +27,7 @@
     }
   },
   "type": "weapon",
-  "img": "modules/sw5e/icons/packs/Martial%20Vibroweapons/Vibrobuster.webp",
+  "img": "modules/sw5e-module/icons/packs/Martial%20Vibroweapons/Vibrobuster.webp",
   "system": {
     "description": {
       "value": "<h3>Brutal 1</h3>\n<p>When you score a critical hit with a weapon with the brutal property, you roll a number of additional weapon damage dice equal to the brutal number.</p>\n<h3>Dexterity 19</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Keen 1</h3>\n<p>When you make a weapon attack with a weapon with the keen property, the critical hit range increases by an amount equal to the keen number.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>",
@@ -169,8 +169,8 @@
     "magicalBonus": null,
     "proficient": null,
     "firingArc": "",
-    "activities": {
-      "sw5e0attack00000": {
+    "activities": [
+      {
         "_id": "sw5e0attack00000",
         "activation": {
           "type": "action"
@@ -200,7 +200,7 @@
         "target": {},
         "type": "attack"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "6mAX46oU2wo1O0PZ",
@@ -211,7 +211,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296019804,
     "modifiedTime": 1739121084621,

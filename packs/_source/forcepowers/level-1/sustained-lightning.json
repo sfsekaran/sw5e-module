@@ -2,7 +2,7 @@
   "_id": "zQKSr04nT58a3kVf",
   "name": "Sustained Lightning",
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Force%20Powers/SustainedLightning.webp",
+  "img": "modules/sw5e-module/icons/packs/Force%20Powers/SustainedLightning.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -119,8 +119,8 @@
     },
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0attack00000": {
+    "activities": [
+      {
         "_id": "sw5e0attack00000",
         "activation": {
           "condition": "",
@@ -200,14 +200,14 @@
           ]
         }
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493979347,
     "modifiedTime": 1739121089377,

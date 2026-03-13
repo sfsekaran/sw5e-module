@@ -15,7 +15,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Echani.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Echani.webp",
   "system": {
     "description": {
       "value": "<p>If a humanoid you can see makes a melee weapon attack, you can use your reaction to make a Wisdom (Insight) check against the target's Charisma (Deception). On a success you learn one of the following traits about that creature: it's Strength, Dexterity or Constitution score; bonus to Strength, Dexterity or Constitution saving throws; armor class; or current hit points. On a failure, the target becomes immune to this feature for one day. You can use this ability a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses on a long rest.</p>",
@@ -36,8 +36,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0check000000": {
+    "activities": [
+      {
         "_id": "sw5e0check000000",
         "activation": {
           "type": "reaction"
@@ -67,7 +67,7 @@
         },
         "type": "check"
       }
-    },
+    ],
     "identifier": "echani-art",
     "enchant": {},
     "prerequisites": {
@@ -86,7 +86,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1739121096233,
     "lastModifiedBy": "dnd5ebuilder0000"

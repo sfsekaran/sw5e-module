@@ -2,7 +2,7 @@
   "_id": "BlvJbbbNFVglXAtp",
   "name": "Beastmaster Approach (Companion)",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/BeastmasterApproach-Companion.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/BeastmasterApproach-Companion.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.m5gqTDJslmFIRyLI",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.m5gqTDJslmFIRyLI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.sBGRpDSXwECVm6Oy",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.sBGRpDSXwECVm6Oy",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.tTOpTZl4akf1Hfsn",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.tTOpTZl4akf1Hfsn",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.rFuCcGO4GGTKIVSq",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.rFuCcGO4GGTKIVSq",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Rj7vz5mgChKt4rZG",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Rj7vz5mgChKt4rZG",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.PKm1awwP0mN1QxOu",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.PKm1awwP0mN1QxOu",
               "optional": false
             }
           ],
@@ -129,7 +129,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959722,
     "modifiedTime": 1732304668793,

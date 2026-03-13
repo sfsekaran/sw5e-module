@@ -1,7 +1,7 @@
 {
   "name": "Brutal Critical",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Monster%20Traits/Brutal%20Critical.webp",
+  "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Brutal%20Critical.webp",
   "effects": [],
   "flags": {
     "entityorder": {
@@ -100,7 +100,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1669747131735,
     "modifiedTime": 1720368816175,

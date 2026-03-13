@@ -2,7 +2,7 @@
   "_id": "XYrBlYfB8UWtfffp",
   "name": "Way of Balance",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/WayOfBalance.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/WayOfBalance.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,7 +29,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.gG9EhW6R4xUTevff",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.gG9EhW6R4xUTevff",
               "optional": false
             }
           ],
@@ -46,7 +46,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.LKWQb6BZ4SAZFRaJ",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.LKWQb6BZ4SAZFRaJ",
               "optional": false
             }
           ],
@@ -63,7 +63,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.XKawQMDbmtUoSiWL",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.XKawQMDbmtUoSiWL",
               "optional": false
             }
           ],
@@ -80,7 +80,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.LGPIqycfmthhGJzC",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.LGPIqycfmthhGJzC",
               "optional": false
             }
           ],
@@ -97,7 +97,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Lt411ykCwZ3b0maV",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Lt411ykCwZ3b0maV",
               "optional": false
             }
           ],
@@ -122,7 +122,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959754,
     "modifiedTime": 1732304669286,

@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Droid-ClassV.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Droid-ClassV.webp",
   "system": {
     "description": {
       "value": "<h2>Appearance</h2>\n<p>Class V droids are typically vaguely human-like in both shape and size, standing at around 6 feet, although many can be larger. They are usually a polished metallic color, though this can vary based on tasks for which they are created, their affiliation, or quirks of their owner.</p>\n<p>They are noteworthy for their simple programming and quiet, focused work habits.</p>\n<h2>Utility</h2>\n<p>Class V droids are programmed for menial and low-skill tasks. Such droids tend to perform basic tasks such as construction, lifting, maintenance, mining, sanitation, and transportation. Labor droids are fifth-degree droids.</p>\n<h2>Names</h2>\n<p>Droids are typically called by their designation, given to them when they are created, or some affectation given to them by their owner. Often this affectation is a play on their designation. Occasionally, noteworthy droids will earn monikers based on their accomplishments.</p>\n<p><strong>Designations (Names).</strong> CO-34 (See-Oh Three Four), FX-9 (Effex), PK-4 (Pook), SAE-B13 (Sable)</p>",
@@ -47,67 +47,67 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Yo4Z3sX0NDDxYaiI",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Yo4Z3sX0NDDxYaiI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.t0zf7BDJhtJkZqIY",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.t0zf7BDJhtJkZqIY",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.R1fDs5IDbPHgN1OI",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.R1fDs5IDbPHgN1OI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.yLaEUGXDB1b59RfU",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.yLaEUGXDB1b59RfU",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.CeErZ5BOkdYQjfhx",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.CeErZ5BOkdYQjfhx",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.CJWdGdp4e4If4ytv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.CJWdGdp4e4If4ytv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.gJA2igwKInJcdVZJ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.gJA2igwKInJcdVZJ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.rQwNVwjXixRNMW6m",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.rQwNVwjXixRNMW6m",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Yglw81yCSUaoXWCe",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Yglw81yCSUaoXWCe",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.r65JSPtWfHKp4xdN",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.r65JSPtWfHKp4xdN",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.6dXA2Q9QhoEftRkM",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.6dXA2Q9QhoEftRkM",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Sj1kBtuHL2LaXL0T",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Sj1kBtuHL2LaXL0T",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Klc1bapD5QW43Qib",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Klc1bapD5QW43Qib",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.DJ8nPpQ0bAqU2HcH",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.DJ8nPpQ0bAqU2HcH",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.1HXIOjaapUaQCeBK",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.1HXIOjaapUaQCeBK",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.JdkzP0CbzJjV0xhN",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.JdkzP0CbzJjV0xhN",
               "optional": false
             }
           ],
@@ -227,7 +227,7 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null
@@ -270,7 +270,7 @@
         "turns": null
       },
       "flags": {},
-      "img": "modules/sw5e/icons/packs/Species/Droid%20Class%20V.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Droid%20Class%20V.webp",
       "name": "Droid, Class V",
       "origin": null,
       "sort": 0,
@@ -290,7 +290,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732412596409,

@@ -2,11 +2,11 @@
   "_id": "ya8OGukZiRJ9TogQ",
   "name": "Sidearm Focus",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/SidearmFocus.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/SidearmFocus.webp",
   "effects": [
     {
       "name": "Sidearm Focus",
-      "origin": "Compendium.sw5e.feats.Item.ya8OGukZiRJ9TogQ",
+      "origin": "Compendium.sw5e-module.feats.Item.ya8OGukZiRJ9TogQ",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -149,8 +149,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -184,14 +184,14 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966854,
     "modifiedTime": 1739121097153,

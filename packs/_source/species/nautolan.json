@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Nautolan.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Nautolan.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Nautolans possess physiology common to amphibious species, including low light vision and excellent swimming skills. Their bony endoskeleton and dense cartilage make them tough and resistant to glancing blows. An egg-laying species, Nautolans emerge from their egg as a tadpole that develops arms, legs, and head-tails during their second year of life. Roughly the same size as a Human infant during this time, their limbs are weak and unable to support their weight, forcing youthful Nautolans to remain in aquatic environments for much of their childhood. </p>\n<h2>Society and Culture</h2>\n<p>The society developed by the Nautolans on Glee Anselm is centralized around local families and governments. The centralized government of Glee Anselm is comprised of representatives from the Council of Elders that govern each settlement. Elders are elected on merit, and can be made up of youthful politicians as well as the most aged members of the society. A culture that promotes life-long mates, Nautolan families are characterized by their loyalty between spouses and the equality of the sexes in the household. Arranged marriages are not uncommon. </p>\n<p>No cultural affinity for the Force ever developed on Glee Anselm, though members of the Nautolan species recognize its importance and respected those among them that were Forceful.</p>\n<h2>Names</h2>\n<p>Nautolan names are generally short and melodic. Female names usually end in a vowel. Surnames are familial.</p>\n<p><strong>Male Names.</strong> Brod, Knirkoc, Peng, Tikuwik, Zesufreat</p>\n<p><strong>Female Names.</strong> Doli, Hahi, Thamlymyo, Usha, Zezu</p>\n<p><strong>Surnames.</strong> Iarre, Rirrall, Sompanong, Uzumdall</p>",
@@ -47,51 +47,51 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.jfPtPhnlxmS78Brd",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.jfPtPhnlxmS78Brd",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.l0SJdeeAdlkTubi7",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.l0SJdeeAdlkTubi7",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.SViV7Fs3w3x5npon",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.SViV7Fs3w3x5npon",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.xCVKqLS1yktcemmJ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.xCVKqLS1yktcemmJ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.7aJaTtGmxLa4jbHm",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.7aJaTtGmxLa4jbHm",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.d4wDdLv91tbOjXGi",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.d4wDdLv91tbOjXGi",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.YcqiPHZuWeDYqmzO",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.YcqiPHZuWeDYqmzO",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.IJofJpaj6emu1PjG",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.IJofJpaj6emu1PjG",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.u81OaoGfIka9HxnG",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.u81OaoGfIka9HxnG",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.2uz3nEhRjRRtyRe9",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.2uz3nEhRjRRtyRe9",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.YZP0iCj5bBuw2kR7",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.YZP0iCj5bBuw2kR7",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.vwBuliUu21qBJDBG",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.vwBuliUu21qBJDBG",
               "optional": false
             }
           ],
@@ -213,7 +213,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Nautolan.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Nautolan.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -228,7 +228,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725487,

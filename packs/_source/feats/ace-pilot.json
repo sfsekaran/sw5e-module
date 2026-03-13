@@ -2,7 +2,7 @@
   "_id": "qvZ81yL3lMLBro0T",
   "name": "Ace Pilot",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/AcePilot.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/AcePilot.webp",
   "effects": [
     {
       "_id": "wETPj7Yg4Sj3OEEV",
@@ -47,7 +47,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Feats/AcePilot.webp",
+      "img": "modules/sw5e-module/icons/packs/Feats/AcePilot.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -155,7 +155,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966836,
     "modifiedTime": 1730434333277,

@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/MNK-ARCH-Bonus.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/MNK-ARCH-Bonus.webp",
   "effects": [],
   "system": {
     "description": {
@@ -107,8 +107,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "type": "bonus"
@@ -150,7 +150,7 @@
         },
         "type": "damage"
       }
-    }
+    ]
   },
   "folder": null,
   "sort": 0,
@@ -159,7 +159,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1667426104142,
     "modifiedTime": 1739121092781,

@@ -2,11 +2,11 @@
   "_id": "zYb7G5KmvBqXD28s",
   "name": "Supreme Aptitude",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/SupremeAptitude.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/SupremeAptitude.webp",
   "effects": [
     {
       "name": "Supreme Aptitude",
-      "origin": "Compendium.sw5e.feats.Item.zYb7G5KmvBqXD28s",
+      "origin": "Compendium.sw5e-module.feats.Item.zYb7G5KmvBqXD28s",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -41,7 +41,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Feats/SupremeAptitude.webp",
+      "img": "modules/sw5e-module/icons/packs/Feats/SupremeAptitude.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -149,7 +149,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966856,
     "modifiedTime": 1730434333529,

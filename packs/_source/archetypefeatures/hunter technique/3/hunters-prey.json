@@ -2,7 +2,7 @@
   "_id": "qIxH6tE6oiSglRaa",
   "name": "Hunter's Prey",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCT-ARCH-Reaction.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCT-ARCH-Reaction.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -21,7 +21,7 @@
   },
   "system": {
     "description": {
-      "value": "<p><em><strong>Hunter Technique:</strong> 3rd level</em></p>\n<p>You gain one of the following features of your choice. </p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.bkHPKACByCvSf2br]{Colossus Slayer}</h3>\n<p>Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, the creature takes an extra [[/r 1d8]] damage if it's below its hit point maximum. You can deal this extra damage only once per turn, and this damage is the same type as the weapon's damage. </p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.nHycSyY8xdrp5c6G]{Giant Killer}</h3>\n<p>When a Large or larger creature within 5 feet of you hits or misses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided that you can see the creature. </p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.1LSnF7cvNXmLRgYJ]{Horde Breaker}</h3>\n<p>Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon, no action required.</p>",
+      "value": "<p><em><strong>Hunter Technique:</strong> 3rd level</em></p>\n<p>You gain one of the following features of your choice. </p>\n<h3>@UUID[Compendium.sw5e-module.archetypefeatures.Item.bkHPKACByCvSf2br]{Colossus Slayer}</h3>\n<p>Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, the creature takes an extra [[/r 1d8]] damage if it's below its hit point maximum. You can deal this extra damage only once per turn, and this damage is the same type as the weapon's damage. </p>\n<h3>@UUID[Compendium.sw5e-module.archetypefeatures.Item.nHycSyY8xdrp5c6G]{Giant Killer}</h3>\n<p>When a Large or larger creature within 5 feet of you hits or misses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided that you can see the creature. </p>\n<h3>@UUID[Compendium.sw5e-module.archetypefeatures.Item.1LSnF7cvNXmLRgYJ]{Horde Breaker}</h3>\n<p>Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon, no action required.</p>",
       "chat": ""
     },
     "requirements": "Scout (Hunter Technique) 3",
@@ -110,8 +110,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "type": "reaction"
@@ -154,14 +154,14 @@
         },
         "type": "damage"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493958148,
     "modifiedTime": 1739121092781,

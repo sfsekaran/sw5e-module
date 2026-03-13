@@ -2,7 +2,7 @@
   "_id": "QKnOhSPnDRPeAntU",
   "name": "Way of the Seer",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/WayOfTheSeer.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/WayOfTheSeer.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,7 +29,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Qau2JJxfCBN6koWg",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Qau2JJxfCBN6koWg",
               "optional": false
             }
           ],
@@ -46,7 +46,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.fDBTreWvkxYFstMM",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.fDBTreWvkxYFstMM",
               "optional": false
             }
           ],
@@ -63,7 +63,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.9FqNEJdb0V81kkDC",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.9FqNEJdb0V81kkDC",
               "optional": false
             }
           ],
@@ -80,7 +80,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.qn5Ed5jefXCyELkQ",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.qn5Ed5jefXCyELkQ",
               "optional": false
             }
           ],
@@ -97,7 +97,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.s9N0SbnOiNitLT5W",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.s9N0SbnOiNitLT5W",
               "optional": false
             }
           ],
@@ -138,7 +138,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959743,
     "modifiedTime": 1732412593736,

@@ -2,7 +2,7 @@
   "_id": "eYYdXnO1zUk4XpFW",
   "name": "Stunning Strike",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/MNK-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/MNK-Passive.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -105,8 +105,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -140,14 +140,14 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493962348,
     "modifiedTime": 1739121094035,

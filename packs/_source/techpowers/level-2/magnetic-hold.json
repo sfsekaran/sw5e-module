@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/MagneticHold.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/MagneticHold.webp",
   "system": {
     "description": {
       "value": "<p>Until the power ends, one willing creature you touch gains the ability affix itself to and move along any metallic surface. It can move up, down, and across vertical surfaces and upside down along ceilings, all while leaving its hands free, at its normal walking speed.</p>",
@@ -101,8 +101,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -143,7 +143,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "vhNxb57YsDBUw7jO",
@@ -154,7 +154,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

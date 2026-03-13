@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Passive.webp",
   "system": {
     "description": {
       "value": "<p>You've created a new mixture from your chemicals that you can use when you activate your distributor. When you do so, the target creature must make an Intelligence saving throw. On a failed save, the target loses the ability to distinguish friend from foe, regarding all creatures it can see as enemies until the end of your next turn. Each time the target takes damage, it can repeat the saving throw, ending the effect on itself on a success. </p>\n<p>Whenever the affected creature chooses another creature as a target, it must choose the target at random from among the creatures it can see within range of the attack, power, or other ability it's using. If an enemy provokes an opportunity attack from the affected creature, the creature must make that attack if it is able to.</p>\n<p>This feature has no effect on droids or constructs.</p>",
@@ -34,8 +34,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -69,7 +69,7 @@
         },
         "type": "save"
       }
-    },
+    ],
     "identifier": "expanded-mixtures-hallucinogenic",
     "enchant": {},
     "prerequisites": {
@@ -88,7 +88,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

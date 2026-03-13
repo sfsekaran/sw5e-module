@@ -2,7 +2,7 @@
   "_id": "VB7FBS9Btk1l9lSb",
   "name": "Cryo Cell (Devastating)",
   "type": "consumable",
-  "img": "modules/sw5e/icons/packs/Ammunition/CryoCell.webp",
+  "img": "modules/sw5e-module/icons/packs/Ammunition/CryoCell.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -120,8 +120,8 @@
     "enchantment": null,
     "summons": null,
     "magicalBonus": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -183,14 +183,14 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493964726,
     "modifiedTime": 1739121086510,

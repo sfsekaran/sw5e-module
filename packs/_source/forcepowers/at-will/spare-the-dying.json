@@ -2,7 +2,7 @@
   "_id": "pPwTHbPUo4AI8EeN",
   "name": "Spare the Dying",
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Force%20Powers/SpareTheDying.webp",
+  "img": "modules/sw5e-module/icons/packs/Force%20Powers/SpareTheDying.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -103,8 +103,8 @@
     "enchantment": null,
     "summons": null,
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -130,14 +130,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493979319,
     "modifiedTime": 1739121089377,

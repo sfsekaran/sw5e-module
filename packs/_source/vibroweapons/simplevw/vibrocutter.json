@@ -22,7 +22,7 @@
     }
   },
   "type": "weapon",
-  "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrocutter.webp",
+  "img": "modules/sw5e-module/icons/packs/Simple%20Vibroweapons/Vibrocutter.webp",
   "system": {
     "description": {
       "value": "<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>",
@@ -159,8 +159,8 @@
     "magicalBonus": null,
     "proficient": null,
     "firingArc": "",
-    "activities": {
-      "sw5e0attack00000": {
+    "activities": [
+      {
         "_id": "sw5e0attack00000",
         "activation": {
           "type": "action"
@@ -190,7 +190,7 @@
         "target": {},
         "type": "attack"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "XuOFMQCwr7Rn65ys",
@@ -201,7 +201,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296019804,
     "modifiedTime": 1739121084621,

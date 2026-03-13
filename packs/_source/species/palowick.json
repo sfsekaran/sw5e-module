@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/PaLowick.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/PaLowick.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>The pa'lowick are a species of humanoid amphibians who live in the coastal salt marshes of Lowick. They have compact but rotund midsections that top a pair of long, spindly legs ending in anisodactylic feet—three toes pointing forward, one back. This configuration, combined with their powerful lungs, enabled them to swim.</p>\n<p>The most prominent feature of pa'lowick physiology is their prehensile snout, which ends in a pair of pouty, human-like lips. Pa'lowick are also born with sharp tusks, which some lose by middle age.</p>\n<h2>Society and Culture</h2>\n<p>Pa'lowick live in large, independent communities with a feudal system of government. Many pa'lowick become fishers or hunters, as their biology allows. </p>\n<p>Songs and stories are the most treasured aspect of pa'lowick culture. Pa'lowick music runs the gamut of genres and subjects, although religious music is particularly common. Cultural heritage, such as history, genealogy, and parables, is largely passed down orally. Every Pa'lowick community has a dedicated storyteller; the esteem afforded this individual makes the position a coveted one. Large lungs make the Pa'lowick hearty singers and affords at least some members of the species the ability to scream loudly and disarm opponents in combat.</p>\n<h2>Names</h2>\n<p>Pa'lowick names tend to grow longer as the family tree grows older, with each generation adding a few syllables they are fond of.</p>\n<p><strong>Male Names.</strong> Loran, Jelanto, Neeamesh, Samoos</p>\n<p><strong>Female Names.</strong> Larisselle, Rensilla, Sy, Tripika</p>\n<p><strong>Surnames.</strong> Chatrunis, Dym, Geeci, Snootles</p>",
@@ -47,47 +47,47 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ATxt3BTcatpjoOKx",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ATxt3BTcatpjoOKx",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.K2LN9tFzL5ZnxxmL",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.K2LN9tFzL5ZnxxmL",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.q69VHoBRsaZGbfrO",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.q69VHoBRsaZGbfrO",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.o184Vzq5JYvnMNet",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.o184Vzq5JYvnMNet",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Ho8he7IDOMMCfPNF",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Ho8he7IDOMMCfPNF",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.XUtLuvt5UiMpnw3x",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.XUtLuvt5UiMpnw3x",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.bEgCKfOoJYbJyfun",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.bEgCKfOoJYbJyfun",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.tPwEABFmSdAc5dLQ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.tPwEABFmSdAc5dLQ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.1MCHXzm5hBPJCOY4",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.1MCHXzm5hBPJCOY4",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.wSNXV4rGvssUOBDH",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.wSNXV4rGvssUOBDH",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.JEQjO6Mz16bokbec",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.JEQjO6Mz16bokbec",
               "optional": false
             }
           ],
@@ -180,7 +180,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725066,

@@ -2,7 +2,7 @@
   "_id": "555TTBsK71OVoIa7",
   "name": "Electrifying Calibrator (Devastating)",
   "type": "consumable",
-  "img": "modules/sw5e/icons/packs/Ammunition/Melee Consumables/ElectrifyingCalibrator.webp",
+  "img": "modules/sw5e-module/icons/packs/Ammunition/Melee Consumables/ElectrifyingCalibrator.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -116,8 +116,8 @@
     "enchantment": null,
     "summons": null,
     "magicalBonus": null,
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "type": "action"
@@ -161,14 +161,14 @@
         },
         "type": "damage"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493964402,
     "modifiedTime": 1739121086510,

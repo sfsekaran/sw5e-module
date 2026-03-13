@@ -2,7 +2,7 @@
   "_id": "nKQCzSeJg7i61pO5",
   "name": "Bloodstorm Approach",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/BloodstormApproach.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/BloodstormApproach.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.a4zSRZYJfNv0a4fP",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.a4zSRZYJfNv0a4fP",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.7hrUI1fmnFMx4MTf",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.7hrUI1fmnFMx4MTf",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.w9kmr36IxzwXq7Ac",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.w9kmr36IxzwXq7Ac",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.jL3qsXtVhhJaNU8D",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.jL3qsXtVhhJaNU8D",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.3lqydI4v73szourv",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.3lqydI4v73szourv",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959769,
     "modifiedTime": 1732304669500,

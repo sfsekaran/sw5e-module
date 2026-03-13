@@ -2,7 +2,7 @@
   "_id": "lawuC5DlTMgma6P8",
   "name": "Heavy blaster rifle",
   "type": "weapon",
-  "img": "modules/sw5e/icons/packs/Martial%20Blasters/HeavyBlasterRifle.webp",
+  "img": "modules/sw5e-module/icons/packs/Martial%20Blasters/HeavyBlasterRifle.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -176,8 +176,8 @@
     "summons": null,
     "magicalBonus": null,
     "firingArc": "",
-    "activities": {
-      "sw5e0attack00000": {
+    "activities": [
+      {
         "_id": "sw5e0attack00000",
         "activation": {
           "type": "action"
@@ -208,7 +208,7 @@
         "target": {},
         "type": "attack"
       },
-      "sw5e1save0000000": {
+      {
         "_id": "sw5e1save0000000",
         "activation": {
           "type": "action"
@@ -246,14 +246,14 @@
         "target": {},
         "type": "save"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493961302,
     "modifiedTime": 1739121083882,

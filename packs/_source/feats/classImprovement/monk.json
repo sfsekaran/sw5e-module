@@ -2,7 +2,7 @@
   "_id": "FplL9LRkC6PxBl0y",
   "name": "Monk",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Classes/Monk.webp",
+  "img": "modules/sw5e-module/icons/packs/Classes/Monk.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -110,8 +110,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0heal0000000": {
+    "activities": [
+      {
         "_id": "sw5e0heal0000000",
         "activation": {
           "type": "action"
@@ -147,14 +147,14 @@
         },
         "type": "heal"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966779,
     "modifiedTime": 1739121097153,
