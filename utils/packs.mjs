@@ -8,6 +8,7 @@ import { extractPack } from "@foundryvtt/foundryvtt-cli";
 import { ClassicLevel } from "classic-level";
 import {
 	TARGET_DND5E_VERSION,
+	normalizeLegacyMasterItemSource,
 	normalizeDnd5eItemSource,
 	normalizeEmbeddedDnd5eItemSources
 } from "../scripts/dnd5e-source-normalization.mjs";
@@ -503,16 +504,7 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 	if ( data.type === "starshipsize" ) normalizeLegacyStarshipSizeItem(data);
 	if ( data.type === "starshipmod" ) normalizeLegacyStarshipModItem(data);
 
-	if ( data.type === "power" ) data.type = "spell";
-	if ( data.type === "species" ) data.type = "race";
-	if ( data.type === "archetype" ) data.type = "subclass";
-	if ( ["maneuver", "sw5e.maneuver"].includes(data.type) ) data.type = "sw5e-module.maneuver";
-	if ( data.changes ) data.changes.forEach(ch => { if ( ch.key === "system.traits.languages.value" && ch.value === "basic" ) ch.value = "common"; });
-
-	if ( data.system?.price?.denomination === "gc" ) data.system.price.denomination = "gp";
-	if ( data.system?.save?.scaling === "power" ) data.system.save.scaling = "spell";
-	if ( data.system?.target?.type === "starship" ) data.system.target.type = "";
-	if ( data.system?.attributes?.ac?.calc === "starship" ) data.system.attributes.ac.calc = "flat";
+	normalizeLegacyMasterItemSource(data);
 
 	if ( data.flags?.['sw5e-module-test'] ) {
 		data.flags.sw5e = {

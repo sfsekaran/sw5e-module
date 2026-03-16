@@ -835,7 +835,7 @@
     }
   ],
   "flags": {
-    "needsMigrationVersion": "0.20",
+    "needsMigrationVersion": "0.21",
     "compatibleMigrationVersion": "0"
   }
 }

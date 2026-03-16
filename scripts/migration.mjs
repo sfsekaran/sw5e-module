@@ -6,8 +6,10 @@ import {
 	normalizeCompendiumUuid,
 	SETTINGS_NAMESPACE
 } from "./module-support.mjs";
-import { normalizeDnd5eItemSource } from "./dnd5e-source-normalization.mjs";
+import { normalizeDnd5eItemSource, normalizeLegacyMasterItemSource } from "./dnd5e-source-normalization.mjs";
 import { normalizeLegacyStarshipActorData, normalizeLegacyStarshipItemData } from "./starship-data.mjs";
+
+const MIGRATABLE_COMPENDIUM_DOCUMENTS = ["Actor", "Item", "Scene", "JournalEntry", "RollTable"];
 
 /**
  * Checks if the world needs migrating.
@@ -168,7 +170,7 @@ export const migrateWorld = async function() {
 	// Migrate World Compendium Packs
 	for ( let p of game.packs ) {
 		if ( p.metadata.packageType !== "world" ) continue;
-		if ( !["Actor", "Item", "Scene"].includes(p.documentName) ) continue;
+		if ( !MIGRATABLE_COMPENDIUM_DOCUMENTS.includes(p.documentName) ) continue;
 		await migrateCompendium(p);
 	}
 
@@ -187,7 +189,7 @@ export const migrateWorld = async function() {
  */
 export const migrateCompendium = async function(pack) {
 	const documentName = pack.documentName;
-	if ( !["Actor", "Item", "Scene"].includes(documentName) ) return;
+	if ( !MIGRATABLE_COMPENDIUM_DOCUMENTS.includes(documentName) ) return;
 
 	const migrationData = await getMigrationData();
 
@@ -214,6 +216,12 @@ export const migrateCompendium = async function(pack) {
 					break;
 				case "Scene":
 					updateData = migrateSceneData(source, migrationData, flags);
+					break;
+				case "JournalEntry":
+					updateData = migrateJournalEntryData(source, migrationData);
+					break;
+				case "RollTable":
+					updateData = migrateRollTableData(source, migrationData);
 					break;
 			}
 
@@ -302,7 +310,7 @@ export const migrateActorData = function(actor, migrationData, flags={}, { actor
 	const items = workingActor.items.reduce((arr, i) => {
 		// Migrate the Owned Item
 		const itemData = i instanceof CONFIG.Item.documentClass ? i.toObject() : i;
-		const itemFlags = { persistSourceMigration: normalizeLegacyStarshipItemData(itemData) };
+		const itemFlags = { persistSourceMigration: false };
 		let itemUpdate = migrateItemData(itemData, migrationData, itemFlags);
 		applyUpdateData(itemData, itemUpdate);
 
@@ -336,12 +344,17 @@ export const migrateActorData = function(actor, migrationData, flags={}, { actor
  */
 export function migrateItemData(item, migrationData, flags={}) {
 	const normalizedItem = foundry.utils.deepClone(item);
+	const normalizedLegacyMasterItem = normalizeLegacyMasterItemSource(normalizedItem);
+	const normalizedLegacyStarshipItem = normalizeLegacyStarshipItemData(normalizedItem);
 	const normalizedDnd5eItem = normalizeDnd5eItemSource(normalizedItem);
 	const migratedItem = applyDocumentMigration(CONFIG.Item.documentClass, normalizedItem);
 	const workingItem = migratedItem.source;
 	const updateData = {};
-	const requiresFullSourceMigration = normalizedDnd5eItem
+	const requiresFullSourceMigration = normalizedLegacyMasterItem
+		|| normalizedLegacyStarshipItem
+		|| normalizedDnd5eItem
 		|| migratedItem.changed
+		|| normalizeLegacyMasterItemSource(workingItem)
 		|| normalizeLegacyStarshipItemData(workingItem);
 	if ( requiresFullSourceMigration ) flags.persistSourceMigration = true;
 
@@ -398,6 +411,16 @@ export const migrateEffectData = function(effect, migrationData, { parent }={}) 
  */
 export const migrateMacroData = function(macro, migrationData) {
 	const updateData = {};
+	_migrateImage(macro, updateData);
+	_migrateObjectFlags(macro, updateData);
+	if ( typeof macro.command === "string" ) {
+		const normalized = normalizeLegacyContentString(macro.command);
+		if ( normalized !== macro.command ) updateData.command = normalized;
+	}
+	if ( macro.flags ) {
+		const normalizedFlags = normalizeCompendiumReferences(foundry.utils.deepClone(macro.flags), { moduleId: getModuleId() });
+		if ( !foundry.utils.deepEqual(normalizedFlags, macro.flags) ) updateData.flags = normalizedFlags;
+	}
 	return updateData;
 };
 
@@ -411,6 +434,76 @@ export const migrateMacroData = function(macro, migrationData) {
  */
 export function migrateRollTableData(table, migrationData) {
 	const updateData = {};
+	_migrateImage(table, updateData);
+	_migrateObjectFlags(table, updateData);
+
+	if ( Array.isArray(table.results) ) {
+		const results = table.results.reduce((arr, result) => {
+			const resultData = result instanceof foundry.abstract.DataModel ? result.toObject() : foundry.utils.deepClone(result);
+			const resultUpdate = {};
+			_migrateImage(resultData, resultUpdate);
+			_migrateObjectFlags(resultData, resultUpdate);
+
+			if ( typeof resultData.text === "string" ) {
+				const normalizedText = normalizeLegacyContentString(resultData.text);
+				if ( normalizedText !== resultData.text ) resultUpdate.text = normalizedText;
+			}
+
+			const normalizedCollection = normalizeLegacyDocumentCollection(resultData.documentCollection);
+			if ( normalizedCollection !== resultData.documentCollection ) {
+				resultUpdate.documentCollection = normalizedCollection;
+			}
+
+			if ( typeof resultData.collection === "string" ) {
+				const normalizedCompendium = normalizeCompendiumUuid(resultData.collection, { moduleId: getModuleId() });
+				if ( normalizedCompendium !== resultData.collection ) resultUpdate.collection = normalizedCompendium;
+			}
+
+			if ( !foundry.utils.isEmpty(resultUpdate) ) {
+				resultUpdate._id = resultData._id;
+				arr.push(resultUpdate);
+			}
+			return arr;
+		}, []);
+		if ( results.length ) updateData.results = results;
+	}
+	return updateData;
+}
+
+/* -------------------------------------------- */
+
+/**
+ * Migrate a single JournalEntry document to incorporate latest data model changes.
+ * @param {object} journal          JournalEntry data to migrate.
+ * @param {object} [migrationData]  Additional data to perform the migration.
+ * @returns {object}                The updateData to apply.
+ */
+export function migrateJournalEntryData(journal, migrationData) {
+	const updateData = {};
+	_migrateImage(journal, updateData);
+	_migrateObjectFlags(journal, updateData);
+
+	if ( Array.isArray(journal.pages) ) {
+		const pages = journal.pages.reduce((arr, page) => {
+			const pageData = page instanceof foundry.abstract.DataModel ? page.toObject() : foundry.utils.deepClone(page);
+			const pageUpdate = {};
+			_migrateImage(pageData, pageUpdate);
+			_migrateObjectFlags(pageData, pageUpdate);
+
+			if ( typeof pageData.text?.content === "string" ) {
+				const normalizedContent = normalizeLegacyContentString(pageData.text.content);
+				if ( normalizedContent !== pageData.text.content ) pageUpdate["text.content"] = normalizedContent;
+			}
+
+			if ( !foundry.utils.isEmpty(pageUpdate) ) {
+				pageUpdate._id = pageData._id;
+				arr.push(pageUpdate);
+			}
+			return arr;
+		}, []);
+		if ( pages.length ) updateData.pages = pages;
+	}
+
 	return updateData;
 }
 
@@ -451,6 +544,25 @@ export const getMigrationData = async function() {
 	}
 	return data;
 };
+
+function normalizeLegacyContentString(content) {
+	if ( typeof content !== "string" ) return content;
+	const moduleId = getModuleId();
+	let normalized = normalizeCompendiumReferences(content, { moduleId });
+	normalized = normalized.replace(/systems\/sw5e\/packs\/Icons/g, getModulePath("icons/packs"));
+	normalized = normalized.replace(/modules\/sw5e\/icons\/packs/g, getModulePath("icons/packs"));
+	normalized = normalized.replace(/modules\/sw5e-module-test\/icons\/packs/g, getModulePath("icons/packs"));
+	return normalized;
+}
+
+function normalizeLegacyDocumentCollection(collection) {
+	if ( typeof collection !== "string" ) return collection;
+	if ( collection.startsWith("Compendium.") ) return normalizeCompendiumUuid(collection, { moduleId: getModuleId() });
+	if ( /^(sw5e|sw5e-module-test)\./.test(collection) ) {
+		return collection.replace(/^(sw5e|sw5e-module-test)\./, `${getModuleId()}.`);
+	}
+	return collection;
+}
 
 function getInvalidDocumentSource(collection, id, legacyKey) {
 	const invalid = collection.getInvalid?.(id);

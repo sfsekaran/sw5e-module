@@ -1,5 +1,11 @@
 export const TARGET_DND5E_VERSION = "5.2.5"
 
+const LEGACY_ITEM_TYPE_REMAPS = {
+	power: "spell",
+	species: "race",
+	archetype: "subclass"
+}
+
 function isObjectLike(value) {
 	return !!value && (typeof value === "object") && !Array.isArray(value)
 }
@@ -136,5 +142,57 @@ export function normalizeDnd5eItemSource(item, { targetSystemVersion=TARGET_DND5
 export function normalizeEmbeddedDnd5eItemSources(items=[]) {
 	let changed = false
 	for ( const item of items ) changed = normalizeDnd5eItemSource(item) || changed
+	return changed
+}
+
+export function normalizeLegacyMasterItemSource(item) {
+	if ( !item || (typeof item !== "object") ) return false
+
+	let changed = false
+
+	if ( typeof item.type === "string" ) {
+		const remappedType = LEGACY_ITEM_TYPE_REMAPS[item.type]
+		if ( remappedType && remappedType !== item.type ) {
+			item.type = remappedType
+			changed = true
+		} else if ( ["maneuver", "sw5e.maneuver"].includes(item.type) ) {
+			item.type = "sw5e-module.maneuver"
+			changed = true
+		}
+	}
+
+	if ( item.system?.price?.denomination === "gc" ) {
+		item.system.price.denomination = "gp"
+		changed = true
+	}
+	if ( item.system?.save?.scaling === "power" ) {
+		item.system.save.scaling = "spell"
+		changed = true
+	}
+	if ( item.system?.target?.type === "starship" ) {
+		item.system.target.type = ""
+		changed = true
+	}
+	if ( item.system?.attributes?.ac?.calc === "starship" ) {
+		item.system.attributes.ac.calc = "flat"
+		changed = true
+	}
+
+	if ( Array.isArray(item.changes) ) {
+		for ( const change of item.changes ) {
+			if ( change?.key !== "system.traits.languages.value" ) continue
+			if ( change.value === "basic" ) {
+				change.value = "common"
+				changed = true
+			}
+		}
+	}
+
+	return changed
+}
+
+export function normalizeEmbeddedLegacyMasterItemSources(items=[]) {
+	let changed = false
+	for ( const item of items ) changed = normalizeLegacyMasterItemSource(item) || changed
 	return changed
 }
