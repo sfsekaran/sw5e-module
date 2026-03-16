@@ -66,7 +66,7 @@ function addPowercasting(result) {
 			level: new NumberField({ nullable: true, min: 0, initial: null, label: "SW5E.Powercasting.Force.Level.Override" }),
 			limit: new NumberField({ nullable: true, min: 0, initial: null, label: "SW5E.Powercasting.Force.Limit.Override" }),
 			maxPowerLevel: new NumberField({ nullable: true, min: 0, initial: null, label: "SW5E.Powercasting.Force.MaxPowerLevel.Override" }),
-			points: makePointsResource({ label: "SW5E.Powercasting.Force.Point.Label", hasTemp: true }),
+			points: makePointsResource({ label: "SW5E.Powercasting.Force.Point.Label", hasTemp: true, hasTempMax: true }),
 			schools: new SchemaField({
 				lgt: new SchemaField({
 					attr: new StringField({ nullable: true, initial: null, label: "SW5E.Powercasting.Force.School.Lgt.Attr.Override" }),
@@ -90,7 +90,7 @@ function addPowercasting(result) {
 			level: new NumberField({ nullable: true, min: 0, initial: null, label: "SW5E.Powercasting.Tech.Level.Override" }),
 			limit: new NumberField({ nullable: true, min: 0, initial: null, label: "SW5E.Powercasting.Tech.Limit.Override" }),
 			maxPowerLevel: new NumberField({ nullable: true, min: 0, initial: null, label: "SW5E.Powercasting.Tech.MaxPowerLevel.Override" }),
-			points: makePointsResource({ label: "SW5E.Powercasting.Tech.Point.Label", hasTemp: true }),
+			points: makePointsResource({ label: "SW5E.Powercasting.Tech.Point.Label", hasTemp: true, hasTempMax: true }),
 			schools: new SchemaField({
 				tec: new SchemaField({
 					attr: new StringField({ nullable: true, initial: null, label: "SW5E.Powercasting.Tech.School.Tec.Attr.Override" }),
@@ -124,6 +124,29 @@ function addSuperiority(result) {
 		}, { label: "SW5E.Superiority.Type.Label" })
 	}, { label: "SW5E.Superiority.Label" });
 }
+function addLegacyNpcDetailFields(result) {
+	const detailsField = result.details;
+	const detailSchema = detailsField?.fields ?? detailsField?.model?.fields;
+	if ( !detailSchema ) return;
+
+	const legacyLevelFields = {
+		powerForceLevel: "SW5E.ForcecasterLevel",
+		powerTechLevel: "SW5E.TechcasterLevel",
+		superiorityLevel: "SW5E.SuperiorityLevel"
+	};
+
+	for (const [key, label] of Object.entries(legacyLevelFields)) {
+		if ( key in detailSchema ) continue;
+		detailSchema[key] = new NumberField({
+			required: true,
+			nullable: false,
+			integer: true,
+			min: 0,
+			initial: 0,
+			label
+		});
+	}
+}
 function changeProficiency(result, type) {
 	if (type === "creature") {
 		result.skills.model.fields.value.max = 5;
@@ -141,6 +164,7 @@ export function patchDataModels() {
 	libWrapper.register(getModuleId(), 'dnd5e.dataModels.item.SubclassData.defineSchema', addProgression, 'WRAPPER');
 	libWrapper.register(getModuleId(), 'dnd5e.dataModels.actor.CreatureTemplate.defineSchema', function (wrapped, ...args) {
 		const result = wrapped(...args);
+		addLegacyNpcDetailFields(result);
 		addPowercasting(result);
 		addSuperiority(result);
 		changeProficiency(result, "creature");

@@ -79,33 +79,117 @@ function getNumericValue(value) {
 }
 
 function getLegacyPowerPoints(actor, castType) {
+	const sourcePoints = actor?._source?.system?.attributes?.[castType]?.points;
+	if ( sourcePoints && typeof sourcePoints === "object" ) return sourcePoints;
+	const preparedPoints = actor?.system?.attributes?.[castType]?.points;
+	if ( preparedPoints && typeof preparedPoints === "object" ) return preparedPoints;
 	return actor?._source?.system?.[castType]?.points ?? actor?.system?.[castType]?.points ?? {};
 }
 
+function inferNpcPowerLevelFromPowers(actor, castType, typeConfig) {
+	const schools = typeConfig?.schools ?? {};
+	const powers = actor?.itemTypes?.spell ?? [];
+	const relevantPowers = powers.filter(power => (power?.system?.school ?? "") in schools);
+	if ( !relevantPowers.length ) return null;
+
+	const highestPowerLevel = relevantPowers.reduce((highest, power) => {
+		const level = getNumericValue(power?.system?.level) ?? 0;
+		return Math.max(highest, level);
+	}, 0);
+
+	const fullProgression = typeConfig?.progression?.full?.powerMaxLevel;
+	if ( !fullProgression || typeof fullProgression !== "object" ) {
+		return highestPowerLevel > 0 ? Math.min(highestPowerLevel * 2, 20) : 1;
+	}
+
+	for (let lvl = 1; lvl <= 20; lvl += 1) {
+		const cap = getNumericValue(fullProgression[lvl] ?? fullProgression[String(lvl)]) ?? 0;
+		if ( cap >= highestPowerLevel ) return lvl;
+	}
+	return 20;
+}
+
 function getPowercastingMountPoint(root, actorType) {
-	const sidebar = root.querySelector(".sidebar .stats");
-	const hpButton = root.querySelector('[data-action="hitPoints"]');
-	const hpGroup = hpButton?.closest(".meter-group");
-	if ( actorType === "npc" ) {
+	const hpButton = root.querySelector('[data-action="hitPoints"], [data-action="hit-points"]');
+	const hpGroup = hpButton?.closest(".meter-group, .attrib.health, .attribute.health, .health, .resource");
+	if ( hpGroup?.parentElement ) {
 		return {
-			container: hpGroup?.parentElement ?? sidebar,
+			container: hpGroup.parentElement,
 			reference: hpGroup,
-			insertAfter: !!hpGroup,
-			append: !hpGroup
+			insertAfter: true,
+			append: false
+		};
+	}
+
+	const hpSectionFromInput = root
+		.querySelector('[name="system.attributes.hp.value"]')
+		?.closest(".meter-group, .attrib.health, .attribute.health, .health, .resource");
+	if ( hpSectionFromInput?.parentElement ) {
+		return {
+			container: hpSectionFromInput.parentElement,
+			reference: hpSectionFromInput,
+			insertAfter: true,
+			append: false
 		};
 	}
 
 	if ( root.classList?.contains("tidy5e-sheet") ) {
+		const sidePanel = root.querySelector(".attributes .side-panel");
+		if ( sidePanel ) {
+			return {
+				container: sidePanel,
+				reference: null,
+				insertAfter: false,
+				append: false
+			};
+		}
+	}
+
+	if ( actorType === "npc" ) {
+		const npcMount = [
+			root.querySelector("header .attributes"),
+			root.querySelector(".sheet-header .attributes")
+		].find(Boolean);
+		if ( npcMount?.parentElement ) {
+			return {
+				container: npcMount.parentElement,
+				reference: npcMount,
+				insertAfter: true,
+				append: false
+			};
+		}
+	}
+
+	const sidebar = [
+		root.querySelector(".sidebar .stats"),
+		root.querySelector("[data-application-part='sidebar'] .stats"),
+		root.querySelector(".sheet-sidebar .stats"),
+		root.querySelector(".sidebar"),
+		root.querySelector("[data-application-part='sidebar']"),
+		root.querySelector(".sheet-sidebar")
+	].find(Boolean);
+	if ( sidebar ) {
 		return {
-			container: root.querySelector(".attributes .side-panel"),
+			container: sidebar,
 			reference: null,
 			insertAfter: false,
+			append: true
+		};
+	}
+
+	const profileImage = root.querySelector("img.profile, .profile img, .portrait img, .profile-img");
+	const profileBlock = profileImage?.closest("section, aside, header, div");
+	if ( profileBlock?.parentElement ) {
+		return {
+			container: profileBlock.parentElement,
+			reference: profileBlock,
+			insertAfter: true,
 			append: false
 		};
 	}
 
 	return {
-		container: sidebar,
+		container: root.querySelector("form, .window-content"),
 		reference: null,
 		insertAfter: false,
 		append: true
@@ -202,8 +286,25 @@ function preparePowercasting() {
 		for (const [castType, obj] of Object.entries(charProgression)) {
 			const typeConfig = CONFIG.DND5E.powerCasting[castType];
 			if (isNPC) {
-				const level = _this.system.details?.[`power${castType.capitalize()}Level`];
-				if (level) {
+				const levelKey = `power${castType.capitalize()}Level`;
+				let level = getNumericValue(_this.system.details?.[levelKey]);
+				const sourceLevel = getNumericValue(_this._source?.system?.details?.[levelKey]);
+				if ( !(level > 0) ) level = sourceLevel;
+
+				// Recovery path for already-imported NPCs whose legacy detail fields were pruned.
+				if ( !(level > 0) ) {
+					const inferredLevel = inferNpcPowerLevelFromPowers(_this, castType, typeConfig);
+					if ( inferredLevel > 0 ) {
+						level = inferredLevel;
+						_this.system.details ??= {};
+						_this.system.details[levelKey] = inferredLevel;
+						if ( !(sourceLevel > 0) ) {
+							_this.updateSource?.({ [`system.details.${levelKey}`]: inferredLevel });
+						}
+					}
+				}
+
+				if ( level > 0 ) {
 					obj.classes = 1;
 					obj.points = level * (typeConfig.progression.full?.powerPoints ?? 0);
 					obj.casterLevel = level;
@@ -278,6 +379,11 @@ function preparePowercasting() {
 				target.maxPowerLevel = obj.maxPowerLevel;
 				target.points.max = reconciledPool.max;
 				target.points.value = reconciledPool.value;
+				const legacyPoints = _this.system.attributes?.[castType]?.points;
+				if ( legacyPoints && typeof legacyPoints === "object" ) {
+					legacyPoints.max = reconciledPool.max;
+					legacyPoints.value = reconciledPool.value;
+				}
 			} else {
 				target.known.max ??= obj.powersKnownMax;
 				target.level ??= obj.casterLevel;
@@ -759,12 +865,15 @@ function showPowercastingBar() {
 		// Add meters for the tech and force powercasting values. This 
 		// will be added right after the hit points meter.
 		for (const castType of ["force", "tech"]) {
-			if (powerCasting[castType].level > 0) {
-				const castData = powerCasting[castType];
-				const value = castData.points.value;
-				const temp = castData.points.temp ?? 0;
-				const max = castData.points.max;
-				const tempmax = castData.points.tempmax ?? 0;
+			const castData = powerCasting[castType];
+			const value = Number.isFinite(Number(castData?.points?.value)) ? Number(castData.points.value) : 0;
+			const temp = Number.isFinite(Number(castData?.points?.temp)) ? Number(castData.points.temp) : 0;
+			const max = Number.isFinite(Number(castData?.points?.max)) ? Number(castData.points.max) : 0;
+			const tempmax = Number.isFinite(Number(castData?.points?.tempmax)) ? Number(castData.points.tempmax) : 0;
+			const effectiveMax = Math.max(0, max + tempmax);
+			const clampedValue = Math.max(0, Math.min(value, effectiveMax || value));
+			const shouldRenderMeter = (Number(castData?.level ?? 0) > 0) || (max > 0) || (value > 0) || (temp > 0) || (tempmax !== 0);
+			if ( shouldRenderMeter ) {
 				const templateData = {
 					'castType': castType,
 					'pointsLabel': game.i18n.localize(`SW5E.Powercasting.${castType.capitalize()}.Point.Label`),
@@ -772,10 +881,11 @@ function showPowercastingBar() {
 					'value': value,
 					'temp': temp,
 					'max': max,
+					'ariaMax': effectiveMax,
 					'tempmax': tempmax,
 					'tempmaxSign': (tempmax > 0) ? 'temp-positive' : (tempmax < 0) ? 'temp-negative' : '',
-					'effectiveMax': max + tempmax,
-					'pct': max > 0 ? (value / max) * 100 : 0,
+					'effectiveMax': effectiveMax,
+					'pct': effectiveMax > 0 ? (clampedValue / effectiveMax) * 100 : 0,
 					'bonus': game.dnd5e.utils.formatNumber(tempmax, { signDisplay: "always" })
 				};
 
