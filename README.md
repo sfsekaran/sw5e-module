@@ -46,6 +46,8 @@ The `packs/` folder is generated output and should not be edited by hand. The so
 
 For a plain-English walkthrough of what is safe to edit, when to rebuild, and a copy/paste template for reporting a bug or requesting a change, see [docs/local-setup.md](docs/local-setup.md).
 
+For migrating legacy `sw5e` world data into a `dnd5e` + `sw5e-module` world, see [docs/world-conversion.md](docs/world-conversion.md).
+
 ## Developer Documentation
 
 For a contributor-focused overview of the repo layout, runtime entrypoints, compendium build pipeline, and release packaging, see [docs/developer-guide.md](docs/developer-guide.md).

@@ -11,11 +11,13 @@ import { patchProperties } from "./patch/properties.mjs";
 import { patchStarshipPrepare } from "./patch/starship-prepare.mjs";
 import { patchStarshipSheet } from "./patch/starship-sheet.mjs";
 import * as migrations from "./migration.mjs";
+import { openWorldConversionTool } from "./world-conversion.mjs";
 import { handleTemplates } from "./templates.mjs";
 import { registerModuleSettings } from "./settings.mjs";
 
 globalThis.sw5e = {
-	migrations
+	migrations,
+	openWorldConversionTool
 };
 
 const strict = true;

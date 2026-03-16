@@ -6,7 +6,11 @@ import {
 	normalizeCompendiumUuid,
 	SETTINGS_NAMESPACE
 } from "./module-support.mjs";
-import { normalizeDnd5eItemSource, normalizeLegacyMasterItemSource } from "./dnd5e-source-normalization.mjs";
+import {
+	normalizeDnd5eItemSource,
+	normalizeLegacyMasterActorSource,
+	normalizeLegacyMasterItemSource
+} from "./dnd5e-source-normalization.mjs";
 import { normalizeLegacyStarshipActorData, normalizeLegacyStarshipItemData } from "./starship-data.mjs";
 
 const MIGRATABLE_COMPENDIUM_DOCUMENTS = ["Actor", "Item", "Scene", "JournalEntry", "RollTable"];
@@ -246,6 +250,213 @@ export const migrateCompendium = async function(pack) {
 
 /* -------------------------------------------- */
 
+function toDocumentArray(value) {
+	if ( Array.isArray(value) ) return value;
+	if ( !value || (typeof value !== "object") ) return [];
+	return Array.isArray(value.contents) ? value.contents : [];
+}
+
+function getLegacyPayloadArrays(payload={}) {
+	return {
+		actors: toDocumentArray(payload.actors),
+		items: toDocumentArray(payload.items),
+		scenes: toDocumentArray(payload.scenes),
+		macros: toDocumentArray(payload.macros),
+		rollTables: toDocumentArray(payload.rollTables ?? payload.tables),
+		journalEntries: toDocumentArray(payload.journalEntries ?? payload.journal ?? payload.journals)
+	};
+}
+
+async function upsertWorldDocument(DocumentClass, source, { replaceExisting=true, dryRun=false }={}) {
+	const sourceId = source?._id ?? null;
+	const collection = DocumentClass?.metadata?.collection ? game[DocumentClass.metadata.collection] : null;
+	const existing = sourceId && collection?.get?.(sourceId);
+
+	if ( dryRun ) {
+		if ( existing && replaceExisting ) return "updated";
+		return "created";
+	}
+
+	if ( existing && replaceExisting ) {
+		await existing.update(source, { enforceTypes: false, diff: false, render: false });
+		return "updated";
+	}
+
+	await DocumentClass.create(source, { keepId: true, renderSheet: false });
+	return "created";
+}
+
+async function upsertCompendiumDocument(pack, source, { replaceExisting=true, dryRun=false }={}) {
+	const sourceId = source?._id ?? null;
+	const hasExisting = sourceId && pack.index.has(sourceId);
+
+	if ( dryRun ) {
+		if ( hasExisting && replaceExisting ) return "updated";
+		return "created";
+	}
+
+	if ( hasExisting && replaceExisting ) {
+		const existing = await pack.getDocument(sourceId);
+		await existing.update(source, { enforceTypes: false, diff: false });
+		return "updated";
+	}
+
+	const DocumentClass = getDocumentClass(pack.documentName);
+	await DocumentClass.create(source, { pack: pack.collection, keepId: true, renderSheet: false });
+	return "created";
+}
+
+function prepareMigratedSource(source, updateData, { persistSourceMigration=false }={}) {
+	if ( persistSourceMigration ) return mergePersistedMigrationSource(source, updateData);
+	return applyUpdateToClone(source, updateData);
+}
+
+function convertSourceByType(documentName, source, migrationData, options={}) {
+	const flags = { persistSourceMigration: false };
+	let updateData = {};
+	switch ( documentName ) {
+		case "Actor":
+			updateData = migrateActorData(source, migrationData, flags, { actorUuid: options.actorUuid });
+			break;
+		case "Item":
+			updateData = migrateItemData(source, migrationData, flags);
+			break;
+		case "Scene":
+			updateData = migrateSceneData(source, migrationData);
+			break;
+		case "Macro":
+			updateData = migrateMacroData(source, migrationData);
+			break;
+		case "RollTable":
+			updateData = migrateRollTableData(source, migrationData);
+			break;
+		case "JournalEntry":
+			updateData = migrateJournalEntryData(source, migrationData);
+			break;
+		default:
+			return { source, changed: false, flags };
+	}
+
+	if ( foundry.utils.isEmpty(updateData) ) return { source, changed: false, flags };
+	return {
+		source: prepareMigratedSource(source, updateData, flags),
+		changed: true,
+		flags
+	};
+}
+
+/**
+ * Convert a legacy SW5E world payload and import it into the current world.
+ * @param {object} payload                                     Parsed legacy world data payload.
+ * @param {object} [options]
+ * @param {boolean} [options.replaceExisting=true]             Replace matching _id documents instead of always creating.
+ * @param {boolean} [options.includeCompendia=false]           Import world compendia present in payload.compendia.
+ * @param {boolean} [options.dryRun=false]                     Run conversion analysis without creating/updating documents.
+ * @returns {Promise<object>}                                  Conversion report.
+ */
+export async function convertLegacyWorldPayload(payload, {
+	replaceExisting=true,
+	includeCompendia=false,
+	dryRun=false
+}={}) {
+	if ( !game.user?.isGM ) throw new Error("Only a GM can run world conversion.");
+	if ( game.system?.id !== "dnd5e" ) throw new Error("Open a dnd5e world before running SW5E world conversion.");
+	if ( !payload || (typeof payload !== "object") ) throw new Error("Conversion payload must be a JSON object.");
+
+	const migrationData = await getMigrationData();
+	const report = {
+		created: 0,
+		updated: 0,
+		skipped: 0,
+		errors: [],
+		warnings: [],
+		processed: {
+			Actor: 0,
+			Item: 0,
+			Scene: 0,
+			Macro: 0,
+			RollTable: 0,
+			JournalEntry: 0,
+			Compendium: 0
+		}
+	};
+
+	const payloadArrays = getLegacyPayloadArrays(payload);
+	const worldCollections = [
+		{ name: "Actor", docs: payloadArrays.actors, cls: CONFIG.Actor.documentClass },
+		{ name: "Item", docs: payloadArrays.items, cls: CONFIG.Item.documentClass },
+		{ name: "Scene", docs: payloadArrays.scenes, cls: CONFIG.Scene.documentClass },
+		{ name: "Macro", docs: payloadArrays.macros, cls: CONFIG.Macro.documentClass },
+		{ name: "RollTable", docs: payloadArrays.rollTables, cls: CONFIG.RollTable.documentClass },
+		{ name: "JournalEntry", docs: payloadArrays.journalEntries, cls: CONFIG.JournalEntry.documentClass }
+	];
+
+	for ( const { name, docs, cls } of worldCollections ) {
+		for ( const document of docs ) {
+			try {
+				const source = foundry.utils.deepClone(document);
+				const converted = convertSourceByType(name, source, migrationData);
+				report.processed[name] += 1;
+				if ( !converted.changed && !replaceExisting ) {
+					report.skipped += 1;
+					continue;
+				}
+				const result = await upsertWorldDocument(cls, converted.source, { replaceExisting, dryRun });
+				if ( result === "created" ) report.created += 1;
+				else if ( result === "updated" ) report.updated += 1;
+			} catch ( err ) {
+				report.errors.push(`[${name}] ${document?.name ?? document?._id ?? "unknown"}: ${err.message}`);
+			}
+		}
+	}
+
+	if ( includeCompendia ) {
+		const compendia = Array.isArray(payload.compendia) ? payload.compendia : [];
+		for ( const entry of compendia ) {
+			const collectionId = entry?.collection ?? null;
+			if ( !collectionId ) {
+				report.warnings.push("Skipped a compendium entry without collection id.");
+				continue;
+			}
+			const pack = game.packs.get(collectionId);
+			if ( !pack ) {
+				report.warnings.push(`Compendium ${collectionId} is not present in this world; skipped.`);
+				continue;
+			}
+			if ( !MIGRATABLE_COMPENDIUM_DOCUMENTS.includes(pack.documentName) ) {
+				report.warnings.push(`Compendium ${collectionId} (${pack.documentName}) is not supported for import; skipped.`);
+				continue;
+			}
+
+			const docs = toDocumentArray(entry.documents ?? entry.contents);
+			if ( !docs.length ) continue;
+
+			const wasLocked = pack.locked;
+			if ( !dryRun ) await pack.configure({ locked: false });
+			try {
+				for ( const doc of docs ) {
+					try {
+						const source = foundry.utils.deepClone(doc);
+						const converted = convertSourceByType(pack.documentName, source, migrationData);
+						report.processed.Compendium += 1;
+						const result = await upsertCompendiumDocument(pack, converted.source, { replaceExisting, dryRun });
+						if ( result === "created" ) report.created += 1;
+						else if ( result === "updated" ) report.updated += 1;
+					} catch ( err ) {
+						report.errors.push(`[Compendium:${collectionId}] ${doc?.name ?? doc?._id ?? "unknown"}: ${err.message}`);
+					}
+				}
+			} finally {
+				if ( !dryRun ) await pack.configure({ locked: wasLocked });
+			}
+		}
+	}
+
+	return report;
+}
+
+/* -------------------------------------------- */
+
 /**
  * Migrate any active effects attached to the provided parent.
  * @param {object} parent           Data of the parent being migrated.
@@ -281,9 +492,14 @@ export const migrateEffects = function(parent, migrationData) {
  */
 export const migrateActorData = function(actor, migrationData, flags={}, { actorUuid }={}) {
 	const updateData = {};
-	const migratedActor = applyDocumentMigration(CONFIG.Actor.documentClass, actor);
+	const normalizedActor = foundry.utils.deepClone(actor);
+	const normalizedLegacyMasterActor = normalizeLegacyMasterActorSource(normalizedActor);
+	const migratedActor = applyDocumentMigration(CONFIG.Actor.documentClass, normalizedActor);
 	const workingActor = migratedActor.source;
-	let requiresFullSourceMigration = migratedActor.changed || normalizeLegacyStarshipActorData(workingActor);
+	let requiresFullSourceMigration = normalizedLegacyMasterActor
+		|| migratedActor.changed
+		|| normalizeLegacyMasterActorSource(workingActor)
+		|| normalizeLegacyStarshipActorData(workingActor);
 
 	_migrateImage(workingActor, updateData);
 	_migrateObjectFlags(workingActor, updateData);
@@ -575,6 +791,12 @@ function getInvalidDocumentSource(collection, id, legacyKey) {
 function applyUpdateData(target, updateData) {
 	if ( foundry.utils.isEmpty(updateData) ) return;
 	foundry.utils.mergeObject(target, foundry.utils.expandObject(updateData), { inplace: true });
+}
+
+function applyUpdateToClone(source, updateData) {
+	const clone = foundry.utils.deepClone(source);
+	applyUpdateData(clone, updateData);
+	return clone;
 }
 
 function applyEmbeddedUpdates(collection, updates=[]) {

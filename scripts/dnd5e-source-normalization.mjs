@@ -3,7 +3,20 @@ export const TARGET_DND5E_VERSION = "5.2.5"
 const LEGACY_ITEM_TYPE_REMAPS = {
 	power: "spell",
 	species: "race",
-	archetype: "subclass"
+	archetype: "subclass",
+	modification: "loot",
+	starship: "starshipsize"
+}
+
+const LEGACY_FEAT_LIKE_ITEM_TYPES = {
+	deploymentfeature: { value: "deployment" },
+	classfeature: { value: "class" },
+	fightingmastery: { value: "customizationOption", subtype: "fightingMastery" },
+	fightingstyle: { value: "customizationOption", subtype: "fightingStyle" },
+	lightsaberform: { value: "customizationOption", subtype: "lightsaberForm" },
+	starshipaction: { value: "starshipAction" },
+	starshipfeature: { value: "starship" },
+	venture: { value: "deployment", subtype: "venture" }
 }
 
 function isObjectLike(value) {
@@ -14,6 +27,20 @@ function normalizeActivityEntry(activity, fallbackId) {
 	if ( !isObjectLike(activity) ) return null
 	activity._id ??= fallbackId
 	return activity
+}
+
+function normalizeSystemStats(data, { targetSystemVersion=TARGET_DND5E_VERSION }={}) {
+	if ( !isObjectLike(data?._stats) ) return false
+	let changed = false
+	if ( data._stats.systemId === "sw5e" ) {
+		data._stats.systemId = "dnd5e"
+		changed = true
+	}
+	if ( data._stats.systemId === "dnd5e" && data._stats.systemVersion !== targetSystemVersion ) {
+		data._stats.systemVersion = targetSystemVersion
+		changed = true
+	}
+	return changed
 }
 
 export function normalizeLegacyItemActivities(item) {
@@ -131,10 +158,7 @@ export function normalizeDnd5eItemSource(item, { targetSystemVersion=TARGET_DND5
 	changed = normalizeLegacyItemActivities(item) || changed
 	changed = normalizeLegacyItemAdvancement(item) || changed
 
-	if ( changed && item._stats?.systemId === "dnd5e" && item._stats.systemVersion !== targetSystemVersion ) {
-		item._stats.systemVersion = targetSystemVersion
-		changed = true
-	}
+	if ( changed ) changed = normalizeSystemStats(item, { targetSystemVersion }) || changed
 
 	return changed
 }
@@ -149,13 +173,26 @@ export function normalizeLegacyMasterItemSource(item) {
 	if ( !item || (typeof item !== "object") ) return false
 
 	let changed = false
+	changed = normalizeSystemStats(item) || changed
 
 	if ( typeof item.type === "string" ) {
-		const remappedType = LEGACY_ITEM_TYPE_REMAPS[item.type]
+		const normalizedType = item.type.split(".").at(-1) ?? item.type
+		const remappedType = LEGACY_ITEM_TYPE_REMAPS[normalizedType]
+		const legacyFeatLike = LEGACY_FEAT_LIKE_ITEM_TYPES[normalizedType]
 		if ( remappedType && remappedType !== item.type ) {
 			item.type = remappedType
 			changed = true
-		} else if ( ["maneuver", "sw5e.maneuver"].includes(item.type) ) {
+		} else if ( legacyFeatLike ) {
+			item.type = "feat"
+			item.system ??= {}
+			item.system.description ??= { value: "", chat: "" }
+			item.system.source ??= {}
+			item.system.advancement ??= []
+			item.system.type ??= {}
+			item.system.type.value = legacyFeatLike.value
+			item.system.type.subtype = legacyFeatLike.subtype ?? ""
+			changed = true
+		} else if ( ["maneuver", "sw5e.maneuver"].includes(item.type) || normalizedType === "maneuver" ) {
 			item.type = "sw5e-module.maneuver"
 			changed = true
 		}
@@ -194,5 +231,26 @@ export function normalizeLegacyMasterItemSource(item) {
 export function normalizeEmbeddedLegacyMasterItemSources(items=[]) {
 	let changed = false
 	for ( const item of items ) changed = normalizeLegacyMasterItemSource(item) || changed
+	return changed
+}
+
+export function normalizeLegacyMasterActorSource(actor) {
+	if ( !actor || (typeof actor !== "object") ) return false
+
+	let changed = false
+	changed = normalizeSystemStats(actor) || changed
+
+	const details = actor.system?.details
+	if ( isObjectLike(details) ) {
+		for ( const key of ["background", "species", "originalClass", "starshipsize"] ) {
+			const value = details[key]
+			if ( !isObjectLike(value) ) continue
+			const id = value._id ?? value.id ?? value.uuid ?? null
+			if ( !id ) continue
+			details[key] = id
+			changed = true
+		}
+	}
+
 	return changed
 }
