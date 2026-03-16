@@ -29,11 +29,6 @@
 
 /* Force Point CSS for the main sheet */
 
-.dnd5e2.sheet.actor .meter.sw5e-power-points > .tmp {
-  flex: 0 0 56px;
-  border-inline-start: 1px dashed var(--dnd5e-color-gold);
-}
-
 .dnd5e2.sheet.actor .meter.force-points .progress::before {
   background: linear-gradient(to right, #08568a 0%, #AFC6D5 100%);
 }
@@ -44,8 +39,24 @@
   background: linear-gradient(to right, #2F2F2F 0%, #7e7e7e 100%);
 }
 
-.dnd5e2.sheet.actor .meter.sw5e-power-points .tmp input {
+.dnd5e2.sheet.actor .meter-group.sw5e-powercasting-meter > .label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.power-point-config .final-value {
+  margin-bottom: 0.75rem;
+  font-size: var(--font-size-28);
+  font-weight: 700;
   text-align: center;
+}
+
+.power-point-config .form-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
 }
 
 .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab-button {

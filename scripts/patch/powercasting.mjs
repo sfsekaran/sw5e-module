@@ -1,5 +1,6 @@
 import { getBestAbility } from "./../utils.mjs";
 import { getModulePath, isModuleType } from "../module-support.mjs";
+import { openPowerPointConfig } from "../power-point-config.mjs";
 
 const PRECALCULATED_SPELLCASTING_KEY = "sw5e-preCalculatedSpellcastingClasses";
 
@@ -877,10 +878,9 @@ function showPowercastingBar() {
 				const templateData = {
 					'castType': castType,
 					'pointsLabel': game.i18n.localize(`SW5E.Powercasting.${castType.capitalize()}.Point.Label`),
+					'configureLabel': `${game.i18n.localize(`SW5E.Powercasting.${castType.capitalize()}.Point.Label`)} Configuration`,
 					'isEditable': app.editable,
 					'value': value,
-					'temp': temp,
-					'max': max,
 					'ariaMax': effectiveMax,
 					'tempmax': tempmax,
 					'tempmaxSign': (tempmax > 0) ? 'temp-positive' : (tempmax < 0) ? 'temp-negative' : '',
@@ -906,13 +906,16 @@ function showPowercastingBar() {
 				}
 				if (app.isEditable) {
 					const pointBar = containerElement.querySelector(`.progress.${castType}-points`);
+					const configButton = containerElement.querySelector('[data-action="configure-power-points"]');
 					const currentInput = pointBar?.querySelector('input[name$=".points.value"]');
-					const inputs = containerElement.querySelectorAll('[type="text"][data-dtype="Number"]');
 					pointBar?.addEventListener("click", event => _toggleEditPoints(castType, event, true));
 					currentInput?.addEventListener("blur", event => _toggleEditPoints(castType, event, false));
-					inputs.forEach(input => {
-						input.addEventListener("focus", ev => ev.currentTarget.select());
-						input.addEventListener("change", app._onChangeInputDelta.bind(app));
+					currentInput?.addEventListener("focus", ev => ev.currentTarget.select());
+					currentInput?.addEventListener("change", app._onChangeInputDelta.bind(app));
+					configButton?.addEventListener("click", event => {
+						event.preventDefault();
+						event.stopPropagation();
+						openPowerPointConfig(data.actor, castType);
 					});
 				}
 			}
