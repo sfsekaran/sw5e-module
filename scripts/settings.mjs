@@ -1,4 +1,5 @@
 import { Sw5eWorldConversionApp } from "./world-conversion.mjs";
+import { getModuleId } from "./module-support.mjs";
 
 /**
  * Register all of the module's settings.
@@ -13,7 +14,7 @@ export function registerModuleSettings() {
 		default: ""
 	});
 
-	game.settings.registerMenu("sw5e", "legacyWorldConversion", {
+	game.settings.registerMenu(getModuleId(), "legacyWorldConversion", {
 		name: "SW5E Legacy World Conversion",
 		label: "Open Conversion Tool",
 		hint: "Import and convert legacy sw5e world JSON into this dnd5e + sw5e-module world.",
