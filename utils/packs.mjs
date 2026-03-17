@@ -354,6 +354,7 @@ function cleanPackEntry(data, { clearSourceId=true, ownership=0, forceConvert=tr
 	if ( data.effects ) data.effects.forEach(i => cleanPackEntry(i, { clearSourceId: false, forceConvert }));
 	if ( data.items ) data.items.forEach(i => cleanPackEntry(i, { clearSourceId: false, forceConvert }));
 	if ( data.pages ) data.pages.forEach(i => cleanPackEntry(i, { ownership: -1, forceConvert }));
+	if ( data.results ) data.results.forEach(i => { if ( i.img ) i.img = cleanImage(i.img); });
 	if ( data.system?.description?.value ) data.system.description.value = cleanString(data.system.description.value);
 	if ( data.label ) data.label = cleanString(data.label);
 	if ( data.name ) data.name = cleanString(data.name);
