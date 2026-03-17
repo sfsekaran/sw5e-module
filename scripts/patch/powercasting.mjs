@@ -312,33 +312,27 @@ function patchPowerbooks() {
 		config.result = powerbook.sort((a, b) => a.order - b.order);
 	});
 
-	Hooks.on('sw5e.ActorSheet5e._onDropSpell', function (_this, result, config, ...args) {
-		const itemData = args[0];
-	    const prep = itemData.system.preparation;
+	// In dnd5e 5.x, _onDropSpell no longer exists on actor sheets.
+	// Use preCreateItem hook to intercept spell drops on powercasting actors.
+	Hooks.on('preCreateItem', function (item, data, options, userId) {
+		if (item.type !== "spell") return;
+		const actor = item.parent;
+		if (!actor || actor.documentName !== "Actor") return;
 
-	    if (prep.mode !== "innate") return;
-
-		// Determine the section it is dropped on, if any.
-		let header = _this._event.target.closest(".items-header"); // Dropped directly on the header.
-		if ( !header ) {
-			const list = _this._event.target.closest(".item-list"); // Dropped inside an existing list.
-			header = list?.previousElementSibling;
-		}
-
-		const { level, preparationMode } = header?.closest("[data-level]")?.dataset ?? {};
+		const prep = data.system?.preparation;
+		if (!prep || prep.mode !== "innate") return;
 
 		// Determine if the actor is a powercaster.
-		const isCaster = Object.values(_this.actor.system.powercasting).reduce(((acc, obj) => acc || !!obj.level), false);
+		const isCaster = Object.values(actor.system.powercasting ?? {}).reduce(((acc, obj) => acc || !!obj.level), false);
+		if (!isCaster) return;
 
 		// Case 1: Drop a cantrip.
-		if ( itemData.system.level === 0 ) {
-			const modes = CONFIG.DND5E.spellPreparationModes;
-			if ( !preparationMode && isCaster ) prep.mode = "powerCasting";
+		if (data.system.level === 0) {
+			item.updateSource({ "system.preparation.mode": "powerCasting" });
 		}
-
-		// Case 2: Drop a leveled spell in a section without a mode.
-		else if ( (level === "0") || !preparationMode ) {
-			if ( _this.document.type !== "npc" ) prep.mode = "powerCasting";
+		// Case 2: Drop a leveled spell.
+		else if (actor.type !== "npc") {
+			item.updateSource({ "system.preparation.mode": "powerCasting" });
 		}
 	});
 }
@@ -428,9 +422,10 @@ function makePowerPointsConsumable() {
 
 function showPowercastingBar() {
 	const { simplifyBonus } = dnd5e.utils;
-	Hooks.on("renderActorSheet5eCharacter2", (app, html, data) => {
+	Hooks.on("renderCharacterActorSheet", (app, element, context, options) => {
+		const html = $(element);
 		const hpHTML = html.find('.meter-group')[0];
-		const powerCasting = data.actor.system.powercasting;
+		const powerCasting = app.actor.system.powercasting;
 
 		// Add meters for the tech and force powercasting values. This 
 		// will be added right after the hit points meter.
