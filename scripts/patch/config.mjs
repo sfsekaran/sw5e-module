@@ -1899,24 +1899,21 @@ export function patchConfig(config, strict=true) {
 	config.conditionTypes = {
 		...config.conditionTypes,
 		corroded: {
-			label: "SW5E.ConCorroded",
-			icon: "systems/sw5e/icons/svg/statuses/corroded.svg"
-			// reference: "" // TODO
+			name: "SW5E.ConCorroded",
+			img: "systems/dnd5e/icons/svg/statuses/diseased.svg" // TODO: add systems/sw5e/icons/svg/statuses/corroded.svg
 		},
 		ignited: {
-			label: "SW5E.ConIgnited",
-			icon: "systems/sw5e/icons/svg/statuses/ignited.svg"
-			// reference: "" // TODO
+			name: "SW5E.ConIgnited",
+			img: "systems/dnd5e/icons/svg/statuses/burning.svg" // TODO: add systems/sw5e/icons/svg/statuses/ignited.svg
 		},
 		shocked: {
-			label: "SW5E.ConShocked",
-			icon: "systems/sw5e/icons/svg/statuses/shocked.svg",
+			name: "SW5E.ConShocked",
+			img: "systems/dnd5e/icons/svg/statuses/silenced.svg", // TODO: add systems/sw5e/icons/svg/statuses/shocked.svg
 			reference: "Compendium.sw5e.conditions.JournalEntry.HBSJojgAGu9Gsctd.JournalEntryPage.0000000000000000"
-			// reference: "" // TODO
 		},
 		slowed: {
-			label: "SW5E.ConSlowed",
-			icon: "systems/sw5e/icons/svg/statuses/slowed.svg",
+			name: "SW5E.ConSlowed",
+			img: "systems/dnd5e/icons/svg/statuses/encumbered.svg", // TODO: add systems/sw5e/icons/svg/statuses/slowed.svg
 			// reference: "", // TODO
 			levels: 4,
 			speedReduction: [
@@ -1939,9 +1936,8 @@ export function patchConfig(config, strict=true) {
 			]
 		},
 		weakened: {
-			label: "SW5E.ConWeakened",
-			icon: "systems/sw5e/icons/svg/statuses/weakened.svg"
-			// reference: "" // TODO
+			name: "SW5E.ConWeakened",
+			img: "systems/dnd5e/icons/svg/statuses/exhaustion.svg" // TODO: add systems/sw5e/icons/svg/statuses/weakened.svg
 		}
 	};
 	config.conditionEffects = {
