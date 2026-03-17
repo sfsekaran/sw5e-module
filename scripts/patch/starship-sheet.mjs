@@ -283,7 +283,6 @@ function makeSummaryCards(actor) {
 	const hp = actor.system?.attributes?.hp ?? {};
 	const shields = getShieldState(actor);
 	const fuel = legacySystem.attributes?.fuel?.value;
-	const movement = formatMovement(actor, legacySystem);
 	const ac = actor.system?.attributes?.ac?.value;
 	return [
 		{
@@ -309,38 +308,15 @@ function makeSummaryCards(actor) {
 			value: formatNumericValue(fuel),
 			note: "Consumable reserve",
 			tone: "fuel"
-		},
-		{
-			label: localizeOrFallback("SW5E.Movement", "Movement"),
-			value: movement.primary,
-			note: movement.secondary || localizeOrFallback("SW5E.MovementSpace", "Space"),
-			tone: "movement"
-		},
-		{
-			label: localizeOrFallback("SW5E.PowerDie", "Power Routing"),
-			value: getRoutingLabel(legacySystem),
-			note: `${formatPowerSummary(legacySystem)} | ${formatRoutingMechanicsSummary(actor)}`,
-			tone: "power"
 		}
 	];
 }
 
 function makeBridgeStatusEntries(actor) {
-	const legacySystem = getLegacyStarshipSystem(actor);
 	return [
 		{
-			label: localizeOrFallback("SW5E.StarshipTier", "Tier"),
-			value: Number.isFinite(Number(legacySystem.details?.tier)) ? `${legacySystem.details.tier}` : "\u2014",
-			note: normalizeSourceLabel(legacySystem.details?.source)
-		},
-		{
-			label: localizeOrFallback("SW5E.Size", "Size"),
-			value: getSizeLabel(actor, legacySystem),
-			note: localizeOrFallback("TYPES.Actor.vehicle", "Vehicle Actor")
-		},
-		{
 			label: localizeOrFallback("SW5E.SystemDamage", "System Damage"),
-			value: formatNumericValue(legacySystem.attributes?.systemDamage),
+			value: formatNumericValue(getLegacyStarshipSystem(actor).attributes?.systemDamage),
 			note: "Critical systems strain"
 		},
 		{
@@ -357,11 +333,6 @@ function makeBridgeStatusEntries(actor) {
 			label: localizeOrFallback("DND5E.VEHICLE.FIELDS.attributes.capacity.cargo.value.label", "Cargo"),
 			value: formatCapacityValue(actor, "cargo"),
 			note: "Transport capacity"
-		},
-		{
-			label: localizeOrFallback("SW5E.Source", "Source"),
-			value: normalizeSourceLabel(legacySystem.details?.source) || "\u2014",
-			note: localizeOrFallback("SW5E.StarshipProfile", "Legacy starship profile")
 		}
 	];
 }
@@ -383,24 +354,9 @@ function makeBridgeLogisticsEntries(actor) {
 			note: movement.secondary || "Speed and turn"
 		},
 		{
-			label: localizeOrFallback("SW5E.Fuel", "Fuel"),
-			value: formatNumericValue(legacySystem.attributes?.fuel?.value),
-			note: "Remaining burn reserve"
-		},
-		{
-			label: localizeOrFallback("SW5E.PowerDie", "Power Routing"),
-			value: getRoutingLabel(legacySystem),
-			note: `${formatPowerSummary(legacySystem)} | ${formatRoutingMechanicsSummary(actor)}`
-		},
-		{
 			label: localizeOrFallback("DND5E.VEHICLE.FIELDS.attributes.actions.label", "Actions"),
 			value: actionMax != null ? `${Math.max(actionMax - (actionSpent ?? 0), 0)} / ${actionMax}` : "\u2014",
 			note: thresholds.length ? `Thresholds ${thresholds.join(" / ")}` : "Available stations"
-		},
-		{
-			label: localizeOrFallback("DND5E.ArmorClass", "Armor Class"),
-			value: formatNumericValue(actor.system?.attributes?.ac?.value),
-			note: "Ship defense baseline"
 		}
 	];
 }
@@ -864,15 +820,8 @@ function getLegacyNotes(actor) {
 }
 
 function makeHeaderBadges(actor) {
-	const legacySystem = getLegacyStarshipSystem(actor);
-	const movement = formatMovement(actor, legacySystem);
-	const badges = [
-		getSizeLabel(actor, legacySystem),
-		Number.isFinite(Number(legacySystem.details?.tier)) ? `${localizeOrFallback("SW5E.StarshipTier", "Tier")} ${legacySystem.details.tier}` : null,
-		movement.primary !== "\u2014" ? movement.primary : null,
-		normalizeSourceLabel(legacySystem.details?.source) || null
-	];
-	return badges.filter(Boolean);
+	void actor;
+	return [];
 }
 
 function makeWorkspaceActions({ integrated=false }={}) {
@@ -1140,7 +1089,7 @@ async function renderStarshipLayer(app, html, data) {
 		}),
 		foundry.applications.handlebars.renderTemplate(getModulePath("templates/starship-features-layer.hbs"), {
 			title: "Systems",
-			subtitle: "Review the ship's installed systems, weapons, roles, and preserved conversion data in one place.",
+			subtitle: "Review the ship's installed systems, equipment, frame traits, and preserved conversion data in one place.",
 			bridgeActions,
 			groups: systemsGroups
 		}),
