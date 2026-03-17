@@ -1675,11 +1675,12 @@ export function patchConfig(config, strict=true) {
 		}
 	};
 	// Powercasting
-	config.spellPreparationModes.powerCasting = {
+	config.spellcasting.powerCasting = {
 		label: "SW5E.Powercasting.Label",
 		usesPoints: true,
 		upcast: true,
-	};	
+		order: 30,
+	};
 	config.powerCasting = {
 		force: {
 			label: "SW5E.Powercasting.Force.Label",
