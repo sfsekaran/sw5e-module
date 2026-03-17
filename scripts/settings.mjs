@@ -1,6 +1,3 @@
-import { Sw5eWorldConversionApp } from "./world-conversion.mjs";
-import { getModuleId } from "./module-support.mjs";
-
 /**
  * Register all of the module's settings.
  */
@@ -12,15 +9,6 @@ export function registerModuleSettings() {
 		config: false,
 		type: String,
 		default: ""
-	});
-
-	game.settings.registerMenu(getModuleId(), "legacyWorldConversion", {
-		name: "SW5E Legacy World Conversion",
-		label: "Open Conversion Tool",
-		hint: "Import and convert legacy sw5e world JSON into this dnd5e + sw5e-module world.",
-		icon: "fas fa-shuttle-space",
-		type: Sw5eWorldConversionApp,
-		restricted: true
 	});
 
 	// // Allow 'feat + 1 ASI' variant rule

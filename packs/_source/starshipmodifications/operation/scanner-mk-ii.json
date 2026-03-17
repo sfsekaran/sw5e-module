@@ -1,7 +1,7 @@
 {
   "name": "Scanner, Mk II",
-  "type": "loot",
-  "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
+  "type": "starshipmod",
+  "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
   "effects": [
     {
       "_id": "egG0QTJwHSRYX8QA",
@@ -29,7 +29,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e-module.starshipmodifications.MCf4UdMxbP4S4t0o",
+      "origin": "Compendium.sw5e.starshipmodifications.MCf4UdMxbP4S4t0o",
       "transfer": true,
       "flags": {
         "core": {
@@ -51,128 +51,21 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
+      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "type": "base",
       "system": {},
       "_key": "!items.effects!jIKq3QRIFBvCFTCq.egG0QTJwHSRYX8QA"
     }
   ],
   "folder": null,
-  "flags": {
-    "sw5e": {
-      "legacyStarshipMod": {
-        "description": {
-          "value": "<p><span style=\"font-family:'Open Sans', sans-serif\">This modification improves the radar scanner on your ship. Your ship now has blindsight out to 2,000 feet.</span></p><p>Your ship is expertly equipped for Intelligence (Probe) and Wisdom (Scan) checks.</p>",
-          "chat": "",
-          "unidentified": ""
-        },
-        "requirements": "",
-        "source": {
-          "value": "SotG"
-        },
-        "quantity": 1,
-        "weight": 0,
-        "price": {
-          "value": 0,
-          "denomination": "gp"
-        },
-        "attunement": 0,
-        "equipped": false,
-        "rarity": "",
-        "identified": false,
-        "isCargo": false,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": null,
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": null,
-          "width": null,
-          "units": "",
-          "type": ""
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": ""
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null
-        },
-        "ability": null,
-        "actionType": "",
-        "attackBonus": 0,
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "recharge": {
-          "charged": false,
-          "value": null
-        },
-        "grade": {
-          "value": 2
-        },
-        "baseCost": {
-          "value": null
-        },
-        "prerequisites": {
-          "value": "Scanner, Mk I"
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "armor": {
-          "type": "",
-          "value": null,
-          "dex": null
-        },
-        "proficient": false,
-        "properties": [],
-        "attributes": {
-          "dr": ""
-        },
-        "strength": null,
-        "stealth": false,
-        "type": {
-          "value": "Operation"
-        }
-      }
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p><span style=\"font-family:'Open Sans', sans-serif\">This modification improves the radar scanner on your ship. Your ship now has blindsight out to 2,000 feet.</span></p><p>Your ship is expertly equipped for Intelligence (Probe) and Wisdom (Scan) checks.</p>",
       "chat": "",
       "unidentified": ""
     },
+    "requirements": "",
     "source": {
       "value": "SotG"
     },
@@ -182,12 +75,98 @@
       "value": 0,
       "denomination": "gp"
     },
+    "attunement": 0,
+    "equipped": false,
     "rarity": "",
-    "identified": false
+    "identified": false,
+    "isCargo": false,
+    "activation": {
+      "type": "",
+      "cost": null,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": null,
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null
+    },
+    "ability": null,
+    "actionType": "",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "recharge": {
+      "charged": false,
+      "value": null
+    },
+    "grade": {
+      "value": 2
+    },
+    "baseCost": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": "Scanner, Mk I"
+    },
+    "free": {
+      "slot": false,
+      "suite": false
+    },
+    "armor": {
+      "type": "",
+      "value": null,
+      "dex": null
+    },
+    "proficient": false,
+    "properties": [],
+    "attributes": {
+      "dr": ""
+    },
+    "strength": null,
+    "stealth": false,
+    "type": {
+      "value": "Operation"
+    }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "5.2.5",
+    "systemVersion": "3.3.1",
     "coreVersion": "12.330",
     "createdTime": 1674494018661,
     "modifiedTime": 1706199587811,

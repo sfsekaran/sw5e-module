@@ -2,7 +2,7 @@
   "_id": "Wj62TEtwKeG1P2DD",
   "name": "Fortress Shield",
   "type": "equipment",
-  "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/FortressShield.webp",
+  "img": "modules/sw5e/icons/packs/Starship%20Equipment/FortressShield.webp",
   "effects": [
     {
       "_id": "sGJkO7upmm5N3jIS",
@@ -54,7 +54,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e-module.starshiparmor.Wj62TEtwKeG1P2DD",
+      "origin": "Compendium.sw5e.starshiparmor.Wj62TEtwKeG1P2DD",
       "transfer": true,
       "flags": {
         "core": {
@@ -75,7 +75,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/FortressShield.webp",
+      "img": "modules/sw5e/icons/packs/Starship%20Equipment/FortressShield.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -231,7 +231,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "5.2.5",
+    "systemVersion": "3.3.1",
     "coreVersion": "12.330",
     "createdTime": 1674494017107,
     "modifiedTime": 1720552913109,

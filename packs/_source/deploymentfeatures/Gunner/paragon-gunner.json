@@ -2,7 +2,7 @@
   "_id": "UXrfTXCo0SUfGfkL",
   "name": "Paragon Gunner",
   "type": "feat",
-  "img": "modules/sw5e-module/icons/packs/Deployments/Gunner.webp",
+  "img": "modules/sw5e/icons/packs/Deployments/Gunner.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -99,7 +99,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "5.2.5",
+    "systemVersion": "3.3.1",
     "coreVersion": "12.331",
     "createdTime": 1674493963444,
     "modifiedTime": 1720368730122,

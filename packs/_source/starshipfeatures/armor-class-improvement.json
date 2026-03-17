@@ -2,7 +2,7 @@
   "name": "Armor Class Improvement",
   "type": "feat",
   "flags": {},
-  "img": "modules/sw5e-module/icons/packs/Starship/yt_1300f_light_freighter.Token.webp",
+  "img": "modules/sw5e/icons/packs/Starship/yt_1300f_light_freighter.Token.webp",
   "effects": [
     {
       "_id": "yFABWn5b0YvgXlks",
@@ -45,7 +45,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e-module/icons/packs/Starship/yt_1300f_light_freighter.Token.webp",
+      "img": "modules/sw5e/icons/packs/Starship/yt_1300f_light_freighter.Token.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -147,7 +147,7 @@
   "sort": 0,
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "5.2.5",
+    "systemVersion": "3.3.1",
     "coreVersion": "12.330",
     "createdTime": 1674494017981,
     "modifiedTime": 1720552913876,

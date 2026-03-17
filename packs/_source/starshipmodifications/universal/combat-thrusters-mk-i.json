@@ -1,7 +1,7 @@
 {
   "name": "Combat Thrusters, Mk I",
-  "type": "loot",
-  "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Universal.webp",
+  "type": "starshipmod",
+  "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
   "effects": [
     {
       "name": "Combat Thrusters, Mk I",
@@ -61,128 +61,21 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Universal.webp",
+      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
       "type": "base",
       "system": {},
       "_key": "!items.effects!X6aGTz0DRzG9FoIQ.giD5qccvLQuASvKU"
     }
   ],
   "folder": null,
-  "flags": {
-    "sw5e": {
-      "legacyStarshipMod": {
-        "description": {
-          "value": "<p><span style=\"font-family:'Open Sans', sans-serif\">Your ship's turning speed decreases by 50 feet.</span></p>",
-          "chat": "",
-          "unidentified": ""
-        },
-        "requirements": "",
-        "source": {
-          "value": "SotG"
-        },
-        "quantity": 1,
-        "weight": 0,
-        "price": {
-          "value": 0,
-          "denomination": "gp"
-        },
-        "attunement": 0,
-        "equipped": false,
-        "rarity": "",
-        "identified": false,
-        "isCargo": false,
-        "activation": {
-          "type": "none",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": null,
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": null,
-          "width": null,
-          "units": "",
-          "type": ""
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": "",
-          "recovery": ""
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null
-        },
-        "ability": null,
-        "actionType": "",
-        "attackBonus": 0,
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "recharge": {
-          "charged": false,
-          "value": null
-        },
-        "grade": {
-          "value": 1
-        },
-        "baseCost": {
-          "value": null
-        },
-        "prerequisites": {
-          "value": "Dexterity 9"
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "armor": {
-          "type": "",
-          "value": null,
-          "dex": null
-        },
-        "proficient": false,
-        "properties": [],
-        "attributes": {
-          "dr": ""
-        },
-        "strength": null,
-        "stealth": false,
-        "type": {
-          "value": "Universal"
-        }
-      }
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p><span style=\"font-family:'Open Sans', sans-serif\">Your ship's turning speed decreases by 50 feet.</span></p>",
       "chat": "",
       "unidentified": ""
     },
+    "requirements": "",
     "source": {
       "value": "SotG"
     },
@@ -192,12 +85,98 @@
       "value": 0,
       "denomination": "gp"
     },
+    "attunement": 0,
+    "equipped": false,
     "rarity": "",
-    "identified": false
+    "identified": false,
+    "isCargo": false,
+    "activation": {
+      "type": "none",
+      "cost": null,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null
+    },
+    "ability": null,
+    "actionType": "",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "recharge": {
+      "charged": false,
+      "value": null
+    },
+    "grade": {
+      "value": 1
+    },
+    "baseCost": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": "Dexterity 9"
+    },
+    "free": {
+      "slot": false,
+      "suite": false
+    },
+    "armor": {
+      "type": "",
+      "value": null,
+      "dex": null
+    },
+    "proficient": false,
+    "properties": [],
+    "attributes": {
+      "dr": ""
+    },
+    "strength": null,
+    "stealth": false,
+    "type": {
+      "value": "Universal"
+    }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "5.2.5",
+    "systemVersion": "3.3.1",
     "coreVersion": "12.330",
     "createdTime": 1674494018656,
     "modifiedTime": 1706199587777,

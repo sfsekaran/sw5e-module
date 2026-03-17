@@ -11,7 +11,10 @@ import {
 	normalizeLegacyMasterActorSource,
 	normalizeLegacyMasterItemSource
 } from "./dnd5e-source-normalization.mjs";
-import { normalizeLegacyStarshipActorData, normalizeLegacyStarshipItemData } from "./starship-data.mjs";
+import {
+	normalizeLegacyStarshipActorSource,
+	normalizeLegacyStarshipItemSource
+} from "./starship-character.mjs";
 
 const MIGRATABLE_COMPENDIUM_DOCUMENTS = ["Actor", "Item", "Scene", "JournalEntry", "RollTable"];
 
@@ -494,12 +497,14 @@ export const migrateActorData = function(actor, migrationData, flags={}, { actor
 	const updateData = {};
 	const normalizedActor = foundry.utils.deepClone(actor);
 	const normalizedLegacyMasterActor = normalizeLegacyMasterActorSource(normalizedActor);
+	const normalizedLegacyStarshipActor = normalizeLegacyStarshipActorSource(normalizedActor);
 	const migratedActor = applyDocumentMigration(CONFIG.Actor.documentClass, normalizedActor);
 	const workingActor = migratedActor.source;
 	let requiresFullSourceMigration = normalizedLegacyMasterActor
+		|| normalizedLegacyStarshipActor
 		|| migratedActor.changed
 		|| normalizeLegacyMasterActorSource(workingActor)
-		|| normalizeLegacyStarshipActorData(workingActor);
+		|| normalizeLegacyStarshipActorSource(workingActor);
 
 	_migrateImage(workingActor, updateData);
 	_migrateObjectFlags(workingActor, updateData);
@@ -561,17 +566,17 @@ export const migrateActorData = function(actor, migrationData, flags={}, { actor
 export function migrateItemData(item, migrationData, flags={}) {
 	const normalizedItem = foundry.utils.deepClone(item);
 	const normalizedLegacyMasterItem = normalizeLegacyMasterItemSource(normalizedItem);
-	const normalizedLegacyStarshipItem = normalizeLegacyStarshipItemData(normalizedItem);
 	const normalizedDnd5eItem = normalizeDnd5eItemSource(normalizedItem);
+	const normalizedLegacyStarshipItem = normalizeLegacyStarshipItemSource(normalizedItem);
 	const migratedItem = applyDocumentMigration(CONFIG.Item.documentClass, normalizedItem);
 	const workingItem = migratedItem.source;
 	const updateData = {};
 	const requiresFullSourceMigration = normalizedLegacyMasterItem
-		|| normalizedLegacyStarshipItem
 		|| normalizedDnd5eItem
+		|| normalizedLegacyStarshipItem
 		|| migratedItem.changed
 		|| normalizeLegacyMasterItemSource(workingItem)
-		|| normalizeLegacyStarshipItemData(workingItem);
+		|| normalizeLegacyStarshipItemSource(workingItem);
 	if ( requiresFullSourceMigration ) flags.persistSourceMigration = true;
 
 	_migrateImage(workingItem, updateData);
@@ -825,14 +830,7 @@ function applyDocumentMigration(DocumentClass, source) {
 }
 
 function mergePersistedMigrationSource(source, updateData) {
-	const merged = foundry.utils.mergeObject(source, updateData, { inplace: false });
-	if ( updateData.flags?.sw5e?.legacyStarshipActor?.type === "starship" ) {
-		if ( updateData.type ) merged.type = updateData.type;
-		if ( updateData.system ) merged.system = updateData.system;
-		if ( updateData.items ) merged.items = updateData.items;
-		if ( updateData.effects ) merged.effects = updateData.effects;
-	}
-	return merged;
+	return foundry.utils.mergeObject(source, updateData, { inplace: false });
 }
 
 /* -------------------------------------------- */

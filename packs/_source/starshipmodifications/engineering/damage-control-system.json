@@ -1,7 +1,7 @@
 {
   "name": "Damage Control System",
-  "type": "loot",
-  "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Engineering.webp",
+  "type": "starshipmod",
+  "img": "modules/sw5e/icons/packs/Starship%20Modifications/Engineering.webp",
   "effects": [
     {
       "_id": "EIoqcUoxubzSKbfX",
@@ -23,7 +23,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e-module.starshipmodifications.dJcTZQo0ys42giYo",
+      "origin": "Compendium.sw5e.starshipmodifications.dJcTZQo0ys42giYo",
       "transfer": true,
       "flags": {
         "core": {
@@ -45,128 +45,21 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Engineering.webp",
+      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Engineering.webp",
       "type": "base",
       "system": {},
       "_key": "!items.effects!ZSaB7x3ev07cgpxg.EIoqcUoxubzSKbfX"
     }
   ],
   "folder": null,
-  "flags": {
-    "sw5e": {
-      "legacyStarshipMod": {
-        "description": {
-          "value": "<p>You install a damage control system on your ship.  A crew member can take the Patch action as a bonus action.  This feature can be used a number of times equal to your ship's tier (a minimum of once). All expended uses are regained when the ship undergoes refitting.</p><p>Additionally, your ship is proficiently equipped for Constitution (Patch) checks.</p>",
-          "chat": "",
-          "unidentified": ""
-        },
-        "requirements": "",
-        "source": {
-          "value": "SotG"
-        },
-        "quantity": 1,
-        "weight": 0,
-        "price": {
-          "value": 0,
-          "denomination": "gp"
-        },
-        "attunement": 0,
-        "equipped": false,
-        "rarity": "",
-        "identified": false,
-        "isCargo": false,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": null,
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": null,
-          "width": null,
-          "units": "",
-          "type": ""
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": ""
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null
-        },
-        "ability": null,
-        "actionType": "",
-        "attackBonus": 0,
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "recharge": {
-          "charged": false,
-          "value": null
-        },
-        "grade": {
-          "value": 0
-        },
-        "baseCost": {
-          "value": null
-        },
-        "prerequisites": {
-          "value": ""
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "armor": {
-          "type": "",
-          "value": null,
-          "dex": null
-        },
-        "proficient": false,
-        "properties": [],
-        "attributes": {
-          "dr": ""
-        },
-        "strength": null,
-        "stealth": false,
-        "type": {
-          "value": "Engineering"
-        }
-      }
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p>You install a damage control system on your ship.  A crew member can take the Patch action as a bonus action.  This feature can be used a number of times equal to your ship's tier (a minimum of once). All expended uses are regained when the ship undergoes refitting.</p><p>Additionally, your ship is proficiently equipped for Constitution (Patch) checks.</p>",
       "chat": "",
       "unidentified": ""
     },
+    "requirements": "",
     "source": {
       "value": "SotG"
     },
@@ -176,12 +69,98 @@
       "value": 0,
       "denomination": "gp"
     },
+    "attunement": 0,
+    "equipped": false,
     "rarity": "",
-    "identified": false
+    "identified": false,
+    "isCargo": false,
+    "activation": {
+      "type": "",
+      "cost": null,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": null,
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null
+    },
+    "ability": null,
+    "actionType": "",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "recharge": {
+      "charged": false,
+      "value": null
+    },
+    "grade": {
+      "value": 0
+    },
+    "baseCost": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": ""
+    },
+    "free": {
+      "slot": false,
+      "suite": false
+    },
+    "armor": {
+      "type": "",
+      "value": null,
+      "dex": null
+    },
+    "proficient": false,
+    "properties": [],
+    "attributes": {
+      "dr": ""
+    },
+    "strength": null,
+    "stealth": false,
+    "type": {
+      "value": "Engineering"
+    }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "5.2.5",
+    "systemVersion": "3.3.1",
     "coreVersion": "12.330",
     "createdTime": 1674494018706,
     "modifiedTime": 1706199587782,

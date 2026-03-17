@@ -43,992 +43,146 @@
   margin-top: 0.75rem;
 }
 
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab-button {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  letter-spacing: 0.08em;
-  cursor: pointer;
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  overflow: auto;
 }
 
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab-host {
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-summary {
+  display: grid;
+  gap: 1rem;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-identity {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-identity .profile {
+  width: 96px;
+  height: 96px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-identity h2,
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-panel h3 {
+  margin: 0;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-identity p {
+  margin: 0.15rem 0;
+  color: var(--dnd5e-color-text-muted);
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-card,
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-panel {
+  border: 1px solid var(--dnd5e-color-gold);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--dnd5e-color-parchment) 88%, white);
+  padding: 0.85rem;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-card h3,
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-card span {
+  margin: 0;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-card strong {
+  display: block;
+  margin: 0.35rem 0 0.2rem;
+  font-size: var(--font-size-24);
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-layout,
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-panel header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
   margin-bottom: 0.75rem;
 }
 
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-fallback-nav {
-  margin-bottom: 0.5rem;
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-panel header span {
+  color: var(--dnd5e-color-text-muted);
 }
 
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-sidebar-summary {
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-pill-grid {
   display: grid;
-  gap: 0.65rem;
-  padding: 0.75rem;
-  margin: 0 0 0.75rem;
-  border: 1px solid rgb(255 255 255 / 10%);
-  border-radius: 10px;
-  background:
-    radial-gradient(circle at top left, rgb(98 121 170 / 16%), transparent 42%),
-    linear-gradient(180deg, rgb(14 18 28 / 92%), rgb(20 25 36 / 88%));
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-sidebar-summary-inner,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-sidebar-summary-list {
-  display: grid;
-  gap: 0.45rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-sidebar-summary-header {
-  display: flex;
-  align-items: center;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-sidebar-summary-kicker {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--dnd5e-color-gold);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-sidebar-summary-entry {
-  display: grid;
-  gap: 0.12rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgb(255 255 255 / 8%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-sidebar-summary-entry:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-sidebar-summary-label,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-sidebar-summary-note {
-  color: var(--dnd5e-color-tan);
-  font-size: 0.75rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-sidebar-summary-value {
-  font-size: 1rem;
-  line-height: 1.2;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet dialog.sw5e-starship-warnings-dialog {
-  max-width: 28rem;
-  border: 1px solid var(--dnd5e-color-gold);
-  border-radius: 8px;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-warnings-body {
-  display: grid;
-  gap: 0.5rem;
-  margin: 0 0 0.75rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab {
-  padding-top: 0.75rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-panel {
-  display: grid;
-  gap: 1rem;
-  padding: 1rem;
-  border: 1px solid var(--dnd5e-color-gold);
-  border-radius: 10px;
-  background:
-    radial-gradient(circle at top left, rgb(98 121 170 / 18%), transparent 32%),
-    linear-gradient(180deg, rgb(12 15 23 / 94%), rgb(20 25 36 / 90%));
-  box-shadow:
-    inset 0 0 0 1px rgb(255 255 255 / 4%),
-    0 12px 32px rgb(0 0 0 / 20%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-section-header {
-  display: grid;
-  gap: 0.35rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-section-header h2,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-section-header p {
-  margin: 0;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-hero {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 1rem;
-  align-items: start;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-hero-image {
-  width: 72px;
-  height: 72px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid rgb(255 255 255 / 12%);
-  background: rgb(0 0 0 / 20%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-hero-copy {
-  display: grid;
-  gap: 0.35rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-kicker {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--dnd5e-color-gold);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-badges,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-notes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-badge,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-note {
-  padding: 0.22rem 0.55rem;
-  border-radius: 999px;
-  border: 1px solid rgb(255 255 255 / 8%);
-  background: rgb(255 255 255 / 7%);
-  color: var(--dnd5e-color-tan);
-  font-size: 0.75rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-hero h2 {
-  margin: 0;
-  font-size: 1.35rem;
-  line-height: 1.1;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-hero p {
-  margin: 0.15rem 0 0;
-  color: var(--dnd5e-color-tan);
-  font-size: 0.9rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-notes {
-  justify-content: end;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-overview {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 0.65rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-workspace-actions {
-  display: flex;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 0.5rem;
 }
 
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-action-button,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-link,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-button {
-  appearance: none;
-  border: 1px solid rgb(255 255 255 / 12%);
-  border-radius: 7px;
-  background: rgb(255 255 255 / 6%);
-  color: var(--dnd5e-color-parchment);
-  cursor: pointer;
-  font: inherit;
-  line-height: 1.2;
-  transition: border-color 120ms ease, background 120ms ease, transform 120ms ease;
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-pill,
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-skill,
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-item {
+  border: 1px solid var(--dnd5e-color-card-border);
+  border-radius: 10px;
+  background: white;
 }
 
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-action-button,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-link {
-  padding: 0.5rem 0.75rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-button {
-  padding: 0.4rem 0.6rem;
-  min-width: 5.5rem;
-  text-align: center;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-button-secondary {
-  background: rgb(0 0 0 / 18%);
-  color: var(--dnd5e-color-tan);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-link-secondary {
-  background: rgb(0 0 0 / 18%);
-  color: var(--dnd5e-color-tan);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-button-danger {
-  background: rgb(73 18 22 / 42%);
-  color: rgb(255 210 210);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-action-button:hover,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-action-button:focus,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-link:hover,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-link:focus,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-button:hover,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-button:focus {
-  border-color: var(--dnd5e-color-gold);
-  background: rgb(255 255 255 / 10%);
-  transform: translateY(-1px);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-card,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group {
-  display: grid;
-  gap: 0.25rem;
-  padding: 0.8rem;
-  border: 1px solid rgb(255 255 255 / 8%);
-  border-radius: 8px;
-  background: linear-gradient(180deg, rgb(255 255 255 / 6%), rgb(255 255 255 / 3%));
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-card-label,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-card-note,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-meta,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-title p {
-  color: var(--dnd5e-color-tan);
-  font-size: 0.75rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-card-value {
-  font-size: 1.15rem;
-  line-height: 1.15;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-groups {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 0.9rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.35rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-title {
-  display: grid;
-  gap: 0.2rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-header h3 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-title p {
-  margin: 0;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-tools {
-  display: grid;
-  justify-items: end;
-  gap: 0.35rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-count {
-  min-width: 1.8rem;
-  padding: 0.1rem 0.45rem;
-  border-radius: 999px;
-  background: rgb(255 255 255 / 10%);
-  text-align: center;
-  font-size: 0.75rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-groups-stacked {
-  grid-template-columns: 1fr;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-list {
-  display: grid;
-  gap: 0.45rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.75rem;
-  align-items: center;
-  padding: 0.6rem 0.7rem;
-  border: 1px solid rgb(255 255 255 / 10%);
-  border-radius: 6px;
-  background: rgb(0 0 0 / 18%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-row:hover {
-  border-color: rgb(255 255 255 / 18%);
-  background: rgb(255 255 255 / 5%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-icon-button {
-  appearance: none;
-  display: inline-flex;
-  padding: 0;
-  border: 1px solid rgb(255 255 255 / 10%);
-  border-radius: 6px;
-  background: rgb(0 0 0 / 18%);
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-icon-button:hover,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-icon-button:focus {
-  border-color: var(--dnd5e-color-gold);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-main {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.6rem;
-  align-items: center;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-image {
-  width: 34px;
-  height: 34px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid rgb(255 255 255 / 10%);
-  background: rgb(0 0 0 / 18%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-copy {
-  display: grid;
-  gap: 0.15rem;
-  min-width: 0;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-name {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-name-button {
-  appearance: none;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  font-weight: 600;
-  text-align: left;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-name-button:hover,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-name-button:focus {
-  color: var(--dnd5e-color-gold);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-actions {
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-pill {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: end;
-  gap: 0.35rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.65rem;
 }
 
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab-button {
-  padding-bottom: 0.35rem;
-  border-bottom: 2px solid transparent;
-  color: var(--dnd5e-color-tan);
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-skills,
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-items {
+  display: grid;
+  gap: 0.5rem;
 }
 
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab-button.active {
-  color: var(--dnd5e-color-parchment);
-  border-bottom-color: var(--dnd5e-color-gold);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-sidebar-summary {
-  gap: 0.4rem;
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-skill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
   padding: 0.65rem 0.75rem;
-  border-radius: 8px;
-  background: linear-gradient(180deg, rgb(13 17 25 / 96%), rgb(18 22 31 / 94%));
 }
 
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-sidebar-summary-entry {
-  gap: 0;
-  padding-bottom: 0.3rem;
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-skill span,
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-item .item-type {
+  color: var(--dnd5e-color-text-muted);
 }
 
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-shell {
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-item {
   display: grid;
-  gap: 1rem;
-  padding: 1.1rem;
-  border: 1px solid rgb(255 255 255 / 10%);
-  border-radius: 12px;
-  background:
-    radial-gradient(circle at top left, rgb(67 101 151 / 12%), transparent 28%),
-    linear-gradient(180deg, rgb(11 14 21 / 97%), rgb(16 20 28 / 95%));
-  box-shadow:
-    inset 0 0 0 1px rgb(255 255 255 / 3%),
-    0 14px 34px rgb(0 0 0 / 18%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-bridge-header,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-page-header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1rem;
-  align-items: start;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-bridge-identity {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 1rem;
-  align-items: start;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-bridge-image {
-  width: 88px;
-  height: 88px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid rgb(255 255 255 / 12%);
-  background: rgb(0 0 0 / 28%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-bridge-copy,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-bridge-side {
-  display: grid;
-  gap: 0.45rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-page-header h2,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-bridge-copy h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  line-height: 1.05;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-page-header p,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-bridge-copy p {
-  margin: 0;
-  color: var(--dnd5e-color-tan);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: end;
-  gap: 0.5rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-summary-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.75rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-summary-card {
-  display: grid;
-  gap: 0.25rem;
-  padding: 0.85rem 0.95rem;
-  border: 1px solid rgb(255 255 255 / 8%);
-  border-radius: 10px;
-  background: linear-gradient(180deg, rgb(255 255 255 / 6%), rgb(255 255 255 / 2%));
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-summary-card-defense {
-  border-color: rgb(219 186 102 / 20%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-summary-card-hull {
-  border-color: rgb(101 181 132 / 18%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-summary-card-shields {
-  border-color: rgb(126 173 222 / 18%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-summary-card-fuel,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-summary-card-power {
-  border-color: rgb(174 141 221 / 18%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-summary-label,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-summary-note,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-data-label,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-data-note,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-power-label,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-section-copy p,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-section-footer,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-item-meta {
-  color: var(--dnd5e-color-tan);
-  font-size: 0.76rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-summary-value,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-data-value {
-  font-size: 1.15rem;
-  line-height: 1.1;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-panel-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.85rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-panel-card,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-section-card {
-  display: grid;
-  gap: 0.75rem;
-  padding: 0.9rem;
-  border: 1px solid rgb(255 255 255 / 8%);
-  border-radius: 10px;
-  background: linear-gradient(180deg, rgb(255 255 255 / 5%), rgb(255 255 255 / 2%));
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-panel-card-wide {
-  grid-column: 1 / -1;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-panel-header,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-section-header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.75rem;
-  align-items: start;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-panel-header h3,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-section-header h3 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-section-copy {
-  display: grid;
-  gap: 0.2rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-section-copy p {
-  margin: 0;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-section-tools {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: end;
-  gap: 0.4rem;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
   align-items: center;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-section-count {
-  min-width: 1.9rem;
-  padding: 0.12rem 0.45rem;
-  border-radius: 999px;
-  background: rgb(255 255 255 / 10%);
-  text-align: center;
-  font-size: 0.75rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-data-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-data-item {
-  display: grid;
-  gap: 0.12rem;
-  padding: 0.6rem 0.7rem;
-  border-radius: 8px;
-  background: rgb(0 0 0 / 18%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-power-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  gap: 0.55rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-routing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
-  margin-bottom: 0.85rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-routing-channel {
-  display: grid;
-  gap: 0.7rem;
-  justify-items: center;
-  padding: 0.85rem 0.8rem;
-  border: 1px solid rgb(255 255 255 / 10%);
-  border-radius: 10px;
-  background: linear-gradient(180deg, rgb(255 255 255 / 4%), rgb(0 0 0 / 18%));
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-routing-channel.is-primary {
-  border-color: rgb(219 186 102 / 34%);
-  background: linear-gradient(180deg, rgb(89 69 25 / 26%), rgb(255 255 255 / 3%));
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-routing-copy {
-  display: grid;
-  gap: 0.2rem;
-  justify-items: center;
-  text-align: center;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-routing-symbol {
-  font-size: 1.6rem;
-  line-height: 1;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-routing-effect,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-power-total-label {
-  color: var(--dnd5e-color-tan);
-  font-size: 0.76rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-routing-control {
-  display: grid;
-  place-items: center;
-  min-height: 8rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-routing-slider {
-  appearance: none;
-  inline-size: 1.1rem;
-  block-size: 7.75rem;
-  margin: 0;
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgb(219 186 102 / 58%), rgb(255 255 255 / 18%), rgb(118 164 219 / 58%));
-  writing-mode: vertical-lr;
-  direction: rtl;
-  cursor: pointer;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-routing-slider:disabled {
-  cursor: default;
-  opacity: 0.65;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-routing-slider::-webkit-slider-thumb {
-  appearance: none;
-  width: 1.05rem;
-  height: 1.05rem;
-  border: 1px solid rgb(255 255 255 / 35%);
-  border-radius: 999px;
-  background: var(--dnd5e-color-gold);
-  box-shadow: 0 0 0 2px rgb(0 0 0 / 30%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-routing-slider::-moz-range-thumb {
-  width: 1.05rem;
-  height: 1.05rem;
-  border: 1px solid rgb(255 255 255 / 35%);
-  border-radius: 999px;
-  background: var(--dnd5e-color-gold);
-  box-shadow: 0 0 0 2px rgb(0 0 0 / 30%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-power-cell {
-  display: grid;
-  gap: 0.15rem;
-  padding: 0.7rem 0.75rem;
-  border: 1px solid rgb(255 255 255 / 8%);
-  border-radius: 8px;
-  background: rgb(0 0 0 / 2%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-power-cell.is-primary {
-  border-color: rgb(219 186 102 / 34%);
-  background: linear-gradient(180deg, rgb(89 69 25 / 26%), rgb(255 255 255 / 3%));
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-power-value {
-  font-size: 1.1rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-power-allocation {
-  display: grid;
-  gap: 0.7rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-power-input {
   width: 100%;
-  min-width: 0;
-  height: 2.15rem;
-  padding: 0.35rem 0.45rem;
-  border: 1px solid rgb(255 255 255 / 12%);
+  padding: 0.5rem 0.65rem;
+  text-align: left;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-item img {
+  width: 40px;
+  height: 40px;
+  border: 0;
   border-radius: 8px;
-  background: rgb(0 0 0 / 25%);
-  color: inherit;
-  text-align: center;
-  font-size: 1rem;
+  object-fit: cover;
 }
 
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-power-input:focus {
-  outline: none;
-  border-color: var(--dnd5e-color-gold);
-  box-shadow: 0 0 0 2px rgb(230 171 72 / 18%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-quick-grid,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-systems-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 0.9rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-crew-stations {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 0.9rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapons-grid {
-  display: grid;
-  gap: 0.95rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-bank {
-  display: grid;
-  gap: 0.8rem;
-  padding: 0.95rem;
-  border: 1px solid rgb(255 255 255 / 8%);
-  border-radius: 10px;
-  background: linear-gradient(180deg, rgb(255 255 255 / 5%), rgb(255 255 255 / 2%));
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-list {
-  display: grid;
-  gap: 0.55rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-row {
-  display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(320px, 1.2fr) auto;
-  gap: 0.75rem;
-  align-items: center;
-  padding: 0.7rem 0.8rem;
-  border-radius: 8px;
-  border: 1px solid rgb(255 255 255 / 10%);
-  background: rgb(0 0 0 / 24%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-main {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.65rem;
-  align-items: center;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-fire {
-  appearance: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.2rem;
-  border: 1px solid rgb(219 186 102 / 28%);
-  border-radius: 8px;
-  background: linear-gradient(180deg, rgb(89 69 25 / 28%), rgb(255 255 255 / 3%));
-  cursor: pointer;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-fire:hover,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-fire:focus {
-  border-color: var(--dnd5e-color-gold);
-  box-shadow: 0 0 0 2px rgb(230 171 72 / 20%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-telemetry {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.45rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-stat {
-  display: grid;
-  gap: 0.12rem;
-  padding: 0.45rem 0.55rem;
-  border-radius: 6px;
-  background: rgb(255 255 255 / 4%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-stat-label {
-  color: var(--dnd5e-color-tan);
-  font-size: 0.72rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-stat-value {
-  font-size: 0.92rem;
-  line-height: 1.05;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-controls {
-  display: grid;
-  gap: 0.45rem;
-  justify-items: end;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: end;
-  gap: 0.35rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-tag {
-  padding: 0.16rem 0.45rem;
-  border-radius: 999px;
-  border: 1px solid rgb(255 255 255 / 10%);
-  background: rgb(255 255 255 / 6%);
-  color: var(--dnd5e-color-tan);
-  font-size: 0.7rem;
-  text-transform: lowercase;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-station-card {
-  display: grid;
-  gap: 0.75rem;
-  padding: 0.95rem;
-  border: 1px solid rgb(255 255 255 / 8%);
-  border-radius: 10px;
-  background: linear-gradient(180deg, rgb(255 255 255 / 5%), rgb(255 255 255 / 2%));
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-station-capacity,
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-station-empty {
-  color: var(--dnd5e-color-tan);
-  font-size: 0.76rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-station-list {
-  display: grid;
-  gap: 0.5rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-station-entry {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.5rem;
-  align-items: center;
-  padding: 0.65rem 0.7rem;
-  border-radius: 8px;
-  background: rgb(0 0 0 / 18%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-station-entry-copy {
-  display: grid;
-  gap: 0.18rem;
-  min-width: 0;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-station-entry-copy strong {
+.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-item .item-name {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-station-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: end;
-  gap: 0.35rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-station-tag {
-  padding: 0.18rem 0.5rem;
-  border-radius: 999px;
-  border: 1px solid rgb(255 255 255 / 10%);
-  background: rgb(255 255 255 / 7%);
-  color: var(--dnd5e-color-tan);
-  font-size: 0.72rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-station-tag-active {
-  border-color: rgb(219 186 102 / 24%);
-  color: var(--dnd5e-color-parchment);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-item-list {
-  gap: 0.5rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-shell .sw5e-starship-item-row {
-  grid-template-columns: minmax(0, 1fr) auto;
-  padding: 0.65rem 0.7rem;
-  border-radius: 8px;
-  background: rgb(0 0 0 / 22%);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-shell .sw5e-starship-item-actions {
-  justify-content: end;
-  align-items: center;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-shell .sw5e-starship-item-button {
-  min-width: 4.5rem;
-  padding: 0.38rem 0.55rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-section-footer {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-sheet [data-item-id].sw5e-starship-item-pulse {
-  border-color: var(--dnd5e-color-gold);
-  box-shadow: 0 0 0 2px rgb(230 171 72 / 30%);
-}
-
-@media (max-width: 700px) {
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-hero {
-    grid-template-columns: 1fr;
-  }
-
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-notes {
-    justify-content: start;
-  }
-
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-bridge-header,
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-page-header,
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-panel-grid,
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-data-list,
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-routing-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-bridge-identity {
-    grid-template-columns: 1fr;
-  }
-
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-row,
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-telemetry {
-    grid-template-columns: 1fr;
-  }
-
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-controls,
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-weapon-tags {
-    justify-items: start;
-    justify-content: start;
-  }
-
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-header,
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-row {
-    grid-template-columns: 1fr;
-  }
-
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-group-tools,
-  .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-item-actions {
-    justify-items: start;
-    justify-content: start;
-  }
 }

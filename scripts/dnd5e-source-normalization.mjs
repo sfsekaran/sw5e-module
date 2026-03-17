@@ -4,8 +4,7 @@ const LEGACY_ITEM_TYPE_REMAPS = {
 	power: "spell",
 	species: "race",
 	archetype: "subclass",
-	modification: "loot",
-	starship: "starshipsize"
+	modification: "loot"
 }
 
 const LEGACY_FEAT_LIKE_ITEM_TYPES = {
@@ -14,8 +13,6 @@ const LEGACY_FEAT_LIKE_ITEM_TYPES = {
 	fightingmastery: { value: "customizationOption", subtype: "fightingMastery" },
 	fightingstyle: { value: "customizationOption", subtype: "fightingStyle" },
 	lightsaberform: { value: "customizationOption", subtype: "lightsaberForm" },
-	starshipaction: { value: "starshipAction" },
-	starshipfeature: { value: "starship" },
 	venture: { value: "deployment", subtype: "venture" }
 }
 
@@ -206,15 +203,6 @@ export function normalizeLegacyMasterItemSource(item) {
 		item.system.save.scaling = "spell"
 		changed = true
 	}
-	if ( item.system?.target?.type === "starship" ) {
-		item.system.target.type = ""
-		changed = true
-	}
-	if ( item.system?.attributes?.ac?.calc === "starship" ) {
-		item.system.attributes.ac.calc = "flat"
-		changed = true
-	}
-
 	if ( Array.isArray(item.changes) ) {
 		for ( const change of item.changes ) {
 			if ( change?.key !== "system.traits.languages.value" ) continue
@@ -242,7 +230,7 @@ export function normalizeLegacyMasterActorSource(actor) {
 
 	const details = actor.system?.details
 	if ( isObjectLike(details) ) {
-		for ( const key of ["background", "species", "originalClass", "starshipsize"] ) {
+		for ( const key of ["background", "species", "originalClass"] ) {
 			const value = details[key]
 			if ( !isObjectLike(value) ) continue
 			const id = value._id ?? value.id ?? value.uuid ?? null

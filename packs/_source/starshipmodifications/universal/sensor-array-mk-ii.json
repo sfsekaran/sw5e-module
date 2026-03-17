@@ -1,7 +1,7 @@
 {
   "name": "Sensor Array, Mk II",
-  "type": "loot",
-  "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Universal.webp",
+  "type": "starshipmod",
+  "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
   "effects": [
     {
       "_id": "Cd5NSG3u3YbJHkbG",
@@ -23,7 +23,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e-module.starshipmodifications.IOvy2IhFk8S7oVNj",
+      "origin": "Compendium.sw5e.starshipmodifications.IOvy2IhFk8S7oVNj",
       "transfer": true,
       "flags": {
         "core": {
@@ -45,128 +45,21 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Universal.webp",
+      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
       "type": "base",
       "system": {},
       "_key": "!items.effects!IOAM9A7uzHnUkM62.Cd5NSG3u3YbJHkbG"
     }
   ],
   "folder": null,
-  "flags": {
-    "sw5e": {
-      "legacyStarshipMod": {
-        "description": {
-          "value": "<p>You further improve your ship's Sensor Array. Your ship's Wisdom score increases by 1. As normal, you can't increase your ship's Wisdom score above the maximum for your size with this system.</p>",
-          "chat": "",
-          "unidentified": ""
-        },
-        "requirements": "",
-        "source": {
-          "value": "SotG"
-        },
-        "quantity": 1,
-        "weight": 0,
-        "price": {
-          "value": 0,
-          "denomination": "gp"
-        },
-        "attunement": 0,
-        "equipped": false,
-        "rarity": "",
-        "identified": false,
-        "isCargo": false,
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": null,
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": null,
-          "width": null,
-          "units": "",
-          "type": ""
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": ""
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null
-        },
-        "ability": null,
-        "actionType": "",
-        "attackBonus": 0,
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "recharge": {
-          "charged": false,
-          "value": null
-        },
-        "grade": {
-          "value": 2
-        },
-        "baseCost": {
-          "value": null
-        },
-        "prerequisites": {
-          "value": "Sensor Array, Mk I"
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "armor": {
-          "type": "",
-          "value": null,
-          "dex": null
-        },
-        "proficient": false,
-        "properties": [],
-        "attributes": {
-          "dr": ""
-        },
-        "strength": null,
-        "stealth": false,
-        "type": {
-          "value": "Universal"
-        }
-      }
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p>You further improve your ship's Sensor Array. Your ship's Wisdom score increases by 1. As normal, you can't increase your ship's Wisdom score above the maximum for your size with this system.</p>",
       "chat": "",
       "unidentified": ""
     },
+    "requirements": "",
     "source": {
       "value": "SotG"
     },
@@ -176,12 +69,98 @@
       "value": 0,
       "denomination": "gp"
     },
+    "attunement": 0,
+    "equipped": false,
     "rarity": "",
-    "identified": false
+    "identified": false,
+    "isCargo": false,
+    "activation": {
+      "type": "",
+      "cost": null,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": null,
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null
+    },
+    "ability": null,
+    "actionType": "",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "recharge": {
+      "charged": false,
+      "value": null
+    },
+    "grade": {
+      "value": 2
+    },
+    "baseCost": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": "Sensor Array, Mk I"
+    },
+    "free": {
+      "slot": false,
+      "suite": false
+    },
+    "armor": {
+      "type": "",
+      "value": null,
+      "dex": null
+    },
+    "proficient": false,
+    "properties": [],
+    "attributes": {
+      "dr": ""
+    },
+    "strength": null,
+    "stealth": false,
+    "type": {
+      "value": "Universal"
+    }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "5.2.5",
+    "systemVersion": "3.3.1",
     "coreVersion": "12.330",
     "createdTime": 1674494018649,
     "modifiedTime": 1706199587723,

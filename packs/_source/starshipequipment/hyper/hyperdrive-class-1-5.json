@@ -3,7 +3,7 @@
   "name": "Hyperdrive, Class 1.5",
   "type": "equipment",
   "flags": {},
-  "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/Hyperdrive.webp",
+  "img": "modules/sw5e/icons/packs/Starship%20Equipment/Hyperdrive.webp",
   "effects": [],
   "system": {
     "description": {
@@ -153,7 +153,7 @@
   "sort": 0,
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "5.2.5",
+    "systemVersion": "3.3.1",
     "coreVersion": "12.331",
     "createdTime": 1674494017489,
     "modifiedTime": 1720552913218,

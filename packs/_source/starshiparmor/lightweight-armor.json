@@ -2,7 +2,7 @@
   "_id": "AAA9PWi1rTiSUIIe",
   "name": "Lightweight Armor",
   "type": "equipment",
-  "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/LightweightArmor.webp",
+  "img": "modules/sw5e/icons/packs/Starship%20Equipment/LightweightArmor.webp",
   "effects": [
     {
       "_id": "tk77Tg2Isa31PJMd",
@@ -36,7 +36,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e-module.starshiparmor.AAA9PWi1rTiSUIIe",
+      "origin": "Compendium.sw5e.starshiparmor.AAA9PWi1rTiSUIIe",
       "transfer": true,
       "flags": {
         "core": {
@@ -57,7 +57,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e-module/icons/packs/Starship%20Equipment/LightweightArmor.webp",
+      "img": "modules/sw5e/icons/packs/Starship%20Equipment/LightweightArmor.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -213,7 +213,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "5.2.5",
+    "systemVersion": "3.3.1",
     "coreVersion": "12.330",
     "createdTime": 1674494017102,
     "modifiedTime": 1720552913085,

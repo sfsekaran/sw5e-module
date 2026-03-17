@@ -1,7 +1,7 @@
 {
   "name": "Comms Suppressor, Mk I",
-  "type": "loot",
-  "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
+  "type": "starshipmod",
+  "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
   "effects": [
     {
       "_id": "qJBFsKFIMXNDvqnc",
@@ -23,7 +23,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e-module.starshipmodifications.oie2WIjNeQ48HydG",
+      "origin": "Compendium.sw5e.starshipmodifications.oie2WIjNeQ48HydG",
       "transfer": true,
       "flags": {
         "core": {
@@ -45,7 +45,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e-module/icons/packs/Starship%20Modifications/Operation.webp",
+      "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "type": "base",
       "system": {},
       "_key": "!items.effects!UXxgtlUwspHD3I1h.qJBFsKFIMXNDvqnc"
@@ -63,7 +63,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e-module.starshipmodifications.oie2WIjNeQ48HydG",
+      "origin": "Compendium.sw5e.starshipmodifications.oie2WIjNeQ48HydG",
       "transfer": false,
       "flags": {
         "core": {
@@ -85,128 +85,21 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e-module/icons/packs/Communications/CommJammer.webp",
+      "img": "modules/sw5e/icons/packs/Communications/CommJammer.webp",
       "type": "base",
       "system": {},
       "_key": "!items.effects!UXxgtlUwspHD3I1h.XuBx5ZOj16OVn5pZ"
     }
   ],
   "folder": null,
-  "flags": {
-    "sw5e": {
-      "legacyStarshipMod": {
-        "description": {
-          "value": "<p><span style=\"font-family:'Open Sans', sans-serif\">This modification adds a device designed to suppress the communications of a space station or starship within 1,000 feet of your ship. As an action, a crewmember can attempt to suppress the target's communications by forcing them to succeed at a Charisma saving throw (DC equal to 8 + your Charisma (Interfere) bonus). On a failure, the target's communications are suppressed for 1 hour, preventing any communication to or from external sources. On a success, they become immune to this feature for one day.</span></p><p><span style=\"font-family:'Open Sans', sans-serif\">Additionally, your ship is proficiently equipped for Charisma (Interfere) checks.</span></p>",
-          "chat": "",
-          "unidentified": ""
-        },
-        "requirements": "",
-        "source": {
-          "value": "SotG"
-        },
-        "quantity": 1,
-        "weight": 0,
-        "price": {
-          "value": 0,
-          "denomination": "gp"
-        },
-        "attunement": 0,
-        "equipped": false,
-        "rarity": "",
-        "identified": false,
-        "isCargo": false,
-        "activation": {
-          "type": "action",
-          "cost": 1,
-          "condition": ""
-        },
-        "duration": {
-          "value": 1,
-          "units": "hour"
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": 1,
-          "width": null,
-          "units": "",
-          "type": "enemy"
-        },
-        "range": {
-          "value": 1,
-          "long": null,
-          "units": "mi"
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": "",
-          "recovery": ""
-        },
-        "consume": {
-          "type": "",
-          "target": "",
-          "amount": null
-        },
-        "ability": "cha",
-        "actionType": "save",
-        "attackBonus": 0,
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "cha",
-          "dc": null,
-          "scaling": "cha"
-        },
-        "recharge": {
-          "charged": false,
-          "value": null
-        },
-        "grade": {
-          "value": 1
-        },
-        "baseCost": {
-          "value": null
-        },
-        "prerequisites": {
-          "value": ""
-        },
-        "free": {
-          "slot": false,
-          "suite": false
-        },
-        "armor": {
-          "type": "",
-          "value": null,
-          "dex": null
-        },
-        "proficient": false,
-        "properties": [],
-        "attributes": {
-          "dr": ""
-        },
-        "strength": null,
-        "stealth": false,
-        "type": {
-          "value": "Operation"
-        }
-      }
-    }
-  },
+  "flags": {},
   "system": {
     "description": {
       "value": "<p><span style=\"font-family:'Open Sans', sans-serif\">This modification adds a device designed to suppress the communications of a space station or starship within 1,000 feet of your ship. As an action, a crewmember can attempt to suppress the target's communications by forcing them to succeed at a Charisma saving throw (DC equal to 8 + your Charisma (Interfere) bonus). On a failure, the target's communications are suppressed for 1 hour, preventing any communication to or from external sources. On a success, they become immune to this feature for one day.</span></p><p><span style=\"font-family:'Open Sans', sans-serif\">Additionally, your ship is proficiently equipped for Charisma (Interfere) checks.</span></p>",
       "chat": "",
       "unidentified": ""
     },
+    "requirements": "",
     "source": {
       "value": "SotG"
     },
@@ -216,12 +109,98 @@
       "value": 0,
       "denomination": "gp"
     },
+    "attunement": 0,
+    "equipped": false,
     "rarity": "",
-    "identified": false
+    "identified": false,
+    "isCargo": false,
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "hour"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 1,
+      "width": null,
+      "units": "",
+      "type": "enemy"
+    },
+    "range": {
+      "value": 1,
+      "long": null,
+      "units": "mi"
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "cha",
+    "actionType": "save",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "cha",
+      "dc": null,
+      "scaling": "cha"
+    },
+    "recharge": {
+      "charged": false,
+      "value": null
+    },
+    "grade": {
+      "value": 1
+    },
+    "baseCost": {
+      "value": null
+    },
+    "prerequisites": {
+      "value": ""
+    },
+    "free": {
+      "slot": false,
+      "suite": false
+    },
+    "armor": {
+      "type": "",
+      "value": null,
+      "dex": null
+    },
+    "proficient": false,
+    "properties": [],
+    "attributes": {
+      "dr": ""
+    },
+    "strength": null,
+    "stealth": false,
+    "type": {
+      "value": "Operation"
+    }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "5.2.5",
+    "systemVersion": "3.3.1",
     "coreVersion": "12.330",
     "createdTime": 1674494018739,
     "modifiedTime": 1706199587770,

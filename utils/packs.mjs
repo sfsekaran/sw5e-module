@@ -13,10 +13,9 @@ import {
 	normalizeEmbeddedDnd5eItemSources
 } from "../scripts/dnd5e-source-normalization.mjs";
 import {
-	normalizeLegacyStarshipActorData,
-	normalizeLegacyStarshipItemData,
-	normalizeSourceField as sharedNormalizeSourceField
-} from "../scripts/starship-data.mjs";
+	normalizeLegacyStarshipActorSource,
+	normalizeLegacyStarshipItemSource
+} from "../scripts/starship-character.mjs";
 
 const CANONICAL_MODULE_ID = "sw5e-module";
 
@@ -330,26 +329,6 @@ function ensureSw5eFlags(data) {
 	return (data.flags.sw5e ??= {});
 }
 
-function normalizeSourceField(source) {
-	return sharedNormalizeSourceField(source);
-}
-
-function normalizeLegacyVehicleSystem(data) {
-	normalizeLegacyStarshipActorData(data);
-}
-
-function normalizeLegacyDeploymentItem(data) {
-	normalizeLegacyStarshipItemData(data);
-}
-
-function normalizeLegacyStarshipSizeItem(data) {
-	normalizeLegacyStarshipItemData(data);
-}
-
-function normalizeLegacyStarshipModItem(data) {
-	normalizeLegacyStarshipItemData(data);
-}
-
 /**
  * Convert an entry from the sw5e system format.
  * @param {object} data                           Data for a single entry to convert.
@@ -499,12 +478,9 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 		});
 	}
 
-	if ( data.type === "starship" ) normalizeLegacyVehicleSystem(data);
-	if ( data.type === "deployment" ) normalizeLegacyDeploymentItem(data);
-	if ( data.type === "starshipsize" ) normalizeLegacyStarshipSizeItem(data);
-	if ( data.type === "starshipmod" ) normalizeLegacyStarshipModItem(data);
-
 	normalizeLegacyMasterItemSource(data);
+	normalizeLegacyStarshipActorSource(data);
+	normalizeLegacyStarshipItemSource(data);
 
 	if ( data.flags?.['sw5e-module-test'] ) {
 		data.flags.sw5e = {
@@ -916,13 +892,10 @@ function transformName(entry, packName) {
 			// foundry type
 			if (["adventuringgear", "enhanceditems"].includes(packName)) parts.add(entry.type);
 			// item type
-			const legacyItemType = entry.system?.type?.value ?? entry.flags?.sw5e?.legacyStarshipMod?.type?.value;
 			if (entry.type !== "loot") parts.add(entry.system?.type?.value?.toLowerCase());
-			else parts.add(legacyItemType?.toLowerCase?.());
 			// item subtype
-			const legacySubtype = entry.system?.type?.subtype ?? entry.flags?.sw5e?.legacyStarshipMod?.type?.subtype;
-			if (legacySubtype === "crossbowBolt") parts.add("bolt");
-			else parts.add(legacySubtype);
+			if (entry.system?.type?.subtype === "crossbowBolt") parts.add("bolt");
+			else parts.add(entry.system?.type?.subtype);
 
 			parts.delete(undefined);
 			parts.delete("");

@@ -1,7 +1,7 @@
 {
   "name": "Dogfight",
   "type": "feat",
-  "img": "modules/sw5e-module/icons/packs/Starship%20Actions/pilot-action.webp",
+  "img": "modules/sw5e/icons/packs/Starship%20Actions/pilot-action.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -99,7 +99,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "5.2.5",
+    "systemVersion": "3.3.1",
     "coreVersion": "12.331",
     "createdTime": 1674494016677,
     "modifiedTime": 1720552912969,

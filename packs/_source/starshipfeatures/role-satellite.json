@@ -1,7 +1,7 @@
 {
   "name": "Role: Satellite",
   "type": "feat",
-  "img": "modules/sw5e-module/icons/packs/Starship%20Features/Tiny.webp",
+  "img": "modules/sw5e/icons/packs/Starship%20Features/Tiny.webp",
   "effects": [
     {
       "_id": "qQTMHDrpIch61Q7C",
@@ -44,7 +44,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e-module/icons/packs/Starship%20Features/Tiny.webp",
+      "img": "modules/sw5e/icons/packs/Starship%20Features/Tiny.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -144,7 +144,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "5.2.5",
+    "systemVersion": "3.3.1",
     "coreVersion": "12.330",
     "createdTime": 1674494017965,
     "modifiedTime": 1720552913657,

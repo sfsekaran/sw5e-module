@@ -8,17 +8,13 @@ import { patchBlasterReload } from "./patch/blaster-reload.mjs";
 import { patchPowercasting } from "./patch/powercasting.mjs";
 import { patchProficiencyInit, patchProficiencyReady } from "./patch/proficiency.mjs";
 import { patchProperties } from "./patch/properties.mjs";
-import { patchStarshipPrepare } from "./patch/starship-prepare.mjs";
-import { patchStarshipRoutingMechanics } from "./patch/starship-routing-mechanics.mjs";
-import { patchStarshipSheet } from "./patch/starship-sheet.mjs";
+import { patchStarshipCharacterSheet } from "./patch/starship-character-sheet.mjs";
 import * as migrations from "./migration.mjs";
-import { openWorldConversionTool } from "./world-conversion.mjs";
 import { handleTemplates } from "./templates.mjs";
 import { registerModuleSettings } from "./settings.mjs";
 
 globalThis.sw5e = {
-	migrations,
-	openWorldConversionTool
+	migrations
 };
 
 const strict = true;
@@ -40,9 +36,7 @@ Hooks.once('init', async function() {
 	patchPowercasting();
 	patchProficiencyInit();
 	patchProperties();
-	patchStarshipPrepare();
-	patchStarshipRoutingMechanics();
-	patchStarshipSheet();
+	patchStarshipCharacterSheet();
 });
 
 Hooks.once('ready', async function() {

@@ -513,7 +513,7 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["vehicle"]
+          "types": ["character"]
         }
       }
     },
@@ -835,7 +835,7 @@
     }
   ],
   "flags": {
-    "needsMigrationVersion": "0.21",
+    "needsMigrationVersion": "0.22",
     "compatibleMigrationVersion": "0"
   }
 }
