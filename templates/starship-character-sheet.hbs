@@ -1,4 +1,4 @@
-<section class="tab active sw5e-starship-tab" data-tab="sw5e-starship" data-group="primary">
+<section class="tab sw5e-starship-tab" data-tab="sw5e-starship" data-group="primary">
   <div class="sw5e-starship-summary">
     <div class="sw5e-starship-identity">
       <img class="profile" src="{{actor.img}}" alt="{{actor.name}}">
@@ -28,7 +28,7 @@
       <article class="sw5e-starship-card">
         <h3>Crew</h3>
         <strong>{{summary.deployment.crewCount}}</strong>
-        <span>{{#if summary.deployment.pilotAssigned}}pilot assigned{{else}}no pilot assigned{{/if}}</span>
+        <span>{{#if summary.deployment.pilotAssigned}}pilot ready{{else}}pilot needed{{/if}}</span>
       </article>
       <article class="sw5e-starship-card">
         <h3>Passengers</h3>
@@ -43,8 +43,8 @@
     </div>
   </div>
 
-  <div class="sw5e-starship-layout">
-    <section class="sw5e-starship-panel">
+  <div class="sw5e-starship-layout sw5e-starship-layout-overview">
+    <section class="sw5e-starship-panel sw5e-starship-panel-compact">
       <header>
         <h3>Power Routing</h3>
         <span>{{summary.power.routing}}</span>
@@ -80,6 +80,100 @@
       </div>
     </section>
   </div>
+
+  <div class="sw5e-starship-layout sw5e-starship-layout-crew">
+    <section class="sw5e-starship-panel{{#unless crew.roster.length}} sw5e-starship-panel-empty{{/unless}}">
+      <header>
+        <h3>Crew Roster</h3>
+        <span>{{crew.roster.length}} assigned</span>
+      </header>
+      <div class="sw5e-starship-crew-list">
+        {{#if crew.roster.length}}
+        {{#each crew.roster as |member|}}
+        <article class="sw5e-starship-crew-entry{{#if member.active}} active{{/if}}">
+          <img src="{{member.img}}" alt="{{member.name}}">
+          <div class="crew-copy">
+            <strong>{{member.name}}</strong>
+            <div class="sw5e-starship-badges">
+              {{#if member.isPilot}}<span class="sw5e-starship-badge">Pilot</span>{{/if}}
+              {{#if member.isCrew}}<span class="sw5e-starship-badge">Crew</span>{{/if}}
+              {{#if member.isPassenger}}<span class="sw5e-starship-badge">Passenger</span>{{/if}}
+              {{#if member.active}}<span class="sw5e-starship-badge active">Active</span>{{/if}}
+            </div>
+          </div>
+          <div class="crew-controls">
+            <button type="button" data-sw5e-crew-command="toggle-pilot" data-actor-uuid="{{member.uuid}}" data-is-pilot="{{member.isPilot}}">
+              {{#if member.isPilot}}Clear Pilot{{else}}Set Pilot{{/if}}
+            </button>
+            <button type="button" data-sw5e-crew-command="toggle-active" data-actor-uuid="{{member.uuid}}">
+              {{#if member.active}}Clear Active{{else}}Set Active{{/if}}
+            </button>
+            <button type="button" data-sw5e-crew-command="remove" data-actor-uuid="{{member.uuid}}">Remove</button>
+          </div>
+        </article>
+        {{/each}}
+        {{else}}
+        <p class="sw5e-starship-empty">No crew or passengers are assigned yet.</p>
+        {{/if}}
+      </div>
+    </section>
+
+    <section class="sw5e-starship-panel{{#unless crew.availableActors.length}} sw5e-starship-panel-empty{{/unless}}">
+      <header>
+        <h3>Available Actors</h3>
+        <span>{{crew.availableActors.length}} listed</span>
+      </header>
+      <div class="sw5e-starship-crew-list">
+        {{#if crew.availableActors.length}}
+        {{#each crew.availableActors as |candidate|}}
+        <article class="sw5e-starship-crew-entry available">
+          <img src="{{candidate.img}}" alt="{{candidate.name}}">
+          <div class="crew-copy">
+            <strong>{{candidate.name}}</strong>
+            <span class="crew-meta">
+              {{candidate.type}}
+              {{#if candidate.assignedElsewhere}} | on {{candidate.assignedShipName}}{{/if}}
+            </span>
+          </div>
+          <div class="crew-controls">
+            <button type="button" data-sw5e-crew-command="deploy" data-deploy-role="pilot" data-actor-uuid="{{candidate.uuid}}">Pilot</button>
+            <button type="button" data-sw5e-crew-command="deploy" data-deploy-role="crew" data-actor-uuid="{{candidate.uuid}}">Crew</button>
+            <button type="button" data-sw5e-crew-command="deploy" data-deploy-role="passenger" data-actor-uuid="{{candidate.uuid}}">Passenger</button>
+          </div>
+        </article>
+        {{/each}}
+        {{else}}
+        <p class="sw5e-starship-empty">No eligible actors are available to assign.</p>
+        {{/if}}
+      </div>
+    </section>
+  </div>
+
+  <section class="sw5e-starship-panel sw5e-starship-panel-compact{{#unless crew.actions.length}} sw5e-starship-panel-empty{{/unless}}">
+    <header>
+      <h3>Crew Actions</h3>
+      <span>{{crew.actions.length}} derived</span>
+    </header>
+    <div class="sw5e-starship-items">
+      {{#if crew.actions.length}}
+      {{#each crew.actions as |item|}}
+      <button
+        type="button"
+        class="sw5e-starship-item{{#if item.active}} active{{/if}}"
+        data-sw5e-open-crew-item="true"
+        data-actor-uuid="{{item.sourceActorUuid}}"
+        data-item-id="{{item.itemId}}"
+      >
+        <img src="{{item.img}}" alt="{{item.name}}">
+        <span class="item-name">{{item.name}}</span>
+        <span class="item-type">{{item.sourceActorName}}{{#if item.active}} | active{{/if}}</span>
+      </button>
+      {{/each}}
+      {{else}}
+      <p class="sw5e-starship-empty">No deployment actions are currently available from crew.</p>
+      {{/if}}
+    </div>
+  </section>
 
   <section class="sw5e-starship-groups">
     {{#each itemGroups as |group|}}

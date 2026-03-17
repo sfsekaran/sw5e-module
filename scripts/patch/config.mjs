@@ -505,6 +505,12 @@ export function patchConfig(config, strict = true) {
 		label: "SW5E.CreatureForce",
 		plural: "SW5E.CreatureForcePl"
 	};
+	config.creatureTypes.starship = {
+		label: "Starship",
+		plural: "Starships",
+		icon: "icons/svg/wing.svg"
+	};
+	preLocalize("creatureTypes", { keys: ["label", "plural"], sort: true });
 	// Equipment
 	config.armorTypes.starship = "SW5E.EquipmentStarshipArmor";
 	config.castingEquipmentTypes = {
