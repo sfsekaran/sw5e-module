@@ -932,8 +932,10 @@ function showPowercastingBar() {
  */
 function _toggleEditPoints(pointType, event, edit) {
 	const target = event.currentTarget.closest(`.${pointType}-points`);
+	if ( !target ) return;
 	const label = target.querySelector(":scope > .label");
 	const input = target.querySelector(":scope > input");
+	if ( !label || !input ) return;
 	label.hidden = edit;
 	input.hidden = !edit;
 	if (edit) input.focus();

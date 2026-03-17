@@ -9,6 +9,7 @@ import { patchPowercasting } from "./patch/powercasting.mjs";
 import { patchProficiencyInit, patchProficiencyReady } from "./patch/proficiency.mjs";
 import { patchProperties } from "./patch/properties.mjs";
 import { patchStarshipPrepare } from "./patch/starship-prepare.mjs";
+import { patchStarshipRoutingMechanics } from "./patch/starship-routing-mechanics.mjs";
 import { patchStarshipSheet } from "./patch/starship-sheet.mjs";
 import * as migrations from "./migration.mjs";
 import { openWorldConversionTool } from "./world-conversion.mjs";
@@ -40,6 +41,7 @@ Hooks.once('init', async function() {
 	patchProficiencyInit();
 	patchProperties();
 	patchStarshipPrepare();
+	patchStarshipRoutingMechanics();
 	patchStarshipSheet();
 });
 

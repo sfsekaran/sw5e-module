@@ -1,4 +1,4 @@
-<div class="sw5e-starship-shell sw5e-starship-systems">
+<div class="sw5e-starship-shell sw5e-starship-weapons">
   <header class="sw5e-starship-page-header">
     <div>
       <span class="sw5e-starship-kicker">{{title}}</span>
@@ -22,9 +22,9 @@
     {{/if}}
   </header>
 
-  <section class="sw5e-starship-systems-grid">
-    {{#each groups}}
-      <article class="sw5e-starship-section-card">
+  <section class="sw5e-starship-weapons-grid">
+    {{#each sections}}
+      <article class="sw5e-starship-weapon-bank">
         <header class="sw5e-starship-section-header">
           <div class="sw5e-starship-section-copy">
             <span class="sw5e-starship-kicker">{{label}}</span>
@@ -51,24 +51,24 @@
                 data-sw5e-action="open-tab"
                 data-tab="{{defaultTab}}"
               >
-                Open {{manageLabel}}
+                Open Cargo
               </button>
             {{/if}}
           </div>
         </header>
 
-        <div class="sw5e-starship-item-list">
+        <div class="sw5e-starship-weapon-list">
           {{#each items}}
-            <article class="sw5e-starship-item-row">
-              <div class="sw5e-starship-item-main">
+            <article class="sw5e-starship-weapon-row">
+              <div class="sw5e-starship-weapon-main">
                 {{#if img}}
                   <button
                     type="button"
-                    class="sw5e-starship-item-icon-button"
+                    class="sw5e-starship-weapon-fire"
                     data-sw5e-action="use-item"
                     data-item-id="{{id}}"
-                    title="Roll or post to chat"
-                    aria-label="Roll or post {{name}} to chat"
+                    title="Fire weapon"
+                    aria-label="Fire {{name}}"
                   >
                     <img class="sw5e-starship-item-image" src="{{img}}" alt="" />
                   </button>
@@ -89,19 +89,36 @@
                 </div>
               </div>
 
-              <div class="sw5e-starship-item-actions">
-                {{#if ../supportsSheetNavigation}}
-                  <button
-                    type="button"
-                    class="sw5e-starship-item-button sw5e-starship-item-button-secondary"
-                    data-sw5e-action="focus-item"
-                    data-item-id="{{id}}"
-                    data-tab="{{defaultTab}}"
-                  >
-                    Locate
-                  </button>
+              <div class="sw5e-starship-weapon-telemetry">
+                {{#each telemetry}}
+                  <div class="sw5e-starship-weapon-stat">
+                    <span class="sw5e-starship-weapon-stat-label">{{label}}</span>
+                    <strong class="sw5e-starship-weapon-stat-value">{{value}}</strong>
+                  </div>
+                {{/each}}
+              </div>
+
+              <div class="sw5e-starship-weapon-controls">
+                {{#if tags.length}}
+                  <div class="sw5e-starship-weapon-tags">
+                    {{#each tags}}
+                      <span class="sw5e-starship-weapon-tag">{{this}}</span>
+                    {{/each}}
+                  </div>
                 {{/if}}
-                {{#if ../showDelete}}
+
+                <div class="sw5e-starship-item-actions">
+                  {{#if ../supportsSheetNavigation}}
+                    <button
+                      type="button"
+                      class="sw5e-starship-item-button sw5e-starship-item-button-secondary"
+                      data-sw5e-action="focus-item"
+                      data-item-id="{{id}}"
+                      data-tab="{{defaultTab}}"
+                    >
+                      Locate
+                    </button>
+                  {{/if}}
                   <button
                     type="button"
                     class="sw5e-starship-item-button sw5e-starship-item-button-danger"
@@ -110,7 +127,7 @@
                   >
                     Remove
                   </button>
-                {{/if}}
+                </div>
               </div>
             </article>
           {{/each}}

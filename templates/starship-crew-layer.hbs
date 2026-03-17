@@ -1,0 +1,166 @@
+<div class="sw5e-starship-shell sw5e-starship-crew">
+  <header class="sw5e-starship-page-header">
+    <div>
+      <span class="sw5e-starship-kicker">{{title}}</span>
+      <h2>{{title}}</h2>
+      <p>{{subtitle}}</p>
+    </div>
+
+    {{#if bridgeActions.length}}
+      <section class="sw5e-starship-toolbar">
+        {{#each bridgeActions}}
+          <button
+            type="button"
+            class="sw5e-starship-action-button"
+            data-sw5e-action="open-tab"
+            data-tab="{{id}}"
+          >
+            {{label}}
+          </button>
+        {{/each}}
+      </section>
+    {{/if}}
+  </header>
+
+  <section class="sw5e-starship-crew-stations">
+    {{#each stations}}
+      <article class="sw5e-starship-station-card">
+        <header class="sw5e-starship-section-header">
+          <div class="sw5e-starship-section-copy">
+            <span class="sw5e-starship-kicker">{{label}}</span>
+            <h3>{{label}}</h3>
+            <p>{{note}}</p>
+          </div>
+
+          <div class="sw5e-starship-section-tools">
+            <span class="sw5e-starship-section-count">{{count}}</span>
+            <span class="sw5e-starship-station-capacity">Cap {{capacity}}</span>
+          </div>
+        </header>
+
+        {{#if entries.length}}
+          <div class="sw5e-starship-station-list">
+            {{#each entries}}
+              <article class="sw5e-starship-station-entry">
+                <div class="sw5e-starship-station-entry-copy">
+                  <strong>{{name}}</strong>
+                  <span class="sw5e-starship-item-meta">{{uuid}}</span>
+                </div>
+
+                <div class="sw5e-starship-station-tags">
+                  {{#if isPilot}}
+                    <span class="sw5e-starship-station-tag">Pilot</span>
+                  {{/if}}
+                  {{#if isActive}}
+                    <span class="sw5e-starship-station-tag sw5e-starship-station-tag-active">Active</span>
+                  {{/if}}
+                </div>
+              </article>
+            {{/each}}
+          </div>
+        {{else}}
+          <div class="sw5e-starship-station-empty">No assignment preserved for this station.</div>
+        {{/if}}
+      </article>
+    {{/each}}
+  </section>
+
+  {{#if groups.length}}
+    <section class="sw5e-starship-systems-grid">
+      {{#each groups}}
+        <article class="sw5e-starship-section-card">
+          <header class="sw5e-starship-section-header">
+            <div class="sw5e-starship-section-copy">
+              <span class="sw5e-starship-kicker">{{label}}</span>
+              <h3>{{label}}</h3>
+              <p>{{description}}</p>
+            </div>
+
+            <div class="sw5e-starship-section-tools">
+              <span class="sw5e-starship-section-count">{{count}}</span>
+              {{#if browsePack}}
+                <button
+                  type="button"
+                  class="sw5e-starship-group-link sw5e-starship-group-link-secondary"
+                  data-sw5e-action="open-pack"
+                  data-pack="{{browsePack}}"
+                >
+                  Browse Pack
+                </button>
+              {{/if}}
+              {{#if supportsSheetNavigation}}
+                <button
+                  type="button"
+                  class="sw5e-starship-group-link"
+                  data-sw5e-action="open-tab"
+                  data-tab="{{defaultTab}}"
+                >
+                  Open {{manageLabel}}
+                </button>
+              {{/if}}
+            </div>
+          </header>
+
+          <div class="sw5e-starship-item-list">
+            {{#each items}}
+              <article class="sw5e-starship-item-row">
+                <div class="sw5e-starship-item-main">
+                  {{#if img}}
+                    <button
+                      type="button"
+                      class="sw5e-starship-item-icon-button"
+                      data-sw5e-action="use-item"
+                      data-item-id="{{id}}"
+                      title="Roll or post to chat"
+                      aria-label="Roll or post {{name}} to chat"
+                    >
+                      <img class="sw5e-starship-item-image" src="{{img}}" alt="" />
+                    </button>
+                  {{/if}}
+
+                  <div class="sw5e-starship-item-copy">
+                    <button
+                      type="button"
+                      class="sw5e-starship-item-name-button"
+                      data-sw5e-action="open-item"
+                      data-item-id="{{id}}"
+                    >
+                      {{name}}
+                    </button>
+                    {{#if meta}}
+                      <span class="sw5e-starship-item-meta">{{meta}}</span>
+                    {{/if}}
+                  </div>
+                </div>
+
+                <div class="sw5e-starship-item-actions">
+                  {{#if ../supportsSheetNavigation}}
+                    <button
+                      type="button"
+                      class="sw5e-starship-item-button sw5e-starship-item-button-secondary"
+                      data-sw5e-action="focus-item"
+                      data-item-id="{{id}}"
+                      data-tab="{{defaultTab}}"
+                    >
+                      Locate
+                    </button>
+                  {{/if}}
+                  {{#if ../showDelete}}
+                    <button
+                      type="button"
+                      class="sw5e-starship-item-button sw5e-starship-item-button-danger"
+                      data-sw5e-action="delete-item"
+                      data-item-id="{{id}}"
+                    >
+                      Remove
+                    </button>
+                  {{/if}}
+                </div>
+              </article>
+            {{/each}}
+          </div>
+        </article>
+      {{/each}}
+    </section>
+  {{/if}}
+</div>

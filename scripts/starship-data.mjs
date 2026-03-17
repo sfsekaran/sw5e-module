@@ -122,6 +122,8 @@ function buildVehicleSystem(legacySystem={}, items=[], existingSystem={}) {
 	const sizeSystem = starshipSize?.flags?.sw5e?.legacyStarshipSize ?? starshipSize?.system ?? {};
 	const hpValue = toFiniteNumber(legacySystem.attributes?.hp?.value, toFiniteNumber(existingSystem.attributes?.hp?.value));
 	const hpMax = toFiniteNumber(legacySystem.attributes?.hp?.max, hpValue);
+	const shieldValue = toFiniteNumber(legacySystem.attributes?.hp?.temp, toFiniteNumber(existingSystem.attributes?.hp?.temp, 0)) ?? 0;
+	const shieldMax = toFiniteNumber(legacySystem.attributes?.hp?.tempmax, toFiniteNumber(existingSystem.attributes?.hp?.tempmax, 0)) ?? 0;
 	const cargoCap = toFiniteNumber(sizeSystem.cargoCap, toFiniteNumber(existingSystem.attributes?.capacity?.cargo, 0)) ?? 0;
 	const flySpeed = toFiniteNumber(sizeSystem.baseSpaceSpeed, toFiniteNumber(existingSystem.attributes?.movement?.fly, 0)) ?? 0;
 	const acFlat = toFiniteNumber(legacySystem.attributes?.ac?.flat, toFiniteNumber(existingSystem.attributes?.ac?.flat, 10)) ?? 10;
@@ -140,6 +142,8 @@ function buildVehicleSystem(legacySystem={}, items=[], existingSystem={}) {
 			hp: {
 				value: hpValue,
 				max: hpMax,
+				temp: Math.min(shieldValue, shieldMax),
+				tempmax: shieldMax,
 				dt: existingSystem.attributes?.hp?.dt ?? null,
 				mt: existingSystem.attributes?.hp?.mt ?? null
 			},
