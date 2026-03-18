@@ -1,6 +1,16 @@
 const { ArrayField, BooleanField, NumberField, ObjectField, SchemaField, StringField } = foundry.data.fields;
 
 export class StarshipData extends dnd5e.dataModels.actor.VehicleData {
+	/**
+	 * Declare this model as provided by dnd5e so its full prepareData() lifecycle runs.
+	 * Foundry sets modelProvider based on the module that registered the type (sw5e), but
+	 * dnd5e gates its preparation on modelProvider === dnd5e. Returning game.system here
+	 * satisfies that check while still using our extended schema.
+	 */
+	get modelProvider() {
+		return game.system;
+	}
+
 	static defineSchema() {
 		const schema = super.defineSchema();
 		const FormulaField = dnd5e.dataModels.fields.FormulaField;
