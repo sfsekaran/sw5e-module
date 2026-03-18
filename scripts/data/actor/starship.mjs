@@ -32,7 +32,7 @@ export class StarshipData extends dnd5e.dataModels.actor.VehicleData {
 			}),
 			deployment: new SchemaField({
 				pilot:     new SchemaField({
-					value: new StringField({ initial: "" }),
+					value: new StringField({ nullable: true, initial: null }),
 					active: new BooleanField({ initial: false })
 				}),
 				crew:      new SchemaField({
@@ -42,12 +42,15 @@ export class StarshipData extends dnd5e.dataModels.actor.VehicleData {
 				passenger: new SchemaField({
 					items: new ArrayField(new StringField()),
 					active: new BooleanField({ initial: false })
+				}),
+				active: new SchemaField({
+					value: new StringField({ nullable: true, initial: null })
 				})
 			})
 		});
 
 		// Extend details with starship size
-		schema.details.fields.starshipsize = new StringField({ initial: "" });
+		schema.details.fields.starshipsize = new StringField({ nullable: true, initial: null });
 
 		// Starship skills (stored as a free-form mapping so existing compendium keys are preserved)
 		schema.skills = new dnd5e.dataModels.fields.MappingField(
@@ -57,6 +60,11 @@ export class StarshipData extends dnd5e.dataModels.actor.VehicleData {
 				bonuses: new SchemaField({
 					check:   new FormulaField({ initial: "" }),
 					passive: new FormulaField({ initial: "" })
+				}),
+				roll: new SchemaField({
+					min:  new NumberField({ nullable: true, initial: null }),
+					max:  new NumberField({ nullable: true, initial: null }),
+					mode: new NumberField({ nullable: false, integer: true, initial: 0 })
 				})
 			}),
 			{ initialKeysOnly: false }
