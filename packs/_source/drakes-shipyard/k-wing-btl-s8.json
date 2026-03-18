@@ -10861,11 +10861,11 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
-    "coreVersion": "12.330",
+    "systemVersion": "5.2.5",
+    "coreVersion": "13.345",
     "createdTime": 1674494006674,
-    "modifiedTime": 1720368944711,
-    "lastModifiedBy": "dnd5ebuilder0000",
+    "modifiedTime": 1773858505534,
+    "lastModifiedBy": "sw5ebuilder0000",
     "duplicateSource": null
   },
   "_key": "!actors!vuT2zQ9MkT4bl9sX"
