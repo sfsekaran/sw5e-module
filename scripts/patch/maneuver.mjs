@@ -239,7 +239,7 @@ function patchPowerbooks() {
 		// Iterate over every maneuver item, adding maneuvers to the spellbook by section
 		_this.actor.itemTypes['sw5e.maneuver'].forEach(maneuver => {
 			const type = maneuver.system.type.value || "general";
-			const key = `maneuver-${type}`;
+			const key = `maneuvers-${type}`;
 
 			// Sections for maneuvers which the caster "should not" have, but maneuver items exist for
 			if (!superiorityBook[type]) {

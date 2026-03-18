@@ -587,7 +587,7 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["loot"]
+          "types": ["sw5e.starshipmod"]
         }
       }
     },
@@ -600,7 +600,7 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["starship"]
+          "types": ["sw5e.starshipsize"]
         }
       }
     },

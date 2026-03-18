@@ -241,7 +241,7 @@ function patchItemSheet() {
 
 function patchPowerAbilityScore() {
 	Hooks.on('sw5e.preActor5e.spellcastingClasses', function (_this, ...args) {
-		_this['sw5e-preCalculatedSpellcastingClasses2'] = _this._spellcastingClasses !== undefined;
+		_this['sw5e-preCalculatedSpellcastingClasses'] = _this._spellcastingClasses !== undefined;
 	});
 	Hooks.on('sw5e.Actor5e.spellcastingClasses', function (_this, result, config, ...args) {
 		const preCalculated = _this['sw5e-preCalculatedSpellcastingClasses'] = _this._spellcastingClasses !== undefined;
