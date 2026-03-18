@@ -1,7 +1,7 @@
 {
   "_id": "WUJlWDH4enxYeX4n",
   "name": "TYE-wing",
-  "type": "starship",
+  "type": "sw5e.starship",
   "img": "modules/sw5e/icons/packs/Starship/tye_wing.Avatar.webp?1661173311365",
   "items": [
     {
@@ -2212,7 +2212,7 @@
     {
       "_id": "y9pISHPmrvy66Vav",
       "name": "Small Starship",
-      "type": "starshipsize",
+      "type": "sw5e.starshipsize",
       "img": "modules/sw5e/icons/packs/Starship%20Features/Small.webp",
       "effects": [
         {
@@ -2576,7 +2576,7 @@
     {
       "_id": "XwOX8iKhWKXSlQeG",
       "name": "Flight Computer",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
@@ -2705,7 +2705,7 @@
     {
       "_id": "1UBJDgmmXJgFie3t",
       "name": "Scanner, Premium",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [
         {
@@ -2894,7 +2894,7 @@
     {
       "_id": "hVBpIpx6cFpUkvhX",
       "name": "Fixed Hardpoint",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,

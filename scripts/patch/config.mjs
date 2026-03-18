@@ -523,7 +523,21 @@ export function patchConfig(config, strict=true) {
 		heavyphysicalshield: "Compendium.sw5e.armor.Item.KvzKRKNWATwdzxjz",
 		heavyshieldgenerator: "Compendium.sw5e.armor.Item.2u9493AUhrh2AfES",
 	};
-	config.armorClasses.unarmoredMonk.formula = "10 + @abilities.dex.mod + max(@abilities.wis.mod, @abilities.cha.mod)"
+	config.armorClasses.unarmoredMonk.formula = "10 + @abilities.dex.mod + max(@abilities.wis.mod, @abilities.cha.mod)";
+	config.armorClasses.starship = { label: "SW5E.ArmorClassStarship", formula: "@attributes.ac.flat" };
+	// Register non-standard abilities used by starship actors so data is preserved on save
+	config.abilities.hon = {
+		label: "SW5E.AbilityHon",
+		abbreviation: "SW5E.AbilityHonAbbr",
+		type: "mental",
+		fullKey: "honor"
+	};
+	config.abilities.san = {
+		label: "SW5E.AbilitySan",
+		abbreviation: "SW5E.AbilitySanAbbr",
+		type: "mental",
+		fullKey: "sanity"
+	};
 	// Consumables
 	if (strict) {
 		delete config.consumableTypes.ammo.blowgunNeedle;

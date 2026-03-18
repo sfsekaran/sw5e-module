@@ -1,7 +1,7 @@
 {
   "_id": "Gc58wD4Yv0HoMsZW",
   "name": "M3-A Scyk Fighter",
-  "type": "starship",
+  "type": "sw5e.starship",
   "img": "modules/sw5e/icons/packs/Starship/m3_a_scyk_fighter.Avatar.webp?1661170454193",
   "items": [
     {
@@ -2212,7 +2212,7 @@
     {
       "_id": "4gbVkRMDzmkKcMNC",
       "name": "Small Starship",
-      "type": "starshipsize",
+      "type": "sw5e.starshipsize",
       "img": "modules/sw5e/icons/packs/Starship%20Features/Small.webp",
       "effects": [
         {
@@ -2413,7 +2413,7 @@
     {
       "_id": "H60MfyhBsYMr5pMq",
       "name": "Flight Computer",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
@@ -2542,7 +2542,7 @@
     {
       "_id": "dN0DfH1eZ6KD86Q5",
       "name": "Hyperdrive Slot",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
@@ -2671,7 +2671,7 @@
     {
       "_id": "vncj6qVr8XRPYQaS",
       "name": "Navcomputer",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [
         {
@@ -2848,7 +2848,7 @@
     {
       "_id": "t5TrtlRIVWUcSZ0U",
       "name": "Fixed Hardpoint",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,

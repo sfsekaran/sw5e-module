@@ -1,7 +1,7 @@
 {
   "_id": "1r4jBr6JMShi7Uay",
   "name": "M3-A Scyk \"Heavy\" Fighter",
-  "type": "starship",
+  "type": "sw5e.starship",
   "img": "modules/sw5e/icons/packs/Starship/m3_a_scyk_heavy_fighter.Avatar.webp?1661170404382",
   "items": [
     {
@@ -2212,7 +2212,7 @@
     {
       "_id": "PzNkl1S4xtYOd5lp",
       "name": "Small Starship",
-      "type": "starshipsize",
+      "type": "sw5e.starshipsize",
       "img": "modules/sw5e/icons/packs/Starship%20Features/Small.webp",
       "effects": [
         {
@@ -2415,7 +2415,7 @@
     {
       "_id": "onNbenkrEziym0gz",
       "name": "Flight Computer",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
@@ -2544,7 +2544,7 @@
     {
       "_id": "kjFdSV37HqGIf4Vd",
       "name": "Hyperdrive Slot",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
@@ -2673,7 +2673,7 @@
     {
       "_id": "phNmvnEz5vQojPDu",
       "name": "Navcomputer",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [
         {
@@ -2850,7 +2850,7 @@
     {
       "_id": "Bxn1XsoMJJqLEE4V",
       "name": "Scanner, Premium",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [
         {
@@ -3039,7 +3039,7 @@
     {
       "_id": "aCRAC38E0HrIQfyP",
       "name": "Thrusters, Mark I",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
       "effects": [
         {
@@ -3216,7 +3216,7 @@
     {
       "_id": "RJQZNeVIKImy90lp",
       "name": "Fixed Hardpoint",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,
@@ -3345,7 +3345,7 @@
     {
       "_id": "DYmof5LjiC9hU8kR",
       "name": "Fixed Hardpoint",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,

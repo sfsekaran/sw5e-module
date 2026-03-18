@@ -1,7 +1,7 @@
 {
   "_id": "FbzPxDn1FfeRvDym",
   "name": "Delta-7 Aethersprite-class light interceptor - Modified",
-  "type": "starship",
+  "type": "sw5e.starship",
   "img": "https://static.wikia.nocookie.net/starwars/images/0/0a/AnakinsModifiedDelta-7.jpg?1660398197218?1660417787639",
   "items": [
     {
@@ -2212,7 +2212,7 @@
     {
       "_id": "Y7hwa9yY5DmF4YAr",
       "name": "Astromech Socket",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
@@ -2341,7 +2341,7 @@
     {
       "_id": "2LBjNSaU4oSk5P4Q",
       "name": "Small Starship",
-      "type": "starshipsize",
+      "type": "sw5e.starshipsize",
       "img": "modules/sw5e/icons/packs/Starship%20Features/Small.webp",
       "effects": [
         {
@@ -2826,7 +2826,7 @@
     {
       "_id": "fIlfN3wR9c5Ums1L",
       "name": "Comms Package, Premium",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
@@ -2955,7 +2955,7 @@
     {
       "_id": "F1TAtKnAfvOVbbSq",
       "name": "Comms Package, Prototype",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
@@ -3084,7 +3084,7 @@
     {
       "_id": "9HQjdxAscbuafEHl",
       "name": "Scanner, Premium",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [
         {
@@ -3273,7 +3273,7 @@
     {
       "_id": "T2SjeOYQo1TtSduI",
       "name": "Scanner, Prototype",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [
         {
@@ -3456,7 +3456,7 @@
     {
       "_id": "XDNv3RzQ8QT5Mm4l",
       "name": "Inertial Dampeners",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
       "effects": [],
       "folder": null,
@@ -3585,7 +3585,7 @@
     {
       "_id": "wi5QPohbt7hKWyYd",
       "name": "Thrusters, Mark I",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
       "effects": [
         {
@@ -3762,7 +3762,7 @@
     {
       "_id": "sBBh6ncDP0dme7hq",
       "name": "Fixed Hardpoint",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,
@@ -7468,7 +7468,7 @@
     {
       "_id": "4nv1S9DPTNswTXW6",
       "name": "SLAM",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Engineering.webp",
       "effects": [],
       "folder": null,
@@ -7597,7 +7597,7 @@
     {
       "_id": "aOt09XgzdOCtML5w",
       "name": "Hyperdrive Slot",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
@@ -7726,7 +7726,7 @@
     {
       "_id": "FxogYcbDil0Eig1b",
       "name": "Adaptive Ailerons",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
       "effects": [
         {
@@ -7915,7 +7915,7 @@
     {
       "_id": "D5wtwGcDLFUcLuwv",
       "name": "Lightweight Plating, Mark I",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
       "effects": [
         {
@@ -8092,7 +8092,7 @@
     {
       "_id": "h30djeQtbYcsZHmi",
       "name": "Lightweight Plating, Mark II",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
       "effects": [
         {
@@ -8269,7 +8269,7 @@
     {
       "_id": "r0McwAYdIUVxf1PQ",
       "name": "Fire-Linked Mounting",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,
@@ -8398,7 +8398,7 @@
     {
       "_id": "udiNbsUC3rrRDY9X",
       "name": "Fire-Linked Weapon Reinforcement",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,
@@ -8527,7 +8527,7 @@
     {
       "_id": "lPhPoK12d5C510bV",
       "name": "Fixed Hardpoint",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,
@@ -8656,7 +8656,7 @@
     {
       "_id": "jvsqyVqw6i1Jk6kI",
       "name": "Fixed Hardpoint",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,
@@ -8785,7 +8785,7 @@
     {
       "_id": "H5edsc7DIckIvTLi",
       "name": "Fixed Hardpoint",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,
@@ -8914,7 +8914,7 @@
     {
       "_id": "U2oK3eIbyM5N6fZJ",
       "name": "S-Foils",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,

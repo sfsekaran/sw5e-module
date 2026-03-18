@@ -1,7 +1,7 @@
 {
   "_id": "qiAPxTVe39l5Su3w",
   "name": "V-wing Starfighter - Alpha-3 Nimbus-class",
-  "type": "starship",
+  "type": "sw5e.starship",
   "img": "modules/sw5e/icons/packs/Starship/v_wing_starfighter_alpha_3_nimbus_class.Avatar.webp?1661173389090",
   "items": [
     {
@@ -2212,7 +2212,7 @@
     {
       "_id": "wwiQePUDcqjyrmKu",
       "name": "Small Starship",
-      "type": "starshipsize",
+      "type": "sw5e.starshipsize",
       "img": "modules/sw5e/icons/packs/Starship%20Features/Small.webp",
       "effects": [
         {
@@ -2578,7 +2578,7 @@
     {
       "_id": "spTl2l6ZKXrfpKti",
       "name": "Astromech Socket",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [],
       "folder": null,
@@ -2707,7 +2707,7 @@
     {
       "_id": "1YmICtEACeZb442X",
       "name": "Power Converter, Premium",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
       "effects": [
         {
@@ -2884,7 +2884,7 @@
     {
       "_id": "ggTVhyau88wyRUU3",
       "name": "Sensor Array, Mark I",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
       "effects": [
         {
@@ -3061,7 +3061,7 @@
     {
       "_id": "M4Ao0Z4xjNPop7Ru",
       "name": "Sensor Array, Mark II",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Universal.webp",
       "effects": [
         {
@@ -3238,7 +3238,7 @@
     {
       "_id": "66qNV4dcKXoMuO7p",
       "name": "Fixed Hardpoint",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,
@@ -3367,7 +3367,7 @@
     {
       "_id": "iVpjuc6laFyG7DOW",
       "name": "Gauss Rounds",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,

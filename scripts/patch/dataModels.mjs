@@ -157,6 +157,16 @@ export function patchDataModels() {
 	});
 
 	Object.assign(CONFIG.Item.dataModels, dataModels.item.config);
+	// Map sw5e-specific item types to the nearest dnd5e equivalent so activities/advancement are processed correctly
+	CONFIG.Item.dataModels["sw5e.starshipmod"] = dnd5e.dataModels.item.FeatData;
+	CONFIG.Item.dataModels["sw5e.starshipsize"] = dnd5e.dataModels.item.FeatData;
 	const types = Object.keys(game.modules.get("sw5e").documentTypes.Item).map(t => `sw5e.${t}`);
 	// DocumentSheetConfig.registerSheet(Item, "sw5e.maneuver", ItemSheetSW5E, { types, makeDefault: true });
+
+	Object.assign(CONFIG.Actor.dataModels, dataModels.actor.config);
+	DocumentSheetConfig.registerSheet(Actor, "sw5e", dnd5e.applications.actor.VehicleActorSheet, {
+		types: ["sw5e.starship"],
+		makeDefault: true,
+		label: "SW5E Starship"
+	});
 }

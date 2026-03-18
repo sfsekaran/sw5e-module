@@ -1,7 +1,7 @@
 {
   "_id": "pzL1SI9raUYuSpv8",
   "name": "Z-TIE Fighter",
-  "type": "starship",
+  "type": "sw5e.starship",
   "img": "modules/sw5e/icons/packs/Starship/z_tie_fighter.Avatar.webp?1661167285991",
   "items": [
     {
@@ -2546,7 +2546,7 @@
     {
       "_id": "dPInprwdDICY0FcG",
       "name": "Small Starship",
-      "type": "starshipsize",
+      "type": "sw5e.starshipsize",
       "img": "modules/sw5e/icons/packs/Starship%20Features/Small.webp",
       "effects": [
         {
@@ -2747,7 +2747,7 @@
     {
       "_id": "chvx3V1RoUtc58YH",
       "name": "Scanner, Premium",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Operation.webp",
       "effects": [
         {
@@ -2936,7 +2936,7 @@
     {
       "_id": "VeXvHCYiWdtQ9fen",
       "name": "Expanded Payload",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,
@@ -3065,7 +3065,7 @@
     {
       "_id": "LCqrRym1LcO1fUA4",
       "name": "Fixed Hardpoint",
-      "type": "starshipmod",
+      "type": "sw5e.starshipmod",
       "img": "modules/sw5e/icons/packs/Starship%20Modifications/Weapon.webp",
       "effects": [],
       "folder": null,

@@ -45,6 +45,14 @@
     "styles/module.css"
   ],
   "documentTypes": {
+    "Actor": {
+      "starship": {
+        "htmlFields": [
+          "system.details.biography.value",
+          "system.details.biography.public"
+        ]
+      }
+    },
     "Item": {
       "maneuver": {
         "htmlFields": [
@@ -52,7 +60,9 @@
           "description.chat",
           "unidentified.description"
         ]
-      }
+      },
+      "starshipmod": {},
+      "starshipsize": {}
     }
   },
   "packs": [
@@ -512,7 +522,7 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["starship"]
+          "types": ["sw5e.starship"]
         }
       }
     },
