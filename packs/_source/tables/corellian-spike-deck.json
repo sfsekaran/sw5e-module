@@ -10,7 +10,7 @@
       "flags": {},
       "type": "text",
       "text": "Sylop",
-      "img": "systems/sw5e/packs/Icons/Sabacc/Sylop.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/Sylop.webp",
       "weight": 1,
       "range": [
         1,
@@ -25,7 +25,7 @@
       "flags": {},
       "type": "text",
       "text": "Sylop",
-      "img": "systems/sw5e/packs/Icons/Sabacc/Sylop.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/Sylop.webp",
       "weight": 1,
       "range": [
         2,
@@ -40,7 +40,7 @@
       "flags": {},
       "type": "text",
       "text": "1 of Circles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/1oC-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/1oC-green.webp",
       "weight": 1,
       "range": [
         3,
@@ -55,7 +55,7 @@
       "flags": {},
       "type": "text",
       "text": "2 of Circles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/2oC-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/2oC-green.webp",
       "weight": 1,
       "range": [
         4,
@@ -70,7 +70,7 @@
       "flags": {},
       "type": "text",
       "text": "3 of Circles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/3oC-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/3oC-green.webp",
       "weight": 1,
       "range": [
         5,
@@ -85,7 +85,7 @@
       "flags": {},
       "type": "text",
       "text": "4 of Circles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/4oC-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/4oC-green.webp",
       "weight": 1,
       "range": [
         6,
@@ -100,7 +100,7 @@
       "flags": {},
       "type": "text",
       "text": "5 of Circles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/5oC-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/5oC-green.webp",
       "weight": 1,
       "range": [
         7,
@@ -115,7 +115,7 @@
       "flags": {},
       "type": "text",
       "text": "6 of Circles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/6oC-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/6oC-green.webp",
       "weight": 1,
       "range": [
         8,
@@ -130,7 +130,7 @@
       "flags": {},
       "type": "text",
       "text": "7 of Circles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/7oC-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/7oC-green.webp",
       "weight": 1,
       "range": [
         9,
@@ -145,7 +145,7 @@
       "flags": {},
       "type": "text",
       "text": "8 of Circles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/8oC-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/8oC-green.webp",
       "weight": 1,
       "range": [
         10,
@@ -160,7 +160,7 @@
       "flags": {},
       "type": "text",
       "text": "9 of Circles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/9oC-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/9oC-green.webp",
       "weight": 1,
       "range": [
         11,
@@ -175,7 +175,7 @@
       "flags": {},
       "type": "text",
       "text": "10 of Circles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/10oC-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/10oC-green.webp",
       "weight": 1,
       "range": [
         12,
@@ -190,7 +190,7 @@
       "flags": {},
       "type": "text",
       "text": "1 of Squares (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/1oS-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/1oS-green.webp",
       "weight": 1,
       "range": [
         13,
@@ -205,7 +205,7 @@
       "flags": {},
       "type": "text",
       "text": "2 of Squares (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/2oS-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/2oS-green.webp",
       "weight": 1,
       "range": [
         14,
@@ -220,7 +220,7 @@
       "flags": {},
       "type": "text",
       "text": "3 of Squares (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/3oS-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/3oS-green.webp",
       "weight": 1,
       "range": [
         15,
@@ -235,7 +235,7 @@
       "flags": {},
       "type": "text",
       "text": "4 of Squares (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/4oS-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/4oS-green.webp",
       "weight": 1,
       "range": [
         16,
@@ -250,7 +250,7 @@
       "flags": {},
       "type": "text",
       "text": "5 of Squares (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/5oS-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/5oS-green.webp",
       "weight": 1,
       "range": [
         17,
@@ -265,7 +265,7 @@
       "flags": {},
       "type": "text",
       "text": "6 of Squares (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/6oS-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/6oS-green.webp",
       "weight": 1,
       "range": [
         18,
@@ -280,7 +280,7 @@
       "flags": {},
       "type": "text",
       "text": "7 of Squares (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/7oS-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/7oS-green.webp",
       "weight": 1,
       "range": [
         19,
@@ -295,7 +295,7 @@
       "flags": {},
       "type": "text",
       "text": "8 of Squares (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/8oS-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/8oS-green.webp",
       "weight": 1,
       "range": [
         20,
@@ -310,7 +310,7 @@
       "flags": {},
       "type": "text",
       "text": "9 of Squares (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/9oS-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/9oS-green.webp",
       "weight": 1,
       "range": [
         21,
@@ -325,7 +325,7 @@
       "flags": {},
       "type": "text",
       "text": "10 of Squares (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/10oS-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/10oS-green.webp",
       "weight": 1,
       "range": [
         22,
@@ -340,7 +340,7 @@
       "flags": {},
       "type": "text",
       "text": "1 of Triangles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/1oT-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/1oT-green.webp",
       "weight": 1,
       "range": [
         23,
@@ -355,7 +355,7 @@
       "flags": {},
       "type": "text",
       "text": "2 of Triangles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/2oT-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/2oT-green.webp",
       "weight": 1,
       "range": [
         24,
@@ -370,7 +370,7 @@
       "flags": {},
       "type": "text",
       "text": "3 of Triangles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/3oT-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/3oT-green.webp",
       "weight": 1,
       "range": [
         25,
@@ -385,7 +385,7 @@
       "flags": {},
       "type": "text",
       "text": "4 of Triangles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/4oT-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/4oT-green.webp",
       "weight": 1,
       "range": [
         26,
@@ -400,7 +400,7 @@
       "flags": {},
       "type": "text",
       "text": "5 of Triangles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/6oT-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/6oT-green.webp",
       "weight": 1,
       "range": [
         27,
@@ -415,7 +415,7 @@
       "flags": {},
       "type": "text",
       "text": "6 of Triangles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/6oT-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/6oT-green.webp",
       "weight": 1,
       "range": [
         28,
@@ -430,7 +430,7 @@
       "flags": {},
       "type": "text",
       "text": "7 of Triangles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/7oT-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/7oT-green.webp",
       "weight": 1,
       "range": [
         29,
@@ -445,7 +445,7 @@
       "flags": {},
       "type": "text",
       "text": "8 of Triangles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/8oT-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/8oT-green.webp",
       "weight": 1,
       "range": [
         30,
@@ -460,7 +460,7 @@
       "flags": {},
       "type": "text",
       "text": "9 of Triangles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/9oT-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/9oT-green.webp",
       "weight": 1,
       "range": [
         31,
@@ -475,7 +475,7 @@
       "flags": {},
       "type": "text",
       "text": "10 of Triangles (green)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/10oT-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/10oT-green.webp",
       "weight": 1,
       "range": [
         32,
@@ -490,7 +490,7 @@
       "flags": {},
       "type": "text",
       "text": "1 of Circles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/1oC-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/1oC-red.webp",
       "weight": 1,
       "range": [
         33,
@@ -505,7 +505,7 @@
       "flags": {},
       "type": "text",
       "text": "2 of Circles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/2oC-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/2oC-red.webp",
       "weight": 1,
       "range": [
         34,
@@ -520,7 +520,7 @@
       "flags": {},
       "type": "text",
       "text": "3 of Circles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/3oC-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/3oC-red.webp",
       "weight": 1,
       "range": [
         35,
@@ -535,7 +535,7 @@
       "flags": {},
       "type": "text",
       "text": "4 of Circles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/4oC-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/4oC-red.webp",
       "weight": 1,
       "range": [
         36,
@@ -550,7 +550,7 @@
       "flags": {},
       "type": "text",
       "text": "5 of Circles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/5oC-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/5oC-red.webp",
       "weight": 1,
       "range": [
         37,
@@ -565,7 +565,7 @@
       "flags": {},
       "type": "text",
       "text": "6 of Circles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/6oC-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/6oC-red.webp",
       "weight": 1,
       "range": [
         38,
@@ -580,7 +580,7 @@
       "flags": {},
       "type": "text",
       "text": "7 of Circles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/7oC-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/7oC-red.webp",
       "weight": 1,
       "range": [
         39,
@@ -595,7 +595,7 @@
       "flags": {},
       "type": "text",
       "text": "8 of Circles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/8oC-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/8oC-red.webp",
       "weight": 1,
       "range": [
         40,
@@ -610,7 +610,7 @@
       "flags": {},
       "type": "text",
       "text": "9 of Circles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/9oC-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/9oC-red.webp",
       "weight": 1,
       "range": [
         41,
@@ -625,7 +625,7 @@
       "flags": {},
       "type": "text",
       "text": "10 of Circles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/10oC-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/10oC-red.webp",
       "weight": 1,
       "range": [
         42,
@@ -640,7 +640,7 @@
       "flags": {},
       "type": "text",
       "text": "1 of Squares (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/1oS-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/1oS-red.webp",
       "weight": 1,
       "range": [
         43,
@@ -655,7 +655,7 @@
       "flags": {},
       "type": "text",
       "text": "2 of Squares (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/2oS-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/2oS-red.webp",
       "weight": 1,
       "range": [
         44,
@@ -670,7 +670,7 @@
       "flags": {},
       "type": "text",
       "text": "3 of Squares (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/3oS-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/3oS-red.webp",
       "weight": 1,
       "range": [
         45,
@@ -685,7 +685,7 @@
       "flags": {},
       "type": "text",
       "text": "4 of Squares (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/4oS-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/4oS-red.webp",
       "weight": 1,
       "range": [
         46,
@@ -700,7 +700,7 @@
       "flags": {},
       "type": "text",
       "text": "5 of Squares (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/5oS-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/5oS-red.webp",
       "weight": 1,
       "range": [
         47,
@@ -715,7 +715,7 @@
       "flags": {},
       "type": "text",
       "text": "6 of Squares (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/6oS-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/6oS-red.webp",
       "weight": 1,
       "range": [
         48,
@@ -730,7 +730,7 @@
       "flags": {},
       "type": "text",
       "text": "7 of Squares (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/7oS-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/7oS-red.webp",
       "weight": 1,
       "range": [
         49,
@@ -745,7 +745,7 @@
       "flags": {},
       "type": "text",
       "text": "8 of Squares (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/8oS-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/8oS-red.webp",
       "weight": 1,
       "range": [
         50,
@@ -760,7 +760,7 @@
       "flags": {},
       "type": "text",
       "text": "9 of Squares (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/9oS-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/9oS-red.webp",
       "weight": 1,
       "range": [
         51,
@@ -775,7 +775,7 @@
       "flags": {},
       "type": "text",
       "text": "10 of Squares (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/10oS-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/10oS-red.webp",
       "weight": 1,
       "range": [
         52,
@@ -790,7 +790,7 @@
       "flags": {},
       "type": "text",
       "text": "1 of Triangles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/1oT-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/1oT-red.webp",
       "weight": 1,
       "range": [
         53,
@@ -805,7 +805,7 @@
       "flags": {},
       "type": "text",
       "text": "2 of Triangles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/2oT-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/2oT-red.webp",
       "weight": 1,
       "range": [
         54,
@@ -820,7 +820,7 @@
       "flags": {},
       "type": "text",
       "text": "3 of Triangles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/3oT-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/3oT-red.webp",
       "weight": 1,
       "range": [
         55,
@@ -835,7 +835,7 @@
       "flags": {},
       "type": "text",
       "text": "4 of Triangles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/4oT-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/4oT-red.webp",
       "weight": 1,
       "range": [
         56,
@@ -850,7 +850,7 @@
       "flags": {},
       "type": "text",
       "text": "5 of Triangles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/5oT-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/5oT-red.webp",
       "weight": 1,
       "range": [
         59,
@@ -865,7 +865,7 @@
       "flags": {},
       "type": "text",
       "text": "6 of Triangles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/6oT-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/6oT-red.webp",
       "weight": 1,
       "range": [
         60,
@@ -880,7 +880,7 @@
       "flags": {},
       "type": "text",
       "text": "7 of Triangles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/7oT-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/7oT-red.webp",
       "weight": 1,
       "range": [
         61,
@@ -895,7 +895,7 @@
       "flags": {},
       "type": "text",
       "text": "8 of Triangles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/8oT-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/8oT-red.webp",
       "weight": 1,
       "range": [
         62,
@@ -910,7 +910,7 @@
       "flags": {},
       "type": "text",
       "text": "9 of Triangles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/9oT-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/9oT-red.webp",
       "weight": 1,
       "range": [
         63,
@@ -925,7 +925,7 @@
       "flags": {},
       "type": "text",
       "text": "10 of Triangles (red)",
-      "img": "systems/sw5e/packs/Icons/Sabacc/9oT-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/9oT-red.webp",
       "weight": 1,
       "range": [
         64,

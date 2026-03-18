@@ -1,10 +1,9 @@
 {
   "id": "sw5e",
   "title": "SW5E",
-  "description": "Test",
+  "description": "Star Wars 5th Edition content and rules for the dnd5e system. Adds Force and Tech powercasting, maneuvers, superiority dice, starships, and hundreds of SW5E items, species, classes, and compendium entries.",
   "version": "#{VERSION}#",
   "library": "false",
-  "manifestPlusVersion": "1.2.3",
   "compatibility": {
     "minimum": 13,
     "verified": 13

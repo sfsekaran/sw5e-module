@@ -280,26 +280,19 @@ function patchPowerAbilityScore() {
 }
 
 function patchPowerbooks() {
-	Hooks.on('sw5e.ActorSheet5e._prepareSpellbook', function (_this, powerbook, config, ...args) {
-		const [context, spells] = args;
-
-		// Format a powerbook entry for a certain indexed level
-		const registerSection = (sl, i, label) => {
-			if (powerbook.find(section => section.order === i)) return;
-			powerbook.push({
+	Hooks.on('sw5e.ActorSheet5e._prepareSpellbook', function (_this, spellbook, config, ...args) {
+		// In dnd5e 5.x, _prepareSpellbook returns a plain object keyed by slot, not an array.
+		const registerSection = (key, i, label) => {
+			if (key in spellbook) return;
+			spellbook[key] = {
 				order: i,
 				label: label,
 				usesSlots: false,
-				canCreate: _this.actor.isOwner,
-				canPrepare: (context.actor.type === "character") && (i >= 1),
-				spells: [],
-				uses: 0,
-				slots: 0,
-				override: 0,
-				dataset: {type: "spell", level: i, preparationMode: "powerCasting"},
-				prop: sl,
-				editable: context.editable
-			});
+				id: "powerCasting",
+				slot: key,
+				items: [],
+				dataset: { level: i, method: "powerCasting", type: "spell" },
+			};
 		};
 
 		for (const [castType, typeConfig] of Object.entries(CONFIG.DND5E.powerCasting)) {
@@ -308,8 +301,10 @@ function patchPowerbooks() {
 			for (let lvl = 0; lvl <= castData.maxPowerLevel; lvl++) registerSection(`spell${lvl}`, lvl, CONFIG.DND5E.spellLevels[lvl]);
 		}
 
-		// Sort the powerbook by section level
-		config.result = powerbook.sort((a, b) => a.order - b.order);
+		// Sort the spellbook object by section order
+		config.result = Object.fromEntries(
+			Object.entries(spellbook).sort(([, a], [, b]) => a.order - b.order)
+		);
 	});
 
 	// In dnd5e 5.x, _onDropSpell no longer exists on actor sheets.
