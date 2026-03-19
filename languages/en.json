@@ -13,6 +13,8 @@
   "TYPES.Item.subclassPl": "Archetypes",
   "TYPES.Actor.sw5e.starship": "Starship",
   "TYPES.Actor.sw5e.starshipPl": "Starships",
+  "TYPES.Item.sw5e.deployment": "Deployment",
+  "TYPES.Item.sw5e.deploymentPl": "Deployments",
   "TYPES.Item.sw5e.maneuver": "Maneuver",
   "TYPES.Item.sw5e.maneuverPl": "Maneuvers",
   "TYPES.JournalEntryPage.spells": "Power List",
