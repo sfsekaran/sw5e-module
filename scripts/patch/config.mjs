@@ -2081,6 +2081,8 @@ export function patchConfig(config, strict=true) {
 		zabraki: "SW5E.LanguagesZabraki",
 		zygerrian: "SW5E.LanguagesZygerrian"
 	};
+	// Vehicle Types — add starship so VehicleActorSheet sidebar shows "Starship" instead of "Water Vehicle"
+	config.vehicleTypes = { ...config.vehicleTypes, starship: game.i18n.localize("SW5E.ActorTypeStarship") };
 	// Traits
 	config.traits = {
 		...config.traits,
@@ -2089,7 +2091,7 @@ export function patchConfig(config, strict=true) {
 				title: "SW5E.ShieldDamImm",
 				localization: "SW5E.TraitSDIPlural"
 			},
-			icon: "systems/sw5e/icons/svg/trait-damage-immunities.svg",
+			icon: "systems/dnd5e/icons/svg/trait-damage-immunities.svg",
 			configKey: "damageTypes"
 		},
 		sdr: {
@@ -2097,7 +2099,7 @@ export function patchConfig(config, strict=true) {
 				title: "SW5E.ShieldDamRes",
 				localization: "SW5E.TraitSDRPlural"
 			},
-			icon: "systems/sw5e/icons/svg/trait-damage-resistances.svg",
+			icon: "systems/dnd5e/icons/svg/trait-damage-resistances.svg",
 			configKey: "damageTypes"
 		},
 		sdv: {
@@ -2105,7 +2107,7 @@ export function patchConfig(config, strict=true) {
 				title: "SW5E.ShieldDamVuln",
 				localization: "SW5E.TraitSDVPlural"
 			},
-			icon: "systems/sw5e/icons/svg/trait-damage-vulnerabilities.svg",
+			icon: "systems/dnd5e/icons/svg/trait-damage-vulnerabilities.svg",
 			configKey: "damageTypes"
 		},
 	};

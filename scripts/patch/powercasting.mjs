@@ -204,7 +204,7 @@ function showPowercastingStats() {
 
 function patchItemSheet() {
 	Hooks.on("renderItemSheet5e", (app, html, data) => {
-		html.find(`select[name|='system.spellcasting.progression']`).each((idx, el) => {
+		for (const el of html.querySelectorAll(`select[name|='system.spellcasting.progression']`)) {
 			const root = el.parentNode.parentNode;
 			for (const castType of ["Tech", "Force"]) {
 				const selectedValue = app.item.system.spellcasting[`${castType.toLowerCase()}Progression`];
@@ -235,7 +235,7 @@ function patchItemSheet() {
 				div.appendChild(div2);
 				root.nextElementSibling.insertAdjacentElement("afterend", div);
 			}
-		});
+		}
 	});
 }
 
@@ -418,8 +418,7 @@ function makePowerPointsConsumable() {
 function showPowercastingBar() {
 	const { simplifyBonus } = dnd5e.utils;
 	Hooks.on("renderCharacterActorSheet", (app, element, context, options) => {
-		const html = $(element);
-		const hpHTML = html.find('.meter-group')[0];
+		const hpHTML = element.querySelector('.meter-group');
 		const powerCasting = app.actor.system.powercasting;
 
 		// Add meters for the tech and force powercasting values. This 
@@ -469,17 +468,20 @@ function showPowercastingBar() {
 						</div>
 					</div>
 				`;
-				$(hpHTML).after(castingHTMLMeter);
-				const statsHTML = $(hpHTML.parentNode);
+				hpHTML.insertAdjacentHTML('afterend', castingHTMLMeter);
+				const statsParent = hpHTML.parentNode;
 
 				// Editable Only Listeners
 				if (app.isEditable) {
-					statsHTML.find(`.meter > .${castType}-points`).on("click", event => _toggleEditPoints(castType, event, true));
-					statsHTML.find(`.meter > .${castType}-points > input`).on("blur", event => _toggleEditPoints(castType, event, false));
+					for (const el of statsParent.querySelectorAll(`.meter > .${castType}-points`))
+						el.addEventListener("click", event => _toggleEditPoints(castType, event, true));
+					for (const el of statsParent.querySelectorAll(`.meter > .${castType}-points > input`))
+						el.addEventListener("blur", event => _toggleEditPoints(castType, event, false));
 					// Input focus and update
-					const inputs = statsHTML.find("input");
-					inputs.focus(ev => ev.currentTarget.select());
-					inputs.addBack().find('[type="text"][data-dtype="Number"]').change(app._onChangeInputDelta.bind(app));
+					for (const el of statsParent.querySelectorAll("input"))
+						el.addEventListener("focus", ev => ev.currentTarget.select());
+					for (const el of statsParent.querySelectorAll('[type="text"][data-dtype="Number"]'))
+						el.addEventListener("change", app._onChangeInputDelta.bind(app));
 				}
 			}
 		}

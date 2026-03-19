@@ -51,6 +51,8 @@ export class StarshipData extends dnd5e.dataModels.actor.VehicleData {
 
 		// Extend details with starship size
 		schema.details.fields.starshipsize = new StringField({ nullable: true, initial: null });
+		// Override vehicle "type" default so starships show "Starship" instead of "Water Vehicle"
+		schema.details.fields.type.initial = "starship";
 
 		// Starship skills (stored as a free-form mapping so existing compendium keys are preserved)
 		schema.skills = new dnd5e.dataModels.fields.MappingField(
@@ -73,5 +75,19 @@ export class StarshipData extends dnd5e.dataModels.actor.VehicleData {
 		schema.favorites = new ArrayField(new ObjectField());
 
 		return schema;
+	}
+
+	/** @inheritDoc */
+	prepareDerivedData() {
+		try {
+			super.prepareDerivedData();
+		} finally {
+			// SourceField.prepareData sets source.label dynamically. If super() throws before
+			// reaching that call, label stays undefined and the window header shows "undefined".
+			// Guarantee a non-undefined value so the source span renders as empty instead.
+			if (this.source && this.source.label === undefined) {
+				this.source.label = "";
+			}
+		}
 	}
 }

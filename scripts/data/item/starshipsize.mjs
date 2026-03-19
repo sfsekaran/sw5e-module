@@ -1,6 +1,6 @@
 const { ArrayField, NumberField, ObjectField, SchemaField, StringField } = foundry.data.fields;
 
-export default class StarshipSizeData extends dnd5e.dataModels.item.ItemDataModel {
+export default class StarshipSizeData extends dnd5e.dataModels.item.FeatData {
 	static defineSchema() {
 		const schema = super.defineSchema();
 

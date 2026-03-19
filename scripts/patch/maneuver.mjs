@@ -161,7 +161,7 @@ function showPowercastingStats() {
 
 function patchItemSheet() {
 	Hooks.on("renderItemSheet5e", (app, html, data) => {
-		html.find(`select[name|='system.spellcasting.progression']`).each((idx, el) => {
+		for (const el of html.querySelectorAll(`select[name|='system.spellcasting.progression']`)) {
 			const root = el.parentNode.parentNode;
 			const selectedValue = app.item.system.spellcasting.superiorityProgression;
 			const div = document.createElement("div");
@@ -190,7 +190,7 @@ function patchItemSheet() {
 			div2.appendChild(select);
 			div.appendChild(div2);
 			root.nextElementSibling.insertAdjacentElement("afterend", div);
-		});
+		}
 	});
 }
 
