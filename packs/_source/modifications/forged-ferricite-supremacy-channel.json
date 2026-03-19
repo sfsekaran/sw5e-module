@@ -1,7 +1,7 @@
 {
   "_id": "U8E5aXWtfyP53xQk",
   "name": "Forged Ferricite Supremacy Channel",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

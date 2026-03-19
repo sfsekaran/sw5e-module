@@ -1,7 +1,7 @@
 {
   "_id": "G5Bp8ZoQK2f69ff6",
   "name": "Increasing Cycler (Adept)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

@@ -1,7 +1,7 @@
 {
   "_id": "c1myEoXykDEhDFaC",
   "name": "Fading Cycler (Fighting)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

@@ -1,7 +1,7 @@
 {
   "_id": "MjLQ1Q6cXz6pame7",
   "name": "Expanding Conductor (Champion)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

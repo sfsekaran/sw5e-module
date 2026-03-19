@@ -1,7 +1,7 @@
 {
   "_id": "L89cdAtB889SvYkO",
   "name": "Damind Crystal (Regular)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/LightweaponMod.webp",
   "effects": [],
   "folder": null,

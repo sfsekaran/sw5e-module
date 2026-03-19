@@ -1,7 +1,7 @@
 {
   "_id": "13pR3dpt0jA8pMwj",
   "name": "Absorbing Conductor (Apprentice)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

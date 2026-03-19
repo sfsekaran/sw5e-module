@@ -1,7 +1,7 @@
 {
   "_id": "QYeUOHIwx6j02CRt",
   "name": "Recoil Dampener",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/BlasterMod.webp",
   "effects": [],
   "folder": null,

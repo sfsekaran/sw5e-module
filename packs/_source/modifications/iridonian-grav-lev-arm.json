@@ -7,7 +7,7 @@
       "uid": "EnhancedItem.name-iridonian_grav_lev_arm.subtype-replacement"
     }
   },
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/CyberneticMod.webp",
   "effects": [],
   "system": {

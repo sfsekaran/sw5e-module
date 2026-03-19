@@ -1,7 +1,7 @@
 {
   "_id": "zyh9Bc2rVRw4qtJR",
   "name": "Ace Pilot's Pattern (Basic)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

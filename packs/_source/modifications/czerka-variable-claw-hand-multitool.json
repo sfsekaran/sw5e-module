@@ -7,7 +7,7 @@
       "uid": "EnhancedItem.name-czerka_variable_claw_hand_multitool.subtype-replacement"
     }
   },
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/CyberneticMod.webp",
   "effects": [],
   "system": {

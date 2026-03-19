@@ -1,7 +1,7 @@
 {
   "_id": "fLniRU43shQ94e0j",
   "name": "Fading Motherboard (Ascendancy)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/WristpadMod.webp",
   "effects": [],
   "folder": null,

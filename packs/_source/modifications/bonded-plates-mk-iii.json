@@ -1,7 +1,7 @@
 {
   "_id": "ASFvAZu5s9VcG2f4",
   "name": "Bonded Plates Mk III",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ArmorMod.webp",
   "effects": [],
   "folder": null,

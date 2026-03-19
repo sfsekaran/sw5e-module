@@ -1,7 +1,7 @@
 {
   "_id": "6PeZpC8gAjkYthBF",
   "name": "Crossguard Hilt (Champion)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/LightweaponMod.webp",
   "effects": [],
   "folder": null,

@@ -1,7 +1,7 @@
 {
   "_id": "Cyhwp3snI1nFleCf",
   "name": "Mighty Core",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/BlasterMod.webp",
   "effects": [],
   "folder": null,

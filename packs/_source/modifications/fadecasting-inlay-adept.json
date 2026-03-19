@@ -1,7 +1,7 @@
 {
   "_id": "ZYYNI1pLcdnH1w8j",
   "name": "Fadecasting Inlay (Adept)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

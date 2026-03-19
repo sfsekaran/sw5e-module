@@ -1,7 +1,7 @@
 {
   "_id": "A2DTu8c4xppG9qsz",
   "name": "Fadecasting Crystal (Dueling)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/LightweaponMod.webp",
   "effects": [],
   "folder": null,

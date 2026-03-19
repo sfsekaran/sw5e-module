@@ -1,7 +1,7 @@
 {
   "_id": "R8hAeZVK25mKHBH0",
   "name": "Spiked Shielding Mk III",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ArmorMod.webp",
   "effects": [],
   "folder": null,

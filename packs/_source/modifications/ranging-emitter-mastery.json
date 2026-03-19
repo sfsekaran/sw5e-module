@@ -1,7 +1,7 @@
 {
   "_id": "vdQTIKV7OM5tC6V5",
   "name": "Ranging Emitter (Mastery)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

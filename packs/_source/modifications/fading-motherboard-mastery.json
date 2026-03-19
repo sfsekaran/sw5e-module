@@ -1,7 +1,7 @@
 {
   "_id": "ZawhsvD5sLnG2l2D",
   "name": "Fading Motherboard (Mastery)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/WristpadMod.webp",
   "effects": [],
   "folder": null,

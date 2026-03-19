@@ -1,7 +1,7 @@
 {
   "_id": "AN1RHG8K2D2VItvu",
   "name": "Enlarging Channel (Flawed)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

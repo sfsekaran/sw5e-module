@@ -1,7 +1,7 @@
 {
   "_id": "g7qTcVQenEiJP1Ld",
   "name": "Oscillating Amplifier Mk III",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

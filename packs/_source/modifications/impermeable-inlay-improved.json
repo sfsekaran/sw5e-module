@@ -7,7 +7,7 @@
       "uid": "EnhancedItem.name-impermeable_inlay_improved.subtype-clothing"
     }
   },
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "system": {

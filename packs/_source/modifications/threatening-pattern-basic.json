@@ -1,7 +1,7 @@
 {
   "_id": "TIWbDu1J2cOu6Ak1",
   "name": "Threatening Pattern (Basic)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

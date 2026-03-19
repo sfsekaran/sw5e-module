@@ -1,7 +1,7 @@
 {
   "_id": "Sz0HaK8CESBil5nV",
   "name": "Oscillating Rangefinder Mk III",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

@@ -1,7 +1,7 @@
 {
   "_id": "TOpGolINtmekT7Lz",
   "name": "Withercasting Guard (Novice)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

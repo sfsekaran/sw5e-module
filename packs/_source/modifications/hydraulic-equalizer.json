@@ -1,7 +1,7 @@
 {
   "_id": "8Y6PmvjSTzjCxiuw",
   "name": "Hydraulic Equalizer",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ArmorMod.webp",
   "effects": [],
   "folder": null,

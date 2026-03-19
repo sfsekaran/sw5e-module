@@ -1,7 +1,7 @@
 {
   "_id": "Cru9vVwdgMXmAoRK",
   "name": "Flashlight Attachment",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/BlasterMod.webp",
   "effects": [],
   "folder": null,

@@ -1,7 +1,7 @@
 {
   "_id": "yCp4wu005NI5BjwO",
   "name": "Animal Handler's Pattern (Fine)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

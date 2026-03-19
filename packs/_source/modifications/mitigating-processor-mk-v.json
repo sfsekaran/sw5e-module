@@ -1,7 +1,7 @@
 {
   "_id": "93Z2p03vusQ1HnKI",
   "name": "Mitigating Processor Mk V",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/WristpadMod.webp",
   "effects": [],
   "folder": null,

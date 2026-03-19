@@ -1,7 +1,7 @@
 {
   "_id": "KNkqF3zHr8h9QFTR",
   "name": "Neutronium Edge (Minor)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

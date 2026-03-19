@@ -1,7 +1,7 @@
 {
   "_id": "djku9FgexP7mhB9F",
   "name": "Naturalist's Pattern (Basic)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

@@ -1,7 +1,7 @@
 {
   "_id": "JxPhTclXk4Acda6Q",
   "name": "Keen Core",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/BlasterMod.webp",
   "effects": [],
   "folder": null,

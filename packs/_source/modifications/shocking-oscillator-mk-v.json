@@ -1,7 +1,7 @@
 {
   "_id": "NQvyQkbYX8fYic1y",
   "name": "Shocking Oscillator Mk V",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

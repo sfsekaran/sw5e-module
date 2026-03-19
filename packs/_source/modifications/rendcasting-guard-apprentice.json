@@ -1,7 +1,7 @@
 {
   "_id": "gRuLV20MYyanFM4w",
   "name": "Rendcasting Guard (Apprentice)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

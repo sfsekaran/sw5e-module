@@ -1,7 +1,7 @@
 {
   "_id": "Chgi5KaXzkUuwDjZ",
   "name": "Precision Chamber Mk I",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/BlasterMod.webp",
   "effects": [],
   "folder": null,

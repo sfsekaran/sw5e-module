@@ -1,7 +1,7 @@
 {
   "_id": "UU24zon2lZB1Guis",
   "name": "Enlarging Processor (Leading)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/WristpadMod.webp",
   "effects": [],
   "folder": null,

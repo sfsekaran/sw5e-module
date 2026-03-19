@@ -1,7 +1,7 @@
 {
   "_id": "rqJVBJJkCk7Kk1yn",
   "name": "Rendcasting Inlay (Journeyman)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

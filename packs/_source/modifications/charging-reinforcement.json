@@ -1,7 +1,7 @@
 {
   "_id": "ImN3jBG0gtPeyNe9",
   "name": "Charging Reinforcement",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ArmorMod.webp",
   "effects": [],
   "folder": null,

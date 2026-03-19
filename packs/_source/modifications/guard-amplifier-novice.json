@@ -1,7 +1,7 @@
 {
   "_id": "8zWHdIQaI3GFV2Rt",
   "name": "Guard Amplifier (Novice)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

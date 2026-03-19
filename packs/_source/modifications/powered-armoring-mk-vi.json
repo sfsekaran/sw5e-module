@@ -1,7 +1,7 @@
 {
   "_id": "LfUj7MrBytv2EO2X",
   "name": "Powered Armoring Mk VI",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ArmorMod.webp",
   "effects": [],
   "folder": null,

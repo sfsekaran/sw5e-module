@@ -1,7 +1,7 @@
 {
   "_id": "k9BCfM3r2YkS9a1L",
   "name": "Impermeable Armoring",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ArmorMod.webp",
   "effects": [],
   "folder": null,

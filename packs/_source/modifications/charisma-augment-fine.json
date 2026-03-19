@@ -1,7 +1,7 @@
 {
   "_id": "D0WD7P78uQrmB6CH",
   "name": "Charisma Augment (Fine)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/Augment.webp",
   "effects": [],
   "folder": null,

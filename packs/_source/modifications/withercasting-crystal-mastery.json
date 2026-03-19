@@ -1,7 +1,7 @@
 {
   "_id": "iqnACtSvCt9i8DQ7",
   "name": "Withercasting Crystal (Mastery)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/LightweaponMod.webp",
   "effects": [],
   "folder": null,

@@ -1,7 +1,7 @@
 {
   "_id": "KyeXPnGRd1gc6Vbu",
   "name": "Mitigating Channel (Journeyman)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

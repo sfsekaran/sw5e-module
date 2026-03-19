@@ -1,7 +1,7 @@
 {
   "_id": "noN6L7oVtmCPiINZ",
   "name": "Repelling Motherboard (Excellent)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/WristpadMod.webp",
   "effects": [],
   "folder": null,

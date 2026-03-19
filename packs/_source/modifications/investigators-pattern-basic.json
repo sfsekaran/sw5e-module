@@ -1,7 +1,7 @@
 {
   "_id": "3NNbFp8Sp4PeXhLM",
   "name": "Investigator's Pattern (Basic)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

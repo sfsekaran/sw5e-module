@@ -1,7 +1,7 @@
 {
   "_id": "vOWeD09JaiSA6Zyt",
   "name": "Fadecasting Core (Fighting)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/BlasterMod.webp",
   "effects": [],
   "folder": null,

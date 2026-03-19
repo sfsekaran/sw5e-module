@@ -1,7 +1,7 @@
 {
   "_id": "VhnD21nIWcRDdH6o",
   "name": "Stealthy Pattern (Choice)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

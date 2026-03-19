@@ -1,7 +1,7 @@
 {
   "_id": "sAbRT8Fb8Rv0z9h7",
   "name": "Rending Conductor (Mastery)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

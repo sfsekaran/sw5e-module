@@ -1,7 +1,7 @@
 {
   "_id": "xZFW2MyscvQNAYFF",
   "name": "Expanding Conductor (Superior)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

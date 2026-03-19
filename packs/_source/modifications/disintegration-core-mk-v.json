@@ -1,7 +1,7 @@
 {
   "_id": "21nqQfKk5DfYa0ym",
   "name": "Disintegration Core Mk V",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/BlasterMod.webp",
   "effects": [],
   "folder": null,

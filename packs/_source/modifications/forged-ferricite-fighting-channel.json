@@ -1,7 +1,7 @@
 {
   "_id": "nmt0tA5veP3D5VKU",
   "name": "Forged Ferricite Fighting Channel",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

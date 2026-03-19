@@ -1,7 +1,7 @@
 {
   "_id": "yqCVcKUqeF0pyrEc",
   "name": "Vicious Mastery Core",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/BlasterMod.webp",
   "effects": [],
   "folder": null,

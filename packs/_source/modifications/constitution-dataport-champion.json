@@ -1,7 +1,7 @@
 {
   "_id": "UIoo2yb5ZQua1TH6",
   "name": "Constitution Dataport (Champion)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/WristpadMod.webp",
   "effects": [],
   "folder": null,

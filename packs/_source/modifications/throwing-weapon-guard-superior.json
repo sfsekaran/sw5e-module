@@ -1,7 +1,7 @@
 {
   "_id": "r25yecWifVz9UaYG",
   "name": "Throwing Weapon Guard (Superior)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

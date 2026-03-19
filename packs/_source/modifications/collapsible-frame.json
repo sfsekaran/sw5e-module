@@ -1,7 +1,7 @@
 {
   "_id": "bEyQm7fyxIeAuT1o",
   "name": "Collapsible Frame",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

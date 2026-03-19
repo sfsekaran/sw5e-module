@@ -1,7 +1,7 @@
 {
   "_id": "EqvRXmiWhBkIglvy",
   "name": "Inlay Amplifier (Apprentice)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

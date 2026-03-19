@@ -1,7 +1,7 @@
 {
   "_id": "AsVqtQRl9EXEt99N",
   "name": "Withercasting Channel (Dueling)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

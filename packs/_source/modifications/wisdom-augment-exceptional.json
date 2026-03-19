@@ -1,7 +1,7 @@
 {
   "_id": "O2Ws9RTy03H6Bsub",
   "name": "Wisdom Augment (Exceptional)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/Augment.webp",
   "effects": [],
   "folder": null,

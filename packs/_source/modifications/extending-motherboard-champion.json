@@ -1,7 +1,7 @@
 {
   "_id": "XYlbjn3l1xmrW1TY",
   "name": "Extending Motherboard (Champion)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/WristpadMod.webp",
   "effects": [],
   "folder": null,

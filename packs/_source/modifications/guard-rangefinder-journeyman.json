@@ -1,7 +1,7 @@
 {
   "_id": "exxZLa9oTdVZCD8R",
   "name": "Guard Rangefinder (Journeyman)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

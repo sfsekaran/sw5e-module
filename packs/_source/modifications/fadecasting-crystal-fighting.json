@@ -1,7 +1,7 @@
 {
   "_id": "TcUnZq5EwiQL4wKi",
   "name": "Fadecasting Crystal (Fighting)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/LightweaponMod.webp",
   "effects": [],
   "folder": null,

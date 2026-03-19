@@ -1,7 +1,7 @@
 {
   "_id": "I2m6sfWr9xo22LlJ",
   "name": "Ossus Mastery Lens",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/LightweaponMod.webp",
   "effects": [],
   "folder": null,

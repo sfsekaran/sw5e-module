@@ -1,7 +1,7 @@
 {
   "_id": "SNtWLC5iM5F8KJBD",
   "name": "Surging Processor Mk I",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/WristpadMod.webp",
   "effects": [],
   "folder": null,

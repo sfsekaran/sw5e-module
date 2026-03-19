@@ -1,7 +1,7 @@
 {
   "_id": "0LkH5J9Wwg5cA535",
   "name": "Nagai Edge (Basic)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

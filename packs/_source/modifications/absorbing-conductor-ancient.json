@@ -1,7 +1,7 @@
 {
   "_id": "HjRMCNb3kfWDvkLg",
   "name": "Absorbing Conductor (Ancient)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

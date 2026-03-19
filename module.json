@@ -28,14 +28,14 @@
       }
     ],
     "requires": [
-        {
-            "id": "lib-wrapper",
-            "type": "module",
-            "compatibility": {
-                "minimum": "1.0.0.0",
-                "verified": "1.13.2.0"
-            }
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "compatibility": {
+          "minimum": "1.0.0.0",
+          "verified": "1.13.2.0"
         }
+      }
     ]
   },
   "esmodules": [
@@ -63,7 +63,8 @@
       },
       "deployment": {},
       "starshipmod": {},
-      "starshipsize": {}
+      "starshipsize": {},
+      "modification": {}
     }
   },
   "packs": [
@@ -76,7 +77,13 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["equipment", "consumable", "tool", "loot", "container"]
+          "types": [
+            "equipment",
+            "consumable",
+            "tool",
+            "loot",
+            "container"
+          ]
         }
       }
     },
@@ -89,7 +96,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["consumable"]
+          "types": [
+            "consumable"
+          ]
         }
       }
     },
@@ -102,7 +111,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -115,7 +126,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["subclass"]
+          "types": [
+            "subclass"
+          ]
         }
       }
     },
@@ -128,7 +141,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["equipment"]
+          "types": [
+            "equipment"
+          ]
         }
       }
     },
@@ -150,7 +165,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["background"]
+          "types": [
+            "background"
+          ]
         }
       }
     },
@@ -163,7 +180,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["weapon"]
+          "types": [
+            "weapon"
+          ]
         }
       }
     },
@@ -176,7 +195,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["class"]
+          "types": [
+            "class"
+          ]
         }
       }
     },
@@ -189,7 +210,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -211,7 +234,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["consumable"]
+          "types": [
+            "consumable"
+          ]
         }
       }
     },
@@ -224,7 +249,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -237,7 +264,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["deployment"]
+          "types": [
+            "deployment"
+          ]
         }
       }
     },
@@ -250,7 +279,13 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["weapon", "equipment", "consumable", "loot", "container"]
+          "types": [
+            "weapon",
+            "equipment",
+            "consumable",
+            "loot",
+            "container"
+          ]
         }
       }
     },
@@ -263,7 +298,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["consumable"]
+          "types": [
+            "consumable"
+          ]
         }
       }
     },
@@ -276,7 +313,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -289,7 +328,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -302,7 +343,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -315,7 +358,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["npc"]
+          "types": [
+            "npc"
+          ]
         }
       }
     },
@@ -328,7 +373,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["spell"]
+          "types": [
+            "spell"
+          ]
         }
       }
     },
@@ -341,7 +388,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["tool"]
+          "types": [
+            "tool"
+          ]
         }
       }
     },
@@ -354,7 +403,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["tool"]
+          "types": [
+            "tool"
+          ]
         }
       }
     },
@@ -367,7 +418,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -380,7 +433,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["tool"]
+          "types": [
+            "tool"
+          ]
         }
       }
     },
@@ -393,7 +448,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -406,7 +463,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["weapon"]
+          "types": [
+            "weapon"
+          ]
         }
       }
     },
@@ -419,7 +478,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["sw5e.maneuver"]
+          "types": [
+            "sw5e.maneuver"
+          ]
         }
       }
     },
@@ -432,7 +493,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["npc"]
+          "types": [
+            "npc"
+          ]
         }
       }
     },
@@ -445,7 +508,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -458,7 +523,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["npc"]
+          "types": [
+            "npc"
+          ]
         }
       }
     },
@@ -471,7 +538,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["loot"]
+          "types": [
+            "loot"
+          ]
         }
       }
     },
@@ -484,7 +553,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["tool"]
+          "types": [
+            "tool"
+          ]
         }
       }
     },
@@ -497,7 +568,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["race"]
+          "types": [
+            "race"
+          ]
         }
       }
     },
@@ -510,7 +583,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -523,7 +598,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["sw5e.starship"]
+          "types": [
+            "sw5e.starship"
+          ]
         }
       }
     },
@@ -536,7 +613,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -549,7 +628,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["equipment"]
+          "types": [
+            "equipment"
+          ]
         }
       }
     },
@@ -562,7 +643,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["equipment"]
+          "types": [
+            "equipment"
+          ]
         }
       }
     },
@@ -575,7 +658,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -588,7 +673,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["sw5e.starshipmod"]
+          "types": [
+            "sw5e.starshipmod"
+          ]
         }
       }
     },
@@ -601,7 +688,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["sw5e.starshipsize"]
+          "types": [
+            "sw5e.starshipsize"
+          ]
         }
       }
     },
@@ -614,7 +703,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["weapon"]
+          "types": [
+            "weapon"
+          ]
         }
       }
     },
@@ -636,7 +727,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["spell"]
+          "types": [
+            "spell"
+          ]
         }
       }
     },
@@ -649,7 +742,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["feat"]
+          "types": [
+            "feat"
+          ]
         }
       }
     },
@@ -662,7 +757,9 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["weapon"]
+          "types": [
+            "weapon"
+          ]
         }
       }
     },

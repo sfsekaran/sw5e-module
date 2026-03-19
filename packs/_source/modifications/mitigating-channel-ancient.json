@@ -1,7 +1,7 @@
 {
   "_id": "BBhOAsXAmdh7fk7h",
   "name": "Mitigating Channel (Ancient)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

@@ -1,7 +1,7 @@
 {
   "_id": "aHgpVtT98nDIfAzJ",
   "name": "Techie's Pattern (Exquisite)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

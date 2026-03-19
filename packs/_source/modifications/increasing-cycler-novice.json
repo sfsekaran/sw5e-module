@@ -1,7 +1,7 @@
 {
   "_id": "DP7386LlqZ2pPGfS",
   "name": "Increasing Cycler (Novice)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

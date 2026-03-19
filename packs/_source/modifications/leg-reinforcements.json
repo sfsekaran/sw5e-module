@@ -7,7 +7,7 @@
       "uid": "EnhancedItem.name-leg_reinforcements.subtype-part"
     }
   },
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
   "effects": [],
   "system": {

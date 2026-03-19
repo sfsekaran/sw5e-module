@@ -1,7 +1,7 @@
 {
   "_id": "0qBYPFzV5SV0w3I1",
   "name": "Engineer Defensive Augment",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/Augment.webp",
   "effects": [],
   "folder": null,

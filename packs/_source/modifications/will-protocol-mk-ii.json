@@ -7,7 +7,7 @@
       "uid": "EnhancedItem.name-will_protocol_mk_ii.subtype-protocol"
     }
   },
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
   "effects": [],
   "system": {

@@ -1,7 +1,7 @@
 {
   "_id": "y0W15IX0xDqeU51v",
   "name": "Fading Cycler (Ascendancy)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

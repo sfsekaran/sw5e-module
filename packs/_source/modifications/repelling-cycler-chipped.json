@@ -1,7 +1,7 @@
 {
   "_id": "Z43OgH83t715z8KM",
   "name": "Repelling Cycler (Chipped)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

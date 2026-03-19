@@ -1,7 +1,7 @@
 {
   "_id": "o2tAR1lJ3KhyHTTl",
   "name": "Overlay Amplifier (Novice)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ArmorMod.webp",
   "effects": [],
   "folder": null,

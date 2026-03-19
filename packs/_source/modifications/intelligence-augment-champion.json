@@ -1,7 +1,7 @@
 {
   "_id": "ksIwRKQWFZBdiImO",
   "name": "Intelligence Augment (Champion)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/Augment.webp",
   "effects": [],
   "folder": null,

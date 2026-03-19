@@ -1,7 +1,7 @@
 {
   "_id": "hjq2MtWg2nL5EI46",
   "name": "Disintegration Core Mk III",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/BlasterMod.webp",
   "effects": [],
   "folder": null,

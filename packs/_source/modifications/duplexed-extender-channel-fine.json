@@ -1,7 +1,7 @@
 {
   "_id": "knxsKdshU2cyHrVP",
   "name": "Duplexed Extender Channel (Fine)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

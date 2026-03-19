@@ -1,7 +1,7 @@
 {
   "_id": "3JPZX3G1HtFAf0qM",
   "name": "Powered Armoring Mk IV",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ArmorMod.webp",
   "effects": [],
   "folder": null,

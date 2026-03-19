@@ -1,7 +1,7 @@
 {
   "_id": "fpjlZStN9E5t1xio",
   "name": "Duplexed Extender Channel",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

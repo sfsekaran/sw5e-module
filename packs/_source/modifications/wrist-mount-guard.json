@@ -1,7 +1,7 @@
 {
   "_id": "iZlCNrBQ6waxsaKX",
   "name": "Wrist Mount Guard",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

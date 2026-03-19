@@ -1,7 +1,7 @@
 {
   "_id": "xeLWvAX7E5rg7eEB",
   "name": "Corruption Crystal (Master)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/LightweaponMod.webp",
   "effects": [],
   "folder": null,

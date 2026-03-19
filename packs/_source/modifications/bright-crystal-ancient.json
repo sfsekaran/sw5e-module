@@ -1,7 +1,7 @@
 {
   "_id": "hqnhlXCdT6npyO34",
   "name": "Bright Crystal (Ancient)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/LightweaponMod.webp",
   "effects": [],
   "folder": null,

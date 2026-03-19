@@ -1,7 +1,7 @@
 {
   "_id": "PKMMFlSrPn7U1Pth",
   "name": "Magnetized Shield (Champion)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ArmorMod.webp",
   "effects": [],
   "folder": null,

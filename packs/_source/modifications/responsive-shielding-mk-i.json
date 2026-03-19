@@ -1,7 +1,7 @@
 {
   "_id": "9upr7aglu6OhgxGy",
   "name": "Responsive Shielding Mk I",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ArmorMod.webp",
   "effects": [],
   "folder": null,

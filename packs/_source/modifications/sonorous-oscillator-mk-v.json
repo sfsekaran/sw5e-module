@@ -1,7 +1,7 @@
 {
   "_id": "s7bFhpOTYFeStwLV",
   "name": "Sonorous Oscillator Mk V",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

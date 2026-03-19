@@ -1,7 +1,7 @@
 {
   "_id": "7H1BuK7qPubMQaUp",
   "name": "Ostrine Splitter Mk III",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/BlasterMod.webp",
   "effects": [],
   "folder": null,

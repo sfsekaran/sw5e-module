@@ -1,7 +1,7 @@
 {
   "_id": "7HSrj8wIN8sMq6Si",
   "name": "Constitution Augment (Improved)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/Augment.webp",
   "effects": [],
   "folder": null,

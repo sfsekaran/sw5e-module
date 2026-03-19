@@ -1,7 +1,7 @@
 {
   "_id": "hQkTKV38UPJV4RXB",
   "name": "Withercasting Inlay (Journeyman)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

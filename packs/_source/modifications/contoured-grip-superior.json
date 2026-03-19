@@ -1,7 +1,7 @@
 {
   "_id": "v1i4r3s3ztmfru2v",
   "name": "Contoured Grip (Superior)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

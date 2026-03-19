@@ -1,7 +1,7 @@
 {
   "_id": "EdxTYYSTio8ytnX6",
   "name": "Helisaber Attachment",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/LightweaponMod.webp",
   "effects": [],
   "folder": null,

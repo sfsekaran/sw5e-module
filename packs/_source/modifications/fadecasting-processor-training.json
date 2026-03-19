@@ -1,7 +1,7 @@
 {
   "_id": "aYdwzCebr2u9zHN5",
   "name": "Fadecasting Processor (Training)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/WristpadMod.webp",
   "effects": [],
   "folder": null,

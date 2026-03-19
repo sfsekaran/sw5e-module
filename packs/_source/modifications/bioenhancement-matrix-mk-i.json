@@ -1,7 +1,7 @@
 {
   "_id": "QqeqouvqwV7pQE9Y",
   "name": "Bioenhancement Matrix Mk I",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ArmorMod.webp",
   "effects": [],
   "folder": null,

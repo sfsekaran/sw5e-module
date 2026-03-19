@@ -1,7 +1,7 @@
 {
   "_id": "kP5P3r4WWHJJyw6N",
   "name": "Maser Core",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/BlasterMod.webp",
   "effects": [],
   "folder": null,

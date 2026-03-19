@@ -1,7 +1,7 @@
 {
   "_id": "OIiSjcQRprNynapM",
   "name": "Biting Crystal (Adept)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/LightweaponMod.webp",
   "effects": [],
   "folder": null,

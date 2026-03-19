@@ -1,7 +1,7 @@
 {
   "_id": "Eew0zTwAsgK8q8rK",
   "name": "Absorbing Conductor (Adept)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/FocusgeneratorMod.webp",
   "effects": [],
   "folder": null,

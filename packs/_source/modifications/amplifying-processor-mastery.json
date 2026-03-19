@@ -1,7 +1,7 @@
 {
   "_id": "SCT1cx4jlDTImvUR",
   "name": "Amplifying Processor (Mastery)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/WristpadMod.webp",
   "effects": [],
   "folder": null,

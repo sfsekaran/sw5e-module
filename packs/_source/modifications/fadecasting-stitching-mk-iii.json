@@ -1,7 +1,7 @@
 {
   "_id": "aaGu2eoDgLCNQjQ8",
   "name": "Fadecasting Stitching Mk III",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

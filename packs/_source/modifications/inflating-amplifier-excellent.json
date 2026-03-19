@@ -1,7 +1,7 @@
 {
   "_id": "Ej27x41ye0cDRxcJ",
   "name": "Inflating Amplifier (Excellent)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/WristpadMod.webp",
   "effects": [],
   "folder": null,

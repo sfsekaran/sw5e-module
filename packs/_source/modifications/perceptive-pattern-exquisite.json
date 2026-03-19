@@ -1,7 +1,7 @@
 {
   "_id": "l8vJP38XztdQhF6Y",
   "name": "Perceptive Pattern (Exquisite)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/ClothingMod.webp",
   "effects": [],
   "folder": null,

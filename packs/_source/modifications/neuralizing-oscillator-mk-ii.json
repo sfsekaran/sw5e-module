@@ -1,7 +1,7 @@
 {
   "_id": "8tMjDrUtX5bmlP85",
   "name": "Neuralizing Oscillator Mk II",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,

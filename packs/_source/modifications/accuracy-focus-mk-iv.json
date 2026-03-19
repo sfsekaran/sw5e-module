@@ -1,7 +1,7 @@
 {
   "_id": "AN0AWUd2VABeWAe7",
   "name": "Accuracy Focus Mk IV",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/BlasterMod.webp",
   "effects": [],
   "folder": null,

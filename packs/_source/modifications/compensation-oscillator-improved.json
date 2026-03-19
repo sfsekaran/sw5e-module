@@ -1,7 +1,7 @@
 {
   "_id": "5ORB5PC5I8EiTLRA",
   "name": "Compensation Oscillator (Improved)",
-  "type": "modification",
+  "type": "sw5e.modification",
   "img": "modules/sw5e/icons/packs/Modifications/VibroweaponMod.webp",
   "effects": [],
   "folder": null,
