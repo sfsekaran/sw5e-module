@@ -115,10 +115,14 @@ export default class ManeuverData extends ItemDataModel.mixin(ItemDescriptionTem
 
 	/** @inheritDoc */
 	prepareDerivedData() {
-		ActivitiesTemplate._applyActivityShims.call(this);
-		this._applyManeuverShims();
-		super.prepareDerivedData();
-		this.prepareDescriptionData();
+		try {
+			ActivitiesTemplate._applyActivityShims.call(this);
+			this._applyManeuverShims();
+			super.prepareDerivedData();
+			this.prepareDescriptionData();
+		} finally {
+			if ( this.source && this.source.label === undefined ) this.source.label = "";
+		}
 
 		this.duration.concentration = this.properties.has("concentration");
 
