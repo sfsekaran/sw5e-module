@@ -291,6 +291,7 @@ function patchPowerbooks() {
 				id: "powerCasting",
 				slot: key,
 				items: [],
+				columns: ["school", "time", "range", "target", "roll", { id: "uses", order: 650, priority: 300 }, { id: "formula", priority: 200 }, "controls"],
 				dataset: { level: i, method: "powerCasting", type: "spell" },
 			};
 		};
@@ -439,7 +440,7 @@ function showPowercastingBar() {
 							<span>${pointsLabel}</span>
 					` + (app.editable ? `
 							<a class="config-button" data-action="hitPoints" data-tooltip="DND5E.HitPointsConfig"
-							   aria-label="{{ localize "DND5E.HitPointsConfig" }}">
+							   aria-label="${game.i18n.localize("DND5E.HitPointsConfig")}">
 								<i class="fas fa-cog"></i>
 							</a>
 					` : '') + `
@@ -463,7 +464,7 @@ function showPowercastingBar() {
 							</div>
 							<div class="tmp">
 								<input type="text" name="system.powercasting.${castType}.points.temp" data-dtype="Number"
-									   placeholder="{{ localize "DND5E.TMP" }}" value="${temp}">
+									   placeholder="${game.i18n.localize("DND5E.TMP")}" value="${temp}">
 							</div>
 						</div>
 					</div>

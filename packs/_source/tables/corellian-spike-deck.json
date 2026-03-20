@@ -400,7 +400,7 @@
       "flags": {},
       "type": "text",
       "text": "5 of Triangles (green)",
-      "img": "modules/sw5e/icons/packs/Sabacc/6oT-green.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/5oT-green.webp",
       "weight": 1,
       "range": [
         27,
@@ -925,7 +925,7 @@
       "flags": {},
       "type": "text",
       "text": "10 of Triangles (red)",
-      "img": "modules/sw5e/icons/packs/Sabacc/9oT-red.webp",
+      "img": "modules/sw5e/icons/packs/Sabacc/10oT-red.webp",
       "weight": 1,
       "range": [
         64,

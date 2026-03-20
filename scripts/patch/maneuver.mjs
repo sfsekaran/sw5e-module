@@ -222,6 +222,7 @@ function patchPowerbooks() {
 				id: "maneuver",
 				slot: key,
 				items: [],
+				columns: ["time", "range", "target", "roll", { id: "uses", order: 650, priority: 300 }, "controls"],
 				dataset: { type: "maneuver", ...dataset },
 			};
 			return section;
