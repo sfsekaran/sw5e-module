@@ -26,6 +26,21 @@ function normalizeActivityEntry(activity, fallbackId) {
 	return activity
 }
 
+function normalizeActivitiesToObject(activities) {
+	const normalized = {}
+	let index = 0
+
+	for ( const [candidateId, activity] of activities ) {
+		index += 1
+		const fallbackId = candidateId || `legacy-activity-${index}`
+		const entry = normalizeActivityEntry(activity, fallbackId)
+		if ( !entry ) continue
+		normalized[entry._id ?? fallbackId] = entry
+	}
+
+	return normalized
+}
+
 function normalizeSystemStats(data, { targetSystemVersion=TARGET_DND5E_VERSION }={}) {
 	if ( !isObjectLike(data?._stats) ) return false
 	let changed = false
@@ -47,25 +62,19 @@ export function normalizeLegacyItemActivities(item) {
 	if ( activities === undefined ) return false
 
 	if ( Array.isArray(activities) ) {
-		let changed = false
-		item.system.activities = activities
-			.map((activity, index) => {
-				const hadId = activity?._id
-				const normalized = normalizeActivityEntry(activity, `legacy-activity-${index + 1}`)
-				if ( normalized && (!hadId || normalized !== activity) ) changed = true
-				if ( !normalized && activity ) changed = true
-				return normalized
-			})
-			.filter(activity => activity)
-		return changed
+		const normalized = normalizeActivitiesToObject(
+			activities.map((activity, index) => [activity?._id ?? `legacy-activity-${index + 1}`, activity])
+		)
+		item.system.activities = normalized
+		return true
 	}
 
 	if ( !isObjectLike(activities) ) return false
 
-	item.system.activities = Object.entries(activities)
-		.map(([id, activity], index) => normalizeActivityEntry(activity, id || `legacy-activity-${index + 1}`))
-		.filter(activity => activity)
-	return true
+	const normalized = normalizeActivitiesToObject(Object.entries(activities))
+	const changed = JSON.stringify(activities) !== JSON.stringify(normalized)
+	item.system.activities = normalized
+	return changed
 }
 
 function normalizeScaleValue(scaleValue, scaleType) {

@@ -58,27 +58,6 @@
         {{/each}}
       </div>
     </section>
-
-    <section class="sw5e-starship-panel">
-      <header>
-        <h3>Starship Skills</h3>
-        <span>{{skills.length}} listed</span>
-      </header>
-      <div class="sw5e-starship-skills">
-        {{#each skills as |skill|}}
-        <article class="sw5e-starship-skill">
-          <div>
-            <strong>{{skill.label}}</strong>
-            <span>{{skill.abilityLabel}}</span>
-          </div>
-          <div class="skill-meta">
-            <span>Prof {{skill.proficiency}}</span>
-            <strong>{{numberFormat skill.total sign=true}}</strong>
-          </div>
-        </article>
-        {{/each}}
-      </div>
-    </section>
   </div>
 
   <div class="sw5e-starship-layout sw5e-starship-layout-crew">

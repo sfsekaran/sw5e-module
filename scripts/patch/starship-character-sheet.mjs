@@ -114,6 +114,62 @@ function formatPowerAllocations(power = {}) {
 		.filter(entry => entry.value || entry.key === "central");
 }
 
+function buildNativeStarshipSourceSkills(actor) {
+	const flagSkills = getStarshipCharacterFlag(actor)?.skills ?? {};
+	const configSkills = CONFIG.DND5E.starshipSkills ?? {};
+	const sourceSkills = {};
+
+	for (const [key, config] of Object.entries(configSkills)) {
+		const source = flagSkills[key] ?? {};
+		sourceSkills[key] = {
+			ability: source.ability ?? config.ability ?? "int",
+			value: Number(source.value ?? 0),
+			bonuses: {
+				check: source.bonuses?.check ?? "",
+				passive: source.bonuses?.passive ?? ""
+			}
+		};
+	}
+
+	return sourceSkills;
+}
+
+function buildNativeStarshipSkills(actor) {
+	const existingSkills = actor.system?.skills ?? {};
+	const skills = {};
+
+	for (const skill of buildStarshipSkillEntries(actor)) {
+		const existing = existingSkills[skill.key] ?? {};
+		const total = Number(skill.total ?? 0);
+		const value = Number(skill.proficiency ?? 0);
+		skills[skill.key] = {
+			...existing,
+			ability: skill.ability,
+			value,
+			baseValue: value,
+			mod: total,
+			passive: 10 + total,
+			total,
+			bonuses: {
+				check: existing.bonuses?.check ?? "",
+				passive: existing.bonuses?.passive ?? ""
+			}
+		};
+	}
+
+	return skills;
+}
+
+function applyStarshipSkillContext(context, actor) {
+	context.config ??= {};
+	context.system ??= {};
+	context.source ??= {};
+	context.system.skills = buildNativeStarshipSkills(actor);
+	context.source.skills = buildNativeStarshipSourceSkills(actor);
+	context.config.skills = foundry.utils.deepClone(CONFIG.DND5E.starshipSkills ?? {});
+	return context;
+}
+
 function buildGroupEntries(actor) {
 	const groups = buildStarshipItemGroups(actor);
 	return [
@@ -197,7 +253,6 @@ function buildTemplateContext(actor) {
 		},
 		source,
 		crew,
-		skills: buildStarshipSkillEntries(actor),
 		itemGroups: buildGroupEntries(actor)
 	};
 }
@@ -341,6 +396,21 @@ export function patchStarshipCharacterSheet() {
 				height: 980
 			}
 		});
+
+		async _prepareDetailsContext(context, options) {
+			if ( isStarshipCharacterActor(this.actor) ) {
+				context = applyStarshipSkillContext(context, this.actor);
+			}
+
+			context = await super._prepareDetailsContext(context, options);
+			if ( !isStarshipCharacterActor(this.actor) ) return context;
+
+			for (const [key, entry] of Object.entries(context.skills ?? {})) {
+				entry.reference = CONFIG.DND5E.starshipSkills?.[key]?.reference ?? null;
+			}
+
+			return context;
+		}
 
 		_prepareSkillsTools(context, property) {
 			if ( (property !== "skills") || !isStarshipCharacterActor(this.actor) ) {

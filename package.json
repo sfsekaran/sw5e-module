@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "npm run build:db",
+    "build": "npm run lint && npm run build:db",
+    "lint": "node ./utils/lint-types.mjs",
     "build:clean": "node ./utils/packs.mjs package clean",
     "build:db": "node ./utils/packs.mjs package pack",
     "build:json": "node ./utils/packs.mjs package unpack",

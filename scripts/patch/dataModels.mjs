@@ -349,6 +349,28 @@ function prepareStarshipCharacterRuntime(wrapped, ...args) {
 	this.attributes.mods = runtime.attributes.mods;
 	this.attributes.workforce = runtime.attributes.workforce;
 	this.attributes.equip = runtime.attributes.equip;
+	const existingSkills = this.skills ?? {};
+	for (const key of Object.keys(existingSkills)) {
+		delete existingSkills[key];
+	}
+	for (const skill of buildStarshipSkillEntries(this.parent)) {
+		const existing = existingSkills[skill.key] ?? {};
+		const total = Number(skill.total ?? 0);
+		const value = Number(skill.proficiency ?? 0);
+		existingSkills[skill.key] = {
+			...existing,
+			ability: skill.ability,
+			value,
+			baseValue: value,
+			mod: total,
+			passive: 10 + total,
+			total,
+			bonuses: {
+				check: existing.bonuses?.check ?? "",
+				passive: existing.bonuses?.passive ?? ""
+			}
+		};
+	}
 	return result;
 }
 function changeProficiency(result, type) {
