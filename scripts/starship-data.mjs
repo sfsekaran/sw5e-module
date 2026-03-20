@@ -444,28 +444,129 @@ function getStarshipAdvantageMode(event) {
 	return normal;
 }
 
+function isStarshipFastForward(event) {
+	return Boolean(event?.shiftKey || event?.altKey || event?.ctrlKey || event?.metaKey);
+}
+
+function buildStarshipRollAbilities(actor) {
+	const legacyAbilities = getLegacyStarshipActorSystem(actor).abilities ?? {};
+	const configuredAbilities = CONFIG?.DND5E?.abilities ?? CONFIG?.SW5E?.abilities ?? {};
+	const currentAbilities = actor?.system?.abilities ?? {};
+
+	return Object.keys(configuredAbilities).reduce((abilities, key) => {
+		const currentAbility = currentAbilities[key] ?? {};
+		const legacyAbility = legacyAbilities[key] ?? {};
+		const value = toFiniteNumber(currentAbility?.value, toFiniteNumber(legacyAbility?.value, 10)) ?? 10;
+		const mod = toFiniteNumber(currentAbility?.mod, Math.floor((value - 10) / 2)) ?? 0;
+		abilities[key] = {
+			mod,
+			bonuses: {
+				check: currentAbility?.bonuses?.check ?? legacyAbility?.bonuses?.check ?? ""
+			}
+		};
+		return abilities;
+	}, {});
+}
+
+function getStarshipRollData(actor, selectedAbility, chosenAbility) {
+	const rollData = foundry.utils.deepClone(actor?.getRollData?.() ?? {});
+	rollData.abilities ??= {};
+	rollData.abilities[selectedAbility] ??= {};
+	rollData.abilities[selectedAbility].mod = toFiniteNumber(chosenAbility?.mod, 0) ?? 0;
+	rollData.abilities[selectedAbility].bonuses ??= {};
+	rollData.abilities[selectedAbility].bonuses.check = chosenAbility?.bonuses?.check ?? "";
+	rollData.mod = rollData.abilities[selectedAbility].mod;
+	rollData.prof = toFiniteNumber(
+		rollData.prof,
+		toFiniteNumber(getLegacyStarshipActorSystem(actor).attributes?.prof, 0)
+	) ?? 0;
+	return rollData;
+}
+
+function normalizeFormulaTerm(term, rollData={}) {
+	if ( term === null || term === undefined ) return null;
+	let text = String(term).trim();
+	if ( !text ) return null;
+
+	try {
+		text = Roll.replaceFormulaData(text, rollData, { missing: "0" });
+	} catch {
+		// Keep the original text if formula replacement is unavailable.
+	}
+
+	text = String(text ?? "").trim();
+	if ( !text || /^[-+]?0(?:\.0+)?$/.test(text) ) return null;
+
+	try {
+		new Roll(text, rollData);
+	} catch {
+		return null;
+	}
+
+	return text;
+}
+
+function buildRollFormula(terms=[]) {
+	let formula = "1d20";
+	for ( const term of terms ) {
+		const text = String(term ?? "").trim();
+		if ( !text ) continue;
+		if ( text.startsWith("-") ) formula += ` - ${text.slice(1).trim()}`;
+		else if ( text.startsWith("+") ) formula += ` + ${text.slice(1).trim()}`;
+		else formula += ` + ${text}`;
+	}
+	return formula;
+}
+
+function buildStarshipSkillFormula(actor, entry, selectedAbility, chosenAbility, situationalBonus="") {
+	const rollData = getStarshipRollData(actor, selectedAbility, chosenAbility);
+	const terms = [
+		normalizeFormulaTerm(chosenAbility?.mod ?? entry.parts.abilityMod, rollData),
+		normalizeFormulaTerm(chosenAbility?.bonuses?.check, rollData),
+		normalizeFormulaTerm(entry.parts.proficiency, rollData),
+		normalizeFormulaTerm(entry.parts.bonus, rollData),
+		normalizeFormulaTerm(situationalBonus, rollData)
+	].filter(Boolean);
+	return buildRollFormula(terms);
+}
+
 export async function rollStarshipSkill(actor, skillId, event) {
 	const entry = getStarshipSkillEntries(actor).find(skill => skill.id === skillId);
 	if ( !entry ) return null;
 
-	const parts = ["@abilityMod"];
-	if ( entry.parts.proficiency ) parts.push("@proficiency");
-	if ( entry.parts.bonus ) parts.push("@bonus");
-	const formula = `1d20 + ${parts.join(" + ")}`;
-	const roll = new CONFIG.Dice.D20Roll(formula, {
-		abilityMod: entry.parts.abilityMod,
-		proficiency: entry.parts.proficiency,
-		bonus: entry.parts.bonus
-	}, {
+	const fastForward = isStarshipFastForward(event);
+	const defaultRollMode = game.settings.get("core", "rollMode");
+	const abilities = buildStarshipRollAbilities(actor);
+	const dialogSelection = fastForward
+		? {
+			ability: entry.ability,
+			bonus: "",
+			rollMode: defaultRollMode,
+			advantageMode: getStarshipAdvantageMode(event)
+		}
+		: await (await import("./starship-skill-roll-config.mjs")).promptStarshipSkillRoll({
+			actor,
+			entry,
+			abilities,
+			defaultRollMode,
+			initialMode: getStarshipAdvantageMode(event)
+		});
+	if ( !dialogSelection ) return null;
+
+	const selectedAbility = dialogSelection.ability in abilities ? dialogSelection.ability : entry.ability;
+	const chosenAbility = abilities[selectedAbility] ?? { mod: entry.parts.abilityMod, bonuses: { check: "" } };
+	const formula = buildStarshipSkillFormula(actor, entry, selectedAbility, chosenAbility, dialogSelection.bonus);
+	const roll = new CONFIG.Dice.D20Roll(formula, {}, {
 		flavor: `${actor.name}: ${entry.label}`,
-		advantageMode: getStarshipAdvantageMode(event),
-		defaultRollMode: game.settings.get("core", "rollMode")
+		advantageMode: dialogSelection.advantageMode,
+		defaultRollMode,
+		rollMode: dialogSelection.rollMode
 	});
 
 	await roll.evaluate();
 	await roll.toMessage({
 		speaker: ChatMessage.getSpeaker({ actor }),
-		flavor: `${entry.label} (${entry.abilityLabel})`
+		flavor: `${entry.label} (${CONFIG?.DND5E?.abilities?.[selectedAbility]?.label ?? CONFIG?.SW5E?.abilities?.[selectedAbility]?.label ?? entry.abilityLabel})`
 	});
 	return roll;
 }
