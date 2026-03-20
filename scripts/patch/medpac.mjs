@@ -123,7 +123,7 @@ async function rollMedpacHealing(message, button) {
 	const diceCount = normalizeDiceCount(medpac.diceCount);
 	const formula = `max(1, ${diceCount}${hitDie} + @abilities.con.mod)`;
 	const rollData = actor.getRollData ? actor.getRollData() : actor.system;
-	const roll = await new Roll(formula, rollData).evaluate({ async: true });
+	const roll = await new Roll(formula, rollData).evaluate();
 	const flavor = `${medpac.itemName} Healing (${diceCount}${hitDie} + CON)`;
 
 	await roll.toMessage({

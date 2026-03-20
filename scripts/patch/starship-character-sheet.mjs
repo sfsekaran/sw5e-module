@@ -4,7 +4,6 @@ import {
 	deployStarshipCrew,
 	buildStarshipRuntime,
 	buildStarshipItemGroups,
-	buildStarshipSkillEntries,
 	getStarshipCharacterFlag,
 	getStarshipCharacterSheetClassId,
 	getStarshipClassification,
@@ -134,37 +133,11 @@ function buildNativeStarshipSourceSkills(actor) {
 	return sourceSkills;
 }
 
-function buildNativeStarshipSkills(actor) {
-	const existingSkills = actor.system?.skills ?? {};
-	const skills = {};
-
-	for (const skill of buildStarshipSkillEntries(actor)) {
-		const existing = existingSkills[skill.key] ?? {};
-		const total = Number(skill.total ?? 0);
-		const value = Number(skill.proficiency ?? 0);
-		skills[skill.key] = {
-			...existing,
-			ability: skill.ability,
-			value,
-			baseValue: value,
-			mod: total,
-			passive: 10 + total,
-			total,
-			bonuses: {
-				check: existing.bonuses?.check ?? "",
-				passive: existing.bonuses?.passive ?? ""
-			}
-		};
-	}
-
-	return skills;
-}
-
 function applyStarshipSkillContext(context, actor) {
 	context.config ??= {};
 	context.system ??= {};
 	context.source ??= {};
-	context.system.skills = buildNativeStarshipSkills(actor);
+	context.system.skills = actor.system?.skills ?? {};
 	context.source.skills = buildNativeStarshipSourceSkills(actor);
 	context.config.skills = foundry.utils.deepClone(CONFIG.DND5E.starshipSkills ?? {});
 	return context;

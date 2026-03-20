@@ -13,11 +13,8 @@ export function patchConfig(config, strict = true) {
 	config.defaultAbilities.shieldPoints = "str";
 
 	// Skills
-	if (strict) {
-		delete config.skills.arc;
-		delete config.skills.his;
-		delete config.skills.rel;
-	}
+	// Keep native DND5E skill keys available so stock actor sheets
+	// can still render and sort existing non-starship skill entries.
 	config.skills.lor = {
 		label: "SW5E.SkillLor",
 		ability: "int",

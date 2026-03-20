@@ -15,7 +15,7 @@ import {
 import {
 	normalizeLegacyStarshipActorSource,
 	normalizeLegacyStarshipItemSource
-} from "../scripts/starship-character.mjs";
+} from "../scripts/starship-data.mjs";
 
 const CANONICAL_MODULE_ID = "sw5e-module";
 

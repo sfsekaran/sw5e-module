@@ -14,7 +14,7 @@ import {
 import {
 	normalizeLegacyStarshipActorSource,
 	normalizeLegacyStarshipItemSource
-} from "./starship-character.mjs";
+} from "./starship-data.mjs";
 
 const MIGRATABLE_COMPENDIUM_DOCUMENTS = ["Actor", "Item", "Scene", "JournalEntry", "RollTable"];
 
@@ -65,12 +65,11 @@ export const migrateWorld = async function() {
 			let updateData = migrateActorData(source, migrationData, flags, { actorUuid: actor.uuid });
 			if ( !foundry.utils.isEmpty(updateData) ) {
 				console.log(`Migrating Actor document ${actor.name}`);
-				if ( flags.persistSourceMigration ) {
-					updateData = mergePersistedMigrationSource(source, updateData);
-				}
-				await actor.update(updateData, {
-					enforceTypes: false, diff: valid && !flags.persistSourceMigration, render: false
-				});
+				updateData = prepareMigratedSource(source, updateData, flags);
+				await actor.update(updateData, getDocumentUpdateOptions({
+					valid,
+					persistSourceMigration: flags.persistSourceMigration
+				}));
 			}
 		} catch(err) {
 			err.message = `Failed sw5e module migration for Actor ${actor.name}: ${err.message}`;
@@ -89,12 +88,11 @@ export const migrateWorld = async function() {
 			let updateData = migrateItemData(source, migrationData, flags);
 			if ( !foundry.utils.isEmpty(updateData) ) {
 				console.log(`Migrating Item document ${item.name}`);
-				if ( flags.persistSourceMigration ) {
-					updateData = mergePersistedMigrationSource(source, updateData);
-				}
-				await item.update(updateData, {
-					enforceTypes: false, diff: valid && !flags.persistSourceMigration, render: false
-				});
+				updateData = prepareMigratedSource(source, updateData, flags);
+				await item.update(updateData, getDocumentUpdateOptions({
+					valid,
+					persistSourceMigration: flags.persistSourceMigration
+				}));
 			}
 		} catch(err) {
 			err.message = `Failed sw5e module migration for Item ${item.name}: ${err.message}`;
@@ -153,7 +151,7 @@ export const migrateWorld = async function() {
 				if ( !foundry.utils.isEmpty(updateData) ) {
 					console.log(`Migrating ActorDelta document ${token.actor.name} [${token.delta.id}] in Scene ${s.name}`);
 					if ( flags.persistSourceMigration ) {
-						updateData = mergePersistedMigrationSource(source, updateData);
+						updateData = prepareMigratedSource(source, updateData, flags);
 					} else {
 						// Workaround for core issue of bulk updating ActorDelta collections.
 						["items", "effects"].forEach(col => {
@@ -163,9 +161,10 @@ export const migrateWorld = async function() {
 							}
 						});
 					}
-					await token.actor.update(updateData, {
-						enforceTypes: false, diff: !flags.persistSourceMigration, render: false
-					});
+					await token.actor.update(updateData, getDocumentUpdateOptions({
+						valid: true,
+						persistSourceMigration: flags.persistSourceMigration
+					}));
 				}
 			} catch(err) {
 				err.message = `Failed sw5e module migration for ActorDelta [${token.id}]: ${err.message}`;
@@ -234,8 +233,11 @@ export const migrateCompendium = async function(pack) {
 
 			// Save the entry, if data was changed
 			if ( foundry.utils.isEmpty(updateData) ) continue;
-			if ( flags.persistSourceMigration ) updateData = mergePersistedMigrationSource(source, updateData);
-			await doc.update(updateData, { diff: !flags.persistSourceMigration });
+			updateData = prepareMigratedSource(source, updateData, flags);
+			await doc.update(updateData, getDocumentUpdateOptions({
+				valid: true,
+				persistSourceMigration: flags.persistSourceMigration
+			}));
 			console.log(`Migrated ${documentName} document ${doc.name} in Compendium ${pack.collection}`);
 		}
 
@@ -281,7 +283,12 @@ async function upsertWorldDocument(DocumentClass, source, { replaceExisting=true
 	}
 
 	if ( existing && replaceExisting ) {
-		await existing.update(source, { enforceTypes: false, diff: false, render: false });
+		await existing.update(source, {
+			enforceTypes: false,
+			diff: false,
+			recursive: false,
+			render: false
+		});
 		return "updated";
 	}
 
@@ -300,7 +307,11 @@ async function upsertCompendiumDocument(pack, source, { replaceExisting=true, dr
 
 	if ( hasExisting && replaceExisting ) {
 		const existing = await pack.getDocument(sourceId);
-		await existing.update(source, { enforceTypes: false, diff: false });
+		await existing.update(source, {
+			enforceTypes: false,
+			diff: false,
+			recursive: false
+		});
 		return "updated";
 	}
 
@@ -310,8 +321,25 @@ async function upsertCompendiumDocument(pack, source, { replaceExisting=true, dr
 }
 
 function prepareMigratedSource(source, updateData, { persistSourceMigration=false }={}) {
-	if ( persistSourceMigration ) return mergePersistedMigrationSource(source, updateData);
+	if ( persistSourceMigration ) return foundry.utils.deepClone(updateData);
 	return applyUpdateToClone(source, updateData);
+}
+
+function getDocumentUpdateOptions({ valid=true, persistSourceMigration=false }={}) {
+	if ( persistSourceMigration ) {
+		return {
+			enforceTypes: false,
+			diff: false,
+			recursive: false,
+			render: false
+		};
+	}
+
+	return {
+		enforceTypes: false,
+		diff: valid,
+		render: false
+	};
 }
 
 function convertSourceByType(documentName, source, migrationData, options={}) {
