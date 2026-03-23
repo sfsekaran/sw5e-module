@@ -2,10 +2,10 @@
   "_id": "b5o43ocdxaR9Ed7f",
   "name": "Stroke of Luck",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/OPRT-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/OPRT-Action.webp",
   "effects": [
     {
-      "origin": "Compendium.sw5e.classfeatures.Item.b5o43ocdxaR9Ed7f",
+      "origin": "Compendium.sw5e-module.classfeatures.Item.b5o43ocdxaR9Ed7f",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -59,7 +59,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Class%20Features/OPRT-Passive.webp",
+      "img": "modules/sw5e-module/icons/packs/Class%20Features/OPRT-Passive.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -167,8 +167,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "special"
@@ -192,14 +192,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493962340,
     "modifiedTime": 1739121094035,

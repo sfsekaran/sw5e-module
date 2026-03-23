@@ -1,8 +1,8 @@
 {
   "_id": "pPxx7oVlTkpjh2wh",
   "name": "Rattle",
-  "type": "sw5e.maneuver",
-  "img": "modules/sw5e/icons/packs/Maneuvers/Rattle.webp",
+  "type": "sw5e-module.maneuver",
+  "img": "modules/sw5e-module/icons/packs/Maneuvers/Rattle.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -109,8 +109,8 @@
       "value": null,
       "charged": false
     },
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "bonus"
@@ -161,14 +161,14 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493983318,
     "modifiedTime": 1739121090591,

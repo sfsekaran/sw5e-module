@@ -2,7 +2,7 @@
   "_id": "54xY3WUAEVaSxq3i",
   "name": "Path of Ethereality",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/PathOfEthereality.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/PathOfEthereality.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.8pZDUMhGKgIQQkqc",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.8pZDUMhGKgIQQkqc",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.uRwgNt43SzREjCce",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.uRwgNt43SzREjCce",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.VjnTTjD2eKKwImLP",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.VjnTTjD2eKKwImLP",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.6UKMlKLOknXRjIRm",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.6UKMlKLOknXRjIRm",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.fkw2xa0qoE9CkFDy",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.fkw2xa0qoE9CkFDy",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959711,
     "modifiedTime": 1732304668571,

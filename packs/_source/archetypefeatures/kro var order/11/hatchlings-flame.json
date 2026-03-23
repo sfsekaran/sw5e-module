@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/MNK-ARCH-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/MNK-ARCH-Action.webp",
   "system": {
     "description": {
       "value": "<p>As an action, you focus your energy into a torrent of fire that streaks away from you. A line of roaring flame </p>\n<p>30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes [[/r 3d8]] fire damage on a failed save, or half as much damage on a successful one.</p>",
@@ -106,8 +106,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -155,7 +155,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -165,7 +165,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1679609438407,
     "modifiedTime": 1739121092781,

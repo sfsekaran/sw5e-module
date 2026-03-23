@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCLR-ARCH-Reaction.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCLR-ARCH-Reaction.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Gambler Pursuit:</strong> 9th, 13th, and 17th level</em></p>\n<p>If the target of your Critical Analysis hits you with a weapon attack roll, you can use your reaction to roll a [[/r d8]]. On a 4 or higher, you impose disadvantage on the roll. If the target already had disadvantage, they must instead reroll one of the dice once (your choice).</p>\n<p>This die increases to [[/r d10]] at 13th level and [[/r d12]] at 17th level.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "reaction"
@@ -126,7 +126,7 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -136,7 +136,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288495920,
     "modifiedTime": 1739121092781,

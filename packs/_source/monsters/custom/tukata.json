@@ -1,7 +1,7 @@
 {
   "name": "Tuk'ata",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/011_-_Tuk_27ata/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/011_-_Tuk_27ata/Avatar.webp",
   "items": [
     {
       "name": "Keen Senses",
@@ -1591,7 +1591,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984246,
     "modifiedTime": 1720552771623,

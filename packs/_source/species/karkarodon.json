@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Karkarodon.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Karkarodon.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>The amphibious Karkarodons have tall, slim bodies with webbed hands and feet. Their shark-like heads have pointed noses, gill slits, and many rows of razor-sharp teeth, which they use when attacking and eating. Karkarodons are skilled and fast swimmers. They attack by grabbing the target and used their jaws for ripping and tearing.</p>\n<h2>Society and Culture</h2>\n<p>Karkarodons hail from the planet Karkaris, which is located in a star system neighboring the planet Mon Cala. They harbor an intense hatred for the Mon Calamari and Quarren inhabitants. The planet is almost entirely under water, and is very uninviting to non-Karkarodons. </p>\n<p>Karkarodon culture is a warmongering, strength-based culture. Clans often fight eachother for dominance, natural resources, and to cull the weak. Each clan on the planet has a ruling triumvirate, usually comprised of venerated warriors who rule for life. When a younger Karkarodon wants to replace one of the ruling body, they challenge them to single, mortal combat. Occasionally, the challenged may spare the life of the challenger when they win, though that usually leads to resentment from the loser.</p>\n<p>Karkarodons do not believe in lying or duplicity. They believe in approaching problems head on and saying what they mean, and are generally demeaing towards those they deem their lessers.</p>\n<h2>Names</h2>\n<p>Karkarodon names are harsh and gutteral. They are generally one syllable. Surnames are clan-based rather than familial.</p>\n<p><strong>Male Names.</strong> Aurb, Rend, Riff, Trak, Vour</p>\n<p><strong>Female Names.</strong> Dewb, Garr, Rast, Scrat, Zend</p>\n<p><strong>Surnames.</strong> Alben, Gerdall, Kibben, Tamson, Zendall</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.08OoeBda8RThEmMY",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.08OoeBda8RThEmMY",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.PdYkkOQXhH5nM6Mn",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.PdYkkOQXhH5nM6Mn",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.XnbXRx8i3GBqpH0p",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.XnbXRx8i3GBqpH0p",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.hgF4awDbwpN6hyTP",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.hgF4awDbwpN6hyTP",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.e7JuBm3AgsuXVdfI",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.e7JuBm3AgsuXVdfI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.mkPXEoenqESmOuBo",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.mkPXEoenqESmOuBo",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.51jevmqS2fLDcxEn",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.51jevmqS2fLDcxEn",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.vuHYL3QlwYP8Kcp7",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.vuHYL3QlwYP8Kcp7",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.FsdVL3eI0o9rpHMd",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.FsdVL3eI0o9rpHMd",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.tsV2BXJcqVi6CulB",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.tsV2BXJcqVi6CulB",
               "optional": false
             }
           ],
@@ -211,7 +211,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Karkarodon.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Karkarodon.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -226,7 +226,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725168,

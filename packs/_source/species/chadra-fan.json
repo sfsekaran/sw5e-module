@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Chadra-Fan.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Chadra-Fan.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Chadra-Fan are covered from head to foot in fur. Their species evolved from small, arboreal rodents. The two different sexes of Chadra-Fan are indistinguishable to other species, though the Chadra-Fan could readily tell the difference using their powerful sense of smell. Chadra-Fan also have involuntary pheromones that conveyed information about their family line and created an aura of attractiveness. Other voluntary pheromones often conveyed a Chadra-Fan's state of emotion-anger, fear, or joy. Chadra-Fan even create more complex messages using their pheromones, though the pheromones when mixed sometimes caused confusion. They are unique in the fact that they had clear blood.</p>\n<h2>Society and Culture</h2>\n<p>The society of Chadra-Fan is divided into a clan structure in which every member is responsible for parenting the clan's children; a fact of life is that every household is open at any time. Leadership within the clan is a temporary role that is passed from one individual to another as the situation calls for a particular expertise. Children are the centerpiece of a Chadra-Fan community, and only leave when wed. However the new Chadra-Fan couple remain with the smaller clan so it was possible that a Chadra-Fan never leaves his or her home.</p>\n<p>Chadra-Fan left by themselves suffer depression, so they regularly seek the company of others; thus, Chadra-Fan are not very picky when it came to friends and prefer complete strangers to loneliness</p>\n<h2>Names</h2>\n<p>Chadra-Fan names do not vary significantly based on sex. Surnames are clan based.</p>\n<p><strong>First Names.</strong>  Dubi, Kattar, Naska, T'yabah, O'yasha</p>\n<p><strong>Surnames.</strong> Abalomm, Fandy, Nemm, Nuz, Yedit</p>",
@@ -47,51 +47,51 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.MWlCBzVXoKs6cscc",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.MWlCBzVXoKs6cscc",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.V9RgXyr2Phyw4pwd",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.V9RgXyr2Phyw4pwd",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.CLIqTWH0oFmiufUS",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.CLIqTWH0oFmiufUS",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.U5sd4f87WPtlH2L4",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.U5sd4f87WPtlH2L4",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.98sp82lXvTrUijaq",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.98sp82lXvTrUijaq",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.b12nzI4BlqDCkubH",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.b12nzI4BlqDCkubH",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.5CAYDumWsaN4MER2",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.5CAYDumWsaN4MER2",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.7T3fY7v0qTSBhTmU",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.7T3fY7v0qTSBhTmU",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Uy7gxDAGFev5AWVA",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Uy7gxDAGFev5AWVA",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.pVyNz0mOd1vRoPH0",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.pVyNz0mOd1vRoPH0",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.F3nCQyltV8KFTGy6",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.F3nCQyltV8KFTGy6",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.5vtam1xzPjdnj5kT",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.5vtam1xzPjdnj5kT",
               "optional": false
             }
           ],
@@ -216,10 +216,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.Nhk7H4YrE05zsDqT.ActiveEffect.6clSr6rfOZJaWWiM"
+          "sourceId": "Compendium.sw5e-module.species.Item.Nhk7H4YrE05zsDqT.ActiveEffect.6clSr6rfOZJaWWiM"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.Nhk7H4YrE05zsDqT",
+      "origin": "Compendium.sw5e-module.species.Item.Nhk7H4YrE05zsDqT",
       "name": "Chadra-Fan",
       "description": "",
       "statuses": [],
@@ -233,7 +233,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Chadra-Fan.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Chadra-Fan.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -263,10 +263,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.Nhk7H4YrE05zsDqT.ActiveEffect.6clSr6rfOZJaWWiM"
+          "sourceId": "Compendium.sw5e-module.species.Item.Nhk7H4YrE05zsDqT.ActiveEffect.6clSr6rfOZJaWWiM"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.Nhk7H4YrE05zsDqT",
+      "origin": "Compendium.sw5e-module.species.Item.Nhk7H4YrE05zsDqT",
       "name": "Keen Hearing and Smell",
       "description": "",
       "statuses": [],
@@ -280,7 +280,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Chadra-Fan.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Chadra-Fan.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -295,7 +295,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725726,

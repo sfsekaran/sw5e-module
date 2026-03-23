@@ -1,7 +1,7 @@
 {
   "name": "Ball Form",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Monster%20Traits/Ball%20Form.webp",
+  "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Ball%20Form.webp",
   "effects": [],
   "flags": {},
   "system": {
@@ -96,7 +96,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1669746921002,
     "modifiedTime": 1720368816190,

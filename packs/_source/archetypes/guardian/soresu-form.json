@@ -2,7 +2,7 @@
   "_id": "HT7t6njBrKPe6dB1",
   "name": "Soresu Form",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/SoresuForm.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/SoresuForm.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,19 +29,19 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.6Ah1MYbWyIqXy0dQ",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.6Ah1MYbWyIqXy0dQ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Dlx2lxYwWPkL7JtU",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Dlx2lxYwWPkL7JtU",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.mnulWRJEmjLkpCcD",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.mnulWRJEmjLkpCcD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.KbQuua56x3IDI4O2",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.KbQuua56x3IDI4O2",
               "optional": false
             }
           ],
@@ -58,7 +58,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.o5NQeRkpNqzp6NXg",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.o5NQeRkpNqzp6NXg",
               "optional": false
             }
           ],
@@ -75,7 +75,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.p0zR0ChHwcDi6H2K",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.p0zR0ChHwcDi6H2K",
               "optional": false
             }
           ],
@@ -92,7 +92,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.g1r7gEz0DT78nTIf",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.g1r7gEz0DT78nTIf",
               "optional": false
             }
           ],
@@ -133,7 +133,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959732,
     "modifiedTime": 1732304668959,

@@ -1,7 +1,7 @@
 {
   "name": "Web Walker",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Monster%20Traits/Web%20Walker.webp",
+  "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Web%20Walker.webp",
   "effects": [],
   "flags": {},
   "system": {
@@ -96,7 +96,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1669758315217,
     "modifiedTime": 1720368815787,

@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Toydarian.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Toydarian.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>A mammalian species of winged, stout bodied humanoids, the Toydarians have stubby facial tusks which protruded from their lower jaw and framed a short pudgy trunk. While their stubby legs can support their body weight, Toydarians' primary mode of locomotion was their use of the wings on their upper back. Though their wings can beat as fast as ten times a second, the effort burned up large amounts of energy, causing the species to need to replenish itself often through regularly eating mass quantities of food. In order to fuel this hyperactive metabolism, Toydarians eat concentrated foods and egg-seeds. Most of the bloodiest wars in their history were fought over food supplies. </p>\n<h2>Society and Culture</h2>\n<p>Despite being ruled by the Hutts, the Toydarian people are able to govern themselves free of major outside intervention through the establishment of a feudal monarchy. A ruling king sits on the planet's throne, allowing vassals to form allegiances and have minor disputes to solve their own problems. The king makes sure to keep his vassals happy and to have their allegiance, but will occasionally encourage infighting to reveal the true character of the vassals and weed out treachery. </p>\n<p>Toydarians are known as shrewd businessmen.</p>\n<h2>Names</h2>\n<p>Toydarian names are fairly simple and guttural, but a few harsher elements can be found here and there. Male names are generally shorter than female names. Female names always end in a vowel. </p>\n<p><strong>Male Names.</strong> Dod, Nesteddo, Tul, Zloomroo</p>\n<p><strong>Female Names.</strong> Fefiffe, Lenlibo, Nugni, Zoldibu</p>\n<p><strong>Surnames.</strong> Daab, Faabb, Kepo, Mitra, Vulba</p>",
@@ -47,47 +47,47 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.FFGmqZhTqjgqZOet",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.FFGmqZhTqjgqZOet",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.UWJs7p1eMv3LmoKD",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.UWJs7p1eMv3LmoKD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.rPPPnGvqIPt3m64w",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.rPPPnGvqIPt3m64w",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.KyHBhht2GdYcKwgv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.KyHBhht2GdYcKwgv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.4ReVzNzDaAMYQdvh",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.4ReVzNzDaAMYQdvh",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.KqNaUyK8gi6zCzOa",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.KqNaUyK8gi6zCzOa",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ejMrxAmDPXWHBYzY",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ejMrxAmDPXWHBYzY",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.VGRzEiEAcN3vPbv3",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.VGRzEiEAcN3vPbv3",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.7wgRog5HsAWSVAMe",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.7wgRog5HsAWSVAMe",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.KmIMONbNk2LKa2Mk",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.KmIMONbNk2LKa2Mk",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.MGAWYi3SkdfdVX5e",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.MGAWYi3SkdfdVX5e",
               "optional": false
             }
           ],
@@ -261,7 +261,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Toydarian.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Toydarian.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -276,7 +276,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304726104,

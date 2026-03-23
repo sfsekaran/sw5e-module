@@ -2,7 +2,7 @@
   "_id": "cGWlxLWQDqTLBm3G",
   "name": "Medpac (Fine)",
   "type": "consumable",
-  "img": "modules/sw5e/icons/packs/Medical/Medpac.webp",
+  "img": "modules/sw5e-module/icons/packs/Medical/Medpac.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -11,6 +11,12 @@
       "timestamp": "2023-03-09T01:52:04.8054667+00:00",
       "importer_version": 3,
       "uid": "EnhancedItem.name-medpac_fine.subtype-medpac"
+    },
+    "sw5e": {
+      "medpac": {
+        "enabled": true,
+        "diceCount": 2
+      }
     },
     "dnd5e": {
       "riders": {
@@ -111,8 +117,8 @@
     "enchantment": null,
     "summons": null,
     "magicalBonus": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "action"
@@ -138,14 +144,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493964845,
     "modifiedTime": 1739121086510,

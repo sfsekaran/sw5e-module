@@ -2,7 +2,7 @@
   "_id": "3WEDJ9aje4WwK0b1",
   "name": "Assault Specialist",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/AssaultSpecialist.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/AssaultSpecialist.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.oaeOcCcID7jpDLvC",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.oaeOcCcID7jpDLvC",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.vYujZHTmApzAyaPs",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.vYujZHTmApzAyaPs",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.bdTn1STkrkyTymAW",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.bdTn1STkrkyTymAW",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.UQfXhacffisIadI7",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.UQfXhacffisIadI7",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.OHR8sRaJ4uhnCQt0",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.OHR8sRaJ4uhnCQt0",
               "optional": false
             }
           ],
@@ -101,7 +101,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.mUQpy94CIAOkbxC1",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.mUQpy94CIAOkbxC1",
               "optional": false
             }
           ],
@@ -126,7 +126,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959709,
     "modifiedTime": 1732304668540,

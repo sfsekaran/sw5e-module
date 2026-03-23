@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/MNK-ARCH-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/MNK-ARCH-Action.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Prerequisite:</strong> Crushing Hand of the Mountain</em> or <em>Patient Bantha Listens</em></p>\n<p>As an action, you can choose a point you can see on the ground within 120 feet. A fountain of churned earth and stone erupts in a 20-foot cube centered on that point. Each creature in that area must make a Dexterity saving throw. A creature takes [[/r 3d12]] kinetic damage on a failed save, or half as much damage on a successful one. Additionally, the ground in that area becomes difficult terrain until cleared. Each 5-foot-square portion of the area requires at least 1 minute to clear by hand.</p>",
@@ -106,8 +106,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -156,7 +156,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -166,7 +166,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1679609438453,
     "modifiedTime": 1739121092781,

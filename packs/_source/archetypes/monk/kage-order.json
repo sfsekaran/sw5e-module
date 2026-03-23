@@ -2,7 +2,7 @@
   "_id": "dFbijHHWkFz1VIKx",
   "name": "Kage Order",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/KageOrder.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/KageOrder.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,7 +29,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.rr9Bfao4q8gTpIp3",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.rr9Bfao4q8gTpIp3",
               "optional": false
             }
           ],
@@ -46,7 +46,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.c1H4AQIJtj05QHnT",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.c1H4AQIJtj05QHnT",
               "optional": false
             }
           ],
@@ -63,7 +63,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.HpUzDLe06kGUOCUQ",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.HpUzDLe06kGUOCUQ",
               "optional": false
             }
           ],
@@ -80,7 +80,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.VmtA5IyhcBM7UDxe",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.VmtA5IyhcBM7UDxe",
               "optional": false
             }
           ],
@@ -105,7 +105,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959762,
     "modifiedTime": 1732304669396,

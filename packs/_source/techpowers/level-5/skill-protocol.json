@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/SkillProtocol.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/SkillProtocol.webp",
   "system": {
     "description": {
       "value": "<p>You enhance a droid or construct's protocols. You touch one willing droid or construct and give it expertise in one tool or skill of your choice.</p>\n<p>You must choose a tool or skill in which the target is proficient and that isn't already benefiting from an effect, such as expertise, that doubles its proficiency bonus.</p>",
@@ -101,8 +101,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -143,7 +143,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "LXmk8Ihk560pG4Eq",
@@ -154,7 +154,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

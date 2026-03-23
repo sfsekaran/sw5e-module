@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/CryogenicBlast.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/CryogenicBlast.webp",
   "system": {
     "description": {
       "value": "<p>You release a shard of cryogenic energy at one creature within range. Make a ranged tech attack against the target. On a hit, the target takes [[/r 1d10]] kinetic damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of it must succeed on a Dexterity saving throw or take [[/r 2d6]] cold damage.</p>\n<p><strong><em>Overcharge Tech.</em></strong> When you cast this power using a tech slot of 2nd level or higher, the cold damage increases by [[/r 1d6]] for each slot level above 1st.</p>",
@@ -113,8 +113,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0attack00000": {
+    "activities": [
+      {
         "_id": "sw5e0attack00000",
         "activation": {
           "condition": "",
@@ -194,7 +194,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "BtPIWqiKDBC6FZng",
@@ -205,7 +205,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

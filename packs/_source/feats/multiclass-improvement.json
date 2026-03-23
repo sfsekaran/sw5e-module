@@ -2,7 +2,7 @@
   "_id": "K7hFfGCqlnutg96G",
   "name": "Multiclass Improvement",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/MulticlassImprovement.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/MulticlassImprovement.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -15,7 +15,7 @@
   },
   "system": {
     "description": {
-      "value": "<p>You've learned to blend the skills of your different classes. Choose two of the multiclass improvement options, detailed later in this chapter. You can take this feat multiple times. </p>\n<ul>\n<li>@UUID[Compendium.sw5e.feats.Item.Om5SVvKKX5B3FsxW]{Berserker}</li>\n<li>@UUID[Compendium.sw5e.feats.Item.E7axPXfGddza0LLj]{Consular}</li>\n<li>@UUID[Compendium.sw5e.feats.Item.kqsPoFl9VAUUTLdF]{Engineer}</li>\n<li>@UUID[Compendium.sw5e.feats.Item.wEH9b6g6fWgFi8bj]{Fighter}</li>\n<li>@UUID[Compendium.sw5e.feats.Item.lEw8HbIRuY8LTXez]{Guardian}</li>\n<li>@UUID[Compendium.sw5e.feats.Item.KrUKsGFpmHi2D8Ok]{Monk}</li>\n<li>@UUID[Compendium.sw5e.feats.Item.pJWVWjFyukfU7BTF]{Operative}</li>\n<li>@UUID[Compendium.sw5e.feats.Item.vIs6bNzTpZeGF1ft]{Scholar}</li>\n<li>@UUID[Compendium.sw5e.feats.Item.rLjbZae3xpUq7leY]{Scout}</li>\n<li>@UUID[Compendium.sw5e.feats.Item.pvFCujcCXH41vWI4]{Sentinel}</li></ul>",
+      "value": "<p>You've learned to blend the skills of your different classes. Choose two of the multiclass improvement options, detailed later in this chapter. You can take this feat multiple times. </p>\n<ul>\n<li>@UUID[Compendium.sw5e-module.feats.Item.Om5SVvKKX5B3FsxW]{Berserker}</li>\n<li>@UUID[Compendium.sw5e-module.feats.Item.E7axPXfGddza0LLj]{Consular}</li>\n<li>@UUID[Compendium.sw5e-module.feats.Item.kqsPoFl9VAUUTLdF]{Engineer}</li>\n<li>@UUID[Compendium.sw5e-module.feats.Item.wEH9b6g6fWgFi8bj]{Fighter}</li>\n<li>@UUID[Compendium.sw5e-module.feats.Item.lEw8HbIRuY8LTXez]{Guardian}</li>\n<li>@UUID[Compendium.sw5e-module.feats.Item.KrUKsGFpmHi2D8Ok]{Monk}</li>\n<li>@UUID[Compendium.sw5e-module.feats.Item.pJWVWjFyukfU7BTF]{Operative}</li>\n<li>@UUID[Compendium.sw5e-module.feats.Item.vIs6bNzTpZeGF1ft]{Scholar}</li>\n<li>@UUID[Compendium.sw5e-module.feats.Item.rLjbZae3xpUq7leY]{Scout}</li>\n<li>@UUID[Compendium.sw5e-module.feats.Item.pvFCujcCXH41vWI4]{Sentinel}</li></ul>",
       "chat": ""
     },
     "requirements": "4th level",
@@ -105,7 +105,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966785,
     "modifiedTime": 1733249629603,

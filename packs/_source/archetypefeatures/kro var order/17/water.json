@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/MNK-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/MNK-ARCH-Passive.webp",
   "system": {
     "description": {
       "value": "<p>Your watery weapon has the reach property, deals cold damage on a hit, and you can use your focus ability modifier instead of Dexterity or Strength for its attack and damage rolls. You must use the same modifier for both rolls. Additionally, when you would make a melee weapon attack, you can instead use your weapon to wet a 5-foot square within your weapon's reach. The affected area is difficult terrain. Each creature who starts its turn in the square or enters it for the first time must make a Dexterity saving throw, falling prone on a failed save.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -135,7 +135,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -145,7 +145,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288495960,
     "modifiedTime": 1739121092781,

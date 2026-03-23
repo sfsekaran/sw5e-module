@@ -2,7 +2,7 @@
   "_id": "tfyLKw3FUjMQkEgB",
   "name": "Pugnacity Practice",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/PugnacityPractice.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/PugnacityPractice.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.PRKDBjXs3pYzDy1C",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.PRKDBjXs3pYzDy1C",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.vRIbUglvI9HNlUAk",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.vRIbUglvI9HNlUAk",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.1B1GoAslEcuta50o",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.1B1GoAslEcuta50o",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Ik2nJuqsZYJ2neNe",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Ik2nJuqsZYJ2neNe",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.hNLCVeWzPt9KyXDY",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.hNLCVeWzPt9KyXDY",
               "optional": false
             }
           ],
@@ -133,7 +133,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959780,
     "modifiedTime": 1732304669659,

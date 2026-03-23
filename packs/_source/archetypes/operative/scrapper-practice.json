@@ -2,7 +2,7 @@
   "_id": "clkMPGrmZ27Uj7Ym",
   "name": "Scrapper Practice",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/ScrapperPractice.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/ScrapperPractice.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ygYuniEqiwudKCmN",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ygYuniEqiwudKCmN",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.o6vBVCGXFUFTYbqd",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.o6vBVCGXFUFTYbqd",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.APAgv3dOKSv0M6ty",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.APAgv3dOKSv0M6ty",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.VdSHGgo3eAcb00Vv",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.VdSHGgo3eAcb00Vv",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.t55c7OyiSdmENJIM",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.t55c7OyiSdmENJIM",
               "optional": false
             }
           ],
@@ -148,7 +148,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959762,
     "modifiedTime": 1732304669387,

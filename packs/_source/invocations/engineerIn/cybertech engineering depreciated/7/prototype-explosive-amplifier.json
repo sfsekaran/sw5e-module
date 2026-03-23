@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Passive.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Prerequisite:</strong> 7th level, Explosive Amplifier</em></p>\n<p>You fine tune your Explosive Amplifier. When you activate this amplifier, the creature is also ignited for 1 minute. At the start of each of its turns, the creature </p>\n<p>takes additional fire damage equal to your Intelligence modifier and then makes a Dexterity saving throw against your tech save DC, ending this effect on a success. If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames, the effect ends.</p>",
@@ -106,8 +106,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -158,7 +158,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -168,7 +168,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288497263,
     "modifiedTime": 1739121094709,

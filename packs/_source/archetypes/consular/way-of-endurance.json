@@ -2,7 +2,7 @@
   "_id": "SusnFelt3zuLetoj",
   "name": "Way of Endurance",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/WayOfEndurance.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/WayOfEndurance.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,7 +29,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.c1Z6UNNfudZwipWG",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.c1Z6UNNfudZwipWG",
               "optional": false
             }
           ],
@@ -46,7 +46,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.AgfYHNjnTz1Tlv5L",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.AgfYHNjnTz1Tlv5L",
               "optional": false
             }
           ],
@@ -63,7 +63,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.tDcb9zheTRJokFUW",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.tDcb9zheTRJokFUW",
               "optional": false
             }
           ],
@@ -80,7 +80,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.HjT00X0XmbF5QqSr",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.HjT00X0XmbF5QqSr",
               "optional": false
             }
           ],
@@ -97,7 +97,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.dLHFgesahAtfy7SH",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.dLHFgesahAtfy7SH",
               "optional": false
             }
           ],
@@ -122,7 +122,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959747,
     "modifiedTime": 1732304669184,

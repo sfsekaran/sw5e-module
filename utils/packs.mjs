@@ -4,7 +4,66 @@ import logger from "fancy-log";
 import path from "path";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import { compilePack, extractPack } from "@foundryvtt/foundryvtt-cli";
+import { extractPack } from "@foundryvtt/foundryvtt-cli";
+import { ClassicLevel } from "classic-level";
+import {
+	TARGET_DND5E_VERSION,
+	normalizeLegacyMasterItemSource,
+	normalizeDnd5eItemSource,
+	normalizeEmbeddedDnd5eItemSources
+} from "../scripts/dnd5e-source-normalization.mjs";
+import {
+	normalizeLegacyStarshipActorSource,
+	normalizeLegacyStarshipItemSource
+} from "../scripts/starship-data.mjs";
+
+const CANONICAL_MODULE_ID = "sw5e-module";
+
+const HIERARCHY = {
+	actors: {
+		items: [],
+		effects: []
+	},
+	cards: {
+		cards: []
+	},
+	combats: {
+		combatants: []
+	},
+	delta: {
+		items: [],
+		effects: []
+	},
+	items: {
+		effects: []
+	},
+	journal: {
+		pages: []
+	},
+	playlists: {
+		sounds: []
+	},
+	regions: {
+		behaviors: []
+	},
+	tables: {
+		results: []
+	},
+	tokens: {
+		delta: {}
+	},
+	scenes: {
+		drawings: [],
+		tokens: [],
+		lights: [],
+		notes: [],
+		regions: [],
+		sounds: [],
+		templates: [],
+		tiles: [],
+		walls: []
+	}
+};
 
 
 /**
@@ -81,7 +140,7 @@ function cleanEffects(data) {
 	];
 	function blacklisted(key) {
 		if (key_blacklist.includes(key)) return true;
-		for (const k in key_blacklist_re) if (k.match(key)) return true;
+		for (const re of key_blacklist_re) if (re.test(key)) return true;
 		return false;
 	}
 	const key_whitelist = [
@@ -98,12 +157,12 @@ function cleanEffects(data) {
 	];
 	function whitelisted(key) {
 		if (key_whitelist.includes(key)) return true;
-		for (const k in key_whitelist_re) if (k.match(key)) return true;
+		for (const re of key_whitelist_re) if (re.test(key)) return true;
 		return false;
 	}
 
 	const hasAdvancements = data.advancement !== undefined;
-	if (hasAdvancements) for (const effect in data.effects) {
+	if (hasAdvancements) for (const effect of data.effects) {
 		effect.changes = effect.changes.filter(change => !blacklisted(change.key));
 	}
 	data.effects = data.effects.filter(effect => effect.changes.length || !effect.transfer);
@@ -113,16 +172,161 @@ function cleanEffects(data) {
 			return acc;
 		}, []);
 		if (non_whitelisted.length) {
-			logger.info(`Item ${data.name1} still has non whitelisted effects:`);
+			logger.info(`Item ${data.name} still has non whitelisted effects:`);
 			logger.info(non_whitelisted)
 		}
 	}
 }
 
+function normalizeCompendiumUuid(uuid, { moduleId=CANONICAL_MODULE_ID }={}) {
+	if ( typeof uuid !== "string" ) return uuid;
+	return uuid.replace(/^Compendium\.(sw5e-module-test|sw5e|sw5e-module)\./, `Compendium.${moduleId}.`);
+}
+
+function normalizeCompendiumReferences(data, { moduleId=CANONICAL_MODULE_ID }={}) {
+	if ( typeof data === "string" ) {
+		return data.replace(/Compendium\.(sw5e-module-test|sw5e|sw5e-module)\./g, `Compendium.${moduleId}.`);
+	}
+
+	if ( Array.isArray(data) ) {
+		for ( let i = 0; i < data.length; i += 1 ) data[i] = normalizeCompendiumReferences(data[i], { moduleId });
+		return data;
+	}
+
+	if ( data && (typeof data === "object") ) {
+		for ( const [key, value] of Object.entries(data) ) data[key] = normalizeCompendiumReferences(value, { moduleId });
+	}
+
+	return data;
+}
+
+function normalizeAdvancementLink(item, field, moduleId=CANONICAL_MODULE_ID) {
+	if ( typeof item === "string" ) {
+		if ( item === "languages:standard:basic" ) return { item: "languages:standard:common", changed: true };
+		const normalizedUuid = normalizeCompendiumUuid(item, { moduleId });
+		if ( field === "pool" && normalizedUuid.startsWith("Compendium.") ) return { item: { uuid: normalizedUuid }, changed: true };
+		if ( field === "items" && normalizedUuid.startsWith("Compendium.") ) return { item: { uuid: normalizedUuid, optional: false }, changed: true };
+		return { item: normalizedUuid, changed: normalizedUuid !== item };
+	}
+
+	if ( !item || (typeof item !== "object") ) return { item, changed: false };
+
+	let changed = false;
+	if ( item.uuid ) {
+		const normalizedUuid = normalizeCompendiumUuid(item.uuid, { moduleId });
+		if ( normalizedUuid !== item.uuid ) {
+			item.uuid = normalizedUuid;
+			changed = true;
+		}
+	}
+	if ( (field === "items") && item.uuid?.startsWith("Compendium.") && (item.optional === undefined) ) {
+		item.optional = false;
+		changed = true;
+	}
+	return { item, changed };
+}
+
+function normalizeItemChoiceValue(value, moduleId=CANONICAL_MODULE_ID) {
+	if ( !value || (typeof value !== "object") ) return { value, changed: false };
+	let changed = false;
+
+	if ( value.added && (typeof value.added === "object") ) {
+		for ( const added of Object.values(value.added) ) {
+			if ( !added || (typeof added !== "object") ) continue;
+			for ( const [key, uuid] of Object.entries(added) ) {
+				if ( typeof uuid !== "string" ) continue;
+				const normalizedUuid = normalizeCompendiumUuid(uuid, { moduleId });
+				if ( normalizedUuid !== uuid ) {
+					added[key] = normalizedUuid;
+					changed = true;
+				}
+			}
+		}
+	}
+
+	return { value, changed };
+}
+
+function normalizeSubclassValue(value, moduleId=CANONICAL_MODULE_ID) {
+	if ( !value || (typeof value !== "object") ) return { value: {}, changed: true };
+
+	if ( value.document || value.uuid ) {
+		const normalizedValue = { ...value };
+		let changed = false;
+		if ( typeof normalizedValue.uuid === "string" ) {
+			const normalizedUuid = normalizeCompendiumUuid(normalizedValue.uuid, { moduleId });
+			if ( normalizedUuid !== normalizedValue.uuid ) {
+				normalizedValue.uuid = normalizedUuid;
+				changed = true;
+			}
+		}
+		return { value: normalizedValue, changed };
+	}
+
+	for ( const added of Object.values(value.added ?? {}) ) {
+		if ( !added || (typeof added !== "object") ) continue;
+		const [document, uuid] = Object.entries(added)[0] ?? [];
+		if ( !document ) continue;
+		return {
+			value: {
+				document,
+				...(typeof uuid === "string" ? { uuid: normalizeCompendiumUuid(uuid, { moduleId }) } : {})
+			},
+			changed: true
+		};
+	}
+
+	return { value: {}, changed: Object.keys(value).length > 0 };
+}
+
+function normalizeAdvancements(data, moduleId=CANONICAL_MODULE_ID) {
+	if ( !data.system?.advancement ) return;
+
+	for ( const adv of data.system.advancement ) {
+		for ( const field of ["pool", "items", "grants"] ) {
+			if ( !adv?.configuration?.[field] ) continue;
+			adv.configuration[field] = adv.configuration[field].map(item => normalizeAdvancementLink(item, field, moduleId).item);
+		}
+
+		if ( (data.type === "class") && (adv.type === "ItemChoice")
+			&& ["archetype", "subclass"].includes(adv.configuration?.type) ) {
+			adv.type = "Subclass";
+			adv.configuration = {};
+			adv.value = normalizeSubclassValue(adv.value, moduleId).value;
+			continue;
+		}
+
+		if ( adv.type === "Subclass" ) {
+			adv.value = normalizeSubclassValue(adv.value, moduleId).value;
+			continue;
+		}
+
+		if ( adv.type === "ItemChoice" ) adv.value = normalizeItemChoiceValue(adv.value, moduleId).value;
+	}
+}
+
 function cleanImage(path) {
-		path = path?.replace("systems/sw5e/packs/Icons", "modules/sw5e/icons/packs");
-		path = path?.replace("modules/sw5e-module-test/icons/packs", "modules/sw5e/icons/packs");
+		path = path?.replace("systems/sw5e/packs/Icons", "modules/sw5e-module/icons/packs");
+		path = path?.replace("modules/sw5e/icons/packs", "modules/sw5e-module/icons/packs");
+		path = path?.replace("modules/sw5e-module-test/icons/packs", "modules/sw5e-module/icons/packs");
 		return path;
+}
+
+function cleanHtmlImagePaths(text) {
+	if ( typeof text !== "string" ) return text;
+	return text
+		.replace(/systems\/sw5e\/packs\/Icons/g, "modules/sw5e-module/icons/packs")
+		.replace(/modules\/sw5e\/icons\/packs/g, "modules/sw5e-module/icons/packs")
+		.replace(/modules\/sw5e-module-test\/icons\/packs/g, "modules/sw5e-module/icons/packs");
+}
+
+function cloneData(data) {
+	return data === undefined ? undefined : JSON.parse(JSON.stringify(data));
+}
+
+function ensureSw5eFlags(data) {
+	data.flags ??= {};
+	return (data.flags.sw5e ??= {});
 }
 
 /**
@@ -252,7 +456,7 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 	if ( !forceConvert && (data._stats?.systemId !== "sw5e") ) return false;
 
 	if ( data._stats?.systemId ) data._stats.systemId = "dnd5e";
-	if ( data._stats?.systemVersion ) data._stats.systemVersion = "3.3.1";
+	if ( data._stats?.systemVersion ) data._stats.systemVersion = TARGET_DND5E_VERSION;
 	if ( data._stats?.lastModifiedBy ) data._stats.lastModifiedBy = "sw5ebuilder00000";
 
 	if ( data.system?._propertyValues ) {
@@ -274,22 +478,9 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 		});
 	}
 
-	if ( data.system?.advancement ) for ( const adv of data.system.advancement ) {
-		for (const field of ["pool", "items"]) {
-			if ( adv?.configuration?.[field] ) for ( const item of adv.configuration[field] ) {
-				if ( item.uuid) item.uuid = item.uuid.replace("Compendium.sw5e-module-test.", "Compendium.sw5e.");
-			}
-		}
-	}
-
-	if ( data.type === "power" ) data.type = "spell";
-	if ( data.type === "species" ) data.type = "race";
-	if ( data.type === "archetype" ) data.type = "subclass";
-	if ( data.type === "maneuver" ) data.type = "sw5e.maneuver";
-	if ( data.changes ) data.changes.forEach(ch => { if ( ch.key === "system.traits.languages.value" && ch.value === "basic" ) ch.value = "common"; });
-
-	if ( data.system?.price?.denomination === "gc" ) data.system.price.denomination = "gp";
-	if ( data.system?.save?.scaling === "power" ) data.system.save.scaling = "spell";
+	normalizeLegacyMasterItemSource(data);
+	normalizeLegacyStarshipActorSource(data);
+	normalizeLegacyStarshipItemSource(data);
 
 	if ( data.flags?.['sw5e-module-test'] ) {
 		data.flags.sw5e = {
@@ -302,7 +493,11 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 	if ( data.effects ) cleanEffects(data);
 	if ( data.img ) data.img = cleanImage(data.img);
 	if ( data.icon ) data.icon = cleanImage(data.icon);
-	if ( data.texture ) data.texture = cleanImage(data.texture);
+	if ( data.texture?.src ) data.texture.src = cleanImage(data.texture.src);
+	normalizeDnd5eItemSource(data);
+	normalizeEmbeddedDnd5eItemSources(data.items);
+	normalizeCompendiumReferences(data);
+	normalizeAdvancements(data);
 
 	return true;
 }
@@ -355,7 +550,8 @@ function cleanPackEntry(data, { clearSourceId=true, ownership=0, forceConvert=tr
 	if ( data.effects ) data.effects.forEach(i => cleanPackEntry(i, { clearSourceId: false, forceConvert }));
 	if ( data.items ) data.items.forEach(i => cleanPackEntry(i, { clearSourceId: false, forceConvert }));
 	if ( data.pages ) data.pages.forEach(i => cleanPackEntry(i, { ownership: -1, forceConvert }));
-	if ( data.system?.description?.value ) data.system.description.value = cleanString(data.system.description.value);
+	if ( data.system?.description?.value ) data.system.description.value = cleanHtmlImagePaths(cleanString(data.system.description.value));
+	if ( data.system?.description?.chat ) data.system.description.chat = cleanHtmlImagePaths(cleanString(data.system.description.chat));
 	if ( data.label ) data.label = cleanString(data.label);
 	if ( data.name ) data.name = cleanString(data.name);
 }
@@ -438,9 +634,86 @@ async function compilePacks(packName) {
 		const src = path.join(PACK_SRC, folder.name);
 		const dest = path.join(PACK_DEST, folder.name);
 		logger.info(`Compiling pack ${folder.name}`);
-		await compilePack(src, dest, { recursive: true, log: true, transformEntry: cleanPackEntry });
+		await compileClassicLevelSafe(src, dest, { recursive: true, log: true, transformEntry: cleanPackEntry });
 	}
 }
+
+async function compileClassicLevelSafe(src, dest, { recursive=false, log=false, transformEntry }={}) {
+	const files = findSourceFiles(src, { recursive });
+
+	fs.mkdirSync(dest, { recursive: true });
+
+	const db = new ClassicLevel(dest, { keyEncoding: "utf8", valueEncoding: "json" });
+	await db.open();
+	const seenKeys = new Set();
+	const packDoc = applyHierarchy(async (doc, collection) => {
+		const key = doc._key;
+		delete doc._key;
+		if ( seenKeys.has(key) ) {
+			throw new Error(`An entry with key '${key}' was already packed and would be overwritten by this entry.`);
+		}
+		seenKeys.add(key);
+		const value = structuredClone(doc);
+		await mapHierarchy(value, collection, embeddedDoc => embeddedDoc._id);
+		await db.put(key, value);
+	});
+
+	for ( const file of files ) {
+		try {
+			const contents = fs.readFileSync(file, "utf8");
+			const doc = JSON.parse(contents);
+			const [, collection] = doc._key.split("!");
+			if ( await transformEntry?.(doc) === false ) continue;
+			await packDoc(doc, collection);
+			if ( log ) console.log(`Packed ${doc._id}${doc.name ? ` (${doc.name})` : ""}`);
+		} catch ( err ) {
+			if ( log ) console.error(`Failed to pack ${file}. See error below.`);
+			throw err;
+		}
+	}
+
+	await db.close();
+}
+
+function applyHierarchy(fn) {
+	const apply = async (doc, collection, options={}) => {
+		const newOptions = await fn(doc, collection, options);
+		for ( const [embeddedCollectionName, type] of Object.entries(HIERARCHY[collection] ?? {}) ) {
+			const embeddedValue = doc[embeddedCollectionName];
+			if ( Array.isArray(type) && Array.isArray(embeddedValue) ) {
+				for ( const embeddedDoc of embeddedValue ) await apply(embeddedDoc, embeddedCollectionName, newOptions);
+			} else if ( embeddedValue ) {
+				await apply(embeddedValue, embeddedCollectionName, newOptions);
+			}
+		}
+	};
+	return apply;
+}
+
+async function mapHierarchy(doc, collection, fn) {
+	for ( const [embeddedCollectionName, type] of Object.entries(HIERARCHY[collection] ?? {}) ) {
+		const embeddedValue = doc[embeddedCollectionName];
+		if ( Array.isArray(type) ) {
+			doc[embeddedCollectionName] = Array.isArray(embeddedValue) ? embeddedValue.map(entry => fn(entry, embeddedCollectionName)) : [];
+		} else {
+			doc[embeddedCollectionName] = embeddedValue ? await fn(embeddedValue, embeddedCollectionName) : null;
+		}
+	}
+}
+
+function findSourceFiles(root, { recursive=false }={}) {
+	const files = [];
+	for ( const entry of fs.readdirSync(root, { withFileTypes: true }) ) {
+		const name = path.join(root, entry.name);
+		if ( entry.isDirectory() && recursive ) {
+			files.push(...findSourceFiles(name, { recursive }));
+			continue;
+		}
+		if ( entry.isFile() && path.extname(name) === ".json" ) files.push(name);
+	}
+	return files;
+}
+
 
 
 /* ----------------------------------------- */
@@ -611,7 +884,7 @@ function transformName(entry, packName) {
 		case "lightweapons":
 		case "enhanceditems":
 		case "explosives":
-		case "modification":
+		case "modifications":
 		case "starshipequipment":
 		case "starshipmodifications":
 		case "starshipweapons":
@@ -663,11 +936,11 @@ function transformName(entry, packName) {
 			else if (entry.system.level === 0) subfolder = "at-will";
 			else subfolder = `level-${entry.system.level}`;
 			break;
-		case "maneuver":
+		case "maneuvers":
 			subfolder = entry.system.type.value;
 			break;
 		// actors
-		case "fistorcodex":
+		case "fistoscodex":
 		case "monsters":
 		case "monsters_temp":
 			subfolder = entry.system.details.type.value;

@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Echani.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Echani.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Echani are characterized by their white skin, hair, and eyes, and their remarkable tendency to look very much alike one another to outside observers, particularly amongst family members. It is thought that their origins stem from Arkanian experimentation on the human genome, a hypothesis that could explain their physical conformity.</p>\n<h2>Society and Culture</h2>\n<p>A matriarchal, caste-based society originating from the Inner Rim world of Eshan, the echani spread to encompass a confederacy of six worlds including Bengali and Thyrsus, known as the Six Sisters, governed by the all-female Echani Command. </p>\n<p>\t</p>\n<p>Echani generals are sometimes seen by others as having the ability to predict their opponent's next move. This is no biologicial trait inherent to the species, but rather stems from the fact that combat is so ingrained into every level of echani culture; the echani hold to the idea that combat is the truest form of communication, and to know someone fully, you must fight them. While their combat rituals require complete freedom of movement and unarmed martial arts, in warfare, they tend towards light armor and melee weapons, and are considered excellent craftsmen of such.</p>\n<h2>Names</h2>\n<p>Echani names tend to lack hard consonants, but are otherwise as variable as human ones. Echani surnames are tied directly to their place in the caste system.</p>\n<p><strong>Male Names.</strong> Caelian, Inarin, Losor, Uelis, Yusanis </p>\n<p><strong>Female Names.</strong> Astri, Brianna, Isena, Raskta, Senriel</p>\n<p><strong>Surnames.</strong> Authal, Elysi, Fenni, Kinro, Lsu</p>",
@@ -47,47 +47,47 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.TdpdTkwdzO67erOR",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.TdpdTkwdzO67erOR",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.6JslNDUUlmfHaqub",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.6JslNDUUlmfHaqub",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.5VKJYq14PoZ5igHN",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.5VKJYq14PoZ5igHN",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.tYvWtznBQ7sdX4PK",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.tYvWtznBQ7sdX4PK",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.N5lpNUOIszv2dUxw",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.N5lpNUOIszv2dUxw",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.M7bUUiHnlpBZIHax",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.M7bUUiHnlpBZIHax",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.83s76DgKzhHyNOis",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.83s76DgKzhHyNOis",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.3J2VnY4ooJJcZz0Z",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.3J2VnY4ooJJcZz0Z",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.neoLtkJrAWe06Faz",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.neoLtkJrAWe06Faz",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.FYnpydmuPMAZa9QA",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.FYnpydmuPMAZa9QA",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.pzDiRKGV7AboP0e5",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.pzDiRKGV7AboP0e5",
               "optional": false
             }
           ],
@@ -234,7 +234,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Echani.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Echani.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -249,7 +249,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304724949,

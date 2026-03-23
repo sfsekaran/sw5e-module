@@ -2,7 +2,7 @@
   "_id": "IkmQFQjGc4xq0Czd",
   "name": "Tinker's implements",
   "type": "tool",
-  "img": "modules/sw5e/icons/packs/Kit/DemolitionsKit.webp",
+  "img": "modules/sw5e-module/icons/packs/Kit/DemolitionsKit.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -91,8 +91,8 @@
     "attuned": false,
     "cover": null,
     "crewed": false,
-    "activities": {
-      "dnd5eactivity000": {
+    "activities": [
+      {
         "activation": {
           "type": "",
           "value": null,
@@ -147,14 +147,14 @@
           "ability": ""
         }
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493980398,
     "modifiedTime": 1732312314052,

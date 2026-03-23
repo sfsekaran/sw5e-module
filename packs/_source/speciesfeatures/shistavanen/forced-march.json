@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Shistavanen.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Shistavanen.webp",
   "system": {
     "description": {
       "value": "<p>Shistavanen are able to maintain a fast pace longer than other species. Shistavanen have advantage on Constitution saving throws made to avoid Exhaustion due to prolongued travel, as described in Chapter 8.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "forced-march",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1730433988012,
     "lastModifiedBy": "dnd5ebuilder0000"

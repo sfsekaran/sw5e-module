@@ -2,7 +2,7 @@
   "_id": "Ufz1kN4YpUvi7e3v",
   "name": "Smugglepack (Champion)",
   "type": "container",
-  "img": "modules/sw5e/icons/packs/Storage/Smugglepack.webp",
+  "img": "modules/sw5e-module/icons/packs/Storage/Smugglepack.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -53,7 +53,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493964718,
     "modifiedTime": 1730434223969,

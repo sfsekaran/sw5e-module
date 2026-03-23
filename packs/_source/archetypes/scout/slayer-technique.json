@@ -2,7 +2,7 @@
   "_id": "Fv2rHXRwvn46CNEk",
   "name": "Slayer Technique",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/SlayerTechnique.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/SlayerTechnique.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.tkaAavTOVOjaB8dl",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.tkaAavTOVOjaB8dl",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.hX7H3BNaMpMRd9u8",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.hX7H3BNaMpMRd9u8",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Bpe67XmrSlb9cEeX",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Bpe67XmrSlb9cEeX",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.cjhhmi5WU4mK9DLz",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.cjhhmi5WU4mK9DLz",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Lvls76izYod2m2MF",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Lvls76izYod2m2MF",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.21o2m4T6nKInTyiI",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.21o2m4T6nKInTyiI",
               "optional": false
             }
           ],
@@ -129,7 +129,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959729,
     "modifiedTime": 1732304668911,

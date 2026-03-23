@@ -2,7 +2,7 @@
   "_id": "DAk6NKEfJq4gEyhB",
   "name": "Rage",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/BSKR-Bonus.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/BSKR-Bonus.webp",
   "effects": [
     {
       "_id": "joJ14rFFXKalCoSZ",
@@ -48,7 +48,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.sw5e.classfeatures.DAk6NKEfJq4gEyhB",
+      "origin": "Compendium.sw5e-module.classfeatures.DAk6NKEfJq4gEyhB",
       "tint": "#ffffff",
       "transfer": false,
       "flags": {
@@ -69,7 +69,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Class%20Features/BSKR-Bonus.webp",
+      "img": "modules/sw5e-module/icons/packs/Class%20Features/BSKR-Bonus.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -177,8 +177,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "bonus"
@@ -203,14 +203,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493962278,
     "modifiedTime": 1739121094035,

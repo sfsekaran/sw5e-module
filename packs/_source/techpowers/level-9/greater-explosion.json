@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/GreaterExplosion.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/GreaterExplosion.webp",
   "system": {
     "description": {
       "value": "<p>You expell a massive explosion at a point within range. Each creature in a 40-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes [[/r 40d6]] fire damage and is knocked prone on a failed save, or half as much damage on a successful one but remain standing.</p>\n<p>The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.</p>",
@@ -104,8 +104,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "condition": "",
@@ -167,7 +167,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "t2EP5qutzeEqKAmw",
@@ -178,7 +178,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

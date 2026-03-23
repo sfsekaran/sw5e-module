@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/EchoBlast.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/EchoBlast.webp",
   "system": {
     "description": {
       "value": "<p>You emit a reverberating pulse of sound at a target within range. The target must succeed on a Wisdom saving throw or take [[/r 1d8]] sonic damage.</p>\n<p>This power can hit multiple targets in succession when you reach higher levels: two targets at 5th level, three targets at 11th level, and four targets at 17th level. Each target must be within 30 feet of the previous target, and the last target must be no further than 30 feet away from you. You can not target the same creature twice in succession.</p>",
@@ -104,8 +104,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "condition": "",
@@ -153,7 +153,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "aIoayjl1l9poq0eP",
@@ -164,7 +164,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

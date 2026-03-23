@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/SpectrumDischarge.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/SpectrumDischarge.webp",
   "system": {
     "description": {
       "value": "<p>You touch a willing creature, granting it an elemental charge. Choose acid, cold, fire, lightning, poison or sonic. For the duration, a creature can use an action to expel energy of the chosen type in a 15-foot cone. Each creature in that area must make a Dexterity saving throw, taking [[/r 3d6]] damage of the chosen type on a failed save, or half as much damage on a successful one.</p>\n<p><strong><em>Overcharge Tech.</em></strong> When you cast this power using a tech slot of 3rd level or higher, the damage increases by [[/r 1d6]] for each slot level above 2nd.</p>",
@@ -106,8 +106,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "condition": "",
@@ -170,7 +170,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "Z5hexOzCpnuBLFF6",
@@ -181,7 +181,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Klatooinian.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Klatooinian.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Klatooinians are a humanoid species with canine features, having short muzzles over toothy overbites. They are also notable for their heavy brows and ridges along the tops of their heads. </p>\n<h2>Society and Culture</h2>\n<p>For centuries, klatooinians have been slaves to the hutts, whom they view as almost godlike, immortal beings. Although the hutts allow a council of elders to rule on Klatooine, all off-world affairs are wholly under hutt control. Under the hutts, the klatooinians serve as soldiers and guards. Even those klatooinians who do not serve the hutts are often employed as hired muscle by other masters.</p>\n<p>Klatooinian society was known for a strong belief in tradition and the wisdom of the elders, although some younger klatooinians rebelled against this norm and sought out freedom from enslavement. Others attempted to gain their own fortunes as smugglers, pirates, bounty hunters, or raiders.</p>\n<h2>Names</h2>\n<p>Klatooinian names are often derived from the names of great heroes and historical figures. Surnames are familial, and are usually shorter than klatooinian given names. </p>\n<p><strong>Male Names.</strong> Barada, Castas, Sta-Den, Tarados</p>\n<p><strong>Female Names.</strong> Gelis, Petkara, Sterasi, Yelmith </p>\n<p><strong>Surnames.</strong> Eek, Gort, Gon, Ovin</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.WUqkUPwYpk4oeTjU",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.WUqkUPwYpk4oeTjU",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.EpYGRVS5XZGAzmz2",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.EpYGRVS5XZGAzmz2",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.IVkEzanb3EhDJCUj",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.IVkEzanb3EhDJCUj",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.EgPhpDvEUyoObvI4",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.EgPhpDvEUyoObvI4",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.09LVDlWJVY521bO6",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.09LVDlWJVY521bO6",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ZfDZaie31Y61JydD",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ZfDZaie31Y61JydD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.e3TARW0moGTJrUZd",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.e3TARW0moGTJrUZd",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.MhHTN8Kn3QwJFR4l",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.MhHTN8Kn3QwJFR4l",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.21UXWXgHQYJI96Fr",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.21UXWXgHQYJI96Fr",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.8T3jVIq7aZfZ2go5",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.8T3jVIq7aZfZ2go5",
               "optional": false
             }
           ],
@@ -228,7 +228,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Klatooinian.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Klatooinian.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -243,7 +243,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304724687,

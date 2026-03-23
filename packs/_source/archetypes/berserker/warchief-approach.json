@@ -2,7 +2,7 @@
   "_id": "CvTODiaLKcBBLfh5",
   "name": "Warchief Approach",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/WarchiefApproach.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/WarchiefApproach.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.7gnVnIDhy4tXzcTi",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.7gnVnIDhy4tXzcTi",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.gtzwgunkGHxVh7Ec",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.gtzwgunkGHxVh7Ec",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.03qIkerlYzQEYusy",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.03qIkerlYzQEYusy",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.AtCohgxfC4bUhGpp",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.AtCohgxfC4bUhGpp",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.UYWFpXz6HKecYIC2",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.UYWFpXz6HKecYIC2",
               "optional": false
             }
           ],
@@ -131,7 +131,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959725,
     "modifiedTime": 1732304668838,

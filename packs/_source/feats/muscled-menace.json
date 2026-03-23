@@ -2,11 +2,11 @@
   "_id": "jpWBzw0pFU5CLSjO",
   "name": "Muscled Menace",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/MuscledMenace.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/MuscledMenace.webp",
   "effects": [
     {
       "name": "Muscled Menace",
-      "origin": "Compendium.sw5e.feats.Item.jpWBzw0pFU5CLSjO",
+      "origin": "Compendium.sw5e-module.feats.Item.jpWBzw0pFU5CLSjO",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -47,7 +47,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Feats/MuscledMenace.webp",
+      "img": "modules/sw5e-module/icons/packs/Feats/MuscledMenace.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -155,7 +155,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966822,
     "modifiedTime": 1730434333126,

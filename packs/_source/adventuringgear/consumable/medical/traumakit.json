@@ -2,7 +2,7 @@
   "_id": "wymQ620QCDVhZ17m",
   "name": "Traumakit",
   "type": "consumable",
-  "img": "modules/sw5e/icons/packs/Medical/Traumakit.webp",
+  "img": "modules/sw5e-module/icons/packs/Medical/Traumakit.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -111,8 +111,8 @@
     "enchantment": null,
     "summons": null,
     "magicalBonus": null,
-    "activities": {
-      "sw5e0check000000": {
+    "activities": [
+      {
         "_id": "sw5e0check000000",
         "activation": {
           "type": "action"
@@ -142,14 +142,14 @@
         },
         "type": "check"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493956193,
     "modifiedTime": 1739121083337,

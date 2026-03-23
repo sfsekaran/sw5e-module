@@ -2,7 +2,7 @@
   "_id": "NdmBGQIL4dFm7prB",
   "name": "Mechanist Technique (Companion)",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/MechanistTechnique-Companion.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/MechanistTechnique-Companion.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.RR2lHOW913NVPhmS",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.RR2lHOW913NVPhmS",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.PrzlaH9SDZpQpCL7",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.PrzlaH9SDZpQpCL7",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.r6vbetRPJRkH4T33",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.r6vbetRPJRkH4T33",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.nscmGga7GrAqtS2J",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.nscmGga7GrAqtS2J",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.UvLhp8gL3SIcKxOa",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.UvLhp8gL3SIcKxOa",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.SJOo9dvI40Gl2ll4",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.SJOo9dvI40Gl2ll4",
               "optional": false
             }
           ],
@@ -147,7 +147,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959741,
     "modifiedTime": 1732412593736,

@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-ARCH-Passive.webp",
   "system": {
     "description": {
       "value": "<p>You erect a tower from a 5-foot square platform centered on the target location that rises up to 30 feet. If the tower is created under a creature, that creature must succeed on a Dexterity saving throw or be lifted by the tower. A creature can choose to fail the save. The tower comes equipped with a ladder that reaches from the ground to the platform. </p>\n<p>When you reach 11th level, the tower's platform can extend 5 feet by 10 feet and rise up to 40 feet. When you reach 17th level, the tower's platform can cover a 10-foot square, and rise up to 50 feet. Additionally, any creature on the tower's platform has advantage on Wisdom (Perception) checks that rely on sight.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -135,7 +135,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -145,7 +145,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1679609438387,
     "modifiedTime": 1739121092781,

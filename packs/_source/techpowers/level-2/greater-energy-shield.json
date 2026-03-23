@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/GreaterEnergyShield.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/GreaterEnergyShield.webp",
   "system": {
     "description": {
       "value": "<p>An energy shield appears and protects the target. Until the start of the target's next turn, the target has a +5 bonus to AC, including against the triggering attack, and the target takes no damage from <em>homing rockets</em>.</p>",
@@ -99,8 +99,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "when a creature you can see within range is hit by an attack or targeted by the *homing rockets* power",
@@ -141,7 +141,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "x0C6u483vm7RARlu",
@@ -152,7 +152,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

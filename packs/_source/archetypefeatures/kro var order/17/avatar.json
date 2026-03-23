@@ -2,7 +2,7 @@
   "_id": "mXAvFzTao9HkFAKS",
   "name": "Avatar",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/MNK-ARCH-Bonus.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/MNK-ARCH-Bonus.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -122,8 +122,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "bonus"
@@ -215,14 +215,14 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493958046,
     "modifiedTime": 1739121092781,

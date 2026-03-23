@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/FleshRaider.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/FleshRaider.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Flesh raiders are a more primitive, and more physically imposing subspecies of rakata that mutated prior to the end of the Infinite Empire. A life above ground and in caves has led the flesh raiders to lose their more amphibian traits, and are now more humanoid in their biological needs, though they seem to only be able to digest meats and flesh.</p>\n<p>Flesh raiders keep many of their ancestral rakatan features, though they have experienced a form of gigantism that has lead to their interesting appearance, that of a flat topped, spade shaped head, with blade-like eye stalks coming off the side ends of the spade. Their body structure also more closely matches that of a trandoshan or dashade, being bulky and imposing in stature, towering over most other sentient creatures.</p>\n<p>Unlike contemporary rakata, flesh raiders did not lose their ability to tap into the Force.</p>\n<h2>Society and Culture</h2>\n<p>Flesh raiders are known to form small clan structures, with a war boss in charge of the clan. Those flesh raiders who are born Force-sensitive can be found imitating a temple structure, with a powerful Force-sensitive, usually from another species, leading them. </p>\n<p>Flesh raiders still speak the rakatan language, though it has developed into a cruder variant.</p>\n<h2>Names</h2>\n<p>Flesh  raider names tend to be short and concise, embodying strength and virility. Flesh raider names make no distinction between male and female names. Surnames are clan-based, though they are rarely used.</p>\n<p><strong>First Names.</strong> Cha'nagh, Fashk, Gorshh, Keshk, Mar'govrok</p>\n<p><strong>Surnames.</strong> Ban, Fel, Kuir, Penk, Teeshk</p>",
@@ -47,51 +47,51 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.0LPh4CV49rp87fDT",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.0LPh4CV49rp87fDT",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.hHc7Ct4wiMleuvR9",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.hHc7Ct4wiMleuvR9",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.jssJ4fpmqDf1VxT6",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.jssJ4fpmqDf1VxT6",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.fbkfLLtWclFIdqKO",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.fbkfLLtWclFIdqKO",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.0uRDdebsISuz1wjo",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.0uRDdebsISuz1wjo",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.b6Ivdngn7xMqyjDB",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.b6Ivdngn7xMqyjDB",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.GRypdFwiXxmJFOSK",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.GRypdFwiXxmJFOSK",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.sZY5nfAKfZOPgg7y",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.sZY5nfAKfZOPgg7y",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.fc01fiIAKTNUPTN1",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.fc01fiIAKTNUPTN1",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.wcNtjIgw0Jis2bIb",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.wcNtjIgw0Jis2bIb",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.crf5nsao1yGIOgZS",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.crf5nsao1yGIOgZS",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.7UtYgIjFg1Hxw2Ew",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.7UtYgIjFg1Hxw2Ew",
               "optional": false
             }
           ],
@@ -246,7 +246,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Flesh%20Raider.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Flesh%20Raider.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -261,7 +261,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725792,

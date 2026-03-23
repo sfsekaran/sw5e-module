@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCT-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCT-ARCH-Passive.webp",
   "system": {
     "description": {
       "value": "<p>You create an unstable energy maelstrom in a 5-foot cube at a point you can see within 30 feet that lasts until the start of your next turn. A creature takes [[/r 4d4]] energy damage when it enters the area for the first time on a turn or starts its turn there. You can maintain the barrier by spending an additional barrier hit point at the start of each of your turns (no action required). </p>\n<p>This feature's damage increases by [[/r 1d4]] when you reach 11th level ([[/r 5d4]]) and 17th level ([[/r 6d4]]).</p>",
@@ -106,8 +106,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "type": "action"
@@ -150,7 +150,7 @@
         },
         "type": "damage"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -160,7 +160,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288495917,
     "modifiedTime": 1739121092781,

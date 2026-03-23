@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Rakata.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Rakata.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>In appearance, rakata are smooth skinned amphibian-like humanoids that had tall craniums along with eyes that protruded from each side of their heads on short stalks. These bipedal beings have three digit hands that are tipped with claws for digging through packed dirt. As a species, they are uniformly lean and tall; while most rakata have a similar height and weight, females tend to be more slender than males, though just as tall. Rakata are primarily carnivorous, likely stemming from the fact that they are cannibalistic, often making a meal of other species.</p>\n<p>Long term abuse of the Force in their society, exacerbated by a plague, culled the rakata's ability to sense the Force.</p>\n<h2>Society and Culture</h2>\n<p>Rakatan technology and structures hold the unique property of blending with the Force, creating powerful and long-lasting monuments that are almost impossibly to replicate. Rakatan society is devoted to conquering and enslaving those they deem weak. At the height of its power, the Rakatan Infinite Empire had conquered and enslaved dozens of worlds. They would strip entire planets of their resources and then terraform them to fit their own needs.</p>\n<p>After a plague ravaged their civilization and caused the fall of the Infinite Empire, rakata broke off into smaller tribes rather than a unified organization. Despite their newfound tribal nature, rakata retained their ability to quickly adapt to and appropriate technology.</p>\n<h2>Names</h2>\n<p>Rakatan names do not distinguish by gender, and they do not use surnames.</p>\n<p><strong>Names.</strong> Ceh'let, Orsaa, Skal'nas, Soa, Tul'kar</p>",
@@ -47,59 +47,59 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.V0GehBYWuICeRdKK",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.V0GehBYWuICeRdKK",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.fGyFjyYpkQyzIM5L",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.fGyFjyYpkQyzIM5L",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.dzon283vahoA1JhT",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.dzon283vahoA1JhT",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.fPDzshlPdFson9P4",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.fPDzshlPdFson9P4",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.MruG10m7FdeWyZwg",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.MruG10m7FdeWyZwg",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ouLAfVDlzT6f7kMi",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ouLAfVDlzT6f7kMi",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.pu5qigoGuK5GdbQ7",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.pu5qigoGuK5GdbQ7",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.w4d0dvk5xcj7rd0x",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.w4d0dvk5xcj7rd0x",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.1qMWXhTx4CRoywxM",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.1qMWXhTx4CRoywxM",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.CcEGVr9ch64Eqk4L",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.CcEGVr9ch64Eqk4L",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.NDKcirQomU6lZoya",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.NDKcirQomU6lZoya",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.DUOXU8Nkbc6Z156J",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.DUOXU8Nkbc6Z156J",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Isb6y7wkFLHv9CtF",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Isb6y7wkFLHv9CtF",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.StbtYvu8AegyUGaQ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.StbtYvu8AegyUGaQ",
               "optional": false
             }
           ],
@@ -261,7 +261,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Rakata.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Rakata.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -276,7 +276,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725924,

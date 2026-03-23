@@ -2,7 +2,7 @@
   "_id": "vT9bTQKS2NL1xn73",
   "name": "Monk",
   "type": "class",
-  "img": "modules/sw5e/icons/packs/Classes/Monk.webp",
+  "img": "modules/sw5e-module/icons/packs/Classes/Monk.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -15,7 +15,7 @@
   },
   "system": {
     "description": {
-      "value": "<img style=\"float:right;margin:5px;border:0px\" src=\"modules/sw5e/icons/packs/Classes/monk_01.webp\" />\n<p>Her vibrostaff a blur as they deflect an incoming hail of blaster bolts, a human springs over a barricade and throws herself into the massed ranks of pirates on the other side. She whirls among them, knocking their blows aside and sending them reeling, until at last she stands alone.</p>\n<p>Taking a deep breath, a zabrak covered in tattoos settles into a battle stance. As the first charging mercenaries reach him, he exhales and a blast of negative energy courses from his hands, engulfing his foes.</p>\n<p>Moving with the silence of the night, a black-clad mirialan steps into a shadow beneath an arch and nimbly climbs to the balcony a stone's throw above her. She slides her blade free of its cloth-wrapped scabbard and peers through the open window at the warlord, so vulnerable in the grip of sleep.</p>\n<p>Whatever their discipline, monks are united in their ability to harness the energy that flows in their bodies. Whether channeled as a striking display of combat prowess or a subtler focus of defensive ability and speed, this energy infuses all that a monk does.</p>\n<h2>The Power of Focus</h2>\n<p>Monks make careful study of a mystical energy that most monastic orders call focus. This energy is an element of the power that suffuses the galaxy—specifically, the element that flows through living bodies. Monks harness this energy within themselves to create powerful effects and exceed their bodies' physical capabilities, and some of their special attacks can hinder the flow of focus in their opponents. Using this energy, monks channel uncanny speed and strength into their unarmed strikes. As they gain experience, their martial training and their mastery of focus gives them more power over their bodies and the bodies of their foes.</p>\n<h2>Training and Asceticism</h2>\n<p>Most monks live entirely apart from the surrounding population, secluded from anything that might impede their spiritual progress. Others are sworn to isolation, emerging only to serve as spies or assassins at the command of their leader, a noble patron, or some other power.</p>\n<p>The majority of monks don't shun their neighbors, making frequent visits to nearby towns or villages and exchanging their service for food and other goods. As versatile warriors, monks often end up protecting their neighbors from monsters or brigands.</p>\n<p>For a monk, becoming an adventurer means leaving a structured, communal lifestyle to become a wanderer. This can be a harsh transition, and monks don't undertake it lightly. Those who leave their cloisters take their work seriously, approaching their adventures as personal tests of their physical and spiritual growth. </p>\n<p>As you make your monk character, think about your connection to the monastery where you learned your skills and spent your formative years. Were you an orphan or a child left on the monastery's threshold? Did your parents promise you to the monastery in gratitude for a service performed by the monks? Did you enter this secluded life to hide from a crime you committed? Or did you choose the monastic life for yourself?</p>\n<p>Consider why you left. Did the head of your monastery choose you for a particularly important mission beyond the cloister? Perhaps you were cast out because of some violation of the community's rules. Did you dread leaving, or were you happy to go? Is there something you hope to accomplish outside the monastery? Are you eager to return to your home?</p>\n<p>As a result of the structured life of a monastic community and the discipline required to harness focus, monks are typically lawful in alignment.</p>\n<h3>Quick Build</h3>\n<p>You can make a monk quickly by following these suggestions. First, make Dexterity your highest ability score, followed by Wisdom. Second, choose the agent background.</p>",
+      "value": "<img style=\"float:right;margin:5px;border:0px\" src=\"modules/sw5e-module/icons/packs/Classes/monk_01.webp\" />\n<p>Her vibrostaff a blur as they deflect an incoming hail of blaster bolts, a human springs over a barricade and throws herself into the massed ranks of pirates on the other side. She whirls among them, knocking their blows aside and sending them reeling, until at last she stands alone.</p>\n<p>Taking a deep breath, a zabrak covered in tattoos settles into a battle stance. As the first charging mercenaries reach him, he exhales and a blast of negative energy courses from his hands, engulfing his foes.</p>\n<p>Moving with the silence of the night, a black-clad mirialan steps into a shadow beneath an arch and nimbly climbs to the balcony a stone's throw above her. She slides her blade free of its cloth-wrapped scabbard and peers through the open window at the warlord, so vulnerable in the grip of sleep.</p>\n<p>Whatever their discipline, monks are united in their ability to harness the energy that flows in their bodies. Whether channeled as a striking display of combat prowess or a subtler focus of defensive ability and speed, this energy infuses all that a monk does.</p>\n<h2>The Power of Focus</h2>\n<p>Monks make careful study of a mystical energy that most monastic orders call focus. This energy is an element of the power that suffuses the galaxy—specifically, the element that flows through living bodies. Monks harness this energy within themselves to create powerful effects and exceed their bodies' physical capabilities, and some of their special attacks can hinder the flow of focus in their opponents. Using this energy, monks channel uncanny speed and strength into their unarmed strikes. As they gain experience, their martial training and their mastery of focus gives them more power over their bodies and the bodies of their foes.</p>\n<h2>Training and Asceticism</h2>\n<p>Most monks live entirely apart from the surrounding population, secluded from anything that might impede their spiritual progress. Others are sworn to isolation, emerging only to serve as spies or assassins at the command of their leader, a noble patron, or some other power.</p>\n<p>The majority of monks don't shun their neighbors, making frequent visits to nearby towns or villages and exchanging their service for food and other goods. As versatile warriors, monks often end up protecting their neighbors from monsters or brigands.</p>\n<p>For a monk, becoming an adventurer means leaving a structured, communal lifestyle to become a wanderer. This can be a harsh transition, and monks don't undertake it lightly. Those who leave their cloisters take their work seriously, approaching their adventures as personal tests of their physical and spiritual growth. </p>\n<p>As you make your monk character, think about your connection to the monastery where you learned your skills and spent your formative years. Were you an orphan or a child left on the monastery's threshold? Did your parents promise you to the monastery in gratitude for a service performed by the monks? Did you enter this secluded life to hide from a crime you committed? Or did you choose the monastic life for yourself?</p>\n<p>Consider why you left. Did the head of your monastery choose you for a particularly important mission beyond the cloister? Perhaps you were cast out because of some violation of the community's rules. Did you dread leaving, or were you happy to go? Is there something you hope to accomplish outside the monastery? Are you eager to return to your home?</p>\n<p>As a result of the structured life of a monastic community and the discipline required to harness focus, monks are typically lawful in alignment.</p>\n<h3>Quick Build</h3>\n<p>You can make a monk quickly by following these suggestions. First, make Dexterity your highest ability score, followed by Wisdom. Second, choose the agent background.</p>",
       "chat": ""
     },
     "atFlavorText": {
@@ -384,11 +384,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.xLRbVvyf6SZqI0IR",
+              "uuid": "Compendium.sw5e-module.classfeatures.xLRbVvyf6SZqI0IR",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.oZApI8GlhbASPGO8",
+              "uuid": "Compendium.sw5e-module.classfeatures.oZApI8GlhbASPGO8",
               "optional": false
             }
           ],
@@ -405,11 +405,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.bdi8Z3rZZGkQVSEc",
+              "uuid": "Compendium.sw5e-module.classfeatures.bdi8Z3rZZGkQVSEc",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.yIs1spX5tGcjpoA0",
+              "uuid": "Compendium.sw5e-module.classfeatures.yIs1spX5tGcjpoA0",
               "optional": false
             }
           ],
@@ -426,15 +426,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.j3MilBSO0RDAKpK1",
+              "uuid": "Compendium.sw5e-module.classfeatures.j3MilBSO0RDAKpK1",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.4Ff9Vf3RcIKutLAY",
+              "uuid": "Compendium.sw5e-module.classfeatures.4Ff9Vf3RcIKutLAY",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.8vTlVwgsujIvk9mn",
+              "uuid": "Compendium.sw5e-module.classfeatures.8vTlVwgsujIvk9mn",
               "optional": false
             }
           ],
@@ -451,7 +451,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.VA6oFF0teIsE1gcI",
+              "uuid": "Compendium.sw5e-module.classfeatures.VA6oFF0teIsE1gcI",
               "optional": false
             }
           ],
@@ -468,11 +468,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.MZPn1mydA645VDDE",
+              "uuid": "Compendium.sw5e-module.classfeatures.MZPn1mydA645VDDE",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.eYYdXnO1zUk4XpFW",
+              "uuid": "Compendium.sw5e-module.classfeatures.eYYdXnO1zUk4XpFW",
               "optional": false
             }
           ],
@@ -489,7 +489,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.FA0638Swi8vJIPUk",
+              "uuid": "Compendium.sw5e-module.classfeatures.FA0638Swi8vJIPUk",
               "optional": false
             }
           ],
@@ -506,11 +506,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.kIGVBSr0fq6o00Iq",
+              "uuid": "Compendium.sw5e-module.classfeatures.kIGVBSr0fq6o00Iq",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.classfeatures.BRxLHkDX9NfN35WG",
+              "uuid": "Compendium.sw5e-module.classfeatures.BRxLHkDX9NfN35WG",
               "optional": false
             }
           ],
@@ -527,7 +527,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.Y4d7NX1lWQiLdVFn",
+              "uuid": "Compendium.sw5e-module.classfeatures.Y4d7NX1lWQiLdVFn",
               "optional": false
             }
           ],
@@ -544,7 +544,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.bwKnBonjwJc5c2Kx",
+              "uuid": "Compendium.sw5e-module.classfeatures.bwKnBonjwJc5c2Kx",
               "optional": false
             }
           ],
@@ -561,7 +561,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.xHiGKhyvu88g5Ixh",
+              "uuid": "Compendium.sw5e-module.classfeatures.xHiGKhyvu88g5Ixh",
               "optional": false
             }
           ],
@@ -578,7 +578,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.h4WPdGXUliSHbSWW",
+              "uuid": "Compendium.sw5e-module.classfeatures.h4WPdGXUliSHbSWW",
               "optional": false
             }
           ],
@@ -595,7 +595,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.classfeatures.z517Qm5VFOUCEYyk",
+              "uuid": "Compendium.sw5e-module.classfeatures.z517Qm5VFOUCEYyk",
               "optional": false
             }
           ],
@@ -670,58 +670,58 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.zAQj8scLkdEAfVZg"
+              "uuid": "Compendium.sw5e-module.invocations.zAQj8scLkdEAfVZg"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.y49CrNAo5DdZ5XZb"
+              "uuid": "Compendium.sw5e-module.invocations.y49CrNAo5DdZ5XZb"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.0IE3MsZWeoPHFCbm"
+              "uuid": "Compendium.sw5e-module.invocations.0IE3MsZWeoPHFCbm"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.KVp5vc4BmWkxtR3D"
+              "uuid": "Compendium.sw5e-module.invocations.KVp5vc4BmWkxtR3D"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Tlhzsx5RvgvgjU3s"
+              "uuid": "Compendium.sw5e-module.invocations.Tlhzsx5RvgvgjU3s"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.2AkFYLsNl7wGM9LA"
+              "uuid": "Compendium.sw5e-module.invocations.2AkFYLsNl7wGM9LA"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.3qC0tMtVtXGqlDGZ"
+              "uuid": "Compendium.sw5e-module.invocations.3qC0tMtVtXGqlDGZ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Y5ypYs9CDCYW6Thf"
+              "uuid": "Compendium.sw5e-module.invocations.Y5ypYs9CDCYW6Thf"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.5c3MM1QqE1v7dD7J"
+              "uuid": "Compendium.sw5e-module.invocations.5c3MM1QqE1v7dD7J"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Ov2baOEChu6p4ll2"
+              "uuid": "Compendium.sw5e-module.invocations.Ov2baOEChu6p4ll2"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Z05ZVZox98Q2cEfa"
+              "uuid": "Compendium.sw5e-module.invocations.Z05ZVZox98Q2cEfa"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.xwzJSYG10qHRZz6E"
+              "uuid": "Compendium.sw5e-module.invocations.xwzJSYG10qHRZz6E"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.gao0NzuA00u9iswq"
+              "uuid": "Compendium.sw5e-module.invocations.gao0NzuA00u9iswq"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.z23EVSK1dN2RBsPh"
+              "uuid": "Compendium.sw5e-module.invocations.z23EVSK1dN2RBsPh"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.BpPAfejZENlFucXQ"
+              "uuid": "Compendium.sw5e-module.invocations.BpPAfejZENlFucXQ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.ATzUsvExqInQJzmU"
+              "uuid": "Compendium.sw5e-module.invocations.ATzUsvExqInQJzmU"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.ZNCW0goQ9DyQIQBb"
+              "uuid": "Compendium.sw5e-module.invocations.ZNCW0goQ9DyQIQBb"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.1JL0DY2aquuH3Xgn"
+              "uuid": "Compendium.sw5e-module.invocations.1JL0DY2aquuH3Xgn"
             }
           ],
           "restriction": {
@@ -742,69 +742,10 @@
       },
       {
         "_id": "sw5e30ic00000000",
-        "configuration": {
-          "allowDrops": true,
-          "choices": {
-            "3": {
-              "count": 1,
-              "replacement": false
-            }
-          },
-          "pool": [
-            {
-              "uuid": "Compendium.sw5e.archetypes.wvPuhcodhAtABFOh"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.rZ4XP73OtMBVNm1I"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.Tf9wjN7r5BHbXWTL"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.hc7HaVpTXqQMSsyO"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.2OkP7LUU87OQrvmv"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.gnKE0zDdVRS7Lor7"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.dFbijHHWkFz1VIKx"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.W8kBwnXKWmvXB4My"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.L6OSpZ967QvVxhfd"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.MQm8qCUgy5ln4L8B"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.QoehwZJ0393tfpO8"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.UJqZNuqSlZ1UCquY"
-            },
-            {
-              "uuid": "Compendium.sw5e.archetypes.qrHsv2kIAuh551eP"
-            }
-          ],
-          "restriction": {
-            "level": "",
-            "subtype": "",
-            "type": ""
-          },
-          "type": "archetype",
-          "spell": null
-        },
+        "configuration": {},
         "title": "Monastic Orders",
-        "type": "ItemChoice",
-        "value": {
-          "added": {},
-          "replaced": {}
-        },
+        "type": "Subclass",
+        "value": {},
         "hint": "Orders of monastic pursuit are common in the locales scattered across the galaxy. Each order is based in a specific culture and is mutually exclusive, despite relying on the same basic techniques. Your order grants you features at 3rd, 6th, 11th, and 17th level."
       }
     ],
@@ -821,7 +762,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493961826,
     "modifiedTime": 1732453663682,

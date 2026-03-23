@@ -1,7 +1,7 @@
 {
   "name": "Bite",
   "type": "weapon",
-  "img": "modules/sw5e/icons/packs/Monster%20Traits/Aura%20of%20Bloodthirst.webp",
+  "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Aura%20of%20Bloodthirst.webp",
   "effects": [],
   "flags": {},
   "system": {
@@ -133,7 +133,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1669747065643,
     "modifiedTime": 1720368816497,

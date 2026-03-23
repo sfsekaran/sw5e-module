@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Ardennian.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Ardennian.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Ardennians are sentient humanoid simians hailing from the tropical paradise of Ardennia. They are covered in fur from head to their wrists and ankles, with brown and grey being the most common fur colors. Ardennians sport four arms and prehensile feet. All six of their limbs are equally dexterous.</p>\n<h2>Society and Culture</h2>\n<p>The Ardennian people themselves are a friendly communal species that are well known for welcoming visitors and inviting newcomers to traditional feasts and dances on the sandy beaches of Ardennia. Rural Ardiennan's live in modern tree-villages in the thick, dim jungle canopy on the majority of the islands. Ground level accommodations are available for off world visitors even in the smaller villages. Most off-worlders stay in the large modern resort complexes which boast having miles of private beaches or in the modern cities. Several large cities exist, scattered around the world, which typically encompass an entire island or a series of smaller islands joined together.</p>\n<p>Ardennia's distance from the main hyperlanes makes it one of the lesser-known vacation destinations, but it's a popular one for those who don't mind the extra travel time. Some affluent visitors prefer the solitude that Ardennia offers, and occasionally end up purchasing one of the smaller islands to build their own home. Ardennia is notable for having the most beach per square meter in the galaxy. </p>\n<h2>Names</h2>\n<p>Ardennian's names are typically concise and rarely more than two syllables, with a familal surname.</p>\n<p><strong>Male Names.</strong> Rio, Jakar, Hul, Lup, Quil, Jerno</p>\n<p><strong>Female Names.</strong> Rac, Bras, Nuc, Kua, Karta, Sanya</p>\n<p><strong>Surnames.</strong> Betal, Durant, Jabut, Karon, Rambuan</p>",
@@ -47,55 +47,55 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.fYvS8xTWCImGQZi5",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.fYvS8xTWCImGQZi5",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.4QiJmXakWi34Y6sE",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.4QiJmXakWi34Y6sE",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.E3eDTa9FT9kcAUdF",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.E3eDTa9FT9kcAUdF",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.iKpD8JK5b8QJBM2J",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.iKpD8JK5b8QJBM2J",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.aBJc2tqGiEftD8ZO",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.aBJc2tqGiEftD8ZO",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.YK0D22mciSjrnMs9",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.YK0D22mciSjrnMs9",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.MsCfqTzn72IkrQDr",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.MsCfqTzn72IkrQDr",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.HD4Zoq7RPNDTeS85",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.HD4Zoq7RPNDTeS85",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.VosSBJrUzeqOOsAs",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.VosSBJrUzeqOOsAs",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.qXu46iO7rZZqSGzh",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.qXu46iO7rZZqSGzh",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.15hOHxjyZpzGxvwJ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.15hOHxjyZpzGxvwJ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.9nLbbSoGlFd8uKgv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.9nLbbSoGlFd8uKgv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.cX5kJZt465oxJa0h",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.cX5kJZt465oxJa0h",
               "optional": false
             }
           ],
@@ -229,7 +229,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Ardennian.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Ardennian.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -244,7 +244,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725078,

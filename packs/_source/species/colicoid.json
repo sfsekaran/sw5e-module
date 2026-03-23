@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Colicoid.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Colicoid.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Colicoids are tall insectoids that held multiple appendages. Their bodies are chitinous and include a powerful stinging tail. A colicoid's physiology allows them to curl up into a protective ball and unfurl suddenly which allow them to catch their prey unaware. This rolling method of locomotion is second nature to the colicoids. Their insectoid minds provide them a natural defense against mind tricks. </p>\n<p>Some members are colicoid queens that are different as they are more than twice the size of even the largest warrior breeds. This makes them extremely dangerous and are the only colicoids that possess a unique poisonous stinger. This combined with their strength and size makes them deadly combatants, especially when within their nests. However, a queen tends to only fight when her young are being threatened.</p>\n<h2>Society and Culture</h2>\n<p>Though highly intelligent, colicoids are emotionless and cannibalistic in nature. Their ruthless cunning serves them well on the battlefield as it does on the negotiating table. It is known that long ago that they transferred these ruthless characteristics to their commerce activities. As a result, they are known to be brutally efficient in their business practices. They are noted for being vicious and calculating creatures that are driven by greed whilst showing little regard for others. The colicoids have numerous successful commercial ventures and hold strict business protocols. </p>\n<h2>Names</h2>\n<p>Colicoid names are typically very short and gender neutral, with surnames being based on the queen from which they spawned. </p>\n<p><strong>First Names.</strong> Gal, Het, Kaf, Lyp, Nok, Yin</p>\n<p><strong>Surnames.</strong> Bek, Dor, Set, Tel, Wim, Zal</p>",
@@ -47,51 +47,51 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.S4VIfbuP1RBgakyP",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.S4VIfbuP1RBgakyP",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.pwe6a53LajmjJ9DC",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.pwe6a53LajmjJ9DC",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.QMwLaCwFkkFqPGLE",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.QMwLaCwFkkFqPGLE",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.vJTsNeYCXLZtmPTI",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.vJTsNeYCXLZtmPTI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.sCgyqROu5uUettSE",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.sCgyqROu5uUettSE",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.NA0C7gNqIcSsfGVi",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.NA0C7gNqIcSsfGVi",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.aKfrVHD1TIFpfYLw",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.aKfrVHD1TIFpfYLw",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.XfBAOdcDme3eYWzT",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.XfBAOdcDme3eYWzT",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.VjDKfl8yJtVpKmot",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.VjDKfl8yJtVpKmot",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.QM6UmdcVxKimngmT",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.QM6UmdcVxKimngmT",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.4WcgAZN36x2ajB6v",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.4WcgAZN36x2ajB6v",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Qub9r8IgiYWim6so",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Qub9r8IgiYWim6so",
               "optional": false
             }
           ],
@@ -246,7 +246,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Colicoid.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Colicoid.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -261,7 +261,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725672,

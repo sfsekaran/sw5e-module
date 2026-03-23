@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/Haywire.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Haywire.webp",
   "system": {
     "description": {
       "value": "<p>You momentarily surround a creature you can see within range with electronic interference and holographic illusions. The target must succeed on an Intelligence saving throw, or it takes [[/r 1d6]] lightning damage and moves 5 feet in a random direction if it can move and its speed is at least 5 feet. Roll a [[/r d4]] for the direction: 1, north; 2, south; 3, east; or 4, west. This movement doesn't provoke opportunity attacks, and if the direction rolled is blocked, the target doesn't move.</p>\n<p>The power's damage increases by [[/r 1d6]] when you reach 5th level ([[/r 2d6]]), 11th level ([[/r 3d6]]), and 17th level ([[/r 4d6]]).</p>",
@@ -104,8 +104,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "condition": "",
@@ -153,7 +153,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "ztJ7diXCKhpYfaZH",
@@ -164,7 +164,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

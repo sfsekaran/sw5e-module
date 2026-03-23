@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/Release.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Release.webp",
   "system": {
     "description": {
       "value": "<p>Choose an object that you can see within range. The object can be a door, a box, a chest, a set of binders, a lock, or another object that contains a mundane or enhanced means that prevents access.</p>\n<p>A target that is held shut by a mundane lock or that is stuck or barred becomes unlocked, unstuck, or unbarred. If the object has multiple locks, only one of them is unlocked.</p>\n<p>If you choose a target that is held shut with <em>lock</em>, that power is suppressed for 10 minutes, during which time the target can be opened and shut normally.</p>",
@@ -99,8 +99,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -140,7 +140,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "HqRSFVVdI8tFGzFp",
@@ -151,7 +151,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

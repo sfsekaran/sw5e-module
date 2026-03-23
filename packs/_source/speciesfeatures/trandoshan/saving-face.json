@@ -15,7 +15,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Trandoshan.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Trandoshan.webp",
   "system": {
     "description": {
       "value": "<p>Trandoshans are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest.</p>",
@@ -36,8 +36,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "special"
@@ -62,7 +62,7 @@
         },
         "type": "utility"
       }
-    },
+    ],
     "identifier": "saving-face",
     "enchant": {},
     "prerequisites": {
@@ -81,7 +81,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1739121096233,
     "lastModifiedBy": "dnd5ebuilder0000"

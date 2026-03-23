@@ -2,11 +2,11 @@
   "_id": "hTvif2roWQW7BceW",
   "name": "Titan's Power",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/TitanSPower.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/TitanSPower.webp",
   "effects": [
     {
       "name": "Titan's Power",
-      "origin": "Compendium.sw5e.feats.Item.hTvif2roWQW7BceW",
+      "origin": "Compendium.sw5e-module.feats.Item.hTvif2roWQW7BceW",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -41,7 +41,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Feats/TitanSPower.webp",
+      "img": "modules/sw5e-module/icons/packs/Feats/TitanSPower.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -154,8 +154,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "type": "action"
@@ -198,14 +198,14 @@
         },
         "type": "damage"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966815,
     "modifiedTime": 1739121097153,

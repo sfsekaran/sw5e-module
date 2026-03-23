@@ -1,7 +1,7 @@
 {
   "name": "Mole Serpent, Adult",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/092_-_Mole_Serpent_2C_Adult/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/092_-_Mole_Serpent_2C_Adult/Avatar.webp",
   "items": [
     {
       "_id": "MGYwMmIxNDBlMzQ2",
@@ -9,7 +9,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/092_-_Mole_Serpent_2C_Adult/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/092_-_Mole_Serpent_2C_Adult/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -843,7 +843,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493983976,
     "modifiedTime": 1720552762274,

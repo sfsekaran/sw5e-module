@@ -2,7 +2,7 @@
   "_id": "DAq5ZmQ6aQ88Q9oI",
   "name": "Biochem Engineering",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/BiochemEngineering.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/BiochemEngineering.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.83FQ0ajjAzJk0WYO",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.83FQ0ajjAzJk0WYO",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.xvHfbGtOjBzLFol1",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.xvHfbGtOjBzLFol1",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.zy2QsyaXYjXAE3eY",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.zy2QsyaXYjXAE3eY",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ImzVZdODzSmUbTlC",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ImzVZdODzSmUbTlC",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.MH30Nb0CA4JCDDG8",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.MH30Nb0CA4JCDDG8",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.DXuupgy5zkVoO2i8",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.DXuupgy5zkVoO2i8",
               "optional": false
             }
           ],
@@ -150,79 +150,79 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.LfTrbvbqbEqQLDun"
+              "uuid": "Compendium.sw5e-module.invocations.LfTrbvbqbEqQLDun"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Mdu6WsjRdm3iEttj"
+              "uuid": "Compendium.sw5e-module.invocations.Mdu6WsjRdm3iEttj"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.PIOL0sfdsGR6zujV"
+              "uuid": "Compendium.sw5e-module.invocations.PIOL0sfdsGR6zujV"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.ta2H90QbKOotinUs"
+              "uuid": "Compendium.sw5e-module.invocations.ta2H90QbKOotinUs"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.mlogXFVLlu9QV5xk"
+              "uuid": "Compendium.sw5e-module.invocations.mlogXFVLlu9QV5xk"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.ATxnA8p3Oxyrg2sv"
+              "uuid": "Compendium.sw5e-module.invocations.ATxnA8p3Oxyrg2sv"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Ds8gW9BLb4x4uwpv"
+              "uuid": "Compendium.sw5e-module.invocations.Ds8gW9BLb4x4uwpv"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Q8c0oFdBWTToEIJv"
+              "uuid": "Compendium.sw5e-module.invocations.Q8c0oFdBWTToEIJv"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.8eCrF1T49p8VQbay"
+              "uuid": "Compendium.sw5e-module.invocations.8eCrF1T49p8VQbay"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.pdxQsadfGd5XIJoe"
+              "uuid": "Compendium.sw5e-module.invocations.pdxQsadfGd5XIJoe"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.mvxr81RTwpYlxfUx"
+              "uuid": "Compendium.sw5e-module.invocations.mvxr81RTwpYlxfUx"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.yAh1xw4AY4ehYlqz"
+              "uuid": "Compendium.sw5e-module.invocations.yAh1xw4AY4ehYlqz"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.0icDtA2NotdAztc4"
+              "uuid": "Compendium.sw5e-module.invocations.0icDtA2NotdAztc4"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.bXC9xIkWXCu3osEe"
+              "uuid": "Compendium.sw5e-module.invocations.bXC9xIkWXCu3osEe"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.kXoEJyW0cFSQaz4G"
+              "uuid": "Compendium.sw5e-module.invocations.kXoEJyW0cFSQaz4G"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.2WzMiADNCAGiAQFF"
+              "uuid": "Compendium.sw5e-module.invocations.2WzMiADNCAGiAQFF"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.FwpYyIgcbCW9Zy8A"
+              "uuid": "Compendium.sw5e-module.invocations.FwpYyIgcbCW9Zy8A"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.RRGXZn2p5Ve41m6B"
+              "uuid": "Compendium.sw5e-module.invocations.RRGXZn2p5Ve41m6B"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.UEUg3dfbRL5OBK4H"
+              "uuid": "Compendium.sw5e-module.invocations.UEUg3dfbRL5OBK4H"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.d3iUIKASjt1IsQuF"
+              "uuid": "Compendium.sw5e-module.invocations.d3iUIKASjt1IsQuF"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.X0WkNJb8mEfpwt32"
+              "uuid": "Compendium.sw5e-module.invocations.X0WkNJb8mEfpwt32"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.ZAMzQUI7zzk6DjfL"
+              "uuid": "Compendium.sw5e-module.invocations.ZAMzQUI7zzk6DjfL"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Wilf9tE4FcMVMlRS"
+              "uuid": "Compendium.sw5e-module.invocations.Wilf9tE4FcMVMlRS"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.LnUmcmx19JvVemDX"
+              "uuid": "Compendium.sw5e-module.invocations.LnUmcmx19JvVemDX"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Q9pw6twlMIiLDE0c"
+              "uuid": "Compendium.sw5e-module.invocations.Q9pw6twlMIiLDE0c"
             }
           ],
           "restriction": {
@@ -253,7 +253,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959726,
     "modifiedTime": 1732304668857,

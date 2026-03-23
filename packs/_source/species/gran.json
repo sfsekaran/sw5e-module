@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Gran.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Gran.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Gran can easily be identified by their three eyes and their goat-like snout. Female Gran also have three breasts. They have excellent vision, able to resolve more colors than most species, and even able to see into the infrared, thus they are able to sense one another's emotions and disposition by noting subtle changes in body heat and skin color. Gran have two stomachs, having evolved from herbivorous grazing animals who lived in herds on the mountains and highlands of Kinyen. A single meal can take almost an entire day to finish, after that a Gran does not often need to eat for several days.</p>\n<h2>Society and Culture</h2>\n<p>The peaceful nature of Gran society is a reflection of their homeworld, Kinyen. Kinyen boasted large and rolling grasslands and highlands, a dense and beautiful forest, and one of the longest and clearest rivers in the Bes Ber Bikade sector. The beauty of this planet, and the need for primitive Gran to band together for defense against predatory animals, helped the Gran develop strong bonds of home and family in their society. </p>\n<p>The Grans are also very protective of their families, and were some of the most devoted parents in the galaxy. This is because of their very powerful and sensitive sight, which can sense the emotions of their mates and their children. Gran society maintains its balance by setting up strict career quotas, and making sure young Gran are educated for a specific job that best served his or her talents.</p>\n<h2>Names</h2>\n<p>Gran names typically are monosyllabic and accompanied by a surname, which is familial.</p>\n<p><strong>Male Names.</strong> Ask, Dree, Ree, Pax, Nic</p>\n<p><strong>Female Names.</strong> Yan, Alijia, Meeb, Sir, Zeek</p>\n<p><strong>Surnames.</strong> Moe, Leem, Yees, Wix, Naaq</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.afxfLZIhJHt3JyBI",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.afxfLZIhJHt3JyBI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.54KlZHuWbInLuJ4c",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.54KlZHuWbInLuJ4c",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.NihElAbv7Ag1ffQv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.NihElAbv7Ag1ffQv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.e0gFXpGnRNnJpcEE",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.e0gFXpGnRNnJpcEE",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.2ovlDrxT7n4ixgCN",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.2ovlDrxT7n4ixgCN",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.FQXRwzZRZMFNYodO",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.FQXRwzZRZMFNYodO",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Wa8sXLKIVM3DLx09",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Wa8sXLKIVM3DLx09",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.vcGqeF33tmwYwMqq",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.vcGqeF33tmwYwMqq",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.AxVMkIqfsFzvo46S",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.AxVMkIqfsFzvo46S",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.kxLdrBduMH6BPeiy",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.kxLdrBduMH6BPeiy",
               "optional": false
             }
           ],
@@ -208,10 +208,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.zUPGpaizRcj9ZiOu.ActiveEffect.2cpzxKWagRwrN2wf"
+          "sourceId": "Compendium.sw5e-module.species.Item.zUPGpaizRcj9ZiOu.ActiveEffect.2cpzxKWagRwrN2wf"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.zUPGpaizRcj9ZiOu",
+      "origin": "Compendium.sw5e-module.species.Item.zUPGpaizRcj9ZiOu",
       "name": "Gran",
       "description": "",
       "statuses": [],
@@ -225,7 +225,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Gran.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Gran.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -255,10 +255,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.zUPGpaizRcj9ZiOu.ActiveEffect.2cpzxKWagRwrN2wf"
+          "sourceId": "Compendium.sw5e-module.species.Item.zUPGpaizRcj9ZiOu.ActiveEffect.2cpzxKWagRwrN2wf"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.zUPGpaizRcj9ZiOu",
+      "origin": "Compendium.sw5e-module.species.Item.zUPGpaizRcj9ZiOu",
       "name": "Keen Sight",
       "description": "",
       "statuses": [],
@@ -272,7 +272,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Gran.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Gran.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -287,7 +287,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304726197,

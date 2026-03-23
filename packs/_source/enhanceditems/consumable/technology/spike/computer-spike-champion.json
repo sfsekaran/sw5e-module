@@ -2,7 +2,7 @@
   "_id": "xgNbodkjvLlgf7vR",
   "name": "Computer Spike (Champion)",
   "type": "consumable",
-  "img": "modules/sw5e/icons/packs/Utility/ComputerSpike.webp",
+  "img": "modules/sw5e-module/icons/packs/Utility/ComputerSpike.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -111,7 +111,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493965079,
     "modifiedTime": 1730434243408,

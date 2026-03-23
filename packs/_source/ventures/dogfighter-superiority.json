@@ -3,7 +3,7 @@
   "name": "Dogfighter Superiority",
   "type": "feat",
   "flags": {},
-  "img": "modules/sw5e/icons/packs/Ventures/Venture.webp",
+  "img": "modules/sw5e-module/icons/packs/Ventures/Venture.webp",
   "effects": [],
   "system": {
     "description": {
@@ -99,7 +99,7 @@
   "sort": 0,
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674494021254,
     "modifiedTime": 1720552921357,

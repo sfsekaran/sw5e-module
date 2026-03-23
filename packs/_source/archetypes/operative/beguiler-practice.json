@@ -2,7 +2,7 @@
   "_id": "Uncxt2SzKHT45QWy",
   "name": "Beguiler Practice",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/BeguilerPractice.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/BeguilerPractice.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.0YLFqB0MfZPAXK6i",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.0YLFqB0MfZPAXK6i",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.fiU1UEzqH4x7TjXp",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.fiU1UEzqH4x7TjXp",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.34udwLn3L6yNJnsY",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.34udwLn3L6yNJnsY",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.MiTdjRmFCw4dsEd7",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.MiTdjRmFCw4dsEd7",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.d7wAQPshxavsna3o",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.d7wAQPshxavsna3o",
               "optional": false
             }
           ],
@@ -110,7 +110,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959751,
     "modifiedTime": 1732304669237,

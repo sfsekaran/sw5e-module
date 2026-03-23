@@ -1,16 +1,20 @@
+import { getModulePath, normalizeCompendiumUuid } from "../module-support.mjs";
+
 export function patchConfig(config, strict = true) {
 	const preLocalize = game.dnd5e.utils.preLocalize;
+	const getConditionReference = reference => normalizeCompendiumUuid(reference);
+	config.spellcasting ??= {};
+	config.spellcasting.preparationModes ??= {};
+	config.spellcasting.powerCasting ??= {};
+	const defaultSpellImg = config.spellcasting?.spell?.img ?? "";
 
 	// Default Abilities
 	config.defaultAbilities.hullPoints = "con";
 	config.defaultAbilities.shieldPoints = "str";
 
 	// Skills
-	if (strict) {
-		delete config.skills.arc;
-		delete config.skills.his;
-		delete config.skills.rel;
-	}
+	// Keep native DND5E skill keys available so stock actor sheets
+	// can still render and sort existing non-starship skill entries.
 	config.skills.lor = {
 		label: "SW5E.SkillLor",
 		ability: "int",
@@ -498,6 +502,12 @@ export function patchConfig(config, strict = true) {
 		label: "SW5E.CreatureForce",
 		plural: "SW5E.CreatureForcePl"
 	};
+	config.creatureTypes.starship = {
+		label: "Starship",
+		plural: "Starships",
+		icon: "icons/svg/wing.svg"
+	};
+	preLocalize("creatureTypes", { keys: ["label", "plural"], sort: true });
 	// Equipment
 	config.armorTypes.starship = "SW5E.EquipmentStarshipArmor";
 	config.castingEquipmentTypes = {
@@ -1676,7 +1686,7 @@ export function patchConfig(config, strict = true) {
 		},
 		ion: {
 			label: "SW5E.DamageIon",
-			icon: "modules/sw5e/icons/svg/damage/ion.svg",
+			icon: getModulePath("icons/svg/damage/ion.svg"),
 			// reference: "", // TODO
 			color: new Color(0x1E90FF)
 		},
@@ -1694,7 +1704,14 @@ export function patchConfig(config, strict = true) {
 		delete config.damageTypes.radiant;
 	}
 	// Powercasting
-	config.spellPreparationModes.powerCasting = {
+	Object.assign(config.spellcasting.powerCasting, {
+		label: "SW5E.Powercasting.Label",
+		img: defaultSpellImg,
+		usesPoints: true,
+		upcast: true,
+		prepares: true
+	});
+	config.spellcasting.preparationModes.powerCasting = {
 		label: "SW5E.Powercasting.Label",
 		usesPoints: true,
 		upcast: true,
@@ -1702,7 +1719,7 @@ export function patchConfig(config, strict = true) {
 	config.powerCasting = {
 		force: {
 			label: "SW5E.Powercasting.Force.Label",
-			img: config.spellcasting.spell.img,
+			img: defaultSpellImg,
 			attr: ["wis", "cha"],
 			focus: {
 				label: "SW5E.Powercasting.Force.Focus",
@@ -1763,7 +1780,7 @@ export function patchConfig(config, strict = true) {
 		},
 		tech: {
 			label: "SW5E.Powercasting.Tech.Label",
-			img: config.spellcasting.spell.img,
+			img: defaultSpellImg,
 			attr: ["int"],
 			focus: {
 				label: "SW5E.Powercasting.Tech.Focus",
@@ -1829,7 +1846,7 @@ export function patchConfig(config, strict = true) {
 	// Superiority
 	config.superiority = {
 		label: "SW5E.Superiority.Label",
-		img: config.spellcasting.spell.img,
+		img: defaultSpellImg,
 		// focus: {
 		// 	label: "SW5E.Superiority.Focus",
 		// 	id: "superiorityfocus",
@@ -1918,23 +1935,23 @@ export function patchConfig(config, strict = true) {
 		...config.conditionTypes,
 		corroded: {
 			name: "SW5E.ConCorroded",
-			img: "modules/sw5e/icons/svg/conditions/corroded.svg",
-			reference: "Compendium.sw5e.conditions.JournalEntry.eyo6JvadhVCWr4xD.JournalEntryPage.WZcSCaBuYZjNJ4LG"
+			img: getModulePath("icons/svg/conditions/corroded.svg"),
+			reference: getConditionReference("Compendium.sw5e.conditions.JournalEntry.eyo6JvadhVCWr4xD.JournalEntryPage.WZcSCaBuYZjNJ4LG")
 		},
 		ignited: {
 			name: "SW5E.ConIgnited",
 			img: config.conditionTypes.burning.img,
-			reference: "Compendium.sw5e.conditions.JournalEntry.SqRuG6FvP1Lutzvq.JournalEntryPage.CduLkVFKbfzSVEq8"
+			reference: getConditionReference("Compendium.sw5e.conditions.JournalEntry.SqRuG6FvP1Lutzvq.JournalEntryPage.CduLkVFKbfzSVEq8")
 		},
 		shocked: {
 			name: "SW5E.ConShocked",
-			img: "modules/sw5e/icons/svg/conditions/shocked.svg",
-			reference: "Compendium.sw5e.conditions.JournalEntry.HBSJojgAGu9Gsctd.JournalEntryPage.0000000000000000"
+			img: getModulePath("icons/svg/conditions/shocked.svg"),
+			reference: getConditionReference("Compendium.sw5e.conditions.JournalEntry.HBSJojgAGu9Gsctd.JournalEntryPage.0000000000000000")
 		},
 		slowed: {
 			name: "SW5E.ConSlowed",
-			img: "modules/sw5e/icons/svg/conditions/slowed.svg",
-			reference: "Compendium.sw5e.conditions.JournalEntry.ZhAPlYd3gQ2KgbzV.JournalEntryPage.GTgBAVw76eIKJGEL",
+			img: getModulePath("icons/svg/conditions/slowed.svg"),
+			reference: getConditionReference("Compendium.sw5e.conditions.JournalEntry.ZhAPlYd3gQ2KgbzV.JournalEntryPage.GTgBAVw76eIKJGEL"),
 			levels: 4,
 			speedReduction: [
 				{
@@ -1957,8 +1974,8 @@ export function patchConfig(config, strict = true) {
 		},
 		weakened: {
 			name: "SW5E.ConWeakened",
-			img: "modules/sw5e/icons/svg/conditions/weakened.svg",
-			reference: "Compendium.sw5e.conditions.JournalEntry.ffDhL5tDJ8lD07uN.JournalEntryPage.xGHbrLsJf1B5Gmtd"
+			img: getModulePath("icons/svg/conditions/weakened.svg"),
+			reference: getConditionReference("Compendium.sw5e.conditions.JournalEntry.ffDhL5tDJ8lD07uN.JournalEntryPage.xGHbrLsJf1B5Gmtd")
 		}
 	};
 	config.conditionEffects = {

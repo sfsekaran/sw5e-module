@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Yevetha.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Yevetha.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Physically, the Yevetha are tall beings with a ghoulish appearance that is bereft of any body hair, being described as being so gaunt as to seem skeletal due to their pallid gray skin and lithe builds. The species possesses six fingered hands that have retractable dewclaws. Each one is located on the inside of the wrist above their six-fingered hands. Their dewclaws shoot from a sheath of a skin beneath their cadaverous hands and are capable of being retracted. When extended fully, the wrist blades reach about a foot in length, and are used in close combat and blood sacrifices. The Yevetha also possess a greater tolerance for g-forces when compared to Human pilots.</p>\n<h2>Society and Culture</h2>\n<p>Within their society, blood is an important aspect of their culture and is a central focus of their religious belief system. This has resulted in them becoming a particularly violent species. For the Yevetha, death is not to be feared. They are described as being dutiful, attentive, cautious but also fatalistic in their view of the universe. When fighting against other foes, Yevetha are notable for being ruthless fighters who never surrender even in the face of certain defeat. Due to the brutal nature of their society, the Yevetha do not possess a single jail, penitentiary or stockade as they believe there is no need for such facilities. In fact, they do not possess a word in their language for either convict or incarcerate.</p>\n<h2>Names</h2>\n<p>Yevetha names are sharp and are kept to one syllable, not varying significantly based on gender. Surnames are familial.</p>\n<p><strong>First Names.</strong> Ral, Var, Cax, Tav, Fol, Sip, Nov</p>\n<p><strong>Surnames.</strong> Faalk, Naalar, Giinn, Ralle, Xoota</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.pDgGMMvcLFVVeKyx",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.pDgGMMvcLFVVeKyx",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.EacVY5pFSFodlK1K",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.EacVY5pFSFodlK1K",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.5I0HMmGWUCVF3DaM",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.5I0HMmGWUCVF3DaM",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.nPUcHnWOLpGDiBgv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.nPUcHnWOLpGDiBgv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Kli9fJKBXTcI8IOI",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Kli9fJKBXTcI8IOI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.tPiBD7bWNkyenoy8",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.tPiBD7bWNkyenoy8",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.1YJE94EPztwwOzAW",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.1YJE94EPztwwOzAW",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.hcu2zSAHanOIaVeg",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.hcu2zSAHanOIaVeg",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.qHjtfA6pbnh7exME",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.qHjtfA6pbnh7exME",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.j3NPFgEvc1erNXVf",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.j3NPFgEvc1erNXVf",
               "optional": false
             }
           ],
@@ -205,7 +205,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Yevetha.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Yevetha.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -220,7 +220,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725090,

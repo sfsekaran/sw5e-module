@@ -1,7 +1,7 @@
 {
   "name": "Navy Pilot",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/226_-_Navy_Pilot/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/226_-_Navy_Pilot/Avatar.webp",
   "items": [
     {
       "_id": "NDRlMGY3MTY1NDkz",
@@ -9,7 +9,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/226_-_Navy_Pilot/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/226_-_Navy_Pilot/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -155,7 +155,7 @@
       "_id": "IqU6WERLGzBHJq9Q",
       "name": "Combat suit",
       "type": "equipment",
-      "img": "modules/sw5e/icons/packs/Armor/PHB/CombatSuit.webp",
+      "img": "modules/sw5e-module/icons/packs/Armor/PHB/CombatSuit.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -307,7 +307,7 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": 1674493960308,
         "modifiedTime": 1674582004848,
@@ -1011,7 +1011,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984003,
     "modifiedTime": 1720552763323,

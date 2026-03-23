@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Passive.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Prerequisite:</strong> 13th level, Prototype Grounding System</em></p>\n<p>While wearing your gadgeteer harness you have immunity to lightning damage.</p>",
@@ -104,7 +104,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1684777309214,
     "modifiedTime": 1730434303127,

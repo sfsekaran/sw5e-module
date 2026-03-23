@@ -2,7 +2,7 @@
   "_id": "WOC9XyQpdhs2CeGq",
   "name": "Fury",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/GRDN-ARCH-Reaction.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/GRDN-ARCH-Reaction.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -21,7 +21,7 @@
   },
   "system": {
     "description": {
-      "value": "<p><em><strong>Juyo/Vaapad Form:</strong> 7th level</em></p>\n<p>You gain one of the following features. Choose Relentless for Juyo or Punishing Charge for Vaapad.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.Xuhu5J6jGwdhwPdf]{Relentless }</h3>\n<p>You have advantage on initiative checks, and gain a 10 foot bonus to your speed on your first turn of combat.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.6L8CL3z3jPQkd742]{Punishing Charge }</h3>\n<p>When a hostile creature you can see or hear within 30 feet of you casts a force power, you can use your reaction to move up to half your speed. You must end this move closer to the enemy than you started. If you end this movement within 5 feet of the creature, and the triggering force power required a ranged attack roll, they have disadvantage on the roll.</p>",
+      "value": "<p><em><strong>Juyo/Vaapad Form:</strong> 7th level</em></p>\n<p>You gain one of the following features. Choose Relentless for Juyo or Punishing Charge for Vaapad.</p>\n<h3>@UUID[Compendium.sw5e-module.archetypefeatures.Item.Xuhu5J6jGwdhwPdf]{Relentless }</h3>\n<p>You have advantage on initiative checks, and gain a 10 foot bonus to your speed on your first turn of combat.</p>\n<h3>@UUID[Compendium.sw5e-module.archetypefeatures.Item.6L8CL3z3jPQkd742]{Punishing Charge }</h3>\n<p>When a hostile creature you can see or hear within 30 feet of you casts a force power, you can use your reaction to move up to half your speed. You must end this move closer to the enemy than you started. If you end this movement within 5 feet of the creature, and the triggering force power required a ranged attack roll, they have disadvantage on the roll.</p>",
       "chat": ""
     },
     "requirements": "Guardian (Juyo/Vaapad Form) 7",
@@ -105,8 +105,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "reaction"
@@ -131,14 +131,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493957803,
     "modifiedTime": 1739121092781,

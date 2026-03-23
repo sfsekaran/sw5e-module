@@ -1,7 +1,7 @@
 {
   "name": "Officer, Senior",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/228_-_Officer_2C_Senior/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/228_-_Officer_2C_Senior/Avatar.webp",
   "items": [
     {
       "_id": "MGVhZjAyZjg0MmU0",
@@ -9,7 +9,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/228_-_Officer_2C_Senior/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/228_-_Officer_2C_Senior/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -178,7 +178,7 @@
           "teleDist": 30
         }
       },
-      "img": "modules/sw5e/icons/packs/monsters/228_-_Officer_2C_Senior/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/228_-_Officer_2C_Senior/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -326,7 +326,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/228_-_Officer_2C_Senior/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/228_-_Officer_2C_Senior/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -495,7 +495,7 @@
           "teleDist": 30
         }
       },
-      "img": "modules/sw5e/icons/packs/monsters/228_-_Officer_2C_Senior/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/228_-_Officer_2C_Senior/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -667,7 +667,7 @@
           "sourceId": "Item.UYlxnuMo4uLcJTYV"
         }
       },
-      "img": "modules/sw5e/icons/packs/monsters/227_-_Officer_2C_Junior/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/227_-_Officer_2C_Junior/Avatar.webp",
       "effects": [
         {
           "_id": "Pwq0j7VG4ePDGAWl",
@@ -729,7 +729,7 @@
             "compendiumSource": null,
             "duplicateSource": null
           },
-          "img": "modules/sw5e/icons/packs/monsters/227_-_Officer_2C_Junior/avatar.webp",
+          "img": "modules/sw5e-module/icons/packs/monsters/227_-_Officer_2C_Junior/avatar.webp",
           "type": "base",
           "system": {},
           "sort": 0,
@@ -843,7 +843,7 @@
       "_id": "YXV8CjKAxqlf58nT",
       "name": "Battle armor",
       "type": "equipment",
-      "img": "modules/sw5e/icons/packs/Armor/PHB/BattleArmor.webp",
+      "img": "modules/sw5e-module/icons/packs/Armor/PHB/BattleArmor.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -1003,7 +1003,7 @@
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "coreVersion": "12.330",
         "createdTime": 1674493960313,
         "modifiedTime": 1674582004892,
@@ -1075,7 +1075,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/monsters/227_-_Officer_2C_Junior/avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/227_-_Officer_2C_Junior/avatar.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -1774,7 +1774,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984300,
     "modifiedTime": 1720552773511,

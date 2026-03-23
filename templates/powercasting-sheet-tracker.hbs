@@ -1,15 +1,15 @@
 <div class="label roboto-condensed-upper">
     <span>{{pointsLabel}}</span>
     {{#if isEditable}}
-    <a class="config-button" data-action="hitPoints" data-tooltip="DND5E.HitPointsConfig" aria-label="{{ localize "
-        DND5E.HitPointsConfig" }}">
-        <i class="fas fa-cog"></i>
-    </a>
+    <button type="button" class="config-button unbutton" data-action="configure-power-points"
+        data-cast-type="{{castType}}" data-tooltip aria-label="{{configureLabel}}">
+        <i class="fas fa-cog" inert></i>
+    </button>
     {{/if}}
 </div>
-<div class="meter sectioned {{castType}}-points">
-    <div class="progress {{castType}}-points {{tempmaxSign}}" role=" meter" aria-valuemin="0" aria-valuenow="{{value}}"
-        aria-valuemax="{{max}}" style="--bar-percentage: {{pct}}%">
+<div class="meter sw5e-power-points {{castType}}-points">
+    <div class="progress {{castType}}-points {{tempmaxSign}}" role="meter" aria-valuemin="0" aria-valuenow="{{value}}"
+        aria-valuemax="{{ariaMax}}" style="--bar-percentage: {{pct}}%">
         <div class="label">
             <span class="value">{{value}}</span>
             <span class="separator">&sol;</span>
@@ -20,9 +20,5 @@
         </div>
         <input type="text" name="system.powercasting.{{castType}}.points.value" data-dtype="Number" placeholder="0"
             value="{{value}}" hidden>
-    </div>
-    <div class="tmp">
-        <input type="text" name="system.powercasting.{{castType}}.points.temp" data-dtype="Number"
-            placeholder="{{ localize " DND5E.TMP" }}" value="{{temp}}">
     </div>
 </div>

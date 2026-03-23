@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCT-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCT-ARCH-Passive.webp",
   "system": {
     "description": {
       "value": "<p>You create a wave of barrier energy in a 15-foot cone. Each creature within the cone must make a Dexterity saving throw. On a failed save, a creature takes [[/r 2d6]] energy damage and is pushed back to the edge of the cone. On a success, they take half damage and aren't pushed.</p>\n<p>This feature's damage increases by [[/r 1d6]] when you reach 11th level ([[/r 3d6]]) and 17th level ([[/r 4d6]]).</p>",
@@ -106,8 +106,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -155,7 +155,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -165,7 +165,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288495918,
     "modifiedTime": 1739121092781,

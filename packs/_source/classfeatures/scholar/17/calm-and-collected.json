@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCLR-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCLR-Action.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Scholar:</strong> 14th and 17th level</em></p>\n<p>When you make a saving throw caused by an effect you can see, you may gain a bonus to the saving throw equal to your Intelligence modifier. </p>\n<p>You can use this feature five times. You gain an additional use at 17th level. You regain all expended uses when you complete a long rest.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "special"
@@ -126,7 +126,7 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -136,7 +136,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288496551,
     "modifiedTime": 1739121094035,

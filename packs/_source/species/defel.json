@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Defel.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Defel.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>While defel appear to be visually similar to the shistavanen, they are very different on a biological level. Defel have the ability to bend waves of light in such a manner that it renders them practically invisible to the human eye. Despite this ability, they could be still be spotted by force-users and keen-eyed individuals.</p>\n<p>Defel have extremely high perceptive ability because of their large ears, sensitive noses, and keen eyes. Because of the heightened levels of visual stimuli their eyes experience, defel are nearly blinded by sunlight but  can see rather well in the dark.</p>\n<h2>Society and Culture</h2>\n<p>Defel live in tight-knit, interdependent communites underground. The harsh environment on Af'El turned the defel into rugged survivors, able to hold their own in the Galaxy. </p>\n<p>Defel have a strong sense of honor and will not associate with individuals that do not keep their word.</p>\n<p>Because defel have yet to achieve interplanetary travel, they are a rare sight in the galaxy.</p>\n<h2>Defel Names</h2>\n<p>Defel names tend to sound dark and mysterious, and are mostly composed of multiple syllables. Defel surnames are familial, using stern and simple sounds.</p>\n<p><strong>Male Names.</strong> Alustair, Claustro, Tenebris, Varsiin</p>\n<p><strong>Female Names.</strong> Lhantra, Soliel, Stroika, Zavtra</p>\n<p><strong>Surnames.</strong> Gauss, Neura, Tume, Vecherom</p>",
@@ -47,59 +47,59 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.g2tRtsK6WNL4v08X",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.g2tRtsK6WNL4v08X",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.EVIsRJyNILM4zChZ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.EVIsRJyNILM4zChZ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.VNYyJfjNDh2Sihys",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.VNYyJfjNDh2Sihys",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.LJ2vyBn4WcbFoRyX",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.LJ2vyBn4WcbFoRyX",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.4SBjFyNmlKEOYbm3",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.4SBjFyNmlKEOYbm3",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.y2KCv31nQZ7PS9IX",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.y2KCv31nQZ7PS9IX",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.PdzvmrbEV6OCwh00",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.PdzvmrbEV6OCwh00",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.0pTcAwUgNwvRJUbq",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.0pTcAwUgNwvRJUbq",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.3a8gfPnAiWFUvaAS",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.3a8gfPnAiWFUvaAS",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.9FDCyLPUcCB225F8",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.9FDCyLPUcCB225F8",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.aTkucc5j8CD9DU4w",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.aTkucc5j8CD9DU4w",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.RG0qQKLvUSkYdqdT",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.RG0qQKLvUSkYdqdT",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.a6aRNCvycugXsUXQ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.a6aRNCvycugXsUXQ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.A4GGRQxePgrW4xDn",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.A4GGRQxePgrW4xDn",
               "optional": false
             }
           ],
@@ -225,10 +225,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.FLrIaqeiRgG7XO4D.ActiveEffect.avJjg9zlYNomK9Uw"
+          "sourceId": "Compendium.sw5e-module.species.Item.FLrIaqeiRgG7XO4D.ActiveEffect.avJjg9zlYNomK9Uw"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.FLrIaqeiRgG7XO4D",
+      "origin": "Compendium.sw5e-module.species.Item.FLrIaqeiRgG7XO4D",
       "name": "Defel",
       "description": "",
       "statuses": [],
@@ -242,7 +242,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Defel.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Defel.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -278,10 +278,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.FLrIaqeiRgG7XO4D.ActiveEffect.avJjg9zlYNomK9Uw"
+          "sourceId": "Compendium.sw5e-module.species.Item.FLrIaqeiRgG7XO4D.ActiveEffect.avJjg9zlYNomK9Uw"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.FLrIaqeiRgG7XO4D",
+      "origin": "Compendium.sw5e-module.species.Item.FLrIaqeiRgG7XO4D",
       "name": "Sunlight Sensitivity - you or your target is in sunlight",
       "description": "",
       "statuses": [],
@@ -295,7 +295,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Defel.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Defel.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -310,7 +310,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725869,

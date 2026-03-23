@@ -2,7 +2,7 @@
   "_id": "MZIQGjB51IDTTOQW",
   "name": "Hydraulic Equalizer Mk VI",
   "type": "modification",
-  "img": "modules/sw5e/icons/packs/Modifications/ArmorMod.webp",
+  "img": "modules/sw5e-module/icons/packs/Modifications/ArmorMod.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -111,7 +111,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493999336,
     "modifiedTime": 1720368845006,

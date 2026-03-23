@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Chevin.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Chevin.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Chevin have long snouts which hang down nearly to their ankles. Combined with their intellect, this makes them skilled hunters of animals such as backshin, because they can smell out their prey or feed while keeping their eyes on the horizon. It is also their hunting prowess which allowed them to dominate their homeworld and conquer the Chevs. Chevin have thick legs, massive wide bodies, thin rope-like tails, and arms so long their three-fingered hands often brushed the ground.</p>\n<h2>Society and Culture</h2>\n<p>Chevin live in small, mobile communities, with homes mounted on great wheeled carts. Even after they gained access to galactic technology, they continued to live as nomads (though more affluent Chevin mounted their lodges on large repulsorlift vehicles instead.) Their Chev slaves are usually forced to follow on foot. Nomadic groups of Chevin keep in touch via comlinks, and often converge on a single location to deal with danger.</p>\n<p>The only Chevin settlements that stay in place for more than one standard month are the Government Villages, where Chevin dictators live with their hand-picked advisors. Even these settlements are movable when necessary. Each of the roughly two dozen Government Villages rules a Chevin nation.</p>\n<h2>Names</h2>\n<p>Chevin names do not vary significantly based on gender. Surnames are based on community.</p>\n<p><strong>First Names.</strong> Buula, Ephant, Perre, Phylus, Reseros</p>\n<p><strong>Surnames.</strong> Meh, Mon, Nen, Needmo, Phrusaani</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.NGjlJ7ZZlv6j8ydC",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.NGjlJ7ZZlv6j8ydC",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.TpGtFcJ7xzM7Nh2A",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.TpGtFcJ7xzM7Nh2A",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.7VFRSXQBUhhz0a1R",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.7VFRSXQBUhhz0a1R",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.2jiHpjqki3oyG4rV",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.2jiHpjqki3oyG4rV",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.14nUX9Y2V06bPrSz",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.14nUX9Y2V06bPrSz",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ELlXHQVxTp2eej6z",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ELlXHQVxTp2eej6z",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.1Xinya2yMktEQTUz",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.1Xinya2yMktEQTUz",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.LKhzQQCFxP9ssFKV",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.LKhzQQCFxP9ssFKV",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.4oIXDFpV9UBfENyD",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.4oIXDFpV9UBfENyD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.udSsg2S3BezxBvN6",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.udSsg2S3BezxBvN6",
               "optional": false
             }
           ],
@@ -208,10 +208,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.KOwV2N1l4bDeGSlb.ActiveEffect.xyKlxEBAGLcMBv2n"
+          "sourceId": "Compendium.sw5e-module.species.Item.KOwV2N1l4bDeGSlb.ActiveEffect.xyKlxEBAGLcMBv2n"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.KOwV2N1l4bDeGSlb",
+      "origin": "Compendium.sw5e-module.species.Item.KOwV2N1l4bDeGSlb",
       "name": "Keen Hearing",
       "description": "",
       "statuses": [],
@@ -225,7 +225,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Chevin.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Chevin.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -240,7 +240,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725129,

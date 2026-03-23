@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SCLR-Reaction.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SCLR-Reaction.webp",
   "system": {
     "description": {
       "value": "<p>If a creature makes a melee attack against you or your companion, and your companion is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll.</p>",
@@ -34,8 +34,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "reaction"
@@ -60,7 +60,7 @@
         },
         "type": "utility"
       }
-    },
+    ],
     "identifier": "protective-friend",
     "enchant": {},
     "prerequisites": {
@@ -79,7 +79,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

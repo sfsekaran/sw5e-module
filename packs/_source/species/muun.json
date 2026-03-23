@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Muun.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Muun.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Muuns are tall, gaunt humanoids with thin bodies, long limbs, and elongated hairless heads. They typically have pale pink or white skin, most likely derived from their propensity for staying indoors. Muuns have tiny ears on the middle of the sides of their heads, flat noses, and slim mouths which leads to a commonly nasally voice.</p>\n<h2>Society and Culture</h2>\n<p>Muuns believe in tradition, with an established culture based on intelligence and merit. A class-based hierarchy, Muuns consider the  the intellectual pursuits — financiers, lawyers, engineers, diplomats, scientists — as the highest levels of society. Muun culture, and life, revolves around economics and finance. Intense competition among coworkers encourages economic growth, increased productivity, and superior work ethic. Muuns also have a fundamental respect for justice, though they typically adhere to the letter of the law rather than the spirit.</p>\n<p>Since Muuns tend to shy away from fighting and physical pursuits, Muun society relies on alternative means for their planet's protection, using vast financial resources to purchase massive floating defense platforms to defend their civilization from attack.</p>\n<h2>Names</h2>\n<p>Muun names are typically clear and concise, rarely containing more than two syllables, with familial surnames.</p>\n<p><strong>Male Names.</strong> Clu, Hego, Nix, Pors, San</p>\n<p><strong>Female Names.</strong> Dax, Efra, Gil, Rel, Ter</p>\n<p><strong>Surnames.</strong> Card, Damask, Hill, Lesser, Tonith</p>",
@@ -47,39 +47,39 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.sjyX8z2wtxq62M86",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.sjyX8z2wtxq62M86",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.f3w4MkijjSCXdg9H",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.f3w4MkijjSCXdg9H",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.agdsDChFMuzNqViS",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.agdsDChFMuzNqViS",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ipPlRHlaIgw9xr4k",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ipPlRHlaIgw9xr4k",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.J96xoKzkNijFwkQW",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.J96xoKzkNijFwkQW",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.mgW0DmncySMIUvka",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.mgW0DmncySMIUvka",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.cVaYXK0EWzQHbRrv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.cVaYXK0EWzQHbRrv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.HxwBSUNQazHchO12",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.HxwBSUNQazHchO12",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.O5PAmQVDbTy3j9wx",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.O5PAmQVDbTy3j9wx",
               "optional": false
             }
           ],
@@ -207,7 +207,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Muun.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Muun.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -222,7 +222,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304724744,

@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Gormak.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Gormak.webp",
   "system": {
     "description": {
       "value": "<p>You have proficiency in the Technology skill, one vibroweapon and one blaster of your choice, and your choice of armstech's implements, biotech's implements, constructor's implements, mechanic's kits, or tinker's implements. Additionally, you have advantage on Intelligence (Technology) checks made to understand, utilize, or modify technology that you are unaware of or have never seen before.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "technological-affinity",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1730433988012,
     "lastModifiedBy": "dnd5ebuilder0000"

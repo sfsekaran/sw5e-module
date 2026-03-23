@@ -2,7 +2,7 @@
   "_id": "yUx9ULyHJ85dUe1v",
   "name": "Praetorian Specialist",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/PraetorianSpecialist.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/PraetorianSpecialist.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.3Bxaqj9U1C39HAsr",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.3Bxaqj9U1C39HAsr",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.hI3wZV9oGJN66MkG",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.hI3wZV9oGJN66MkG",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.XyVKlChrOQxpq3wT",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.XyVKlChrOQxpq3wT",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.58S0eDY8LbWcyLUA",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.58S0eDY8LbWcyLUA",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.5eGZeGH5yvM23qaX",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.5eGZeGH5yvM23qaX",
               "optional": false
             }
           ],
@@ -101,7 +101,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.WayeFkeZ0UZogQXl",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.WayeFkeZ0UZogQXl",
               "optional": false
             }
           ],
@@ -191,7 +191,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959785,
     "modifiedTime": 1732304669735,

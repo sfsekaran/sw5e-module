@@ -1,9 +1,9 @@
 {
-  "id": "sw5e",
+  "id": "sw5e-module",
   "title": "SW5E",
-  "description": "Test",
+  "description": "Implementation of SW5E as a module for the dnd5e system.",
   "version": "#{VERSION}#",
-  "library": "false",
+  "library": false,
   "manifestPlusVersion": "1.2.3",
   "compatibility": {
     "minimum": 13,
@@ -24,7 +24,7 @@
         "type": "system",
         "compatibility": {
           "minimum": "5.0.0",
-          "verified": "5.1.10"
+          "verified": "5.2.5"
         }
       }
     ],
@@ -227,7 +227,7 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["deployment"]
+          "types": ["feat"]
         }
       }
     },
@@ -409,7 +409,7 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["sw5e.maneuver"]
+          "types": ["sw5e-module.maneuver"]
         }
       }
     },
@@ -513,7 +513,7 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["starship"]
+          "types": ["vehicle"]
         }
       }
     },
@@ -591,7 +591,7 @@
       "private": false,
       "flags": {
         "dnd5e": {
-          "types": ["starship"]
+          "types": ["feat"]
         }
       }
     },
@@ -796,6 +796,31 @@
       "lang": "en",
       "name": "English",
       "path": "languages/en.json"
+    },
+    {
+      "lang": "de",
+      "name": "German",
+      "path": "languages/de.json"
+    },
+    {
+      "lang": "es",
+      "name": "Spanish",
+      "path": "languages/es.json"
+    },
+    {
+      "lang": "fr",
+      "name": "French",
+      "path": "languages/fr.json"
+    },
+    {
+      "lang": "it",
+      "name": "Italian",
+      "path": "languages/it.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Portuguese (Brazil)",
+      "path": "languages/pt_BR.json"
     }
   ],
   "url": "#{URL}#",
@@ -810,7 +835,7 @@
     }
   ],
   "flags": {
-    "needsMigrationVersion": "0.18",
+    "needsMigrationVersion": "0.25",
     "compatibleMigrationVersion": "0"
   }
 }

@@ -2,7 +2,7 @@
   "_id": "Q3COBM7g1hT9v906",
   "name": "Snapshot Mastery",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/SnapshotMastery.webp",
+  "img": "modules/sw5e-module/icons/packs/Fighting%20Styles%20and%20Masteries/SnapshotMastery.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -105,8 +105,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "bonus"
@@ -131,14 +131,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493967818,
     "modifiedTime": 1739121097474,

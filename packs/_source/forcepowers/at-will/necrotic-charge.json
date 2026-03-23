@@ -2,7 +2,7 @@
   "_id": "Ye0wbflcI8UPzxWa",
   "name": "Necrotic Charge",
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Force%20Powers/NecroticCharge.webp",
+  "img": "modules/sw5e-module/icons/packs/Force%20Powers/NecroticCharge.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -108,8 +108,8 @@
     "enchantment": null,
     "summons": null,
     "properties": [],
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "condition": "",
@@ -154,14 +154,14 @@
         },
         "type": "damage"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493979269,
     "modifiedTime": 1739121089377,

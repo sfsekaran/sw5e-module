@@ -2,7 +2,7 @@
   "_id": "snMUCDEc49pFQlM0",
   "name": "Stalker Technique",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/StalkerTechnique.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/StalkerTechnique.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.mHMVnLFhcHBG6cAt",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.mHMVnLFhcHBG6cAt",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.tjyIuf8lisQ2DNtP",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.tjyIuf8lisQ2DNtP",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.yPmmGhJdfJi5CTHO",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.yPmmGhJdfJi5CTHO",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.2jjhHwDNTNAjKPzZ",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.2jjhHwDNTNAjKPzZ",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.neI83QoBohA6gEqz",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.neI83QoBohA6gEqz",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959777,
     "modifiedTime": 1732304669616,

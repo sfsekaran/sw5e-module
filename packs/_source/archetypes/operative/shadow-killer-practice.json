@@ -8,7 +8,7 @@
     }
   },
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/ShadowKillerPractice.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/ShadowKillerPractice.webp",
   "effects": [],
   "system": {
     "description": {
@@ -26,11 +26,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Fx3dqiaoWec8rhi3",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Fx3dqiaoWec8rhi3",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ohDu7r97o9itdhs9",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ohDu7r97o9itdhs9",
               "optional": false
             }
           ],
@@ -47,7 +47,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.S70e4C7FeptqIcjJ",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.S70e4C7FeptqIcjJ",
               "optional": false
             }
           ],
@@ -64,7 +64,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.EvACp4LrpbKbic2k",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.EvACp4LrpbKbic2k",
               "optional": false
             }
           ],
@@ -81,7 +81,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.lVz2FVvCG2q65gxG",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.lVz2FVvCG2q65gxG",
               "optional": false
             }
           ],
@@ -124,7 +124,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1667426103159,
     "modifiedTime": 1732304669076,

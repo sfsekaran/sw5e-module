@@ -2,7 +2,7 @@
   "_id": "UzpUR5lA4YOM5XVs",
   "name": "Illusionist Technique",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/IllusionistTechnique.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/IllusionistTechnique.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.lAW369rv2hiS8dkA",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.lAW369rv2hiS8dkA",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.h9jPXWvV178DU6YK",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.h9jPXWvV178DU6YK",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.kuyt0JMu56ObIrNW",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.kuyt0JMu56ObIrNW",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ItBrXVOTDaTVCcKR",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ItBrXVOTDaTVCcKR",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.v1GPZX7JZ4lh2Bhy",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.v1GPZX7JZ4lh2Bhy",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959752,
     "modifiedTime": 1732304669245,

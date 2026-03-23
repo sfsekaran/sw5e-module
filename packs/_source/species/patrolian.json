@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Patrolian.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Patrolian.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Patrolians are fish-like in appearance, covered in pale, pastel-colored scales and possessing numerous fins on their long limbs and face, as well as a notable dorsal fin which often require modified clothing to accommodate. </p>\n<p>Thanks to their gills, patrolians are perfectly comfortable breathing underwater as well as on land, and their physiology is also notoriously resistant to electric shocks—both likely throwbacks to evolution on their native homeworld of Patrolia.</p>\n<h2>Society and Culture</h2>\n<p>Patrolians are a notably innovative and resourceful species, and many of their number have found their way into roles in the construction, maintenance and sale of technology. </p>\n<p>Unfortunately, patrolians tend to pursue these businesses in a shady manner, and most tend to operate such ventures in the criminal underworld, working as bounty hunters, thieves, fences, slicers and other such technically-demanding criminal roles. </p>\n<p>This inclination towards crime stems from their homeworld, which is perpetually stalled in a state of economic decay due to wartime. With the advent of multiple wars fought in the system, different armies continue to see the aquatic world as a strategic bulwark in the region. Because of this, patrolians have to find work not only off-world, but typically in fields not falling under governmental purview; unfortunately, criminal activities are the most common path. </p>\n<h2>Names</h2>\n<p>Patrolian names are usually multisyllabic and sing-songy with lots of open vowels and few fricatives. Patrolians are not known to use family names or other surnames.</p>\n<p><strong>Male Names.</strong> Dalladu, Feddi, Nogagai, Teconica</p>\n<p><strong>Female Names.</strong> Kakeda, Machibido, Rinimma, Talla</p>",
@@ -47,59 +47,59 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.E2AEZEKkDPby3DAg",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.E2AEZEKkDPby3DAg",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.g4EAlisfqVnZ8hwK",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.g4EAlisfqVnZ8hwK",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.tb2BYyVtbGrhiKyb",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.tb2BYyVtbGrhiKyb",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.mbY4iGtcOud4pM82",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.mbY4iGtcOud4pM82",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.4nKeg9fUFyWsq57y",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.4nKeg9fUFyWsq57y",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.DLqy1i02ionTVP3v",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.DLqy1i02ionTVP3v",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.nmV4eFcDx5GR6I7h",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.nmV4eFcDx5GR6I7h",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.bWLlF76OvKJDBEtr",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.bWLlF76OvKJDBEtr",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.WX4OM7K69WvKeO9e",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.WX4OM7K69WvKeO9e",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.WkpZL6P9DW1tDvHH",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.WkpZL6P9DW1tDvHH",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.sLldEwZfu4nDBWvX",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.sLldEwZfu4nDBWvX",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.WVND5T8Cr2oIffq2",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.WVND5T8Cr2oIffq2",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Y0U0QGDA2BztAyVD",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Y0U0QGDA2BztAyVD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.HmOmOEQW1Zu9H7vV",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.HmOmOEQW1Zu9H7vV",
               "optional": false
             }
           ],
@@ -257,7 +257,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Patrolian.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Patrolian.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -272,7 +272,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732412596409,

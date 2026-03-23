@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/FGTR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/FGTR-Passive.webp",
   "system": {
     "description": {
       "value": "<p>You enhance your shot with armor-piercing properties. When you use this option, you don't make an attack roll for the attack. Instead, the shot shoots forward in a line, which is 1 foot wide and 30 feet long, before disappearing. The shot passes through objects, ignoring cover. Each creature in that line must make a Dexterity saving throw. On a failed save, a creature takes damage as if it were hit by the shot, plus an extra [[/r 1d6]] damage of the weapon's type. On a successful save, a target takes half as much damage.</p>\n<p>The extra damage increases to [[/r 2d6]] when you reach 18th level in this class.</p>",
@@ -34,8 +34,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -83,7 +83,7 @@
         },
         "type": "save"
       }
-    },
+    ],
     "identifier": "piercing-shot",
     "enchant": {},
     "prerequisites": {
@@ -102,7 +102,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

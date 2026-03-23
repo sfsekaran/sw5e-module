@@ -2,7 +2,7 @@
   "_id": "qrHsv2kIAuh551eP",
   "name": "Whills Order",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/WhillsOrder.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/WhillsOrder.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,7 +29,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.VEOq69gg0l6lolMK",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.VEOq69gg0l6lolMK",
               "optional": false
             }
           ],
@@ -46,7 +46,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.aZhT3MroOAPBsYk3",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.aZhT3MroOAPBsYk3",
               "optional": false
             }
           ],
@@ -63,7 +63,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.mCJv9MUv4Zp11I8G",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.mCJv9MUv4Zp11I8G",
               "optional": false
             }
           ],
@@ -80,7 +80,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.R5H3i6PfQEzdXyz9",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.R5H3i6PfQEzdXyz9",
               "optional": false
             }
           ],
@@ -125,7 +125,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959775,
     "modifiedTime": 1732304669579,

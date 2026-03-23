@@ -1,7 +1,7 @@
 {
   "name": "T-Series Tactical Droid",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/194_-_T-Series_Tactical_Droid/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/194_-_T-Series_Tactical_Droid/Avatar.webp",
   "items": [
     {
       "_id": "NmIzMWQyNzU5ZTUw",
@@ -9,7 +9,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/194_-_T-Series_Tactical_Droid/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/194_-_T-Series_Tactical_Droid/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -120,7 +120,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/194_-_T-Series_Tactical_Droid/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/194_-_T-Series_Tactical_Droid/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -231,7 +231,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/194_-_T-Series_Tactical_Droid/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/194_-_T-Series_Tactical_Droid/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -400,7 +400,7 @@
           "teleDist": 30
         }
       },
-      "img": "modules/sw5e/icons/packs/monsters/194_-_T-Series_Tactical_Droid/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/194_-_T-Series_Tactical_Droid/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -549,7 +549,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.xAgbr9pfUcwf2FjB"
+          "sourceId": "Compendium.sw5e-module.techpowers.xAgbr9pfUcwf2FjB"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -558,7 +558,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/AssesstheSituation.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/AssesstheSituation.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -656,7 +656,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.xAgbr9pfUcwf2FjB",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.xAgbr9pfUcwf2FjB",
         "duplicateSource": null
       },
       "_key": "!actors.items!fM9QuCiphfu78Uwf.N5ElVZpYltbvZzF0"
@@ -668,13 +668,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.Jp3f51H4VaRiMLvb"
+          "sourceId": "Compendium.sw5e-module.techpowers.Jp3f51H4VaRiMLvb"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/EncryptedMessage.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/EncryptedMessage.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -772,7 +772,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.Jp3f51H4VaRiMLvb",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.Jp3f51H4VaRiMLvb",
         "duplicateSource": null
       },
       "_key": "!actors.items!fM9QuCiphfu78Uwf.lhBHrzhJUBn1Pc6b"
@@ -784,13 +784,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.E6OviwnCfEjRTx3X"
+          "sourceId": "Compendium.sw5e-module.techpowers.E6OviwnCfEjRTx3X"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/OnOff.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/OnOff.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -888,7 +888,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.E6OviwnCfEjRTx3X",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.E6OviwnCfEjRTx3X",
         "duplicateSource": null
       },
       "_key": "!actors.items!fM9QuCiphfu78Uwf.wa2b2YgPjzPNrcVU"
@@ -900,13 +900,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.ZH0jkLKHJ54BmkYX"
+          "sourceId": "Compendium.sw5e-module.techpowers.ZH0jkLKHJ54BmkYX"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/Alarm.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Alarm.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1004,7 +1004,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.ZH0jkLKHJ54BmkYX",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.ZH0jkLKHJ54BmkYX",
         "duplicateSource": null
       },
       "_key": "!actors.items!fM9QuCiphfu78Uwf.AT4akZqm39g1jYfp"
@@ -1016,13 +1016,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.Rygvn8mB2NySWQ2s"
+          "sourceId": "Compendium.sw5e-module.techpowers.Rygvn8mB2NySWQ2s"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/ElementofSurprise.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/ElementofSurprise.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1125,7 +1125,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.Rygvn8mB2NySWQ2s",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.Rygvn8mB2NySWQ2s",
         "duplicateSource": null
       },
       "_key": "!actors.items!fM9QuCiphfu78Uwf.EM9spF3JJG9ZpWbN"
@@ -1137,13 +1137,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.jBUTIsaIV0l0iFfR"
+          "sourceId": "Compendium.sw5e-module.techpowers.jBUTIsaIV0l0iFfR"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/RepairDroid.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/RepairDroid.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1246,7 +1246,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.jBUTIsaIV0l0iFfR",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.jBUTIsaIV0l0iFfR",
         "duplicateSource": null
       },
       "_key": "!actors.items!fM9QuCiphfu78Uwf.YAR6Zer9Pn6ZYY1b"
@@ -1258,7 +1258,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.techpowers.b0T7rxNgDtGx3mwh"
+          "sourceId": "Compendium.sw5e-module.techpowers.b0T7rxNgDtGx3mwh"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -1267,7 +1267,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Tech%20Powers/StacktheDeck.webp",
+      "img": "modules/sw5e-module/icons/packs/Tech%20Powers/StacktheDeck.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1365,7 +1365,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.techpowers.b0T7rxNgDtGx3mwh",
+        "compendiumSource": "Compendium.sw5e-module.techpowers.b0T7rxNgDtGx3mwh",
         "duplicateSource": null
       },
       "_key": "!actors.items!fM9QuCiphfu78Uwf.SxIJp8h2vXQetyDR"
@@ -2071,7 +2071,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984335,
     "modifiedTime": 1720552774827,

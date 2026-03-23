@@ -2,7 +2,7 @@
   "_id": "8qXNiCP8VTmXggz9",
   "name": "Gambler Pursuit",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/GamblerPursuit.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/GamblerPursuit.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.fJm2hbth4x8MjcaE",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.fJm2hbth4x8MjcaE",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.fN2aMnXymr47k0PK",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.fN2aMnXymr47k0PK",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.JDQX7iHuOBK2MFNE",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.JDQX7iHuOBK2MFNE",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.oOR0EGzlGILqjiZ7",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.oOR0EGzlGILqjiZ7",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ROtT8JPFQoU1aXZr",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ROtT8JPFQoU1aXZr",
               "optional": false
             }
           ],
@@ -162,28 +162,28 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.v89KbndaIGuq5zze"
+              "uuid": "Compendium.sw5e-module.invocations.v89KbndaIGuq5zze"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.DKGKDM4qNJkb2LM1"
+              "uuid": "Compendium.sw5e-module.invocations.DKGKDM4qNJkb2LM1"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.TpPaNr7ieETI5uLI"
+              "uuid": "Compendium.sw5e-module.invocations.TpPaNr7ieETI5uLI"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.6u7EHYdSYwwuFEL5"
+              "uuid": "Compendium.sw5e-module.invocations.6u7EHYdSYwwuFEL5"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.xuDzUYvNT3r7zAlW"
+              "uuid": "Compendium.sw5e-module.invocations.xuDzUYvNT3r7zAlW"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.NH3Cx8VlkgW5Nf1H"
+              "uuid": "Compendium.sw5e-module.invocations.NH3Cx8VlkgW5Nf1H"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.1CSf0wnfLnjFJCtK"
+              "uuid": "Compendium.sw5e-module.invocations.1CSf0wnfLnjFJCtK"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.yqMlRcaj9l3EdxXg"
+              "uuid": "Compendium.sw5e-module.invocations.yqMlRcaj9l3EdxXg"
             }
           ],
           "restriction": {
@@ -215,7 +215,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959717,
     "modifiedTime": 1732304668698,

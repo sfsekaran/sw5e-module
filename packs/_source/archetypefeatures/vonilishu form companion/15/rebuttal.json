@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/GRDN-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/GRDN-ARCH-Passive.webp",
   "system": {
     "description": {
       "value": "<p>When your companion takes the Help action and helps you, you gain temporary hit points equal to your guardian level that last until the start of your next turn. When you take the Help action and help your companion, it gains temporary hit points equal to your guardian level that last until the start of its next turn.</p>",
@@ -110,8 +110,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0heal0000000": {
+    "activities": [
+      {
         "_id": "sw5e0heal0000000",
         "activation": {
           "type": "action"
@@ -147,7 +147,7 @@
         },
         "type": "heal"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -157,7 +157,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1679609438438,
     "modifiedTime": 1739121092781,

@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Bonus.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Bonus.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Prerequisite:</strong> Armor</em></p>\n<p>You modify your modified armor gauntlet with increased reinforcement and weight. Your modified armor's unarmed strike deals [[/r 1d4]] kinetic damage.</p>\n<p>Additionally, when you take the Attack action and make an unarmed strike, you can make an additional unarmed strike as a bonus action.</p>",
@@ -34,8 +34,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "type": "bonus"
@@ -77,7 +77,7 @@
         },
         "type": "damage"
       }
-    },
+    ],
     "identifier": "power-fist",
     "enchant": {},
     "prerequisites": {
@@ -96,7 +96,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

@@ -2,7 +2,7 @@
   "_id": "R0OP16qx1RSVU8WV",
   "name": "Ballistic Approach",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/BallisticApproach.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/BallisticApproach.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.CkwEWRhU0Y8HPkHt",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.CkwEWRhU0Y8HPkHt",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.RTq7tBpZM0Qf2P03",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.RTq7tBpZM0Qf2P03",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.h5MeIN8utjAqFORR",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.h5MeIN8utjAqFORR",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.DWm0s5SZ86921Q72",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.DWm0s5SZ86921Q72",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.LMvbZfbx0lih3Dbu",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.LMvbZfbx0lih3Dbu",
               "optional": false
             }
           ],
@@ -130,7 +130,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959745,
     "modifiedTime": 1732304669148,

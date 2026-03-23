@@ -2,7 +2,7 @@
   "_id": "ed0CovWE3HjxMsPN",
   "name": "Ring of Tech Storing Mk VI",
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Enhanced%20Items/RingOfTechStoring.webp",
+  "img": "modules/sw5e-module/icons/packs/Enhanced%20Items/RingOfTechStoring.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -159,7 +159,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493964865,
     "modifiedTime": 1730434230465,

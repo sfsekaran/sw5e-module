@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/SuperiorTranslationProgram.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/SuperiorTranslationProgram.webp",
   "system": {
     "description": {
       "value": "<p>You grant up to four willing creatures the ability to understand any registered language they read or hear. Additionally, they gain the ability to speak that language, if they are physically capable of speaking it normally. </p>\n<p><strong><em>Overcharge Tech.</em></strong> When you cast this power using a tech slot of 7th level or higher, you can affect one additional creature for each slot level above 6th.</p>",
@@ -99,8 +99,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -141,7 +141,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "CObN1qB3xw95dCQf",
@@ -152,7 +152,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

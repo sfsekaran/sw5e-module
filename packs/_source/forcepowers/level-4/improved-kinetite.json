@@ -19,7 +19,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Force%20Powers/ImprovedKinetite.webp",
+  "img": "modules/sw5e-module/icons/packs/Force%20Powers/ImprovedKinetite.webp",
   "effects": [],
   "system": {
     "description": {
@@ -116,8 +116,8 @@
     },
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0attack00000": {
+    "activities": [
+      {
         "_id": "sw5e0attack00000",
         "activation": {
           "condition": "",
@@ -197,7 +197,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "folder": null,
   "sort": 0,
@@ -206,7 +206,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1667426102468,
     "modifiedTime": 1739121089377,

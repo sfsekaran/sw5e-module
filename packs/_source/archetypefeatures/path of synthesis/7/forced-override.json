@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SNTL-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SNTL-ARCH-Passive.webp",
   "system": {
     "description": {
       "value": "<p>When you cast a tech power that requires a saving throw, you can impose disadvantage on the save (no action required).</p>",
@@ -104,7 +104,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288495968,
     "modifiedTime": 1729984341403,

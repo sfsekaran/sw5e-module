@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Hutt-Adolescent.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Hutt-Adolescent.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Hutts are a massive slug-like species who have large mouths and stubby arms. They have three lungs and thick leathery skin, which is wrinkled and slimy. Hutts often have watery eyes and lack facial expressions.  Their tails are supported by a skeletal spine.  Despite their legendary size, hutts start out as tiny huttlets less than half a foot in height, and continually grow over the long lives.</p>\n<h2>Society and Culture</h2>\n<p>Most hutts are crime lords who live opulent lives overseeing criminal underworld activities like spice smuggling, slavery, gambling and bounty hunting. This is not true for all, however, as some eschew the life of a decadent, obese version of their species and prefer a more mobile existence. Hutt society is divided into families known as kajidics, a social structure that is both familial and a crime gang.</p>\n<p>Hutts are encouraged to make a name for themselves around the age of 150 while simultaneously not threatening the welfare of the clan.  At around 200, they will likely stop being saved by the clan and encouraged even further to fend for themselves while benefiting the kajidic; they may even be granted a star system or two.  Nomadic or kajidic-less hutts are often hunted or killed by other hutts in fear of the nomad coming to claim a territory.</p>\n<h2>Names</h2>\n<p>Hutt names with a suffix title as \"the Hutt\" are usually reserved for noteworthy huts, with the name of a hutt's kajidic coming before the title.  Because hutts are hermaphroditic, choosing a gender at will, their names are considered androgynous.</p>\n<p><strong>First Names.</strong> Arok, Gorga, Jabba, Mama, Ziro, </p>\n<p><strong>Kajidic Names.</strong> Besadii, Desilijic, Fenn'ak, Gnuda</p>",
@@ -47,55 +47,55 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.A2bFwtDw6o6ryt7x",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.A2bFwtDw6o6ryt7x",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.FFKpt2M7MB5Xi7UO",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.FFKpt2M7MB5Xi7UO",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.tucqx3az1kRwa6Bf",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.tucqx3az1kRwa6Bf",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.vmAkXeRJ39kAkSo1",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.vmAkXeRJ39kAkSo1",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.b6walnv00udncsjD",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.b6walnv00udncsjD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.PgQLK8mKfSf9X9t8",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.PgQLK8mKfSf9X9t8",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.7hxxH7CQCoqAHqo6",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.7hxxH7CQCoqAHqo6",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.3IuJ1ih3offV08Rc",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.3IuJ1ih3offV08Rc",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.J87icRDqgjisnipf",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.J87icRDqgjisnipf",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.XootRy2c9LWVu0A5",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.XootRy2c9LWVu0A5",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.j0ZqplONPgUYZMot",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.j0ZqplONPgUYZMot",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.iwlz9vAIrkeEmrhn",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.iwlz9vAIrkeEmrhn",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.maYdzoyPID3EG7uY",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.maYdzoyPID3EG7uY",
               "optional": false
             }
           ],
@@ -264,7 +264,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Hutt.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Hutt.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -279,7 +279,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732412596409,

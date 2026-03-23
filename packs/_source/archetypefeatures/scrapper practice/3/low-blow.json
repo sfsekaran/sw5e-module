@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/OPRT-ARCH-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/OPRT-ARCH-Passive.webp",
   "effects": [],
   "system": {
     "description": {
@@ -102,8 +102,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -137,7 +137,7 @@
         },
         "type": "save"
       }
-    }
+    ]
   },
   "folder": null,
   "sort": 0,
@@ -146,7 +146,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1667426104217,
     "modifiedTime": 1739121092781,

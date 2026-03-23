@@ -1,4 +1,50 @@
 import { getBestAbility } from "./../utils.mjs";
+import { getModuleType, getModuleTypeCandidates, isModuleType, normalizeModuleType } from "../module-support.mjs";
+
+const PRECALCULATED_SPELLCASTING_KEY = "sw5e-preCalculatedSpellcastingClasses";
+const MANEUVER_TYPE = getModuleType("maneuver");
+const SUPERIORITY_SYNC_KEY = "sw5eSuperioritySync";
+const SUPERIORITY_SYNC_PROMISE_KEY = "sw5eSuperioritySyncPromise";
+
+function getActorManeuvers(actor) {
+	return getModuleTypeCandidates("maneuver").flatMap(type => actor.itemTypes?.[type] ?? []);
+}
+
+function capitalize(text) {
+	return text ? text.charAt(0).toUpperCase() + text.slice(1) : text;
+}
+
+function clampResourceValue(value, max) {
+	const numericValue = Number.isFinite(Number(value)) ? Number(value) : 0;
+	const numericMax = Math.max(0, Number.isFinite(Number(max)) ? Number(max) : 0);
+	return Math.min(Math.max(numericValue, 0), numericMax);
+}
+
+function queueSuperioritySync(actor, updateData) {
+	if ( !actor?.update || foundry.utils.isEmpty(updateData) ) return;
+
+	const pendingUpdate = actor[SUPERIORITY_SYNC_KEY]
+		? foundry.utils.mergeObject(actor[SUPERIORITY_SYNC_KEY], updateData, { inplace: false })
+		: updateData;
+	actor[SUPERIORITY_SYNC_KEY] = pendingUpdate;
+	if ( actor[SUPERIORITY_SYNC_PROMISE_KEY] ) return;
+
+	actor[SUPERIORITY_SYNC_PROMISE_KEY] = Promise.resolve()
+		.then(async () => {
+			const pending = actor[SUPERIORITY_SYNC_KEY];
+			delete actor[SUPERIORITY_SYNC_KEY];
+			if ( foundry.utils.isEmpty(pending) ) return;
+			const canPersistUpdate = actor.id && actor.collection?.has?.(actor.id) && !actor.isToken;
+			if ( canPersistUpdate ) await actor.update(pending, { render: false });
+			else actor.updateSource?.(pending);
+		})
+		.catch(err => console.error("SW5E | Failed to synchronize superiority resource.", err))
+		.finally(() => delete actor[SUPERIORITY_SYNC_PROMISE_KEY]);
+}
+
+function getHtmlRoot(html) {
+	return html instanceof HTMLElement ? html : html?.[0] ?? html;
+}
 
 // dataModels file adds:
 // - maneuverData dataModel
@@ -26,6 +72,8 @@ function prepareSuperiority() {
 	Hooks.on('sw5e.preActor5e._prepareSpellcasting', function (_this, result, config, ...args) {
 		if (!_this.system.superiority) return;
 		const isNPC = _this.type === "npc";
+		const sourceSuperiority = _this._source?.system?.superiority ?? {};
+		const superiorityFlags = _this.flags?.sw5e?.superiority ?? {};
 
 		// Prepare base progression data
 		const charProgression = ["superiority"].reduce((obj, superType) => {
@@ -76,7 +124,7 @@ function prepareSuperiority() {
 				}
 
 				// Calculate known maneuvers
-				for (const pwr of _this.itemTypes?.['sw5e.maneuver'] ?? []) {
+				for (const pwr of getActorManeuvers(_this) ?? []) {
 					const { properties } = pwr?.system ?? {};
 					if (properties?.has("freeLearn")) continue;
 					obj.maneuversKnownCur++;
@@ -94,18 +142,47 @@ function prepareSuperiority() {
 
 			// Apply the calculated values to the sheet
 			const target = _this.system.superiority;
+			const sourceKnown = sourceSuperiority.known ?? {};
+			const sourceDice = sourceSuperiority.dice ?? {};
+			const effectiveKnownMax = sourceKnown.max ?? obj.maneuversKnownMax;
+			const effectiveDiceMax = sourceDice.max ?? obj.diceCount;
+			const effectiveDie = sourceSuperiority.die ?? obj.diceSize;
+			const effectiveLevel = sourceSuperiority.level ?? obj.casterLevel;
+			const sourceCurrentValue = Number.isFinite(Number(sourceDice.value)) ? Number(sourceDice.value) : null;
+			const previousMax = Number.isFinite(Number(superiorityFlags.diceMax)) ? Number(superiorityFlags.diceMax) : null;
+			const missingProgressData = [sourceDice.max, sourceSuperiority.die, sourceSuperiority.level].every(value => value == null);
+			let effectiveCurrentValue = sourceCurrentValue;
+
+			if ( effectiveDiceMax <= 0 ) effectiveCurrentValue = 0;
+			else if ( sourceCurrentValue == null ) effectiveCurrentValue = effectiveDiceMax;
+			else if ( (previousMax == null) && (sourceCurrentValue === 0) && missingProgressData ) {
+				// Existing actors from the broken state had no persisted superiority resource, only the default zero value.
+				effectiveCurrentValue = effectiveDiceMax;
+			} else if ( (previousMax != null) && (previousMax !== effectiveDiceMax) ) {
+				// Preserve spent dice while still granting newly gained dice on level-up.
+				effectiveCurrentValue = clampResourceValue(sourceCurrentValue + (effectiveDiceMax - previousMax), effectiveDiceMax);
+			} else {
+				effectiveCurrentValue = clampResourceValue(sourceCurrentValue, effectiveDiceMax);
+			}
+
 			target.known.value = obj.maneuversKnownCur;
-			target.known.max ??= obj.maneuversKnownMax;
-			target.dice.max ??= obj.diceCount;
-			target.die ??= obj.diceSize;
-			target.level ??= obj.casterLevel;
+			target.known.max = effectiveKnownMax;
+			target.dice.max = effectiveDiceMax;
+			target.dice.value = effectiveCurrentValue;
+			target.die = effectiveDie;
+			target.level = effectiveLevel;
+
+			const updateData = {};
+			if ( previousMax !== effectiveDiceMax ) updateData["flags.sw5e.superiority.diceMax"] = effectiveDiceMax;
+			if ( sourceCurrentValue !== effectiveCurrentValue ) updateData["system.superiority.dice.value"] = effectiveCurrentValue;
+			queueSuperioritySync(_this, updateData);
 		}
 
 		const { simplifyBonus } = dnd5e.utils;
 		const rollData = _this.getRollData();
 
 		const { attributes, superiority } = _this.system;
-		const base = 8 + attributes.prof ?? 0;
+		const base = 8 + (attributes.prof ?? 0);
 
 		// TODO: Add rules
 		// // Simplified forcecasting rule
@@ -163,8 +240,11 @@ function showPowercastingStats() {
 
 function patchItemSheet() {
 	Hooks.on("renderItemSheet5e", (app, html, data) => {
-		html.querySelectorAll(`select[name|='system.spellcasting.progression']`).forEach((el, idx) => {
+		const root = getHtmlRoot(html);
+		if ( !root || !app.item?.system?.spellcasting ) return;
+		root.querySelectorAll(`select[name|='system.spellcasting.progression']`).forEach((el, idx) => {
 			const root = el.parentNode.parentNode;
+			if ( !root?.nextElementSibling ) return;
 			const selectedValue = app.item.system.spellcasting.superiorityProgression;
 			const div = document.createElement("div");
 			div.setAttribute("class", "form-group");
@@ -198,11 +278,11 @@ function patchItemSheet() {
 
 function patchPowerAbilityScore() {
 	Hooks.on('sw5e.preActor5e.spellcastingClasses', function (_this, ...args) {
-		_this['sw5e-preCalculatedSpellcastingClasses2'] = _this._spellcastingClasses !== undefined;
+		_this[PRECALCULATED_SPELLCASTING_KEY] = _this._spellcastingClasses !== undefined;
 	});
 	Hooks.on('sw5e.Actor5e.spellcastingClasses', function (_this, result, config, ...args) {
-		const preCalculated = _this['sw5e-preCalculatedSpellcastingClasses2'] = _this._spellcastingClasses !== undefined;
-		delete _this['sw5e-preCalculatedSpellcastingClasses2'];
+		const preCalculated = _this[PRECALCULATED_SPELLCASTING_KEY];
+		delete _this[PRECALCULATED_SPELLCASTING_KEY];
 
 		if (preCalculated) return;
 		for (const [identifier, cls] of Object.entries(_this.classes)) {
@@ -212,60 +292,58 @@ function patchPowerAbilityScore() {
 }
 
 function patchPowerbooks() {
-	/*
 	Hooks.on('sw5e.ActorSheet5e._prepareSpellbook', function (_this, powerbook, config, ...args) {
-		const [context, spells] = args;
+		const [context] = args;
+		const spellbook = config.result ?? powerbook ?? {};
+		const columns = Object.values(spellbook)[0]?.columns ?? [];
 
-		// Format a powerbook entry for a certain indexed level
-		const registerSection = (sl, i, label, dataset) => {
-			if (powerbook.find(section => section.order === i)) return;
-			const section = {
-				order: i,
-				label: label,
+		// Register a maneuver section using the modern dnd5e spellbook shape.
+		const registerSection = (key, order, label, dataset) => {
+			if ( key in spellbook ) return spellbook[key];
+			const section = spellbook[key] = {
+				label: game.i18n.localize(label),
+				columns,
+				order,
 				usesSlots: false,
-				canCreate: _this.actor.isOwner,
-				canPrepare: false,
-				spells: [],
-				uses: 0,
-				slots: 0,
-				override: 0,
-				dataset: {type: "maneuver", ...dataset},
-				prop: sl,
-				editable: context.editable
+				id: key,
+				slot: key,
+				items: [],
+				minWidth: 220,
+				draggable: true,
+				dataset: { type: MANEUVER_TYPE, ...dataset }
 			};
-			powerbook.push(section);
 			return section;
 		};
 
 		const superiorityBook = {};
 		const superData = _this.actor.system.superiority;
 		let idx = 1000;
-		if (superData.level !== 0) {
+		if (superData?.level) {
 			for (const type of Object.keys(CONFIG.DND5E.superiority.types)) {
-				const section = registerSection(`maneuvers-${type}`, idx++, `SW5E.Superiority.Type.${type.capitalize()}.Label`, {'type.value': type});
+				const section = registerSection(`maneuvers-${type}`, idx++, `SW5E.Superiority.Type.${capitalize(type)}.Label`, { "type.value": type });
 				superiorityBook[type] = section;
 			}
 		}
 
 		// Iterate over every maneuver item, adding maneuvers to the powerbook by section
-		context.actor.itemTypes['sw5e.maneuver'].forEach(maneuver => {
+		getActorManeuvers(context.actor).forEach(maneuver => {
 			const type = maneuver.system.type.value || "general";
-			const mt = `maneuver-${type}`;
+			const key = `maneuvers-${type}`;
 
 			// Sections for maneuvers which the caster "should not" have, but maneuver items exist for
 			if (!superiorityBook[type]) {
-				const section = registerSection(mt, idx++, `SW5E.Superiority.Type.${type.capitalize()}.Label`, {'type.value': type});
+				const section = registerSection(key, idx++, `SW5E.Superiority.Type.${capitalize(type)}.Label`, { "type.value": type });
 				superiorityBook[type] = section;
 			}
 
 			// Add the maneuver to the relevant heading
-			superiorityBook[type].spells.push(maneuver);
+			superiorityBook[type].items.push(maneuver);
 		});
 
-		// Sort the powerbook by section level
-		config.result = powerbook.sort((a, b) => a.order - b.order);
+		config.result = Object.fromEntries(
+			Object.entries(spellbook).sort(([, a], [, b]) => (a.order ?? 0) - (b.order ?? 0))
+		);
 	});
-	*/
 }
 
 function recoverSuperiorityDice() {
@@ -288,14 +366,31 @@ function addSuperiorityScaleValues() {
 }
 
 function addCompendiumBrowserTab() {
-	const tabs = game.dnd5e.applications.CompendiumBrowser.TABS;
+	const tabs = game.dnd5e?.applications?.CompendiumBrowser?.TABS;
+	if ( !tabs?.length || tabs.some(i => i.tab === "maneuvers") ) return;
 	const idx = tabs.findIndex(i => i.tab === "spells");
+	if ( idx === -1 ) return;
 	tabs.splice(idx+1, 0, {
 		tab: "maneuvers",
-		label: "TYPES.Item.sw5e.maneuverPl",
+		label: "TYPES.Item.sw5e-module.maneuverPl",
 		icon: "fas fa-tablet",
 		documentClass: "Item",
-		types: ["sw5e.maneuver"]
+		types: getModuleTypeCandidates("maneuver")
+	});
+}
+
+function normalizeManeuverDropType() {
+	Hooks.on("sw5e.preItem5e.fromDropData", (_cls, data) => {
+		if ( !data ) return;
+		if ( data.type ) data.type = normalizeModuleType(data.type, "maneuver");
+		if ( data.data?.type ) data.data.type = normalizeModuleType(data.data.type, "maneuver");
+	});
+}
+
+function excludeManeuversFromFeatures() {
+	Hooks.on("sw5e.BaseActorSheet._assignItemCategories", (_this, result, config, item) => {
+		if ( !isModuleType(item?.type, "maneuver") ) return;
+		config.result = new Set();
 	});
 }
 
@@ -309,4 +404,6 @@ export function patchManeuver() {
 	showPowercastingStats();
 	makeSuperiorityDiceConsumable();
 	addCompendiumBrowserTab();
+	normalizeManeuverDropType();
+	excludeManeuversFromFeatures();
 }

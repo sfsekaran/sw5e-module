@@ -2,7 +2,7 @@
   "_id": "1NArAZ8FKBEoN6Bg",
   "name": "Predator Technique",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/PredatorTechnique.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/PredatorTechnique.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.8DGG53yj7eOoAwVW",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.8DGG53yj7eOoAwVW",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.MBzjoBmMIrgFze6q",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.MBzjoBmMIrgFze6q",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.3fGONRv3flikLZAI",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.3fGONRv3flikLZAI",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.KKh8VZnbhTMAfXyY",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.KKh8VZnbhTMAfXyY",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.JCDQRKdrqpvoxE57",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.JCDQRKdrqpvoxE57",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.QiK8clUuVuTqq9YB",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.QiK8clUuVuTqq9YB",
               "optional": false
             }
           ],
@@ -129,7 +129,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959705,
     "modifiedTime": 1732304668483,

@@ -2,10 +2,10 @@
   "_id": "FgJJanWEm8ruwcLk",
   "name": "Primal Champion",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/BSKR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/BSKR-Passive.webp",
   "effects": [
     {
-      "origin": "Compendium.sw5e.classfeatures.Item.FgJJanWEm8ruwcLk",
+      "origin": "Compendium.sw5e-module.classfeatures.Item.FgJJanWEm8ruwcLk",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -59,7 +59,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Class%20Features/BSKR-Bonus.webp",
+      "img": "modules/sw5e-module/icons/packs/Class%20Features/BSKR-Bonus.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -167,7 +167,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493962287,
     "modifiedTime": 1733518158203,

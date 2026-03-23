@@ -1,7 +1,7 @@
 {
   "name": "Imperial Guard Champion",
   "type": "npc",
-  "img": "modules/sw5e/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
+  "img": "modules/sw5e-module/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
   "items": [
     {
       "_id": "ZjY4ZTE0ZmFjMWYy",
@@ -9,7 +9,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -120,7 +120,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -231,7 +231,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -342,7 +342,7 @@
       "type": "feat",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -564,7 +564,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -712,7 +712,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -860,7 +860,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "modules/sw5e/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
+      "img": "modules/sw5e-module/icons/packs/monsters/209_-_Imperial_Guard_Champion/Avatar.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1009,13 +1009,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.L8CJ1QEXfKztMyCX"
+          "sourceId": "Compendium.sw5e-module.forcepowers.L8CJ1QEXfKztMyCX"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/Enfeeble.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/Enfeeble.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1118,7 +1118,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.L8CJ1QEXfKztMyCX",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.L8CJ1QEXfKztMyCX",
         "duplicateSource": null
       },
       "_key": "!actors.items!qNNDGo5CmTyfDWRM.F57dJoNSn5fVsg8D"
@@ -1130,7 +1130,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.EXK4sg6gKXfMnLnf"
+          "sourceId": "Compendium.sw5e-module.forcepowers.EXK4sg6gKXfMnLnf"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -1139,7 +1139,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/BattleMeditation.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/BattleMeditation.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1237,7 +1237,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.EXK4sg6gKXfMnLnf",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.EXK4sg6gKXfMnLnf",
         "duplicateSource": null
       },
       "_key": "!actors.items!qNNDGo5CmTyfDWRM.k2jnSrkmNDiaLa0R"
@@ -1249,13 +1249,13 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.1ARPmaD7aZ3Pjxt2"
+          "sourceId": "Compendium.sw5e-module.forcepowers.1ARPmaD7aZ3Pjxt2"
         },
         "sw5e": {
           "dataVersion": "1.2.4"
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/BattlePrecognition.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/BattlePrecognition.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1353,7 +1353,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.1ARPmaD7aZ3Pjxt2",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.1ARPmaD7aZ3Pjxt2",
         "duplicateSource": null
       },
       "_key": "!actors.items!qNNDGo5CmTyfDWRM.n8TbwGSEJhNA6ocy"
@@ -1365,7 +1365,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.forcepowers.haGnWeBa6QhTG9Dh"
+          "sourceId": "Compendium.sw5e-module.forcepowers.haGnWeBa6QhTG9Dh"
         },
         "sw5e": {
           "dataVersion": "1.2.4",
@@ -1374,7 +1374,7 @@
           ]
         }
       },
-      "img": "modules/sw5e/icons/packs/Force%20Powers/Fear.webp",
+      "img": "modules/sw5e-module/icons/packs/Force%20Powers/Fear.webp",
       "effects": [],
       "folder": null,
       "system": {
@@ -1472,7 +1472,7 @@
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
-        "compendiumSource": "Compendium.sw5e.forcepowers.haGnWeBa6QhTG9Dh",
+        "compendiumSource": "Compendium.sw5e-module.forcepowers.haGnWeBa6QhTG9Dh",
         "duplicateSource": null
       },
       "_key": "!actors.items!qNNDGo5CmTyfDWRM.lWIUFMAmaXLefsjs"
@@ -2173,7 +2173,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.330",
     "createdTime": 1674493984415,
     "modifiedTime": 1720552777776,

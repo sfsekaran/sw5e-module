@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/SonicShot.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/SonicShot.webp",
   "system": {
     "description": {
       "value": "<p>As part of the action used to cast this power, you must make a ranged weapon attack against one creature within your weapon's range, otherwise the power fails. On a hit, the target suffers the attack's normal effects, and it becomes wreathed in a sonic barrier until the start of your next turn. If the target willingly moves before then, it immediately takes sonic damage equal to your techcasting ability modifier, becomes deafened until the start of your next turn, and the power ends.</p>\n<p>This power's damage increases when you reach higher levels. At 5th level, the ranged attack deals an extra [[/r 1d6]] sonic damage to the target, and the damage the target takes for moving increases to [[/r 1d6]] + your techcasting ability modifier.  Both damage rolls increase by an additional [[/r 1d6]] at 11th and 17th level.</p>",
@@ -104,8 +104,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "condition": "",
@@ -152,7 +152,7 @@
         },
         "type": "damage"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "WNivjZK6vWxrPgYj",
@@ -163,7 +163,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

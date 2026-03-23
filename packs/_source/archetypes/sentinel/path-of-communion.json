@@ -2,7 +2,7 @@
   "_id": "z86UNeuCm2yckt4i",
   "name": "Path of Communion",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/PathOfCommunion.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/PathOfCommunion.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.XkMWMdiqpquvZDIl",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.XkMWMdiqpquvZDIl",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.X6TVdZMcu1hlgH7l",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.X6TVdZMcu1hlgH7l",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.kAYHyZ2j11MuED94",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.kAYHyZ2j11MuED94",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.clyjD2vr3rdXLqrI",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.clyjD2vr3rdXLqrI",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.G9NlcRAQ2yP8Dkmc",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.G9NlcRAQ2yP8Dkmc",
               "optional": false
             }
           ],
@@ -109,7 +109,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959787,
     "modifiedTime": 1732304669752,

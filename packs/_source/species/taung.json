@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Taung.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Taung.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Taung are a humanoid species of tall and strong sentient simians. Physically, the taung are extremely resilient and are able to endure hardships many other species are unable to, which benefits their warlike nature as well as their tendencies to conquer planets.</p>\n<h2>Society and Culture</h2>\n<p>Taung society is one steeped in war, and the taung are warriors above all else. Nomadic and clan-based, the taung greatly value strength and honor, with pragmatism and ruthlessness being common traits amongst them. Originally waging war as a means of ritual worship to their god Kad Ha'rangir, the taung eventually became the Mandalorians, and - under the leadership of Mandalore the Indomitable - the act of war itself became the center of Mandalorian worship, and to wage war is to <em>be</em> divine.</p>\n<p>Despite their volatile nature, the taung are far from primitive, and maintain a high priority in procuring the latest technological advancements whenever possible.</p>\n<p>The Mandalorian armor that has become iconic throughout the galaxy originally began with the culture's taung founders, with their unique helmets and war masks being forged in the image of the taung's face, including slanted outer angles and a pointed chin. However, the armor is quite sparse among the taung as they believe that unarmed combat brings the highest honor.</p>\n<h2>Names</h2>\n<p>Taung names reflect their practical nature, typically choosing names that correspond to traits they deem desirable. Their names are rarely gender specific and can apply to either male or female. Their surnames reflect that of the clan they hail from.</p>\n<p><strong>First Names.</strong> Adenn (merciless), Atin (stubborn), Kot (strength), Kotep (brave), Tor (justice), Verd (soldier)</p>\n<p><strong>Surnames.</strong> Cadera, Fett, Keldau, Lok, Ordo, Vizla</p>",
@@ -47,51 +47,51 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.W7h7GHnlyJSxoLlQ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.W7h7GHnlyJSxoLlQ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.t73pf7uEVbJpK03Z",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.t73pf7uEVbJpK03Z",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.hK5o8eqEs7sFlt9j",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.hK5o8eqEs7sFlt9j",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.5mron3RyR2OjJ17I",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.5mron3RyR2OjJ17I",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Y05cMaluiLfLcZrq",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Y05cMaluiLfLcZrq",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.L5bWAsCIlTgJ1txL",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.L5bWAsCIlTgJ1txL",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.6fVLmITK05S1OaE7",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.6fVLmITK05S1OaE7",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.xasHAnToKR22xaqw",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.xasHAnToKR22xaqw",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.3Lb7vevmpcOl8H4x",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.3Lb7vevmpcOl8H4x",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.cEhVAyUQrjbjpvtS",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.cEhVAyUQrjbjpvtS",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ks8DtvC0CWqnOOmi",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ks8DtvC0CWqnOOmi",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.MIOwyRf1audKQNnm",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.MIOwyRf1audKQNnm",
               "optional": false
             }
           ],
@@ -215,7 +215,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304726080,

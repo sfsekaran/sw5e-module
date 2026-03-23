@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Passive.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Prerequisite:</strong> 15th level, Prototype Cryo Amplifier</em></p>\n<p>You further fine tune your Cryo Amplifier. When you activate this amplifier, the creature is restrained until the end of your next turn.</p>",
@@ -105,7 +105,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1698185225687,
     "modifiedTime": 1730434305504,

@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SNTL-ARCH-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SNTL-ARCH-Action.webp",
   "system": {
     "description": {
       "value": "<p>&gt; Your spirit might be the ghost of a benevolent Jedi, discovered in the ruins of a Jedi temple, or a powerful Sith spirit lingering in an ancient artifact. It might be the spirit of a Nightsister sorceress, or a paragon of a long-forgotten monastic order. Work with your GM to determine the nature of your spirit.</p>\n<p>Additionally, your spirit can briefly interact with the physical world. When you would make a melee attack, your spirit can deliver the attack as if it had made it. Your spirit must be within 100 feet of you, and it must use its reaction to deliver the attack. It uses your modifiers for the attack and damage rolls. You can use this feature twice. You gain an additional use at 5th, 9th, 13th, and 17th level. You regain all expended uses when you complete a short or long rest.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "special"
@@ -127,7 +127,7 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -137,7 +137,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288495966,
     "modifiedTime": 1739121092781,

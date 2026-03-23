@@ -1,10 +1,12 @@
+import { getModuleId, HOOKS_NAMESPACE } from "../module-support.mjs";
+
 function adjustProficiencyObject() {
-	libWrapper.register('sw5e', 'dnd5e.documents.Proficiency.prototype.flat', function (wrapped, ...args) {
+	libWrapper.register(getModuleId(), 'dnd5e.documents.Proficiency.prototype.flat', function (wrapped, ...args) {
 		this.multiplier = Math.min(this.multiplier, 2);
 		return wrapped(...args);
 	}, 'MIXED' );
 
-	libWrapper.register('sw5e', 'dnd5e.documents.Proficiency.prototype.dice', function (wrapped, ...args) {
+	libWrapper.register(getModuleId(), 'dnd5e.documents.Proficiency.prototype.dice', function (wrapped, ...args) {
 		this.multiplier = Math.min(this.multiplier, 2);
 		return wrapped(...args);
 	}, 'MIXED' );
@@ -15,8 +17,19 @@ function adjustProficiencyObject() {
 // - proficiency can be 0.5 on WeaponData
 // - proficiency can be 0.5 and has a max of 5 on ToolData
 
+function registerProficiencyOverride(id, handler, mode='OVERRIDE') {
+	try {
+		libWrapper.register(getModuleId(), id, handler, mode);
+	} catch(err) {
+		console.warn(`${HOOKS_NAMESPACE.toUpperCase()} | Skipping incompatible proficiency wrapper target '${id}'.`, err);
+	}
+}
+
 function adjustProficiencyCycleElement() {
-	dnd5e.applications.components.ProficiencyCycleElement.CSS = `
+	const ProficiencyCycleElement = dnd5e?.applications?.components?.ProficiencyCycleElement;
+	if ( !ProficiencyCycleElement ) return;
+
+	ProficiencyCycleElement.CSS = `
 		:host { display: inline-block; }
 		div { --_fill: var(--proficiency-cycle-enabled-color, var(--dnd5e-color-blue)); }
 		div:has(:disabled, :focus-visible) { --_fill: var(--proficiency-cycle-disabled-color, var(--dnd5e-color-gold)); }
@@ -110,17 +123,24 @@ function adjustProficiencyCycleElement() {
 		}
 	`;
 
-	libWrapper.register('sw5e', 'dnd5e.applications.components.ProficiencyCycleElement.prototype.type#set', function ( value ) {
+	registerProficiencyOverride('dnd5e.applications.components.ProficiencyCycleElement.prototype.type#set', function ( value ) {
 		if ( !["ability", "skill", "tool", "weapon"].includes( value ) ) throw new Error( "Type must be 'ability', 'skill', 'tool', or 'weapon'." );
 		this.setAttribute( "type", value );
-		this["#internals"].ariaValueMin = 0;
-		this["#internals"].ariaValueMax = value === "weapon" ? 1 : 5;
-		this["#internals"].ariaValueStep = 0.5;
-	}, 'OVERRIDE' );
+		const internals = this["#internals"] ?? this.internals ?? this._internals;
+		if ( internals ) {
+			internals.ariaValueMin = 0;
+			internals.ariaValueMax = value === "weapon" ? 1 : 5;
+			internals.ariaValueStep = 0.5;
+		} else {
+			this.setAttribute("aria-valuemin", 0);
+			this.setAttribute("aria-valuemax", value === "weapon" ? 1 : 5);
+			this.setAttribute("aria-valuestep", 0.5);
+		}
+	});
 
-	libWrapper.register('sw5e', 'dnd5e.applications.components.ProficiencyCycleElement.prototype.validValues', function () {
+	registerProficiencyOverride('dnd5e.applications.components.ProficiencyCycleElement.prototype.validValues', function () {
 		return this.type === "weapon" ? [0, 0.5, 1] : [0, 1, .5, 2, 3, 4, 5];
-	}, 'OVERRIDE' );
+	});
 }
 
 export function patchProficiencyInit() {

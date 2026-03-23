@@ -2,11 +2,11 @@
   "_id": "N3jNRgXwtZ8VsuWj",
   "name": "Exalted Awareness",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Feats/ExaltedAwareness.webp",
+  "img": "modules/sw5e-module/icons/packs/Feats/ExaltedAwareness.webp",
   "effects": [
     {
       "name": "Exalted Awareness",
-      "origin": "Compendium.sw5e.feats.Item.N3jNRgXwtZ8VsuWj",
+      "origin": "Compendium.sw5e-module.feats.Item.N3jNRgXwtZ8VsuWj",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -41,7 +41,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Feats/ExaltedAwareness.webp",
+      "img": "modules/sw5e-module/icons/packs/Feats/ExaltedAwareness.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -149,8 +149,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "action"
@@ -175,14 +175,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966789,
     "modifiedTime": 1739121097153,

@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/FGTR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/FGTR-Passive.webp",
   "system": {
     "description": {
       "value": "<p>You apply a tracing signal to your shot. When you use this option, you don't make an attack roll for the attack. Instead, choose one creature you have seen in the past minute. The shot flies toward that creature, moving around corners if necessary and ignoring three-quarters cover and half cover. If the target is within the weapon's range and there is a path large enough for the shot to travel to the target, the target must make a Dexterity saving throw. Otherwise, the shot disappears after traveling as far as it can. On a failed save, the target takes damage as if it were hit by the shot, plus an extra [[/r 1d6]] kinetic damage, and you learn the target's current location. On a successful save, the target takes half as much damage, and you don't learn its location.</p>\n<p>The kinetic damage increases to [[/r 2d6]] when you reach 18th level in this class.</p>",
@@ -34,8 +34,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "action"
@@ -84,7 +84,7 @@
         },
         "type": "save"
       }
-    },
+    ],
     "identifier": "seeking-shot",
     "enchant": {},
     "prerequisites": {
@@ -103,7 +103,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

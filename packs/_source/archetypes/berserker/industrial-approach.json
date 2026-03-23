@@ -2,7 +2,7 @@
   "_id": "8bApUVZRgQjPC3VY",
   "name": "Industrial Approach",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/IndustrialApproach.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/IndustrialApproach.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.dR3JBEK6uHhf4QKc",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.dR3JBEK6uHhf4QKc",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.TibDm2g8xFkS6Jqt",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.TibDm2g8xFkS6Jqt",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.sofKTOzfdd0bJF2E",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.sofKTOzfdd0bJF2E",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.r0nbaq3ZkbLxSes8",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.r0nbaq3ZkbLxSes8",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.CnVQJRpnRpsY0OFA",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.CnVQJRpnRpsY0OFA",
               "optional": false
             }
           ],
@@ -110,7 +110,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959716,
     "modifiedTime": 1732304668683,

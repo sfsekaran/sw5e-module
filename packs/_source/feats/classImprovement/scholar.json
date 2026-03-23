@@ -2,7 +2,7 @@
   "_id": "6H3Njwe8rh2HfvcZ",
   "name": "Scholar",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Classes/Scholar.webp",
+  "img": "modules/sw5e-module/icons/packs/Classes/Scholar.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -105,7 +105,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493966760,
     "modifiedTime": 1730434332459,

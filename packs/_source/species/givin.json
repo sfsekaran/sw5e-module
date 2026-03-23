@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Givin.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Givin.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>The Givin are a species of white-skinned, hairless humanoids who are quite frequently likened to animated skeletons. Their facial features include many sharp downward angles, large triangular eye sockets, and sloped-up brows that meet together in the middle, lending them an appearance of permanent anguish. Because of the harsh environment of their homeworld, the Givins' organs are sealed against atmospheric exposure; thanks to this complex system, they can survive for about a day in a vacuum.</p>\n<h2>Society and Culture</h2>\n<p>In order to survive their homeworld's lunar tides, the Givin became extremely adept at calculating the trajectory of their celestial bodies. Over the ages, Givin have become so skilled at celestial navigation that they are able to calculate hyperspace jumps in their heads. As such, mathematics have become a cornerstone of Givin society. Two Givin will often greet each other by exchanging complex equations for the other to solve.</p>\n<p>Due to their profound mathematical ability, Givin are skilled starship builders and astrogators. They create some of the most impressive, complex, and sleek ships in the galaxy. However, they frequently build their ships without the presence of a navcomputer or pressurization system, and so their buyers have to add these system in the starship aftermarket.</p>\n<h2>Names</h2>\n<p>Givin names are often derived by parents from favored mathematical equations. Male and female names do not significantly differ. Surnames are familial.</p>\n<p><strong>First Names.</strong> Daggibus, Lersia, Na-Soth, Nisil, Sladru</p>\n<p><strong>Surnames.</strong> Alarin, Nalas, Narth, Larr, Scoritoles</p>",
@@ -47,43 +47,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.tNtZlONw3bIe89iu",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.tNtZlONw3bIe89iu",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.kQA9ghCrlkEot2wq",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.kQA9ghCrlkEot2wq",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.afhq8geJg1R9pary",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.afhq8geJg1R9pary",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.oocYOFgRSZT9qrqA",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.oocYOFgRSZT9qrqA",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.fCcrac6QCOog5Uiu",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.fCcrac6QCOog5Uiu",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.i6YYcq8Fduahee4f",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.i6YYcq8Fduahee4f",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.IhWFlg7Wwz8GxVVS",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.IhWFlg7Wwz8GxVVS",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Zs4S2lIjcUj5c4UR",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Zs4S2lIjcUj5c4UR",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.fZSnJHrOnaKbVQwo",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.fZSnJHrOnaKbVQwo",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ABRFMwHIqXo5bZzP",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ABRFMwHIqXo5bZzP",
               "optional": false
             }
           ],
@@ -194,7 +194,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732412596409,

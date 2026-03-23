@@ -2,7 +2,7 @@
   "_id": "GURvJho88e4mNGdN",
   "name": "Path of the Corsair",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/PathOfTheCorsair.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/PathOfTheCorsair.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.YO98aZ0JenIOgzfP",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.YO98aZ0JenIOgzfP",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.TFDStqIWxI3vNkEK",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.TFDStqIWxI3vNkEK",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.JfLmVn8y5hNyp8cs",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.JfLmVn8y5hNyp8cs",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.OPwut0IVEiMAiZw8",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.OPwut0IVEiMAiZw8",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.WQLfOKA36jXOSz0J",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.WQLfOKA36jXOSz0J",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.YQjndSMMsWAJSeMy",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.YQjndSMMsWAJSeMy",
               "optional": false
             }
           ],
@@ -137,7 +137,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959730,
     "modifiedTime": 1732304668921,

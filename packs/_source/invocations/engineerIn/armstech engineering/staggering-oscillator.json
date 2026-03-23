@@ -15,7 +15,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Action.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Prerequisite:</strong> Vibroweapon</em></p>\n<p>When you hit with the weapon, you can force the target to make a Strength saving throw. On a failed save, the creature is pushed back 10 feet and knocked prone.</p>\n<p>Once you've used this feature, you must complete a short or long rest before you can use it again.</p>",
@@ -36,8 +36,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0save0000000": {
+    "activities": [
+      {
         "_id": "sw5e0save0000000",
         "activation": {
           "type": "special"
@@ -70,7 +70,7 @@
         },
         "type": "save"
       }
-    },
+    ],
     "identifier": "staggering-oscillator",
     "enchant": {},
     "prerequisites": {
@@ -89,7 +89,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

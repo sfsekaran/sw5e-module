@@ -1,17 +1,54 @@
-![](https://img.shields.io/badge/Foundry-v11-informational)
+![](https://img.shields.io/badge/Foundry-v13-informational)
 ![Latest Release Download Count](https://img.shields.io/github/downloads/sw5e-foundry/sw5e-module/latest/module.zip) 
 
 # SW5E
 
 Implementation of the sw5e system as a module for dnd5e.
 
-## Instalation
+Current target compatibility: Foundry VTT `13` with `dnd5e` `5.2.5`.
 
-To install and use the sw5e module for Foundry Virtual Tabletop, simply paste the following URL into the Install Module dialog on the Setup menu of the application.
+## Installation
+
+This module is not listed on Foundry's website or in the in-app Module Repository because it contains homebrew content.
+
+### Install The Latest Release
+
+If you want the newest release, open Foundry's `Install Module` window and paste this URL into the `Manifest URL` box at the bottom:
 
 https://github.com/sw5e-foundry/sw5e-module/releases/latest/download/module.json
 
-If you wish to manually install the system, you must clone or extract it into the `Data/modules/sw5e` folder. You may do this by cloning the repository or downloading a zip archive from the Releases Page.
+### Install A Specific Release
+
+If you want a specific version instead of the latest one:
+
+1. Open the [Releases page](https://github.com/sw5e-foundry/sw5e-module/releases).
+2. Open the release you want to install.
+3. Copy the link to that release's `module.json` artifact.
+4. In Foundry, open `Add-on Modules` -> `Install Module`.
+5. Paste the link into the `Manifest URL` box at the bottom of the window.
+6. Click install.
+
+If you wish to manually install the module, clone or extract it into the `Data/modules/sw5e-module` folder. You may do this by cloning the repository or downloading a zip archive from the Releases Page.
+
+## Local Development
+
+This repository is the editable source for the `sw5e-module` Foundry module. For local work, use Foundry VTT `13.351`, the `dnd5e` system `5.2.5`, and the `lib-wrapper` module.
+
+If your local repository is linked into Foundry's `Data/modules/sw5e-module` folder with a junction or symlink, most code and template changes can be tested by refreshing Foundry after you save your edits.
+
+Compendium content is different:
+
+- Edit the source JSON in `packs/_source/`
+- Rebuild the generated compendium databases with `npm run build:db`
+- Reload Foundry and verify the updated compendium entries in your test world
+
+The `packs/` folder is generated output and should not be edited by hand. The source of truth is `packs/_source/`.
+
+For a plain-English walkthrough of what is safe to edit, when to rebuild, and a copy/paste template for reporting a bug or requesting a change, see [docs/local-setup.md](docs/local-setup.md).
+
+## Developer Documentation
+
+For a contributor-focused overview of the repo layout, runtime entrypoints, compendium build pipeline, and release packaging, see [docs/developer-guide.md](docs/developer-guide.md).
 
 ## Changelog
 

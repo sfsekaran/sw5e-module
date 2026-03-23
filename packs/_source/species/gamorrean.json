@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Gamorrean.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Gamorrean.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Although a typical gamorrean is squat, green, and heavily built, not all shared these characteristics. Most gamorreans have a dark greenish coloration over a large portion of their bodies; however skin coloration does vary, particularly among females, with light skinned and two-toned pigmentation not uncommon. Black, brown, pinkish yellow, and even a rare white pigmentation are possible. Males tended to have less skin variation and had a greater tendency towards dark green skin perhaps because of their higher exposure to the radiation of the Gamorr Star. Eye coloration varied evenly between gold-yellow, blue, black and brown. The gamorreans generally put no importance on skin or eye coloration although there were some superstitions linked to certain markings.</p>\n<h2>Society and Culture</h2>\n<p>Gamorreans are organized into clans ruled by a male warlord and his wife, who was the most powerful of the clan matrons. While the warlord and his boars are solely concerned with preparing and participating in battle with rival clans, the matrons of the clan performed all the productive work including farming, hunting, manufacturing, and running businesses. Since the amount of available arable land on Gamorr is scarce, clans often lay claim to the same piece of land, and they spend their time fighting over possession. </p>\n<h2>Names</h2>\n<p>Gamorrean names are very gutteral and rough. Male names are typically one syllable while females are two. Surnames are based on clan affiliation rather than family. </p>\n<p><strong>Male Names.</strong> Ark, Blarrp, Blubrak, Cuab, Shos</p>\n<p><strong>Female Names.</strong> Dabrisz, Mernoos, Ogreb, Tagorq</p>\n<p><strong>Surnames.</strong> Doofnarq, Griks, Lurc, Poogmokk</p>",
@@ -47,39 +47,39 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.yPldxHLIPDGNkfEu",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.yPldxHLIPDGNkfEu",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.dYM971OepZyX4iaW",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.dYM971OepZyX4iaW",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.U9lOj9H7xbBfANgV",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.U9lOj9H7xbBfANgV",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.HMZUjFxebDGZgAwG",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.HMZUjFxebDGZgAwG",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.UFffPjtDEHBKsysX",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.UFffPjtDEHBKsysX",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.S6DVvWfsEyI9pdQJ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.S6DVvWfsEyI9pdQJ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.rqo8b1tgJcVPbfcM",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.rqo8b1tgJcVPbfcM",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.iL6m5fE30DGWQesG",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.iL6m5fE30DGWQesG",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.r1XzqQgBLPXun4Mc",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.r1XzqQgBLPXun4Mc",
               "optional": false
             }
           ],
@@ -212,10 +212,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.W4oIea3LqP1dAXGu.ActiveEffect.teRJPynVl1RXWsN8"
+          "sourceId": "Compendium.sw5e-module.species.Item.W4oIea3LqP1dAXGu.ActiveEffect.teRJPynVl1RXWsN8"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.W4oIea3LqP1dAXGu",
+      "origin": "Compendium.sw5e-module.species.Item.W4oIea3LqP1dAXGu",
       "name": "Gamorrean",
       "description": "",
       "statuses": [],
@@ -229,7 +229,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Gamorrean.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Gamorrean.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -244,7 +244,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304726449,

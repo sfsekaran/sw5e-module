@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/Glide.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Glide.webp",
   "system": {
     "description": {
       "value": "<p>One willing creature gains the ability to glide when falling. For the duration of the power, it falls at a rate of 30 feet per round and can move up to 30 feet horizontally as well on each of its turns. If the creature lands before the power ends, it takes no falling damage and can land on its feet, and the power ends for that creature.</p>",
@@ -99,8 +99,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "when you or a creature within 30 feet of you falls",
@@ -141,7 +141,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "UTBeVrcyKo3u1esc",
@@ -152,7 +152,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

@@ -2,7 +2,7 @@
   "_id": "4WitHCdI0QiCuS8A",
   "name": "Audiotech Engineering",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/AudiotechEngineering.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/AudiotechEngineering.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.RctYIqnHj2t14axe",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.RctYIqnHj2t14axe",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.qBF3hSgQmoXEE1xa",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.qBF3hSgQmoXEE1xa",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.kmcrjj0s9p4KfNEM",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.kmcrjj0s9p4KfNEM",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.xVKm3UMya6KyNQOx",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.xVKm3UMya6KyNQOx",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.nDpXaAiMpFjx71ym",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.nDpXaAiMpFjx71ym",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.NKOEhauwGTSiMLrm",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.NKOEhauwGTSiMLrm",
               "optional": false
             }
           ],
@@ -155,76 +155,76 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.tGKhuGQkcRHiFsLM"
+              "uuid": "Compendium.sw5e-module.invocations.tGKhuGQkcRHiFsLM"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.of7eiKTv17ASHIno"
+              "uuid": "Compendium.sw5e-module.invocations.of7eiKTv17ASHIno"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.jRubDHCbVZx17Q3c"
+              "uuid": "Compendium.sw5e-module.invocations.jRubDHCbVZx17Q3c"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Z5L2ddCHI0608EEP"
+              "uuid": "Compendium.sw5e-module.invocations.Z5L2ddCHI0608EEP"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.AkQ0MiEYYL18HcnA"
+              "uuid": "Compendium.sw5e-module.invocations.AkQ0MiEYYL18HcnA"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.hlFUrB5kiJEFd5i9"
+              "uuid": "Compendium.sw5e-module.invocations.hlFUrB5kiJEFd5i9"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.JwNqzMxRu0BvADKP"
+              "uuid": "Compendium.sw5e-module.invocations.JwNqzMxRu0BvADKP"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.h0QdUNsFpl5p75y8"
+              "uuid": "Compendium.sw5e-module.invocations.h0QdUNsFpl5p75y8"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.DraBzbjz7L98tfcM"
+              "uuid": "Compendium.sw5e-module.invocations.DraBzbjz7L98tfcM"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.thTvuiT7tHpkULCQ"
+              "uuid": "Compendium.sw5e-module.invocations.thTvuiT7tHpkULCQ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.C7Z4eeNhRnO58mGW"
+              "uuid": "Compendium.sw5e-module.invocations.C7Z4eeNhRnO58mGW"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.4jxQxDLsDfZ6dpqV"
+              "uuid": "Compendium.sw5e-module.invocations.4jxQxDLsDfZ6dpqV"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.ARo5qSJjPMcxN7lJ"
+              "uuid": "Compendium.sw5e-module.invocations.ARo5qSJjPMcxN7lJ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.ZbSi6MCMPbCGFNhg"
+              "uuid": "Compendium.sw5e-module.invocations.ZbSi6MCMPbCGFNhg"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.oGETUFSG9m7PYwBI"
+              "uuid": "Compendium.sw5e-module.invocations.oGETUFSG9m7PYwBI"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.oWwEcvLXiZn29X2c"
+              "uuid": "Compendium.sw5e-module.invocations.oWwEcvLXiZn29X2c"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.wwaITlNr2aukvh9w"
+              "uuid": "Compendium.sw5e-module.invocations.wwaITlNr2aukvh9w"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.N5C0VGhAfM0ogMpU"
+              "uuid": "Compendium.sw5e-module.invocations.N5C0VGhAfM0ogMpU"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.u11CnGTBy84S5iUL"
+              "uuid": "Compendium.sw5e-module.invocations.u11CnGTBy84S5iUL"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.5MqFKIQE53aMn7Al"
+              "uuid": "Compendium.sw5e-module.invocations.5MqFKIQE53aMn7Al"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.AmMTZy6ZllcIGWAO"
+              "uuid": "Compendium.sw5e-module.invocations.AmMTZy6ZllcIGWAO"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.SCUOmLh31Xm10Lcg"
+              "uuid": "Compendium.sw5e-module.invocations.SCUOmLh31Xm10Lcg"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.lYRqiuSDoxdhFGTe"
+              "uuid": "Compendium.sw5e-module.invocations.lYRqiuSDoxdhFGTe"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.uE2CsaHPZsJrAS4n"
+              "uuid": "Compendium.sw5e-module.invocations.uE2CsaHPZsJrAS4n"
             }
           ],
           "restriction": {
@@ -255,7 +255,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959710,
     "modifiedTime": 1732304668548,

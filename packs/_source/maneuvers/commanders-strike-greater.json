@@ -1,8 +1,8 @@
 {
   "_id": "1UXv2b9h8ZlhuFci",
   "name": "Commander's Strike (Greater)",
-  "type": "sw5e.maneuver",
-  "img": "modules/sw5e/icons/packs/Maneuvers/CommanderSStrike-Greater.webp",
+  "type": "sw5e-module.maneuver",
+  "img": "modules/sw5e-module/icons/packs/Maneuvers/CommanderSStrike-Greater.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -104,8 +104,8 @@
       "value": null,
       "charged": false
     },
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "bonus"
@@ -146,14 +146,14 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "ownership": {
     "default": 0
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493983251,
     "modifiedTime": 1739121090591,

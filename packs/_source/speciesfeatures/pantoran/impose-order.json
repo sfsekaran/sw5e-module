@@ -15,7 +15,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Pantoran.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Pantoran.webp",
   "system": {
     "description": {
       "value": "<p>As a bonus action, you can command each ally within 15 feet of you to move up to half that ally's speed as a reaction. This movement does not provoke attacks of opportunity. Once you use this trait, you can—t use it again until you finish a short or long rest.</p>",
@@ -36,8 +36,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "reaction"
@@ -62,7 +62,7 @@
         },
         "type": "utility"
       }
-    },
+    ],
     "identifier": "impose-order",
     "enchant": {},
     "prerequisites": {
@@ -81,7 +81,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1739121096233,
     "lastModifiedBy": "dnd5ebuilder0000"

@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/SNTL-ARCH-Action.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/SNTL-ARCH-Action.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Path of Witchcraft:</strong> 13th level</em></p>\n<p>You've learned to absorb the fleeting magicks of your familiar. When your familiar is destroyed by taking damage, you can choose to grant temporary hit points equal to [[/r 2d8]] + your Wisdom or Charisma modifier (your choice) to one friendly creature of your choice you can see within 30 feet.</p>\n<p>You can use this feature a number of times equal to your proficiency bonus, as shown in the sentinel table. You regain all expended uses when you finish a long rest.</p>",
@@ -101,8 +101,8 @@
       "level": null
     },
     "properties": [],
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "special"
@@ -127,7 +127,7 @@
         },
         "type": "utility"
       }
-    }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -137,7 +137,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1679609438425,
     "modifiedTime": 1739121092781,

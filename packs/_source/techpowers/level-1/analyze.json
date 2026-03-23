@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/Analyze.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/Analyze.webp",
   "system": {
     "description": {
       "value": "<p>You choose one object that you must touch throughout the casting of the power. If it is an enhanced or modified item, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any powers are affecting the item and what they are. If the item was created by a power, you learn which power created it.</p>\n<p>If you instead touch a creature throughout the casting, you learn what tech powers, if any, are currently affecting it.</p>",
@@ -99,8 +99,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "condition": "",
@@ -140,7 +140,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "dXCfmgVuS9SbhiyN",
@@ -151,7 +151,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

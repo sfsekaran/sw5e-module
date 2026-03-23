@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/FlamingShots.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/FlamingShots.webp",
   "system": {
     "description": {
       "value": "<p>You channel tech power through a blaster weapon you are wielding. When a target takes damage from the chosen weapon, the target takes an extra [[/r 1d6]] fire damage. The power ends when twelve shots have been fired.</p>\n<p><strong><em>Overcharge Tech.</em></strong> When you cast this power using a tech slot of 4th level or higher, the number of shots you can take with this power increases by two for each slot level above 3rd.</p>",
@@ -106,8 +106,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0damage00000": {
+    "activities": [
+      {
         "_id": "sw5e0damage00000",
         "activation": {
           "condition": "",
@@ -166,7 +166,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "4gWcNooZPMRtpIvO",
@@ -177,7 +177,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

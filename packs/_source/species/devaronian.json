@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Devaronian.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Devaronian.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>A bipedal mammalian species, Devaronians evolved in the dense jungles of Devaron as a hunter-gather species. Their bodies are denser than most humanoids' and as a result they were heavier than their appearance would tend to indicate. Devaronians have silver-based blood, which appears thick and black when exposed. They possess a unique blood filtration and cleansing system which processes through two livers. Because their bodies are constantly cleansed of toxins and carcinogens, the species is highly resistant to poison. To this end, sulfur is used as a stimulant on Devaron to enhance speed and strength, because inhaling it causes the substance to enter the bloodstream rapidly. Their livers struggle to eliminate sulfur from their system, meaning that long-term use can be dangerous.</p>\n<h2>Society and Culture</h2>\n<p>Devaronian males are driven by an urge to wander, usually taking the first opportunity to move on from one place to another; they are often found traveling the galaxy as tramp freighter captains and scouts. Female Devaronians, on the other hand, are content to remain in a single location, raising the young and running the government of Devaron. The males send money back to their homeworld to support their families, but otherwise hardly ever return. The females are content with this arrangement, as they tend to view the restless males as disruptive to home life. </p>\n<h2>Names</h2>\n<p>Devaronian names are dark, complex and often guttural, with some harsher tones mixed in here and there.</p>\n<p><strong>Male Names.</strong> Cir, Gremegris, Keirtihk, Kucx, Niruhk</p>\n<p><strong>Female Names.</strong> Crilnuy, Ghal, Milma, Nola, Taoluel </p>\n<p><strong>Surnames.</strong> Breiz, Droddost, G'vaulnel, Raokt</p>",
@@ -47,51 +47,51 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.gqkZrO9LZcMmbstk",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.gqkZrO9LZcMmbstk",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.hCU13ItOc0iXcMLb",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.hCU13ItOc0iXcMLb",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.5Jky0hDt9S9kczys",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.5Jky0hDt9S9kczys",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.VSGG8hf4BKtwYuOv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.VSGG8hf4BKtwYuOv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ZZzpAMGJNYXYp2fR",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ZZzpAMGJNYXYp2fR",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.c0UpE2GrNrVefUGX",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.c0UpE2GrNrVefUGX",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Ua5Joo1kaMn8KOvm",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Ua5Joo1kaMn8KOvm",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.dbWhNOOxxJaiW2ZY",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.dbWhNOOxxJaiW2ZY",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.w9tQA1sfOsF81uLE",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.w9tQA1sfOsF81uLE",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.eBgWuNHnVIfYQTPa",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.eBgWuNHnVIfYQTPa",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.j4CuLnQ41vhEJwCk",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.j4CuLnQ41vhEJwCk",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.QkPsE6DC32bHkm0P",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.QkPsE6DC32bHkm0P",
               "optional": false
             }
           ],
@@ -250,7 +250,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Devaronian.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Devaronian.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -265,7 +265,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732412596409,

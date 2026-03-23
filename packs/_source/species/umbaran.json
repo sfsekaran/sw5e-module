@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Umbaran.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Umbaran.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Umbarans, called the \"Shadow People\" by some, are a near-human species characterized by their pale, bluish skin and colorless, sunken eyes. Their homeworld, Umbara, is situated deep within the Ghost Nebula, and receives almost no direct light from the planet's primary star. As a result, Umbaran eyes are well-adjusted to seeing in low light, and can see into the ultraviolet spectrum, but can be disoriented by bright light.</p>\n<h2>Society and Culture</h2>\n<p>Umbaran society is strictly divided into a leveled caste system, with most Umbarans constantly scheming to improve their social rank, using tactics such as blackmail, subterfuege, and even assassination if necessary. Only those within the ten highest caste tiers were given opportunities to leave their homeworld. Because of the cutthroat machinations required to get there, Umbarans in the wider galaxy are known as skilled, ruthless politicians. This reputation is enhanced by the Umbarans' talents for reading and influencing the emotions of others.</p>\n<p>Umbara developed its own technological advances separate from galactic society, and possessed technology that was in many fields far more advanced than the galactic standard. </p>\n<h2>Names</h2>\n<p>Umbaran names are typically no more than one or two syllables. Surnames are familial.</p>\n<p><strong>Male Names.</strong> Mee, Pir, Nyss, Moshenu  </p>\n<p><strong>Female Names.</strong> Sly, Syll, Myn, Sata </p>\n<p> </p>\n<p><strong>Surnames.</strong> Deechi, Moore, Phobi, Nenn</p>",
@@ -47,47 +47,47 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.jfLNzHxQL03HCOPt",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.jfLNzHxQL03HCOPt",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.H9xnR8C74EkYlSSg",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.H9xnR8C74EkYlSSg",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.jfmFFTeZYV1FaBYq",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.jfmFFTeZYV1FaBYq",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.aZQoOjKRBaT83loa",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.aZQoOjKRBaT83loa",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.9GjB85yeb2M7IfGZ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.9GjB85yeb2M7IfGZ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.rE9D2W0iOVNHfikU",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.rE9D2W0iOVNHfikU",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.0AJltyBBqjtH5qZm",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.0AJltyBBqjtH5qZm",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.acYbj44JAUyI83sn",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.acYbj44JAUyI83sn",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.rf3b2AA9yTQHHYxm",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.rf3b2AA9yTQHHYxm",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.bUquMTEfPgyNzjrZ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.bUquMTEfPgyNzjrZ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.LjUq9aIG7mLTdP5H",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.LjUq9aIG7mLTdP5H",
               "optional": false
             }
           ],
@@ -225,10 +225,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.sm8q9UjqMxguQcG2.ActiveEffect.UYCnNjKYqbeNq6n8"
+          "sourceId": "Compendium.sw5e-module.species.Item.sm8q9UjqMxguQcG2.ActiveEffect.UYCnNjKYqbeNq6n8"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.sm8q9UjqMxguQcG2",
+      "origin": "Compendium.sw5e-module.species.Item.sm8q9UjqMxguQcG2",
       "name": "Sunlight Sensitivity - you or your target is in sunlight",
       "description": "",
       "statuses": [],
@@ -242,7 +242,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Umbaran.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Umbaran.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -257,7 +257,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304726210,

@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Kage.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Kage.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>The kage are a pale-skinned sentient species native to the caverns in the planet of Quarzite. The kage have a long-time conflict with the belugans, consistently at odds with them. During the Clone Wars, Otua Blank ordered the capture of Pluma Sodi to marry her, she was later given back to the Kage Warriors by Asajj Ventress. </p>\n<h2>Society and Culture</h2>\n<p>The kage are a dedicated people of physical excellence; they train tireless and elite fighter-monks known as Kage warriors. They tend to use weapons with electric or disruptive properties, but they are also great fighters in unarmed combat. Kage warriors are respected in Kage society as the greatest calling a kage might follow.</p>\n<p>Kage also share an affinity with animals, most notably the native multi-legged milodon, developing a symbiotic relationship. They use the milodon as transport; they can keep pace with the subtram transports that supply belugan strongholds, and launch raids that often catch the belugan security forces off-guard.</p>\n<h2>Names</h2>\n<p>Kage names are generally multisyllable with melodic intonations. Surnames are familial.</p>\n<p><strong>Male Names.</strong> Baalin, Forta, Krismo, Rafa, Timko</p>\n<p><strong>Female Names.</strong> Chena, Fari, Moora, Ooni, Pluma</p>\n<p><strong>Surnames.</strong> Buno, Keeli, Nima, Sodi, Tani</p>",
@@ -47,55 +47,55 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.BXdHZ7vXo6REhuqg",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.BXdHZ7vXo6REhuqg",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.qioIDs4TjnK6kBwQ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.qioIDs4TjnK6kBwQ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.6Y3urCP1SSOOrlY0",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.6Y3urCP1SSOOrlY0",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.mB55im35UVna851p",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.mB55im35UVna851p",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.3cGl6BeQKOM9bNmd",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.3cGl6BeQKOM9bNmd",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.cKgzCasAnGM8LO48",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.cKgzCasAnGM8LO48",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.jLLjyWiK7hVgm9XM",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.jLLjyWiK7hVgm9XM",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.pAuxvNUoEGWAc8ih",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.pAuxvNUoEGWAc8ih",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.QQfcS1vKfWAlatwE",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.QQfcS1vKfWAlatwE",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Yr7YsOAjXgxbXgXM",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Yr7YsOAjXgxbXgXM",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.yyTOb0cK3hPHKKGW",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.yyTOb0cK3hPHKKGW",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.U0qLbbLKW5m1cypD",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.U0qLbbLKW5m1cypD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.9bDE3MZYFS8y9CKs",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.9bDE3MZYFS8y9CKs",
               "optional": false
             }
           ],
@@ -229,10 +229,10 @@
       "transfer": true,
       "flags": {
         "core": {
-          "sourceId": "Compendium.sw5e.species.Item.WQrjYmqGB0tHwxeE.ActiveEffect.i0cnHmFVkjW8q1nQ"
+          "sourceId": "Compendium.sw5e-module.species.Item.WQrjYmqGB0tHwxeE.ActiveEffect.i0cnHmFVkjW8q1nQ"
         }
       },
-      "origin": "Compendium.sw5e.species.Item.WQrjYmqGB0tHwxeE",
+      "origin": "Compendium.sw5e-module.species.Item.WQrjYmqGB0tHwxeE",
       "name": "Sunlight Sensitivity - you or your target is in sunlight",
       "description": "",
       "statuses": [],
@@ -246,7 +246,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Kage.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Kage.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -261,7 +261,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725844,

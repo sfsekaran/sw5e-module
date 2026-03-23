@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/CSLR-Passive.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/CSLR-Passive.webp",
   "system": {
     "description": {
       "value": "<p><em><strong>Consular:</strong> 2nd, 9th, and 17th level</em></p>\n<p>You gain the ability to twist your powers to suit your needs. When you cast a force power, you can expend additional force points to modify the power. You gain two of the following Force-Empowered Casting options of your choice, located at the end of the class description. You gain another one at 9th and 17th level.</p>\n<p>You can use only one Force-Empowered Casting option on a power when you cast it, unless otherwise noted.</p>",
@@ -104,7 +104,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1680288496530,
     "modifiedTime": 1729984342164,

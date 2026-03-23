@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/MonCalamari.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/MonCalamari.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearence</h2>\n<p>The mon calamari are a bipedal, amphibious species with high-domed heads, webbed hands and large, goggle-like eyes. In addition to being webbed, the mon calamari hand presents three suction-cup like holes on its palm, and featured five claw-tipped fingers: one opposable thumb, two long middle fingers, and two very short outer fingers. Although they are shaped like flippers, their feet can nevertheless fit into boots designed for human-like feet. The females are distinguished from the males by their more prominent chest areas.</p>\n<h2>Society and Culture</h2>\n<p>The mon calamari have developed a very advanced and civilized culture. Their art, music, literature, and science show a creativity surpassed by few in the galaxy. Mon calamari literature depicts stars as islands in a galactic sea, showing a passionate longing to explore space and discover other civilizations. Mon Calamari are both soft-spoken and gentle, slow to anger, and have the remarkable ability to maintain their concentration without being distracted by emotional responses. They are both inquisitive and creative, and have a near-legendary quality of being both determined and dedicated; once a mon calamari decides on a course of action, they are not easily swayed from that decision. They often fixate themselves on \"lost causes.\" </p>\n<h2>Names</h2>\n<p>Mon calamari names generally have a melodic feel.</p>\n<p><strong>Male Names.</strong> Creaz, Fior, Hurneerth, Nurrins, Sielpa</p>\n<p><strong>Female Names.</strong> Afwa, Lel, Mhirim, Ri, Theya</p>\n<p><strong>Surnames.</strong> Dualda, Gradi, Tua, Valec, Winab</p>",
@@ -47,47 +47,47 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.H69Yyin0Ez3SQrRV",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.H69Yyin0Ez3SQrRV",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.91hHTxOHupXddDRR",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.91hHTxOHupXddDRR",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.5AvYqbDdK48mqJAy",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.5AvYqbDdK48mqJAy",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.VJLxqTzkt7n5IrI1",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.VJLxqTzkt7n5IrI1",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.zHez4O7AiznOkFB7",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.zHez4O7AiznOkFB7",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.fs7NBFfNH3FEi8Qv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.fs7NBFfNH3FEi8Qv",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.9f5nAVM6O2PA06pn",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.9f5nAVM6O2PA06pn",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.tLQ0X0UXvoaMiwkx",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.tLQ0X0UXvoaMiwkx",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.W2bPh0arYrsAm4cr",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.W2bPh0arYrsAm4cr",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.5J9q6ht4PQokLR6l",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.5J9q6ht4PQokLR6l",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.5grVObhyfZ2rzpSh",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.5grVObhyfZ2rzpSh",
               "optional": false
             }
           ],
@@ -231,7 +231,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Mon%20Calamari.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Mon%20Calamari.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -246,7 +246,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732412596409,

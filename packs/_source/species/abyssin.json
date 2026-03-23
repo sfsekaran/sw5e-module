@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Abyssin.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Abyssin.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>The hulking abyssin have long limbs and a single large eye that dominates their foreheads. Typically well-muscled, the abyssin's stooping gait results in a slightly hunched appearance. </p>\n<p>A distinctive trait of the abyssin is their ability to heal quickly; their fast regeneration is believed to have been an adaptation to prevent fluid loss via bleeding on their desert homeworld. All cells in the abyssin body are replaced every 80 hours, and organs which typically were paired in other species appear singularly.</p>\n<h2>Society and Culture</h2>\n<p>A primitive tribal society, the abyssin of Byss are known as violent and brutish, and their planet is avoided by most beings in the civilized galaxy. Unstable resources on Byss do not allow for mass population growth or for the stabilization of a central government, economy or trade system. </p>\n<p>Existing simply in nomadic tribes, abyssin groups can interact peacefully with one another, though only if both groups have plentiful water and food supplies. Otherwise, they began a 'Blooding', a brawl that ends only when one tribe's warriors are all killed, captured, or incapacitated. Warriors who survive a Blooding are usually allowed to join the winning tribe once they finish their regeneration. This tradition led to some violent incidents when spacers tried to make first contact and trade with Abyssin tribes with scarce water resources, especially since the abyssin assumed the alien traders could regenerate as quickly as they did. </p>\n<h2>Names</h2>\n<p>There does not appear to be any distinction between male and female names for abyssin. Abyssin don't use surnames.</p>\n<p><strong>Names.</strong> Anami, Easym, Myo, Qawohl, Seh-run, Sidie</p>",
@@ -44,43 +44,43 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.NrT0VEANxbblzM4Y",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.NrT0VEANxbblzM4Y",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.GtNxSrexuJW5Twcx",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.GtNxSrexuJW5Twcx",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.3NmHDVbKzglc9O6L",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.3NmHDVbKzglc9O6L",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.bVJY5ZPEQ90rH4SY",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.bVJY5ZPEQ90rH4SY",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.N7xJAYZP8ipabpok",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.N7xJAYZP8ipabpok",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.SoGRfKVA82kkM1tI",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.SoGRfKVA82kkM1tI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.RCZ0QwJxfyoyPqvl",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.RCZ0QwJxfyoyPqvl",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.22hrXNT5I2R1PGgh",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.22hrXNT5I2R1PGgh",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.xnfeAvu6ydah7LEt",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.xnfeAvu6ydah7LEt",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.kR16blth5uBQmEsv",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.kR16blth5uBQmEsv",
               "optional": false
             }
           ],
@@ -146,7 +146,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304724717,
@@ -192,12 +192,12 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "3.3.1",
+        "systemVersion": "5.2.5",
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Abyssin.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Abyssin.webp",
       "type": "base",
       "system": {},
       "sort": 0,

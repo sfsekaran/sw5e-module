@@ -23,7 +23,7 @@
     }
   },
   "type": "weapon",
-  "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Nervebaton.webp",
+  "img": "modules/sw5e-module/icons/packs/Simple%20Vibroweapons/Nervebaton.webp",
   "system": {
     "description": {
       "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Neuralizing 13</h3>\n<p>When you hit a creature with a weapon with the neuralizing property, you can force it to make a Wisdom saving throw, DC equal to the neuralizing number. On a failed save, the creature takes an additional [[/r 1d4]] psychic damage and becomes frightened of you until the start of its next turn.</p>",
@@ -161,8 +161,8 @@
     "magicalBonus": null,
     "proficient": null,
     "firingArc": "",
-    "activities": {
-      "sw5e0attack00000": {
+    "activities": [
+      {
         "_id": "sw5e0attack00000",
         "activation": {
           "type": "action"
@@ -192,7 +192,7 @@
         "target": {},
         "type": "attack"
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "7pk36cb2PRiGAB6F",
@@ -203,7 +203,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296019804,
     "modifiedTime": 1739121084621,

@@ -46,7 +46,7 @@
     }
   },
   "type": "container",
-  "img": "modules/sw5e/icons/packs/Storage/Camtono.webp",
+  "img": "modules/sw5e-module/icons/packs/Storage/Camtono.webp",
   "effects": [],
   "_id": "7wb8wryFlssRaFNr",
   "folder": null,
@@ -58,7 +58,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433915469,
     "modifiedTime": 1730434209108,
     "lastModifiedBy": "dnd5ebuilder0000"

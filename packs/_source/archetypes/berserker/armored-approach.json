@@ -2,7 +2,7 @@
   "_id": "5Adrt5TCu23FngUp",
   "name": "Armored Approach",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/ArmoredApproach.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/ArmoredApproach.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,7 +29,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.LYZTlSIkqxXYml4M",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.LYZTlSIkqxXYml4M",
               "optional": false
             }
           ],
@@ -46,7 +46,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Adna4kIQMT6V6Oao",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Adna4kIQMT6V6Oao",
               "optional": false
             }
           ],
@@ -63,7 +63,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.5WF625vhVkpAdH6M",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.5WF625vhVkpAdH6M",
               "optional": false
             }
           ],
@@ -80,7 +80,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.MEU8T6ZtkXtdEI26",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.MEU8T6ZtkXtdEI26",
               "optional": false
             }
           ],
@@ -121,7 +121,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959712,
     "modifiedTime": 1732304668584,

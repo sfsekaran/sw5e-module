@@ -14,7 +14,7 @@
     }
   },
   "type": "spell",
-  "img": "modules/sw5e/icons/packs/Tech%20Powers/KoltoPack.webp",
+  "img": "modules/sw5e-module/icons/packs/Tech%20Powers/KoltoPack.webp",
   "system": {
     "description": {
       "value": "<p>A creature of your choice that you can see within range regains hit points equal to [[/r 1d4]] + your techcasting ability modifier. This power has no effect on droids or constructs.</p>\n<p><strong><em>Overcharge Tech.</em></strong> When you cast this power using a tech slot of 2nd level or higher, the healing increases by [[/r 1d4]] for each slot level above 1st.</p>",
@@ -104,8 +104,8 @@
     "chatFlavor": "",
     "enchantment": null,
     "summons": null,
-    "activities": {
-      "sw5e0heal0000000": {
+    "activities": [
+      {
         "_id": "sw5e0heal0000000",
         "activation": {
           "condition": "",
@@ -158,7 +158,7 @@
           ]
         }
       }
-    }
+    ]
   },
   "effects": [],
   "_id": "PIyCK0CM3LKRpSIZ",
@@ -169,7 +169,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296025398,
     "modifiedTime": 1739121090144,

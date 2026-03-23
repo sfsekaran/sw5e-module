@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Herglic.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Herglic.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>The herglic are a massive race of creatures descended from aquatic mammals, breathing though a blowhole on top of their heads. They are tall and wide, and have smooth, hairless skin that ranged in color from pale blue to black, though some rare individuals may appear pink or have white markings on their sides. Their girth tends to leave them feeling out of place among smaller species; herglic tend to take up two chairs or fill the entire doorway of any establishment they enter that does not cater to beings their size.</p>\n<h2>Society and Culture</h2>\n<p>The herglics are very technologically advanced, developing space flight and hyperdrives and colonizing their sector of the galaxy prior to the formation of the Galactic Republic. Natural explorers and traders, they sailed the cosmos establishing crucial trade routes and gaining prestige. Despite their size, herglic are surprisingly dexterous while working with tools, and are some of the finest engineers in the galaxy. </p>\n<p>Herglics have an inquisitive but practical nature, enjoying travel and having exotic experiences. Their perpetually calm demeanor  helps them interact with most other species peacefully, though when dealing with smaller species, herglics tend to become nervous and self-conscious about their proportions. They also seem to have an innate predilection for gambling and games of chance, which have gotten more than one herglic into trouble on several occasions.</p>\n<h2>Names</h2>\n<p>Male names are typically harsher sounding than female names. Herglics rarely use surnames.</p>\n<p><strong>Male Names.</strong> Biglu, Melchi, Sehvorah</p>\n<p><strong>Female Names.</strong> Mahg-Raet, Seese, Uddn</p>",
@@ -47,47 +47,47 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.bhO86YmrchFtOWbe",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.bhO86YmrchFtOWbe",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.oWbGLM0UKPxMf1nm",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.oWbGLM0UKPxMf1nm",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.CMOR1HmW2N1PRZs5",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.CMOR1HmW2N1PRZs5",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.jSNU0HBJlIboU9mL",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.jSNU0HBJlIboU9mL",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.lxhq5hhO7GtImHdy",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.lxhq5hhO7GtImHdy",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.LciMNMx2w1a6GhSW",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.LciMNMx2w1a6GhSW",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.eb5hrQMwdirRtea6",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.eb5hrQMwdirRtea6",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.cNA1jRenVCwp1pnR",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.cNA1jRenVCwp1pnR",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.k1dl6zqYVmFovseg",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.k1dl6zqYVmFovseg",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.xzCRC7ys0eWcVr1b",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.xzCRC7ys0eWcVr1b",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.0mdIOKg3zripFfT2",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.0mdIOKg3zripFfT2",
               "optional": false
             }
           ],
@@ -231,7 +231,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Herglic.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Herglic.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -246,7 +246,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725154,

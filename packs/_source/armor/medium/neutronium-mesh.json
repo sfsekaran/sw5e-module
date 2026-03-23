@@ -2,7 +2,7 @@
   "_id": "flWZ2fFvT2vVbVGB",
   "name": "Neutronium mesh",
   "type": "equipment",
-  "img": "modules/sw5e/icons/packs/Armor/WH/NeutroniumMesh.webp",
+  "img": "modules/sw5e-module/icons/packs/Armor/WH/NeutroniumMesh.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -168,7 +168,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493960304,
     "modifiedTime": 1727376479341,

@@ -2,7 +2,7 @@
   "_id": "2OkP7LUU87OQrvmv",
   "name": "Aing-Tii Order",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/Aing-TiiOrder.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/Aing-TiiOrder.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,7 +29,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.Qou8dr4oABdpPiWo",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.Qou8dr4oABdpPiWo",
               "optional": false
             }
           ],
@@ -46,7 +46,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.lvgzAhoGNZu6IyRy",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.lvgzAhoGNZu6IyRy",
               "optional": false
             }
           ],
@@ -63,7 +63,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.jGZOdRgB9yaG7IDb",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.jGZOdRgB9yaG7IDb",
               "optional": false
             }
           ],
@@ -80,7 +80,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.5Fh5O4hQO1zEfI4B",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.5Fh5O4hQO1zEfI4B",
               "optional": false
             }
           ],
@@ -106,7 +106,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959708,
     "modifiedTime": 1732304668522,

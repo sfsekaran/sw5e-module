@@ -2,7 +2,7 @@
   "_id": "Yt9gDW1G5GDaVAJd",
   "name": "Vonil/Ishu Form",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/Vonil-IshuForm.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/Vonil-IshuForm.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,15 +29,15 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.kv2AxlOf44X6zxYR",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.kv2AxlOf44X6zxYR",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.fNQ8DO2qGVJD4cbn",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.fNQ8DO2qGVJD4cbn",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.wHTE9kHoU87SzhiE",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.wHTE9kHoU87SzhiE",
               "optional": false
             }
           ],
@@ -54,7 +54,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.vcZSCv3acStFvfth",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.vcZSCv3acStFvfth",
               "optional": false
             }
           ],
@@ -71,7 +71,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.8FGvMmNGakeD6XjP",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.8FGvMmNGakeD6XjP",
               "optional": false
             }
           ],
@@ -88,7 +88,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.HmfdajaZCOjIwtQQ",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.HmfdajaZCOjIwtQQ",
               "optional": false
             }
           ],
@@ -113,7 +113,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959757,
     "modifiedTime": 1732304669320,

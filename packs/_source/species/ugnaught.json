@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Ugnaught.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Ugnaught.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Ugnaughts are diminutive, porcine humanoids who have pink skin, upturned noses, white hair, and thick layers of jowls. Some have tusks that they use in blood duels. They are strong and resilient, and their life-spans reached up to 200 standard years. They notably eat genteslugs.</p>\n<h2>Society and Culture</h2>\n<p>Ugnaughts are ruled by councils comprised of elected officers. Ugnaughts live their lives in accordance to their \"blood profession\", with Ugnaught parents teaching their children their trade. Infant Ugnaughts are known as Ugletts. If the number of new Ugnaughts in a given profession exceeds the need, a blood duel is called. When the Ugnaughts reached their twentieth year of age, these fights are held to the death, with the victor winning the right to inherit their blood profession. Despite this outdated and violent custom, the Ugnaughts are generally a peaceful people with a rich culture.</p>\n<p>When greeting an Ugnaught, it is advised to bow silently, then wait for a guttural purring as a positive response. Usage of the common galactic greeting \"yaa-yaah\" is considered a personal insult to Ugnaughts. If this occurrs, it was advisable to duck and cover, as various mechanical implements will be thrown one's way. </p>\n<p>Ugnaughts are often enslaved as they are fairly meek.</p>\n<h2>Names</h2>\n<p>Ugnaught names are generally concise. Female names sound more cheerful. Surnames are determined by blood profession.</p>\n<p><strong>Male Names.</strong> Banax, Dral, Durn, Togre, Yirkux</p>\n<p><strong>Female Names.</strong> Admeva, Olnito, Ruskor, Vurlilli</p>\n<p><strong>Surnames.</strong> Col, Gnatro, Mikk, Roc, Sag</p>",
@@ -47,55 +47,55 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.zk64fXq9kSkkeYR2",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.zk64fXq9kSkkeYR2",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.arSrCDQzu28Gh8iG",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.arSrCDQzu28Gh8iG",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.LDl943tWVGAyJ2bI",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.LDl943tWVGAyJ2bI",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.iN2xI4noV5X6tSCz",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.iN2xI4noV5X6tSCz",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.y6fEAL8Y5f8gFxSW",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.y6fEAL8Y5f8gFxSW",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.NtmS57aNBbIibNrN",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.NtmS57aNBbIibNrN",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ztiZTZIINYZWaymT",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ztiZTZIINYZWaymT",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.3SJoF5ffPU1a0d7A",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.3SJoF5ffPU1a0d7A",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.ppNnDmZQqKAz9Ha7",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.ppNnDmZQqKAz9Ha7",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.VBnCGkKPRkBzqFcE",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.VBnCGkKPRkBzqFcE",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.1ypdXr8VTztRfeet",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.1ypdXr8VTztRfeet",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Fkx6cWOX3XIE9MLH",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Fkx6cWOX3XIE9MLH",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.dfj6hlNlgxVpYZA7",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.dfj6hlNlgxVpYZA7",
               "optional": false
             }
           ],
@@ -247,7 +247,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Ugnaught.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Ugnaught.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -262,7 +262,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732412596409,

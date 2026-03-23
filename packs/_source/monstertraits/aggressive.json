@@ -1,7 +1,7 @@
 {
   "name": "Aggressive",
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Monster%20Traits/Aggressive.webp",
+  "img": "modules/sw5e-module/icons/packs/Monster%20Traits/Aggressive.webp",
   "system": {
     "description": {
       "value": "<p>As a bonus action, the {creature} can move up to its speed toward an enemy that it can see or hear.</p>",
@@ -96,7 +96,7 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1669745195532,
     "modifiedTime": 1720368815648,

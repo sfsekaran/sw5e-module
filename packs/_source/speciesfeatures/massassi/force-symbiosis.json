@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Massassi.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Massassi.webp",
   "system": {
     "description": {
       "value": "<p>When you reach 3rd level, you can cast your choice of the <em>curse</em>, <em>dun moch</em>, or <em>hex</em> force power once per day. Your forcecasting ability is Charisma.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "force-symbiosis",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1730433988012,
     "lastModifiedBy": "dnd5ebuilder0000"

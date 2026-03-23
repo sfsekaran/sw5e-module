@@ -8,7 +8,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Species/Gotal.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Gotal.webp",
   "system": {
     "description": {
       "value": "<p>Gotals perceive the environment around them through use of electromagnetic sensors held in their cranial horns. You have blindsight out to 30 feet. If another trait would grant you blindsight, the range is increased by half as many feet.</p>",
@@ -28,7 +28,7 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {},
+    "activities": [],
     "identifier": "energy-sensors",
     "enchant": {},
     "prerequisites": {
@@ -47,7 +47,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433988012,
     "modifiedTime": 1730433988012,
     "lastModifiedBy": "dnd5ebuilder0000"

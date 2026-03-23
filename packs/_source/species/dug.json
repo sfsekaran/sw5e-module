@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Dug.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Dug.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>Dugs are slender, powerfully built beings with a somewhat humanoid build and a unique method of walking that hailed from the high gravity world Malastare. Their primary means of locomotion is their strong arms, and their lower limbs and feet were used for grappling and other fine motor manipulation. They hardly ever walk on their lower limbs. Although most Dugs may walk on all four limbs, others like to use their strong arms as legs and their feet as hands like they would normally do.</p>\n<h2>Society and Culture</h2>\n<p>Due to their oppression under their Gran rulers who colonized Malastare, many Dugs often feel the need to throw around their strength in bids to establish dominance. As a result, they are known for their ill-tempered demeanor, and many are bullying thugs.</p>\n<p>On their homeworld of Malastare, the vast majority of Dugs are little more than laborers toiling for the enrichment of the Gran. With the species excluded from much of the power and money on Malastare, many Dugs turn to swoop racing or bounty hunting as their only means to achieve fame and fortune. In all other areas, the Dugs are exploited.</p>\n<h2>Names</h2>\n<p>Dug names are often 3 syllables long, mostly through big sounds rather than harsh tones. There are harsher tones in their names as well though, often in the forms of x's and k's. Female Dugs have softer names, but no one would call them beautiful. Surnames are usually passed down through family or clan.</p>\n<p><strong>Male Names.</strong> Bawugri, Gadwouhx, Rorgukwa, </p>\n<p><strong>Female Names.</strong> Bosix, Grugne, Jiwous, Pragiba, </p>\n<p><strong>Surnames.</strong> Brundaare, Gninsaidi, Kedwir, Randaine</p>",
@@ -47,55 +47,55 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Z6a0ymDMRjRGQ8FA",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Z6a0ymDMRjRGQ8FA",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.1L0R8YXBXCGCyDs7",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.1L0R8YXBXCGCyDs7",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.e1A7s3eNIHzix1SZ",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.e1A7s3eNIHzix1SZ",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.fHpu4hbyqUhlxU9G",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.fHpu4hbyqUhlxU9G",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.rO9s4G3Qpu5Wlmwt",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.rO9s4G3Qpu5Wlmwt",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.wK1aFrfQmTQRVwm3",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.wK1aFrfQmTQRVwm3",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.bheeia4NoHt4hw6t",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.bheeia4NoHt4hw6t",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.LkHH8ag1ZE845EPy",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.LkHH8ag1ZE845EPy",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.cEyvn00cFXEZaLE1",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.cEyvn00cFXEZaLE1",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.1u359aIox2qafEzC",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.1u359aIox2qafEzC",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.uChiUHv2tAZaiKJT",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.uChiUHv2tAZaiKJT",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.wkK6gXOJgZX6yTRy",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.wkK6gXOJgZX6yTRy",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.p8s2NoYZIHprH7yH",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.p8s2NoYZIHprH7yH",
               "optional": false
             }
           ],
@@ -245,7 +245,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Dug.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Dug.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -260,7 +260,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304725659,

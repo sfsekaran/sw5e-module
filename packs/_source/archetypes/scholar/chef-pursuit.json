@@ -2,7 +2,7 @@
   "_id": "nig3ZPBNyS0KzZmL",
   "name": "Chef Pursuit",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/ChefPursuit.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/ChefPursuit.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.CAZeKeseBHQp9Pko",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.CAZeKeseBHQp9Pko",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.nCs6NVeaLoDueywC",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.nCs6NVeaLoDueywC",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.szOx52zJzpJDDk2G",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.szOx52zJzpJDDk2G",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.OMEv8u23ORmqxHnj",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.OMEv8u23ORmqxHnj",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.gyGfm8RxCPlB4ObC",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.gyGfm8RxCPlB4ObC",
               "optional": false
             }
           ],
@@ -156,52 +156,52 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.eEnjSsiflTcVwg6d"
+              "uuid": "Compendium.sw5e-module.invocations.eEnjSsiflTcVwg6d"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Oo2Fkqstn5gnog8v"
+              "uuid": "Compendium.sw5e-module.invocations.Oo2Fkqstn5gnog8v"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.F2RfuXpGudIgHYaR"
+              "uuid": "Compendium.sw5e-module.invocations.F2RfuXpGudIgHYaR"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.umMdDBmDHfkgYVa0"
+              "uuid": "Compendium.sw5e-module.invocations.umMdDBmDHfkgYVa0"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.UF5a4qLR3WPfwgV4"
+              "uuid": "Compendium.sw5e-module.invocations.UF5a4qLR3WPfwgV4"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.mlFUBDsM8LAUpmN0"
+              "uuid": "Compendium.sw5e-module.invocations.mlFUBDsM8LAUpmN0"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.aggB7pHbYGvoKsGy"
+              "uuid": "Compendium.sw5e-module.invocations.aggB7pHbYGvoKsGy"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.DGVURcZoXWwkNgMc"
+              "uuid": "Compendium.sw5e-module.invocations.DGVURcZoXWwkNgMc"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.BYspMucGpM6CuwIN"
+              "uuid": "Compendium.sw5e-module.invocations.BYspMucGpM6CuwIN"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.wpelIHfNoIEfoIbW"
+              "uuid": "Compendium.sw5e-module.invocations.wpelIHfNoIEfoIbW"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.IdYU2MCzeY3VPdLZ"
+              "uuid": "Compendium.sw5e-module.invocations.IdYU2MCzeY3VPdLZ"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.BJ82noaxNt9UsZvP"
+              "uuid": "Compendium.sw5e-module.invocations.BJ82noaxNt9UsZvP"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.gDGV98eQPLGQts4K"
+              "uuid": "Compendium.sw5e-module.invocations.gDGV98eQPLGQts4K"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.ulYe3evbDBiBQISN"
+              "uuid": "Compendium.sw5e-module.invocations.ulYe3evbDBiBQISN"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.RsludpSdHo4yoMWM"
+              "uuid": "Compendium.sw5e-module.invocations.RsludpSdHo4yoMWM"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.Pkb5N7PbrAjm1dPZ"
+              "uuid": "Compendium.sw5e-module.invocations.Pkb5N7PbrAjm1dPZ"
             }
           ],
           "restriction": {
@@ -233,7 +233,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959769,
     "modifiedTime": 1732304669508,

@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Half-Human.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Half-Human.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>The appearance and biological features of half-humans vary drastically by each species, but tend to fall somewhere in the middle. A common side-effect of a species interbreeding with humans is the loss of darkvision and tails.</p>\n<h2>Society and Culture</h2>\n<p>Half-humans are subjects of two separate cultures, but belong in neither. A half-human might be raised amongst humans or their other half, or might be fully ostracized, instead growing up in a remote, isolated place, removed from both species.</p>\n<p>&gt; #### Traits</p>\n<p>&gt; Half-humans gain the <strong><em>Defiant</em></strong> special trait from their human half. They also gain the special traits from their non-human half, except for those trait(s) mentioned in the Half-Human table above.</p>\n<h2>Names</h2>\n<p>Half-human names might follow human conventions, or that of the other half. Often, they blend the two in some fashion, perhaps taking a human surname, with a special name.</p>",
@@ -47,31 +47,31 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.nOllGB5DNiLzrZAM",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.nOllGB5DNiLzrZAM",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.UyNCNV8o77YmbJQl",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.UyNCNV8o77YmbJQl",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.Y6TADnOGSKgFJLTk",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.Y6TADnOGSKgFJLTk",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.hOUZN6c4HuCQ7if2",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.hOUZN6c4HuCQ7if2",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.h5NZlRia8RKZA3EL",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.h5NZlRia8RKZA3EL",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.E6MMATfAQk3hQaTD",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.E6MMATfAQk3hQaTD",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.pzi91ye31GpLVnG9",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.pzi91ye31GpLVnG9",
               "optional": false
             }
           ],
@@ -190,7 +190,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Half-Human.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Half-Human.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -205,7 +205,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732453664641,

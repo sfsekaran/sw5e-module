@@ -1,7 +1,8 @@
 import * as dataModels from "./../data/_module.mjs";
 import { ItemSheetSW5E } from "./../applications/item-sheet.mjs";
+import { getModule, getModuleId, getModuleTypeCandidates } from "../module-support.mjs";
 
-const { NumberField, SchemaField, SetField, StringField } = foundry.data.fields;
+const { BooleanField, NumberField, SchemaField, SetField, StringField } = foundry.data.fields;
 
 /**
  * Produce the schema field for a points resource.
@@ -65,7 +66,7 @@ function addPowercasting(result) {
 			level: new NumberField({ nullable: true, min: 0, initial: null, label: "SW5E.Powercasting.Force.Level.Override" }),
 			limit: new NumberField({ nullable: true, min: 0, initial: null, label: "SW5E.Powercasting.Force.Limit.Override" }),
 			maxPowerLevel: new NumberField({ nullable: true, min: 0, initial: null, label: "SW5E.Powercasting.Force.MaxPowerLevel.Override" }),
-			points: makePointsResource({ label: "SW5E.Powercasting.Force.Point.Label", hasTemp: true }),
+			points: makePointsResource({ label: "SW5E.Powercasting.Force.Point.Label", hasTemp: true, hasTempMax: true }),
 			schools: new SchemaField({
 				lgt: new SchemaField({
 					attr: new StringField({ nullable: true, initial: null, label: "SW5E.Powercasting.Force.School.Lgt.Attr.Override" }),
@@ -89,7 +90,7 @@ function addPowercasting(result) {
 			level: new NumberField({ nullable: true, min: 0, initial: null, label: "SW5E.Powercasting.Tech.Level.Override" }),
 			limit: new NumberField({ nullable: true, min: 0, initial: null, label: "SW5E.Powercasting.Tech.Limit.Override" }),
 			maxPowerLevel: new NumberField({ nullable: true, min: 0, initial: null, label: "SW5E.Powercasting.Tech.MaxPowerLevel.Override" }),
-			points: makePointsResource({ label: "SW5E.Powercasting.Tech.Point.Label", hasTemp: true }),
+			points: makePointsResource({ label: "SW5E.Powercasting.Tech.Point.Label", hasTemp: true, hasTempMax: true }),
 			schools: new SchemaField({
 				tec: new SchemaField({
 					attr: new StringField({ nullable: true, initial: null, label: "SW5E.Powercasting.Tech.School.Tec.Attr.Override" }),
@@ -123,6 +124,41 @@ function addSuperiority(result) {
 		}, { label: "SW5E.Superiority.Type.Label" })
 	}, { label: "SW5E.Superiority.Label" });
 }
+function addLegacyNpcDetailFields(result) {
+	const detailsField = result.details;
+	const detailSchema = detailsField?.fields ?? detailsField?.model?.fields;
+	if ( !detailSchema ) return;
+
+	const legacyLevelFields = {
+		powerForceLevel: "SW5E.ForcecasterLevel",
+		powerTechLevel: "SW5E.TechcasterLevel",
+		superiorityLevel: "SW5E.SuperiorityLevel"
+	};
+
+	for (const [key, label] of Object.entries(legacyLevelFields)) {
+		if ( key in detailSchema ) continue;
+		detailSchema[key] = new NumberField({
+			required: true,
+			nullable: false,
+			integer: true,
+			min: 0,
+			initial: 0,
+			label
+		});
+	}
+
+	if ( !("tier" in detailSchema) ) {
+		detailSchema.tier = new NumberField({
+			required: true,
+			nullable: false,
+			integer: true,
+			min: 0,
+			initial: 0,
+			label: "Tier"
+		});
+	}
+}
+
 function changeProficiency(result, type) {
 	if (type === "creature") {
 		result.skills.model.fields.value.max = 5;
@@ -136,27 +172,29 @@ function changeProficiency(result, type) {
 
 export function patchDataModels() {
 	// Powercasting
-	libWrapper.register('sw5e', 'dnd5e.dataModels.item.ClassData.defineSchema', addProgression, 'WRAPPER');
-	libWrapper.register('sw5e', 'dnd5e.dataModels.item.SubclassData.defineSchema', addProgression, 'WRAPPER');
-	libWrapper.register('sw5e', 'dnd5e.dataModels.actor.CreatureTemplate.defineSchema', function (wrapped, ...args) {
+	libWrapper.register(getModuleId(), 'dnd5e.dataModels.item.ClassData.defineSchema', addProgression, 'WRAPPER');
+	libWrapper.register(getModuleId(), 'dnd5e.dataModels.item.SubclassData.defineSchema', addProgression, 'WRAPPER');
+	libWrapper.register(getModuleId(), 'dnd5e.dataModels.actor.CreatureTemplate.defineSchema', function (wrapped, ...args) {
 		const result = wrapped(...args);
+		addLegacyNpcDetailFields(result);
 		addPowercasting(result);
 		addSuperiority(result);
 		changeProficiency(result, "creature");
 		return result;
 	}, 'WRAPPER');
-	libWrapper.register('sw5e', 'dnd5e.dataModels.item.ToolData.defineSchema', function (wrapped, ...args) {
+	libWrapper.register(getModuleId(), 'dnd5e.dataModels.item.ToolData.defineSchema', function (wrapped, ...args) {
 		const result = wrapped(...args);
 		changeProficiency(result, "tool");
 		return result;
 	}, 'WRAPPER');
-	libWrapper.register('sw5e', 'dnd5e.dataModels.item.WeaponData.defineSchema', function (wrapped, ...args) {
+	libWrapper.register(getModuleId(), 'dnd5e.dataModels.item.WeaponData.defineSchema', function (wrapped, ...args) {
 		const result = wrapped(...args);
 		changeProficiency(result, "weapon");
 		return result;
-	});
+	}, 'WRAPPER');
 
 	Object.assign(CONFIG.Item.dataModels, dataModels.item.config);
-	const types = Object.keys(game.modules.get("sw5e").documentTypes.Item).map(t => `sw5e.${t}`);
-	// DocumentSheetConfig.registerSheet(Item, "sw5e.maneuver", ItemSheetSW5E, { types, makeDefault: true });
+	const module = getModule();
+	const types = Object.keys(module?.documentTypes?.Item ?? {}).flatMap(getModuleTypeCandidates);
+	foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, getModuleId(), ItemSheetSW5E, { types, makeDefault: true });
 }

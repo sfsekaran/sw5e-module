@@ -22,7 +22,7 @@
     }
   },
   "type": "weapon",
-  "img": "modules/sw5e/icons/packs/Exotic%20Lightweapons/Saberstaff.webp",
+  "img": "modules/sw5e-module/icons/packs/Exotic%20Lightweapons/Saberstaff.webp",
   "effects": [],
   "system": {
     "description": {
@@ -143,8 +143,8 @@
     "summons": null,
     "magicalBonus": null,
     "firingArc": "",
-    "activities": {
-      "sw5e0attack00000": {
+    "activities": [
+      {
         "_id": "sw5e0attack00000",
         "activation": {
           "type": "action"
@@ -174,7 +174,7 @@
         "target": {},
         "type": "attack"
       }
-    }
+    ]
   },
   "folder": null,
   "sort": 0,
@@ -183,7 +183,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1667426099440,
     "modifiedTime": 1739121084250,

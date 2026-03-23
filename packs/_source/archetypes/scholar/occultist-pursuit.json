@@ -2,7 +2,7 @@
   "_id": "Zcx4q2QupVJr2Rmh",
   "name": "Occultist Pursuit",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/OccultistPursuit.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/OccultistPursuit.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,11 +29,11 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.aGO7s8TkeY9fEmd4",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.aGO7s8TkeY9fEmd4",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.wLJ4f7vlpoBiSlUX",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.wLJ4f7vlpoBiSlUX",
               "optional": false
             }
           ],
@@ -50,7 +50,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.ZI7BjzLcFQzru8Ga",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.ZI7BjzLcFQzru8Ga",
               "optional": false
             }
           ],
@@ -67,7 +67,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.wokNr8mYw9khsGQK",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.wokNr8mYw9khsGQK",
               "optional": false
             }
           ],
@@ -84,7 +84,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.bcFE1wrOE90hfVrM",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.bcFE1wrOE90hfVrM",
               "optional": false
             }
           ],
@@ -149,25 +149,25 @@
           },
           "pool": [
             {
-              "uuid": "Compendium.sw5e.invocations.uZMl4TpXMbZ7xfs4"
+              "uuid": "Compendium.sw5e-module.invocations.uZMl4TpXMbZ7xfs4"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.x2Brnm7YoOvmHD29"
+              "uuid": "Compendium.sw5e-module.invocations.x2Brnm7YoOvmHD29"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.rwiOEa6UDDGE8JiK"
+              "uuid": "Compendium.sw5e-module.invocations.rwiOEa6UDDGE8JiK"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.QjE9D1674dCBrPFe"
+              "uuid": "Compendium.sw5e-module.invocations.QjE9D1674dCBrPFe"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.1H8WLHkETuIcByi4"
+              "uuid": "Compendium.sw5e-module.invocations.1H8WLHkETuIcByi4"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.qYYJCDYt4iztZjw6"
+              "uuid": "Compendium.sw5e-module.invocations.qYYJCDYt4iztZjw6"
             },
             {
-              "uuid": "Compendium.sw5e.invocations.l2hnQFOmHi3iMJsN"
+              "uuid": "Compendium.sw5e-module.invocations.l2hnQFOmHi3iMJsN"
             }
           ],
           "restriction": {
@@ -199,7 +199,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959757,
     "modifiedTime": 1732304669328,

@@ -8,7 +8,7 @@
     }
   },
   "type": "race",
-  "img": "modules/sw5e/icons/packs/Species/Aing-Tii.webp",
+  "img": "modules/sw5e-module/icons/packs/Species/Aing-Tii.webp",
   "system": {
     "description": {
       "value": "<h2>Biology and Appearance</h2>\n<p>The aing-tii are a species of sentient, toothless mammals who stand on two clawed feet with two spindly arms, each with three large digits. Their bodies are covered in jointed white, bony plates covered in unique painted motifs. The aing-tii head is small and juts out perpendicularly from their chest, featuring two large eyes and six long, thin, green tongues extending from their mouths. They have a long, prehensile tail. The species is incapable of producing sound and conveys information via tasting, smelling and touching each other with their tongues.</p>\n<h2>Society and Culture</h2>\n<p>The aing-tii are native to a planet whose location in the Kathol Rift is a closely guarded secret. Although in a dangerous area of space, the majority of Aing-Tii never leave their homeworld nor have any contact with the outside world. Those who do—commonly called aing-tii warrior monks—are often xenophobic and reclusive. The monks spend their entire lives performing errands for their gods, in the hope that they will receive \"an answer\" from them. The aing-tii hate slavery, and often attack slavers who roam the Kathol Outback.</p>\n<p>While the aing-tii are Force-sensitive, they avoid wielding the Force, which they see as sacred. The aing-tii believe that everything is somehow guided by the Force. They do not believe in the light or dark sides of the Force. Instead, they hold that there are many different aspects to the Force.</p>\n<h2>Names</h2>\n<p>Aing-tii names are, in reality, non-verbal and only truly understandable via taste, smell, and touch.  The few aing-tii who have been known to the outside world have used translators to convey an auditory identifier. </p>\n<p><strong>Male Names.</strong> Ben'Sur, Looshen'Fel, Tadar'Ro</p>\n<p><strong>Female Names.</strong> Kulan'Pa, Laman'So, Te'Nuriel </p>",
@@ -47,47 +47,47 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.30EvKL8FVcvznDAN",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.30EvKL8FVcvznDAN",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.oMEiy7D9YALhNHum",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.oMEiy7D9YALhNHum",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.vCC8Bw3GRCTm7DZ8",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.vCC8Bw3GRCTm7DZ8",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.vDEFQgHOUYbOPlHq",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.vDEFQgHOUYbOPlHq",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.VQchGHFiWA4jcMct",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.VQchGHFiWA4jcMct",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.QDj6W7hf2bdB9IaY",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.QDj6W7hf2bdB9IaY",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.MAtgkLJk2SG0Ri3y",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.MAtgkLJk2SG0Ri3y",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.bqM30ZH6WvFffuWF",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.bqM30ZH6WvFffuWF",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.BiIxZbkkfYEmRmLU",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.BiIxZbkkfYEmRmLU",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.srq7ywAfKivMNsbN",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.srq7ywAfKivMNsbN",
               "optional": false
             },
             {
-              "uuid": "Compendium.sw5e.speciesfeatures.qWRnZt0CHIiOMBZd",
+              "uuid": "Compendium.sw5e-module.speciesfeatures.qWRnZt0CHIiOMBZd",
               "optional": false
             }
           ],
@@ -237,7 +237,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "modules/sw5e/icons/packs/Species/Aing-Tii.webp",
+      "img": "modules/sw5e-module/icons/packs/Species/Aing-Tii.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -252,7 +252,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1720296028336,
     "modifiedTime": 1732304726144,

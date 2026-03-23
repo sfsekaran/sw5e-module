@@ -14,7 +14,7 @@
     }
   },
   "type": "feat",
-  "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-Reaction.webp",
+  "img": "modules/sw5e-module/icons/packs/Class%20Features/ENGR-Reaction.webp",
   "system": {
     "description": {
       "value": "<p>You install a special kolto injector into your modified biochemist's pack that can inject you with kolto in response to pain. When you take damage, you can use your reaction and expend a Hit Die to regain health as long as the damage would not reduce your hit points to 0.</p>",
@@ -34,8 +34,8 @@
       "spent": 0,
       "recovery": []
     },
-    "activities": {
-      "sw5e0utility0000": {
+    "activities": [
+      {
         "_id": "sw5e0utility0000",
         "activation": {
           "type": "reaction"
@@ -59,7 +59,7 @@
         },
         "type": "utility"
       }
-    },
+    ],
     "identifier": "self-injection-module",
     "enchant": {},
     "prerequisites": {
@@ -78,7 +78,7 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "createdTime": 1730433983637,
     "modifiedTime": 1739121094709,
     "lastModifiedBy": "dnd5ebuilder0000"

@@ -2,7 +2,7 @@
   "_id": "MQm8qCUgy5ln4L8B",
   "name": "Rakatan Order",
   "type": "subclass",
-  "img": "modules/sw5e/icons/packs/Archetypes/RakatanOrder.webp",
+  "img": "modules/sw5e-module/icons/packs/Archetypes/RakatanOrder.webp",
   "effects": [],
   "folder": null,
   "sort": 0,
@@ -29,7 +29,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.wh10BfOQCECFZCC6",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.wh10BfOQCECFZCC6",
               "optional": false
             }
           ],
@@ -46,7 +46,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.E0Fi3UDnVx3oUGZb",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.E0Fi3UDnVx3oUGZb",
               "optional": false
             }
           ],
@@ -63,7 +63,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.HKxCbk25ZvYyfVaU",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.HKxCbk25ZvYyfVaU",
               "optional": false
             }
           ],
@@ -80,7 +80,7 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.sw5e.archetypefeatures.899urmhys6ck1MUF",
+              "uuid": "Compendium.sw5e-module.archetypefeatures.899urmhys6ck1MUF",
               "optional": false
             }
           ],
@@ -106,7 +106,7 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.3.1",
+    "systemVersion": "5.2.5",
     "coreVersion": "12.331",
     "createdTime": 1674493959736,
     "modifiedTime": 1732304669024,
