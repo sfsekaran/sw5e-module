@@ -1,5 +1,5 @@
 import { getModulePath } from "../module-support.mjs";
-import { getDerivedStarshipMovement, getLegacyStarshipActorSystem, getStarshipSkillEntries, rollStarshipSkill } from "../starship-data.mjs";
+import { getDerivedStarshipRuntime, getLegacyStarshipActorSystem, getStarshipSkillEntries, rollStarshipSkill } from "../starship-data.mjs";
 
 const STARSHIP_PACKS = new Set([
 	"starshipactions",
@@ -168,14 +168,18 @@ function formatPool(current, max) {
 }
 
 function formatMovement(actor, legacySystem) {
-	const derivedMovement = getDerivedStarshipMovement(actor);
+	const runtime = getDerivedStarshipRuntime(actor);
+	const derivedMovement = runtime.movement;
 	const units = derivedMovement.units || actor.system?.attributes?.movement?.units || "ft";
 	const space = Number.isFinite(Number(derivedMovement.space)) ? Number(derivedMovement.space) : null;
 	const turn = Number.isFinite(Number(derivedMovement.turn)) ? Number(derivedMovement.turn) : null;
 	if ( space != null || turn != null ) {
+		const notes = [];
+		if ( turn != null ) notes.push(`Turn ${turn}`);
+		if ( derivedMovement.profileSource ) notes.push(derivedMovement.profileSource);
 		return {
 			primary: `${space ?? 0} ${units}`,
-			secondary: turn != null ? `Turn ${turn}` : ""
+			secondary: notes.join(" | ")
 		};
 	}
 
@@ -186,6 +190,27 @@ function formatMovement(actor, legacySystem) {
 		primary: fly != null ? `${fly} ${units}` : "-",
 		secondary: ""
 	};
+}
+
+function localizeTravelPace(pace) {
+	const normalized = String(pace ?? "").trim().toLowerCase();
+	if ( normalized === "fast" ) return localizeOrFallback("DND5E.TravelPaceFast", "Fast");
+	if ( normalized === "slow" ) return localizeOrFallback("DND5E.TravelPaceSlow", "Slow");
+	return localizeOrFallback("DND5E.TravelPaceNormal", "Normal");
+}
+
+function formatTravel(actor) {
+	const runtime = getDerivedStarshipRuntime(actor);
+	return {
+		primary: localizeTravelPace(runtime.travel?.pace),
+		secondary: `Stealth ${localizeTravelPace(runtime.travel?.stealthPace)}`
+	};
+}
+
+function formatHyperdrive(actor) {
+	const runtime = getDerivedStarshipRuntime(actor);
+	const hyperdriveClass = Number(runtime.travel?.hyperdriveClass ?? 0);
+	return hyperdriveClass > 0 ? `Class ${hyperdriveClass}` : localizeOrFallback("SW5E.None", "None");
 }
 
 function formatPowerSummary(legacySystem) {
@@ -215,8 +240,13 @@ function getDeploymentCounts(legacySystem) {
 
 function makeOverviewCards(actor) {
 	const legacySystem = getLegacyStarshipActorSystem(actor);
+	const runtime = getDerivedStarshipRuntime(actor);
 	const movement = formatMovement(actor, legacySystem);
-	const deployment = getDeploymentCounts(legacySystem);
+	const deployment = {
+		...getDeploymentCounts(legacySystem),
+		...runtime.crew
+	};
+	const travel = formatTravel(actor);
 	const fuel = legacySystem.attributes?.fuel ?? {};
 	const routing = legacySystem.attributes?.power?.routing ?? "none";
 
@@ -227,9 +257,19 @@ function makeOverviewCards(actor) {
 			note: movement.secondary || localizeOrFallback("SW5E.MovementSpace", "Space")
 		},
 		{
+			label: localizeOrFallback("DND5E.TravelPace", "Travel Pace"),
+			value: travel.primary,
+			note: travel.secondary
+		},
+		{
+			label: localizeOrFallback("SW5E.Hyperdrive", "Hyperdrive"),
+			value: formatHyperdrive(actor),
+			note: runtime.travel?.hyperdriveClass ? localizeOrFallback("SW5E.Hyperspace", "Hyperspace") : localizeOrFallback("SW5E.None", "Not Installed")
+		},
+		{
 			label: localizeOrFallback("SW5E.VehicleCrew", "Crew"),
-			value: `${deployment.crew}`,
-			note: deployment.pilot ? "Pilot assigned" : "No pilot assigned"
+			value: `${deployment.crewCount ?? deployment.crew ?? 0}`,
+			note: deployment.pilotName || deployment.pilot ? `Pilot: ${deployment.pilotName || deployment.pilot}` : "No pilot assigned"
 		},
 		{
 			label: localizeOrFallback("SW5E.Fuel", "Fuel"),
@@ -246,6 +286,7 @@ function makeOverviewCards(actor) {
 
 function makeSidebarSummary(actor) {
 	const legacySystem = getLegacyStarshipActorSystem(actor);
+	const runtime = getDerivedStarshipRuntime(actor);
 	const hp = actor.system?.attributes?.hp ?? {};
 	const shields = legacySystem.attributes?.hp ?? {};
 	const fuel = legacySystem.attributes?.fuel?.value;
@@ -260,7 +301,7 @@ function makeSidebarSummary(actor) {
 		{
 			label: localizeOrFallback("SW5E.Size", "Size"),
 			value: getSizeLabel(actor, legacySystem),
-			note: actor.type
+			note: formatHyperdrive(actor)
 		},
 		{
 			label: localizeOrFallback("SW5E.HullPoints", "Hull Points"),
@@ -275,7 +316,7 @@ function makeSidebarSummary(actor) {
 		{
 			label: localizeOrFallback("SW5E.Fuel", "Fuel"),
 			value: Number.isFinite(Number(fuel)) ? `${fuel}` : "-",
-			note: `${localizeOrFallback("SW5E.SystemDamage", "System Damage")}: ${Number.isFinite(Number(legacySystem.attributes?.systemDamage)) ? Number(legacySystem.attributes.systemDamage) : 0}`
+			note: `${localizeOrFallback("DND5E.TravelPace", "Travel Pace")}: ${localizeTravelPace(runtime.travel?.pace)}`
 		},
 		{
 			label: localizeOrFallback("SW5E.PowerDie", "Power Routing"),
@@ -285,7 +326,7 @@ function makeSidebarSummary(actor) {
 	];
 }
 
-function getItemMeta(item) {
+function getItemMeta(item, actor = null) {
 	if ( item.flags?.sw5e?.legacyStarshipSize || item.flags?.sw5e?.starshipCharacter?.role === "classification" ) {
 		return localizeOrFallback("SW5E.StarshipTier", "Size Profile");
 	}
@@ -296,14 +337,19 @@ function getItemMeta(item) {
 
 	if ( item.system?.type?.subtype ) return item.system.type.subtype;
 	const pack = getCompendiumPack(item);
+	if ( actor && item.type === "weapon" ) {
+		const routingMultiplier = getDerivedStarshipRuntime(actor).routing?.weaponsMultiplier ?? 1;
+		if ( routingMultiplier === 2 ) return localizeOrFallback("SW5E.PowerRoutingWeaponsPositive", "Weapons deal double damage");
+		if ( routingMultiplier === 0.5 ) return localizeOrFallback("SW5E.PowerRoutingWeaponsNegative", "Ship weapon damage is reduced by half");
+	}
 	return pack ? pack.replace(/-/g, " ") : "";
 }
 
-function makeItemEntry(item, defaultTab = STOCK_CARGO_TAB_ID) {
+function makeItemEntry(item, defaultTab = STOCK_CARGO_TAB_ID, actor = null) {
 	return {
 		id: item.id,
 		name: item.name,
-		meta: getItemMeta(item),
+		meta: getItemMeta(item, actor),
 		img: item.img,
 		defaultTab
 	};
@@ -343,12 +389,13 @@ function buildGroupContext(group) {
 		count: group.items.length,
 		defaultTab: group.defaultTab,
 		manageLabel: group.manageLabel,
-		items: group.items.sort((left, right) => left.name.localeCompare(right.name)).map(item => makeItemEntry(item, group.defaultTab))
+		items: group.items.sort((left, right) => left.name.localeCompare(right.name)).map(item => makeItemEntry(item, group.defaultTab, group.actor))
 	};
 }
 
 function partitionStarshipGroups(actor) {
 	const groups = categorizeStarshipItems(actor);
+	for ( const group of Object.values(groups) ) group.actor = actor;
 	const workspaceGroups = [groups.size, groups.actions, groups.roles, groups.equipment, groups.modifications, groups.weapons]
 		.map(buildGroupContext)
 		.filter(group => group.items.length);
@@ -358,18 +405,27 @@ function partitionStarshipGroups(actor) {
 
 function getLegacyNotes(actor) {
 	const legacySystem = getLegacyStarshipActorSystem(actor);
+	const runtime = getDerivedStarshipRuntime(actor);
 	const notes = [];
 	if ( legacySystem.attributes?.power?.routing ) notes.push(`Routing: ${legacySystem.attributes.power.routing}`);
 	if ( legacySystem.attributes?.systemDamage ) notes.push(`System Damage ${legacySystem.attributes.systemDamage}`);
+	if ( runtime.travel?.hyperdriveClass ) notes.push(`Hyperdrive Class ${runtime.travel.hyperdriveClass}`);
+	if ( runtime.crew?.activeCrewName ) notes.push(`Active Crew: ${runtime.crew.activeCrewName}`);
+	if ( runtime.movement?.enginesMultiplier === 2 ) notes.push(localizeOrFallback("SW5E.PowerRoutingEnginesPositive", "The ship's flying speed is doubled"));
+	else if ( runtime.movement?.enginesMultiplier === 0.5 ) notes.push(localizeOrFallback("SW5E.PowerRoutingEnginesNegative", "The ship's flying speed is reduced by half"));
 	return notes;
 }
 
 function makeHeaderBadges(actor) {
-	const deployment = getDeploymentCounts(getLegacyStarshipActorSystem(actor));
+	const runtime = getDerivedStarshipRuntime(actor);
+	const deployment = {
+		...getDeploymentCounts(getLegacyStarshipActorSystem(actor)),
+		...runtime.crew
+	};
 	return [
 		getSizeLabel(actor, getLegacyStarshipActorSystem(actor)),
-		`${deployment.crew} Crew`,
-		`${deployment.passenger} Passengers`
+		`${deployment.crewCount ?? deployment.crew ?? 0} Crew`,
+		`${deployment.passengerCount ?? deployment.passenger ?? 0} Passengers`
 	];
 }
 
@@ -432,8 +488,71 @@ function focusSheetItem(root, app, itemId, tabId = STOCK_CARGO_TAB_ID) {
 	}, 50);
 }
 
-async function useStarshipItem(item) {
+function isStarshipWeaponItem(item) {
+	if ( item?.type !== "weapon" ) return false;
+	const typeValue = item.system?.type?.value ?? "";
+	return /starship/i.test(typeValue) || getCompendiumPack(item) === "starshipweapons";
+}
+
+function getStarshipWeaponRollData(actor, item) {
+	const rollData = foundry.utils.deepClone(actor?.getRollData?.() ?? {});
+	if ( !item?.system?.ability && isStarshipWeaponItem(item) ) {
+		const wisdomMod = Number.isFinite(Number(actor?.system?.abilities?.wis?.mod))
+			? Number(actor.system.abilities.wis.mod)
+			: 0;
+		rollData.mod = wisdomMod;
+	}
+	return rollData;
+}
+
+async function rollStarshipWeaponDamage(item, actor, multiplier = 1) {
+	const damageParts = Array.isArray(item?.system?.damage?.parts) ? item.system.damage.parts : [];
+	if ( !damageParts.length ) {
+		if ( typeof item?.use === "function" ) await item.use();
+		return;
+	}
+
+	const rollData = getStarshipWeaponRollData(actor, item);
+	const formula = damageParts
+		.map(([part]) => {
+			if ( multiplier === 2 ) return `(${part}) * 2`;
+			if ( multiplier === 0.5 ) return `floor((${part}) / 2)`;
+			return part;
+		})
+		.join(" + ");
+	const damageTypes = damageParts.map(([, type]) => type).filter(Boolean);
+	const roll = new CONFIG.Dice.DamageRoll(formula, rollData, {});
+	await roll.evaluate();
+	const routingNote = multiplier === 2
+		? localizeOrFallback("SW5E.PowerRoutingWeaponsPositive", "Weapons deal double damage")
+		: multiplier === 0.5
+			? localizeOrFallback("SW5E.PowerRoutingWeaponsNegative", "Ship weapon damage is reduced by half")
+			: "";
+	const typeLabel = damageTypes
+		.map(type => CONFIG.DND5E?.damageTypes?.[type]?.label ?? CONFIG.DND5E?.damageTypes?.[type] ?? type)
+		.join(", ");
+	await roll.toMessage({
+		speaker: ChatMessage.getSpeaker({ actor }),
+		flavor: [item.name, typeLabel ? `(${typeLabel})` : "", routingNote].filter(Boolean).join(" ")
+	});
+}
+
+async function useStarshipItem(item, actor = item?.actor) {
 	if ( !item ) return;
+	if ( actor && isStarshipWeaponItem(item) ) {
+		const weaponRouting = getDerivedStarshipRuntime(actor).routing?.weaponsMultiplier ?? 1;
+		if ( weaponRouting !== 1 ) {
+			if ( typeof item.rollAttack === "function" ) {
+				try {
+					await item.rollAttack();
+				} catch ( err ) {
+					console.warn("SW5E MODULE | Failed starship weapon attack roll.", err);
+				}
+			}
+			await rollStarshipWeaponDamage(item, actor, weaponRouting);
+			return;
+		}
+	}
 
 	const methods = ["use", "roll", "displayCard", "toMessage"];
 	for ( const method of methods ) {
@@ -543,7 +662,7 @@ async function renderStarshipLayer(app, html, data) {
 		}
 
 		if ( action === "use-item" ) {
-			await useStarshipItem(actor.items.get(actionNode.dataset.itemId));
+			await useStarshipItem(actor.items.get(actionNode.dataset.itemId), actor);
 			return;
 		}
 

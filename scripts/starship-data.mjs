@@ -13,6 +13,7 @@ const LEGACY_STARSHIP_PACKS = new Set([
 
 const STARSHIP_CHARACTER_FLAG = "starshipCharacter";
 const STARSHIP_POWER_ZONES = ["central", "engines", "shields", "weapons"];
+const STARSHIP_TRAVEL_PACES = new Set(["slow", "normal", "fast"]);
 
 function cloneData(data) {
 	if ( data === undefined ) return undefined;
@@ -58,6 +59,145 @@ function getLegacySizeSystem(item) {
 	if ( item?.flags?.sw5e?.legacyStarshipSize ) return item.flags.sw5e.legacyStarshipSize;
 	const classification = item?.flags?.sw5e?.[STARSHIP_CHARACTER_FLAG]?.classification;
 	return classification?.raw ?? classification ?? item?.system ?? {};
+}
+
+function getLegacyItemSystem(item) {
+	return item?.flags?.sw5e?.legacyStarshipSize
+		?? item?.flags?.sw5e?.legacyStarshipMod
+		?? item?.flags?.sw5e?.legacyDeployment
+		?? item?.flags?.sw5e?.[STARSHIP_CHARACTER_FLAG]?.legacySystem
+		?? item?.system
+		?? {};
+}
+
+function stripHtml(value) {
+	return String(value ?? "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function normalizeTravelPace(value, fallback = "normal") {
+	const normalized = String(value ?? "").trim().toLowerCase();
+	return STARSHIP_TRAVEL_PACES.has(normalized) ? normalized : fallback;
+}
+
+function getItemDescriptionText(item) {
+	const system = getLegacyItemSystem(item);
+	return stripHtml(system?.description?.value ?? system?.description ?? "");
+}
+
+function getItemSpeedProfile(item) {
+	const speed = getLegacyItemSystem(item)?.attributes?.speed ?? item?.system?.attributes?.speed ?? {};
+	const space = toFiniteNumber(speed?.space, null);
+	const turn = toFiniteNumber(speed?.turn, null);
+	if ( space === null && turn === null ) return null;
+	return { space, turn };
+}
+
+function isRoleSpeedProfileItem(item) {
+	if ( !item ) return false;
+	const subtype = item.system?.type?.subtype ?? getLegacyItemSystem(item)?.type?.subtype ?? "";
+	return subtype === "role";
+}
+
+function getMovementProfile(items = [], sizeSystem = {}) {
+	const roleItem = items.find(item => isRoleSpeedProfileItem(item) && getItemSpeedProfile(item));
+	if ( roleItem ) {
+		const speed = getItemSpeedProfile(roleItem);
+		return {
+			space: speed?.space ?? toFiniteNumber(sizeSystem?.baseSpaceSpeed, null),
+			turn: speed?.turn ?? toFiniteNumber(sizeSystem?.baseTurnSpeed, null),
+			source: roleItem.name ?? "Role Profile"
+		};
+	}
+
+	return {
+		space: toFiniteNumber(sizeSystem?.baseSpaceSpeed, null),
+		turn: toFiniteNumber(sizeSystem?.baseTurnSpeed, null),
+		source: null
+	};
+}
+
+function getRoutingMultiplier(selected, zone) {
+	if ( selected === zone ) return 2;
+	if ( !selected || selected === "none" ) return 1;
+	return 0.5;
+}
+
+function getPowerRoutingState(legacySystem = {}) {
+	const selected = legacySystem.attributes?.power?.routing ?? "none";
+	return {
+		selected,
+		enginesMultiplier: getRoutingMultiplier(selected, "engines"),
+		weaponsMultiplier: getRoutingMultiplier(selected, "weapons"),
+		shieldsMultiplier: getRoutingMultiplier(selected, "shields")
+	};
+}
+
+function getDeploymentUuidList(value) {
+	if ( Array.isArray(value?.items) ) return value.items.filter(Boolean);
+	if ( Array.isArray(value?.value) ) return value.value.filter(Boolean);
+	if ( Array.isArray(value) ) return value.filter(Boolean);
+	return [];
+}
+
+function resolveActorDocument(subject) {
+	if ( !subject ) return null;
+	if ( subject.documentName === "Actor" ) return subject;
+	if ( typeof subject !== "string" ) return null;
+	return globalThis.fromUuidSync?.(subject)
+		?? globalThis.game?.actors?.get(subject)
+		?? null;
+}
+
+function getStarshipCrewState(actor, legacySystem = {}) {
+	const deployment = legacySystem.attributes?.deployment ?? {};
+	const pilotUuid = deployment.pilot?.value ?? deployment.pilot ?? null;
+	const activeUuid = deployment.active?.value ?? deployment.active ?? null;
+	const crewUuids = getDeploymentUuidList(deployment.crew);
+	const passengerUuids = getDeploymentUuidList(deployment.passenger);
+	const pilotActor = resolveActorDocument(pilotUuid);
+	const activeActor = resolveActorDocument(activeUuid);
+	const deployedActors = Array.from(new Set([pilotUuid, activeUuid, ...crewUuids, ...passengerUuids]))
+		.map(resolveActorDocument)
+		.filter(Boolean);
+
+	const canStealthAtNormalPace = deployedActors.some(crewActor => {
+		return Array.from(crewActor?.items ?? []).some(item => /move stealthily at a normal pace/i.test(getItemDescriptionText(item)));
+	});
+
+	return {
+		pilotAssigned: Boolean(pilotUuid),
+		pilotName: pilotActor?.name ?? "",
+		activeCrewName: activeActor?.name ?? "",
+		crewCount: crewUuids.length,
+		passengerCount: passengerUuids.length,
+		pilotSkill: toFiniteNumber(pilotActor?.system?.skills?.pil?.value, 0) ?? 0,
+		stealthPace: canStealthAtNormalPace ? "normal" : "slow"
+	};
+}
+
+function getHyperdriveClassFromItem(item) {
+	const candidateText = `${item?.name ?? ""} ${getItemDescriptionText(item)}`.trim();
+	if ( !/hyperdrive/i.test(candidateText) ) return null;
+	if ( /escape pod/i.test(candidateText) ) return null;
+	const match = /class\s*(\d+)/i.exec(candidateText);
+	return toFiniteNumber(match?.[1], null);
+}
+
+function deriveStarshipTravelData({ legacySystem = {}, items = [], crewState = {} } = {}) {
+	const attributes = legacySystem.attributes ?? {};
+	const storedHyperdriveClass = toFiniteNumber(
+		attributes?.equip?.hyperdrive?.class ?? attributes?.travel?.hyperdriveClass,
+		null
+	);
+	const itemHyperdriveClasses = items
+		.map(getHyperdriveClassFromItem)
+		.filter(value => value !== null);
+	const hyperdriveClass = storedHyperdriveClass ?? (itemHyperdriveClasses.length ? Math.min(...itemHyperdriveClasses) : 0);
+	return {
+		pace: normalizeTravelPace(attributes?.travel?.pace ?? attributes?.movement?.travelPace, "normal"),
+		stealthPace: normalizeTravelPace(attributes?.travel?.stealthPace ?? crewState.stealthPace, crewState.stealthPace ?? "slow"),
+		hyperdriveClass
+	};
 }
 
 function getLegacyAbilityValue(currentAbility, legacyAbility) {
@@ -221,14 +361,18 @@ function buildVehicleSystem(legacySystem = {}, items = [], existingSystem = {}) 
 	const hpValue = toFiniteNumber(legacySystem.attributes?.hp?.value, toFiniteNumber(existingSystem.attributes?.hp?.value));
 	const hpMax = toFiniteNumber(legacySystem.attributes?.hp?.max, hpValue);
 	const cargoCap = toFiniteNumber(sizeSystem.cargoCap, toFiniteNumber(existingSystem.attributes?.capacity?.cargo, 0)) ?? 0;
+	const routing = getPowerRoutingState(legacySystem);
 	const derivedMovement = deriveStarshipMovementData({
 		legacySystem,
 		items,
 		liveAbilities: existingSystem.abilities ?? legacySystem.abilities ?? {},
 		liveMovement: existingSystem.attributes?.movement ?? {},
-		sizeSystem
+		sizeSystem,
+		routingState: routing
 	});
+	const derivedTravel = deriveStarshipTravelData({ legacySystem, items });
 	applyDerivedStarshipMovement(legacySystem, derivedMovement);
+	applyDerivedStarshipTravel(legacySystem, derivedTravel);
 	const acFlat = toFiniteNumber(legacySystem.attributes?.ac?.flat, toFiniteNumber(existingSystem.attributes?.ac?.flat, 10)) ?? 10;
 
 	return {
@@ -410,13 +554,16 @@ export function deriveStarshipMovementData({
 	items = [],
 	liveAbilities = {},
 	liveMovement = {},
-	sizeSystem = null
+	sizeSystem = null,
+	routingState = null
 } = {}) {
 	const resolvedSizeSystem = sizeSystem ?? getLegacySizeSystem(getLegacyStarshipSize(items));
+	const movementProfile = getMovementProfile(items, resolvedSizeSystem);
 	const legacyMovement = legacySystem.attributes?.movement ?? {};
 	const legacyAbilities = legacySystem.abilities ?? {};
-	const baseSpaceSpeed = getMovementBaseValue(resolvedSizeSystem?.baseSpaceSpeed);
-	const baseTurnSpeed = getMovementBaseValue(resolvedSizeSystem?.baseTurnSpeed);
+	const routing = routingState ?? getPowerRoutingState(legacySystem);
+	const baseSpaceSpeed = getMovementBaseValue(movementProfile.space);
+	const baseTurnSpeed = getMovementBaseValue(movementProfile.turn);
 	const fallbackSpace = getMovementBaseValue(legacyMovement.space)
 		?? getMovementBaseValue(liveMovement.fly)
 		?? 0;
@@ -436,13 +583,19 @@ export function deriveStarshipMovementData({
 		turn = Math.max(50, baseTurnSpeed - (50 * (dexterityMod - constitutionMod)));
 	}
 
+	if ( routing.enginesMultiplier !== 1 ) {
+		space = Math.max(50, Math.floor((toFiniteNumber(space, fallbackSpace) ?? fallbackSpace) * routing.enginesMultiplier));
+	}
+
 	if ( Number.isFinite(space) && Number.isFinite(turn) && (turn > space) ) turn = space;
 	return {
 		space: toFiniteNumber(space, fallbackSpace) ?? fallbackSpace,
 		turn: toFiniteNumber(turn, fallbackTurn) ?? fallbackTurn,
 		units: liveMovement.units ?? legacyMovement.units ?? "ft",
 		baseSpaceSpeed,
-		baseTurnSpeed
+		baseTurnSpeed,
+		profileSource: movementProfile.source,
+		enginesMultiplier: routing.enginesMultiplier
 	};
 }
 
@@ -455,13 +608,38 @@ export function applyDerivedStarshipMovement(legacySystem = {}, movement = {}) {
 	return legacyMovement;
 }
 
-export function getDerivedStarshipMovement(actor) {
-	return deriveStarshipMovementData({
-		legacySystem: getLegacyStarshipActorSystem(actor),
-		items: actor?.items?.contents ?? actor?._source?.items ?? [],
+export function applyDerivedStarshipTravel(legacySystem = {}, travel = {}) {
+	const attributes = (legacySystem.attributes ??= {});
+	const travelData = (attributes.travel ??= {});
+	travelData.pace = normalizeTravelPace(travel.pace, "normal");
+	travelData.stealthPace = normalizeTravelPace(travel.stealthPace, "slow");
+	travelData.hyperdriveClass = toFiniteNumber(travel.hyperdriveClass, 0) ?? 0;
+	attributes.equip ??= {};
+	attributes.equip.hyperdrive ??= {};
+	if ( travelData.hyperdriveClass > 0 ) attributes.equip.hyperdrive.class = travelData.hyperdriveClass;
+	return travelData;
+}
+
+export function getDerivedStarshipRuntime(actor) {
+	const legacySystem = getLegacyStarshipActorSystem(actor);
+	const items = actor?.items?.contents ?? actor?._source?.items ?? [];
+	const routing = getPowerRoutingState(legacySystem);
+	const crew = getStarshipCrewState(actor, legacySystem);
+	const movement = deriveStarshipMovementData({
+		legacySystem,
+		items,
 		liveAbilities: actor?.system?.abilities ?? {},
-		liveMovement: actor?.system?.attributes?.movement ?? {}
+		liveMovement: actor?.system?.attributes?.movement ?? {},
+		routingState: routing
 	});
+	const travel = deriveStarshipTravelData({ legacySystem, items, crewState: crew });
+	applyDerivedStarshipMovement(legacySystem, movement);
+	applyDerivedStarshipTravel(legacySystem, travel);
+	return { movement, travel, crew, routing };
+}
+
+export function getDerivedStarshipMovement(actor) {
+	return getDerivedStarshipRuntime(actor).movement;
 }
 
 function getProficiencyLevels() {
@@ -478,9 +656,11 @@ function getSkillBonus(skill = {}) {
 
 export function getStarshipSkillEntries(actor) {
 	const legacySystem = getLegacyStarshipActorSystem(actor);
+	const runtime = getDerivedStarshipRuntime(actor);
 	const skillConfig = getStarshipSkillsConfig();
 	const proficiencyLevels = getProficiencyLevels();
 	const baseProficiency = toFiniteNumber(legacySystem.attributes?.prof, 0) ?? 0;
+	const pilotSkill = toFiniteNumber(runtime.crew?.pilotSkill, 0) ?? 0;
 
 	return Object.entries(skillConfig).map(([key, config]) => {
 		const skill = legacySystem.skills?.[key] ?? {};
@@ -490,7 +670,9 @@ export function getStarshipSkillEntries(actor) {
 		const proficiencyMode = toFiniteNumber(skill.value, 0) ?? 0;
 		const multiplier = Number(proficiencyLevels?.[proficiencyMode]?.mult ?? 0);
 		const proficiency = Math.round(baseProficiency * multiplier);
-		const bonus = getSkillBonus(skill);
+		let bonus = getSkillBonus(skill);
+		const baseTotal = abilityMod + proficiency + bonus;
+		if ( key === "man" && pilotSkill > baseTotal ) bonus += (pilotSkill - baseTotal);
 		return {
 			id: key,
 			label: config.label ?? key,

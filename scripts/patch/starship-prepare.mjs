@@ -1,5 +1,5 @@
 import { getModuleId, HOOKS_NAMESPACE } from "../module-support.mjs";
-import { applyDerivedStarshipMovement, deriveStarshipMovementData, mergeVehicleAbilityValues } from "../starship-data.mjs";
+import { applyDerivedStarshipMovement, applyDerivedStarshipTravel, deriveStarshipMovementData, getDerivedStarshipRuntime, mergeVehicleAbilityValues } from "../starship-data.mjs";
 
 function getActorSource(model) {
 	const candidates = [
@@ -35,13 +35,22 @@ export function patchStarshipPrepare() {
 
 			const result = wrapped(...args);
 			if ( legacySystem ) {
-				const movement = deriveStarshipMovementData({
+				const runtime = getDerivedStarshipRuntime({
+					flags: { sw5e: { legacyStarshipActor: { system: legacySystem } } },
+					items: { contents: actorSource.items ?? [] },
+					system: {
+						abilities: this.abilities ?? actorSource.system?.abilities ?? {},
+						attributes: { movement: this.attributes?.movement ?? actorSource.system?.attributes?.movement ?? {} }
+					}
+				});
+				const movement = runtime.movement ?? deriveStarshipMovementData({
 					legacySystem,
 					items: actorSource.items ?? [],
 					liveAbilities: this.abilities ?? actorSource.system?.abilities ?? {},
 					liveMovement: this.attributes?.movement ?? actorSource.system?.attributes?.movement ?? {}
 				});
 				applyDerivedStarshipMovement(legacySystem, movement);
+				applyDerivedStarshipTravel(legacySystem, runtime.travel ?? {});
 				if ( this.attributes?.movement && (typeof this.attributes.movement === "object") ) {
 					this.attributes.movement.fly = movement.space;
 					if ( movement.units ) this.attributes.movement.units = movement.units;
