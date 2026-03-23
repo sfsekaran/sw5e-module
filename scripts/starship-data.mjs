@@ -221,7 +221,14 @@ function buildVehicleSystem(legacySystem = {}, items = [], existingSystem = {}) 
 	const hpValue = toFiniteNumber(legacySystem.attributes?.hp?.value, toFiniteNumber(existingSystem.attributes?.hp?.value));
 	const hpMax = toFiniteNumber(legacySystem.attributes?.hp?.max, hpValue);
 	const cargoCap = toFiniteNumber(sizeSystem.cargoCap, toFiniteNumber(existingSystem.attributes?.capacity?.cargo, 0)) ?? 0;
-	const flySpeed = toFiniteNumber(sizeSystem.baseSpaceSpeed, toFiniteNumber(existingSystem.attributes?.movement?.fly, 0)) ?? 0;
+	const derivedMovement = deriveStarshipMovementData({
+		legacySystem,
+		items,
+		liveAbilities: existingSystem.abilities ?? legacySystem.abilities ?? {},
+		liveMovement: existingSystem.attributes?.movement ?? {},
+		sizeSystem
+	});
+	applyDerivedStarshipMovement(legacySystem, derivedMovement);
 	const acFlat = toFiniteNumber(legacySystem.attributes?.ac?.flat, toFiniteNumber(existingSystem.attributes?.ac?.flat, 10)) ?? 10;
 
 	return {
@@ -246,8 +253,8 @@ function buildVehicleSystem(legacySystem = {}, items = [], existingSystem = {}) 
 				cargo: cargoCap
 			},
 			movement: {
-				fly: flySpeed,
-				units: existingSystem.attributes?.movement?.units ?? "ft",
+				fly: derivedMovement.space,
+				units: derivedMovement.units ?? existingSystem.attributes?.movement?.units ?? "ft",
 				hover: existingSystem.attributes?.movement?.hover ?? true
 			}
 		},
@@ -387,6 +394,74 @@ export function normalizeLegacyStarshipActorData(data) {
 
 export function getLegacyStarshipActorSystem(actor) {
 	return actor?.flags?.sw5e?.legacyStarshipActor?.system ?? {};
+}
+
+function getAbilityModifier(abilities = {}, legacyAbilities = {}, abilityId) {
+	const abilityValue = getLegacyAbilityValue(abilities?.[abilityId], legacyAbilities?.[abilityId]);
+	return Math.floor((abilityValue - 10) / 2);
+}
+
+function getMovementBaseValue(value) {
+	return toFiniteNumber(value, null);
+}
+
+export function deriveStarshipMovementData({
+	legacySystem = {},
+	items = [],
+	liveAbilities = {},
+	liveMovement = {},
+	sizeSystem = null
+} = {}) {
+	const resolvedSizeSystem = sizeSystem ?? getLegacySizeSystem(getLegacyStarshipSize(items));
+	const legacyMovement = legacySystem.attributes?.movement ?? {};
+	const legacyAbilities = legacySystem.abilities ?? {};
+	const baseSpaceSpeed = getMovementBaseValue(resolvedSizeSystem?.baseSpaceSpeed);
+	const baseTurnSpeed = getMovementBaseValue(resolvedSizeSystem?.baseTurnSpeed);
+	const fallbackSpace = getMovementBaseValue(legacyMovement.space)
+		?? getMovementBaseValue(liveMovement.fly)
+		?? 0;
+	const fallbackTurn = getMovementBaseValue(legacyMovement.turn)
+		?? fallbackSpace;
+	const strengthMod = getAbilityModifier(liveAbilities, legacyAbilities, "str");
+	const dexterityMod = getAbilityModifier(liveAbilities, legacyAbilities, "dex");
+	const constitutionMod = getAbilityModifier(liveAbilities, legacyAbilities, "con");
+
+	let space = baseSpaceSpeed ?? fallbackSpace;
+	if ( baseSpaceSpeed !== null ) {
+		space = Math.max(50, baseSpaceSpeed + (50 * (strengthMod - constitutionMod)));
+	}
+
+	let turn = baseTurnSpeed ?? fallbackTurn;
+	if ( baseTurnSpeed !== null ) {
+		turn = Math.max(50, baseTurnSpeed - (50 * (dexterityMod - constitutionMod)));
+	}
+
+	if ( Number.isFinite(space) && Number.isFinite(turn) && (turn > space) ) turn = space;
+	return {
+		space: toFiniteNumber(space, fallbackSpace) ?? fallbackSpace,
+		turn: toFiniteNumber(turn, fallbackTurn) ?? fallbackTurn,
+		units: liveMovement.units ?? legacyMovement.units ?? "ft",
+		baseSpaceSpeed,
+		baseTurnSpeed
+	};
+}
+
+export function applyDerivedStarshipMovement(legacySystem = {}, movement = {}) {
+	const attributes = (legacySystem.attributes ??= {});
+	const legacyMovement = (attributes.movement ??= {});
+	if ( movement.space !== undefined ) legacyMovement.space = movement.space;
+	if ( movement.turn !== undefined ) legacyMovement.turn = movement.turn;
+	if ( movement.units ) legacyMovement.units = movement.units;
+	return legacyMovement;
+}
+
+export function getDerivedStarshipMovement(actor) {
+	return deriveStarshipMovementData({
+		legacySystem: getLegacyStarshipActorSystem(actor),
+		items: actor?.items?.contents ?? actor?._source?.items ?? [],
+		liveAbilities: actor?.system?.abilities ?? {},
+		liveMovement: actor?.system?.attributes?.movement ?? {}
+	});
 }
 
 function getProficiencyLevels() {

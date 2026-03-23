@@ -51,6 +51,7 @@ export class StarshipSkillRollConfigApp extends HandlebarsApplicationMixin(Appli
 		tag: "section",
 		classes: ["config-sheet", "sw5e-starship-skill-roll-config"],
 		window: {
+			icon: false,
 			resizable: true
 		},
 		position: {

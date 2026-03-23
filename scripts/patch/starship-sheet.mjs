@@ -1,5 +1,5 @@
 import { getModulePath } from "../module-support.mjs";
-import { getLegacyStarshipActorSystem, getStarshipSkillEntries, rollStarshipSkill } from "../starship-data.mjs";
+import { getDerivedStarshipMovement, getLegacyStarshipActorSystem, getStarshipSkillEntries, rollStarshipSkill } from "../starship-data.mjs";
 
 const STARSHIP_PACKS = new Set([
 	"starshipactions",
@@ -168,10 +168,10 @@ function formatPool(current, max) {
 }
 
 function formatMovement(actor, legacySystem) {
-	const legacyMovement = legacySystem.attributes?.movement ?? {};
-	const units = legacyMovement.units || actor.system?.attributes?.movement?.units || "ft";
-	const space = Number.isFinite(Number(legacyMovement.space)) ? Number(legacyMovement.space) : null;
-	const turn = Number.isFinite(Number(legacyMovement.turn)) ? Number(legacyMovement.turn) : null;
+	const derivedMovement = getDerivedStarshipMovement(actor);
+	const units = derivedMovement.units || actor.system?.attributes?.movement?.units || "ft";
+	const space = Number.isFinite(Number(derivedMovement.space)) ? Number(derivedMovement.space) : null;
+	const turn = Number.isFinite(Number(derivedMovement.turn)) ? Number(derivedMovement.turn) : null;
 	if ( space != null || turn != null ) {
 		return {
 			primary: `${space ?? 0} ${units}`,
