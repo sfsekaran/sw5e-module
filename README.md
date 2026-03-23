@@ -52,6 +52,26 @@ For a contributor-focused overview of the repo layout, runtime entrypoints, comp
 
 ## Changelog
 
+### [1.2.9] - 2026-03-13
+
+### Added
+
+- Local development and contributor documentation, including install instructions and a plain-English change request template.
+- A guided legacy world conversion tool for migrating older SW5E worlds into the module workflow.
+- Vehicle-backed starship sheets with custom `SW5E` and `Features` tabs, starship skill rolls, travel and hyperdrive displays, crew-aware summaries, and starship item quick actions.
+
+### Changed
+
+- Starship movement now uses a derived runtime for flying speed, turning speed, travel pace, hyperdrive, crew state, and power-routing effects.
+- Force and Tech point sheet support has been expanded to better match the dnd5e sheet workflow across character and NPC use cases.
+- Compendium and migration handling has been hardened for legacy SW5E data and newer dnd5e data expectations.
+
+### Fixed
+
+- Foundry V13 and dnd5e 5.2.5 compatibility issues across starship sheets, roll dialogs, migration, item activity normalization, and deprecated roll/application APIs.
+- Multiple starship sheet issues affecting warnings dialogs, tab visibility, sidebar summaries, skill rolls, and ship weapon interactions.
+- Powercasting sheet display issues, medpac syntax/runtime problems, and reload-related item workflow regressions.
+
 ### [1.2.8] - 2025-12-14
 
 ### Fixed
