@@ -30,6 +30,31 @@
 
 /* Force Point CSS for the main sheet */
 
+.dnd5e2.sheet.actor .meter.sw5e-power-points .progress {
+  position: relative;
+}
+
+.dnd5e2.sheet.actor .meter.sw5e-power-points .progress::before {
+  z-index: 0;
+}
+
+.dnd5e2.sheet.actor .meter.sw5e-power-points .progress > .label,
+.dnd5e2.sheet.actor .meter.sw5e-power-points .progress > input {
+  position: relative;
+  z-index: 1;
+}
+
+.dnd5e2.sheet.actor .meter.sw5e-power-points .progress.editing > input {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.5rem;
+  text-align: center;
+  color: var(--dnd5e-color-text-dark-primary);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
 .dnd5e2.sheet.actor .meter.force-points .progress::before {
   background: linear-gradient(to right, #08568a 0%, #AFC6D5 100%);
 }

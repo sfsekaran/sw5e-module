@@ -936,9 +936,10 @@ function _toggleEditPoints(pointType, event, edit) {
 	const label = target.querySelector(":scope > .label");
 	const input = target.querySelector(":scope > input");
 	if ( !label || !input ) return;
+	target.classList.toggle("editing", edit);
 	label.hidden = edit;
 	input.hidden = !edit;
-	if (edit) input.focus();
+	if ( edit ) input.focus();
 }
 
 export function patchPowercasting() {

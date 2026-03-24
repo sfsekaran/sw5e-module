@@ -16,8 +16,14 @@ const LEGACY_FEAT_LIKE_ITEM_TYPES = {
 	venture: { value: "deployment", subtype: "venture" }
 }
 
+const STANDARD_DND5E_SPELL_SCHOOLS = new Set(["abj", "con", "div", "enc", "evo", "ill", "nec", "trs", "trn"])
+
 function isObjectLike(value) {
 	return !!value && (typeof value === "object") && !Array.isArray(value)
+}
+
+function hasOwnKeys(value) {
+	return isObjectLike(value) && Object.keys(value).length > 0
 }
 
 function normalizeActivityEntry(activity, fallbackId) {
@@ -39,6 +45,63 @@ function normalizeActivitiesToObject(activities) {
 	}
 
 	return normalized
+}
+
+function isSw5ePowerData(item) {
+	if ( item?.type !== "spell" ) return false
+	const school = item?.system?.school
+	const powerCasting = globalThis.CONFIG?.DND5E?.powerCasting ?? {}
+	if ( school && Object.values(powerCasting).some(castType => school in (castType?.schools ?? {})) ) return true
+	if ( school && !STANDARD_DND5E_SPELL_SCHOOLS.has(school) ) return true
+
+	const consumeTarget = item?.system?.consume?.target
+	if ( typeof consumeTarget === "string" && /^powercasting\.(force|tech)\.points\.value$/.test(consumeTarget) ) return true
+
+	const activityTargets = Object.values(item?.system?.activities ?? {}).flatMap(activity => activity?.consumption?.targets ?? [])
+	return activityTargets.some(target =>
+		target?.type === "attribute" && /^powercasting\.(force|tech)\.points\.value$/.test(target?.target ?? "")
+	)
+}
+
+function normalizePowerCastingDefaults(item) {
+	if ( !isSw5ePowerData(item) ) return false
+	item.system ??= {}
+	let changed = false
+
+	if ( item.system.method !== "powerCasting" ) {
+		item.system.method = "powerCasting"
+		changed = true
+	}
+
+	if ( item.system.prepared !== true ) {
+		item.system.prepared = true
+		changed = true
+	}
+
+	item.system.preparation ??= {}
+	if ( item.system.preparation.prepared !== true ) {
+		item.system.preparation.prepared = true
+		changed = true
+	}
+
+	return changed
+}
+
+function activityHasMeasuredTemplate(activity) {
+	const template = activity?.target?.template
+	if ( template === true ) return true
+	if ( hasOwnKeys(template) ) return true
+	if ( activity?.target?.affects?.type === "area" ) return true
+	return false
+}
+
+function normalizeLegacyWeaponPromptDefaults(item) {
+	if ( item?.type !== "weapon" ) return false
+	if ( !hasOwnKeys(item?.system?.activities) ) return false
+	if ( Object.values(item.system.activities).some(activityHasMeasuredTemplate) ) return false
+	if ( !isObjectLike(item.system.target) || item.system.target.prompt !== true ) return false
+	item.system.target.prompt = false
+	return true
 }
 
 function normalizeSystemStats(data, { targetSystemVersion=TARGET_DND5E_VERSION }={}) {
@@ -163,6 +226,8 @@ export function normalizeDnd5eItemSource(item, { targetSystemVersion=TARGET_DND5
 	let changed = false
 	changed = normalizeLegacyItemActivities(item) || changed
 	changed = normalizeLegacyItemAdvancement(item) || changed
+	changed = normalizeLegacyWeaponPromptDefaults(item) || changed
+	changed = normalizePowerCastingDefaults(item) || changed
 
 	if ( changed ) changed = normalizeSystemStats(item, { targetSystemVersion }) || changed
 
