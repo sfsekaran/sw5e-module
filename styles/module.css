@@ -11,6 +11,23 @@
   text-align: left;
 }
 
+.dnd5e2.sheet.actor .window-content {
+  position: relative;
+}
+
+.dnd5e2.sheet.actor .window-content::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 300px;
+  border-radius: inherit;
+  opacity: 0.5;
+  pointer-events: none;
+  background: url("/modules/sw5e-module/styles/dual_color_saber3.jpeg") no-repeat top center / cover;
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+
 /* Force Point CSS for the main sheet */
 
 .dnd5e2.sheet.actor .meter.force-points .progress::before {
