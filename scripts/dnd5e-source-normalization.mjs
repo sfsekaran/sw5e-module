@@ -17,6 +17,14 @@ const LEGACY_FEAT_LIKE_ITEM_TYPES = {
 }
 
 const STANDARD_DND5E_SPELL_SCHOOLS = new Set(["abj", "con", "div", "enc", "evo", "ill", "nec", "trs", "trn"])
+const TOOL_TYPE_VALUE_MAP = {
+	art: "artisan",
+	artisan: "artisan",
+	game: "game",
+	kit: "specialist",
+	music: "music",
+	specialist: "specialist"
+}
 
 function isObjectLike(value) {
 	return !!value && (typeof value === "object") && !Array.isArray(value)
@@ -102,6 +110,28 @@ function normalizeLegacyWeaponPromptDefaults(item) {
 	if ( !isObjectLike(item.system.target) || item.system.target.prompt !== true ) return false
 	item.system.target.prompt = false
 	return true
+}
+
+function normalizeLegacyToolShape(item) {
+	if ( item?.type !== "tool" ) return false
+	item.system ??= {}
+
+	let changed = false
+	const sourceType = item.system.type
+	const toolType = TOOL_TYPE_VALUE_MAP[sourceType?.value ?? item.system.toolType]
+	const baseItem = sourceType?.baseItem ?? item.system.baseItem
+
+	if ( toolType && item.system.toolType !== toolType ) {
+		item.system.toolType = toolType
+		changed = true
+	}
+
+	if ( typeof baseItem === "string" && baseItem && item.system.baseItem !== baseItem ) {
+		item.system.baseItem = baseItem
+		changed = true
+	}
+
+	return changed
 }
 
 function normalizeSystemStats(data, { targetSystemVersion=TARGET_DND5E_VERSION }={}) {
@@ -226,6 +256,7 @@ export function normalizeDnd5eItemSource(item, { targetSystemVersion=TARGET_DND5
 	let changed = false
 	changed = normalizeLegacyItemActivities(item) || changed
 	changed = normalizeLegacyItemAdvancement(item) || changed
+	changed = normalizeLegacyToolShape(item) || changed
 	changed = normalizeLegacyWeaponPromptDefaults(item) || changed
 	changed = normalizePowerCastingDefaults(item) || changed
 

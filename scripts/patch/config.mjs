@@ -410,6 +410,7 @@ export function patchConfig(config, strict = true) {
 	if (strict) config.toolIds = {
 		// Gaming Sets
 		chancecubes: "Compendium.sw5e.gamingsets.Item.kqt52rtjpaz6jiCf",
+		"chatta-ragulset": "Compendium.sw5e.gamingsets.Item.3qg5pm5AHt80Rnvi",
 		dejarikset: "Compendium.sw5e.gamingsets.Item.dKho3HXE7XfS4iRU",
 		kirgatzset: "Compendium.sw5e.gamingsets.Item.vKrWBDhbSZDtdiTv",
 		pazaakdeck: "Compendium.sw5e.gamingsets.Item.XfClqzNPbjJxHqil",
