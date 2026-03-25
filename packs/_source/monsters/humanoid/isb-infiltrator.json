@@ -14,7 +14,7 @@
           "order": 149
         }
       },
-      "img": "systems/dnd5e/icons/skills/violet_10.jpg",
+      "img": "icons/svg/item-bag.svg",
       "effects": [],
       "folder": null,
       "system": {
@@ -130,7 +130,7 @@
           "order": 187
         }
       },
-      "img": "systems/dnd5e/icons/skills/red_03.jpg",
+      "img": "icons/svg/item-bag.svg",
       "effects": [],
       "folder": null,
       "system": {
@@ -357,7 +357,7 @@
           "order": 139
         }
       },
-      "img": "systems/dnd5e/icons/skills/armor_01.jpg",
+      "img": "icons/svg/item-bag.svg",
       "effects": [],
       "folder": null,
       "system": {

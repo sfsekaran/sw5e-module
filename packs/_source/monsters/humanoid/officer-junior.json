@@ -551,7 +551,7 @@
           "sourceId": "Item.U9mmYyuLA70eaKUB"
         }
       },
-      "img": "systems/dnd5e/icons/skills/blue_13.jpg",
+      "img": "icons/svg/item-bag.svg",
       "effects": [
         {
           "_id": "Pwq0j7VG4ePDGAWl",
@@ -613,7 +613,7 @@
             "compendiumSource": null,
             "duplicateSource": null
           },
-          "img": "systems/dnd5e/icons/skills/blue_13.jpg",
+          "img": "icons/svg/item-bag.svg",
           "type": "base",
           "system": {},
           "sort": 0,
@@ -951,7 +951,7 @@
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "systems/dnd5e/icons/skills/blue_13.jpg",
+      "img": "icons/svg/item-bag.svg",
       "type": "base",
       "system": {},
       "sort": 0,

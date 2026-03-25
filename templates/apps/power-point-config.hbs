@@ -5,6 +5,18 @@
         <fieldset class="card">
             <legend>{{maximumLegend}}</legend>
 
+            {{#if showCalculatedReset}}
+            <div class="form-group">
+                <label>{{calculatedMaxLabel}}</label>
+                <div class="form-fields">
+                    <input type="text" value="{{calculatedMax}}" disabled>
+                    <button type="submit" class="dialog-button" data-action="reset-calculated">
+                        {{resetLabel}}
+                    </button>
+                </div>
+            </div>
+            {{/if}}
+
             <div class="form-group">
                 <label>{{maxOverrideLabel}}</label>
                 <div class="form-fields">

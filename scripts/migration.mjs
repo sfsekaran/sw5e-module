@@ -883,6 +883,7 @@ function _migrateImage(objectData, updateData) {
 		let newPath = path?.replace("systems/sw5e/packs/Icons", getModulePath("icons/packs"));
 		newPath = newPath?.replace("modules/sw5e/icons/", `${getModulePath("icons")}/`);
 		newPath = newPath?.replace("modules/sw5e-module-test/icons/", `${getModulePath("icons")}/`);
+		newPath = newPath?.replace(/^systems\/dnd5e\/icons\/.+$/, "icons/svg/item-bag.svg");
 		if (newPath !== path) {
 			updateData[prop] = newPath;
 			console.log("Changed img path for item", objectData.name, "old", path, "new", newPath);

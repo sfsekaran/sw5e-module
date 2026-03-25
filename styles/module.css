@@ -72,6 +72,14 @@
   gap: 0.5rem;
 }
 
+.dnd5e2.sheet.actor .meter-group.sw5e-powercasting-meter .config-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1rem;
+  padding: 0;
+}
+
 .power-point-config .final-value {
   margin-bottom: 0.75rem;
   font-size: var(--font-size-28);
@@ -83,6 +91,11 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 0.75rem;
+}
+
+.power-point-config .form-fields > button[data-action="reset-calculated"] {
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-tab {
