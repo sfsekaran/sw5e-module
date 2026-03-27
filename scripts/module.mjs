@@ -1,4 +1,5 @@
 import { addHooks } from "./patch/addHooks.mjs";
+import { registerCurrencyActorHooks, registerCurrencyTooltipHooks, syncWorldActorCurrencyWallets } from "./currencies.mjs";
 import { patchConfig } from "./patch/config.mjs";
 import { patchDataModels } from "./patch/dataModels.mjs";
 import { patchPacks } from "./patch/packs.mjs";
@@ -29,6 +30,8 @@ Hooks.once('init', async function() {
 	handleTemplates();
 
 	patchConfig(CONFIG.DND5E, strict);
+	registerCurrencyActorHooks();
+	registerCurrencyTooltipHooks();
 	patchDataModels();
 
 	patchManeuver();
@@ -46,5 +49,6 @@ Hooks.once('ready', async function() {
 	patchProficiencyReady();
 
 	// Perform module migration if it is required and feasible
-	if (migrations.needsMigration()) migrations.migrateWorld();
+	if (migrations.needsMigration()) await migrations.migrateWorld();
+	await syncWorldActorCurrencyWallets();
 });

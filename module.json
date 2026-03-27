@@ -873,7 +873,7 @@
     }
   ],
   "flags": {
-    "needsMigrationVersion": "0.26",
+    "needsMigrationVersion": "0.29",
     "compatibleMigrationVersion": "0"
   }
 }

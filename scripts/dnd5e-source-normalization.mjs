@@ -1,3 +1,5 @@
+import { normalizeSwCurrencyWallet, normalizeSwPriceDenomination } from "./currencies.mjs";
+
 export const TARGET_DND5E_VERSION = "5.2.5"
 
 const LEGACY_ITEM_TYPE_REMAPS = {
@@ -300,8 +302,15 @@ export function normalizeLegacyMasterItemSource(item) {
 		}
 	}
 
-	if ( item.system?.price?.denomination === "gc" ) {
-		item.system.price.denomination = "gp"
+	if ( item.system?.price?.denomination !== undefined ) {
+		const normalizedDenomination = normalizeSwPriceDenomination(item.system.price.denomination);
+		if ( normalizedDenomination !== item.system.price.denomination ) {
+			item.system.price.denomination = normalizedDenomination
+			changed = true
+		}
+	}
+	if ( item.system?.price && (item.system.price.denomination === undefined) ) {
+		item.system.price.denomination = normalizeSwPriceDenomination(undefined)
 		changed = true
 	}
 	if ( item.system?.save?.scaling === "power" ) {
@@ -341,6 +350,15 @@ export function normalizeLegacyMasterActorSource(actor) {
 			const id = value._id ?? value.id ?? value.uuid ?? null
 			if ( !id ) continue
 			details[key] = id
+			changed = true
+		}
+	}
+
+	const currency = actor.system?.currency
+	if ( isObjectLike(currency) ) {
+		const normalizedCurrency = normalizeSwCurrencyWallet(currency)
+		if ( JSON.stringify(normalizedCurrency) !== JSON.stringify(currency) ) {
+			actor.system.currency = normalizedCurrency
 			changed = true
 		}
 	}

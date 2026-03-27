@@ -68,7 +68,6 @@ export function addHooks() {
 	// ActorSheet5e Hooks
 	addHook('dnd5e.applications.actor.BaseActorSheet.prototype._assignItemCategories', 'BaseActorSheet._assignItemCategories');
 	addHook('dnd5e.applications.actor.BaseActorSheet.prototype._prepareSpellbook', 'ActorSheet5e._prepareSpellbook');
-	// addHookAsync('dnd5e.applications.actor.ActorSheet5e.prototype.getData', 'ActorSheet5eCharacter.getData');
 	// ItemSheet5e Hooks
 	// ?
 	// ActivityUsageDialog Hooks

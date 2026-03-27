@@ -1,14 +1,47 @@
-export const HOOKS_NAMESPACE = "sw5e";
-export const SETTINGS_NAMESPACE = "sw5e";
-
 const LEGACY_MODULE_ID = "sw5e";
 const TEST_MODULE_ID = "sw5e-module-test";
 export const CANONICAL_MODULE_ID = "sw5e-module";
+export const HOOKS_NAMESPACE = LEGACY_MODULE_ID;
+export const LEGACY_SETTINGS_NAMESPACE = LEGACY_MODULE_ID;
+export const SETTINGS_NAMESPACE = CANONICAL_MODULE_ID;
 const MODULE_ID_CANDIDATES = [CANONICAL_MODULE_ID, LEGACY_MODULE_ID];
 const COMPENDIUM_MODULE_ID_CANDIDATES = [CANONICAL_MODULE_ID, LEGACY_MODULE_ID, TEST_MODULE_ID];
 
 function escapeRegex(text) {
 	return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function cloneData(data) {
+	if ( data === undefined ) return undefined;
+	if ( typeof globalThis.structuredClone === "function" ) return globalThis.structuredClone(data);
+	return JSON.parse(JSON.stringify(data));
+}
+
+function getWorldSettingsStorage() {
+	return game?.settings?.storage?.get?.("world") ?? null;
+}
+
+export function hasStoredWorldSetting(namespace, key) {
+	return Boolean(getWorldSettingsStorage()?.get(`${namespace}.${key}`));
+}
+
+export function getModuleSettingValue(key, fallback) {
+	const namespaces = Array.from(new Set([SETTINGS_NAMESPACE, LEGACY_SETTINGS_NAMESPACE]));
+	for ( const namespace of namespaces ) {
+		if ( !hasStoredWorldSetting(namespace, key) ) continue;
+		try {
+			return cloneData(game.settings.get(namespace, key));
+		} catch {
+			const value = getWorldSettingsStorage()?.get(`${namespace}.${key}`)?.value;
+			return value ?? cloneData(fallback);
+		}
+	}
+
+	try {
+		return cloneData(game.settings.get(SETTINGS_NAMESPACE, key));
+	} catch {
+		return cloneData(fallback);
+	}
 }
 
 export function getModuleId() {

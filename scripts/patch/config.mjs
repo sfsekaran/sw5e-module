@@ -1,3 +1,4 @@
+import { applySw5eCurrencyConfig } from "../currencies.mjs";
 import { getModulePath, normalizeCompendiumUuid } from "../module-support.mjs";
 
 export function patchConfig(config, strict = true) {
@@ -1701,12 +1702,7 @@ export function patchConfig(config, strict = true) {
 		])
 	};
 	// Currencies
-	if (strict) config.currencies = {};
-	config.currencies.gc = {
-		label: "SW5E.CurrencyGC",
-		abbreviation: "SW5E.CurrencyAbbrGC",
-		conversion: 1
-	};
+	applySw5eCurrencyConfig(config, strict);
 	// Damage
 	// config.damageTypes.force.reference = ""; // TODO
 	// config.damageTypes.thunder.reference = ""; // TODO

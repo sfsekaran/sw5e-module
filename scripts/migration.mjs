@@ -1,5 +1,6 @@
 import {
 	getModule,
+	getModuleSettingValue,
 	getModuleId,
 	getModulePath,
 	normalizeCompendiumReferences,
@@ -25,7 +26,7 @@ const MIGRATABLE_COMPENDIUM_DOCUMENTS = ["Actor", "Item", "Scene", "JournalEntry
 export const needsMigration = function() {
 	// Determine whether a system migration is required and feasible
 	if (!game.user.isGM) return false;
-	const cv = game.settings.get(SETTINGS_NAMESPACE, "moduleMigrationVersion");
+	const cv = getModuleSettingValue("moduleMigrationVersion", "");
 	const totalDocuments = game.actors.size + game.scenes.size + game.items.size;
 	const sw5eModule = getModule();
 	if ( !sw5eModule ) return false;
@@ -873,6 +874,10 @@ function mergePersistedMigrationSource(source, updateData) {
  * @private
  */
 function _migrateImage(objectData, updateData) {
+	const actorTypesWithBlankAvatarFallback = new Set(["character", "npc", "starship", "vehicle"]);
+	const isActorAvatarTarget = actorTypesWithBlankAvatarFallback.has(objectData?.type);
+	const isLegacyDndIcon = path => /^systems\/dnd5e\/icons\/.+$/.test(path ?? "");
+	const isLootBagFallback = path => path === "icons/svg/item-bag.svg";
 	const props = ["img", "texture.src", "prototypeToken.texture.src"];
 	// ActiveEffect5e#icon is deprecated since Foundry v12 (migrated to img); avoid accessing it.
 	const isEffect = objectData?.documentName === "ActiveEffect" || (objectData?.changes && Array.isArray(objectData.changes));
@@ -883,10 +888,14 @@ function _migrateImage(objectData, updateData) {
 		let newPath = path?.replace("systems/sw5e/packs/Icons", getModulePath("icons/packs"));
 		newPath = newPath?.replace("modules/sw5e/icons/", `${getModulePath("icons")}/`);
 		newPath = newPath?.replace("modules/sw5e-module-test/icons/", `${getModulePath("icons")}/`);
-		newPath = newPath?.replace(/^systems\/dnd5e\/icons\/.+$/, "icons/svg/item-bag.svg");
+		if ( isActorAvatarTarget && (prop !== "icon") && (isLegacyDndIcon(newPath) || isLootBagFallback(newPath)) ) {
+			newPath = "";
+		} else {
+			newPath = newPath?.replace(/^systems\/dnd5e\/icons\/.+$/, "icons/svg/item-bag.svg");
+		}
 		if (newPath !== path) {
 			updateData[prop] = newPath;
-			console.log("Changed img path for item", objectData.name, "old", path, "new", newPath);
+			console.log("Changed image path", objectData.name, "prop", prop, "old", path, "new", newPath);
 		}
 	}
 	return updateData;
