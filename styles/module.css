@@ -434,13 +434,12 @@
   }
 }
 
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sheet-tabs {
+  font-size: var(--font-size-11);
+}
+
 .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab-button {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  letter-spacing: 0.08em;
-  cursor: pointer;
+  white-space: nowrap;
 }
 
 .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab-host {

@@ -48,7 +48,7 @@ function getPrimaryTabPanelParent(root) {
 }
 
 function getTabButton(root, tabId) {
-	return getPrimaryTabNav(root)?.querySelector(`.item[data-tab="${tabId}"]`) ?? null;
+	return getPrimaryTabNav(root)?.querySelector(`[data-tab="${tabId}"]`) ?? null;
 }
 
 function getStarshipActiveTab(app) {
@@ -64,7 +64,7 @@ function setStarshipActiveTab(app, tabId = null) {
 function activatePrimaryTab(root, tabId) {
 	const nav = getPrimaryTabNav(root);
 	if ( nav ) {
-		nav.querySelectorAll(".item[data-tab]").forEach(item => {
+		nav.querySelectorAll("[data-tab]").forEach(item => {
 			item.classList.toggle("active", item.dataset.tab === tabId);
 		});
 	}
@@ -612,19 +612,17 @@ async function renderStarshipLayer(app, html, data) {
 		})
 	]);
 
-	const tabButton = document.createElement("button");
-	tabButton.type = "button";
-	tabButton.className = "item sw5e-starship-tab-button";
+	const tabButton = document.createElement("a");
+	tabButton.className = "sw5e-starship-tab-button";
 	tabButton.dataset.group = "primary";
 	tabButton.dataset.tab = STARSHIP_TAB_ID;
-	tabButton.textContent = "SW5E";
+	tabButton.innerHTML = `<span>SW5E</span>`;
 
-	const featuresTabButton = document.createElement("button");
-	featuresTabButton.type = "button";
-	featuresTabButton.className = "item sw5e-starship-tab-button sw5e-starship-features-tab-button";
+	const featuresTabButton = document.createElement("a");
+	featuresTabButton.className = "sw5e-starship-tab-button sw5e-starship-features-tab-button";
 	featuresTabButton.dataset.group = "primary";
 	featuresTabButton.dataset.tab = STARSHIP_FEATURES_TAB_ID;
-	featuresTabButton.textContent = localizeOrFallback("SW5E.Feature.Starship.Label", "Features");
+	featuresTabButton.innerHTML = `<span>${localizeOrFallback("SW5E.Feature.Starship.LabelPl", "Starship Features")}</span>`;
 
 	const wrapper = document.createElement("section");
 	wrapper.className = "tab sw5e-starship-tab";
@@ -697,7 +695,7 @@ async function renderStarshipLayer(app, html, data) {
 	featuresWrapper.addEventListener("click", handleTabClick);
 
 	if ( integrated ) {
-		nav.querySelectorAll(".item[data-tab]").forEach(item => {
+		nav.querySelectorAll("[data-tab]").forEach(item => {
 			if ( item === tabButton || item === featuresTabButton ) return;
 			if ( CUSTOM_STARSHIP_TAB_IDS.has(item.dataset.tab) ) return;
 			item.addEventListener("click", () => {
