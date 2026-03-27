@@ -231,7 +231,8 @@ function formatPowerSummary(legacySystem) {
 
 function getSizeLabel(actor, legacySystem) {
 	const sizeKey = actor.system?.traits?.size ?? legacySystem.traits?.size ?? "";
-	return CONFIG.DND5E.actorSizes?.[sizeKey] ?? sizeKey ?? "-";
+	const entry = CONFIG.DND5E.actorSizes?.[sizeKey];
+	return (typeof entry === "string" ? entry : entry?.label) ?? sizeKey ?? "-";
 }
 
 function getDeploymentCounts(legacySystem) {
