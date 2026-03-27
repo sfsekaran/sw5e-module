@@ -512,7 +512,7 @@ export function patchConfig(config, strict = true) {
 		config.tools[id] = {
 			ability: toolAbility,
 			type: toolType,
-			id: uuid
+			id: normalizeCompendiumUuid(uuid)
 		}
 	}
 	// Ability Consumption
