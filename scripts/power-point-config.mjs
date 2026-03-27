@@ -23,6 +23,10 @@ function formatPointsLabel(castType) {
 	return game.i18n.localize(`SW5E.Powercasting.${castType.capitalize()}.Point.Label`);
 }
 
+function getPowerPointRuntime(actor, castType) {
+	return actor?._sw5ePowerPointRuntime?.[castType] ?? {};
+}
+
 export class PowerPointConfigApp extends HandlebarsApplicationMixin(ApplicationV2) {
 	constructor({ actor, castType }={}) {
 		super();
@@ -55,6 +59,7 @@ export class PowerPointConfigApp extends HandlebarsApplicationMixin(ApplicationV
 	async _prepareContext(options={}) {
 		const source = foundry.utils.deepClone(this.actor?._source?.system?.powercasting?.[this.castType]?.points ?? {});
 		const points = this.actor?.system?.powercasting?.[this.castType]?.points ?? {};
+		const runtime = getPowerPointRuntime(this.actor, this.castType);
 		const sourceBonuses = source.bonuses ??= {};
 		source.value = parseNumberInput(source.value, getNumericValue(points.value) ?? 0);
 		source.temp = parseNumberInput(source.temp, getNumericValue(points.temp) ?? 0);
@@ -64,22 +69,27 @@ export class PowerPointConfigApp extends HandlebarsApplicationMixin(ApplicationV
 
 		const max = getNumericValue(points.max) ?? 0;
 		const tempmax = getNumericValue(points.tempmax) ?? 0;
+		const calculatedMax = Math.max(0, getNumericValue(runtime.calculatedMax) ?? max);
+		const hasMaxOverride = source.max !== null && source.max !== undefined && source.max !== "";
 		return {
 			castType: this.castType,
 			source,
 			value: getNumericValue(points.value) ?? source.value ?? 0,
 			effectiveMax: Math.max(0, max + tempmax),
-			calculatedMax: max,
-			hasMaxOverride: source.max !== null && source.max !== undefined && source.max !== "",
+			calculatedMax,
+			hasMaxOverride,
+			showCalculatedReset: this.actor?.type === "npc",
 			maximumLegend: `Maximum ${formatPointsLabel(this.castType)}`,
 			currentLegend: `Current ${formatPointsLabel(this.castType)}`,
 			currentLabel: "Current Points",
 			tempLabel: game.i18n.localize("DND5E.TMP"),
 			tempMaxLabel: "Temporary Maximum",
+			calculatedMaxLabel: "Calculated Maximum",
 			maxOverrideLabel: "Maximum Override",
 			maxOverrideHint: `Leave blank to use the calculated ${formatPointsLabel(this.castType).toLowerCase()} maximum.`,
 			perLevelBonusLabel: "Per Level Bonus",
 			overallBonusLabel: "Overall Bonus",
+			resetLabel: "Reset to Calculated",
 			saveLabel: "Save"
 		};
 	}
@@ -98,6 +108,7 @@ export class PowerPointConfigApp extends HandlebarsApplicationMixin(ApplicationV
 		if ( !this.actor ) return;
 
 		const formData = new FormData(event.currentTarget);
+		const submitAction = event.submitter?.dataset?.action ?? "save";
 		const basePath = `system.powercasting.${this.castType}.points`;
 		const updateData = {
 			[`${basePath}.value`]: parseNumberInput(formData.get(`${basePath}.value`)),
@@ -107,16 +118,19 @@ export class PowerPointConfigApp extends HandlebarsApplicationMixin(ApplicationV
 			[`${basePath}.bonuses.level`]: String(formData.get(`${basePath}.bonuses.level`) ?? "").trim(),
 			[`${basePath}.bonuses.overall`]: String(formData.get(`${basePath}.bonuses.overall`) ?? "").trim()
 		};
+		if ( submitAction === "reset-calculated" ) updateData[`${basePath}.max`] = null;
 
-		const currentMax = getNumericValue(this.actor.system?.powercasting?.[this.castType]?.points?.max) ?? 0;
-		const expanded = foundry.utils.expandObject(updateData);
-		const clone = this.actor.clone(foundry.utils.deepClone(expanded));
-		const clonedPoints = clone.system?.powercasting?.[this.castType]?.points ?? {};
-		const nextMax = getNumericValue(clonedPoints.max) ?? 0;
-		const nextTempMax = getNumericValue(clonedPoints.tempmax) ?? 0;
+		const points = this.actor.system?.powercasting?.[this.castType]?.points ?? {};
+		const runtime = getPowerPointRuntime(this.actor, this.castType);
+		const previousMax = Math.max(0, getNumericValue(runtime.effectiveMax) ?? getNumericValue(points.max) ?? 0);
+		const previousTempMax = getNumericValue(points.tempmax) ?? 0;
+		const nextTempMax = getNumericValue(updateData[`${basePath}.tempmax`]) ?? previousTempMax;
+		const nextMax = updateData[`${basePath}.max`] === null
+			? previousMax
+			: Math.max(0, getNumericValue(updateData[`${basePath}.max`]) ?? 0);
+		const nextEffectiveMax = Math.max(0, nextMax + nextTempMax);
 		const submittedCurrent = getNumericValue(updateData[`${basePath}.value`]) ?? 0;
-		const currentWithDelta = submittedCurrent + (nextMax - currentMax);
-		updateData[`${basePath}.value`] = Math.max(0, Math.min(currentWithDelta, Math.max(0, nextMax + nextTempMax)));
+		updateData[`${basePath}.value`] = Math.max(0, Math.min(submittedCurrent, nextEffectiveMax));
 
 		await this.actor.update(updateData);
 		this.render(true);

@@ -206,19 +206,57 @@ function reconcileNpcPowerPool(actor, castType, computedMax) {
 	const legacyMax = getNumericValue(legacyPoints.max);
 	const legacyValue = getNumericValue(legacyPoints.value);
 	const computedPoolMax = Math.max(0, getNumericValue(computedMax) ?? 0);
-
-	const effectiveMax = [sourceMax, legacyMax, computedPoolMax]
-		.find(value => value != null && value > 0) ?? 0;
+	const hasSourceOverride = sourcePoints.max !== null && sourcePoints.max !== undefined && sourcePoints.max !== "";
+	const effectiveMax = hasSourceOverride
+		? Math.max(0, sourceMax ?? 0)
+		: ([legacyMax, computedPoolMax].find(value => value != null && value > 0) ?? 0);
 
 	let effectiveValue = effectiveMax;
-	if ( sourceValue != null && sourceMax != null && sourceMax > 0 ) effectiveValue = sourceValue;
+	if ( sourceValue != null ) effectiveValue = sourceValue;
 	else if ( legacyValue != null ) effectiveValue = legacyValue;
-	else if ( sourceValue != null && effectiveMax === 0 ) effectiveValue = sourceValue;
 
 	return {
+		calculatedMax: computedPoolMax,
+		overrideMax: hasSourceOverride ? Math.max(0, sourceMax ?? 0) : null,
+		hasOverride: hasSourceOverride,
 		max: effectiveMax,
 		value: Math.min(Math.max(getNumericValue(effectiveValue) ?? 0, 0), effectiveMax)
 	};
+}
+
+function actorHasPowercastingUi(actor, castType) {
+	const castData = actor?.system?.powercasting?.[castType];
+	const points = castData?.points ?? {};
+	const level = Number(castData?.level ?? 0);
+	const value = Number(points?.value ?? 0);
+	const max = Number(points?.max ?? 0);
+	const temp = Number(points?.temp ?? 0);
+	const tempmax = Number(points?.tempmax ?? 0);
+	if ( level > 0 || max > 0 || value > 0 || temp > 0 || tempmax !== 0 ) return true;
+
+	const schools = Object.keys(CONFIG.DND5E.powerCasting?.[castType]?.schools ?? {});
+	if ( (actor?.itemTypes?.spell ?? []).some(power => schools.includes(power?.system?.school)) ) return true;
+
+	if ( actor?.type === "npc" ) {
+		const levelKey = `power${castType.capitalize()}Level`;
+		if ( (getNumericValue(actor.system?.details?.[levelKey]) ?? 0) > 0 ) return true;
+		if ( (getNumericValue(actor._source?.system?.details?.[levelKey]) ?? 0) > 0 ) return true;
+	}
+
+	return false;
+}
+
+function insertPowercastingElement(containerElement, mountPoint, mountContainer, insertReference) {
+	if ( mountPoint.insertAfter && insertReference?.parentElement ) {
+		insertReference.insertAdjacentElement("afterend", containerElement);
+		return containerElement;
+	}
+	if ( mountPoint.append ) {
+		mountContainer.append(containerElement);
+		return insertReference;
+	}
+	mountContainer.prepend(containerElement);
+	return insertReference;
 }
 
 // dataModels file adds:
@@ -374,6 +412,13 @@ function preparePowercasting() {
 			target.known.value = obj.powersKnownCur;
 			if ( isNPC ) {
 				const reconciledPool = reconcileNpcPowerPool(_this, castType, obj.points);
+				_this._sw5ePowerPointRuntime ??= {};
+				_this._sw5ePowerPointRuntime[castType] = {
+					calculatedMax: reconciledPool.calculatedMax,
+					overrideMax: reconciledPool.overrideMax,
+					hasOverride: reconciledPool.hasOverride,
+					effectiveMax: reconciledPool.max
+				};
 				target.known.max = obj.powersKnownMax;
 				target.level = obj.casterLevel;
 				target.limit = obj.limit;
@@ -386,6 +431,13 @@ function preparePowercasting() {
 					legacyPoints.value = reconciledPool.value;
 				}
 			} else {
+				_this._sw5ePowerPointRuntime ??= {};
+				_this._sw5ePowerPointRuntime[castType] = {
+					calculatedMax: getNumericValue(obj.points) ?? 0,
+					overrideMax: null,
+					hasOverride: false,
+					effectiveMax: getNumericValue(target.points?.max) ?? getNumericValue(obj.points) ?? 0
+				};
 				target.known.max ??= obj.powersKnownMax;
 				target.level ??= obj.casterLevel;
 				target.limit ??= obj.limit;
@@ -422,7 +474,7 @@ function preparePowercasting() {
 			}
 		}
 
-		// Set Force and tech bonus points for PC Actors
+		// Apply formula-based bonus points to actors without a max override.
 		for (const [castType, typeConfig] of Object.entries(CONFIG.DND5E.powerCasting)) {
 			const cast = _this.system.powercasting[castType];
 			const castSource = _this._source?.system?.powercasting?.[castType];
@@ -439,6 +491,23 @@ function preparePowercasting() {
 			const focusBonus = focus?.flags?.sw5e?.properties?.[focusProperty] ?? 0;
 
 			cast.points.max += levelBonus + overallBonus + focusBonus;
+			const finalMax = Math.max(0, getNumericValue(cast.points.max) ?? 0);
+			if ( _this._sw5ePowerPointRuntime?.[castType] ) _this._sw5ePowerPointRuntime[castType].effectiveMax = finalMax;
+
+			if ( isNPC ) {
+				const sourcePoints = castSource.points ?? {};
+				const legacyPoints = getLegacyPowerPoints(_this, castType);
+				const sourceValue = getNumericValue(sourcePoints.value);
+				const legacyValue = getNumericValue(legacyPoints.value);
+				const restoredValue = sourceValue ?? legacyValue ?? getNumericValue(cast.points.value) ?? 0;
+				cast.points.value = Math.min(Math.max(restoredValue, 0), finalMax);
+
+				const legacyPreparedPoints = _this.system.attributes?.[castType]?.points;
+				if ( legacyPreparedPoints && typeof legacyPreparedPoints === "object" ) {
+					legacyPreparedPoints.max = finalMax;
+					legacyPreparedPoints.value = cast.points.value;
+				}
+			}
 		}
 	});
 }
@@ -862,7 +931,7 @@ function showPowercastingBar() {
 		const mountContainer = mountPoint.container;
 		if ( !mountContainer ) return;
 		let insertReference = mountPoint.reference;
-
+		const isEditable = typeof app.isEditable === "boolean" ? app.isEditable : false;
 		// Add meters for the tech and force powercasting values. This 
 		// will be added right after the hit points meter.
 		for (const castType of ["force", "tech"]) {
@@ -873,13 +942,13 @@ function showPowercastingBar() {
 			const tempmax = Number.isFinite(Number(castData?.points?.tempmax)) ? Number(castData.points.tempmax) : 0;
 			const effectiveMax = Math.max(0, max + tempmax);
 			const clampedValue = Math.max(0, Math.min(value, effectiveMax || value));
-			const shouldRenderMeter = (Number(castData?.level ?? 0) > 0) || (max > 0) || (value > 0) || (temp > 0) || (tempmax !== 0);
+			const shouldRenderMeter = actorHasPowercastingUi(data.actor, castType);
 			if ( shouldRenderMeter ) {
 				const templateData = {
 					'castType': castType,
 					'pointsLabel': game.i18n.localize(`SW5E.Powercasting.${castType.capitalize()}.Point.Label`),
 					'configureLabel': `${game.i18n.localize(`SW5E.Powercasting.${castType.capitalize()}.Point.Label`)} Configuration`,
-					'isEditable': app.editable,
+					'isEditable': isEditable,
 					'value': value,
 					'ariaMax': effectiveMax,
 					'tempmax': tempmax,
@@ -896,15 +965,8 @@ function showPowercastingBar() {
 
 				container.append(renderedHtml);
 				const containerElement = container[0];
-				if ( mountPoint.insertAfter && insertReference?.parentElement ) {
-					insertReference.insertAdjacentElement("afterend", containerElement);
-					insertReference = containerElement;
-				} else if ( mountPoint.append ) {
-					mountContainer.append(containerElement);
-				} else {
-					mountContainer.prepend(containerElement);
-				}
-				if (app.isEditable) {
+				insertReference = insertPowercastingElement(containerElement, mountPoint, mountContainer, insertReference);
+				if ( isEditable ) {
 					const pointBar = containerElement.querySelector(`.progress.${castType}-points`);
 					const configButton = containerElement.querySelector('[data-action="configure-power-points"]');
 					const currentInput = pointBar?.querySelector('input[name$=".points.value"]');
@@ -920,6 +982,7 @@ function showPowercastingBar() {
 				}
 			}
 		}
+
 	});
 }
 
@@ -936,9 +999,10 @@ function _toggleEditPoints(pointType, event, edit) {
 	const label = target.querySelector(":scope > .label");
 	const input = target.querySelector(":scope > input");
 	if ( !label || !input ) return;
+	target.classList.toggle("editing", edit);
 	label.hidden = edit;
 	input.hidden = !edit;
-	if (edit) input.focus();
+	if ( edit ) input.focus();
 }
 
 export function patchPowercasting() {

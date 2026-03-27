@@ -193,6 +193,15 @@
       "flags": {}
     },
     {
+      "name": "mandaloriancodexjournals",
+      "label": "Mandalorian Codex Journals",
+      "system": "dnd5e",
+      "path": "packs/mandaloriancodexjournals",
+      "type": "JournalEntry",
+      "private": false,
+      "flags": {}
+    },
+    {
       "name": "consumables",
       "label": "Consumables",
       "system": "dnd5e",
@@ -241,6 +250,19 @@
       "flags": {
         "dnd5e": {
           "types": ["weapon", "equipment", "consumable", "loot", "container"]
+        }
+      }
+    },
+    {
+      "name": "mandaloriancodexitems",
+      "label": "Mandalorian Codex Armory",
+      "system": "dnd5e",
+      "path": "packs/mandaloriancodexitems",
+      "type": "Item",
+      "private": false,
+      "flags": {
+        "dnd5e": {
+          "types": ["weapon", "equipment", "loot", "consumable"]
         }
       }
     },
@@ -301,6 +323,19 @@
       "label": "Fisto's Codex",
       "system": "dnd5e",
       "path": "packs/fistoscodex",
+      "type": "Actor",
+      "private": false,
+      "flags": {
+        "dnd5e": {
+          "types": ["npc"]
+        }
+      }
+    },
+    {
+      "name": "mandaloriancodexnpcs",
+      "label": "Mandalorian Codex NPCs",
+      "system": "dnd5e",
+      "path": "packs/mandaloriancodexnpcs",
       "type": "Actor",
       "private": false,
       "flags": {
@@ -683,6 +718,7 @@
             "armor",
             "consumables",
             "enhanceditems",
+            "mandaloriancodexitems",
             "explosives",
             "modifications"
           ],
@@ -746,6 +782,7 @@
             "monsters",
             "monstertraits",
             "fistoscodex",
+            "mandaloriancodexnpcs",
             "monsters_temp"
           ]
         },
@@ -767,6 +804,7 @@
             "armorproperties",
             "weaponproperties",
             "conditions",
+            "mandaloriancodexjournals",
             "tables"
           ]
         },
@@ -835,7 +873,7 @@
     }
   ],
   "flags": {
-    "needsMigrationVersion": "0.25",
+    "needsMigrationVersion": "0.29",
     "compatibleMigrationVersion": "0"
   }
 }

@@ -1,3 +1,5 @@
+import { getBaseCurrencyKey, normalizeSwPriceDenomination } from "./currencies.mjs";
+
 const LEGACY_STARSHIP_PACKS = new Set([
 	"starshipactions",
 	"starshiparmor",
@@ -493,10 +495,13 @@ export function normalizeLegacyStarshipItemData(data) {
 				source: normalizeSourceField(legacySystem.source),
 				quantity: legacySystem.quantity ?? 1,
 				weight: cloneData(legacySystem.weight) ?? { value: 0, units: "lb" },
-				price: cloneData(legacySystem.price) ?? { value: 0, denomination: "gp" },
+				price: cloneData(legacySystem.price) ?? { value: 0, denomination: getBaseCurrencyKey() },
 				rarity: legacySystem.rarity ?? "",
 				identified: legacySystem.identified ?? true
 			};
+			if ( data.system?.price ) {
+				data.system.price.denomination = normalizeSwPriceDenomination(data.system.price.denomination);
+			}
 			if ( legacySystem.container !== undefined ) data.system.container = legacySystem.container;
 			return true;
 	}

@@ -342,7 +342,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "systems/dnd5e/icons/items/weapons/club-spikes.jpg",
+      "img": "icons/svg/item-bag.svg",
       "effects": [],
       "folder": null,
       "system": {
@@ -492,7 +492,7 @@
       "flags": {
         "_sheetTab": "description"
       },
-      "img": "systems/dnd5e/icons/items/weapons/sling.jpg",
+      "img": "icons/svg/item-bag.svg",
       "effects": [],
       "folder": null,
       "system": {

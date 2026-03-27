@@ -52,13 +52,32 @@ For a contributor-focused overview of the repo layout, runtime entrypoints, comp
 
 ## Changelog
 
+### [1.3.0] - 2026-03-27
+
+### Added
+
+- Optional Star Wars currencies with GM-managed enablement, custom exchange rates, and exchange-rate tooltips integrated into actor wallets and item price denomination selectors.
+
+### Changed
+
+- Currency support now follows the dnd5e multi-denomination workflow more closely, including wallet normalization for existing actors and better compatibility with convert and transfer actions.
+- The SW currency configuration app now uses the module namespace correctly, appears under `SW5E` in settings, and supports a bounded scrollable layout.
+
+### Fixed
+
+- Force and Tech point editing on character and NPC sheets, including current-point save behavior, post-bonus max handling, repeated save drift, and edit access from the cog-only sheet control.
+- The redundant Power Point Controls panel on actor sheets has been removed.
+- Currency fields now render correctly on the Inventory tab for enabled denominations, and tooltip text no longer shows unresolved placeholders.
+- Legacy image migration no longer replaces actor and vehicle avatars with the loot bag icon, and affected worlds are repaired during migration.
+- Stale dnd5e image references in migrated data and compendium content no longer cause repeated missing-image errors.
+
 ### [1.2.9] - 2026-03-13
 
 ### Added
 
 - Local development and contributor documentation, including install instructions and a plain-English change request template.
 - A guided legacy world conversion tool for migrating older SW5E worlds into the module workflow.
-- Vehicle-backed starship sheets with custom SW5E and Features tabs, starship skill rolls, travel and hyperdrive displays, crew-aware summaries, and starship item quick actions.
+- Vehicle-backed starship sheets with custom `SW5E` and `Features` tabs, starship skill rolls, travel and hyperdrive displays, crew-aware summaries, and starship item quick actions.
 
 ### Changed
 

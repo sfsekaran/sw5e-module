@@ -453,7 +453,7 @@
       "type": "weapon",
       "sort": 0,
       "flags": {},
-      "img": "systems/dnd5e/icons/items/weapons/bow-short.jpg",
+      "img": "icons/svg/item-bag.svg",
       "effects": [],
       "folder": null,
       "system": {

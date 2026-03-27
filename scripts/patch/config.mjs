@@ -1,3 +1,4 @@
+import { applySw5eCurrencyConfig } from "../currencies.mjs";
 import { getModulePath, normalizeCompendiumUuid } from "../module-support.mjs";
 
 export function patchConfig(config, strict = true) {
@@ -406,10 +407,30 @@ export function patchConfig(config, strict = true) {
 		torpedoplasma: "Compendium.sw5e.ammo.Item.6fDA5yg8WAoCBGlk",
 	};
 	// Tools
-	config.toolTypes.kit = config.toolProficiencies.kit = "SW5E.ToolSpecialistKit";
+	config.toolTypes = {
+		artisan: "SW5E.ToolArtisanImplement",
+		specialist: "SW5E.ToolSpecialistKit",
+		game: "SW5E.ToolGamingSet",
+		music: "SW5E.ToolMusicalInstrument"
+	};
+	preLocalize("toolTypes", { sort: true });
+	config.toolProficiencies = {
+		...config.toolTypes,
+		vehicle: "SW5E.ToolVehicle"
+	};
+	preLocalize("toolProficiencies", { sort: true });
+	config.toolProficienciesMap = {
+		art: "artisan",
+		artisan: "artisan",
+		kit: "specialist",
+		specialist: "specialist",
+		game: "game",
+		music: "music"
+	};
 	if (strict) config.toolIds = {
 		// Gaming Sets
 		chancecubes: "Compendium.sw5e.gamingsets.Item.kqt52rtjpaz6jiCf",
+		"chatta-ragulset": "Compendium.sw5e.gamingsets.Item.3qg5pm5AHt80Rnvi",
 		dejarikset: "Compendium.sw5e.gamingsets.Item.dKho3HXE7XfS4iRU",
 		kirgatzset: "Compendium.sw5e.gamingsets.Item.vKrWBDhbSZDtdiTv",
 		pazaakdeck: "Compendium.sw5e.gamingsets.Item.XfClqzNPbjJxHqil",
@@ -467,16 +488,30 @@ export function patchConfig(config, strict = true) {
 		valahorn: "Compendium.sw5e.musicalinstruments.Item.sNnvwOZrUp5xJuHe",
 		xantha: "Compendium.sw5e.musicalinstruments.Item.WVSGXxzBoTUoPvi9",
 	};
+	if (strict) {
+		config.toolIds = Object.fromEntries(
+			Object.entries(config.toolIds).map(([key, reference]) => [key, normalizeCompendiumUuid(reference)])
+		);
+	}
+	if (strict) config.tools = {};
 	for (const id in config.toolIds) {
 		let toolAbility = "int";
+		let toolType = "artisan";
 		const uuid = config.toolIds[id];
 
-		if (uuid.includes(".gamingsets.") || uuid.includes(".musicalinstruments.")) {
+		if (uuid.includes(".gamingsets.")) {
 			toolAbility = "cha";
+			toolType = "game";
+		} else if (uuid.includes(".musicalinstruments.")) {
+			toolAbility = "cha";
+			toolType = "music";
+		} else if (uuid.includes(".kits.")) {
+			toolType = "specialist";
 		}
 
 		config.tools[id] = {
 			ability: toolAbility,
+			type: toolType,
 			id: uuid
 		}
 	}
@@ -1667,12 +1702,7 @@ export function patchConfig(config, strict = true) {
 		])
 	};
 	// Currencies
-	if (strict) config.currencies = {};
-	config.currencies.gc = {
-		label: "SW5E.CurrencyGC",
-		abbreviation: "SW5E.CurrencyAbbrGC",
-		conversion: 1
-	};
+	applySw5eCurrencyConfig(config, strict);
 	// Damage
 	// config.damageTypes.force.reference = ""; // TODO
 	// config.damageTypes.thunder.reference = ""; // TODO
@@ -2108,6 +2138,20 @@ export function patchConfig(config, strict = true) {
 	// Traits
 	config.traits = {
 		...config.traits,
+		tool: {
+			...config.traits.tool,
+			labels: {
+				...(config.traits.tool?.labels ?? {}),
+				title: "SW5E.TraitToolProf",
+				localization: "SW5E.TraitToolPlural"
+			},
+			actorKeyPath: "system.tools",
+			configKey: "toolProficiencies",
+			subtypes: { keyPath: "toolType", ids: ["tools"] },
+			children: { vehicle: "vehicleTypes" },
+			sortCategories: true,
+			expertise: true
+		},
 		sdi: {
 			labels: {
 				title: "SW5E.ShieldDamImm",

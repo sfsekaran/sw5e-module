@@ -1,3 +1,4 @@
+import { normalizeSwCurrencyWallet } from "./currencies.mjs";
 import { getModuleId } from "./module-support.mjs";
 
 export const STARSHIP_CHARACTER_FLAG = "starshipCharacter";
@@ -258,13 +259,7 @@ function buildCharacterSystem(actor, preservedStarship) {
 				units: "ft"
 			}
 		},
-		currency: {
-			gp: 0,
-			sp: 0,
-			cp: 0,
-			ep: 0,
-			pp: 0
-		},
+		currency: normalizeSwCurrencyWallet({}),
 		details: {
 			source,
 			biography: cloneData(legacySystem.details?.biography ?? { value: "", public: "" }),
