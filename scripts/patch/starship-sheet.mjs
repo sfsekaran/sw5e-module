@@ -72,7 +72,14 @@ function activatePrimaryTab(root, tabId) {
 	root.querySelectorAll(".tab[data-group='primary']").forEach(panel => {
 		const isActive = panel.dataset.tab === tabId;
 		panel.classList.toggle("active", isActive);
-		panel.hidden = !isActive;
+		// Only manage `hidden` on our own custom tabs.
+		// Stock dnd5e panels use CSS classes for visibility; setting `hidden` on them
+		// prevents dnd5e from showing them again when the user clicks back to cargo/description.
+		if ( panel.classList.contains("sw5e-starship-tab") ) {
+			panel.hidden = !isActive;
+		} else {
+			panel.hidden = false;
+		}
 	});
 }
 
