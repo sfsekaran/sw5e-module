@@ -307,6 +307,7 @@
 			"Passenger": "Passenger"
 		}
 	},
+	"SW5E.Features": "Star Wars 5th Edition Features",
 	"SW5E.FlagsManeuverCritThreshold": "Maneuver Critical Threshold",
 	"SW5E.FlagsManeuverCritThresholdHint": "Reduce the roll required for a critical hit with maneuvers by this amount.",
 	"SW5E.FlagsForcePowerDiscount": "Force Power Cost Discount",
