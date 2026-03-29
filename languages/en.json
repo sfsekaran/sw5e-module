@@ -291,8 +291,35 @@
 			"Label": "Deployment Feature",
 			"LabelPl": "Deployment Features",
 			"Venture": "Venture"
+		},
+		"Starship": {
+			"Label": "Starship Feature",
+			"LabelPl": "Starship Features",
+			"Role": "Role",
+			"RoleSpecialization": "Role Specialization",
+			"RoleMastery": "Role Mastery"
+		},
+		"StarshipAction": {
+			"Label": "Starship Action",
+			"LabelPl": "Starship Actions",
+			"Pilot": "Pilot",
+			"Crew": "Crew",
+			"Passenger": "Passenger"
 		}
 	},
+	"SW5E.Features": "Star Wars 5th Edition Features",
+	"SW5E.FlagsManeuverCritThreshold": "Maneuver Critical Threshold",
+	"SW5E.FlagsManeuverCritThresholdHint": "Reduce the roll required for a critical hit with maneuvers by this amount.",
+	"SW5E.FlagsForcePowerDiscount": "Force Power Cost Discount",
+	"SW5E.FlagsForcePowerDiscountHint": "Reduce the force point cost of force powers by this amount (minimum 1).",
+	"SW5E.FlagsTechPowerDiscount": "Tech Power Cost Discount",
+	"SW5E.FlagsTechPowerDiscountHint": "Reduce the tech point cost of tech powers by this amount (minimum 1).",
+	"SW5E.FlagsSupremeAptitude": "Supreme Aptitude",
+	"SW5E.FlagsSupremeAptitudeHint": "Add your proficiency bonus to the damage rolls of tech powers.",
+	"SW5E.FlagsSupremeDurability": "Supreme Durability",
+	"SW5E.FlagsSupremeDurabilityHint": "Add your Constitution modifier to your maximum hit points for each level.",
+	"SW5E.FlagsEncumbranceMultiplier": "Encumbrance Multiplier",
+	"SW5E.FlagsEncumbranceMultiplierHint": "Multiply your carrying capacity by this value.",
 	"SW5E.FreeLearn": "Free Learn",
 	"DND5E.ITEM.Property.Magical": "Enhanced",
 	"SW5E.Item": {
