@@ -40,7 +40,7 @@ All runtime dnd5e integration lives here. Key files:
 | `dataModels.mjs` | Extends dnd5e data model schemas (powercasting fields, superiority, proficiency changes); registers `ItemSheetSW5E` |
 | `powercasting.mjs` | Force/tech powercasting point computation; hooks into actor prep and sheet rendering |
 | `starship-prepare.mjs` | Derives starship runtime data (hull/shields, movement, crew) from legacy JSON flags |
-| `starship-sheet.mjs` | Injects SW5E and Starship Features tabs into the dnd5e VehicleActorSheet via `renderActorSheetV2` hook |
+| `starship-sheet.mjs` | Injects SW5E and Starship Features tabs into the dnd5e VehicleActorSheet via `renderActorSheetV2` hook — see [`docs/actor-sheet-tabs.md`](docs/actor-sheet-tabs.md) for tab system details |
 | `maneuver.mjs` | Maneuver item type behavior |
 | `addHooks.mjs` | Central hook/wrapper registration |
 

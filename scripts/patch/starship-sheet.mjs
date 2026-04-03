@@ -91,14 +91,16 @@ function activateSheetTab(root, app, tabId) {
 	}
 
 	setStarshipActiveTab(app, null);
-	const button = getTabButton(root, tabId);
-	if ( button ) {
-		button.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true }));
-		if ( !button.classList.contains("active") ) activatePrimaryTab(root, tabId);
-		return;
+	root.querySelectorAll(".sw5e-starship-tab").forEach(panel => { panel.classList.remove("active"); panel.hidden = true; });
+	if ( typeof app?.changeTab === "function" ) {
+		try {
+			app.changeTab(tabId, "primary", { force: true, updatePosition: false });
+		} catch(e) {
+			activatePrimaryTab(root, tabId);
+		}
+	} else {
+		activatePrimaryTab(root, tabId);
 	}
-
-	activatePrimaryTab(root, tabId);
 }
 
 function ensureStarshipTabTargets(root) {
@@ -485,11 +487,13 @@ async function renderStarshipSidebarSummary(root, actor) {
 }
 
 function focusSheetItem(root, app, itemId, tabId = STOCK_CARGO_TAB_ID) {
-	activateSheetTab(root, app, tabId);
 	window.setTimeout(() => {
 		const candidates = root.querySelectorAll(`[data-item-id="${itemId}"]`);
 		const target = Array.from(candidates).find(node => !node.closest(".sw5e-starship-tab"));
 		if ( !target ) return;
+		// Only switch tabs if the item is inside a named tab panel; non-tab sections (e.g. stations sidebar) are always visible.
+		const panel = target.closest(".tab[data-group='primary']");
+		if ( panel?.dataset.tab ) activateSheetTab(root, app, panel.dataset.tab);
 		target.scrollIntoView({ behavior: "smooth", block: "center" });
 		target.classList.add("sw5e-starship-item-pulse");
 		window.setTimeout(() => target.classList.remove("sw5e-starship-item-pulse"), 1800);
