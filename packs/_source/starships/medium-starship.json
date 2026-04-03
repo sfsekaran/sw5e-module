@@ -162,7 +162,10 @@
     "fuelCap": 30,
     "foodCap": 120,
     "size": "med",
-    "startingEquipment": []
+    "startingEquipment": [],
+    "details": {
+      "type": "space"
+    }
   },
   "ownership": {
     "default": 0

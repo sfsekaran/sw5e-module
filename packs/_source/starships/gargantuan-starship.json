@@ -174,7 +174,10 @@
     "fuelCap": 1800,
     "foodCap": 576000000,
     "size": "grg",
-    "startingEquipment": []
+    "startingEquipment": [],
+    "details": {
+      "type": "space"
+    }
   },
   "ownership": {
     "default": 0

@@ -174,7 +174,10 @@
     "fuelCap": 10,
     "foodCap": 10,
     "size": "sm",
-    "startingEquipment": []
+    "startingEquipment": [],
+    "details": {
+      "type": "space"
+    }
   },
   "ownership": {
     "default": 0
