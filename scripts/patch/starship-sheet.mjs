@@ -16,7 +16,7 @@ const STARSHIP_PACKS = new Set([
 
 const STARSHIP_TAB_ID = "sw5e-starship";
 const STARSHIP_FEATURES_TAB_ID = "sw5e-starship-features";
-const STOCK_CARGO_TAB_ID = "cargo";
+const STOCK_CARGO_TAB_ID = "inventory";
 const CUSTOM_STARSHIP_TAB_IDS = new Set([STARSHIP_TAB_ID, STARSHIP_FEATURES_TAB_ID]);
 
 function getHtmlRoot(html) {
@@ -368,13 +368,13 @@ function makeItemEntry(item, defaultTab = STOCK_CARGO_TAB_ID, actor = null) {
 
 function categorizeStarshipItems(actor) {
 	const groups = {
-		size: { label: localizeOrFallback("TYPES.Item.starshipsizePl", "Starship Size"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" },
-		actions: { label: localizeOrFallback("SW5E.Feature.StarshipAction.Label", "Starship Actions"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" },
-		roles: { label: localizeOrFallback("SW5E.Feature.Deployment.Label", "Crew Roles"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" },
-		features: { label: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" },
-		equipment: { label: localizeOrFallback("SW5E.Equipment", "Equipment"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" },
-		modifications: { label: localizeOrFallback("TYPES.Item.starshipmodPl", "Modifications"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" },
-		weapons: { label: localizeOrFallback("SW5E.Weapon", "Weapons"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" }
+		size: { label: localizeOrFallback("TYPES.Item.starshipsizePl", "Starship Size"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
+		actions: { label: localizeOrFallback("SW5E.Feature.StarshipAction.Label", "Starship Actions"), items: [], defaultTab: null, manageLabel: "Features", scrollTo: "stations" },
+		roles: { label: localizeOrFallback("SW5E.Feature.Deployment.Label", "Crew Roles"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
+		features: { label: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"), items: [], defaultTab: null, manageLabel: "Features", scrollTo: "stations" },
+		equipment: { label: localizeOrFallback("SW5E.Equipment", "Equipment"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
+		modifications: { label: localizeOrFallback("TYPES.Item.starshipmodPl", "Modifications"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
+		weapons: { label: localizeOrFallback("SW5E.Weapon", "Weapons"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" }
 	};
 
 	for ( const item of actor.items ) {
@@ -400,6 +400,8 @@ function buildGroupContext(group) {
 		count: group.items.length,
 		defaultTab: group.defaultTab,
 		manageLabel: group.manageLabel,
+		scrollTo: group.scrollTo,
+		firstItemId: group.items[0]?.id ?? null,
 		items: group.items.sort((left, right) => left.name.localeCompare(right.name)).map(item => makeItemEntry(item, group.defaultTab, group.actor))
 	};
 }
@@ -495,7 +497,8 @@ function focusSheetItem(root, app, itemId, tabId = STOCK_CARGO_TAB_ID) {
 		// Only switch tabs if the item is inside a named tab panel; non-tab sections (e.g. stations sidebar) are always visible.
 		const panel = target.closest(".tab[data-group='primary']");
 		if ( panel?.dataset.tab ) activateSheetTab(root, app, panel.dataset.tab);
-		target.scrollIntoView({ behavior: "smooth", block: "center" });
+		// Defer scroll to next frame so the tab panel is visible (display:none → display:block) before scrollIntoView runs.
+		window.requestAnimationFrame(() => target.scrollIntoView({ behavior: "smooth", block: "center" }));
 		target.classList.add("sw5e-starship-item-pulse");
 		window.setTimeout(() => target.classList.remove("sw5e-starship-item-pulse"), 1800);
 	}, 50);
@@ -607,14 +610,14 @@ async function renderStarshipLayer(app, html, data) {
 			subtitle: localizeOrFallback("TYPES.Actor.vehicle", "Vehicle Actor"),
 			headerBadges: makeHeaderBadges(actor),
 			overviewCards: makeOverviewCards(actor),
-			groups: workspaceGroups.map(group => ({ ...group, supportsSheetNavigation: integrated })),
+			groups: workspaceGroups.map(group => ({ ...group, supportsSheetNavigation: integrated, showManageButton: integrated })),
 			legacyNotes: getLegacyNotes(actor),
 			skills
 		}),
 		foundry.applications.handlebars.renderTemplate(getModulePath("templates/starship-features-layer.hbs"), {
 			title: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"),
 			subtitle: "Manage configuration items and remove or replace them through the stock vehicle sheet.",
-			groups: featureGroups.map(group => ({ ...group, supportsSheetNavigation: integrated }))
+			groups: featureGroups.map(group => ({ ...group, supportsSheetNavigation: integrated, showManageButton: integrated }))
 		})
 	]);
 
@@ -688,7 +691,8 @@ async function renderStarshipLayer(app, html, data) {
 		}
 
 		if ( action === "open-tab" ) {
-			activateSheetTab(root, app, actionNode.dataset.tab);
+			const firstItemId = actionNode.dataset.firstItemId;
+			if ( firstItemId ) focusSheetItem(root, app, firstItemId);
 			return;
 		}
 

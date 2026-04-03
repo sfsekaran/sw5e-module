@@ -85,12 +85,12 @@
           </div>
           <div class="sw5e-starship-group-tools">
             <span class="sw5e-starship-group-count">{{count}}</span>
-            {{#if supportsSheetNavigation}}
+            {{#if showManageButton}}
               <button
                 type="button"
                 class="sw5e-starship-group-link"
                 data-sw5e-action="open-tab"
-                data-tab="{{defaultTab}}"
+                data-first-item-id="{{firstItemId}}"
               >
                 Manage in {{manageLabel}}
               </button>
