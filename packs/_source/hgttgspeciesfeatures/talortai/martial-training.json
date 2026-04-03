@@ -1,0 +1,56 @@
+{
+  "name": "Martial Training",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:36.487Z",
+      "importer_version": 4,
+      "uid": "Feature.name-martial-training.source-species.sourceName-talortai"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Talortai.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Martial Training.</strong></em> Talortai are trained to fight from a young age. You have proficiency in two vibroweapons of your choice.</p>",
+      "chat": ""
+    },
+    "requirements": "Talortai",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "martial-training",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "YNOubQfTcMVdv6mz",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!YNOubQfTcMVdv6mz"
+}

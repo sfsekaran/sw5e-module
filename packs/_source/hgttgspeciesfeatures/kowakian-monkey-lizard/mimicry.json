@@ -1,0 +1,56 @@
+{
+  "name": "Mimicry",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:36.372Z",
+      "importer_version": 4,
+      "uid": "Feature.name-mimicry.source-species.sourceName-kowakian-monkey-lizard"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Kowakian Monkey-Lizard.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Mimicry.</strong></em> You can mimic sounds you have heard, including voices. A creature that hears the sounds you make can tell they are imitations with a successful Wisdom (Insight) check opposed by your Charisma (Deception) check.</p>",
+      "chat": ""
+    },
+    "requirements": "Kowakian Monkey-Lizard",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "mimicry",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "1Av6V7DCDZIpMEy7",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!1Av6V7DCDZIpMEy7"
+}

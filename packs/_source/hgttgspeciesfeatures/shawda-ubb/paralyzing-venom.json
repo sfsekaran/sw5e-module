@@ -1,0 +1,56 @@
+{
+  "name": "Paralyzing Venom",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.401Z",
+      "importer_version": 4,
+      "uid": "Feature.name-paralyzing-venom.source-species.sourceName-shawda-ubb"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Shawda Ubb.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Paralyzing Venom.</strong></em> You can use your action to expel venom in a 10-foot cone. When you do so, each creature in the area of the exhalation must make a Constitution saving throw (DC = 8 + your proficiency bonus + your Constitution modifier). On a failed save, a creature is paralyzed until the end of its next turn. This ability has no effect on constructs. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses when you complete a long rest.</p>",
+      "chat": ""
+    },
+    "requirements": "Shawda Ubb",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "paralyzing-venom",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "PdljGfWkhTQETHR8",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!PdljGfWkhTQETHR8"
+}

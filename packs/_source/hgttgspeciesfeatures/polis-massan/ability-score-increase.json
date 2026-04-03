@@ -1,0 +1,56 @@
+{
+  "name": "Ability Score Increase",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.162Z",
+      "importer_version": 4,
+      "uid": "Feature.name-ability-score-increase.source-species.sourceName-polis-massan"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Polis Massan.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Ability Score Increase.</strong></em> Your Intelligence score increases by 2, and your Wisdom score increases by 1.</p>",
+      "chat": ""
+    },
+    "requirements": "Polis Massan",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "ability-score-increase",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "ECjbSE43Qww3chXM",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!ECjbSE43Qww3chXM"
+}

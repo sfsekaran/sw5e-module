@@ -1,0 +1,56 @@
+{
+  "name": "Nimble Agility",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.566Z",
+      "importer_version": 4,
+      "uid": "Feature.name-nimble-agility.source-species.sourceName-terrelian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Terrelian.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Nimble Agility.</em></strong> Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can double your speed until the end of the tum. Once you use this trait, you can&rsquo;t use it again until you move 0 feet on one of your turns.</p>",
+      "chat": ""
+    },
+    "requirements": "Terrelian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "nimble-agility",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "T8lFYQUit0Sq7R38",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!T8lFYQUit0Sq7R38"
+}

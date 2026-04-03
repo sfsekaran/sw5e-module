@@ -1,0 +1,56 @@
+{
+  "name": "Caste Specialization",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.810Z",
+      "importer_version": 4,
+      "uid": "Feature.name-caste-specialization.source-species.sourceName-pacithhip"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Pacithhip.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Caste Specialization.</strong></em> Your position in the pacithhip caste system as a scholar, warrior, or farmer gives you unique talents. You have proficiency in one of the following skills: Insight, Lore, or Athletics.</p>",
+      "chat": ""
+    },
+    "requirements": "Pacithhip",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "caste-specialization",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "WFnVlA4IaNIoHMQx",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!WFnVlA4IaNIoHMQx"
+}

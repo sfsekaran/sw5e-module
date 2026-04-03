@@ -1,0 +1,56 @@
+{
+  "name": "Dexterous Tongue",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.276Z",
+      "importer_version": 4,
+      "uid": "Feature.name-dexterous-tongue.source-species.sourceName-bravaisian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Bravaisian.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Dexterous Tongue.</strong></em> You are able to use your long flexible tongue for various tasks. You have proficiency in the Sleight of Hand skill. Additionally, when you make a Dexterity (Sleight of Hand) or Intelligence (Technology) check to interact with creatures or objects, your reach is 5 feet greater than normal.</p>",
+      "chat": ""
+    },
+    "requirements": "Bravaisian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "dexterous-tongue",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "ZcIOqIPaHRzdEkCY",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!ZcIOqIPaHRzdEkCY"
+}

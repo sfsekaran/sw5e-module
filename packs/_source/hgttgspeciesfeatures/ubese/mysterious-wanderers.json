@@ -1,0 +1,56 @@
+{
+  "name": "Mysterious Wanderers",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.152Z",
+      "importer_version": 4,
+      "uid": "Feature.name-mysterious-wanderers.source-species.sourceName-ubese"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Ubese.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Mysterious Wanderers.</strong></em> You have proficiency in Stealth and Survival.</p>",
+      "chat": ""
+    },
+    "requirements": "Ubese",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "mysterious-wanderers",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "KhanfnPJA8OzGy5W",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!KhanfnPJA8OzGy5W"
+}

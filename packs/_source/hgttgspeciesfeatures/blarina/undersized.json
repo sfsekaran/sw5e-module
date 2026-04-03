@@ -1,0 +1,56 @@
+{
+  "name": "Undersized",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.219Z",
+      "importer_version": 4,
+      "uid": "Feature.name-undersized.source-species.sourceName-blarina"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Blarina.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Undersized.</strong></em> Your small stature makes it hard for you to wield bigger weapons. You can’t use heavy shields. Additionally, you can’t use martial weapons with the two-handed property unless it also has the light property, and if a martial weapon has the versatile property, you can only wield it in two hands.</p>",
+      "chat": ""
+    },
+    "requirements": "Blarina",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "undersized",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "EJBeWgPQlHmGEAc1",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!EJBeWgPQlHmGEAc1"
+}

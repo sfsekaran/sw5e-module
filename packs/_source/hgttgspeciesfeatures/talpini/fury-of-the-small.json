@@ -1,0 +1,56 @@
+{
+  "name": "Fury of the Small",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.556Z",
+      "importer_version": 4,
+      "uid": "Feature.name-fury-of-the-small.source-species.sourceName-talpini"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Talpini.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Fury of the Small.</strong></em> When you damage a creature with an attack or a power and the creature&rsquo;s size is larger than yours, you can cause the attack or power to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can&rsquo;t use it again until you finish a short or long rest.</p>",
+      "chat": ""
+    },
+    "requirements": "Talpini",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "fury-of-the-small",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "P54wG79QtlfRuUgl",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!P54wG79QtlfRuUgl"
+}

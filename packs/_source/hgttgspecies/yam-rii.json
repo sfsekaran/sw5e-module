@@ -1,0 +1,263 @@
+{
+  "name": "Yam'rii",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.547Z",
+      "importer_version": 4,
+      "uid": "Species.name-yam-rii"
+    }
+  },
+  "type": "race",
+  "img": "modules/sw5e-module/icons/packs/Species/Yam'rii.webp",
+  "system": {
+    "description": {
+      "value": "<h2>Biology and Appearance</h2>\n<p>Yam'rii, also known as Huk, are a sentient species of insects with mantis-like bodies, large, multifaceted eyes, thin torsos, knobby carapaces, and pointed feet. Their arms are shaped like giant clippers: the upper limb has a barbed, serrated cutting edge on its underside, and the lower part of the limb narrows to a point; together, both halves act like shears. They are strong, burly creatures, although they remain stealthy despite their size. Yam'rii are carnivorous, subsisting on meat and eggs&mdash;and, according to rumor, their own kind.</p>\n<h2>Society and Culture</h2>\n<p>Members of the species are known for their quick tempers and lust for the property of others. They show little concern for non-yam'rii; members of the species are known to eat the eggs of sentient species, so mothers and caretakers of such creches have to keep careful watch when in a yam'rii's company. In their hayday, they overran neighboring planets (such as Abbaji and Tovarskl), ruthlessly colonizing them and plundering their wealth. The insatiable yam'rii eventually attacked nearby Kalee, seeking to enslave the native kaleesh. They captured millions of kaleesh and sold them into slavery. Not ones to be oppressed, the kaleesh rebelled and the two races soon became locked in violent combat known as the Huk War. This led many kaleesh to derogatorily refer to the yam'rii as huks, translating as \"soulless bugs.\"</p>\n<h2>Names</h2>\n<p>Yam'rii surnames were often complex and multifaceted. While they were familiar in nature, many yam'rii choose to abandon their surname as a sign of independence.</p>\n<p>&nbsp;&nbsp;<strong>Male Names.</strong> Enetik, Hakk, Knet, Thurat</p>\n<p>&nbsp;&nbsp;<strong>Female Names.</strong> Firyk, Krot, Trex, Voq</p>\n<p>&nbsp;&nbsp;<strong>Surnames.</strong> Iriet'lot, Lakk'fent, Shet'that, Yenneth'mat</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "HGTTG"
+    },
+    "identifier": "yam-rii",
+    "details": {
+      "isDroid": false
+    },
+    "type": {
+      "value": "humanoid"
+    },
+    "movement": {
+      "walk": 30,
+      "burrow": null,
+      "climb": null,
+      "fly": null,
+      "swim": null,
+      "units": null,
+      "hover": false
+    },
+    "senses": {
+      "darkvision": null,
+      "blindsight": null,
+      "tremorsense": null,
+      "truesight": null,
+      "units": null,
+      "special": ""
+    },
+    "advancement": [
+      {
+        "_id": "W8ZR5IoyMKzWr7id",
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.G7azmBdxTDFzyFVm",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.5YDTzZOcCE6An8xS",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Wyn5eGENewQJoW9Q",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.vlVxSLu61JOucSLs",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.7HwNdqOBnbEQm8IF",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.XDrs3TloP6ZYQ9NK",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.9vdauFLaku5nM1gH",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Y0NSE1L6IiuH0sjv",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.7l0gZk7pPkvUAOCH",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.RwAqjmzlGyAi4Rz2",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.23kIpQZVUzUindoB",
+              "optional": false
+            }
+          ],
+          "optional": true,
+          "spell": null
+        },
+        "level": 0,
+        "title": "Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "Soyv1Gzm7eBOiJL0",
+        "configuration": {
+          "fixed": {
+            "dex": 2,
+            "con": 1
+          },
+          "points": 0,
+          "cap": 2,
+          "locked": []
+        },
+        "level": 0,
+        "type": "AbilityScoreImprovement",
+        "value": {
+          "type": "asi"
+        }
+      },
+      {
+        "_id": "MryL4rpNeiCZegzi",
+        "configuration": {
+          "sizes": [
+            "med"
+          ]
+        },
+        "level": 0,
+        "type": "Size",
+        "value": {}
+      },
+      {
+        "_id": "7EYcOjUIpER9U75a",
+        "configuration": {
+          "choices": [],
+          "grants": [
+            "skills:ste"
+          ],
+          "mode": "default",
+          "allowReplacements": false
+        },
+        "level": 0,
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      }
+    ],
+    "skinColorOptions": {
+      "value": "Gray, brown, or green"
+    },
+    "hairColorOptions": {
+      "value": "None"
+    },
+    "eyeColorOptions": {
+      "value": "Red, gray, or yellow"
+    },
+    "colorScheme": {
+      "value": ""
+    },
+    "distinctions": {
+      "value": "Mantid bodies, shear-like arms"
+    },
+    "heightAverage": {
+      "value": "5'9\""
+    },
+    "heightRollMod": {
+      "value": "+2d8\""
+    },
+    "weightAverage": {
+      "value": "110 lb."
+    },
+    "weightRollMod": {
+      "value": "x(2d4) lb."
+    },
+    "homeworld": {
+      "value": "Huk"
+    },
+    "slanguage": {
+      "value": "Huk'siin"
+    },
+    "droidDistinctions": {
+      "value": ""
+    },
+    "manufacturer": {
+      "value": ""
+    },
+    "droidLanguage": {
+      "value": ""
+    }
+  },
+  "effects": [
+    {
+      "_id": "FmqjevWugDzmlxZD",
+      "changes": [
+        {
+          "key": "flags.sw5e.cannibalize",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "system.attributes.ac.value",
+          "mode": 5,
+          "priority": 20,
+          "value": "13+@abilities.dex.mod"
+        },
+        {
+          "key": "flags.sw5e.surpriseAttack",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "tint": "#ffffff",
+      "transfer": true,
+      "flags": {},
+      "origin": null,
+      "name": "Yam'rii",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.330",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "modules/sw5e-module/icons/packs/Species/Yam'rii.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!NClpl6zdJeWeFRgC.FmqjevWugDzmlxZD"
+    }
+  ],
+  "_id": "NClpl6zdJeWeFRgC",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!NClpl6zdJeWeFRgC"
+}

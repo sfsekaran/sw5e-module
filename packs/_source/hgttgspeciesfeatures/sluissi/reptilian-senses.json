@@ -1,0 +1,56 @@
+{
+  "name": "Reptilian Senses",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.658Z",
+      "importer_version": 4,
+      "uid": "Feature.name-reptilian-senses.source-species.sourceName-sluissi"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Sluissi.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Reptilian Senses.</strong></em> Whenever you make a Wisdom (Perception) check related to sensing heat, you are considered to have expertise in the Perception skill.</p>",
+      "chat": ""
+    },
+    "requirements": "Sluissi",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "reptilian-senses",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "SjTIEWQJoSiNYkC4",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!SjTIEWQJoSiNYkC4"
+}

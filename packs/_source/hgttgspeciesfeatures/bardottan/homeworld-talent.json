@@ -1,0 +1,56 @@
+{
+  "name": "Homeworld Talent",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.374Z",
+      "importer_version": 4,
+      "uid": "Feature.name-homeworld-talent.source-species.sourceName-bardottan"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Bardottan.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Homeworld Talent.</strong></em> Most bardottans come from their ancestral homeworld of Bardotta, or the socialite colony of Phu, individuals from both possessing different talents. You have proficiency in two vibroweapons or one gaming set of your choice.</p>",
+      "chat": ""
+    },
+    "requirements": "Bardottan",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "homeworld-talent",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "W1mJV9hMQ4CtxYpr",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!W1mJV9hMQ4CtxYpr"
+}

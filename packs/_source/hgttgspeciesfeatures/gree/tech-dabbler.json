@@ -1,0 +1,56 @@
+{
+  "name": "Tech Dabbler",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:36.332Z",
+      "importer_version": 4,
+      "uid": "Feature.name-tech-dabbler.source-species.sourceName-gree"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Gree.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Tech Dabbler.</strong></em> You know your choice of the <em>reboot</em>, <em>mending</em>, or <em>short circuit</em> at-will tech powers. Your techcasting ability is Intelligence. You do not require use of a wristpad for this power.</p>",
+      "chat": ""
+    },
+    "requirements": "Gree",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "tech-dabbler",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "QbueMfncM8HfohF5",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!QbueMfncM8HfohF5"
+}

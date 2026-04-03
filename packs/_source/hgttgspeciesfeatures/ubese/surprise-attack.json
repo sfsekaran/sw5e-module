@@ -1,0 +1,56 @@
+{
+  "name": "Surprise Attack",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.154Z",
+      "importer_version": 4,
+      "uid": "Feature.name-surprise-attack.source-species.sourceName-ubese"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Ubese.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Surprise Attack.</strong></em> If you surprise a creature and hit it with an attack on your first turn in combat, the attack deals an extra 2d6 damage to it. You can use this trait only once per combat.</p>",
+      "chat": ""
+    },
+    "requirements": "Ubese",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "surprise-attack",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "LROfAeluh4VCbVmg",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!LROfAeluh4VCbVmg"
+}

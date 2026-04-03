@@ -1,0 +1,263 @@
+{
+  "name": "Epicanthix",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.308Z",
+      "importer_version": 4,
+      "uid": "Species.name-epicanthix"
+    }
+  },
+  "type": "race",
+  "img": "modules/sw5e-module/icons/packs/Species/Epicanthix.webp",
+  "system": {
+    "description": {
+      "value": "<h2>Biology and Appearance</h2>\n<p>Physically, epicanthix are generally human in appearance, possessing faces that are somewhat longer than usual, with narrow eyes, dark hair, and lithe builds with powerful musculature that tends to be willowy and graceful due to a cultural focus on physical training and combat readiness. Most epicanthix possess a natural unconscious talent to shield their minds from Force-assisted mental tricks, influence, domination, and mind reading, with the talent being widespread enough that many groups sought out the epicanthix for use as spies.</p>\n<h2>Society and Culture</h2>\n<p>A race of warriors known for their their combination of militaristic mindsets and high regard for art and culture, the epicanthix train and hone their bodies in preparation for war - with great value being placed on an individual's combat readiness - while simultaneously broadening their minds by studying art, music, and literature. Practical yet praising aesthetic, the Epicanthix worked this duality into much of their way of life; their starships were beautiful yet lethal, their hair was tied in ceremonial styles that were not only attractive but practical for combat, and while they trained their bodies for strength they simultaneously toned them for beauty. Even when conquering an enemy, the Epicanthix would absorb their conquered subject's culture, regarding a subjugated people's art and culture as equally important as their material wealth.</p>\n<h2>Names</h2>\n<p>Epicanthix names are short and exotic, with surnames being familiar.</p>\n<p>&nbsp;&nbsp;<strong>Male Names.</strong> Taw, Vu, Yix, Zun</p>\n<p>&nbsp;&nbsp;<strong>Female Names.</strong> Qiy, Rev, Xa, Yav</p>\n<p>&nbsp;&nbsp;<strong>Surnames.</strong> Halber, Lanse, Poyn, Spera</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "HGTTG"
+    },
+    "identifier": "epicanthix",
+    "details": {
+      "isDroid": false
+    },
+    "type": {
+      "value": "humanoid"
+    },
+    "movement": {
+      "walk": 30,
+      "burrow": null,
+      "climb": null,
+      "fly": null,
+      "swim": null,
+      "units": null,
+      "hover": false
+    },
+    "senses": {
+      "darkvision": null,
+      "blindsight": null,
+      "tremorsense": null,
+      "truesight": null,
+      "units": null,
+      "special": ""
+    },
+    "advancement": [
+      {
+        "_id": "SiUVpNKd4bwIOnUq",
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.1inmGXvhS1rU7EU3",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.PslSz0x2PpJbbotr",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Qonr75qR8pAMvNmV",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.RzTb2B707aGFnC5m",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.C6UP0pLCKaCdH0p8",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.FpVsCXsEd0TA61ID",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Ro61IaF1FZsdxeBy",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.EBysL365HZXO9hPT",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.YA1jC0zDGlDdnfKW",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.EOpjGbWkXx5UsKH9",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Tdjo6YNzOAAcpSsc",
+              "optional": false
+            }
+          ],
+          "optional": true,
+          "spell": null
+        },
+        "level": 0,
+        "title": "Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "9C21iPX1eXMXGQYx",
+        "configuration": {
+          "fixed": {
+            "wis": 1
+          },
+          "points": 2,
+          "cap": 2,
+          "locked": []
+        },
+        "level": 0,
+        "type": "AbilityScoreImprovement",
+        "value": {
+          "type": "asi"
+        }
+      },
+      {
+        "_id": "MryL4rpNeiCZegzi",
+        "configuration": {
+          "sizes": [
+            "med"
+          ]
+        },
+        "level": 0,
+        "type": "Size",
+        "value": {}
+      },
+      {
+        "_id": "O4HE9x0lJV0dZecK",
+        "configuration": {
+          "choices": [
+            {
+              "count": 1,
+              "pool": [
+                "tool:music:*"
+              ]
+            }
+          ],
+          "grants": [
+            "skills:lor"
+          ],
+          "mode": "default",
+          "allowReplacements": false
+        },
+        "level": 0,
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      }
+    ],
+    "skinColorOptions": {
+      "value": "Light to dark tones"
+    },
+    "hairColorOptions": {
+      "value": "Brown to black"
+    },
+    "eyeColorOptions": {
+      "value": "Brown or green"
+    },
+    "colorScheme": {
+      "value": ""
+    },
+    "distinctions": {
+      "value": "Narrow eyes, dark hair, mental shielding against the Force"
+    },
+    "heightAverage": {
+      "value": "4'9\""
+    },
+    "heightRollMod": {
+      "value": "+2d6\""
+    },
+    "weightAverage": {
+      "value": "110 lb."
+    },
+    "weightRollMod": {
+      "value": "x(2d4) lb."
+    },
+    "homeworld": {
+      "value": "Panatha"
+    },
+    "slanguage": {
+      "value": "Epicant"
+    },
+    "droidDistinctions": {
+      "value": ""
+    },
+    "manufacturer": {
+      "value": ""
+    },
+    "droidLanguage": {
+      "value": ""
+    }
+  },
+  "effects": [
+    {
+      "_id": "XwBrKSybEqS7T6My",
+      "changes": [
+        {
+          "key": "flags.sw5e.closedMind",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "flags.sw5e.unarmedCombatant",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "tint": "#ffffff",
+      "transfer": true,
+      "flags": {},
+      "origin": null,
+      "name": "Epicanthix",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.330",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "modules/sw5e-module/icons/packs/Species/Epicanthix.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!Y9NDiG9rtrxKHCn8.XwBrKSybEqS7T6My"
+    }
+  ],
+  "_id": "Y9NDiG9rtrxKHCn8",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!Y9NDiG9rtrxKHCn8"
+}

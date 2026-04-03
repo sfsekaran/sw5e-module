@@ -1,0 +1,56 @@
+{
+  "name": "Tracker",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.366Z",
+      "importer_version": 4,
+      "uid": "Feature.name-tracker.source-species.sourceName-melitto"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Melitto.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Tracker.</strong></em> Melitto's powerful scent-memories make them skilled trackers. You are considered to have expertise in Wisdom (Survival) checks made to track a creature if that creature has a scent.</p>",
+      "chat": ""
+    },
+    "requirements": "Melitto",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "tracker",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "22tlKo9ipSmIv2Vl",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!22tlKo9ipSmIv2Vl"
+}

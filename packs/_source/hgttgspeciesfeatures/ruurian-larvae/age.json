@@ -1,0 +1,56 @@
+{
+  "name": "Age",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.077Z",
+      "importer_version": 4,
+      "uid": "Feature.name-age.source-species.sourceName-ruurian-larvae"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Ruurian.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Age.</em></strong> Ruurians reach adulthood by twelve and typically live for 30 to 40 years before entering the pupa stage, with full grown Chroma-Wings living for less than half a century on average.</p>",
+      "chat": ""
+    },
+    "requirements": "Ruurian, Larvae",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "age",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "RAGZsGNXLBMzOZtr",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!RAGZsGNXLBMzOZtr"
+}

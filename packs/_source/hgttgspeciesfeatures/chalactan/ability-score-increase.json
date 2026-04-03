@@ -1,0 +1,56 @@
+{
+  "name": "Ability Score Increase",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.446Z",
+      "importer_version": 4,
+      "uid": "Feature.name-ability-score-increase.source-species.sourceName-chalactan"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Chalactan.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Ability Score Increase.</em></strong> Your Wisdom score increases by 2, and your Intelligence score increases by 1.</p>",
+      "chat": ""
+    },
+    "requirements": "Chalactan",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "ability-score-increase",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "QYHqKyjx9RaNDl3g",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!QYHqKyjx9RaNDl3g"
+}

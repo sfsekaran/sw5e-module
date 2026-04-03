@@ -1,0 +1,56 @@
+{
+  "name": "Shrewd",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.870Z",
+      "importer_version": 4,
+      "uid": "Feature.name-shrewd.source-species.sourceName-vahla"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Vahla.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Shrewd.</strong></em> You are proficient in the Insight and Deception skills.</p>",
+      "chat": ""
+    },
+    "requirements": "Vahla",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "shrewd",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "GsTX6ALdE6s30IE2",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!GsTX6ALdE6s30IE2"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Defiant",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.340Z",
+      "importer_version": 4,
+      "uid": "Feature.name-defiant.source-species.sourceName-dantari"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Dantari.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Defiant.</strong></em> Dantari are known to be stubborn and often refuse to give up, even against the worst odds. When you or a creature you can see that can see and understand you makes an ability check, attack roll, or saving throw, you can roll a d4 and add it to their roll (no action required). You can use this before or after the roll, but before the GM determines the roll&rsquo;s outcome. Once you&rsquo;ve used this feature, you must complete a short or long rest before you can use it again.</p>",
+      "chat": ""
+    },
+    "requirements": "Dantari",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "defiant",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "Zc9kDaf5TOcEzUV6",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!Zc9kDaf5TOcEzUV6"
+}

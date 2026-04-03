@@ -1,0 +1,56 @@
+{
+  "name": "Adept Climbers",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.045Z",
+      "importer_version": 4,
+      "uid": "Feature.name-adept-climbers.source-species.sourceName-morseerian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Morseerian.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Adept Climbers.</strong></em> You have a climbing speed of 30 feet.</p>",
+      "chat": ""
+    },
+    "requirements": "Morseerian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "adept-climbers",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "4BiMUBpNN1Vept6a",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!4BiMUBpNN1Vept6a"
+}

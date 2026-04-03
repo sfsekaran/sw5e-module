@@ -1,0 +1,56 @@
+{
+  "name": "Bite",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.978Z",
+      "importer_version": 4,
+      "uid": "Feature.name-bite.source-species.sourceName-chistori"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Chistori.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Bite.</strong></em> Your sharp teeth are a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal kinetic damage equal to 1d6 + your Strength modifier.</p>",
+      "chat": ""
+    },
+    "requirements": "Chistori",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "bite",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "K5MQZmP2gMXdKRCY",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!K5MQZmP2gMXdKRCY"
+}

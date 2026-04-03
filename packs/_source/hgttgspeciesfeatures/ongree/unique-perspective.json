@@ -1,0 +1,56 @@
+{
+  "name": "Unique Perspective",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.382Z",
+      "importer_version": 4,
+      "uid": "Feature.name-unique-perspective.source-species.sourceName-ongree"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Ongree.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Unique Perspective.</strong></em> As an ongree, you are skilled in looking at things from different perspectives, giving you a unique mindset. Once per long rest, when you make an Intelligence (Investigation), Wisdom (Perception), or Charisma (Persuasion) check, you can choose to gain proficiency in that skill for the check. If you are already proficient, you gain expertise for the check.</p>",
+      "chat": ""
+    },
+    "requirements": "Ongree",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "unique-perspective",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "P6uFt2tdnpXQLupO",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!P6uFt2tdnpXQLupO"
+}

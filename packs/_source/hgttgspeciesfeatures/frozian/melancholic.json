@@ -1,0 +1,56 @@
+{
+  "name": "Melancholic",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.916Z",
+      "importer_version": 4,
+      "uid": "Feature.name-melancholic.source-species.sourceName-frozian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Frozian.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Melancholic.</em></strong> Your depressive demeanor and mood make you hard to manipulate. Charisma (Persuasion) checks made against you have disadvantage, and you have advantage on any saving throw against an effect that would charm you.</p>",
+      "chat": ""
+    },
+    "requirements": "Frozian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "melancholic",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "2Kv5Y35p9ujnDyXC",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!2Kv5Y35p9ujnDyXC"
+}

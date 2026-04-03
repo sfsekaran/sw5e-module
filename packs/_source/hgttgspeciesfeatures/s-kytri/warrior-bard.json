@@ -1,0 +1,56 @@
+{
+  "name": "Warrior Bard",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.339Z",
+      "importer_version": 4,
+      "uid": "Feature.name-warrior-bard.source-species.sourceName-s-kytri"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/S'kytri.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Warrior Bard.</strong></em> You have proficiency with the vibrospear, vibroblade, and one musical instrument of your choice.</p>",
+      "chat": ""
+    },
+    "requirements": "S'kytri",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "warrior-bard",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "SXOVIHL5Vw2LH55A",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!SXOVIHL5Vw2LH55A"
+}

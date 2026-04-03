@@ -1,0 +1,265 @@
+{
+  "name": "Gossam",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.853Z",
+      "importer_version": 4,
+      "uid": "Species.name-gossam"
+    }
+  },
+  "type": "race",
+  "img": "modules/sw5e-module/icons/packs/Species/Gossam.webp",
+  "system": {
+    "description": {
+      "value": "<h2>Biology and Appearance</h2>\n<p>Gossam are diminutive reptilian humanoids known for their shrewd and cunning nature. They have pebbly green or blue skin, elongated necks, wide eyes and a tapered head that slopes back on an incline. Gossam balance their thin bodies on two three-toed feet and have long, graceful three-fingered hands.</p>\n<h2>Society and Culture</h2>\n<p>Gossam hold their appearances as extremely important, and dress in elaborate clothing in an attempt to impress other sentients. Females use oil-based creams to mold their hair into a wave that traditionally sweeps up from the back of their heads. Wealthy gossam aristocrats and trade negotiators often wear elevated footwear to appear taller when dealing with other species, in addition to the exotic robes and finery favored by most gossam. Most gossam are selfish, scheming beings skilled at the art of business. Most gossam traveling the galaxy are either legitimate merchants or shady smugglers. Though most gossam are intelligent and independently minded, many spend much of their lives working for the Commerce Guild, which offers them food, housing and a decent income for a ten year exclusive contract. Gossam goods are generally cheap to manufacture and overpriced. Always looking for an angle they can play to come out on top, gossam are considered untrustworthy by other beings. A gossam's word means precious little in most other species' opinions.</p>\n<h2>Names</h2>\n<p>Gossam names are rarely more than 4 letters, traditionally chosen before hatching, with familial surnames being separated by an apostrophe or space.</p>\n<p>&nbsp;&nbsp;<strong>Male Names.</strong> Fen, Man, Sate, Xim</p>\n<p>&nbsp;&nbsp;<strong>Female Names.</strong> Lei, Net, Pess, Siri</p>\n<p>&nbsp;&nbsp;<strong>Surnames.</strong> Chi, Fi, Mae, Zen</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "HGTTG"
+    },
+    "identifier": "gossam",
+    "details": {
+      "isDroid": false
+    },
+    "type": {
+      "value": "humanoid"
+    },
+    "movement": {
+      "walk": 25,
+      "burrow": null,
+      "climb": null,
+      "fly": null,
+      "swim": null,
+      "units": null,
+      "hover": false
+    },
+    "senses": {
+      "darkvision": 60,
+      "blindsight": null,
+      "tremorsense": null,
+      "truesight": null,
+      "units": null,
+      "special": ""
+    },
+    "advancement": [
+      {
+        "_id": "3971ZJYPFvLsxbiB",
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.NqD2Dms4yBwpLZpR",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.AjcG0xVNKpUvrtY3",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Z0vYOJeyQbhL6uOA",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Q0CWQdx5JTWPDtAd",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.QCFPiWOn3jCrMQE6",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.J4lTLkymXH2X4qwS",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.YjsKPaCfjwihF3bE",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.ZV27q0jblJ8oXMW7",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.17bl5yz059xNIoju",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.LboIaOXiP9vitsa3",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.ErXl9yyeEkiQHXnf",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.86ZTPJ3WgYpA620g",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.DtgjB8kLSFRFMlTA",
+              "optional": false
+            }
+          ],
+          "optional": true,
+          "spell": null
+        },
+        "level": 0,
+        "title": "Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "YgVlPMGORf5A3Hwj",
+        "configuration": {
+          "fixed": {
+            "cha": 2,
+            "int": 1
+          },
+          "points": 0,
+          "cap": 2,
+          "locked": []
+        },
+        "level": 0,
+        "type": "AbilityScoreImprovement",
+        "value": {
+          "type": "asi"
+        }
+      },
+      {
+        "_id": "juRFP3ry8F6E5m32",
+        "configuration": {
+          "sizes": [
+            "sm"
+          ]
+        },
+        "level": 0,
+        "type": "Size",
+        "value": {}
+      },
+      {
+        "_id": "Q4UEReT33odTkDcc",
+        "configuration": {
+          "choices": [],
+          "grants": [
+            "skills:ins"
+          ],
+          "mode": "default",
+          "allowReplacements": false
+        },
+        "level": 0,
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      }
+    ],
+    "skinColorOptions": {
+      "value": "Pale blue or green"
+    },
+    "hairColorOptions": {
+      "value": "Brown, gray, blue, or none"
+    },
+    "eyeColorOptions": {
+      "value": "Yellow or black"
+    },
+    "colorScheme": {
+      "value": ""
+    },
+    "distinctions": {
+      "value": "Wrinkled skin, elongated necks, small shriveled heads"
+    },
+    "heightAverage": {
+      "value": "3'8\""
+    },
+    "heightRollMod": {
+      "value": "+2d6\""
+    },
+    "weightAverage": {
+      "value": "50 lb."
+    },
+    "weightRollMod": {
+      "value": "x(2d4) lb."
+    },
+    "homeworld": {
+      "value": "Castell"
+    },
+    "slanguage": {
+      "value": "Gossam"
+    },
+    "droidDistinctions": {
+      "value": ""
+    },
+    "manufacturer": {
+      "value": ""
+    },
+    "droidLanguage": {
+      "value": ""
+    }
+  },
+  "effects": [
+    {
+      "_id": "NnpWcesxylNCvkca",
+      "changes": [
+        {
+          "key": "flags.sw5e.businessSavvy",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "flags.sw5e.undersized",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "tint": "#ffffff",
+      "transfer": true,
+      "flags": {},
+      "origin": null,
+      "name": "Gossam",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.330",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "modules/sw5e-module/icons/packs/Species/Gossam.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!7t6TtcxZV1DiZB5h.NnpWcesxylNCvkca"
+    }
+  ],
+  "_id": "7t6TtcxZV1DiZB5h",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!7t6TtcxZV1DiZB5h"
+}

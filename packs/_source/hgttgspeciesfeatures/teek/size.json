@@ -1,0 +1,56 @@
+{
+  "name": "Size",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.037Z",
+      "importer_version": 4,
+      "uid": "Feature.name-size.source-species.sourceName-teek"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Teek.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Size.</strong></em> Teeks typically stand 2 and a half to 3 feet tall and generally weigh about 35 lbs. Regardless of your position in that range, your size is Small.</p>",
+      "chat": ""
+    },
+    "requirements": "Teek",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "size",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "3X8jLsj760trT32r",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!3X8jLsj760trT32r"
+}

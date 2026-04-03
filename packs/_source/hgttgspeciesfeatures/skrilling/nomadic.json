@@ -1,0 +1,56 @@
+{
+  "name": "Nomadic",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.382Z",
+      "importer_version": 4,
+      "uid": "Feature.name-nomadic.source-species.sourceName-skrilling"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Skrilling.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Nomadic.</strong></em> You have proficiency in the Survival skill.</p>",
+      "chat": ""
+    },
+    "requirements": "Skrilling",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "nomadic",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "DP9CXipVYUDpFjvI",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!DP9CXipVYUDpFjvI"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Melodious",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.108Z",
+      "importer_version": 4,
+      "uid": "Feature.name-melodious.source-species.sourceName-khil"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Khil.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Melodious.</strong></em> You have proficiency in the Performance skill and one other Charisma skill of your choice.</p>",
+      "chat": ""
+    },
+    "requirements": "Khil",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "melodious",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "BiGxJyQClJoNlOFv",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!BiGxJyQClJoNlOFv"
+}

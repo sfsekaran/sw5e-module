@@ -1,0 +1,56 @@
+{
+  "name": "Pintsized",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.716Z",
+      "importer_version": 4,
+      "uid": "Feature.name-pintsized.source-species.sourceName-columi"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Columi.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Pintsized.</strong></em> Your tiny stature makes it hard for you to wield bigger weapons. You can't use medium or heavy shields. Additionally, you can't wield weapons with the two-handed or versatile property, and you can only wield one-handed weapons in two hands unless they have the light property.</p>",
+      "chat": ""
+    },
+    "requirements": "Columi",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "pintsized",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "4y4lSmB8EE3SwMw9",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!4y4lSmB8EE3SwMw9"
+}

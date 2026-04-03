@@ -82,6 +82,18 @@ function cloneData(data) {
 	return JSON.parse(JSON.stringify(data));
 }
 
+function getGame() {
+	return globalThis.game ?? null;
+}
+
+function localize(key, fallback=key) {
+	return getGame()?.i18n?.localize?.(key) ?? fallback;
+}
+
+function formatI18n(key, data, fallback) {
+	return getGame()?.i18n?.format?.(key, data) ?? fallback;
+}
+
 function getHtmlRoot(html) {
 	return html instanceof HTMLElement ? html : html?.[0] ?? html;
 }
@@ -108,7 +120,7 @@ function applyTooltip(element, tooltip) {
 
 function getLocalizedCurrencyLabel(key) {
 	const entry = SW_CURRENCY_REGISTRY[key];
-	return entry ? game.i18n.localize(entry.label) : key;
+	return entry ? localize(entry.label, entry.key.toUpperCase()) : key;
 }
 
 export function getBaseCurrencyKey() {
@@ -160,7 +172,7 @@ export function getCurrencyConversion(key, options={}) {
 }
 
 function formatCreditsPerUnit(value) {
-	const formatted = game?.dnd5e?.utils?.formatNumber?.(value, {
+	const formatted = getGame()?.dnd5e?.utils?.formatNumber?.(value, {
 		minimumFractionDigits: 0,
 		maximumFractionDigits: 3
 	});
@@ -172,16 +184,22 @@ export function getCurrencyTooltipText(key, { customRates=getCustomCurrencyRates
 	if ( !entry ) return "";
 	const resolvedCreditsPerUnit = creditsPerUnit ?? getCurrencyCreditsPerUnit(key, { customRates });
 	if ( resolvedCreditsPerUnit == null ) {
-		return game.i18n.format("SW5E.CurrencyTooltipNeedsConfig", {
-			currency: game.i18n.localize(entry.label)
-		});
+		const currencyLabel = localize(entry.label, entry.key.toUpperCase());
+		return formatI18n(
+			"SW5E.CurrencyTooltipNeedsConfig",
+			{ currency: currencyLabel },
+			`${currencyLabel} requires a configured exchange rate.`
+		);
 	}
 	const tooltipKey = entry.fixed ? "SW5E.CurrencyTooltipFixed" : "SW5E.CurrencyTooltipConfigured";
-	return game.i18n.format(tooltipKey, {
-		currency: game.i18n.localize(entry.label),
-		rate: formatCreditsPerUnit(resolvedCreditsPerUnit),
-		credits: game.i18n.localize("SW5E.CurrencyGC")
-	});
+	const currencyLabel = localize(entry.label, entry.key.toUpperCase());
+	const creditsLabel = localize("SW5E.CurrencyGC", BASE_CURRENCY_KEY.toUpperCase());
+	const rate = formatCreditsPerUnit(resolvedCreditsPerUnit);
+	return formatI18n(
+		tooltipKey,
+		{ currency: currencyLabel, rate, credits: creditsLabel },
+		`1 ${currencyLabel} = ${rate} ${creditsLabel}.`
+	);
 }
 
 export function getConfiguredCurrencies({ enabledMap=getEnabledCurrencyMap(), customRates=getCustomCurrencyRates() }={}) {
@@ -274,8 +292,8 @@ function currencyWalletsMatch(left={}, right={}) {
 	return true;
 }
 
-export async function syncWorldActorCurrencyWallets(actors=Array.from(game.actors ?? [])) {
-	if ( !game?.user?.isGM ) return 0;
+export async function syncWorldActorCurrencyWallets(actors=Array.from(getGame()?.actors ?? [])) {
+	if ( !getGame()?.user?.isGM ) return 0;
 
 	const updates = [];
 	for ( const actor of actors ) {
@@ -409,8 +427,8 @@ export function getCurrencySettingsRows() {
 	const customRates = getCustomCurrencyRates();
 	return getConfiguredCurrencies({ enabledMap, customRates }).map(entry => ({
 		...entry,
-		labelText: game.i18n.localize(entry.label),
-		abbreviationText: game.i18n.localize(entry.abbreviation),
+		labelText: localize(entry.label, entry.key.toUpperCase()),
+		abbreviationText: localize(entry.abbreviation, entry.key.toUpperCase()),
 		fixedRateText: entry.creditsPerUnit != null ? formatCreditsPerUnit(entry.creditsPerUnit) : "",
 		customRateValue: customRates[entry.key] ?? "",
 		isBaseCurrency: entry.key === BASE_CURRENCY_KEY

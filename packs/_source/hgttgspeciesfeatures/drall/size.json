@@ -1,0 +1,56 @@
+{
+  "name": "Size",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.049Z",
+      "importer_version": 4,
+      "uid": "Feature.name-size.source-species.sourceName-drall"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Drall.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Size.</strong></em> Drall typically stand 3 to 4 feet tall and generally weigh about 50 lbs. Regardless of your position in that range, your size is Small.</p>",
+      "chat": ""
+    },
+    "requirements": "Drall",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "size",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "5LBT4LLG2lkBRntZ",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!5LBT4LLG2lkBRntZ"
+}

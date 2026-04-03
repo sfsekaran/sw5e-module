@@ -1,0 +1,56 @@
+{
+  "name": "Tracker",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.942Z",
+      "importer_version": 4,
+      "uid": "Feature.name-tracker.source-species.sourceName-snivvian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Snivvian.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Tracker.</strong></em> Snivvians are skilled at tracking thanks to their sensitive nostrils. You are considered to have expertise in Wisdom (Survival) checks made to track a creature if that creature has a scent.</p>",
+      "chat": ""
+    },
+    "requirements": "Snivvian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "tracker",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "K0gASZDitFIqMjI9",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!K0gASZDitFIqMjI9"
+}

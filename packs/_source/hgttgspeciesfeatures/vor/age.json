@@ -1,0 +1,56 @@
+{
+  "name": "Age",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.837Z",
+      "importer_version": 4,
+      "uid": "Feature.name-age.source-species.sourceName-vor"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Vor.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Age.</strong></em> Vors reach adulthood in their late teens and live for about 85 years.</p>",
+      "chat": ""
+    },
+    "requirements": "Vor",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "age",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "LnnBqlfYC8zbcX7B",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!LnnBqlfYC8zbcX7B"
+}

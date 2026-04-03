@@ -1,0 +1,56 @@
+{
+  "name": "Magnetic Awareness",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.114Z",
+      "importer_version": 4,
+      "uid": "Feature.name-magnetic-awareness.source-species.sourceName-devlikk"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Devlikk.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Magnetic Awareness.</em></strong> Devlikks are able to sense magnetic fields around them, assisting them with navigation and coordination. You always know which way is north. Additionally, you have blindsight out to 30 feet. If another trait would grant you blindsight, the range is increased by half as many feet.</p>",
+      "chat": ""
+    },
+    "requirements": "Devlikk",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "magnetic-awareness",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "TJq8pFUMY1tbeDGU",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!TJq8pFUMY1tbeDGU"
+}

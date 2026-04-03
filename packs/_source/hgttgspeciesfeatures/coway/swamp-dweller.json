@@ -1,0 +1,56 @@
+{
+  "name": "Swamp Dweller",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.822Z",
+      "importer_version": 4,
+      "uid": "Feature.name-swamp-dweller.source-species.sourceName-coway"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Coway.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Swamp Dweller.</strong></em> Growing up in the swamps of Mimban has left an impact. You don't treat swamp terrain as difficult terrain.</p>",
+      "chat": ""
+    },
+    "requirements": "Coway",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "swamp-dweller",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "682UDrDLtd8Th2x1",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!682UDrDLtd8Th2x1"
+}

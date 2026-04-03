@@ -1,0 +1,56 @@
+{
+  "name": "Desert Adaptation",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.030Z",
+      "importer_version": 4,
+      "uid": "Feature.name-desert-adaptation.source-species.sourceName-askajian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Askajian.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Desert Adaptation.</em></strong> Your body is naturally adapted to hot climates, as described in chapter 5 of the Dungeon Master&rsquo;s Guide. Additionally, you are able to go a number of days without water equal to 3 + twice your Constitution modifier before suffering exhaustion.</p>",
+      "chat": ""
+    },
+    "requirements": "Askajian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "desert-adaptation",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "W0mDUeXG8CD9nmdt",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!W0mDUeXG8CD9nmdt"
+}

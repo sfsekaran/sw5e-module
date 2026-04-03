@@ -1,0 +1,56 @@
+{
+  "name": "Mathematical Savant",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.685Z",
+      "importer_version": 4,
+      "uid": "Feature.name-mathematical-savant.source-species.sourceName-nimbanel"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Nimbanel.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Mathematical Savant.</strong></em> Whenever you make an Intelligence (Technology) check involving mathematics, you are considered to have expertise in the Technology skill.</p>",
+      "chat": ""
+    },
+    "requirements": "Nimbanel",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "mathematical-savant",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "OHayIbDw8TMOdnrV",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!OHayIbDw8TMOdnrV"
+}

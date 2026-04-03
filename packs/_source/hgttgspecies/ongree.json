@@ -1,0 +1,261 @@
+{
+  "name": "Ongree",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.385Z",
+      "importer_version": 4,
+      "uid": "Species.name-ongree"
+    }
+  },
+  "type": "race",
+  "img": "modules/sw5e-module/icons/packs/Species/Ongree.webp",
+  "system": {
+    "description": {
+      "value": "<h2>Biology and Appearance</h2>\n<p>Ongree are an amphibious sentient species characterized by yellowish or brownish skin and elongated, tapering heads with beaked mouths. Two flexible eyestalks protrude from either side of an ongree's head, allowing them to see an object from many angles.</p>\n<p>Their lipless mouths are located above four nostrils and their other facial features, giving them an \"upside-down\" facial appearance. They possess two thick fingers and an opposable thumb on each hand. Despite the apparent lack of dexterity inherent in their makeup, ongree are nevertheless able to hold even small objects with ease. Their natural agility is belied by their humpbacked, awkward appearance.</p>\n<h2>Society and Culture</h2>\n<p>Ongree are commonly seen as a diplomatic, measured species. This opinion is fostered by the arrangement of their eyestalks; since ongree can see an object from multiple angles, it is thought that this ability gives the species a unique mindset, allowing them to examine a situation from all possible perspectives. It is believed that their literal and figurative outlooks are linked by a psychological trait.</p>\n<p>Due to their unique psychologies, many members of the species are adept negotiators, diplomats, and politicians, though this characteristic is also exploited for less wholesome activities, and some are known to consort with crime lords and gangsters.</p>\n<h2>Names</h2>\n<p>Ongree usually take a long time to settle on names for their children, usually asking close friends and family for naming advice. Surnames are familiar.</p>\n<p>&nbsp;&nbsp;<strong>Male Names.</strong> Atrov, Betwen, Cortes, Kaiman, Khiroc</p>\n<p>&nbsp;&nbsp;<strong>Female Names.</strong> Dautir, Jayman, Llij, Mutra, Yojaw</p>\n<p>&nbsp;&nbsp;<strong>Surnames.</strong> -Frek, Nivek, Oej, -Prah, -Troz</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "HGTTG"
+    },
+    "identifier": "ongree",
+    "details": {
+      "isDroid": false
+    },
+    "type": {
+      "value": "humanoid"
+    },
+    "movement": {
+      "walk": 30,
+      "burrow": null,
+      "climb": null,
+      "fly": null,
+      "swim": null,
+      "units": null,
+      "hover": false
+    },
+    "senses": {
+      "darkvision": null,
+      "blindsight": null,
+      "tremorsense": null,
+      "truesight": null,
+      "units": null,
+      "special": ""
+    },
+    "advancement": [
+      {
+        "_id": "UW5aj4zoomrAV8ln",
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.RC0uLUY2xjpy1Rvn",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.NOFjoZGpliwGPue2",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.RGYpyYtEUDwZ2HJ0",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.7fombFbH2VVCAq33",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.9ggp2pgDlZIuP1v9",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.5TQbKHqkS1JC6boN",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Aee0Jjpz45wmt0BK",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.C3TW8WAHg1Xr6bLg",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.P6uFt2tdnpXQLupO",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.GDt12Fz3LJhch3uk",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.oaAn9c3hmNh0seRM",
+              "optional": false
+            }
+          ],
+          "optional": true,
+          "spell": null
+        },
+        "level": 0,
+        "title": "Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "8HHo3HNdAvpGxW89",
+        "configuration": {
+          "fixed": {},
+          "points": 3,
+          "cap": 2,
+          "locked": []
+        },
+        "level": 0,
+        "type": "AbilityScoreImprovement",
+        "value": {
+          "type": "asi"
+        }
+      },
+      {
+        "_id": "MryL4rpNeiCZegzi",
+        "configuration": {
+          "sizes": [
+            "med"
+          ]
+        },
+        "level": 0,
+        "type": "Size",
+        "value": {}
+      },
+      {
+        "_id": "I36yiIr3huenMA9F",
+        "configuration": {
+          "choices": [],
+          "grants": [
+            "skills:ins",
+            "skills:inv"
+          ],
+          "mode": "default",
+          "allowReplacements": false
+        },
+        "level": 0,
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      }
+    ],
+    "skinColorOptions": {
+      "value": "Yellow or brown"
+    },
+    "hairColorOptions": {
+      "value": "None"
+    },
+    "eyeColorOptions": {
+      "value": "Red or orange"
+    },
+    "colorScheme": {
+      "value": ""
+    },
+    "distinctions": {
+      "value": "Eyestalks, inverted face, awkward stance"
+    },
+    "heightAverage": {
+      "value": "4'9\""
+    },
+    "heightRollMod": {
+      "value": "+2d6\""
+    },
+    "weightAverage": {
+      "value": "120 lb."
+    },
+    "weightRollMod": {
+      "value": "x(2d4) lb."
+    },
+    "homeworld": {
+      "value": "Skustell"
+    },
+    "slanguage": {
+      "value": "Ongreenen"
+    },
+    "droidDistinctions": {
+      "value": ""
+    },
+    "manufacturer": {
+      "value": ""
+    },
+    "droidLanguage": {
+      "value": ""
+    }
+  },
+  "effects": [
+    {
+      "_id": "KQF6dznJRszxSdhU",
+      "changes": [
+        {
+          "key": "flags.sw5e.amphibious",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "flags.sw5e.detailOriented",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "flags.sw5e.unsettlingVisage",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "tint": "#ffffff",
+      "transfer": true,
+      "flags": {},
+      "origin": null,
+      "name": "Ongree",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.330",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "modules/sw5e-module/icons/packs/Species/Ongree.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!10JhQXPzACTIKgxi.KQF6dznJRszxSdhU"
+    }
+  ],
+  "_id": "10JhQXPzACTIKgxi",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!10JhQXPzACTIKgxi"
+}

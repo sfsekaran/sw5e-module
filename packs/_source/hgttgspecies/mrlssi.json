@@ -1,0 +1,272 @@
+{
+  "name": "Mrlssi",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:36.033Z",
+      "importer_version": 4,
+      "uid": "Species.name-mrlssi"
+    }
+  },
+  "type": "race",
+  "img": "modules/sw5e-module/icons/packs/Species/Mrlssi.webp",
+  "system": {
+    "description": {
+      "value": "<h2>Biology and Appearance</h2><p>Mrlssi are flightless avian humanoids covered in gray feathers, while their head is bare except for a fringe of feathers covering the back of their head. Their head feathers are brown in young mrlssi, but becomes more colorful with age. Their arms, legs, and faces are covered in scales. Mrlssi speak in high, piping voices.</p><h2>Society and Culture</h2><p>Mrlssi are quick-witted and detail-oriented beings who value knowledge over physical possessions. Even the richest mrlssi live modestly, although they often have huge libraries consisting of rare and obscure texts. Mrlssi are seldom impressed by shows of wealth or power, but they always have great respect for talented intellectuals and scientists. Mrlssi are natural problem-solvers, and they love mysteries and puzzles. This quality, coupled with keen analytical abilities, is what makes their engineers so good at improving upon existing designs. They can spot a design weakness and work at it until they have found the key to fixing the limitation. mrlssi enjoy intelligent conversations and tinkering with gadgets, and they love nothing more than friendly debates over the relative strengths of various starships or speeders. They also delight in jokes and wordplay, considering themselves among the galaxy's foremost humorists. However, mrlssi humor is often so dry or based on convoluted premises that members of other species can have a difficult time knowing when a mrlssi is joking.</p><h2>Names</h2><p>Mrlssi names are melodic in nature, despite their structure, with a majority of mrlssi names being dominated by double 'S's or other consonants. They have agendered names with familial surnames.</p><p>&nbsp;&nbsp;<strong>First Names.</strong> Crlisst, Kepor, Krssibel, Virssl</p><p>&nbsp;&nbsp;<strong>Surnames.</strong> Dagwa, Herssek, Jasst, Waray</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "HGTTG"
+    },
+    "identifier": "mrlssi",
+    "details": {
+      "isDroid": false
+    },
+    "type": {
+      "value": "humanoid"
+    },
+    "movement": {
+      "walk": 25,
+      "burrow": null,
+      "climb": null,
+      "fly": null,
+      "swim": null,
+      "units": null,
+      "hover": false
+    },
+    "senses": {
+      "darkvision": null,
+      "blindsight": null,
+      "tremorsense": null,
+      "truesight": null,
+      "units": null,
+      "special": ""
+    },
+    "advancement": [
+      {
+        "_id": "C9LFC7NetC5joQRw",
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.LMU2F3H5ZjpZoKqD",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.ENp7KrUacGZkdurv",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.PBAF8Rk8nnVEBYay",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.LaRIA8yXgU9rjEV4",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.M7UfEYnZacWPJrMN",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.I3guGyNcPdpVs9Xu",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.4KHAbFeOXI6d6gWp",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.JD6WUArqNSmFucJc",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.4TYg7Z1zMYJg7Yui",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.CjfrVMEGobR773hp",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.GaFhBRpJAzGlvq11",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.4BQiHwKwYLfEe4Kp",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.GS3rIWQB7PmZDTNw",
+              "optional": false
+            }
+          ],
+          "optional": true,
+          "spell": null
+        },
+        "level": 0,
+        "title": "Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "BDBmXDvLqtK2QwOP",
+        "configuration": {
+          "fixed": {
+            "int": 1,
+            "wis": 1,
+            "cha": 1
+          },
+          "points": 0,
+          "cap": 2,
+          "locked": []
+        },
+        "level": 0,
+        "type": "AbilityScoreImprovement",
+        "value": {
+          "type": "asi"
+        }
+      },
+      {
+        "_id": "juRFP3ry8F6E5m32",
+        "configuration": {
+          "sizes": [
+            "sm"
+          ]
+        },
+        "level": 0,
+        "type": "Size",
+        "value": {}
+      },
+      {
+        "_id": "Q4UEReT33odTkDcc",
+        "configuration": {
+          "choices": [],
+          "grants": [
+            "skills:ins"
+          ],
+          "mode": "default",
+          "allowReplacements": false
+        },
+        "level": 0,
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      }
+    ],
+    "skinColorOptions": {
+      "value": "Blue"
+    },
+    "hairColorOptions": {
+      "value": "Gray on body, brown on head (bright colors developing with age)"
+    },
+    "eyeColorOptions": {
+      "value": "Yellow, orange, or black"
+    },
+    "colorScheme": {
+      "value": ""
+    },
+    "distinctions": {
+      "value": "Flightless avians"
+    },
+    "heightAverage": {
+      "value": "2'5\""
+    },
+    "heightRollMod": {
+      "value": "+2d8\""
+    },
+    "weightAverage": {
+      "value": "60 lb."
+    },
+    "weightRollMod": {
+      "value": "x1 lb."
+    },
+    "homeworld": {
+      "value": "Mrlsst"
+    },
+    "slanguage": {
+      "value": "Tsi"
+    },
+    "droidDistinctions": {
+      "value": ""
+    },
+    "manufacturer": {
+      "value": ""
+    },
+    "droidLanguage": {
+      "value": ""
+    }
+  },
+  "effects": [
+    {
+      "_id": "71nSD9jAbyTh2jPa",
+      "changes": [
+        {
+          "key": "flags.sw5e.detailOriented",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "flags.sw5e.tinker",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "flags.sw5e.undersized",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "tint": "#ffffff",
+      "transfer": true,
+      "flags": {},
+      "origin": null,
+      "name": "Mrlssi",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.330",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "modules/sw5e-module/icons/packs/Species/Mrlssi.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!CMW1bXGk8HBCCAsQ.71nSD9jAbyTh2jPa"
+    }
+  ],
+  "_id": "CMW1bXGk8HBCCAsQ",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!CMW1bXGk8HBCCAsQ"
+}

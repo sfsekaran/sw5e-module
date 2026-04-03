@@ -1,0 +1,56 @@
+{
+  "name": "Trunk",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.818Z",
+      "importer_version": 4,
+      "uid": "Feature.name-trunk.source-species.sourceName-pacithhip"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Pacithhip.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Trunk.</strong></em> You have supreme control over your trunk and can use it to manipulate objects as well as your hands.</p>",
+      "chat": ""
+    },
+    "requirements": "Pacithhip",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "trunk",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "2Fx1ufDHvBodUFZ0",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!2Fx1ufDHvBodUFZ0"
+}

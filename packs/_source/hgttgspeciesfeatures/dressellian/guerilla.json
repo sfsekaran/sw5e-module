@@ -1,0 +1,56 @@
+{
+  "name": "Guerilla",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:36.187Z",
+      "importer_version": 4,
+      "uid": "Feature.name-guerilla.source-species.sourceName-dressellian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Dressellian.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Guerilla.</strong></em> You have proficiency in the Stealth skill.</p>",
+      "chat": ""
+    },
+    "requirements": "Dressellian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "guerilla",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "Y8e3bPn9GttieFGe",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!Y8e3bPn9GttieFGe"
+}

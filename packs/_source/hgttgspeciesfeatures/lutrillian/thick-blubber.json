@@ -1,0 +1,56 @@
+{
+  "name": "Thick Blubber",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.132Z",
+      "importer_version": 4,
+      "uid": "Feature.name-thick-blubber.source-species.sourceName-lutrillian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Lutrillian.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Thick Blubber.</strong></em> You have a thick hide covering a layer of protective blubber. When you aren&rsquo;t wearing armor, your AC is 13 + your Dexterity modifier. Additionally, your thick hide is naturally adapted to cold climates, as described in chapter 5 of the Dungeon Master&rsquo;s Guide. Lastly, you have resistance to cold damage.</p>",
+      "chat": ""
+    },
+    "requirements": "Lutrillian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "thick-blubber",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "a6192eSZ5FvEXuqW",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!a6192eSZ5FvEXuqW"
+}

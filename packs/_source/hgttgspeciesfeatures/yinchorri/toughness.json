@@ -1,0 +1,56 @@
+{
+  "name": "Toughness",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.536Z",
+      "importer_version": 4,
+      "uid": "Feature.name-toughness.source-species.sourceName-yinchorri"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Yinchorri.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Toughness.</em></strong> Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.</p>",
+      "chat": ""
+    },
+    "requirements": "Yinchorri",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "toughness",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "WknNOh3RbYK6TURA",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!WknNOh3RbYK6TURA"
+}

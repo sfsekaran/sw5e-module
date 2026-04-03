@@ -1,0 +1,56 @@
+{
+  "name": "Enhanced Senses",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.935Z",
+      "importer_version": 4,
+      "uid": "Feature.name-enhanced-senses.source-species.sourceName-firrerreo"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Firrereo.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Enhanced Senses.</strong></em> Whenever you make a Wisdom (Perception) check related to hearing or sight, you are considered to have expertise in the Perception skill.</p>",
+      "chat": ""
+    },
+    "requirements": "Firrerreo",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "enhanced-senses",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "XF86A6uImYkj3vqN",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!XF86A6uImYkj3vqN"
+}

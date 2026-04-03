@@ -1,0 +1,288 @@
+{
+  "name": "Kitonak",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.605Z",
+      "importer_version": 4,
+      "uid": "Species.name-kitonak"
+    }
+  },
+  "type": "race",
+  "img": "modules/sw5e-module/icons/packs/Species/Kitonak.webp",
+  "system": {
+    "description": {
+      "value": "<h2>Biology and Appearance</h2>\n<p>Kitonaks have tough skin which folds to seal vulnerable openings, a trait evolved to protect them from the harsh environment of Kirdo III's deserts. They also have some double organs, including two pairs of lungs, which can store oxygen, allowing them to hold their breath for up to four hours. Their ears, eyes, and mouth can be sealed, and are almost too small for the casual observer to see. Kitonaks move slowly, as they walk by expanding and contracting their foot muscles, or slither slowly in a prone position. Their feet anchor them during windstorms, while they lean into the wind with their aerodynamically shaped bodies and heads. In worse storms, when rocks begin to fly, they burrow into the dunes. Their bodies release a vanilla-like smell.</p>\n<h2>Society and Culture</h2>\n<p>Kitonaks live in nomadic tribes of about one hundred kitonaks, following migrating chooba herds. Due to their nomadic lifestyle and the tendency for what possessions they have to blow away in windstorms, kitonak technology is limited to crude, temporary tools and musical instruments. Their tribes are united in a planet-wide participatory democracy, though slow communications and their deliberate thought processes means that years would pass before decisions are made (by which time, the problem would often have solved itself). The \"Telling of the Story\" is the highlight of a kitonak tribe's day. Each night, the members of the tribe will take turns at storytelling, with each Kitonak adding his or her own details and plot twists. A single story can take several nights to conclude.</p>\n<h2>Names</h2>\n<p>Kitonak names are short with thick tones. They do not use surnames, and names are not gendered.</p>\n<p>&nbsp;&nbsp;<strong>First Names.</strong> Archii, Cruks, Rento, Sulc, Treet</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "HGTTG"
+    },
+    "identifier": "kitonak",
+    "details": {
+      "isDroid": false
+    },
+    "type": {
+      "value": "humanoid"
+    },
+    "movement": {
+      "walk": 20,
+      "burrow": null,
+      "climb": null,
+      "fly": null,
+      "swim": null,
+      "units": null,
+      "hover": false
+    },
+    "senses": {
+      "darkvision": null,
+      "blindsight": null,
+      "tremorsense": null,
+      "truesight": null,
+      "units": null,
+      "special": ""
+    },
+    "advancement": [
+      {
+        "_id": "9Lbr9e7Qz3ycEw8w",
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.FEWxoGXNVMc08NvW",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.BIUjOHDoYji0GjS5",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.1qxxp3bNPHdeWW1X",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.1vZ1METVSX59kMru",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.CjJIjT7qKTWmvIyN",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.4YHdheQ4orOqHA5U",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.9DjwJ1FCPHyDfhNP",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Sr25h8LzCJ55r2Ie",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.GVa2SgrQOTbRFqZ6",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.PirfCXaluKEUCwIy",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.58GHSlUIO2yk8kVN",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.LR4kqnjiFeb51FXt",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.SdchTGhMnnk0DJNA",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.H6Bjib62f7MXVeAE",
+              "optional": false
+            }
+          ],
+          "optional": true,
+          "spell": null
+        },
+        "level": 0,
+        "title": "Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "LF913XHA8nJNtBvS",
+        "configuration": {
+          "fixed": {
+            "con": 2,
+            "wis": 1
+          },
+          "points": 0,
+          "cap": 2,
+          "locked": []
+        },
+        "level": 0,
+        "type": "AbilityScoreImprovement",
+        "value": {
+          "type": "asi"
+        }
+      },
+      {
+        "_id": "juRFP3ry8F6E5m32",
+        "configuration": {
+          "sizes": [
+            "sm"
+          ]
+        },
+        "level": 0,
+        "type": "Size",
+        "value": {}
+      },
+      {
+        "_id": "RTuWk7pGVM1nXYbM",
+        "configuration": {
+          "choices": [
+            {
+              "count": 1,
+              "pool": [
+                "tool:music:*"
+              ]
+            }
+          ],
+          "grants": [
+            "skills:sur"
+          ],
+          "mode": "default",
+          "allowReplacements": false
+        },
+        "level": 0,
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      }
+    ],
+    "skinColorOptions": {
+      "value": "Off-white to pink"
+    },
+    "hairColorOptions": {
+      "value": "None"
+    },
+    "eyeColorOptions": {
+      "value": "Black"
+    },
+    "colorScheme": {
+      "value": ""
+    },
+    "distinctions": {
+      "value": "Leathery skin, tiny eyes, ears, and mouth, slow movement"
+    },
+    "heightAverage": {
+      "value": "2'11\""
+    },
+    "heightRollMod": {
+      "value": "+2d12\""
+    },
+    "weightAverage": {
+      "value": "100 lb."
+    },
+    "weightRollMod": {
+      "value": "x(2d4) lb."
+    },
+    "homeworld": {
+      "value": "Kirdo III"
+    },
+    "slanguage": {
+      "value": "Kitonese"
+    },
+    "droidDistinctions": {
+      "value": ""
+    },
+    "manufacturer": {
+      "value": ""
+    },
+    "droidLanguage": {
+      "value": ""
+    }
+  },
+  "effects": [
+    {
+      "_id": "Xlxb33iFTZzBWuRe",
+      "changes": [
+        {
+          "key": "system.attributes.ac.value",
+          "mode": 5,
+          "priority": 20,
+          "value": "12+@abilities.dex.mod"
+        },
+        {
+          "key": "flags.sw5e.keenSenses",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "system.traits.toolProf.value",
+          "mode": 2,
+          "priority": 20,
+          "value": "music"
+        },
+        {
+          "key": "flags.sw5e.undersized",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "tint": "#ffffff",
+      "transfer": true,
+      "flags": {},
+      "origin": null,
+      "name": "Kitonak",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.330",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "modules/sw5e-module/icons/packs/Species/Kitonak.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!DaUX1Qj6HLPk8w0E.Xlxb33iFTZzBWuRe"
+    }
+  ],
+  "_id": "DaUX1Qj6HLPk8w0E",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!DaUX1Qj6HLPk8w0E"
+}

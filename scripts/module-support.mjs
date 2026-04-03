@@ -17,8 +17,12 @@ function cloneData(data) {
 	return JSON.parse(JSON.stringify(data));
 }
 
+function getGame() {
+	return globalThis.game ?? null;
+}
+
 function getWorldSettingsStorage() {
-	return game?.settings?.storage?.get?.("world") ?? null;
+	return getGame()?.settings?.storage?.get?.("world") ?? null;
 }
 
 export function hasStoredWorldSetting(namespace, key) {
@@ -26,6 +30,8 @@ export function hasStoredWorldSetting(namespace, key) {
 }
 
 export function getModuleSettingValue(key, fallback) {
+	const game = getGame();
+	if ( !game?.settings ) return cloneData(fallback);
 	const namespaces = Array.from(new Set([SETTINGS_NAMESPACE, LEGACY_SETTINGS_NAMESPACE]));
 	for ( const namespace of namespaces ) {
 		if ( !hasStoredWorldSetting(namespace, key) ) continue;
@@ -47,11 +53,13 @@ export function getModuleSettingValue(key, fallback) {
 export function getModuleId() {
 	const fromUrl = import.meta.url.match(/\/modules\/([^/]+)\//)?.[1];
 	if ( fromUrl ) return fromUrl;
+	const game = getGame();
 	const module = game?.modules?.find?.(m => MODULE_ID_CANDIDATES.includes(m.id) || m.title === "SW5E");
 	return module?.id ?? MODULE_ID_CANDIDATES[0];
 }
 
 export function getModule() {
+	const game = getGame();
 	const moduleId = getModuleId();
 	return game?.modules?.get?.(moduleId)
 		?? MODULE_ID_CANDIDATES.map(id => game?.modules?.get?.(id)).find(Boolean)

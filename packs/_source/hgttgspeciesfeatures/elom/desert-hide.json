@@ -1,0 +1,56 @@
+{
+  "name": "Desert Hide",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.316Z",
+      "importer_version": 4,
+      "uid": "Feature.name-desert-hide.source-species.sourceName-elom"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Elom.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Desert Hide.</strong></em> You have a thick hide. When you aren&rsquo;t wearing armor, your AC is 12 + your Dexterity modifier. Additionally, your thick hide is naturally adapted to hot climates, as described in chapter 5 of the Dungeon Master&rsquo;s Guide. Lastly, you are able to go a number of days without water equal to 3 + twice your Constitution modifier before suffering exhaustion.</p>",
+      "chat": ""
+    },
+    "requirements": "Elom",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "desert-hide",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "Dp4Issbol8V43ATN",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!Dp4Issbol8V43ATN"
+}

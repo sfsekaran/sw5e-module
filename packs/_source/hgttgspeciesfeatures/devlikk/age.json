@@ -1,0 +1,56 @@
+{
+  "name": "Age",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.103Z",
+      "importer_version": 4,
+      "uid": "Feature.name-age.source-species.sourceName-devlikk"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Devlikk.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Age.</em></strong> Devlikks have incredibly short lifespans, reaching adulthood at 2 and living up to 10 years on average.</p>",
+      "chat": ""
+    },
+    "requirements": "Devlikk",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "age",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "1YeCS6bkAfifPhil",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!1YeCS6bkAfifPhil"
+}

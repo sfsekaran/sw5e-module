@@ -1,0 +1,227 @@
+{
+  "name": "Sathari",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.588Z",
+      "importer_version": 4,
+      "uid": "Species.name-sathari"
+    }
+  },
+  "type": "race",
+  "img": "modules/sw5e-module/icons/packs/Species/Sathari.webp",
+  "system": {
+    "description": {
+      "value": "<h2>Biology and Appearance</h2>\n<p>Sathari are a humanoid species of avian ancestry native to the planet Arbooine. Though the sathari&rsquo;s ancestors were likely once capable of true flight, this ability disappeared millions of years ago. However, their avian heritage is apparent in their plumage, which varies in color and pattern by individual, and in their rapid, precise movements. Of particular note are the facial plumes of the sathari, which grow outward from near the beak or eye. The relatively subtle sexual variance of the sathari species leads to adult males frequently having four such feathers and adult females frequently having two, although various genetic, environmental, cultural, and individual factors mean that plumage, sex, and gender vary across a spectrum and can appear in any grouping. Sathari skeletons are far less dense than those of most humanoid species, allowing them to move more quickly and dexterously, but leaving them more susceptible to fractures and other damage.</p>\n<h2>Society and Culture</h2>\n<p>Sathari are rarely encountered away from their home planet, for sathari culture values family above all else. For sathari, to travel off-planet or even to leave their hometown is seen as abandoning family, so few depart. Sathari are fiercely loyal to their family and friends, but many sathari are known to harbor significant grudges against their foes.</p>\n<h2>Names</h2>\n<p>Sathari names are usually melodic in tone, first names being short and more. When sathari introduce themselves, they always begin with their familiar surname, as the secondary name is more important in sathari culture.</p>\n<p>&nbsp;&nbsp;<strong>Male Names.</strong> Dyr, Kae, Renn, Thoric</p>\n<p>&nbsp;&nbsp;<strong>Female Names.</strong> Feyya, Kiraak, Leh, Nia</p>\n<p>&nbsp;&nbsp;<strong>Surnames.</strong> Corren, Ithar, Runter, Shahwor</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "HGTTG"
+    },
+    "identifier": "sathari",
+    "details": {
+      "isDroid": false
+    },
+    "type": {
+      "value": "humanoid"
+    },
+    "movement": {
+      "walk": 35,
+      "burrow": null,
+      "climb": null,
+      "fly": null,
+      "swim": null,
+      "units": null,
+      "hover": false
+    },
+    "senses": {
+      "darkvision": null,
+      "blindsight": null,
+      "tremorsense": null,
+      "truesight": null,
+      "units": null,
+      "special": ""
+    },
+    "advancement": [
+      {
+        "_id": "ItWApwBvEiAmU9Le",
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.D2lz2sDA3SPtK5kR",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.IkHBcpjNq1ea6fTZ",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.EYIH0SOe3GwdQMPf",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Kq5QJ55dlyDHj2Fq",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.WrXqNXiyrfLxFqDo",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.RUiOc3vOVrvzZAsM",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Mm4rhflUesIU1cBE",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.JD1hPNAsjoU250e9",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.LTeDyO0WmqlZdvlL",
+              "optional": false
+            }
+          ],
+          "optional": true,
+          "spell": null
+        },
+        "level": 0,
+        "title": "Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "ZZZjvGG78AeCBe5y",
+        "configuration": {
+          "fixed": {
+            "dex": 2,
+            "int": 1
+          },
+          "points": 0,
+          "cap": 2,
+          "locked": []
+        },
+        "level": 0,
+        "type": "AbilityScoreImprovement",
+        "value": {
+          "type": "asi"
+        }
+      },
+      {
+        "_id": "MryL4rpNeiCZegzi",
+        "configuration": {
+          "sizes": [
+            "med"
+          ]
+        },
+        "level": 0,
+        "type": "Size",
+        "value": {}
+      }
+    ],
+    "skinColorOptions": {
+      "value": "Green, pink, white, or yellow"
+    },
+    "hairColorOptions": {
+      "value": "Various, usually blue, purple, or white"
+    },
+    "eyeColorOptions": {
+      "value": "Red or yellow"
+    },
+    "colorScheme": {
+      "value": ""
+    },
+    "distinctions": {
+      "value": "Large hand-tipped wings"
+    },
+    "heightAverage": {
+      "value": "5'1\""
+    },
+    "heightRollMod": {
+      "value": "+2d10\""
+    },
+    "weightAverage": {
+      "value": "100 lb."
+    },
+    "weightRollMod": {
+      "value": "x(2d4) lb."
+    },
+    "homeworld": {
+      "value": "Arbooine"
+    },
+    "slanguage": {
+      "value": "Arbori"
+    },
+    "droidDistinctions": {
+      "value": ""
+    },
+    "manufacturer": {
+      "value": ""
+    },
+    "droidLanguage": {
+      "value": ""
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZgpMPeMJcQyPgKNv",
+      "changes": [
+        {
+          "key": "flags.sw5e.nimbleAgility",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "tint": "#ffffff",
+      "transfer": true,
+      "flags": {},
+      "origin": null,
+      "name": "Sathari",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.330",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "modules/sw5e-module/icons/packs/Species/Sathari.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!S9X4OfHCBoRxgAEF.ZgpMPeMJcQyPgKNv"
+    }
+  ],
+  "_id": "S9X4OfHCBoRxgAEF",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!S9X4OfHCBoRxgAEF"
+}

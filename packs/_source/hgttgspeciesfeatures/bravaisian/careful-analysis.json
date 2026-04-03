@@ -1,0 +1,56 @@
+{
+  "name": "Careful Analysis",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.273Z",
+      "importer_version": 4,
+      "uid": "Feature.name-careful-analysis.source-species.sourceName-bravaisian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Bravaisian.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Careful Analysis.</strong></em> You have proficiency in the Investigation skill and your choice of archaeologists kits, scavenging kits, or jeweler's implements. Additionally, once per day, you can cast the <em>analyze</em> tech power. Your techcasting ability is Intelligence. You do not require use of a wristpad for this power.</p>",
+      "chat": ""
+    },
+    "requirements": "Bravaisian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "careful-analysis",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "AblHKzcOccEm6aX3",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!AblHKzcOccEm6aX3"
+}

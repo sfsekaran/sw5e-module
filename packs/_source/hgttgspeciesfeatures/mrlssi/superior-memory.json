@@ -1,0 +1,56 @@
+{
+  "name": "Superior Memory",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:36.023Z",
+      "importer_version": 4,
+      "uid": "Feature.name-superior-memory.source-species.sourceName-mrlssi"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Mrlssi.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Superior Memory.</strong></em> You can double your proficiency bonus for it when you make an Intelligence (Lore) check to recall information you have learned, or to recall the details of your experiences.</p>",
+      "chat": ""
+    },
+    "requirements": "Mrlssi",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "superior-memory",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "CjfrVMEGobR773hp",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!CjfrVMEGobR773hp"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Metabolic Endurance",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.591Z",
+      "importer_version": 4,
+      "uid": "Feature.name-metabolic-endurance.source-species.sourceName-kitonak"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Kitonak.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Metabolic Endurance.</strong></em> You are able to go a number of days without food or water equal to 3 + twice your Constitution modifier before suffering exhaustion.</p>",
+      "chat": ""
+    },
+    "requirements": "Kitonak",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "metabolic-endurance",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "GVa2SgrQOTbRFqZ6",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!GVa2SgrQOTbRFqZ6"
+}

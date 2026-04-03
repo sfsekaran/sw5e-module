@@ -1,0 +1,56 @@
+{
+  "name": "Peripheral Awareness",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.917Z",
+      "importer_version": 4,
+      "uid": "Feature.name-peripheral-awareness.source-species.sourceName-frozian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Frozian.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Peripheral Awareness.</em></strong> If you are surprised, you may act normally on your first turn. Once you&rsquo;ve used this trait, you can&rsquo;t use it again until you finish a short or long rest.</p>",
+      "chat": ""
+    },
+    "requirements": "Frozian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "peripheral-awareness",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "Che10hh23cxNjMxi",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!Che10hh23cxNjMxi"
+}

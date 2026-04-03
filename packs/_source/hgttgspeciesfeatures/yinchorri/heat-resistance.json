@@ -1,0 +1,56 @@
+{
+  "name": "Heat Resistance",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.533Z",
+      "importer_version": 4,
+      "uid": "Feature.name-heat-resistance.source-species.sourceName-yinchorri"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Yinchorri.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Heat Resistance.</em></strong> Yinchorri are cold-blooded, with incredible fortitude against extreme heat, giving you resistance to fire damage. Additionally, your thick hide is naturally adapted to hot climates, as described in chapter 5 of the Dungeon Master&rsquo;s Guide. Lastly, you have disadvantage on Constitution saving throws made to avoid exhaustion due to extreme cold.</p>",
+      "chat": ""
+    },
+    "requirements": "Yinchorri",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "heat-resistance",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "FYa8IVmMSHs9r0qX",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!FYa8IVmMSHs9r0qX"
+}

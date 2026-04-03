@@ -1,0 +1,56 @@
+{
+  "name": "Forced March",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.565Z",
+      "importer_version": 4,
+      "uid": "Feature.name-forced-march.source-species.sourceName-terrelian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Terrelian.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Forced March.</em></strong> Terrelians are able to maintain a fast pace longer than other species. Terrelians have advantage on Constitution saving throws made to avoid Exhaustion due to prolongued travel, as described in Chapter 8.</p>",
+      "chat": ""
+    },
+    "requirements": "Terrelian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "forced-march",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "5Ya7ZOATJpdqU1x5",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!5Ya7ZOATJpdqU1x5"
+}

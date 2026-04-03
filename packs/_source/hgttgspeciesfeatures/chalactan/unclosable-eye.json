@@ -1,0 +1,56 @@
+{
+  "name": "Unclosable Eye",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.457Z",
+      "importer_version": 4,
+      "uid": "Feature.name-unclosable-eye.source-species.sourceName-chalactan"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Chalactan.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Unclosable Eye.</em></strong> You have advantage on saving throws against being charmed, and powers can't put you to sleep.</p>",
+      "chat": ""
+    },
+    "requirements": "Chalactan",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "unclosable-eye",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "8jz2kiiEFR4tiJKa",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!8jz2kiiEFR4tiJKa"
+}

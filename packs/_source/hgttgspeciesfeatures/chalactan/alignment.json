@@ -1,0 +1,56 @@
+{
+  "name": "Alignment",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.449Z",
+      "importer_version": 4,
+      "uid": "Feature.name-alignment.source-species.sourceName-chalactan"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Chalactan.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Alignment.</em></strong> Chalactan culture values discipline and benevolence, causing them to tend towards lawful light side, though there are exceptions.</p>",
+      "chat": ""
+    },
+    "requirements": "Chalactan",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "alignment",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "PLywRQBDhFVutcnQ",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!PLywRQBDhFVutcnQ"
+}

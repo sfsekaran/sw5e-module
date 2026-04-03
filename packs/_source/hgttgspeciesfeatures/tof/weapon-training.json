@@ -1,0 +1,56 @@
+{
+  "name": "Weapon Training",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.699Z",
+      "importer_version": 4,
+      "uid": "Feature.name-weapon-training.source-species.sourceName-tof"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Tof.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Weapon Training.</strong></em> The tof are adept warriors. You are proficient with vibroblades and your choice of vibroclubs or slugthrowers.</p>",
+      "chat": ""
+    },
+    "requirements": "Tof",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "weapon-training",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "YrLueUJCS6NPDU6Y",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!YrLueUJCS6NPDU6Y"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Specialist",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:36.127Z",
+      "importer_version": 4,
+      "uid": "Feature.name-specialist.source-species.sourceName-dybrinthe"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Dybrinthe.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Specialist.</strong></em> You have proficiency in one specialist's kit of your choice.</p>",
+      "chat": ""
+    },
+    "requirements": "Dybrinthe",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "specialist",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "HORM5htMBxOvBvmm",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!HORM5htMBxOvBvmm"
+}

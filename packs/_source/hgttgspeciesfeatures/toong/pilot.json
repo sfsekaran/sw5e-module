@@ -1,0 +1,56 @@
+{
+  "name": "Pilot",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.132Z",
+      "importer_version": 4,
+      "uid": "Feature.name-pilot.source-species.sourceName-toong"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Toong.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Pilot.</strong></em> You have proficiency in the Piloting skill.</p>",
+      "chat": ""
+    },
+    "requirements": "Toong",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "pilot",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "J2G8EoSpZUCX2hRc",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!J2G8EoSpZUCX2hRc"
+}

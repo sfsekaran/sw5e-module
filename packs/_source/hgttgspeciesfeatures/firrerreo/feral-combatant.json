@@ -1,0 +1,56 @@
+{
+  "name": "Feral Combatant",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.936Z",
+      "importer_version": 4,
+      "uid": "Feature.name-feral-combatant.source-species.sourceName-firrerreo"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Firrereo.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Feral Combatant.</strong></em> Firrerreo are ferocious fighters, their enemies seeing them as wild and dangerous. You have proficiency in the Intimidation skill. Additionally, you are proficient with your unarmed strikes, which deal 1d4 + your Strength modifier kinetic damage on a hit.</p>",
+      "chat": ""
+    },
+    "requirements": "Firrerreo",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "feral-combatant",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "C7BXwsVluWevJG4K",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!C7BXwsVluWevJG4K"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Caste Specialization",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.530Z",
+      "importer_version": 4,
+      "uid": "Feature.name-caste-specialization.source-species.sourceName-yinchorri"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Yinchorri.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Caste Specialization.</em></strong> Your position in the yinchorri caste system, as a member of the Intelligencia or warrior caste, gives you unique talents. You have proficiency with one artisan's implements or two vibroweapons or blasters of your choice.</p>",
+      "chat": ""
+    },
+    "requirements": "Yinchorri",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "caste-specialization",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "NDSvtxiEJjXHqGBy",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!NDSvtxiEJjXHqGBy"
+}

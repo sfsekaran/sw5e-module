@@ -1,0 +1,56 @@
+{
+  "name": "Closed Mind",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.532Z",
+      "importer_version": 4,
+      "uid": "Feature.name-closed-mind.source-species.sourceName-yinchorri"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Yinchorri.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Closed Mind.</em></strong> Yinchorri brains have an unusual composition which made them resistant to influence from the Force. You have advantage on Wisdom and Charisma saving throws against force powers.</p>",
+      "chat": ""
+    },
+    "requirements": "Yinchorri",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "closed-mind",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "Hjp1m5l7zDScM8Yd",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!Hjp1m5l7zDScM8Yd"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Sensory Sight",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.365Z",
+      "importer_version": 4,
+      "uid": "Feature.name-sensory-sight.source-species.sourceName-melitto"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Melitto.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Sensory Sight.</strong></em> Melitto perceive the environment around them through use of sensitive cilia detecting vibrations and electrical fields. You have blindsight out to 30 feet. If another trait would grant you blindsight, the range is increased by half as many feet.</p>",
+      "chat": ""
+    },
+    "requirements": "Melitto",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "sensory-sight",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "PKNUAio3TG7FKumv",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!PKNUAio3TG7FKumv"
+}

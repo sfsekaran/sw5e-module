@@ -1,0 +1,56 @@
+{
+  "name": "Languages",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.302Z",
+      "importer_version": 4,
+      "uid": "Feature.name-languages.source-species.sourceName-feeorin"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Feeorin.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Languages.</strong></em> You can speak, read, and write Galactic Basic and Feeorin. The Feeorin language is gruff and dry sounding and has many different words for forms of combat, these phrases being borrowed by other species often.</p>",
+      "chat": ""
+    },
+    "requirements": "Feeorin",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "languages",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "HtE0IwDzodCrCd25",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!HtE0IwDzodCrCd25"
+}

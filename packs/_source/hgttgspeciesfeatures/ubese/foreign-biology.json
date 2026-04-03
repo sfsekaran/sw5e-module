@@ -1,0 +1,56 @@
+{
+  "name": "Foreign Biology",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.151Z",
+      "importer_version": 4,
+      "uid": "Feature.name-foreign-biology.source-species.sourceName-ubese"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Ubese.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Foreign Biology.</strong></em> Ubese struggle in atmospheres other than that of their homeworld. You wear a breath mask, and if your mask is removed while you are in such an environment, you lose consciousness.</p>",
+      "chat": ""
+    },
+    "requirements": "Ubese",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "foreign-biology",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "2xqzd8txHYnNkBdG",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!2xqzd8txHYnNkBdG"
+}

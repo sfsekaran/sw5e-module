@@ -1,0 +1,56 @@
+{
+  "name": "Languages",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.220Z",
+      "importer_version": 4,
+      "uid": "Feature.name-languages.source-species.sourceName-blarina"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Blarina.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Languages.</strong></em> You can speak, read, and write Galactic Basic and Blarinan. Blarinan is infamous for how easily it is to change emotional tones mid-sentence, leading to easy misunderstandings when spoken non-native speakers.</p>",
+      "chat": ""
+    },
+    "requirements": "Blarina",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "languages",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "1kGf6vDdu45p3Tn1",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!1kGf6vDdu45p3Tn1"
+}

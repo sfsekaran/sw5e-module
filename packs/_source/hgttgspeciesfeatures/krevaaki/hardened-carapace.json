@@ -1,0 +1,56 @@
+{
+  "name": "Hardened Carapace",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.080Z",
+      "importer_version": 4,
+      "uid": "Feature.name-hardened-carapace.source-species.sourceName-krevaaki"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Krevaaki.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Hardened Carapace.</em></strong> While you are unarmored or wearing light armor, your AC is 13 + your Dexterity modifier.</p>",
+      "chat": ""
+    },
+    "requirements": "Krevaaki",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "hardened-carapace",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "Ps032wxcYzkie6ZO",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!Ps032wxcYzkie6ZO"
+}

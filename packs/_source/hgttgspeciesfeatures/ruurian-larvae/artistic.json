@@ -1,0 +1,56 @@
+{
+  "name": "Artistic",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.083Z",
+      "importer_version": 4,
+      "uid": "Feature.name-artistic.source-species.sourceName-ruurian-larvae"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Ruurian.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Artistic.</em></strong> You have proficiency in artist's implements or one musical instrument of your choice.</p>",
+      "chat": ""
+    },
+    "requirements": "Ruurian, Larvae",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "artistic",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "S1O01siEMNLGKNGR",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!S1O01siEMNLGKNGR"
+}

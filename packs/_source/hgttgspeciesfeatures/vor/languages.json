@@ -1,0 +1,56 @@
+{
+  "name": "Languages",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.857Z",
+      "importer_version": 4,
+      "uid": "Feature.name-languages.source-species.sourceName-vor"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Vor.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Languages.</strong></em> You can speak, read, and write Galactic Basic and Vortexlex. Vortexlex, also known as Vorese, uses soft chirps, lilting squawks, and trilling whistles to form a melodic language to hear. Vortexlex has its own alphabet, using diamond shapes and swirling lines to represent individual letters. You can communicate with other vors within 30 feet without speaking through use of pheromones. Force attuned individuals can detect the communication but can&rsquo;t understand it.</p>",
+      "chat": ""
+    },
+    "requirements": "Vor",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "languages",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "2MhwxqvpqBGrzK8d",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!2MhwxqvpqBGrzK8d"
+}

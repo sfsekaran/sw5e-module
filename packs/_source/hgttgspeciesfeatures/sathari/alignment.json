@@ -1,0 +1,56 @@
+{
+  "name": "Alignment",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.577Z",
+      "importer_version": 4,
+      "uid": "Feature.name-alignment.source-species.sourceName-sathari"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Sathari.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Alignment.</strong></em> Sathari's loyal nature causes them to tend towards lawful alignments, though there are exceptions.</p>",
+      "chat": ""
+    },
+    "requirements": "Sathari",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "alignment",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "EYIH0SOe3GwdQMPf",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!EYIH0SOe3GwdQMPf"
+}

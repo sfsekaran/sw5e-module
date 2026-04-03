@@ -1,0 +1,56 @@
+{
+  "name": "Quick Learner",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.090Z",
+      "importer_version": 4,
+      "uid": "Feature.name-quick-learner.source-species.sourceName-ruurian-larvae"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Ruurian.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Quick Learner.</em></strong> When using downtime for learning a new language or training with a set of tools, it takes half the amount of time and credits necessary to complete.</p>",
+      "chat": ""
+    },
+    "requirements": "Ruurian, Larvae",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "quick-learner",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "EQVissbZ8KWuQeMe",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!EQVissbZ8KWuQeMe"
+}

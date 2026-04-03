@@ -1,0 +1,56 @@
+{
+  "name": "Alignment",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.731Z",
+      "importer_version": 4,
+      "uid": "Feature.name-alignment.source-species.sourceName-yuzzum"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Yuzzum.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Alignment.</strong></em> Yuzzums are resourceful, prioritizing survival over any morals, causing them to tend towards balanced alignments, though there are exceptions.</p>",
+      "chat": ""
+    },
+    "requirements": "Yuzzum",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "alignment",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "99P81SXVjEadJt7d",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!99P81SXVjEadJt7d"
+}

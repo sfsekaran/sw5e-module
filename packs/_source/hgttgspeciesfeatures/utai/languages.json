@@ -1,0 +1,56 @@
+{
+  "name": "Languages",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.606Z",
+      "importer_version": 4,
+      "uid": "Feature.name-languages.source-species.sourceName-utai"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Utai.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Languages.</strong></em> You can speak, read, and write Galactic Basic, Utai, and Utapese. Utai is characterized as a series of burbling glottal hoots.</p>",
+      "chat": ""
+    },
+    "requirements": "Utai",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "languages",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "Pl8O7sSR0hkVrbnK",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!Pl8O7sSR0hkVrbnK"
+}

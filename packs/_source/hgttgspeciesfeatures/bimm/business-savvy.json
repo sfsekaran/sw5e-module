@@ -1,0 +1,56 @@
+{
+  "name": "Business Savvy",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.621Z",
+      "importer_version": 4,
+      "uid": "Feature.name-business-savvy.source-species.sourceName-bimm"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Bimm.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Business Savvy.</em></strong> A common trait of all bimms is their shrewd business sense and their ability to haggle any deal. Whenever you make a Charisma (Persuasion) check involving haggling you are considered to have expertise in the Persuasion skill.</p>",
+      "chat": ""
+    },
+    "requirements": "Bimm",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "business-savvy",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "W1JcW4AVBJZTVxTU",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!W1JcW4AVBJZTVxTU"
+}

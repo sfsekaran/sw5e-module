@@ -1,0 +1,56 @@
+{
+  "name": "Attuned",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.911Z",
+      "importer_version": 4,
+      "uid": "Feature.name-attuned.source-species.sourceName-tholothian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Tholothian.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Attuned.</strong></em> You know your choice of the <em>battle insight</em>, <em>spare the dying</em>, or <em>resistance</em> at-will force powers. Wisdom is your forcecasting ability for this power.</p>",
+      "chat": ""
+    },
+    "requirements": "Tholothian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "attuned",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "aTLDDLyt81pynN3e",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!aTLDDLyt81pynN3e"
+}

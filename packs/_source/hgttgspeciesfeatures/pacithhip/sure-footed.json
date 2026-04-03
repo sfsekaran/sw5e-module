@@ -1,0 +1,56 @@
+{
+  "name": "Sure-Footed",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.816Z",
+      "importer_version": 4,
+      "uid": "Feature.name-sure-footed.source-species.sourceName-pacithhip"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Pacithhip.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Sure-Footed.</strong></em> You have advantage on ability checks and saving throws against being knocked prone.</p>",
+      "chat": ""
+    },
+    "requirements": "Pacithhip",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "sure-footed",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "81D9aEpUZ05lksWT",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!81D9aEpUZ05lksWT"
+}

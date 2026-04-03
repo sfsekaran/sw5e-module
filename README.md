@@ -50,6 +50,13 @@ For a plain-English walkthrough of what is safe to edit, when to rebuild, and a 
 
 For a contributor-focused overview of the repo layout, runtime entrypoints, compendium build pipeline, and release packaging, see [docs/developer-guide.md](docs/developer-guide.md).
 
+## Included Legacy Content
+
+The module includes Heretic's Guide to the Galaxy species content as dedicated baked-in compendiums instead of mixing it into the core species lists:
+
+- `HGTTG Species`
+- `HGTTG Species Features`
+
 ## Changelog
 
 ### [1.3.0] - 2026-03-27
@@ -57,11 +64,14 @@ For a contributor-focused overview of the repo layout, runtime entrypoints, comp
 ### Added
 
 - Optional Star Wars currencies with GM-managed enablement, custom exchange rates, and exchange-rate tooltips integrated into actor wallets and item price denomination selectors.
+- Baked-in Heretic's Guide to the Galaxy species compendiums, published as dedicated `HGTTG Species` and `HGTTG Species Features` packs with migrated artwork and V13 / `dnd5e` 5.2.5-compatible data.
 
 ### Changed
 
 - Currency support now follows the dnd5e multi-denomination workflow more closely, including wallet normalization for existing actors and better compatibility with convert and transfer actions.
 - The SW currency configuration app now uses the module namespace correctly, appears under `SW5E` in settings, and supports a bounded scrollable layout.
+- Legacy HGTTG species are now separated from the main `Species` compendium instead of being merged into the core species roster.
+- Repository line-ending rules are now pinned with `.gitattributes` so generated compendium source files behave consistently across Windows and non-Windows development environments.
 
 ### Fixed
 

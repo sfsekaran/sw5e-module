@@ -1,0 +1,56 @@
+{
+  "name": "Languages",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.663Z",
+      "importer_version": 4,
+      "uid": "Feature.name-languages.source-species.sourceName-sluissi"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Sluissi.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Languages.</strong></em> You can speak, read, and write Galactic Basic and Sluissese. Sluissese consists of quick serpentine syllables spoken quickly, sounding similar to a snake's hissing. When speaking Basic, sluissi tend to lisp and slur many words because of their snakelike mouths and viperine tongue.</p>",
+      "chat": ""
+    },
+    "requirements": "Sluissi",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "languages",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "Vw0F1fehSrvDTwgQ",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!Vw0F1fehSrvDTwgQ"
+}

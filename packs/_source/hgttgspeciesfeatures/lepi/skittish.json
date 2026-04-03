@@ -1,0 +1,56 @@
+{
+  "name": "Skittish",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.400Z",
+      "importer_version": 4,
+      "uid": "Feature.name-skittish.source-species.sourceName-lepi"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Lepi.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Skittish.</strong></em> You can choose to reroll Initiative checks, but you must use the new roll.</p>",
+      "chat": ""
+    },
+    "requirements": "Lepi",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "skittish",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "Yr4lpnM4y3Chy9hX",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!Yr4lpnM4y3Chy9hX"
+}

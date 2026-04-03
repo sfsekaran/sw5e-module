@@ -1,0 +1,56 @@
+{
+  "name": "Keen Sight",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.318Z",
+      "importer_version": 4,
+      "uid": "Feature.name-keen-sight.source-species.sourceName-iakaru"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Iakaru.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Keen Sight.</strong></em> You have advantage on Wisdom (Perception) checks that involve sight.</p>",
+      "chat": ""
+    },
+    "requirements": "Iakaru",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "keen-sight",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "P5Tna42iopsJMvHx",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!P5Tna42iopsJMvHx"
+}

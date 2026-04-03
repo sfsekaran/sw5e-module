@@ -1,0 +1,56 @@
+{
+  "name": "Hunter Training",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.648Z",
+      "importer_version": 4,
+      "uid": "Feature.name-hunter-training.source-species.sourceName-patitite"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Patitite.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Hunter Training.</strong></em> You have proficiency in your choice of Investigation, Survival, or Stealth. Additionally, you are proficient with the electrobaton and electroprod.</p>",
+      "chat": ""
+    },
+    "requirements": "Patitite",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "hunter-training",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "YC1Qt9qzV7lVtSaB",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!YC1Qt9qzV7lVtSaB"
+}

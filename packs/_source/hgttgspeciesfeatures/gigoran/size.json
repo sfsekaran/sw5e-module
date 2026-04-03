@@ -1,0 +1,56 @@
+{
+  "name": "Size",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.976Z",
+      "importer_version": 4,
+      "uid": "Feature.name-size.source-species.sourceName-gigoran"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Gigoran.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Size.</strong></em> Gigorans tend to tower over other species, reaching heights over 8 feet and weighing 400 pounds. Regardless of your position in that range, your size is Medium.</p>",
+      "chat": ""
+    },
+    "requirements": "Gigoran",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "size",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "34HVoc03uyAmJeWZ",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!34HVoc03uyAmJeWZ"
+}

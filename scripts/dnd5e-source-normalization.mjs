@@ -302,6 +302,14 @@ export function normalizeLegacyMasterItemSource(item) {
 		}
 	}
 
+	if ( item.system?.price !== undefined && !isObjectLike(item.system.price) ) {
+		const numericPrice = Number(item.system.price)
+		item.system.price = {
+			value: Number.isFinite(numericPrice) ? numericPrice : 0,
+			denomination: normalizeSwPriceDenomination(undefined)
+		}
+		changed = true
+	}
 	if ( item.system?.price?.denomination !== undefined ) {
 		const normalizedDenomination = normalizeSwPriceDenomination(item.system.price.denomination);
 		if ( normalizedDenomination !== item.system.price.denomination ) {

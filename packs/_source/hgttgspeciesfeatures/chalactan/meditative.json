@@ -1,0 +1,56 @@
+{
+  "name": "Meditative",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.456Z",
+      "importer_version": 4,
+      "uid": "Feature.name-meditative.source-species.sourceName-chalactan"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Chalactan.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Meditative.</em></strong> When you reach 3rd level, you learn and can cast your choice of the <em>sense force</em>, <em>battle precognition</em>, or <em>sense emotion</em> force powers once per day. Wisdom is your forcecasting ability for this power.</p>",
+      "chat": ""
+    },
+    "requirements": "Chalactan",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "meditative",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "JJWwO3PKAWrhu3SP",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!JJWwO3PKAWrhu3SP"
+}

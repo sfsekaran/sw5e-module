@@ -1,0 +1,56 @@
+{
+  "name": "Powerful Build",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.892Z",
+      "importer_version": 4,
+      "uid": "Feature.name-powerful-build.source-species.sourceName-cragmoloid"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Cragmoloid.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Powerful Build.</strong></em> You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>",
+      "chat": ""
+    },
+    "requirements": "Cragmoloid",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "powerful-build",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "8eWW0rT89HKNF2CA",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!8eWW0rT89HKNF2CA"
+}

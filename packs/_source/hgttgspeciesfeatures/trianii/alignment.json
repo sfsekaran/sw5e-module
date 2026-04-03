@@ -1,0 +1,56 @@
+{
+  "name": "Alignment",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.184Z",
+      "importer_version": 4,
+      "uid": "Feature.name-alignment.source-species.sourceName-trianii"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Trianii.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Alignment.</strong></em> Trianii's spiritual nature causes them to tend toward the light side, though there are exceptions.</p>",
+      "chat": ""
+    },
+    "requirements": "Trianii",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "alignment",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "FpUI3SGSSqSqFMJl",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!FpUI3SGSSqSqFMJl"
+}

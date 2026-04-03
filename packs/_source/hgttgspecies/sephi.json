@@ -1,0 +1,257 @@
+{
+  "name": "Sephi",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:36.266Z",
+      "importer_version": 4,
+      "uid": "Species.name-sephi"
+    }
+  },
+  "type": "race",
+  "img": "modules/sw5e-module/icons/packs/Species/Sephi.webp",
+  "system": {
+    "description": {
+      "value": "<h2>Biology and Appearance</h2>\n<p>The sephi are a species of sentient humanoids. Outwardly, they are very similar in appearance to human stock, the key difference being their long, pointed ears that can twitch, swivel and flatten in accordance with their emotional state. Many sephi are tall and healthy-looking, with a narrow waistline and long-fingered hands. However, smaller and overweight individuals are not unheard of. While many sephi have pale, purplish skin, some had more human-like skintones. Their long, straight hair ranges in color from black through blond to gray and white. Depending on personal status, it is common for upper-class sephi to fashion their hair into thick spirals adorned with gemstones and other decorations, making it a source of personal pride.</p>\n<h2>Society and Culture</h2>\n<p>Sephi are often driven act whenever they feel they must. Whether this be something as simple as helping another in need, to their choice to support a government. The sephi formed a space-level civilization led by a monarch. Due to the species' longevity, sephi sovereigns tend to stay in place for a long time. They have developed a culture of elegance and sophistication in art, which is even reflected in the delicate design of their walkers, flyers, tanks, and architecture. Additionally, sephi have an affinity with droids and machinery, often making work as engineers aboard spacecrafts or repairing malfunctioning or broken down droids when offworld.</p>\n<h2>Names</h2>\n<p>Sephi names are soft and melodic, forgoing surnames to promote a more individualist mindset for their children.</p>\n<p>&nbsp;&nbsp;<strong>Male Names.</strong> Ennu, Mazered, Nerrus, Thelres</p>\n<p>&nbsp;&nbsp;<strong>Female Names.</strong> Althe, Feryei, Ida, Naedi</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "HGTTG"
+    },
+    "identifier": "sephi",
+    "details": {
+      "isDroid": false
+    },
+    "type": {
+      "value": "humanoid"
+    },
+    "movement": {
+      "walk": 30,
+      "burrow": null,
+      "climb": null,
+      "fly": null,
+      "swim": null,
+      "units": null,
+      "hover": false
+    },
+    "senses": {
+      "darkvision": 60,
+      "blindsight": null,
+      "tremorsense": null,
+      "truesight": null,
+      "units": null,
+      "special": ""
+    },
+    "advancement": [
+      {
+        "_id": "9zDEpPCSguTvYaaM",
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.6DQaLTo3RmggFkzC",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.VFCONRE6JJ9bxghx",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.NNkN2vaK1lPzIiwh",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.UUgnxig7BfJolcxM",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.1mQGvjCVkcOnKO7y",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.S5QaeQhv7c31qE6Q",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.9TMrnyTMMrblv4Ri",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.QkZBlw0CHhMtBc5G",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.OGlXhAE1tsJdlmMc",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.RpEnL6JbiRmdTiib",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.H0BiGZgYJg7MKihq",
+              "optional": false
+            }
+          ],
+          "optional": true,
+          "spell": null
+        },
+        "level": 0,
+        "title": "Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "XcmYFpjOOHyJY1ED",
+        "configuration": {
+          "fixed": {
+            "int": 2,
+            "cha": 1
+          },
+          "points": 0,
+          "cap": 2,
+          "locked": []
+        },
+        "level": 0,
+        "type": "AbilityScoreImprovement",
+        "value": {
+          "type": "asi"
+        }
+      },
+      {
+        "_id": "MryL4rpNeiCZegzi",
+        "configuration": {
+          "sizes": [
+            "med"
+          ]
+        },
+        "level": 0,
+        "type": "Size",
+        "value": {}
+      },
+      {
+        "_id": "ITILYSlrH6uPbEH6",
+        "configuration": {
+          "choices": [],
+          "grants": [
+            "skills:lor"
+          ],
+          "mode": "default",
+          "allowReplacements": false
+        },
+        "level": 0,
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      }
+    ],
+    "skinColorOptions": {
+      "value": "Pale purple-blue, lavender, peach, white, or pinkish"
+    },
+    "hairColorOptions": {
+      "value": "Black, blond, gray, or white"
+    },
+    "eyeColorOptions": {
+      "value": "Black, brown, green, or blue"
+    },
+    "colorScheme": {
+      "value": ""
+    },
+    "distinctions": {
+      "value": "Pointed ears, long lived, artistic culture"
+    },
+    "heightAverage": {
+      "value": "4'9\""
+    },
+    "heightRollMod": {
+      "value": "+2d6\""
+    },
+    "weightAverage": {
+      "value": "105 lb."
+    },
+    "weightRollMod": {
+      "value": "x(2d4) lb."
+    },
+    "homeworld": {
+      "value": "Thustra, Isobe"
+    },
+    "slanguage": {
+      "value": "Sephi"
+    },
+    "droidDistinctions": {
+      "value": ""
+    },
+    "manufacturer": {
+      "value": ""
+    },
+    "droidLanguage": {
+      "value": ""
+    }
+  },
+  "effects": [
+    {
+      "_id": "TQ4b6tvg9HjDEeMk",
+      "changes": [
+        {
+          "key": "system.traits.toolProf.value",
+          "mode": 2,
+          "priority": 20,
+          "value": "art"
+        },
+        {
+          "key": "system.traits.toolProf.value",
+          "mode": 2,
+          "priority": 20,
+          "value": "mech"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "tint": "#ffffff",
+      "transfer": true,
+      "flags": {},
+      "origin": null,
+      "name": "Sephi",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.330",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "modules/sw5e-module/icons/packs/Species/Sephi.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!O4jgVZkVmFi96P1b.TQ4b6tvg9HjDEeMk"
+    }
+  ],
+  "_id": "O4jgVZkVmFi96P1b",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!O4jgVZkVmFi96P1b"
+}

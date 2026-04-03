@@ -1,0 +1,56 @@
+{
+  "name": "Beak",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.605Z",
+      "importer_version": 4,
+      "uid": "Feature.name-beak.source-species.sourceName-ishi-tib"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Ishi Tib.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Beak.</strong></em> Your sharp beak is a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal kinetic damage equal to 1d4 + your Strength modifier.</p>",
+      "chat": ""
+    },
+    "requirements": "Ishi Tib",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "beak",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "V9qqauwOdCh0Kaqw",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!V9qqauwOdCh0Kaqw"
+}

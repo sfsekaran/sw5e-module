@@ -1,0 +1,56 @@
+{
+  "name": "Shrewd Demeanor",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.063Z",
+      "importer_version": 4,
+      "uid": "Feature.name-shrewd-demeanor.source-species.sourceName-drall"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Drall.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Shrewd Demeanor.</strong></em> You have proficiency in two Intelligence, Wisdom, or Charisma skills of your choice.</p>",
+      "chat": ""
+    },
+    "requirements": "Drall",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "shrewd-demeanor",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "JAdPnwGar0neXGyB",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!JAdPnwGar0neXGyB"
+}

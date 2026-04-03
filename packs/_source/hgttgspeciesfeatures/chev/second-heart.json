@@ -1,0 +1,56 @@
+{
+  "name": "Second Heart",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.436Z",
+      "importer_version": 4,
+      "uid": "Feature.name-second-heart.source-species.sourceName-chev"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Chev.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Second Heart.</strong></em> When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can&rsquo;t use this feature again until you finish a long rest.</p>",
+      "chat": ""
+    },
+    "requirements": "Chev",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "second-heart",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "Xkmc7KdVIpQRqie6",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!Xkmc7KdVIpQRqie6"
+}

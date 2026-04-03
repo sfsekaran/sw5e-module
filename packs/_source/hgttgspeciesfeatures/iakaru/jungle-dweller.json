@@ -1,0 +1,56 @@
+{
+  "name": "Jungle Dweller",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.317Z",
+      "importer_version": 4,
+      "uid": "Feature.name-jungle-dweller.source-species.sourceName-iakaru"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Iakaru.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Jungle Dweller.</strong></em> Growing up in the jungles of Iakar has left an impact. You don&rsquo;t treat jungle terrain as difficult terrain.</p>",
+      "chat": ""
+    },
+    "requirements": "Iakaru",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "jungle-dweller",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "XZdsgkvON1IQ40m3",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!XZdsgkvON1IQ40m3"
+}

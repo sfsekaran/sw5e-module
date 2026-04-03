@@ -1,0 +1,56 @@
+{
+  "name": "Hide",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.358Z",
+      "importer_version": 4,
+      "uid": "Feature.name-hide.source-species.sourceName-tynnan"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Tynnan.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Hide.</strong></em> Your thick hide is naturally adapted to cold climates, as described in chapter 5 of the Dungeon Master&rsquo;s Guide.</p>",
+      "chat": ""
+    },
+    "requirements": "Tynnan",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "hide",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "LQmNo05tl0vARUOV",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!LQmNo05tl0vARUOV"
+}

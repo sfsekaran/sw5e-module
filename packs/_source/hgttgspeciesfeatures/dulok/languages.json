@@ -1,0 +1,56 @@
+{
+  "name": "Languages",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.724Z",
+      "importer_version": 4,
+      "uid": "Feature.name-languages.source-species.sourceName-dulok"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Dulok.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Languages.</em></strong> You can speak, read, and write Galactic Basic and Ewokese. The dulok's dialect of Ewokese is intelligible to their distant relatives, if somewhat gruffer.</p>",
+      "chat": ""
+    },
+    "requirements": "Dulok",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "languages",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "CX7uxPndBXDnJhmn",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!CX7uxPndBXDnJhmn"
+}

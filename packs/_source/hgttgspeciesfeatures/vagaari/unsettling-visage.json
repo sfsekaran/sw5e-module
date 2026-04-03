@@ -1,0 +1,56 @@
+{
+  "name": "Unsettling Visage",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.867Z",
+      "importer_version": 4,
+      "uid": "Feature.name-unsettling-visage.source-species.sourceName-vagaari"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Vagaari.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Unsettling Visage.</strong></em> When a creature you can see makes an attack roll against you, you can use your reaction to impose disadvantage on the roll. You must use this feature before knowing whether the attack hits or misses. Once you use this trait, you can't use it again until you finish a short or long rest.</p>",
+      "chat": ""
+    },
+    "requirements": "Vagaari",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "unsettling-visage",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "JqiE2t7cuifCy4v0",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!JqiE2t7cuifCy4v0"
+}

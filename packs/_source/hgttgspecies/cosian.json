@@ -1,0 +1,262 @@
+{
+  "name": "Cosian",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.033Z",
+      "importer_version": 4,
+      "uid": "Species.name-cosian"
+    }
+  },
+  "type": "race",
+  "img": "modules/sw5e-module/icons/packs/Species/Cosian.webp",
+  "system": {
+    "description": {
+      "value": "<h2>Biology and Appearance</h2>\n<p>Cosians are a species of sentient reptilian humanoids from Cosia who have beaked mouths, four-fingered hands, eyes with lids that blink upward instead of down, and a long tail that ends in a tuft of hair. Able to reach up to two hundred years of age, cosians are one of the longest lived species in the galaxy.</p>\n<h2>Society and Culture</h2>\n<p>Cosians are calm, straightforward thinkers. They often only take action after they are assured of the outcome, making them masterful players of Dejarik and other tests of wit and strategy. Cosians have a hunched posture and gentle demeanor that leaves an impression of harmlessness, helplessness, or even senility&mdash;but that could not be further from the truth. The sharp minds and keen senses of the Cosian are valued among adventurers, constantly observing and eager to learn more about the larger galaxy. The combination of an aged sense of wisdom and a genuine childlike excitement at the discovery of new places and beings casts the Cosian as a bit of a paradox. Any Cosian will tell you that they are simply taking each day as it arrives, and that anyone who believes they have learned all there is to learn is doing themselves a great disservice. Though welcoming diversity and negotiation, the villages on Cosia have been virtually untouched by technology&mdash;starports being built well outside the boundaries of their settlements.</p>\n<h2>Names</h2>\n<p>Cosian names are often short, sometimes forgetting to introduce themselves to strangers, as names are not very important to them. Surnames are familial.</p>\n<p>&nbsp; <strong>Male Names.</strong> Dasa, Eylan, Liua, Zev</p>\n<p>&nbsp; <strong>Female Names.</strong> Fesh, Hela, Penn, Yalra</p>\n<p>&nbsp; <strong>Surnames.</strong> Eshora, Rube, Sulube, Wuun</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "HGTTG"
+    },
+    "identifier": "cosian",
+    "details": {
+      "isDroid": false
+    },
+    "type": {
+      "value": "humanoid"
+    },
+    "movement": {
+      "walk": 30,
+      "burrow": null,
+      "climb": null,
+      "fly": null,
+      "swim": null,
+      "units": null,
+      "hover": false
+    },
+    "senses": {
+      "darkvision": 60,
+      "blindsight": null,
+      "tremorsense": null,
+      "truesight": null,
+      "units": null,
+      "special": ""
+    },
+    "advancement": [
+      {
+        "_id": "7BV5tlnzXiWILXhW",
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.FIyViqgaodllzYRg",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.PWkZ80hxz99ayLsW",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.9ewR42HjBXYjtwtg",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.SNbvCuPjKZNnFnux",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Ro0tiUdxsktqQ5r4",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Una0xX5gqIgSXd7C",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.NljbyNfq27T4YmzS",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.8aDAEpXArLwJNs9D",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.AVY3kUon3Wk0seSU",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Vjn1fN2CayxXy6bH",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.A4ZBMIP0AtJOfYqG",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.NjQfMkvEOXrbvFlE",
+              "optional": false
+            }
+          ],
+          "optional": true,
+          "spell": null
+        },
+        "level": 0,
+        "title": "Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "PVmk081UyyNr7hJU",
+        "configuration": {
+          "fixed": {
+            "wis": 2,
+            "int": 1
+          },
+          "points": 0,
+          "cap": 2,
+          "locked": []
+        },
+        "level": 0,
+        "type": "AbilityScoreImprovement",
+        "value": {
+          "type": "asi"
+        }
+      },
+      {
+        "_id": "MryL4rpNeiCZegzi",
+        "configuration": {
+          "sizes": [
+            "med"
+          ]
+        },
+        "level": 0,
+        "type": "Size",
+        "value": {}
+      },
+      {
+        "_id": "NzdthYUstSCNoXF4",
+        "configuration": {
+          "choices": [],
+          "grants": [
+            "skills:prc",
+            "skills:lor"
+          ],
+          "mode": "default",
+          "allowReplacements": false
+        },
+        "level": 0,
+        "type": "Trait",
+        "value": {
+          "chosen": []
+        }
+      }
+    ],
+    "skinColorOptions": {
+      "value": "Mottled green"
+    },
+    "hairColorOptions": {
+      "value": "White to blue"
+    },
+    "eyeColorOptions": {
+      "value": "Orange or yellow"
+    },
+    "colorScheme": {
+      "value": ""
+    },
+    "distinctions": {
+      "value": "Beaked mouths, long tails ending with a tuft of hair"
+    },
+    "heightAverage": {
+      "value": "4'9\""
+    },
+    "heightRollMod": {
+      "value": "+2d6\""
+    },
+    "weightAverage": {
+      "value": "105 lb."
+    },
+    "weightRollMod": {
+      "value": "x(2d6) lb."
+    },
+    "homeworld": {
+      "value": "Cosia"
+    },
+    "slanguage": {
+      "value": "Cosian"
+    },
+    "droidDistinctions": {
+      "value": ""
+    },
+    "manufacturer": {
+      "value": ""
+    },
+    "droidLanguage": {
+      "value": ""
+    }
+  },
+  "effects": [
+    {
+      "_id": "5Zh3pTkd0TvBiltM",
+      "changes": [
+        {
+          "key": "system.attributes.ac.value",
+          "mode": 5,
+          "priority": 20,
+          "value": "12+@abilities.dex.mod"
+        },
+        {
+          "key": "flags.sw5e.inscrutable",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "tint": "#ffffff",
+      "transfer": true,
+      "flags": {},
+      "origin": null,
+      "name": "Cosian",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.330",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "modules/sw5e-module/icons/packs/Species/Cosian.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!QS2r8rl0ShfxItH5.5Zh3pTkd0TvBiltM"
+    }
+  ],
+  "_id": "QS2r8rl0ShfxItH5",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!QS2r8rl0ShfxItH5"
+}

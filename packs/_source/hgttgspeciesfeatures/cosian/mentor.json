@@ -1,0 +1,56 @@
+{
+  "name": "Mentor",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.029Z",
+      "importer_version": 4,
+      "uid": "Feature.name-mentor.source-species.sourceName-cosian"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Cosian.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Mentor.</strong></em> You know the <em>guidance</em> at-will force power. Wisdom is your forcecasting ability for this power.</p>",
+      "chat": ""
+    },
+    "requirements": "Cosian",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "mentor",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "Vjn1fN2CayxXy6bH",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!Vjn1fN2CayxXy6bH"
+}

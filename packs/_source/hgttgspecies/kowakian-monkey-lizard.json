@@ -1,0 +1,249 @@
+{
+  "name": "Kowakian Monkey-Lizard",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:36.380Z",
+      "importer_version": 4,
+      "uid": "Species.name-kowakian-monkey-lizard"
+    }
+  },
+  "type": "race",
+  "img": "modules/sw5e-module/icons/packs/Species/Kowakian Monkey-Lizard.webp",
+  "system": {
+    "description": {
+      "value": "<h2>BIOLOGY AND APPEARANCE</h2>\n<p>Kowakian monkey-lizards are reptilian bipeds, with thin, almost twig-like limbs, and a small, triangular head atop slender shoulders. They have two large, highly sensitive, floppy ears, which curve backwards and narrow into a thin, hairy point, and often have several small holes in them, though not always. Some monkey-lizards wear piercings in those ears. In place of a nose, monkey-lizards have a wide, hooked, dark-colored beak, like that of a reptile, which can be opened to reveal a large, toothless mouth.</p>\n<h2>SOCIETY AND CULTURE</h2>\n<p>Kowakians are greedy, nefarious beings that revel in others suffering. They often use their ceaseless, loud laughter to scare off any potential attackers. They travel in groups, making as much noise as possible in an attempt to intimidate other creatures in the jungles. After finding a corpse, monkey-lizards spend time fighting over the food instead of sharing it. Kowakians are known to be extremely cruel and mean-spirited to both other monkey-lizards and to members of other species. They have a clear sense of mischief and humor, and are known to mock others, laugh at them, and even fling objects towards them simply because they find it amusing. They are able to perfectly mimic almost any language, and according to certain studies, communicate in those languages if they wish. Monkey-lizards are also known to laugh at appropriate times during conversations, and can often repeat back what they hear fairly accurately.</p>\n<h2>NAMES</h2>\n<p>Kowakians don't put much stock in names, being given entertaining nicknames by others typically.</p>\n<p>&nbsp;&nbsp;<strong>First Names.</strong> Bibidi, Fikoot, Glutch, Kneve, Lecherous</p>\n<p>&nbsp;&nbsp;<strong>Middle Names.</strong> D., R., C., S., B.</p>\n<p>&nbsp;&nbsp;<strong>Surnames.</strong> Flim, Morsel, Rakrak, Tiketa, Zilch</p>",
+      "chat": ""
+    },
+    "source": {
+      "custom": "HGTTG"
+    },
+    "identifier": "kowakian-monkey-lizard",
+    "details": {
+      "isDroid": false
+    },
+    "type": {
+      "value": "humanoid"
+    },
+    "movement": {
+      "walk": 30,
+      "burrow": null,
+      "climb": 30,
+      "fly": null,
+      "swim": null,
+      "units": null,
+      "hover": false
+    },
+    "senses": {
+      "darkvision": null,
+      "blindsight": null,
+      "tremorsense": null,
+      "truesight": null,
+      "units": null,
+      "special": ""
+    },
+    "advancement": [
+      {
+        "_id": "zOS9hZ1dt7vWtt6c",
+        "configuration": {
+          "items": [
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.QcptoXSEHdTsRFYb",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.H8DoDWgoAkZPvDtM",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.W6TqMOEgfUQcHPHl",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.3doIilIBayFQ0n9o",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Z0pqZy0Ln65hVXEN",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.9Zd3OmiQ5Md4bbc7",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.9oq0YMiRcVfXkILZ",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.FnrO1Pm02HVzsMSG",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.FRMKe0sgJBQ3IPk6",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.1Av6V7DCDZIpMEy7",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.Ny4hWmSbr0rA2geh",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.JGqysFbWGB4o4H2m",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.sw5e-module.hgttgspeciesfeatures.YfcxGCpoLkzkS1TR",
+              "optional": false
+            }
+          ],
+          "optional": true,
+          "spell": null
+        },
+        "level": 0,
+        "title": "Features",
+        "type": "ItemGrant",
+        "value": {}
+      },
+      {
+        "_id": "83dyD5dj8J7YjxMp",
+        "configuration": {
+          "fixed": {
+            "dex": 2,
+            "cha": 1
+          },
+          "points": 0,
+          "cap": 2,
+          "locked": []
+        },
+        "level": 0,
+        "type": "AbilityScoreImprovement",
+        "value": {
+          "type": "asi"
+        }
+      },
+      {
+        "_id": "juRFP3ry8F6E5m32",
+        "configuration": {
+          "sizes": [
+            "sm"
+          ]
+        },
+        "level": 0,
+        "type": "Size",
+        "value": {}
+      }
+    ],
+    "skinColorOptions": {
+      "value": "Yellow, brown, red, green, light blue"
+    },
+    "hairColorOptions": {
+      "value": "Black, brown, orange, green, purple, light blue"
+    },
+    "eyeColorOptions": {
+      "value": "Yellow"
+    },
+    "colorScheme": {
+      "value": ""
+    },
+    "distinctions": {
+      "value": "Cackling, sharp beaks, mischievous"
+    },
+    "heightAverage": {
+      "value": "1'10\""
+    },
+    "heightRollMod": {
+      "value": "+2d4\""
+    },
+    "weightAverage": {
+      "value": "20 lb."
+    },
+    "weightRollMod": {
+      "value": "x1 lb."
+    },
+    "homeworld": {
+      "value": "Kowak"
+    },
+    "slanguage": {
+      "value": "None"
+    },
+    "droidDistinctions": {
+      "value": ""
+    },
+    "manufacturer": {
+      "value": ""
+    },
+    "droidLanguage": {
+      "value": ""
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZYUTp1PL3O5880G3",
+      "changes": [
+        {
+          "key": "flags.sw5e.cannibalize",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "flags.sw5e.undersized",
+          "mode": 0,
+          "priority": 20,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "tint": "#ffffff",
+      "transfer": true,
+      "flags": {},
+      "origin": null,
+      "name": "Kowakian Monkey-Lizard",
+      "description": "",
+      "statuses": [],
+      "_stats": {
+        "coreVersion": "12.330",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "modules/sw5e-module/icons/packs/Species/Kowakian Monkey-Lizard.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!YdFogXfQAedqb4Yp.ZYUTp1PL3O5880G3"
+    }
+  ],
+  "_id": "YdFogXfQAedqb4Yp",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!YdFogXfQAedqb4Yp"
+}

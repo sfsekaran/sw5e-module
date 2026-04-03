@@ -1,0 +1,56 @@
+{
+  "name": "Adept Philosophy",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:33.454Z",
+      "importer_version": 4,
+      "uid": "Feature.name-adept-philosophy.source-species.sourceName-chalactan"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Chalactan.webp",
+  "system": {
+    "description": {
+      "value": "<p><strong><em>Adept Philosophy.</em></strong> You have proficiency in the Insight and Lore skills.</p>",
+      "chat": ""
+    },
+    "requirements": "Chalactan",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "adept-philosophy",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "DXVOMxf419SVAB4I",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!DXVOMxf419SVAB4I"
+}

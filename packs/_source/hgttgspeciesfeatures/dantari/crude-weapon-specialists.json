@@ -1,0 +1,56 @@
+{
+  "name": "Crude Weapon Specialists",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:34.339Z",
+      "importer_version": 4,
+      "uid": "Feature.name-crude-weapon-specialists.source-species.sourceName-dantari"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Dantari.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Crude Weapon Specialists.</strong></em> Dantari are used to making do with less. You can spend 1 hour, which you can do over the course of a short rest, crafting a weapon out of loose materials. You can craft any simple kinetic weapon, but the weapon&rsquo;s damage suffers a -1 penalty.</p>",
+      "chat": ""
+    },
+    "requirements": "Dantari",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "crude-weapon-specialists",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "8P24sDoLzhMDgPIi",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!8P24sDoLzhMDgPIi"
+}

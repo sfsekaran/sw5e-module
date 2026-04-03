@@ -1,0 +1,56 @@
+{
+  "name": "Musical",
+  "flags": {
+    "sw5e-importer": {
+      "timestamp": "2026-04-03T15:18:35.748Z",
+      "importer_version": 4,
+      "uid": "Feature.name-musical.source-species.sourceName-yuzzum"
+    }
+  },
+  "type": "feat",
+  "img": "modules/sw5e-module/icons/packs/Species/Yuzzum.webp",
+  "system": {
+    "description": {
+      "value": "<p><em><strong>Musical.</strong></em> You have proficiency in the Performance skill.</p>",
+      "chat": ""
+    },
+    "requirements": "Yuzzum",
+    "source": {
+      "custom": "HGTTG",
+      "revision": 1,
+      "rules": "2024"
+    },
+    "type": {
+      "value": "species",
+      "subtype": ""
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": []
+    },
+    "activities": [],
+    "identifier": "musical",
+    "enchant": {},
+    "prerequisites": {
+      "level": null
+    },
+    "properties": []
+  },
+  "effects": [],
+  "_id": "EaxYn1Zbb91ANStm",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": "dnd5ebuilder0000"
+  },
+  "_key": "!items!EaxYn1Zbb91ANStm"
+}
