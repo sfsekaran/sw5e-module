@@ -241,8 +241,9 @@ function getDeploymentCounts(legacySystem) {
 	const deployment = legacySystem.attributes?.deployment ?? {};
 	const crew = Array.isArray(deployment.crew?.items) ? deployment.crew.items : Array.isArray(deployment.crew) ? deployment.crew : [];
 	const passenger = Array.isArray(deployment.passenger?.items) ? deployment.passenger.items : Array.isArray(deployment.passenger) ? deployment.passenger : [];
+	const rawPilot = deployment.pilot?.value ?? deployment.pilot ?? "";
 	return {
-		pilot: deployment.pilot?.value ?? deployment.pilot ?? "",
+		pilot: typeof rawPilot === "string" ? rawPilot : "",
 		crew: crew.length,
 		passenger: passenger.length
 	};
