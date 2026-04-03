@@ -395,7 +395,8 @@ function buildVehicleSystem(legacySystem = {}, items = [], existingSystem = {}) 
 	const acFlat = toFiniteNumber(runtimeSystem.attributes?.ac?.flat, 10) ?? 10;
 
 	const system = cloneData(runtimeSystem) ?? {};
-	system.vehicleType = runtimeSystem.vehicleType || "air";
+	// Remove legacy vehicleType — dnd5e migrates it to details.type, which would overwrite our "space" value.
+	delete system.vehicleType;
 	system.attributes = mergeStarshipSystemData(runtimeSystem.attributes, {
 		ac: {
 			calc: "flat",

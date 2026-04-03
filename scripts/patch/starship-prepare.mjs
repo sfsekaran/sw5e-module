@@ -74,6 +74,12 @@ export function patchStarshipPrepare() {
 					actorSource.system.attributes.movement.fly = movement.space;
 					if ( movement.units ) actorSource.system.attributes.movement.units = movement.units;
 				}
+				// Ensure vehicle type is always "space" — existing world actors may have "air" stored
+				// from before buildVehicleSystem set details.type correctly.
+				if ( this.details && (typeof this.details === "object") ) this.details.type = "space";
+				if ( actorSource.system?.details && (typeof actorSource.system.details === "object") ) {
+					actorSource.system.details.type = "space";
+				}
 			}
 
 			return result;
