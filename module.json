@@ -899,7 +899,7 @@
     }
   ],
   "flags": {
-    "needsMigrationVersion": "0.29",
+    "needsMigrationVersion": "0.31",
     "compatibleMigrationVersion": "0"
   }
 }

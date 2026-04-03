@@ -32,6 +32,10 @@ function hasOwnKeys(value) {
 	return !!value && (typeof value === "object") && !Array.isArray(value) && (Object.keys(value).length > 0);
 }
 
+function isRecord(value) {
+	return !!value && (typeof value === "object") && !Array.isArray(value);
+}
+
 function toFiniteNumber(value, fallback = null) {
 	const number = Number(value);
 	return Number.isFinite(number) ? number : fallback;
@@ -284,6 +288,17 @@ export function normalizeSourceField(source) {
 	return trimmed && (trimmed !== "[object Object]") ? { custom: trimmed } : {};
 }
 
+function mergeStarshipSystemData(...systems) {
+	return systems.reduce((merged, system) => {
+		if ( !isRecord(system) ) return merged;
+		for ( const [key, value] of Object.entries(system) ) {
+			if ( isRecord(value) && isRecord(merged[key]) ) merged[key] = mergeStarshipSystemData(merged[key], value);
+			else merged[key] = cloneData(value);
+		}
+		return merged;
+	}, {});
+}
+
 function buildLegacySystemFromCharacterStarship(actor, starshipFlag = {}) {
 	const currentSystem = cloneData(actor.system ?? {});
 	const legacySystem = cloneData(starshipFlag.legacySystem ?? {});
@@ -358,66 +373,69 @@ function buildLegacySystemFromCharacterStarship(actor, starshipFlag = {}) {
 }
 
 function buildVehicleSystem(legacySystem = {}, items = [], existingSystem = {}) {
+	const runtimeSystem = mergeStarshipSystemData(legacySystem, existingSystem);
 	const starshipSize = getLegacyStarshipSize(items);
 	const sizeSystem = getLegacySizeSystem(starshipSize);
-	const hpValue = toFiniteNumber(legacySystem.attributes?.hp?.value, toFiniteNumber(existingSystem.attributes?.hp?.value));
-	const hpMax = toFiniteNumber(legacySystem.attributes?.hp?.max, hpValue);
-	const cargoCap = toFiniteNumber(sizeSystem.cargoCap, toFiniteNumber(existingSystem.attributes?.capacity?.cargo, 0)) ?? 0;
-	const routing = getPowerRoutingState(legacySystem);
+	const hpValue = toFiniteNumber(runtimeSystem.attributes?.hp?.value, 0) ?? 0;
+	const resolvedHpMax = toFiniteNumber(runtimeSystem.attributes?.hp?.max, hpValue) ?? hpValue;
+	const cargoCap = toFiniteNumber(sizeSystem.cargoCap, toFiniteNumber(runtimeSystem.attributes?.capacity?.cargo, 0)) ?? 0;
+	const resolvedCargoCap = toFiniteNumber(runtimeSystem.attributes?.capacity?.cargo, cargoCap) ?? cargoCap;
+	const routing = getPowerRoutingState(runtimeSystem);
 	const derivedMovement = deriveStarshipMovementData({
-		legacySystem,
+		legacySystem: runtimeSystem,
 		items,
-		liveAbilities: existingSystem.abilities ?? legacySystem.abilities ?? {},
-		liveMovement: existingSystem.attributes?.movement ?? {},
+		liveAbilities: runtimeSystem.abilities ?? {},
+		liveMovement: runtimeSystem.attributes?.movement ?? {},
 		sizeSystem,
 		routingState: routing
 	});
-	const derivedTravel = deriveStarshipTravelData({ legacySystem, items });
-	applyDerivedStarshipMovement(legacySystem, derivedMovement);
-	applyDerivedStarshipTravel(legacySystem, derivedTravel);
-	const acFlat = toFiniteNumber(legacySystem.attributes?.ac?.flat, toFiniteNumber(existingSystem.attributes?.ac?.flat, 10)) ?? 10;
+	const derivedTravel = deriveStarshipTravelData({ legacySystem: runtimeSystem, items });
+	applyDerivedStarshipMovement(runtimeSystem, derivedMovement);
+	applyDerivedStarshipTravel(runtimeSystem, derivedTravel);
+	const acFlat = toFiniteNumber(runtimeSystem.attributes?.ac?.flat, 10) ?? 10;
 
-	return {
-		vehicleType: existingSystem.vehicleType || "air",
-		attributes: {
-			ac: {
-				calc: "flat",
-				flat: acFlat,
-				motionless: existingSystem.attributes?.ac?.motionless ?? ""
-			},
-			actions: {
-				stations: existingSystem.attributes?.actions?.stations ?? true
-			},
-			hp: {
-				value: hpValue,
-				max: hpMax,
-				dt: existingSystem.attributes?.hp?.dt ?? null,
-				mt: existingSystem.attributes?.hp?.mt ?? null
-			},
-			capacity: {
-				creature: existingSystem.attributes?.capacity?.creature ?? "",
-				cargo: cargoCap
-			},
-			movement: {
-				fly: derivedMovement.space,
-				units: derivedMovement.units ?? existingSystem.attributes?.movement?.units ?? "ft",
-				hover: existingSystem.attributes?.movement?.hover ?? true
-			}
+	const system = cloneData(runtimeSystem) ?? {};
+	system.vehicleType = runtimeSystem.vehicleType || "air";
+	system.attributes = mergeStarshipSystemData(runtimeSystem.attributes, {
+		ac: {
+			calc: "flat",
+			flat: acFlat,
+			motionless: runtimeSystem.attributes?.ac?.motionless ?? ""
 		},
-		details: {
-			source: normalizeSourceField(legacySystem.details?.source)
+		actions: {
+			stations: runtimeSystem.attributes?.actions?.stations ?? true
 		},
-		traits: {
-			size: sizeSystem.size ?? existingSystem.traits?.size ?? legacySystem.traits?.size ?? "med",
-			dimensions: existingSystem.traits?.dimensions ?? "",
-			di: cloneData(existingSystem.traits?.di) ?? cloneData(legacySystem.traits?.di) ?? { value: [], bypasses: [], custom: "" },
-			ci: cloneData(existingSystem.traits?.ci) ?? cloneData(legacySystem.traits?.ci) ?? { value: [], custom: "" }
+		hp: {
+			value: hpValue,
+			max: resolvedHpMax,
+			dt: runtimeSystem.attributes?.hp?.dt ?? null,
+			mt: runtimeSystem.attributes?.hp?.mt ?? null
 		},
-		cargo: {
-			crew: cloneData(existingSystem.cargo?.crew) ?? [],
-			passengers: cloneData(existingSystem.cargo?.passengers) ?? []
+		capacity: {
+			creature: runtimeSystem.attributes?.capacity?.creature ?? "",
+			cargo: resolvedCargoCap
+		},
+		movement: {
+			fly: derivedMovement.space,
+			units: derivedMovement.units ?? runtimeSystem.attributes?.movement?.units ?? "ft",
+			hover: runtimeSystem.attributes?.movement?.hover ?? true
 		}
-	};
+	});
+	system.details = mergeStarshipSystemData(runtimeSystem.details, {
+		source: normalizeSourceField(runtimeSystem.details?.source),
+		type: runtimeSystem.details?.type ?? "space"
+	});
+	system.traits = mergeStarshipSystemData(runtimeSystem.traits, {
+		size: sizeSystem.size ?? runtimeSystem.traits?.size ?? "med",
+		dimensions: runtimeSystem.traits?.dimensions ?? "",
+		di: cloneData(runtimeSystem.traits?.di) ?? { value: [], bypasses: [], custom: "" },
+		ci: cloneData(runtimeSystem.traits?.ci) ?? { value: [], custom: "" }
+	});
+	system.cargo = mergeStarshipSystemData(runtimeSystem.cargo, {
+		crew: cloneData(runtimeSystem.cargo?.crew) ?? [],
+		passengers: cloneData(runtimeSystem.cargo?.passengers) ?? []
+	});
+	return system;
 }
 
 function isLegacyStarshipLikeActor(data) {
@@ -520,11 +538,6 @@ export function normalizeLegacyStarshipActorData(data) {
 		? buildLegacySystemFromCharacterStarship(data, characterRecord)
 		: cloneData(legacyRecord?.type === "starship" ? legacyRecord.system ?? {} : currentSystem);
 
-	flags.legacyStarshipActor = {
-		type: "starship",
-		system: legacySystem
-	};
-
 	data.type = "vehicle";
 	data.flags ??= {};
 	data.flags.core ??= {};
@@ -538,11 +551,24 @@ export function normalizeLegacyStarshipActorData(data) {
 		for ( const item of data.items ) normalizeLegacyStarshipItemData(item);
 	}
 
+	flags.legacyStarshipActor = {
+		type: "starship",
+		system: cloneData(data.system ?? legacySystem)
+	};
+
 	return true;
 }
 
-export function getLegacyStarshipActorSystem(actor) {
+function getStoredLegacyStarshipActorSystem(actor) {
 	return actor?.flags?.sw5e?.legacyStarshipActor?.system ?? {};
+}
+
+export function getLegacyStarshipActorSystem(actor) {
+	return mergeStarshipSystemData(
+		getStoredLegacyStarshipActorSystem(actor),
+		actor?._source?.system ?? {},
+		actor?.system ?? {}
+	);
 }
 
 function getAbilityModifier(abilities = {}, legacyAbilities = {}, abilityId) {
@@ -638,8 +664,6 @@ export function getDerivedStarshipRuntime(actor) {
 		routingState: routing
 	});
 	const travel = deriveStarshipTravelData({ legacySystem, items, crewState: crew });
-	applyDerivedStarshipMovement(legacySystem, movement);
-	applyDerivedStarshipTravel(legacySystem, travel);
 	return { movement, travel, crew, routing };
 }
 

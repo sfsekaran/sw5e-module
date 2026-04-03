@@ -17,6 +17,8 @@ const STARSHIP_PACKS = new Set([
 const STARSHIP_TAB_ID = "sw5e-starship";
 const STARSHIP_FEATURES_TAB_ID = "sw5e-starship-features";
 const STOCK_CARGO_TAB_ID = "inventory";
+const STOCK_FEATURES_TAB_ID = "features";
+const STOCK_STARSHIP_TAB_ORDER = [STOCK_CARGO_TAB_ID, "effects", "description"];
 const CUSTOM_STARSHIP_TAB_IDS = new Set([STARSHIP_TAB_ID, STARSHIP_FEATURES_TAB_ID]);
 
 function getHtmlRoot(html) {
@@ -59,6 +61,45 @@ function getStarshipActiveTab(app) {
 
 function setStarshipActiveTab(app, tabId = null) {
 	app._sw5eStarshipActiveTab = tabId;
+}
+
+function getTabButtons(nav) {
+	return Array.from(nav?.querySelectorAll("[data-tab]") ?? []);
+}
+
+function getTabLabel(button) {
+	return button?.textContent?.replace(/\s+/g, " ").trim().toLowerCase() ?? "";
+}
+
+function getStockFeaturesTabButton(nav) {
+	return getTabButtons(nav).find(button => {
+		if ( CUSTOM_STARSHIP_TAB_IDS.has(button.dataset.tab) ) return false;
+		return (button.dataset.tab === STOCK_FEATURES_TAB_ID) || (getTabLabel(button) === "features");
+	}) ?? null;
+}
+
+function hideStockFeaturesTab(root, app, nav) {
+	const featuresButton = getStockFeaturesTabButton(nav);
+	if ( !featuresButton ) return;
+	const isActive = !getStarshipActiveTab(app) && featuresButton.classList.contains("active");
+	featuresButton.classList.add("sw5e-starship-hidden-tab");
+	featuresButton.hidden = true;
+	featuresButton.setAttribute("aria-hidden", "true");
+	if ( isActive ) activateSheetTab(root, app, STOCK_CARGO_TAB_ID);
+}
+
+function insertCustomTabButtons(nav, buttons = []) {
+	const stockButtons = getTabButtons(nav).filter(button => !buttons.includes(button));
+	const anchor = STOCK_STARSHIP_TAB_ORDER
+		.map(tabId => stockButtons.find(button => button.dataset.tab === tabId))
+		.find(Boolean)
+		?? stockButtons.find(button => !button.hidden)
+		?? null;
+
+	for ( const button of buttons ) {
+		if ( anchor?.parentElement === nav ) nav.insertBefore(button, anchor);
+		else nav.append(button);
+	}
 }
 
 function activatePrimaryTab(root, tabId) {
@@ -166,6 +207,14 @@ function normalizeSourceLabel(source) {
 	if ( typeof source === "string" ) return source && source !== "[object Object]" ? source : "";
 	if ( source && typeof source === "object" ) return source.custom ?? source.book ?? source.label ?? "";
 	return "";
+}
+
+function sanitizeImagePath(value) {
+	if ( typeof value !== "string" ) return "";
+	const normalized = value.trim();
+	if ( !normalized ) return "";
+	if ( ["undefined", "null", "nan"].includes(normalized.toLowerCase()) ) return "";
+	return normalized;
 }
 
 function formatPool(current, max) {
@@ -361,7 +410,7 @@ function makeItemEntry(item, defaultTab = STOCK_CARGO_TAB_ID, actor = null) {
 		id: item.id,
 		name: item.name,
 		meta: getItemMeta(item, actor),
-		img: item.img,
+		img: sanitizeImagePath(item.img),
 		defaultTab
 	};
 }
@@ -605,7 +654,7 @@ async function renderStarshipLayer(app, html, data) {
 	const [rendered, renderedFeatures] = await Promise.all([
 		foundry.applications.handlebars.renderTemplate(getModulePath("templates/starship-sheet-layer.hbs"), {
 			actorName: actor.name,
-			actorImage: actor.img,
+			actorImage: sanitizeImagePath(actor.img),
 			title: localizeOrFallback("TYPES.Actor.starshipPl", "Starship Systems"),
 			subtitle: localizeOrFallback("TYPES.Actor.vehicle", "Vehicle Actor"),
 			headerBadges: makeHeaderBadges(actor),
@@ -625,13 +674,13 @@ async function renderStarshipLayer(app, html, data) {
 	tabButton.className = "sw5e-starship-tab-button";
 	tabButton.dataset.group = "primary";
 	tabButton.dataset.tab = STARSHIP_TAB_ID;
-	tabButton.innerHTML = `<span>SW5E</span>`;
+	tabButton.innerHTML = `<span>SotG</span>`;
 
 	const featuresTabButton = document.createElement("a");
 	featuresTabButton.className = "sw5e-starship-tab-button sw5e-starship-features-tab-button";
 	featuresTabButton.dataset.group = "primary";
 	featuresTabButton.dataset.tab = STARSHIP_FEATURES_TAB_ID;
-	featuresTabButton.innerHTML = `<span>${localizeOrFallback("SW5E.Feature.Starship.LabelPl", "Starship Features")}</span>`;
+	featuresTabButton.innerHTML = `<span>SotG Features</span>`;
 
 	const wrapper = document.createElement("section");
 	wrapper.className = "tab sw5e-starship-tab";
@@ -649,8 +698,8 @@ async function renderStarshipLayer(app, html, data) {
 	featuresWrapper.hidden = getStarshipActiveTab(app) !== STARSHIP_FEATURES_TAB_ID;
 	if ( getStarshipActiveTab(app) === STARSHIP_FEATURES_TAB_ID ) featuresWrapper.classList.add("active");
 
-	nav.append(tabButton);
-	nav.append(featuresTabButton);
+	hideStockFeaturesTab(root, app, nav);
+	insertCustomTabButtons(nav, [tabButton, featuresTabButton]);
 	panelParent.append(wrapper);
 	panelParent.append(featuresWrapper);
 

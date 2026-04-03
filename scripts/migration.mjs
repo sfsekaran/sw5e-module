@@ -377,6 +377,20 @@ function convertSourceByType(documentName, source, migrationData, options={}) {
 	};
 }
 
+function getTokenActorDeltaSource(tokenData) {
+	if ( tokenData?.delta && (typeof tokenData.delta === "object") ) return foundry.utils.deepClone(tokenData.delta);
+	if ( tokenData?.actorData && (typeof tokenData.actorData === "object") ) return foundry.utils.deepClone(tokenData.actorData);
+	return null;
+}
+
+function setTokenActorDeltaUpdate(tokenData, update, deltaSource, actorFlags) {
+	if ( foundry.utils.isEmpty(update) ) return update;
+	const prepared = prepareMigratedSource(deltaSource, update, actorFlags);
+	if ( tokenData?.delta && (typeof tokenData.delta === "object") ) return { delta: prepared };
+	if ( tokenData?.actorData && (typeof tokenData.actorData === "object") ) return { actorData: prepared };
+	return {};
+}
+
 /**
  * Convert a legacy SW5E world payload and import it into the current world.
  * @param {object} payload                                     Parsed legacy world data payload.
@@ -773,6 +787,12 @@ export const migrateSceneData = function(scene, migrationData) {
 		_migrateImage(t, update);
 		_migrateObjectFlags(t, update);
 		if ( !game.actors.has(t.actorId) ) update.actorId = null;
+		const deltaSource = (!t.actorLink && t.actorId) ? getTokenActorDeltaSource(t) : null;
+		if ( deltaSource ) {
+			const actorFlags = { persistSourceMigration: false };
+			const actorUpdate = migrateActorData(deltaSource, migrationData, actorFlags, {});
+			Object.assign(update, setTokenActorDeltaUpdate(t, actorUpdate, deltaSource, actorFlags));
+		}
 		if ( !foundry.utils.isEmpty(update) ) arr.push({ ...update, _id: t._id });
 		return arr;
 	}, []);
@@ -878,12 +898,22 @@ function _migrateImage(objectData, updateData) {
 	const isActorAvatarTarget = actorTypesWithBlankAvatarFallback.has(objectData?.type);
 	const isLegacyDndIcon = path => /^systems\/dnd5e\/icons\/.+$/.test(path ?? "");
 	const isLootBagFallback = path => path === "icons/svg/item-bag.svg";
+	const isInvalidImageValue = path => {
+		if ( typeof path !== "string" ) return false;
+		const normalized = path.trim().toLowerCase();
+		return ["", "undefined", "null", "nan"].includes(normalized);
+	};
 	const props = ["img", "texture.src", "prototypeToken.texture.src"];
 	// ActiveEffect5e#icon is deprecated since Foundry v12 (migrated to img); avoid accessing it.
 	const isEffect = objectData?.documentName === "ActiveEffect" || (objectData?.changes && Array.isArray(objectData.changes));
 	if ( !isEffect ) props.push("icon");
 	for (const prop of props) {
 		const path = foundry.utils.getProperty(objectData, prop);
+		if ( isInvalidImageValue(path) ) {
+			updateData[prop] = "";
+			console.log("Cleared invalid image path", objectData.name, "prop", prop, "old", path);
+			continue;
+		}
 
 		let newPath = path?.replace("systems/sw5e/packs/Icons", getModulePath("icons/packs"));
 		newPath = newPath?.replace("modules/sw5e/icons/", `${getModulePath("icons")}/`);

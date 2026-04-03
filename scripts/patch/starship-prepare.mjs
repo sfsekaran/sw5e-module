@@ -1,5 +1,11 @@
 import { getModuleId, HOOKS_NAMESPACE } from "../module-support.mjs";
-import { applyDerivedStarshipMovement, applyDerivedStarshipTravel, deriveStarshipMovementData, getDerivedStarshipRuntime, mergeVehicleAbilityValues } from "../starship-data.mjs";
+import {
+	applyDerivedStarshipMovement,
+	applyDerivedStarshipTravel,
+	getDerivedStarshipRuntime,
+	getLegacyStarshipActorSystem,
+	mergeVehicleAbilityValues
+} from "../starship-data.mjs";
 
 function getActorSource(model) {
 	const candidates = [
@@ -20,38 +26,46 @@ export function patchStarshipPrepare() {
 	try {
 		libWrapper.register(getModuleId(), "dnd5e.dataModels.actor.VehicleData.prototype.prepareAbilities", function(wrapped, ...args) {
 			const actorSource = getActorSource(this);
-			let legacySystem = null;
-			if ( actorSource?.flags?.sw5e?.legacyStarshipActor?.type === "starship" ) {
-				legacySystem = actorSource.flags.sw5e.legacyStarshipActor.system ?? {};
-				const legacyAbilities = legacySystem.abilities ?? actorSource.system?.abilities;
+			const isStarship = actorSource?.flags?.sw5e?.legacyStarshipActor?.type === "starship";
+			if ( isStarship ) {
+				const starshipSystem = getLegacyStarshipActorSystem({
+					_source: actorSource,
+					flags: actorSource.flags,
+					system: actorSource.system
+				});
+				const legacyAbilities = starshipSystem.abilities ?? actorSource.system?.abilities;
 				const mergedAbilities = mergeVehicleAbilityValues(this.abilities, legacyAbilities);
 				if ( mergedAbilities ) {
 					this.abilities = mergedAbilities;
 					if ( actorSource.system && (typeof actorSource.system === "object") ) {
 						actorSource.system.abilities = mergedAbilities;
 					}
+					const legacySnapshot = actorSource.flags?.sw5e?.legacyStarshipActor?.system;
+					if ( legacySnapshot && (typeof legacySnapshot === "object") ) legacySnapshot.abilities = mergedAbilities;
 				}
-
 			}
 
 			const result = wrapped(...args);
-			if ( legacySystem ) {
+			if ( isStarship ) {
 				const runtime = getDerivedStarshipRuntime({
-					flags: { sw5e: { legacyStarshipActor: { system: legacySystem } } },
+					_source: actorSource,
+					flags: actorSource.flags,
 					items: { contents: actorSource.items ?? [] },
 					system: {
 						abilities: this.abilities ?? actorSource.system?.abilities ?? {},
 						attributes: { movement: this.attributes?.movement ?? actorSource.system?.attributes?.movement ?? {} }
 					}
 				});
-				const movement = runtime.movement ?? deriveStarshipMovementData({
-					legacySystem,
-					items: actorSource.items ?? [],
-					liveAbilities: this.abilities ?? actorSource.system?.abilities ?? {},
-					liveMovement: this.attributes?.movement ?? actorSource.system?.attributes?.movement ?? {}
-				});
-				applyDerivedStarshipMovement(legacySystem, movement);
-				applyDerivedStarshipTravel(legacySystem, runtime.travel ?? {});
+				const movement = runtime.movement ?? {};
+				if ( actorSource.system && (typeof actorSource.system === "object") ) {
+					applyDerivedStarshipMovement(actorSource.system, movement);
+					applyDerivedStarshipTravel(actorSource.system, runtime.travel ?? {});
+				}
+				const legacySnapshot = actorSource.flags?.sw5e?.legacyStarshipActor?.system;
+				if ( legacySnapshot && (typeof legacySnapshot === "object") ) {
+					applyDerivedStarshipMovement(legacySnapshot, movement);
+					applyDerivedStarshipTravel(legacySnapshot, runtime.travel ?? {});
+				}
 				if ( this.attributes?.movement && (typeof this.attributes.movement === "object") ) {
 					this.attributes.movement.fly = movement.space;
 					if ( movement.units ) this.attributes.movement.units = movement.units;

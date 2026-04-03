@@ -72,6 +72,8 @@ The module includes Heretic's Guide to the Galaxy species content as dedicated b
 - The SW currency configuration app now uses the module namespace correctly, appears under `SW5E` in settings, and supports a bounded scrollable layout.
 - Legacy HGTTG species are now separated from the main `Species` compendium instead of being merged into the core species roster.
 - Repository line-ending rules are now pinned with `.gitattributes` so generated compendium source files behave consistently across Windows and non-Windows development environments.
+- Vehicle-backed starships are now the authoritative SW5E runtime path, with legacy and character-backed starship data normalized into the vehicle sheet workflow during migration and pack conversion.
+- Starship sheet navigation now presents `SotG` and `SotG Features` ahead of the stock tabs, while hiding the stock `Features` tab on SW5E starship sheets so the remaining tabs can use the full width.
 
 ### Fixed
 
@@ -80,6 +82,7 @@ The module includes Heretic's Guide to the Galaxy species content as dedicated b
 - Currency fields now render correctly on the Inventory tab for enabled denominations, and tooltip text no longer shows unresolved placeholders.
 - Legacy image migration no longer replaces actor and vehicle avatars with the loot bag icon, and affected worlds are repaired during migration.
 - Stale dnd5e image references in migrated data and compendium content no longer cause repeated missing-image errors.
+- Starship compendium builds now preserve vehicle-backed system data such as `details.type`, and migrated starships retain their SW5E movement, travel, crew, and routing data more consistently.
 
 ### [1.2.9] - 2026-03-13
 

@@ -438,8 +438,28 @@
   font-size: var(--font-size-11);
 }
 
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sheet-navigation[data-group='primary'],
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-fallback-nav {
+  display: flex;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sheet-navigation[data-group='primary'] > [data-tab],
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-fallback-nav > [data-tab] {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+}
+
 .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab-button {
+  display: inline-flex;
+  justify-content: center;
   white-space: nowrap;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-hidden-tab {
+  display: none !important;
 }
 
 .dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab-host {
