@@ -59,7 +59,7 @@ The module includes Heretic's Guide to the Galaxy species content as dedicated b
 
 ## Changelog
 
-### [1.3.0] - 2026-03-27
+### [1.3.0] - 2026-04-03
 
 ### Added
 
