@@ -174,7 +174,10 @@
     "fuelCap": 600,
     "foodCap": 9600000,
     "size": "huge",
-    "startingEquipment": []
+    "startingEquipment": [],
+    "details": {
+      "type": "space"
+    }
   },
   "ownership": {
     "default": 0

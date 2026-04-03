@@ -16,7 +16,7 @@ const STARSHIP_PACKS = new Set([
 
 const STARSHIP_TAB_ID = "sw5e-starship";
 const STARSHIP_FEATURES_TAB_ID = "sw5e-starship-features";
-const STOCK_CARGO_TAB_ID = "cargo";
+const STOCK_CARGO_TAB_ID = "inventory";
 const CUSTOM_STARSHIP_TAB_IDS = new Set([STARSHIP_TAB_ID, STARSHIP_FEATURES_TAB_ID]);
 
 function getHtmlRoot(html) {
@@ -91,14 +91,16 @@ function activateSheetTab(root, app, tabId) {
 	}
 
 	setStarshipActiveTab(app, null);
-	const button = getTabButton(root, tabId);
-	if ( button ) {
-		button.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true }));
-		if ( !button.classList.contains("active") ) activatePrimaryTab(root, tabId);
-		return;
+	root.querySelectorAll(".sw5e-starship-tab").forEach(panel => { panel.classList.remove("active"); panel.hidden = true; });
+	if ( typeof app?.changeTab === "function" ) {
+		try {
+			app.changeTab(tabId, "primary", { force: true, updatePosition: false });
+		} catch(e) {
+			activatePrimaryTab(root, tabId);
+		}
+	} else {
+		activatePrimaryTab(root, tabId);
 	}
-
-	activatePrimaryTab(root, tabId);
 }
 
 function ensureStarshipTabTargets(root) {
@@ -239,8 +241,9 @@ function getDeploymentCounts(legacySystem) {
 	const deployment = legacySystem.attributes?.deployment ?? {};
 	const crew = Array.isArray(deployment.crew?.items) ? deployment.crew.items : Array.isArray(deployment.crew) ? deployment.crew : [];
 	const passenger = Array.isArray(deployment.passenger?.items) ? deployment.passenger.items : Array.isArray(deployment.passenger) ? deployment.passenger : [];
+	const rawPilot = deployment.pilot?.value ?? deployment.pilot ?? "";
 	return {
-		pilot: deployment.pilot?.value ?? deployment.pilot ?? "",
+		pilot: typeof rawPilot === "string" ? rawPilot : "",
 		crew: crew.length,
 		passenger: passenger.length
 	};
@@ -343,7 +346,7 @@ function getItemMeta(item, actor = null) {
 		return item.system?.type?.subtype ?? "Modification";
 	}
 
-	if ( item.system?.type?.subtype ) return item.system.type.subtype;
+	if ( item.system?.type?.subtype ) return game.i18n.localize(item.system.type.subtype);
 	const pack = getCompendiumPack(item);
 	if ( actor && item.type === "weapon" ) {
 		const routingMultiplier = getDerivedStarshipRuntime(actor).routing?.weaponsMultiplier ?? 1;
@@ -365,13 +368,13 @@ function makeItemEntry(item, defaultTab = STOCK_CARGO_TAB_ID, actor = null) {
 
 function categorizeStarshipItems(actor) {
 	const groups = {
-		size: { label: localizeOrFallback("TYPES.Item.starshipsizePl", "Starship Size"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" },
-		actions: { label: localizeOrFallback("SW5E.Feature.StarshipAction.Label", "Starship Actions"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" },
-		roles: { label: localizeOrFallback("SW5E.Feature.Deployment.Label", "Crew Roles"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" },
-		features: { label: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" },
-		equipment: { label: localizeOrFallback("SW5E.Equipment", "Equipment"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" },
-		modifications: { label: localizeOrFallback("TYPES.Item.starshipmodPl", "Modifications"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" },
-		weapons: { label: localizeOrFallback("SW5E.Weapon", "Weapons"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo" }
+		size: { label: localizeOrFallback("TYPES.Item.starshipsizePl", "Starship Size"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
+		actions: { label: localizeOrFallback("SW5E.Feature.StarshipAction.Label", "Starship Actions"), items: [], defaultTab: null, manageLabel: "Features", scrollTo: "stations" },
+		roles: { label: localizeOrFallback("SW5E.Feature.Deployment.Label", "Crew Roles"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
+		features: { label: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"), items: [], defaultTab: null, manageLabel: "Features", scrollTo: "stations" },
+		equipment: { label: localizeOrFallback("SW5E.Equipment", "Equipment"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
+		modifications: { label: localizeOrFallback("TYPES.Item.starshipmodPl", "Modifications"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
+		weapons: { label: localizeOrFallback("SW5E.Weapon", "Weapons"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" }
 	};
 
 	for ( const item of actor.items ) {
@@ -397,6 +400,8 @@ function buildGroupContext(group) {
 		count: group.items.length,
 		defaultTab: group.defaultTab,
 		manageLabel: group.manageLabel,
+		scrollTo: group.scrollTo,
+		firstItemId: group.items[0]?.id ?? null,
 		items: group.items.sort((left, right) => left.name.localeCompare(right.name)).map(item => makeItemEntry(item, group.defaultTab, group.actor))
 	};
 }
@@ -485,12 +490,15 @@ async function renderStarshipSidebarSummary(root, actor) {
 }
 
 function focusSheetItem(root, app, itemId, tabId = STOCK_CARGO_TAB_ID) {
-	activateSheetTab(root, app, tabId);
 	window.setTimeout(() => {
 		const candidates = root.querySelectorAll(`[data-item-id="${itemId}"]`);
 		const target = Array.from(candidates).find(node => !node.closest(".sw5e-starship-tab"));
 		if ( !target ) return;
-		target.scrollIntoView({ behavior: "smooth", block: "center" });
+		// Only switch tabs if the item is inside a named tab panel; non-tab sections (e.g. stations sidebar) are always visible.
+		const panel = target.closest(".tab[data-group='primary']");
+		if ( panel?.dataset.tab ) activateSheetTab(root, app, panel.dataset.tab);
+		// Defer scroll to next frame so the tab panel is visible (display:none → display:block) before scrollIntoView runs.
+		window.requestAnimationFrame(() => target.scrollIntoView({ behavior: "smooth", block: "center" }));
 		target.classList.add("sw5e-starship-item-pulse");
 		window.setTimeout(() => target.classList.remove("sw5e-starship-item-pulse"), 1800);
 	}, 50);
@@ -683,7 +691,8 @@ async function renderStarshipLayer(app, html, data) {
 		}
 
 		if ( action === "open-tab" ) {
-			activateSheetTab(root, app, actionNode.dataset.tab);
+			const firstItemId = actionNode.dataset.firstItemId;
+			if ( firstItemId ) focusSheetItem(root, app, firstItemId);
 			return;
 		}
 

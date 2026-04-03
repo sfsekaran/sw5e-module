@@ -31,6 +31,7 @@ export function patchStarshipPrepare() {
 						actorSource.system.abilities = mergedAbilities;
 					}
 				}
+
 			}
 
 			const result = wrapped(...args);

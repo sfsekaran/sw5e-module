@@ -177,6 +177,9 @@
 	"DND5E.DamageThunder": "Sonic",
 
 	"SW5E.EquipmentFocusGenerator": "Focus Generator",
+	"SW5E.EquipmentHyperdrive": "Hyperdrive",
+	"SW5E.EquipmentPowerCoupling": "Power Coupling",
+	"SW5E.EquipmentReactor": "Reactor",
 	"SW5E.EquipmentStarshipArmor": "Starship Armor",
 	"SW5E.EquipmentWristpad": "Wristpad",
 	"SW5E.CreatureDroid": "Droid",
