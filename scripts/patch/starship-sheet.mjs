@@ -346,7 +346,7 @@ function getItemMeta(item, actor = null) {
 		return item.system?.type?.subtype ?? "Modification";
 	}
 
-	if ( item.system?.type?.subtype ) return item.system.type.subtype;
+	if ( item.system?.type?.subtype ) return game.i18n.localize(item.system.type.subtype);
 	const pack = getCompendiumPack(item);
 	if ( actor && item.type === "weapon" ) {
 		const routingMultiplier = getDerivedStarshipRuntime(actor).routing?.weaponsMultiplier ?? 1;
