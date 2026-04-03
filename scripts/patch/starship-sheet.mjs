@@ -610,14 +610,14 @@ async function renderStarshipLayer(app, html, data) {
 			subtitle: localizeOrFallback("TYPES.Actor.vehicle", "Vehicle Actor"),
 			headerBadges: makeHeaderBadges(actor),
 			overviewCards: makeOverviewCards(actor),
-			groups: workspaceGroups.map(group => ({ ...group, supportsSheetNavigation: integrated, showManageButton: integrated })),
+			groups: workspaceGroups.map(group => ({ ...group, supportsSheetNavigation: integrated })),
 			legacyNotes: getLegacyNotes(actor),
 			skills
 		}),
 		foundry.applications.handlebars.renderTemplate(getModulePath("templates/starship-features-layer.hbs"), {
 			title: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"),
 			subtitle: "Manage configuration items and remove or replace them through the stock vehicle sheet.",
-			groups: featureGroups.map(group => ({ ...group, supportsSheetNavigation: integrated, showManageButton: integrated }))
+			groups: featureGroups.map(group => ({ ...group, supportsSheetNavigation: integrated }))
 		})
 	]);
 
