@@ -54,6 +54,29 @@ Key option: `{ force: true }` bypasses the early-return guard that does nothing 
 
 The default `tabGroups.primary = "inventory"`.
 
+### Item categorization — what goes where
+
+`VehicleActorSheet._assignItemCategories(item)` determines which part of the stock sheet each item renders in:
+
+```javascript
+if ( item.type === "container" )       → inventory tab
+if ( item.type === "facility" )        → facilities
+if ( item.system.isMountable )         → stations (crew stations list)
+if ( "inventorySection" in model )     → inventory tab   ← weapon, equipment, loot, consumable, tool
+else                                   → stations (features section)  ← feat, sw5e-module.maneuver
+```
+
+**Practical rule for SW5E starship items:**
+
+| Item type | Goes to |
+|-----------|---------|
+| `feat` (starship actions, features, deployments, ventures) | `stations` sidebar — always visible, no tab switch needed |
+| `weapon` (starship weapons) | `inventory` tab |
+| `equipment` (reactors, hyperdrives, power couplings) | `inventory` tab |
+| `loot` / physical items (modifications) | `inventory` tab |
+
+This matters for "Find in Sheet" navigation: `focusSheetItem` determines the correct tab from the DOM (`.tab[data-group='primary']`). For feat-type items it finds them in `stations` (panel = null → no tab switch, just scroll). For physical items it finds them in the `inventory` panel → switches to the cargo tab then scrolls.
+
 ## SW5E Custom Tab Injection
 
 `renderStarshipLayer` (in `starship-sheet.mjs`) hooks into `renderActorSheetV2` and injects two custom tabs into the primary nav:
@@ -135,3 +158,4 @@ Do not put `data-action="tab"` on non-nav elements (e.g., action buttons) even i
 | Features tab blanks out after "Find in Sheet" | `data-application-part` fallback resolves to `"stations"` (not a nav tab); `changeTab` throws; catch falls to `activatePrimaryTab` which deactivates all panels | Only resolve tab ID from `.tab[data-group='primary']`, not `data-application-part` |
 | Custom tab button stays highlighted after navigating away | Custom button `.active` not removed; `app.changeTab` handles this automatically when `force: true` is used | Ensure stock-tab path calls `app.changeTab` with `force: true` |
 | Stock tab button click dispatched as a synthetic event | `changeTab` exits early (same reasons above); using `dispatchEvent` bypasses the `force` option | Use `app.changeTab` directly instead of synthesizing click events |
+| `scrollIntoView` on a tab panel item does nothing | Panel was `display:none` when `scrollIntoView` was called; browser has not yet painted the `display:block` change | Wrap `scrollIntoView` in `window.requestAnimationFrame(...)` after `activateSheetTab` |
