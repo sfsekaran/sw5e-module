@@ -1,5 +1,6 @@
 import { getModulePath } from "../module-support.mjs";
 import { getDerivedStarshipRuntime, getLegacyStarshipActorSystem, getStarshipSkillEntries, rollStarshipSkill } from "../starship-data.mjs";
+import { buildVehicleStarshipCrewContext, buildVehicleAvailableActors, deployStarshipCrew, undeployStarshipCrew, toggleStarshipActiveCrew } from "../starship-character.mjs";
 
 const STARSHIP_PACKS = new Set([
 	"starshipactions",
@@ -633,6 +634,60 @@ async function useStarshipItem(item, actor = item?.actor) {
 	item.sheet?.render(true);
 }
 
+function escapeHtml(str) {
+	return String(str ?? "")
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/"/g, "&quot;");
+}
+
+async function openAddCrewDialog(actor) {
+	const available = buildVehicleAvailableActors(actor);
+
+	if ( !available.length ) {
+		ui?.notifications?.info("No actors available to add. Create character or NPC actors in the Actors tab first.");
+		return;
+	}
+
+	const rows = available.map(a => `
+		<div class="sw5e-add-crew-entry${a.assignedElsewhere ? " sw5e-add-crew-elsewhere" : ""}">
+			<img src="${escapeHtml(a.img || "icons/svg/mystery-man.svg")}" alt="${escapeHtml(a.name)}" />
+			<div class="sw5e-add-crew-copy">
+				<strong>${escapeHtml(a.name)}</strong>
+				${a.assignedElsewhere ? `<span class="sw5e-add-crew-note">Aboard: ${escapeHtml(a.assignedShipName)}</span>` : ""}
+			</div>
+			<div class="sw5e-add-crew-roles">
+				<button type="button" data-actor-uuid="${escapeHtml(a.uuid)}" data-deploy-role="pilot">Pilot</button>
+				<button type="button" data-actor-uuid="${escapeHtml(a.uuid)}" data-deploy-role="crew">Crew</button>
+				<button type="button" data-actor-uuid="${escapeHtml(a.uuid)}" data-deploy-role="passenger">Passenger</button>
+			</div>
+		</div>
+	`).join("");
+
+	const content = `<div class="sw5e-add-crew-dialog"><div class="sw5e-add-crew-list">${rows}</div></div>`;
+
+	await foundry.applications.api.DialogV2.wait({
+		window: { title: "Add Crew Member" },
+		content,
+		buttons: [{ action: "cancel", label: "Cancel", icon: "fas fa-times" }],
+		rejectClose: false,
+		render: (_event, dialog) => {
+			dialog.element.querySelectorAll("[data-actor-uuid][data-deploy-role]").forEach(btn => {
+				btn.addEventListener("click", async () => {
+					btn.disabled = true;
+					try {
+						await deployStarshipCrew(actor, btn.dataset.actorUuid, btn.dataset.deployRole);
+					} catch ( err ) {
+						console.error("SW5E MODULE | Failed to add crew member.", err);
+					}
+					await dialog.close();
+				});
+			});
+		}
+	});
+}
+
 async function renderStarshipLayer(app, html, data) {
 	const actor = data.actor ?? app.actor;
 	if ( !isSw5eStarshipActor(actor) ) return;
@@ -640,7 +695,7 @@ async function renderStarshipLayer(app, html, data) {
 	const root = getHtmlRoot(html);
 	if ( !root ) return;
 	root.classList.add("sw5e-starship-sheet");
-	root.querySelectorAll(".sw5e-starship-tab, .sw5e-starship-tab-button, .sw5e-starship-tab-host, .sw5e-starship-sidebar-summary").forEach(node => node.remove());
+
 	await ensureWarningsDialog(root, app, actor);
 	await renderStarshipSidebarSummary(root, actor);
 
@@ -661,7 +716,8 @@ async function renderStarshipLayer(app, html, data) {
 			overviewCards: makeOverviewCards(actor),
 			groups: workspaceGroups.map(group => ({ ...group, supportsSheetNavigation: integrated })),
 			legacyNotes: getLegacyNotes(actor),
-			skills
+			skills,
+			crew: buildVehicleStarshipCrewContext(actor)
 		}),
 		foundry.applications.handlebars.renderTemplate(getModulePath("templates/starship-features-layer.hbs"), {
 			title: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"),
@@ -669,6 +725,20 @@ async function renderStarshipLayer(app, html, data) {
 			groups: featureGroups.map(group => ({ ...group, supportsSheetNavigation: integrated }))
 		})
 	]);
+
+	// If our tab wrappers are already in the DOM, update their content in place.
+	// This avoids removing and re-inserting elements, which would reset scroll position.
+	// Event listeners attached via delegation to the wrapper elements survive innerHTML updates.
+	const existingWrapper = panelParent.querySelector(`.sw5e-starship-tab[data-tab="${STARSHIP_TAB_ID}"]`);
+	const existingFeaturesWrapper = panelParent.querySelector(`.sw5e-starship-tab[data-tab="${STARSHIP_FEATURES_TAB_ID}"]`);
+	if ( existingWrapper && existingFeaturesWrapper ) {
+		existingWrapper.innerHTML = rendered;
+		existingFeaturesWrapper.innerHTML = renderedFeatures;
+		return;
+	}
+
+	// First render: clean up any leftover nodes, create wrappers, and wire up all listeners.
+	root.querySelectorAll(".sw5e-starship-tab, .sw5e-starship-tab-button, .sw5e-starship-tab-host").forEach(node => node.remove());
 
 	const tabButton = document.createElement("a");
 	tabButton.className = "sw5e-starship-tab-button";
@@ -752,6 +822,28 @@ async function renderStarshipLayer(app, html, data) {
 
 	wrapper.addEventListener("click", handleTabClick);
 	featuresWrapper.addEventListener("click", handleTabClick);
+
+	wrapper.addEventListener("click", async event => {
+		const btn = event.target.closest("[data-sw5e-crew-command]");
+		if ( !btn ) return;
+		event.preventDefault();
+		if ( btn.disabled ) return;
+		btn.disabled = true;
+		try {
+			const command = btn.dataset.sw5eCrewCommand;
+			const uuid = btn.dataset.actorUuid;
+			if ( command === "open-add-crew" ) { await openAddCrewDialog(actor); return; }
+			else if ( command === "deploy" ) await deployStarshipCrew(actor, uuid, btn.dataset.deployRole);
+			else if ( command === "remove" ) await undeployStarshipCrew(actor, uuid);
+			else if ( command === "toggle-active" ) await toggleStarshipActiveCrew(actor, uuid);
+			else if ( command === "set-pilot" ) await deployStarshipCrew(actor, uuid, "pilot");
+			else if ( command === "undeploy-pilot" ) await undeployStarshipCrew(actor, uuid, ["pilot"]);
+		} catch ( err ) {
+			console.error("SW5E MODULE | Crew command failed.", err);
+		} finally {
+			btn.disabled = false;
+		}
+	});
 
 	if ( integrated ) {
 		nav.querySelectorAll("[data-tab]").forEach(item => {

@@ -135,305 +135,6 @@
   white-space: nowrap;
 }
 
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-tab {
-  gap: 0.75rem;
-  padding: 0.75rem;
-  overflow: auto;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-tab.active {
-  display: flex;
-  flex-direction: column;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-summary {
-  display: grid;
-  grid-template-columns: minmax(260px, 1.15fr) minmax(0, 2fr);
-  gap: 0.75rem;
-  align-items: start;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-identity {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-  min-width: 0;
-  padding: 0.75rem;
-  border: 1px solid var(--dnd5e-color-card-border);
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--dnd5e-color-parchment) 84%, black);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-identity .profile {
-  width: 72px;
-  height: 72px;
-  border-radius: 10px;
-  object-fit: cover;
-  flex: 0 0 auto;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-identity h2,
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-panel h3 {
-  margin: 0;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-identity .identity-copy {
-  min-width: 0;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-identity .identity-copy h2 {
-  font-size: var(--font-size-24);
-  line-height: 1.1;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-identity p {
-  margin: 0.1rem 0;
-  color: var(--dnd5e-color-text-muted);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
-  gap: 0.5rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-card,
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-panel {
-  border: 1px solid var(--dnd5e-color-card-border);
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--dnd5e-color-parchment) 82%, black);
-  padding: 0.65rem 0.75rem;
-  min-width: 0;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-card h3,
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-card span {
-  margin: 0;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-card h3 {
-  font-size: var(--font-size-11);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--dnd5e-color-text-muted);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-card strong {
-  display: block;
-  margin: 0.15rem 0 0.1rem;
-  font-size: var(--font-size-18);
-  line-height: 1.1;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-layout,
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-groups {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 0.75rem;
-  align-items: start;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-layout-overview {
-  grid-template-columns: 1fr;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-layout-crew {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-groups {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-panel header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-panel header span {
-  color: var(--dnd5e-color-text-muted);
-  font-size: var(--font-size-11);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-panel-compact {
-  padding-bottom: 0.55rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-panel-empty {
-  align-self: start;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-pill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(94px, 1fr));
-  gap: 0.35rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-pill,
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-item {
-  border: 1px solid var(--dnd5e-color-card-border);
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--dnd5e-color-parchment) 92%, white);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-pill {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.35rem 0.5rem;
-  font-size: var(--font-size-12);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-items {
-  display: grid;
-  gap: 0.35rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-crew-list {
-  display: grid;
-  gap: 0.45rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-crew-entry {
-  display: grid;
-  grid-template-columns: 32px minmax(0, 1fr) auto;
-  align-items: start;
-  gap: 0.5rem;
-  padding: 0.45rem 0.55rem;
-  border: 1px solid var(--dnd5e-color-card-border);
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--dnd5e-color-parchment) 92%, white);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-crew-entry.active {
-  border-color: var(--dnd5e-color-gold);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-crew-entry img {
-  width: 32px;
-  height: 32px;
-  border: 0;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-crew-entry .crew-copy {
-  min-width: 0;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-crew-entry .crew-copy strong,
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-item .item-name {
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-crew-entry .crew-copy span {
-  color: var(--dnd5e-color-text-muted);
-  font-size: var(--font-size-11);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  margin-top: 0.2rem;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-badge {
-  padding: 0.1rem 0.35rem;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--dnd5e-color-parchment) 86%, white);
-  border: 1px solid var(--dnd5e-color-card-border);
-  font-size: 10px;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-badge.active {
-  border-color: var(--dnd5e-color-gold);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .crew-controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.25rem;
-  align-items: center;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .crew-controls button {
-  white-space: nowrap;
-  min-height: 24px;
-  padding: 0.1rem 0.4rem;
-  font-size: var(--font-size-11);
-  line-height: 1.1;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-empty {
-  margin: 0;
-  color: var(--dnd5e-color-text-muted);
-  padding: 0.45rem 0.55rem;
-  border: 1px dashed var(--dnd5e-color-card-border);
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--dnd5e-color-parchment) 90%, black);
-  font-size: var(--font-size-12);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-layout-overview .sw5e-starship-panel {
-  max-width: 100%;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-item .item-type {
-  color: var(--dnd5e-color-text-muted);
-  font-size: var(--font-size-11);
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-item {
-  display: grid;
-  grid-template-columns: 32px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 0.55rem;
-  width: 100%;
-  padding: 0.4rem 0.55rem;
-  text-align: left;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-item img {
-  width: 32px;
-  height: 32px;
-  border: 0;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-.dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-item.active {
-  border-color: var(--dnd5e-color-gold);
-}
-
-@media (max-width: 900px) {
-  .dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-summary,
-  .dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-layout-overview,
-  .dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-layout-crew {
-    grid-template-columns: 1fr;
-  }
-
-  .dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .dnd5e2.sheet.actor.sw5e-starship-character-sheet .sw5e-starship-crew-entry {
-    grid-template-columns: 32px minmax(0, 1fr);
-  }
-
-  .dnd5e2.sheet.actor.sw5e-starship-character-sheet .crew-controls {
-    grid-column: 1 / -1;
-    justify-content: flex-start;
-  }
-}
-
 .dnd5e2.sheet.actor.sw5e-starship-sheet .sheet-tabs {
   font-size: var(--font-size-11);
 }
@@ -839,4 +540,129 @@
     justify-items: start;
     justify-content: start;
   }
+}
+
+
+/* Crew Management Section */
+
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-starship-crew-section {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-crew-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-crew-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  margin-top: 0.15rem;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-crew-badge {
+  padding: 0.1rem 0.35rem;
+  border-radius: 999px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  background: rgb(255 255 255 / 7%);
+  color: var(--dnd5e-color-tan);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-crew-badge-pilot {
+  border-color: rgb(230 171 72 / 40%);
+  background: rgb(230 171 72 / 12%);
+  color: var(--dnd5e-color-gold);
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-crew-badge-active {
+  border-color: rgb(100 200 100 / 35%);
+  background: rgb(100 200 100 / 10%);
+  color: rgb(160 220 160);
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-crew-active {
+  border-color: rgb(230 171 72 / 35%);
+}
+
+.dnd5e2.sheet.actor.sw5e-starship-sheet .sw5e-starship-tab .sw5e-crew-empty {
+  margin: 0;
+  color: var(--dnd5e-color-tan);
+  font-size: 0.8rem;
+  padding: 0.5rem 0.6rem;
+  border: 1px dashed rgb(255 255 255 / 12%);
+  border-radius: 6px;
+}
+
+/* Add Crew Dialog */
+
+.sw5e-add-crew-dialog {
+  padding: 0.25rem 0;
+}
+
+.sw5e-add-crew-list {
+  display: grid;
+  gap: 0.4rem;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.sw5e-add-crew-entry {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--color-border-light-tertiary, #c9c7b8);
+  border-radius: 6px;
+}
+
+.sw5e-add-crew-entry.sw5e-add-crew-elsewhere {
+  opacity: 0.6;
+}
+
+.sw5e-add-crew-entry img {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.sw5e-add-crew-copy {
+  display: grid;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.sw5e-add-crew-copy strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sw5e-add-crew-note {
+  font-size: var(--font-size-11);
+  color: var(--color-text-dark-secondary, #4b4a44);
+}
+
+.sw5e-add-crew-roles {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.sw5e-add-crew-roles button {
+  min-height: 26px;
+  padding: 0.1rem 0.5rem;
+  font-size: var(--font-size-12);
+  line-height: 1.1;
+  white-space: nowrap;
+  cursor: pointer;
 }

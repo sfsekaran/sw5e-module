@@ -41,6 +41,52 @@
     </section>
   {{/if}}
 
+  {{#if crew}}
+    <section class="sw5e-starship-crew-section">
+      <header class="sw5e-starship-section-header sw5e-crew-section-header">
+        <div>
+          <span class="sw5e-starship-kicker">Crew &amp; Passengers</span>
+          <h2>Crew Management</h2>
+        </div>
+        <button type="button" class="sw5e-starship-item-button" data-sw5e-crew-command="open-add-crew">+ Add Crew Member</button>
+      </header>
+
+      {{#if crew.roster.length}}
+        <div class="sw5e-starship-item-list">
+          {{#each crew.roster}}
+            <article class="sw5e-starship-item-row{{#if active}} sw5e-crew-active{{/if}}">
+              <div class="sw5e-starship-item-main">
+                <img class="sw5e-starship-item-image" src="{{img}}" alt="{{name}}" />
+                <div class="sw5e-starship-item-copy">
+                  <strong class="sw5e-starship-item-name">{{name}}</strong>
+                  <div class="sw5e-crew-badges">
+                    {{#if isPilot}}<span class="sw5e-crew-badge sw5e-crew-badge-pilot">Pilot</span>{{/if}}
+                    {{#if active}}<span class="sw5e-crew-badge sw5e-crew-badge-active">Active</span>{{/if}}
+                    {{#unless isPilot}}{{#if isCrew}}<span class="sw5e-crew-badge">Crew</span>{{/if}}{{/unless}}
+                    {{#if isPassenger}}<span class="sw5e-crew-badge">Passenger</span>{{/if}}
+                  </div>
+                </div>
+              </div>
+              <div class="sw5e-starship-item-actions">
+                {{#if isPilot}}
+                  <button type="button" class="sw5e-starship-item-button" data-sw5e-crew-command="undeploy-pilot" data-actor-uuid="{{uuid}}">Clear Pilot</button>
+                {{else}}
+                  <button type="button" class="sw5e-starship-item-button" data-sw5e-crew-command="set-pilot" data-actor-uuid="{{uuid}}">Set Pilot</button>
+                {{/if}}
+                <button type="button" class="sw5e-starship-item-button" data-sw5e-crew-command="toggle-active" data-actor-uuid="{{uuid}}">
+                  {{#if active}}Deactivate{{else}}Activate{{/if}}
+                </button>
+                <button type="button" class="sw5e-starship-item-button sw5e-starship-item-button-danger" data-sw5e-crew-command="remove" data-actor-uuid="{{uuid}}">Remove</button>
+              </div>
+            </article>
+          {{/each}}
+        </div>
+      {{else}}
+        <p class="sw5e-crew-empty">No crew assigned. Use "+ Add Crew Member" to assign crew.</p>
+      {{/if}}
+    </section>
+  {{/if}}
+
   {{#if skills.length}}
     <section class="sw5e-starship-skills">
       <header class="sw5e-starship-section-header">
