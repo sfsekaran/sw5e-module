@@ -788,6 +788,8 @@ async function renderStarshipLayer(app, html, data) {
 			insertCustomTabButtons(nav, [tabButton, featuresTabButton]);
 			hideStockFeaturesTab(root, app, nav);
 		}
+		const activeTab = getStarshipActiveTab(app);
+		if ( activeTab ) activateSheetTab(root, app, activeTab);
 		return;
 	}
 
