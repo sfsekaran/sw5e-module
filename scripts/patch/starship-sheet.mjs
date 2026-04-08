@@ -302,6 +302,7 @@ function getDeploymentCounts(legacySystem) {
 function makeOverviewCards(actor) {
 	const legacySystem = getLegacyStarshipActorSystem(actor);
 	const runtime = getDerivedStarshipRuntime(actor);
+	const pools = deriveStarshipPools(actor);
 	const movement = formatMovement(actor, legacySystem);
 	const deployment = {
 		...getDeploymentCounts(legacySystem),
@@ -340,7 +341,7 @@ function makeOverviewCards(actor) {
 		{
 			label: localizeOrFallback("SW5E.PowerDie", "Routing"),
 			value: localizeOrFallback(`SW5E.PowerRouting.${routing}`, routing),
-			note: formatPowerSummary(legacySystem)
+			note: pools.power.die ? `${pools.power.die} | ${formatPowerZones(legacySystem, pools)}` : formatPowerSummary(legacySystem)
 		}
 	];
 }
