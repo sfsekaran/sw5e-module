@@ -1,4 +1,3 @@
-import { getModuleId } from "./module-support.mjs";
 import { getLegacyStarshipActorSystem } from "./starship-data.mjs";
 
 export const STARSHIP_CREW_DEPLOYMENT_FLAG = "starshipDeployment";
@@ -10,14 +9,6 @@ function cloneDeep(data) {
 	if ( data === undefined ) return undefined;
 	if ( typeof globalThis.structuredClone === "function" ) return globalThis.structuredClone(data);
 	return JSON.parse(JSON.stringify(data));
-}
-
-function getSafeModuleId() {
-	try {
-		return getModuleId();
-	} catch {
-		return "sw5e-module";
-	}
 }
 
 function cloneData(data) {
@@ -119,12 +110,10 @@ function cloneStarshipDeployment(starship) {
 	return getDeploymentState(legacySystem.attributes?.deployment);
 }
 
-function buildDeploymentUpdateData(starship, deployment) {
+function buildDeploymentUpdateData(deployment) {
 	syncDeploymentActiveFlags(deployment);
 	// Vehicle actors store deployment in flags — dnd5e's DataModel silently discards writes to system.attributes.*
-	const prefix = isLegacyVehicleStarship(starship)
-		? "flags.sw5e.legacyStarshipActor.system.attributes.deployment"
-		: "system.attributes.deployment";
+	const prefix = "flags.sw5e.legacyStarshipActor.system.attributes.deployment";
 	return {
 		[`${prefix}.pilot.value`]: deployment.pilot.value,
 		[`${prefix}.pilot.active`]: deployment.pilot.active,
@@ -222,7 +211,7 @@ export async function undeployStarshipCrew(starshipSubject, crewSubject, roles =
 	if ( roleSet.has("crew") ) deployment.crew.items.delete(crewUuid);
 	if ( roleSet.has("passenger") ) deployment.passenger.items.delete(crewUuid);
 
-	await starship.update(buildDeploymentUpdateData(starship, deployment));
+	await starship.update(buildDeploymentUpdateData(deployment));
 	await updateCrewDeploymentFlag(crewActor, starship, getDeploymentRolesForUuid(deployment, crewUuid));
 	return true;
 }
@@ -251,7 +240,7 @@ export async function deployStarshipCrew(starshipSubject, crewSubject, role) {
 	if ( role === "crew" || role === "pilot" ) deployment.crew.items.add(crewUuid);
 	if ( role === "passenger" ) deployment.passenger.items.add(crewUuid);
 
-	await starship.update(buildDeploymentUpdateData(starship, deployment));
+	await starship.update(buildDeploymentUpdateData(deployment));
 	await updateCrewDeploymentFlag(crewActor, starship, getDeploymentRolesForUuid(deployment, crewUuid));
 
 	if ( displacedPilotUuid && (displacedPilotUuid !== crewUuid) ) {
@@ -274,7 +263,7 @@ export async function toggleStarshipActiveCrew(starshipSubject, crewSubject = nu
 
 	if ( nextActive && !collectDeploymentUuids(deployment).has(nextActive) ) return false;
 	deployment.active.value = nextActive;
-	await starship.update(buildDeploymentUpdateData(starship, deployment));
+	await starship.update(buildDeploymentUpdateData(deployment));
 	return true;
 }
 
