@@ -893,11 +893,16 @@
 			"Used": "Used Tech 'Slots'"
 		}
 	},
+	"SW5E.HullDice": "Hull Dice",
+	"SW5E.HullPoints": "Hull Points",
+	"SW5E.ModSlots": "Mod Slots",
 	"SW5E.PowerDice": "Power Dice",
+	"SW5E.PowerRouting": "Power Routing",
 	"SW5E.ShieldDamImm": "Shield Damage Immunities",
 	"SW5E.ShieldDamRes": "Shield Damage Resistances",
 	"SW5E.ShieldDamVuln": "Shield Damage Vulnerabilities",
 	"SW5E.ShieldDice": "Shield Dice",
+	"SW5E.ShieldPoints": "Shield Points",
 	"SW5E.SkillLor": "Lore",
 	"SW5E.SkillPil": "Piloting",
 	"SW5E.SkillTec": "Technology",

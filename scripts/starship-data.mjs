@@ -58,13 +58,17 @@ function isCharacterBackedStarship(data) {
 function getLegacyStarshipSize(items = []) {
 	return items.find(item => item.type === "starshipsize")
 		?? items.find(item => item.flags?.sw5e?.legacyStarshipSize)
-		?? items.find(item => item.flags?.sw5e?.[STARSHIP_CHARACTER_FLAG]?.role === "classification");
+		?? items.find(item => item.flags?.sw5e?.[STARSHIP_CHARACTER_FLAG]?.role === "classification")
+		// New-format: feat item with HullPoints advancement (identifier-based, no legacy flag)
+		?? items.find(item => item.type === "feat" && item.system?.advancement?.some?.(a => a.type === "HullPoints"));
 }
 
 function getLegacySizeSystem(item) {
 	if ( item?.flags?.sw5e?.legacyStarshipSize ) return item.flags.sw5e.legacyStarshipSize;
 	const classification = item?.flags?.sw5e?.[STARSHIP_CHARACTER_FLAG]?.classification;
-	return classification?.raw ?? classification ?? item?.system ?? {};
+	// item._source is the raw pre-DataModel object; item.system may be a DataModel that hides custom fields
+	const rawSystem = item?._source?.system ?? item?.system ?? {};
+	return classification?.raw ?? classification ?? rawSystem;
 }
 
 function getLegacyItemSystem(item) {
@@ -670,6 +674,120 @@ export function getDerivedStarshipRuntime(actor) {
 
 export function getDerivedStarshipMovement(actor) {
 	return getDerivedStarshipRuntime(actor).movement;
+}
+
+const POWER_DIE_BY_TIER = { 1: "d4", 2: "d6", 3: "d8", 4: "d10", 5: "d12" };
+
+// Static size profiles — hull/shield dice and mod caps are class-level constants, not per-actor state.
+// Used as a fallback when the embedded size item lacks legacy flag data (new-format feat items
+// with identifier + HullPoints advancement instead of direct hullDice/modBaseCap fields).
+const STARSHIP_SIZE_PROFILES = {
+	tiny:        { hullDice: "d4",  hullDiceStart: 1,  shldDice: "d4",  shldDiceStart: 1,  modBaseCap: 10, modMaxSuitesBase: 0,  modMaxSuitesMult: 0 },
+	small:       { hullDice: "d6",  hullDiceStart: 3,  shldDice: "d6",  shldDiceStart: 3,  modBaseCap: 20, modMaxSuitesBase: 0,  modMaxSuitesMult: 1 },
+	medium:      { hullDice: "d8",  hullDiceStart: 5,  shldDice: "d8",  shldDiceStart: 5,  modBaseCap: 30, modMaxSuitesBase: 3,  modMaxSuitesMult: 1 },
+	large:       { hullDice: "d10", hullDiceStart: 7,  shldDice: "d10", shldDiceStart: 7,  modBaseCap: 50, modMaxSuitesBase: 3,  modMaxSuitesMult: 2 },
+	huge:        { hullDice: "d12", hullDiceStart: 9,  shldDice: "d12", shldDiceStart: 9,  modBaseCap: 60, modMaxSuitesBase: 6,  modMaxSuitesMult: 3 },
+	gargantuan:  { hullDice: "d20", hullDiceStart: 11, shldDice: "d20", shldDiceStart: 11, modBaseCap: 70, modMaxSuitesBase: 10, modMaxSuitesMult: 4 }
+};
+// Map dnd5e actor size keys → identifier
+const ACTOR_SIZE_TO_IDENTIFIER = { tiny: "tiny", sm: "small", med: "medium", lg: "large", huge: "huge", grg: "gargantuan" };
+
+export function deriveStarshipPools(actor) {
+	const liveItems = actor?.items?.contents ?? [];
+	const sourceItems = actor?._source?.items ?? [];
+	// For mods/equipment (standard dnd5e types), live items have accessible system data.
+	const items = liveItems.length ? liveItems : sourceItems;
+
+	// Size item system: live items of unknown type (e.g. "starshipsize") run through DataModel
+	// which discards custom fields. actor._source.items are plain objects where item.system
+	// always contains all stored fields. Prefer flag data (post-migration), then raw source system.
+	const liveSizeItem = getLegacyStarshipSize(liveItems);
+	const sourceSizeItem = getLegacyStarshipSize(sourceItems)
+		?? (liveSizeItem ? sourceItems.find(i => i._id === liveSizeItem.id) : null);
+	let sizeSystem = liveSizeItem?.flags?.sw5e?.legacyStarshipSize  // post-migration
+		?? sourceSizeItem?.system                                        // pre-migration (raw plain object)
+		?? getLegacySizeSystem(liveSizeItem)                             // character-backed fallback
+		?? {};
+
+	// New-format size items (feat + HullPoints advancement, identifier-based) lack custom system fields.
+	// Fall back to the static size profile keyed by identifier or actor traits.size.
+	if ( !sizeSystem.hullDice ) {
+		const identifier = liveSizeItem?.system?.identifier ?? sourceSizeItem?.system?.identifier ?? "";
+		const actorSize = actor?.system?.traits?.size ?? "";
+		const profile = STARSHIP_SIZE_PROFILES[identifier] ?? STARSHIP_SIZE_PROFILES[ACTOR_SIZE_TO_IDENTIFIER[actorSize]];
+		if ( profile ) sizeSystem = { ...sizeSystem, ...profile };
+	}
+
+	// Tier: try size system, then stored legacy actor system, then HullPoints advancement max key.
+	const legacyActorSystem = getLegacyStarshipActorSystem(actor) ?? {};
+	let tier = toFiniteNumber(sizeSystem.tier ?? legacyActorSystem.details?.tier, null);
+	if ( tier === null ) {
+		const hullAdv = liveSizeItem?.system?.advancement?.find?.(a => a.type === "HullPoints");
+		const advKeys = hullAdv?.value ? Object.keys(hullAdv.value).map(Number).filter(Number.isFinite) : [];
+		tier = advKeys.length ? Math.max(0, ...advKeys) : 0;
+	}
+
+	// Hull dice pool
+	const hullDie = sizeSystem.hullDice ?? "";
+	const hullDiceStart = toFiniteNumber(sizeSystem.hullDiceStart, 0);
+	const hullDiceUsed = toFiniteNumber(sizeSystem.hullDiceUsed, 0);
+	const hullDiceMax = hullDiceStart + (2 * tier);
+
+	// Shield dice pool
+	const shldDie = sizeSystem.shldDice ?? "";
+	const shldDiceStart = toFiniteNumber(sizeSystem.shldDiceStart, 0);
+	const shldDiceUsed = toFiniteNumber(sizeSystem.shldDiceUsed, 0);
+	const shldDiceMax = shldDiceStart + (2 * tier);
+
+	// Power coupling — find the equipped powerc item for zone capacities.
+	// Equipment items are standard dnd5e type so item.system is accessible normally.
+	// Also try _source.system as fallback for items whose DataModel restricts field access.
+	const powerCoupling = items.find(item => {
+		const typeVal = item.system?.type?.value ?? item._source?.system?.type?.value;
+		const equipped = item.system?.equipped ?? item._source?.system?.equipped;
+		return typeVal === "powerc" && equipped !== false;
+	});
+	const pcSystem = powerCoupling?.system?.attributes ? powerCoupling.system : powerCoupling?._source?.system ?? {};
+	const cscap = toFiniteNumber(pcSystem?.attributes?.cscap?.value, 0);
+	const sscap = toFiniteNumber(pcSystem?.attributes?.sscap?.value, 0);
+	const powerDie = POWER_DIE_BY_TIER[tier] ?? "";
+
+	// Modification slot budget.
+	// Mods in Drake's Shipyard actors are embedded with type "starshipmod" and no legacy flags.
+	// After migration they become type "loot" with legacyStarshipMod set.
+	// Standalone compendium items dragged to an actor have flags.core.sourceId referencing the pack.
+	const conValue = toFiniteNumber(actor?.system?.abilities?.con?.value, 10);
+	const conMod = Math.floor((conValue - 10) / 2);
+	const modSlotMax = toFiniteNumber(sizeSystem.modBaseCap, 0);
+	const suiteMax = Math.max(0,
+		toFiniteNumber(sizeSystem.modMaxSuitesBase, 0)
+		+ toFiniteNumber(sizeSystem.modMaxSuitesMult, 0) * conMod
+	);
+	const isModItem = (item) => {
+		if ( item.flags?.sw5e?.legacyStarshipMod ) return true;
+		if ( item.type === "starshipmod" ) return true;
+		const sourceId = item.flags?.core?.sourceId ?? item._stats?.compendiumSource ?? "";
+		return /^Compendium\.[^.]+\.starshipmodifications\./.test(sourceId);
+	};
+	const isSuiteItem = (item) => {
+		// After migration: legacyStarshipMod contains original system with type.value
+		const legacyType = item.flags?.sw5e?.legacyStarshipMod?.type?.value;
+		if ( legacyType ) return legacyType === "Suite";
+		// Pre-migration: read from raw source system
+		const rawType = item._source?.system?.type?.value ?? item.system?.type?.value ?? "";
+		return rawType === "Suite";
+	};
+	const modItems = items.filter(isModItem);
+	const suitesUsed = modItems.filter(isSuiteItem).length;
+	const modSlotsUsed = modItems.length;
+
+	return {
+		tier,
+		hull: { die: hullDie, current: hullDiceMax - hullDiceUsed, max: hullDiceMax },
+		shld: { die: shldDie, current: shldDiceMax - shldDiceUsed, max: shldDiceMax },
+		power: { die: powerDie, cscap, sscap },
+		mods: { slotsUsed: modSlotsUsed, slotMax: modSlotMax, suitesUsed, suiteMax }
+	};
 }
 
 function getProficiencyLevels() {

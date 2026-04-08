@@ -1,5 +1,5 @@
 import { getModulePath } from "../module-support.mjs";
-import { getDerivedStarshipRuntime, getLegacyStarshipActorSystem, getStarshipSkillEntries, rollStarshipSkill } from "../starship-data.mjs";
+import { getDerivedStarshipRuntime, getLegacyStarshipActorSystem, getStarshipSkillEntries, rollStarshipSkill, deriveStarshipPools } from "../starship-data.mjs";
 import { buildVehicleStarshipCrewContext, buildVehicleAvailableActors, deployStarshipCrew, undeployStarshipCrew, toggleStarshipActiveCrew } from "../starship-character.mjs";
 
 const STARSHIP_PACKS = new Set([
@@ -345,9 +345,30 @@ function makeOverviewCards(actor) {
 	];
 }
 
+function formatDicePool(current, max, die) {
+	if ( !max && !die ) return "-";
+	const pool = max > 0 ? `${current}/${max}` : "-";
+	return die ? `${pool} ${die}` : pool;
+}
+
+function formatPowerZones(legacySystem, pools) {
+	const power = legacySystem.attributes?.power ?? {};
+	const zones = [
+		{ key: "central", label: "C", max: pools.power.cscap },
+		{ key: "engines", label: "E", max: pools.power.sscap },
+		{ key: "shields", label: "S", max: pools.power.sscap },
+		{ key: "weapons", label: "W", max: pools.power.sscap }
+	];
+	return zones.map(({ key, label, max }) => {
+		const current = Number.isFinite(Number(power[key]?.value)) ? Number(power[key].value) : 0;
+		return `${label}:${current}/${max}`;
+	}).join(" ");
+}
+
 function makeSidebarSummary(actor) {
 	const legacySystem = getLegacyStarshipActorSystem(actor);
 	const runtime = getDerivedStarshipRuntime(actor);
+	const pools = deriveStarshipPools(actor);
 	const hp = actor.system?.attributes?.hp ?? {};
 	const shields = legacySystem.attributes?.hp ?? {};
 	const fuel = legacySystem.attributes?.fuel?.value;
@@ -356,7 +377,7 @@ function makeSidebarSummary(actor) {
 	return [
 		{
 			label: localizeOrFallback("SW5E.StarshipTier", "Tier"),
-			value: Number.isFinite(Number(legacySystem.details?.tier)) ? `${legacySystem.details.tier}` : "-",
+			value: (() => { const t = legacySystem.details?.tier ?? pools.tier; return Number.isFinite(Number(t)) ? `${t}` : "-"; })(),
 			note: normalizeSourceLabel(legacySystem.details?.source)
 		},
 		{
@@ -370,9 +391,19 @@ function makeSidebarSummary(actor) {
 			note: localizeOrFallback("SW5E.VehicleCrew", "Vehicle")
 		},
 		{
+			label: localizeOrFallback("SW5E.HullDice", "Hull Dice"),
+			value: formatDicePool(pools.hull.current, pools.hull.max, pools.hull.die),
+			note: null
+		},
+		{
 			label: localizeOrFallback("SW5E.ShieldPoints", "Shield Points"),
 			value: formatPool(shields.temp, shields.tempmax),
-			note: formatPowerSummary(legacySystem)
+			note: null
+		},
+		{
+			label: localizeOrFallback("SW5E.ShieldDice", "Shield Dice"),
+			value: formatDicePool(pools.shld.current, pools.shld.max, pools.shld.die),
+			note: null
 		},
 		{
 			label: localizeOrFallback("SW5E.Fuel", "Fuel"),
@@ -380,9 +411,14 @@ function makeSidebarSummary(actor) {
 			note: `${localizeOrFallback("DND5E.TravelPace", "Travel Pace")}: ${localizeTravelPace(runtime.travel?.pace)}`
 		},
 		{
-			label: localizeOrFallback("SW5E.PowerDie", "Power Routing"),
+			label: localizeOrFallback("SW5E.PowerRouting", "Power Routing"),
 			value: localizeOrFallback(`SW5E.PowerRouting.${routing}`, routing),
-			note: formatPowerSummary(legacySystem)
+			note: pools.power.die ? `${pools.power.die} | ${formatPowerZones(legacySystem, pools)}` : formatPowerSummary(legacySystem)
+		},
+		{
+			label: localizeOrFallback("SW5E.ModSlots", "Mod Slots"),
+			value: `${pools.mods.slotsUsed}/${pools.mods.slotMax}`,
+			note: `${pools.mods.suitesUsed}/${pools.mods.suiteMax} suites`
 		}
 	];
 }
@@ -734,6 +770,24 @@ async function renderStarshipLayer(app, html, data) {
 	if ( existingWrapper && existingFeaturesWrapper ) {
 		existingWrapper.innerHTML = rendered;
 		existingFeaturesWrapper.innerHTML = renderedFeatures;
+		// dnd5e may re-render the nav in edit mode, removing our custom tab buttons.
+		// Re-insert them if they're gone, and re-hide the stock features tab if needed.
+		if ( !nav.querySelector(`[data-tab="${STARSHIP_TAB_ID}"]`) ) {
+			const tabButton = document.createElement("a");
+			tabButton.className = "sw5e-starship-tab-button";
+			tabButton.dataset.group = "primary";
+			tabButton.dataset.tab = STARSHIP_TAB_ID;
+			tabButton.innerHTML = `<span>SotG</span>`;
+			tabButton.addEventListener("click", event => { event.preventDefault(); activateSheetTab(root, app, STARSHIP_TAB_ID); });
+			const featuresTabButton = document.createElement("a");
+			featuresTabButton.className = "sw5e-starship-tab-button sw5e-starship-features-tab-button";
+			featuresTabButton.dataset.group = "primary";
+			featuresTabButton.dataset.tab = STARSHIP_FEATURES_TAB_ID;
+			featuresTabButton.innerHTML = `<span>SotG Features</span>`;
+			featuresTabButton.addEventListener("click", event => { event.preventDefault(); activateSheetTab(root, app, STARSHIP_FEATURES_TAB_ID); });
+			insertCustomTabButtons(nav, [tabButton, featuresTabButton]);
+			hideStockFeaturesTab(root, app, nav);
+		}
 		return;
 	}
 

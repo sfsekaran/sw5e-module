@@ -60,9 +60,19 @@ The SotG tab (in `starship-sheet.mjs`) currently displays:
 
 ### Gap A: Hull Dice / Shield Dice Pools (Display Only)
 **Rule**: Ships have Hull Dice (for resting/recovery) and Shield Dice (for shield regeneration). These are tracked as current/max pools.
-**Current state**: The legacy flag data stores `hull.die`, `hull.dice`, `hull.dicemax`, `shld.die`, `shld.dice`, `shld.dicemax` -- this data exists in the flags from the pack normalization pipeline. But the SotG tab **does not display** these pools.
-**Removed code**: `buildStarshipRuntime` computed these pools. The data is still stored; only the UI is missing.
-**Recommendation**: **(b) Should be added soon.** This is low-hanging fruit -- the data exists in the legacy system flags. Add a display card or sidebar entry showing hull dice (e.g., "3/5 d6") and shield dice (e.g., "2/5 d6"). No complex logic needed, just read from `legacySystem.attributes.hull` and `legacySystem.attributes.shld`.
+**Current state**: The SotG tab does **not display** hull/shield dice pools.
+**Data availability**: The raw actor-level data (`system.attributes.hull`, `system.attributes.shld`) is **null** in all Drake's Shipyard actors and is not populated by the pack normalization pipeline. However, all the data needed to derive these values exists on the **embedded size item** (`starshipsize` item in `actor.items`):
+- `sizeItem.system.hullDice` / `shldDice` -- the die type (d4/d6/d8/d10/d12/d20, scales with ship size)
+- `sizeItem.system.hullDiceStart` / `shldDiceStart` -- base dice count at tier 0
+- `sizeItem.system.hullDiceUsed` / `shldDiceUsed` -- dice currently expended
+- `sizeItem.system.tier` -- ship tier (0-5)
+
+Per SotG rules, ships gain 2 additional Hull Dice and 2 additional Shield Dice per tier. So:
+- `diceMax = hullDiceStart + (2 * tier)`
+- `diceCurrent = diceMax - hullDiceUsed`
+
+The removed `buildStarshipRuntime` code used exactly this formula. No migration is needed -- the values are fully derivable at runtime from the size item. A new `deriveHullShieldDice(actor)` helper should scan `actor.items` for the size item (using the existing `getLegacyStarshipSize()` and `getLegacySizeSystem()` helpers in `starship-data.mjs`) and compute the pools.
+**Recommendation**: **(b) Should be added soon.** Derive at runtime from the size item; no stored values to read or migrate. Add a display card or sidebar entry showing hull dice (e.g., "3/5 d6") and shield dice (e.g., "2/5 d6").
 
 ### Gap B: Shield Regeneration Rate
 **Rule**: Shields regenerate each round by expending a shield die. The rate depends on shield type (directional x1, fortress x2/3, quick-charge x3/2).
@@ -73,14 +83,28 @@ The SotG tab (in `starship-sheet.mjs`) currently displays:
 ### Gap C: Power Dice Pool (Current/Max per Zone)
 **Rule**: Ships store power dice in central and/or system capacitors. Power coupling type determines storage architecture (direct: 4 central; distributed: 2 per system; hub & spoke: 2 central + 1 per system).
 **Current state**: The SotG tab shows power routing selection and a 4-zone summary (C/E/S/W values), which covers the *current* dice in each zone. However, it does **not show max capacity** per zone, the power die type, or power dice recovery rate.
-**Removed code**: `buildStarshipRuntime` computed full power zone state including max capacity per zone. The old code used 6 zones (adding comms and sensors); `starship-data.mjs` uses 4 zones.
-**Recommendation**: **(b) Should be added soon.** Show the power die type and max capacity alongside current values. The data is already in `legacySystem.attributes.power`. The 4-zone vs 6-zone discrepancy is minor -- the vehicle data only stores 4 zones, so display those 4 with current/max.
+**Data availability**: The raw actor data stores per-zone `value` (current dice count) in `system.attributes.power.{central,engines,shields,weapons}.value` and `power.routing`. It does **not** store `max` per zone, `die` type, or recovery rate. These must be derived:
+- **Power die type**: Determined by tier. Tier 1=d4, 2=d6, 3=d8, 4=d10, 5=d12 (tier 0 ships have no power dice). Tier is on the embedded size item (`sizeItem.system.tier`).
+- **Max capacity per zone**: Determined by the power coupling equipment item on the actor. The coupling item's `system.attributes.cscap` (central storage capacity) and `system.attributes.sscap` (system storage capacity) fields define the architecture:
+  - Direct: cscap=4, sscap=0 (4 central, 0 per system)
+  - Distributed: cscap=0, sscap=2 (0 central, 2 per system)
+  - Hub & Spoke: cscap=2, sscap=1 (2 central, 1 per system)
+- **Recovery rate**: Determined by reactor equipment item. The reactor's `system.attributes.powerdicerec.value` field stores the formula (Fuel Cell="1", Ionization="(1d2)-1", Power Core="1d2").
+
+The removed `buildStarshipRuntime` code computed these from equipment items. No migration is needed -- derive at runtime by scanning `actor.items` for equipment with `system.type.value === "powerc"` (coupling) and `system.type.value === "reactor"`.
+**Recommendation**: **(b) Should be added soon.** Derive max capacity and die type at runtime from equipment + size items. Show power die type and per-zone current/max alongside current values. The 4-zone vs 6-zone discrepancy is minor -- the vehicle data only stores 4 zones (C/E/S/W), so display those 4.
 
 ### Gap D: Modification Slots / Suite Tracking
 **Rule**: Each ship size has a base number of modification slots and maximum suites. Modifications consume slots.
 **Current state**: The SotG tab lists modifications as items but does **not** show slot usage (e.g., "12/30 slots used, 2/3 suites").
-**Removed code**: `buildStarshipRuntime` computed `mods.slots.value` and `mods.suites.value` vs max.
-**Recommendation**: **(b) Should be added soon.** The modification count is visible, but showing slot budget vs. capacity would be genuinely useful for ship building. The data may be available in `legacySystem.attributes.mods`.
+**Data availability**: The raw actor data does **not** store `mods` at the actor level (it is null in all Drake's Shipyard actors). The values are fully derivable from the embedded size item and the modification items on the actor:
+- **Max slots**: `sizeItem.system.modBaseCap` (e.g., Small=20, Medium=30, Large=50, Huge=60, Gargantuan=70)
+- **Max suites**: `sizeItem.system.modMaxSuitesBase + (sizeItem.system.modMaxSuitesMult * constitutionMod)` (minimum 0)
+- **Slots used**: Count of `starshipmod` items on the actor, each consuming slots per their `system.modify.modSlots` value
+- **Suites used**: Count of suite-type modifications (identifiable by their modification category)
+
+The removed `buildStarshipRuntime` code computed `mods.slots.value` and `mods.suites.value` vs max from these same sources. No migration is needed -- derive at runtime.
+**Recommendation**: **(b) Should be added soon.** Derive slot/suite budget at runtime from size item + modification items. Show slots used vs. max, suites used vs. max.
 
 ### Gap E: Upgrade Cost / Workforce Summary
 **Rule**: Upgrading tier costs credits scaled by ship size. Equipment installation requires workforce and time.
@@ -119,14 +143,72 @@ The SotG tab (in `starship-sheet.mjs`) currently displays:
 
 **Recommendation**: Track this as a future feature ("Crew Station: show active crew member's deployment actions on the starship sheet"). Do not port the old `buildResolvedCrewActions` directly.
 
+## 6. Data Availability and Migration Analysis
+
+Analysis date: 2026-04-04
+
+### Key Finding: No Migration Needed
+
+All three "Soon" gaps (A, C, D) involve data that is **not stored** at the actor level in raw source data or in the `legacyStarshipActor` flags. Instead, the values are **fully derivable at runtime** from items embedded on the actor. No migration is required.
+
+### Data Sources for Derivation
+
+| Field | Source | Location on Actor |
+|-------|--------|-------------------|
+| Hull die type | Size item | `sizeItem.system.hullDice` (d4/d6/d8/d10/d12/d20) |
+| Hull dice max | Size item | `sizeItem.system.hullDiceStart + (2 * sizeItem.system.tier)` |
+| Hull dice current | Size item | `hullDiceMax - sizeItem.system.hullDiceUsed` |
+| Shield die type | Size item | `sizeItem.system.shldDice` |
+| Shield dice max | Size item | `sizeItem.system.shldDiceStart + (2 * sizeItem.system.tier)` |
+| Shield dice current | Size item | `shieldDiceMax - sizeItem.system.shldDiceUsed` |
+| Power die type | Size item (tier) | Tier 1=d4, 2=d6, 3=d8, 4=d10, 5=d12 (tier 0 = no power dice) |
+| Power zone max (central) | Power coupling equipment | `couplingItem.system.attributes.cscap.value` |
+| Power zone max (per system) | Power coupling equipment | `couplingItem.system.attributes.sscap.value` |
+| Power dice recovery | Reactor equipment | `reactorItem.system.attributes.powerdicerec.value` |
+| Mod slots max | Size item | `sizeItem.system.modBaseCap` |
+| Mod suites max | Size item + CON | `sizeItem.system.modMaxSuitesBase + (sizeItem.system.modMaxSuitesMult * conMod)` (min 0) |
+| Mod slots used | Modification items | Count/sum of `starshipmod` items on actor |
+
+### Why Stored Values Don't Exist
+
+The pack source files in `packs/_source/drakes-shipyard/` store actors with `type: "starship"` -- their raw `system.attributes` has **null** for `hull`, `shld`, and `mods`. Only `power.{zone}.value` (current dice per zone) and `power.routing` are stored at the actor level.
+
+The normalization pipeline (`normalizeLegacyStarshipActorData` in `starship-data.mjs`) converts these to `type: "vehicle"` and builds the `legacyStarshipActor` flag, but `buildVehicleSystem` uses `mergeStarshipSystemData` which only preserves keys that already exist in the input. Since hull/shld/mods are null in the source, they remain absent in the normalized output.
+
+The old `buildStarshipRuntime` (removed dead code from `starship-character.mjs`) computed these values at runtime from the size and equipment items -- it never relied on stored actor-level values either.
+
+### Implications for World Actors
+
+- **Compendium actors** (Drake's Shipyard): Always have the embedded size item with correct tier, hull/shield dice fields, and equipment items. Derivation will work.
+- **World actors imported from compendium**: Same as above -- items are copied when the actor is imported.
+- **Manually created world actors**: Would need a size item added manually. Without one, derivation returns null/defaults. This is acceptable -- a starship without a size item is incomplete by definition.
+- **Pre-existing world actors from older module versions**: May have different flag structures, but the derivation approach is resilient -- it only reads item data, not flag fields. As long as the size item exists, it works.
+
+### Runtime Migration (`migration.mjs`)
+
+The runtime migration does **not** need to be extended for these fields. There is nothing to migrate because:
+1. The values were never stored at the actor level in the source data
+2. The derivation approach reads from items, which are always present on properly-constructed actors
+3. The normalization pipeline already handles converting `type: "starship"` to `type: "vehicle"` and normalizing item types
+
+### Recommended Implementation Approach
+
+**Derive at runtime, don't store.** Add a new export to `starship-data.mjs` (e.g., `deriveStarshipPools(actor)`) that:
+1. Finds the size item via existing `getLegacyStarshipSize()` / `getLegacySizeSystem()` helpers
+2. Finds equipment items by `system.type.value` (`"powerc"`, `"reactor"`)
+3. Computes hull/shield dice pools, power die info, and mod slot budget
+4. Returns a structured object for the sheet template to consume
+
+This mirrors the pattern already used by `getDerivedStarshipRuntime()` for movement/travel/crew data.
+
 ## Summary of Recommendations
 
 | Gap | Priority | Action |
 |-----|----------|--------|
-| A. Hull/Shield Dice pools | **Soon** | Add display card showing current/max hull dice and shield dice from legacy flags |
+| A. Hull/Shield Dice pools | **Soon** | Derive from size item at runtime; display in SotG tab |
 | B. Shield Regeneration Rate | Future | Requires shield type identification; defer |
-| C. Power Dice max capacity | **Soon** | Show power die type and per-zone max alongside current values |
-| D. Modification slot budget | **Soon** | Show slots used vs. max, suites used vs. max |
+| C. Power Dice max capacity | **Soon** | Derive from equipment items at runtime; show die type + per-zone max |
+| D. Modification slot budget | **Soon** | Derive from size item + mod items at runtime; show slots/suites used vs. max |
 | E. Upgrade cost/workforce | Future | Bookkeeping data, not gameplay-critical |
 | F. Active crew deployment actions | Future | Design as "Crew Station" feature; do not port old code directly |
 | G. System damage detail | Done | Already adequate |
