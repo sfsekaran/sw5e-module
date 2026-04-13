@@ -738,7 +738,15 @@ async function renderStarshipLayer(app, html, data) {
 
 	const { nav, panelParent, integrated } = ensureStarshipTabTargets(root);
 	if ( !nav || !panelParent ) return;
-	if ( app._sw5eStarshipActiveTab === undefined ) setStarshipActiveTab(app, STARSHIP_TAB_ID);
+	if ( app._sw5eStarshipActiveTab === undefined ) {
+		setStarshipActiveTab(app, STARSHIP_TAB_ID);
+		// Remove active class from stock tab buttons (but don't hide panels - dnd5e manages that)
+		nav.querySelectorAll("[data-tab]").forEach(item => {
+			if ( !CUSTOM_STARSHIP_TAB_IDS.has(item.dataset.tab) ) {
+				item.classList.remove("active");
+			}
+		});
+	}
 
 	const { workspaceGroups, featureGroups } = partitionStarshipGroups(actor);
 	const skills = getStarshipSkillEntries(actor);
@@ -906,11 +914,30 @@ async function renderStarshipLayer(app, html, data) {
 		nav.querySelectorAll("[data-tab]").forEach(item => {
 			if ( item === tabButton || item === featuresTabButton ) return;
 			if ( CUSTOM_STARSHIP_TAB_IDS.has(item.dataset.tab) ) return;
-			item.addEventListener("click", () => {
+			item.addEventListener("click", (event) => {
+				// Prevent no-op clicks when stock tab already has 'active' class
+				if ( item.classList.contains("active") ) {
+					event.preventDefault();
+					return;
+				}
+				// Reset SW5E state
 				setStarshipActiveTab(app, null);
-			});
+				// Hide SW5E wrapper panels
+				root.querySelectorAll(".sw5e-starship-tab").forEach(panel => {
+					panel.classList.remove("active");
+					panel.hidden = true;
+				});
+				// Call stock tab's changeTab to actually switch to it
+				const tabId = item.dataset.tab;
+				if ( typeof app?.changeTab === "function" ) {
+					try {
+						app.changeTab(tabId, "primary", { force: true, updatePosition: false });
+					} catch(e) {
+						activatePrimaryTab(root, tabId);
+					}
+				}
+				});
 		});
-		const activeTab = getStarshipActiveTab(app);
 		if ( activeTab ) activateSheetTab(root, app, activeTab);
 	}
 }
