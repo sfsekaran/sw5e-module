@@ -306,7 +306,11 @@ function normalizeAdvancements(data, moduleId=CANONICAL_MODULE_ID) {
 }
 
 function cleanImage(path) {
-		path = path?.replace("systems/sw5e/packs/Icons", "modules/sw5e-module/icons/packs");
+		const normalized = typeof path === "string" ? path.trim() : path;
+		const lower = typeof normalized === "string" ? normalized.toLowerCase() : "";
+		const isBrokenExternal = /^https?:\/\/(?:static\.wikia\.nocookie\.net|cdn[ab]\.artstation\.com)\//.test(lower);
+		if ( ["", "undefined", "null", "nan"].includes(lower) || lower.startsWith("tokenizer/") || isBrokenExternal ) return "";
+		path = normalized?.replace("systems/sw5e/packs/Icons", "modules/sw5e-module/icons/packs");
 		path = path?.replace("modules/sw5e/icons/packs", "modules/sw5e-module/icons/packs");
 		path = path?.replace("modules/sw5e-module-test/icons/packs", "modules/sw5e-module/icons/packs");
 		return path;

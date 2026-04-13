@@ -214,7 +214,9 @@ function sanitizeImagePath(value) {
 	if ( typeof value !== "string" ) return "";
 	const normalized = value.trim();
 	if ( !normalized ) return "";
-	if ( ["undefined", "null", "nan"].includes(normalized.toLowerCase()) ) return "";
+	const lower = normalized.toLowerCase();
+	const isBrokenExternal = /^https?:\/\/(?:static\.wikia\.nocookie\.net|cdn[ab]\.artstation\.com)\//.test(lower);
+	if ( ["undefined", "null", "nan"].includes(lower) || lower.startsWith("tokenizer/") || isBrokenExternal ) return "";
 	return normalized;
 }
 

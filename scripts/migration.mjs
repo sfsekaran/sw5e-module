@@ -898,10 +898,13 @@ function _migrateImage(objectData, updateData) {
 	const isActorAvatarTarget = actorTypesWithBlankAvatarFallback.has(objectData?.type);
 	const isLegacyDndIcon = path => /^systems\/dnd5e\/icons\/.+$/.test(path ?? "");
 	const isLootBagFallback = path => path === "icons/svg/item-bag.svg";
+	const isKnownBrokenExternalImage = path => /^https?:\/\/(?:static\.wikia\.nocookie\.net|cdn[ab]\.artstation\.com)\//.test(path ?? "");
 	const isInvalidImageValue = path => {
 		if ( typeof path !== "string" ) return false;
 		const normalized = path.trim().toLowerCase();
-		return ["", "undefined", "null", "nan"].includes(normalized);
+		return ["", "undefined", "null", "nan"].includes(normalized)
+			|| normalized.startsWith("tokenizer/")
+			|| isKnownBrokenExternalImage(normalized);
 	};
 	const props = ["img", "texture.src", "prototypeToken.texture.src"];
 	// ActiveEffect5e#icon is deprecated since Foundry v12 (migrated to img); avoid accessing it.
