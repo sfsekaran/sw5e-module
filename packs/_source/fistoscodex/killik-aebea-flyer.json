@@ -1835,7 +1835,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/350_-_Killik_Aebea_Flyer/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/350_-_Killik_Aebea_Flyer/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

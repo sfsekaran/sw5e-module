@@ -2121,7 +2121,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/301_-_Dark_Trooper_2C_Phase_III/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/301_-_Dark_Trooper_2C_Phase_III/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

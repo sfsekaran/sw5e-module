@@ -1651,7 +1651,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/371_-_Front-Line_Soldier/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/371_-_Front-Line_Soldier/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

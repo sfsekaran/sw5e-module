@@ -1725,7 +1725,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/377_-_Sergeant/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/377_-_Sergeant/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

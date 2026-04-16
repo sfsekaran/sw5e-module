@@ -1218,7 +1218,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/170_-_GH-7_Medical_Analysis_Unit/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/170_-_GH-7_Medical_Analysis_Unit/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

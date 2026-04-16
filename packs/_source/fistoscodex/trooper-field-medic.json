@@ -1839,7 +1839,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/309_-_Trooper_2C_Field_Medic/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/309_-_Trooper_2C_Field_Medic/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

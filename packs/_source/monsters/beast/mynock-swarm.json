@@ -1142,7 +1142,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/253_-_Mynock_Swarm/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/253_-_Mynock_Swarm/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

@@ -1601,7 +1601,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/152_-_DF.9_Anti-Infantry_Turret/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/152_-_DF.9_Anti-Infantry_Turret/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

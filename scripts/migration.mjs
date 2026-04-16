@@ -899,7 +899,15 @@ function _migrateImage(objectData, updateData) {
 	const isActorAvatarTarget = actorTypesWithBlankAvatarFallback.has(objectData?.type);
 	const isLegacyDndIcon = path => /^systems\/dnd5e\/icons\/.+$/.test(path ?? "");
 	const isLootBagFallback = path => path === "icons/svg/item-bag.svg";
-	const isLegacyMonsterToken = path => /^modules\/sw5e-module\/icons\/packs\/monsters\/.+\/Token\.webp$/i.test(path ?? "");
+	const normalizeModuleImagePath = path => path
+		?.replace(/^modules\/sw5e\//, `${getModulePath()}/`)
+		?.replace(/^modules\/sw5e-module-test\//, `${getModulePath()}/`)
+		?.replace("systems/sw5e/packs/Icons", getModulePath("icons/packs"))
+		?.replace("modules/sw5e/icons/", `${getModulePath("icons")}/`)
+		?.replace("modules/sw5e-module-test/icons/", `${getModulePath("icons")}/`);
+	const getMonsterTokenPathFromAvatar = path => /^modules\/sw5e-module\/icons\/packs\/monsters\/.+\/Avatar\.webp$/i.test(path ?? "")
+		? path.replace(/\/Avatar\.webp$/i, "/Token.webp")
+		: "";
 	const isKnownBrokenExternalImage = path => /^https?:\/\/(?:static\.wikia\.nocookie\.net|cdn[ab]\.artstation\.com)\//.test(path ?? "");
 	const isInvalidImageValue = path => {
 		if ( typeof path !== "string" ) return false;
@@ -920,15 +928,11 @@ function _migrateImage(objectData, updateData) {
 			continue;
 		}
 
-		let newPath = path?.replace("systems/sw5e/packs/Icons", getModulePath("icons/packs"));
-		newPath = newPath?.replace("modules/sw5e/icons/", `${getModulePath("icons")}/`);
-		newPath = newPath?.replace("modules/sw5e-module-test/icons/", `${getModulePath("icons")}/`);
-		if ( (prop === "prototypeToken.texture.src") && isLegacyMonsterToken(newPath) ) {
-			const actorAvatar = foundry.utils.getProperty(objectData, "img")
-				?.replace("systems/sw5e/packs/Icons", getModulePath("icons/packs"))
-				?.replace("modules/sw5e/icons/", `${getModulePath("icons")}/`)
-				?.replace("modules/sw5e-module-test/icons/", `${getModulePath("icons")}/`);
-			newPath = actorAvatar || newPath.replace(/\/Token\.webp$/i, "/Avatar.webp");
+		let newPath = normalizeModuleImagePath(path);
+		if ( prop === "prototypeToken.texture.src" ) {
+			const actorAvatar = normalizeModuleImagePath(foundry.utils.getProperty(objectData, "img"));
+			const canonicalMonsterToken = getMonsterTokenPathFromAvatar(actorAvatar);
+			if ( canonicalMonsterToken && (newPath === actorAvatar) ) newPath = canonicalMonsterToken;
 		}
 		if ( isActorAvatarTarget && (prop !== "icon") && (isLegacyDndIcon(newPath) || isLootBagFallback(newPath)) ) {
 			newPath = "";

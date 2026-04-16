@@ -312,21 +312,29 @@ function normalizeAdvancements(data, moduleId=CANONICAL_MODULE_ID) {
 }
 
 function normalizeModuleImagePath(path) {
+	path = path?.replace(/^modules\/sw5e\//, "modules/sw5e-module/");
+	path = path?.replace(/^modules\/sw5e-module-test\//, "modules/sw5e-module/");
 	path = path?.replace("systems/sw5e/packs/Icons", "modules/sw5e-module/icons/packs");
 	path = path?.replace("modules/sw5e/icons/packs", "modules/sw5e-module/icons/packs");
 	path = path?.replace("modules/sw5e-module-test/icons/packs", "modules/sw5e-module/icons/packs");
 	return path;
 }
 
-function cleanImage(path, { avatarPath="" }={}) {
+function getMonsterTokenPathFromAvatar(path) {
+	if ( !/^modules\/sw5e-module\/icons\/packs\/monsters\/.+\/Avatar\.webp$/i.test(path ?? "") ) return "";
+	return path.replace(/\/Avatar\.webp$/i, "/Token.webp");
+}
+
+function cleanImage(path, { avatarPath="", isPrototypeToken=false }={}) {
 		const normalized = typeof path === "string" ? path.trim() : path;
 		const lower = typeof normalized === "string" ? normalized.toLowerCase() : "";
 		const isBrokenExternal = /^https?:\/\/(?:static\.wikia\.nocookie\.net|cdn[ab]\.artstation\.com)\//.test(lower);
 		if ( ["", "undefined", "null", "nan"].includes(lower) || lower.startsWith("tokenizer/") || isBrokenExternal ) return "";
 		path = normalizeModuleImagePath(normalized);
-		if ( /^modules\/sw5e-module\/icons\/packs\/monsters\/.+\/Token\.webp$/i.test(path ?? "") ) {
+		if ( isPrototypeToken ) {
 			const normalizedAvatar = normalizeModuleImagePath(typeof avatarPath === "string" ? avatarPath.trim() : avatarPath);
-			path = normalizedAvatar || path.replace(/\/Token\.webp$/i, "/Avatar.webp");
+			const canonicalMonsterToken = getMonsterTokenPathFromAvatar(normalizedAvatar);
+			if ( canonicalMonsterToken && (path === normalizedAvatar) ) path = canonicalMonsterToken;
 		}
 		return path;
 }
@@ -513,7 +521,7 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 	if ( data.img ) data.img = cleanImage(data.img);
 	if ( data.icon ) data.icon = cleanImage(data.icon);
 	if ( data.texture?.src ) data.texture.src = cleanImage(data.texture.src);
-	if ( data.prototypeToken?.texture?.src ) data.prototypeToken.texture.src = cleanImage(data.prototypeToken.texture.src, { avatarPath: data.img });
+	if ( data.prototypeToken?.texture?.src ) data.prototypeToken.texture.src = cleanImage(data.prototypeToken.texture.src, { avatarPath: data.img, isPrototypeToken: true });
 	normalizeDnd5eItemSource(data);
 	normalizeEmbeddedDnd5eItemSources(data.items);
 	normalizeCompendiumReferences(data);

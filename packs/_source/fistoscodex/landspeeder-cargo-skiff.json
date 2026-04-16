@@ -1581,7 +1581,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/414_-_Landspeeder_2C_Cargo_Skiff/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/414_-_Landspeeder_2C_Cargo_Skiff/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

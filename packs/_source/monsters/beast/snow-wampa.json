@@ -1450,7 +1450,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/120_-_Snow_Wampa/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/120_-_Snow_Wampa/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

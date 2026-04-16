@@ -1141,7 +1141,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/078_-_Jubba_Bird/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/078_-_Jubba_Bird/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

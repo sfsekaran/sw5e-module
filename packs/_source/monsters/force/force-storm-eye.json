@@ -1831,7 +1831,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/199_-_Force_Storm_Eye/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/199_-_Force_Storm_Eye/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

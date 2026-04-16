@@ -1180,7 +1180,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/047_-_Trooper_2C_Heavy/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/047_-_Trooper_2C_Heavy/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

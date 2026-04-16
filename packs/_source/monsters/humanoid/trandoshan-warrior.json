@@ -1571,7 +1571,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/233_-_Trandoshan_Warrior/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/233_-_Trandoshan_Warrior/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

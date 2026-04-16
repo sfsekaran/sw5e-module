@@ -1395,7 +1395,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/064_-_Ghest/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/064_-_Ghest/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

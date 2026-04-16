@@ -31,6 +31,9 @@
 /* Force Point CSS for the main sheet */
 
 .dnd5e2.sheet.actor .meter.sw5e-power-points .progress {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
   position: relative;
 }
 

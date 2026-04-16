@@ -1490,7 +1490,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/251_-_Mob/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/251_-_Mob/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

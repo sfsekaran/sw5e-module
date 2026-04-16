@@ -1740,7 +1740,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/229_-_Trandoshan_Elite_Warrior/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/229_-_Trandoshan_Elite_Warrior/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

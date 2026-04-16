@@ -973,7 +973,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/210_-_Imperial_Guard_Sentinel/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/210_-_Imperial_Guard_Sentinel/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

@@ -1152,7 +1152,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/001_-_1.4_FD_P-Tower_Turret/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/001_-_1.4_FD_P-Tower_Turret/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

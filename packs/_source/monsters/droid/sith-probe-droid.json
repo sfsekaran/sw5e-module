@@ -1137,7 +1137,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/192_-_Sith_Probe_Droid/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/192_-_Sith_Probe_Droid/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

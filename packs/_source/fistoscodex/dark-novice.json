@@ -2825,7 +2825,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/410_-_Dark_Novice/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/410_-_Dark_Novice/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

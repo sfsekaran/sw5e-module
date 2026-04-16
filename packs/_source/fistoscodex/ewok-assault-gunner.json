@@ -1623,7 +1623,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/305_-_Ewok_Assault_Gunner/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/305_-_Ewok_Assault_Gunner/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

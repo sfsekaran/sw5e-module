@@ -1022,7 +1022,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/234_-_Tusken_Brute/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/234_-_Tusken_Brute/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

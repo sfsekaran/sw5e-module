@@ -1409,7 +1409,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/169_-_DSD1_Dwarf_Spider_Droid/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/169_-_DSD1_Dwarf_Spider_Droid/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

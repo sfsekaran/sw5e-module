@@ -2643,7 +2643,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/354_-_Sea_Leviathan/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/354_-_Sea_Leviathan/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

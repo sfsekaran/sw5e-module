@@ -1752,7 +1752,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/224_-_Kolkpravis_Tarkhan/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/224_-_Kolkpravis_Tarkhan/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

@@ -911,7 +911,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/242_-_Knobby_White_Spiderling/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/242_-_Knobby_White_Spiderling/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

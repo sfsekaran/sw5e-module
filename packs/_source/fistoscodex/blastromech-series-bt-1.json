@@ -1722,7 +1722,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/159_-_Blastromech_Series_2C_BT-1/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/159_-_Blastromech_Series_2C_BT-1/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

@@ -2960,7 +2960,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/009_-_Starweird/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/009_-_Starweird/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

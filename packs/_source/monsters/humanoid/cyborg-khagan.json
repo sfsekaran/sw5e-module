@@ -2332,7 +2332,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/201_-_Cyborg_Khagan/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/201_-_Cyborg_Khagan/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

@@ -1399,7 +1399,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/043_-_Trooper_2C_Headhunter/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/043_-_Trooper_2C_Headhunter/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

@@ -1526,7 +1526,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/051_-_Energy_Spider/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/051_-_Energy_Spider/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

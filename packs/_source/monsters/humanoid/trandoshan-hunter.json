@@ -1670,7 +1670,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/230_-_Trandoshan_Hunter/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/230_-_Trandoshan_Hunter/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

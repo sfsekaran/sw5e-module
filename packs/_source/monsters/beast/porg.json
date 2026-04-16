@@ -909,7 +909,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/102_-_Porg/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/102_-_Porg/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

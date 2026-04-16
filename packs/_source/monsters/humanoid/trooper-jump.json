@@ -1228,7 +1228,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/044_-_Trooper_2C_Jump/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/044_-_Trooper_2C_Jump/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

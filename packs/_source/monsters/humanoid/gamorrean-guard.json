@@ -1032,7 +1032,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/203_-_Gamorrean_Guard/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/203_-_Gamorrean_Guard/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

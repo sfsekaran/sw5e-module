@@ -1519,7 +1519,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/425_-_Black_Sun_Vigo/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/425_-_Black_Sun_Vigo/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

@@ -2363,7 +2363,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/050_-_Death_Trooper/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/050_-_Death_Trooper/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

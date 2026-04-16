@@ -2609,7 +2609,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/369_-_Combat_Engineer_2C_Junior/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/369_-_Combat_Engineer_2C_Junior/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

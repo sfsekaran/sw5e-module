@@ -909,7 +909,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/079_-_Jundland_Wastes_Womp_Rat/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/079_-_Jundland_Wastes_Womp_Rat/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

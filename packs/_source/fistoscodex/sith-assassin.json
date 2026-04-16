@@ -4642,7 +4642,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/409_-_Sith_Assassin/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/409_-_Sith_Assassin/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

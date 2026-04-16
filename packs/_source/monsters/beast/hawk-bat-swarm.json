@@ -1287,7 +1287,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/250_-_Hawk-bat_Swarm/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/250_-_Hawk-bat_Swarm/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

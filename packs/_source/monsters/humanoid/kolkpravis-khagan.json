@@ -1442,7 +1442,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/222_-_Kolkpravis_Khagan/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/222_-_Kolkpravis_Khagan/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

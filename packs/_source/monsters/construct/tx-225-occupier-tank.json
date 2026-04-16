@@ -1655,7 +1655,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/155_-_TX-225_Occupier_Tank/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/155_-_TX-225_Occupier_Tank/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

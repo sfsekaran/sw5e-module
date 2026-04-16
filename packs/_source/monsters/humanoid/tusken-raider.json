@@ -1286,7 +1286,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/236_-_Tusken_Raider/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/236_-_Tusken_Raider/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

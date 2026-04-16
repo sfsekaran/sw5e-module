@@ -2090,7 +2090,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/231_-_Trandoshan_Huntmaster/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/231_-_Trandoshan_Huntmaster/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

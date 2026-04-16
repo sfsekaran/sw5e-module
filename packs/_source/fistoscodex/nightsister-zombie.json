@@ -1358,7 +1358,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/384_-_Nightsister_Zombie/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/384_-_Nightsister_Zombie/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

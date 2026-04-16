@@ -1175,7 +1175,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/040_-_Trooper_2C_Sniper/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/040_-_Trooper_2C_Sniper/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

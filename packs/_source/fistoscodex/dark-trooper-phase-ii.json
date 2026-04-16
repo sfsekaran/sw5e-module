@@ -1710,7 +1710,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/300_-_Dark_Trooper_2C_Phase_II/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/300_-_Dark_Trooper_2C_Phase_II/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

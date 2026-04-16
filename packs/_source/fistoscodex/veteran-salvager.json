@@ -2822,7 +2822,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/428_-_Veteran_Salvager/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/428_-_Veteran_Salvager/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

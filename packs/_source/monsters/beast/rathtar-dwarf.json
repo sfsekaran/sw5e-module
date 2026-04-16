@@ -1392,7 +1392,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/108_-_Rathtar_2C_Dwarf/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/108_-_Rathtar_2C_Dwarf/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

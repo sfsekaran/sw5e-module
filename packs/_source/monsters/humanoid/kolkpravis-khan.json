@@ -1590,7 +1590,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/223_-_Kolkpravis_Khan/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/223_-_Kolkpravis_Khan/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

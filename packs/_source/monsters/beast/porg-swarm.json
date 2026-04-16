@@ -1179,7 +1179,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/256_-_Porg_Swarm/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/256_-_Porg_Swarm/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

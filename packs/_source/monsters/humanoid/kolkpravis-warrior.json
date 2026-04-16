@@ -1430,7 +1430,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e-module/icons/packs/monsters/225_-_Kolkpravis_Warrior/Avatar.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/225_-_Kolkpravis_Warrior/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,
