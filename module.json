@@ -475,19 +475,6 @@
       }
     },
     {
-      "name": "monsters_temp",
-      "label": "Monsters Temp",
-      "system": "dnd5e",
-      "path": "packs/monsters_temp",
-      "type": "Actor",
-      "private": false,
-      "flags": {
-        "dnd5e": {
-          "types": ["npc"]
-        }
-      }
-    },
-    {
       "name": "modifications",
       "label": "Modifications",
       "system": "dnd5e",
@@ -808,8 +795,7 @@
             "monsters",
             "monstertraits",
             "fistoscodex",
-            "mandaloriancodexnpcs",
-            "monsters_temp"
+            "mandaloriancodexnpcs"
           ]
         },
         {

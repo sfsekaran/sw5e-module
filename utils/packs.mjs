@@ -985,7 +985,6 @@ function transformName(entry, packName) {
 		// actors
 		case "fistoscodex":
 		case "monsters":
-		case "monsters_temp":
 			subfolder = entry.system.details.type.value;
 			break;
 		// other
