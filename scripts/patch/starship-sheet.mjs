@@ -16,11 +16,45 @@ const STARSHIP_PACKS = new Set([
 ]);
 
 const STARSHIP_TAB_ID = "sw5e-starship";
+/** @deprecated Primary tab; feature content now lives in SotG sub-tab `features`. Kept for one-time migration from saved UI state. */
 const STARSHIP_FEATURES_TAB_ID = "sw5e-starship-features";
 const STOCK_CARGO_TAB_ID = "inventory";
 const STOCK_FEATURES_TAB_ID = "features";
 const STOCK_STARSHIP_TAB_ORDER = [STOCK_CARGO_TAB_ID, "effects", "description"];
-const CUSTOM_STARSHIP_TAB_IDS = new Set([STARSHIP_TAB_ID, STARSHIP_FEATURES_TAB_ID]);
+const CUSTOM_STARSHIP_TAB_IDS = new Set([STARSHIP_TAB_ID]);
+
+const SOTG_SUB_TAB_IDS = new Set(["overview", "crew", "skills", "features"]);
+
+function getSotgSubTab(app) {
+	const v = app?._sw5eSotgSubTab;
+	if ( SOTG_SUB_TAB_IDS.has(v) ) return v;
+	return "overview";
+}
+
+function setSotgSubTab(app, tabId) {
+	if ( !app ) return;
+	app._sw5eSotgSubTab = tabId;
+}
+
+/**
+ * SotG inner tabs (Overview / Crew / Skills / Features): show one panel, update nav, persist on the sheet app.
+ */
+function activateSotgSubTab(wrapper, app, tabId) {
+	if ( !wrapper ) return;
+	let id = SOTG_SUB_TAB_IDS.has(tabId) ? tabId : "overview";
+	if ( !wrapper.querySelector(`[data-sw5e-sotg-panel="${id}"]`) ) id = "overview";
+	wrapper.querySelectorAll("[data-sw5e-sotg-tab]").forEach(btn => {
+		const sel = btn.getAttribute("data-sw5e-sotg-tab") === id;
+		btn.classList.toggle("active", sel);
+		btn.setAttribute("aria-selected", sel ? "true" : "false");
+	});
+	wrapper.querySelectorAll("[data-sw5e-sotg-panel]").forEach(panel => {
+		const on = panel.getAttribute("data-sw5e-sotg-panel") === id;
+		panel.classList.toggle("active", on);
+		panel.toggleAttribute("hidden", !on);
+	});
+	setSotgSubTab(app, id);
+}
 
 function getHtmlRoot(html) {
 	return html instanceof HTMLElement ? html : html?.[0] ?? html;
@@ -348,6 +382,17 @@ function makeOverviewCards(actor) {
 	];
 }
 
+/**
+ * At-a-glance strip: same entries as the sidebar summary (hull, shields, tier, fuel, power, …),
+ * plus the first four operational cards from makeOverviewCards (Movement, Travel Pace, Hyperdrive, Crew).
+ * Fuel and Power Routing are not duplicated here — they come only from makeSidebarSummary.
+ * Relies on makeOverviewCards maintaining [Movement, Travel, Hyperdrive, Crew, Fuel, Routing] order.
+ */
+function makeStarshipSummaryStrip(actor) {
+	const operational = makeOverviewCards(actor);
+	return [...makeSidebarSummary(actor), ...operational.slice(0, 4)];
+}
+
 function formatDicePool(current, max, die) {
 	if ( !max && !die ) return "-";
 	const pool = max > 0 ? `${current}/${max}` : "-";
@@ -458,9 +503,9 @@ function makeItemEntry(item, defaultTab = STOCK_CARGO_TAB_ID, actor = null) {
 function categorizeStarshipItems(actor) {
 	const groups = {
 		size: { label: localizeOrFallback("TYPES.Item.starshipsizePl", "Starship Size"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
-		actions: { label: localizeOrFallback("SW5E.Feature.StarshipAction.Label", "Starship Actions"), items: [], defaultTab: null, manageLabel: "Features", scrollTo: "stations" },
+		actions: { label: localizeOrFallback("SW5E.Feature.StarshipAction.Label", "Starship Actions"), items: [], defaultTab: null, manageLabel: "SotG", scrollTo: "stations" },
 		roles: { label: localizeOrFallback("SW5E.Feature.Deployment.Label", "Crew Roles"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
-		features: { label: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"), items: [], defaultTab: null, manageLabel: "Features", scrollTo: "stations" },
+		features: { label: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"), items: [], defaultTab: null, manageLabel: "SotG", scrollTo: "stations" },
 		equipment: { label: localizeOrFallback("SW5E.Equipment", "Equipment"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
 		modifications: { label: localizeOrFallback("TYPES.Item.starshipmodPl", "Modifications"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
 		weapons: { label: localizeOrFallback("SW5E.Weapon", "Weapons"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" }
@@ -740,39 +785,44 @@ async function renderStarshipLayer(app, html, data) {
 
 	const { nav, panelParent, integrated } = ensureStarshipTabTargets(root);
 	if ( !nav || !panelParent ) return;
+
+	// Legacy: standalone primary "SotG Features" tab — fold into SotG > Features sub-tab (must run before default tab init)
+	if ( app._sw5eStarshipActiveTab === STARSHIP_FEATURES_TAB_ID ) {
+		setStarshipActiveTab(app, STARSHIP_TAB_ID);
+		app._sw5eSotgSubTab = "features";
+	}
 	if ( app._sw5eStarshipActiveTab === undefined ) setStarshipActiveTab(app, STARSHIP_TAB_ID);
 
 	const { workspaceGroups, featureGroups } = partitionStarshipGroups(actor);
 	const skills = getStarshipSkillEntries(actor);
 
-	const [rendered, renderedFeatures] = await Promise.all([
-		foundry.applications.handlebars.renderTemplate(getModulePath("templates/starship-sheet-layer.hbs"), {
-			actorName: actor.name,
-			actorImage: sanitizeImagePath(actor.img),
-			title: localizeOrFallback("TYPES.Actor.starshipPl", "Starship Systems"),
-			subtitle: localizeOrFallback("TYPES.Actor.vehicle", "Vehicle Actor"),
-			headerBadges: makeHeaderBadges(actor),
-			overviewCards: makeOverviewCards(actor),
-			groups: workspaceGroups.map(group => ({ ...group, supportsSheetNavigation: integrated })),
-			legacyNotes: getLegacyNotes(actor),
-			skills,
-			crew: buildVehicleStarshipCrewContext(actor)
-		}),
-		foundry.applications.handlebars.renderTemplate(getModulePath("templates/starship-features-layer.hbs"), {
-			title: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"),
-			subtitle: "Manage configuration items and remove or replace them through the stock vehicle sheet.",
-			groups: featureGroups.map(group => ({ ...group, supportsSheetNavigation: integrated }))
-		})
-	]);
+	const featureGroupsRendered = featureGroups.map(group => ({ ...group, supportsSheetNavigation: integrated }));
+
+	const rendered = await foundry.applications.handlebars.renderTemplate(getModulePath("templates/starship-sheet-layer.hbs"), {
+		actorName: actor.name,
+		actorImage: sanitizeImagePath(actor.img),
+		title: localizeOrFallback("TYPES.Actor.starshipPl", "Starship Systems"),
+		subtitle: localizeOrFallback("TYPES.Actor.vehicle", "Vehicle Actor"),
+		headerBadges: makeHeaderBadges(actor),
+		summaryStrip: makeStarshipSummaryStrip(actor),
+		groups: workspaceGroups.map(group => ({ ...group, supportsSheetNavigation: integrated })),
+		legacyNotes: getLegacyNotes(actor),
+		skills,
+		crew: buildVehicleStarshipCrewContext(actor),
+		featureTitle: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"),
+		featureSubtitle: "Manage configuration items and remove or replace them through the stock vehicle sheet.",
+		featureGroups: featureGroupsRendered
+	});
 
 	// If our tab wrappers are already in the DOM, update their content in place.
 	// This avoids removing and re-inserting elements, which would reset scroll position.
 	// Event listeners attached via delegation to the wrapper elements survive innerHTML updates.
+	panelParent.querySelector(`.sw5e-starship-tab[data-tab="${STARSHIP_FEATURES_TAB_ID}"]`)?.remove();
+
 	const existingWrapper = panelParent.querySelector(`.sw5e-starship-tab[data-tab="${STARSHIP_TAB_ID}"]`);
-	const existingFeaturesWrapper = panelParent.querySelector(`.sw5e-starship-tab[data-tab="${STARSHIP_FEATURES_TAB_ID}"]`);
-	if ( existingWrapper && existingFeaturesWrapper ) {
+	if ( existingWrapper ) {
 		existingWrapper.innerHTML = rendered;
-		existingFeaturesWrapper.innerHTML = renderedFeatures;
+		activateSotgSubTab(existingWrapper, app, getSotgSubTab(app));
 		// dnd5e may re-render the nav in edit mode, removing our custom tab buttons.
 		// Re-insert them if they're gone, and re-hide the stock features tab if needed.
 		if ( !nav.querySelector(`[data-tab="${STARSHIP_TAB_ID}"]`) ) {
@@ -782,13 +832,7 @@ async function renderStarshipLayer(app, html, data) {
 			tabButton.dataset.tab = STARSHIP_TAB_ID;
 			tabButton.innerHTML = `<span>SotG</span>`;
 			tabButton.addEventListener("click", event => { event.preventDefault(); activateSheetTab(root, app, STARSHIP_TAB_ID); });
-			const featuresTabButton = document.createElement("a");
-			featuresTabButton.className = "sw5e-starship-tab-button sw5e-starship-features-tab-button";
-			featuresTabButton.dataset.group = "primary";
-			featuresTabButton.dataset.tab = STARSHIP_FEATURES_TAB_ID;
-			featuresTabButton.innerHTML = `<span>SotG Features</span>`;
-			featuresTabButton.addEventListener("click", event => { event.preventDefault(); activateSheetTab(root, app, STARSHIP_FEATURES_TAB_ID); });
-			insertCustomTabButtons(nav, [tabButton, featuresTabButton]);
+			insertCustomTabButtons(nav, [tabButton]);
 			hideStockFeaturesTab(root, app, nav);
 		}
 		const activeTab = getStarshipActiveTab(app);
@@ -805,12 +849,6 @@ async function renderStarshipLayer(app, html, data) {
 	tabButton.dataset.tab = STARSHIP_TAB_ID;
 	tabButton.innerHTML = `<span>SotG</span>`;
 
-	const featuresTabButton = document.createElement("a");
-	featuresTabButton.className = "sw5e-starship-tab-button sw5e-starship-features-tab-button";
-	featuresTabButton.dataset.group = "primary";
-	featuresTabButton.dataset.tab = STARSHIP_FEATURES_TAB_ID;
-	featuresTabButton.innerHTML = `<span>SotG Features</span>`;
-
 	const wrapper = document.createElement("section");
 	wrapper.className = "tab sw5e-starship-tab";
 	wrapper.dataset.group = "primary";
@@ -819,27 +857,13 @@ async function renderStarshipLayer(app, html, data) {
 	wrapper.hidden = getStarshipActiveTab(app) !== STARSHIP_TAB_ID;
 	if ( getStarshipActiveTab(app) === STARSHIP_TAB_ID ) wrapper.classList.add("active");
 
-	const featuresWrapper = document.createElement("section");
-	featuresWrapper.className = "tab sw5e-starship-tab sw5e-starship-features-tab";
-	featuresWrapper.dataset.group = "primary";
-	featuresWrapper.dataset.tab = STARSHIP_FEATURES_TAB_ID;
-	featuresWrapper.innerHTML = renderedFeatures;
-	featuresWrapper.hidden = getStarshipActiveTab(app) !== STARSHIP_FEATURES_TAB_ID;
-	if ( getStarshipActiveTab(app) === STARSHIP_FEATURES_TAB_ID ) featuresWrapper.classList.add("active");
-
 	hideStockFeaturesTab(root, app, nav);
-	insertCustomTabButtons(nav, [tabButton, featuresTabButton]);
+	insertCustomTabButtons(nav, [tabButton]);
 	panelParent.append(wrapper);
-	panelParent.append(featuresWrapper);
 
 	tabButton.addEventListener("click", event => {
 		event.preventDefault();
 		activateSheetTab(root, app, STARSHIP_TAB_ID);
-	});
-
-	featuresTabButton.addEventListener("click", event => {
-		event.preventDefault();
-		activateSheetTab(root, app, STARSHIP_FEATURES_TAB_ID);
 	});
 
 	const handleTabClick = async event => {
@@ -880,7 +904,15 @@ async function renderStarshipLayer(app, html, data) {
 	};
 
 	wrapper.addEventListener("click", handleTabClick);
-	featuresWrapper.addEventListener("click", handleTabClick);
+
+	wrapper.addEventListener("click", event => {
+		const ctl = event.target.closest("[data-sw5e-sotg-tab], [data-sw5e-sotg-goto]");
+		if ( !ctl ) return;
+		event.preventDefault();
+		const id = ctl.getAttribute("data-sw5e-sotg-tab") || ctl.getAttribute("data-sw5e-sotg-goto");
+		if ( !id ) return;
+		activateSotgSubTab(wrapper, app, id);
+	});
 
 	wrapper.addEventListener("click", async event => {
 		const btn = event.target.closest("[data-sw5e-crew-command]");
@@ -906,7 +938,7 @@ async function renderStarshipLayer(app, html, data) {
 
 	if ( integrated ) {
 		nav.querySelectorAll("[data-tab]").forEach(item => {
-			if ( item === tabButton || item === featuresTabButton ) return;
+			if ( item === tabButton ) return;
 			if ( CUSTOM_STARSHIP_TAB_IDS.has(item.dataset.tab) ) return;
 			item.addEventListener("click", () => {
 				setStarshipActiveTab(app, null);
@@ -915,6 +947,8 @@ async function renderStarshipLayer(app, html, data) {
 		const activeTab = getStarshipActiveTab(app);
 		if ( activeTab ) activateSheetTab(root, app, activeTab);
 	}
+
+	activateSotgSubTab(wrapper, app, getSotgSubTab(app));
 }
 
 export function patchStarshipSheet() {

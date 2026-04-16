@@ -1,21 +1,27 @@
-<div class="sw5e-starship-panel">
-  <header class="sw5e-starship-hero">
-    {{#if actorImage}}
-      <img class="sw5e-starship-hero-image" src="{{actorImage}}" alt="{{actorName}}" />
-    {{/if}}
+{{!-- Root: panel > header > summary > SotG sub-tabs: Overview, Crew, Skills, Features. No system form fields. --}}
+<section class="sw5e-starship-panel" data-application-part="sw5e-starship-sotg">
 
-    <div class="sw5e-starship-hero-copy">
-      <span class="sw5e-starship-kicker">{{title}}</span>
-      <h2>{{actorName}}</h2>
-      <p>{{subtitle}}</p>
-
-      {{#if headerBadges.length}}
-        <div class="sw5e-starship-badges">
-          {{#each headerBadges}}
-            <span class="sw5e-starship-badge">{{this}}</span>
-          {{/each}}
-        </div>
+  <header class="sw5e-starship-sheet-header">
+    <div class="sw5e-starship-header-left">
+      {{#if actorImage}}
+        <figure class="sw5e-starship-portrait">
+          <img class="sw5e-starship-portrait-image" src="{{actorImage}}" alt="{{actorName}}" />
+        </figure>
       {{/if}}
+
+      <div class="sw5e-starship-header-identity">
+        <span class="sw5e-starship-kicker">{{title}}</span>
+        <h2 class="sw5e-starship-title">{{actorName}}</h2>
+        <p class="sw5e-starship-subtitle">{{subtitle}}</p>
+
+        {{#if headerBadges.length}}
+          <div class="sw5e-starship-badges">
+            {{#each headerBadges}}
+              <span class="sw5e-starship-badge">{{this}}</span>
+            {{/each}}
+          </div>
+        {{/if}}
+      </div>
     </div>
 
     {{#if legacyNotes.length}}
@@ -27,181 +33,356 @@
     {{/if}}
   </header>
 
-  {{#if overviewCards.length}}
-    <section class="sw5e-starship-overview">
-      {{#each overviewCards}}
-        <article class="sw5e-starship-card">
-          <span class="sw5e-starship-card-label">{{label}}</span>
-          <strong class="sw5e-starship-card-value">{{value}}</strong>
+  {{#if summaryStrip.length}}
+    <section class="sw5e-starship-summary-strip" aria-label="{{title}}">
+      {{#each summaryStrip}}
+        <article class="sw5e-starship-summary-card">
+          <span class="sw5e-starship-summary-label">{{label}}</span>
+          <strong class="sw5e-starship-summary-value">{{value}}</strong>
           {{#if note}}
-            <span class="sw5e-starship-card-note">{{note}}</span>
+            <span class="sw5e-starship-summary-note">{{note}}</span>
           {{/if}}
         </article>
       {{/each}}
     </section>
   {{/if}}
 
-  {{#if crew}}
-    <section class="sw5e-starship-crew-section">
-      <header class="sw5e-starship-section-header sw5e-crew-section-header">
-        <div>
-          <span class="sw5e-starship-kicker">Crew &amp; Passengers</span>
-          <h2>Crew Management</h2>
-        </div>
-        <button type="button" class="sw5e-starship-item-button" data-sw5e-crew-command="open-add-crew">+ Add Crew Member</button>
-      </header>
-
-      {{#if crew.roster.length}}
-        <div class="sw5e-starship-item-list">
-          {{#each crew.roster}}
-            <article class="sw5e-starship-item-row{{#if active}} sw5e-crew-active{{/if}}">
-              <div class="sw5e-starship-item-main">
-                <img class="sw5e-starship-item-image" src="{{img}}" alt="{{name}}" />
-                <div class="sw5e-starship-item-copy">
-                  <strong class="sw5e-starship-item-name">{{name}}</strong>
-                  <div class="sw5e-crew-badges">
-                    {{#if isPilot}}<span class="sw5e-crew-badge sw5e-crew-badge-pilot">Pilot</span>{{/if}}
-                    {{#if active}}<span class="sw5e-crew-badge sw5e-crew-badge-active">Active</span>{{/if}}
-                    {{#unless isPilot}}{{#if isCrew}}<span class="sw5e-crew-badge">Crew</span>{{/if}}{{/unless}}
-                    {{#if isPassenger}}<span class="sw5e-crew-badge">Passenger</span>{{/if}}
-                  </div>
-                </div>
-              </div>
-              <div class="sw5e-starship-item-actions">
-                {{#if isPilot}}
-                  <button type="button" class="sw5e-starship-item-button" data-sw5e-crew-command="undeploy-pilot" data-actor-uuid="{{uuid}}">Clear Pilot</button>
-                {{else}}
-                  <button type="button" class="sw5e-starship-item-button" data-sw5e-crew-command="set-pilot" data-actor-uuid="{{uuid}}">Set Pilot</button>
-                {{/if}}
-                <button type="button" class="sw5e-starship-item-button" data-sw5e-crew-command="toggle-active" data-actor-uuid="{{uuid}}">
-                  {{#if active}}Deactivate{{else}}Activate{{/if}}
-                </button>
-                <button type="button" class="sw5e-starship-item-button sw5e-starship-item-button-danger" data-sw5e-crew-command="remove" data-actor-uuid="{{uuid}}">Remove</button>
-              </div>
-            </article>
-          {{/each}}
-        </div>
-      {{else}}
-        <p class="sw5e-crew-empty">No crew assigned. Use "+ Add Crew Member" to assign crew.</p>
+  <div class="sw5e-starship-main-body">
+    <nav class="sw5e-starship-sotg-nav" role="tablist" aria-label="Starship Systems">
+      <button type="button" class="sw5e-starship-sotg-tab active" role="tab" data-sw5e-sotg-tab="overview" aria-selected="true" id="sw5e-sotg-tab-overview">Overview</button>
+      {{#if crew}}
+      <button type="button" class="sw5e-starship-sotg-tab" role="tab" data-sw5e-sotg-tab="crew" aria-selected="false" id="sw5e-sotg-tab-crew">Crew</button>
       {{/if}}
-    </section>
-  {{/if}}
+      {{#if skills.length}}
+      <button type="button" class="sw5e-starship-sotg-tab" role="tab" data-sw5e-sotg-tab="skills" aria-selected="false" id="sw5e-sotg-tab-skills">Skills</button>
+      {{/if}}
+      <button type="button" class="sw5e-starship-sotg-tab" role="tab" data-sw5e-sotg-tab="features" aria-selected="false" id="sw5e-sotg-tab-features">Features</button>
+    </nav>
 
-  {{#if skills.length}}
-    <section class="sw5e-starship-skills">
-      <header class="sw5e-starship-section-header">
-        <div>
-          <span class="sw5e-starship-kicker">Starship Skills</span>
-          <h2>Skill Console</h2>
-          <p>Vehicle-backed skill rolls now run through a dedicated ship skill path instead of the normal character skill workflow.</p>
-        </div>
-      </header>
-
-      <div class="sw5e-starship-skill-grid">
-        {{#each skills}}
-          <article class="sw5e-starship-skill-row">
-            <div class="sw5e-starship-skill-copy">
-              <strong>{{label}}</strong>
-              <span>{{abilityLabel}}{{#if hover}} | {{hover}}{{/if}}</span>
-            </div>
-
-            <div class="sw5e-starship-skill-total">{{total}}</div>
-
-            <button
-              type="button"
-              class="sw5e-starship-item-button"
-              data-sw5e-action="roll-skill"
-              data-skill-id="{{id}}"
-            >
-              Roll
-            </button>
+    <div class="sw5e-starship-sotg-panels">
+      <section class="sw5e-starship-sotg-panel active" data-sw5e-sotg-panel="overview" role="tabpanel" aria-labelledby="sw5e-sotg-tab-overview" id="sw5e-sotg-panel-overview">
+        <div class="sw5e-starship-overview-compact sw5e-starship-overview-snapshots-region">
+          {{#if crew}}
+          <article class="sw5e-starship-overview-snapshot">
+            <header class="sw5e-starship-overview-snapshot-header">
+              <span class="sw5e-starship-overview-snapshot-kicker">Crew</span>
+            </header>
+            <p class="sw5e-starship-overview-snapshot-stat"><strong>{{crew.roster.length}}</strong> <span class="sw5e-starship-overview-snapshot-units">assigned</span></p>
+            <button type="button" class="sw5e-starship-item-button sw5e-starship-sotg-goto" data-sw5e-sotg-goto="crew">Crew operations</button>
           </article>
-        {{/each}}
-      </div>
-    </section>
-  {{/if}}
+          {{/if}}
+          {{#if skills.length}}
+          <article class="sw5e-starship-overview-snapshot">
+            <header class="sw5e-starship-overview-snapshot-header">
+              <span class="sw5e-starship-overview-snapshot-kicker">Skills</span>
+            </header>
+            <p class="sw5e-starship-overview-snapshot-stat"><strong>{{skills.length}}</strong> <span class="sw5e-starship-overview-snapshot-units">starship skills</span></p>
+            <button type="button" class="sw5e-starship-item-button sw5e-starship-sotg-goto" data-sw5e-sotg-goto="skills">Skill console</button>
+          </article>
+          {{/if}}
+          {{#if featureGroups.length}}
+          <article class="sw5e-starship-overview-snapshot">
+            <header class="sw5e-starship-overview-snapshot-header">
+              <span class="sw5e-starship-overview-snapshot-kicker">Configuration</span>
+            </header>
+            <p class="sw5e-starship-overview-snapshot-stat"><strong>{{featureGroups.length}}</strong> <span class="sw5e-starship-overview-snapshot-units">feature groups</span></p>
+            <button type="button" class="sw5e-starship-item-button sw5e-starship-sotg-goto" data-sw5e-sotg-goto="features">Starship features</button>
+          </article>
+          {{/if}}
+        </div>
 
-  <section class="sw5e-starship-groups">
-    {{#each groups}}
-      <article class="sw5e-starship-group">
-        <header class="sw5e-starship-group-header">
-          <div class="sw5e-starship-group-title">
-            <h3>{{label}}</h3>
-            <p>Browse here first, then use the row actions to open details and jump deeper into the stock sheet when available.</p>
+        <section class="sw5e-starship-overview-workspace" aria-label="Ship workspace">
+          <header class="sw5e-starship-overview-workspace-heading">
+            <span class="sw5e-starship-kicker">Workspace</span>
+            <h2 class="sw5e-starship-overview-workspace-title">Equipment &amp; ship systems</h2>
+            <p class="sw5e-starship-overview-workspace-lede">Items assigned to this vessel. Row actions open sheets, remove entries, or locate items on the stock vehicle view.</p>
+          </header>
+
+          <div class="sw5e-starship-groups sw5e-starship-overview-workspace-grid">
+            {{#each groups}}
+              <article class="sw5e-starship-group sw5e-starship-group--workspace">
+                <header class="sw5e-starship-group-header sw5e-starship-group-header--workspace">
+                  <div class="sw5e-starship-group-title">
+                    <h3>{{label}}</h3>
+                    <p class="sw5e-starship-group-lede">Use the icon to roll or post when available, then <strong>Open</strong> for full details.</p>
+                  </div>
+                  <div class="sw5e-starship-group-tools">
+                    <span class="sw5e-starship-group-count">{{count}}</span>
+                    {{#if supportsSheetNavigation}}
+                      <button
+                        type="button"
+                        class="sw5e-starship-group-link"
+                        data-sw5e-action="open-tab"
+                        data-first-item-id="{{firstItemId}}"
+                      >
+                        Manage in {{manageLabel}}
+                      </button>
+                    {{/if}}
+                  </div>
+                </header>
+
+                <div class="sw5e-starship-item-list sw5e-starship-overview-item-list">
+                  {{#each items}}
+                    <article class="sw5e-starship-item-row sw5e-starship-overview-item-row">
+                      <div class="sw5e-starship-item-main">
+                        {{#if img}}
+                          <button
+                            type="button"
+                            class="sw5e-starship-item-icon-button"
+                            data-sw5e-action="use-item"
+                            data-item-id="{{id}}"
+                            title="Roll or post to chat"
+                            aria-label="Roll or post {{name}} to chat"
+                          >
+                            <img class="sw5e-starship-item-image" src="{{img}}" alt="" />
+                          </button>
+                        {{/if}}
+
+                        <div class="sw5e-starship-item-copy">
+                          <strong class="sw5e-starship-item-name">{{name}}</strong>
+                          {{#if meta}}
+                            <span class="sw5e-starship-item-meta">{{meta}}</span>
+                          {{/if}}
+                        </div>
+                      </div>
+
+                      <div class="sw5e-starship-item-actions sw5e-starship-overview-item-actions">
+                        <button
+                          type="button"
+                          class="sw5e-starship-item-button"
+                          data-sw5e-action="open-item"
+                          data-item-id="{{id}}"
+                        >
+                          Open
+                        </button>
+                        <button
+                          type="button"
+                          class="sw5e-starship-item-button sw5e-starship-item-button-danger"
+                          data-sw5e-action="delete-item"
+                          data-item-id="{{id}}"
+                        >
+                          Delete
+                        </button>
+                        {{#if ../supportsSheetNavigation}}
+                          <button
+                            type="button"
+                            class="sw5e-starship-item-button sw5e-starship-item-button-secondary"
+                            data-sw5e-action="focus-item"
+                            data-item-id="{{id}}"
+                            data-tab="{{defaultTab}}"
+                          >
+                            Find in Sheet
+                          </button>
+                        {{/if}}
+                      </div>
+                    </article>
+                  {{/each}}
+                </div>
+              </article>
+            {{/each}}
           </div>
-          <div class="sw5e-starship-group-tools">
-            <span class="sw5e-starship-group-count">{{count}}</span>
-            {{#if supportsSheetNavigation}}
-              <button
-                type="button"
-                class="sw5e-starship-group-link"
-                data-sw5e-action="open-tab"
-                data-first-item-id="{{firstItemId}}"
-              >
-                Manage in {{manageLabel}}
-              </button>
+        </section>
+      </section>
+
+      {{#if crew}}
+      <section class="sw5e-starship-sotg-panel" data-sw5e-sotg-panel="crew" role="tabpanel" aria-labelledby="sw5e-sotg-tab-crew" id="sw5e-sotg-panel-crew" hidden>
+        <section class="sw5e-starship-crew-section">
+          <div class="sw5e-starship-crew-command">
+            <header class="sw5e-starship-section-header sw5e-crew-section-header">
+              <div class="sw5e-starship-crew-heading">
+                <span class="sw5e-starship-kicker">Crew &amp; Passengers</span>
+                <h2>Crew Management</h2>
+              </div>
+              <button type="button" class="sw5e-starship-item-button sw5e-starship-crew-add" data-sw5e-crew-command="open-add-crew">+ Add Crew Member</button>
+            </header>
+
+            <div class="sw5e-starship-crew-status" aria-live="polite">
+              <span class="sw5e-starship-crew-status-label">Assigned crew</span>
+              <strong class="sw5e-starship-crew-status-value">{{crew.roster.length}}</strong>
+            </div>
+          </div>
+
+          <div class="sw5e-starship-crew-operations">
+            {{#if crew.roster.length}}
+              <div class="sw5e-starship-item-list sw5e-starship-crew-roster">
+                {{#each crew.roster}}
+                  <article class="sw5e-starship-item-row sw5e-starship-crew-row{{#if active}} sw5e-crew-active{{/if}}">
+                    <div class="sw5e-starship-item-main">
+                      <img class="sw5e-starship-item-image" src="{{img}}" alt="{{name}}" />
+                      <div class="sw5e-starship-item-copy">
+                        <strong class="sw5e-starship-item-name">{{name}}</strong>
+                        <div class="sw5e-crew-badges">
+                          {{#if isPilot}}<span class="sw5e-crew-badge sw5e-crew-badge-pilot">Pilot</span>{{/if}}
+                          {{#if active}}<span class="sw5e-crew-badge sw5e-crew-badge-active">Active</span>{{/if}}
+                          {{#unless isPilot}}{{#if isCrew}}<span class="sw5e-crew-badge">Crew</span>{{/if}}{{/unless}}
+                          {{#if isPassenger}}<span class="sw5e-crew-badge">Passenger</span>{{/if}}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sw5e-starship-item-actions sw5e-starship-crew-row-actions">
+                      {{#if isPilot}}
+                        <button type="button" class="sw5e-starship-item-button" data-sw5e-crew-command="undeploy-pilot" data-actor-uuid="{{uuid}}">Clear Pilot</button>
+                      {{else}}
+                        <button type="button" class="sw5e-starship-item-button" data-sw5e-crew-command="set-pilot" data-actor-uuid="{{uuid}}">Set Pilot</button>
+                      {{/if}}
+                      <button type="button" class="sw5e-starship-item-button" data-sw5e-crew-command="toggle-active" data-actor-uuid="{{uuid}}">
+                        {{#if active}}Deactivate{{else}}Activate{{/if}}
+                      </button>
+                      <button type="button" class="sw5e-starship-item-button sw5e-starship-item-button-danger" data-sw5e-crew-command="remove" data-actor-uuid="{{uuid}}">Remove</button>
+                    </div>
+                  </article>
+                {{/each}}
+              </div>
+            {{else}}
+              <p class="sw5e-crew-empty">No crew assigned. Use "+ Add Crew Member" to assign crew.</p>
             {{/if}}
           </div>
-        </header>
+        </section>
+      </section>
+      {{/if}}
 
-        <div class="sw5e-starship-item-list">
-          {{#each items}}
-            <article class="sw5e-starship-item-row">
-              <div class="sw5e-starship-item-main">
-                {{#if img}}
-                  <button
-                    type="button"
-                    class="sw5e-starship-item-icon-button"
-                    data-sw5e-action="use-item"
-                    data-item-id="{{id}}"
-                    title="Roll or post to chat"
-                    aria-label="Roll or post {{name}} to chat"
-                  >
-                    <img class="sw5e-starship-item-image" src="{{img}}" alt="" />
-                  </button>
-                {{/if}}
+      {{#if skills.length}}
+      <section class="sw5e-starship-sotg-panel" data-sw5e-sotg-panel="skills" role="tabpanel" aria-labelledby="sw5e-sotg-tab-skills" id="sw5e-sotg-panel-skills" hidden>
+        <section class="sw5e-starship-skills">
+          <header class="sw5e-starship-section-header sw5e-starship-skills-header">
+            <div class="sw5e-starship-skills-heading">
+              <span class="sw5e-starship-kicker">Starship Skills</span>
+              <h2>Skill Console</h2>
+              <p class="sw5e-starship-skills-lede">Vehicle-backed skill rolls use the ship skill path.</p>
+            </div>
+          </header>
 
-                <div class="sw5e-starship-item-copy">
-                  <strong class="sw5e-starship-item-name">{{name}}</strong>
-                  {{#if meta}}
-                    <span class="sw5e-starship-item-meta">{{meta}}</span>
-                  {{/if}}
+          <div class="sw5e-starship-skill-console">
+            <div class="sw5e-starship-skill-grid-header" aria-hidden="true">
+              <span>Skill</span>
+              <span>Modifier</span>
+              <span>Action</span>
+            </div>
+            <div class="sw5e-starship-skill-grid">
+              {{#each skills}}
+                <article class="sw5e-starship-skill-row">
+                  <div class="sw5e-starship-skill-primary">
+                    <strong class="sw5e-starship-skill-name">{{label}}</strong>
+                    <span class="sw5e-starship-skill-meta">{{abilityLabel}}{{#if hover}} | {{hover}}{{/if}}</span>
+                  </div>
+
+                  <div class="sw5e-starship-skill-total-wrap">
+                    <span class="sw5e-starship-skill-total">{{total}}</span>
+                  </div>
+
+                  <div class="sw5e-starship-skill-actions">
+                    <button
+                      type="button"
+                      class="sw5e-starship-item-button sw5e-starship-skill-roll"
+                      data-sw5e-action="roll-skill"
+                      data-skill-id="{{id}}"
+                    >
+                      Roll
+                    </button>
+                  </div>
+                </article>
+              {{/each}}
+            </div>
+          </div>
+        </section>
+      </section>
+      {{/if}}
+
+      <section class="sw5e-starship-sotg-panel" data-sw5e-sotg-panel="features" role="tabpanel" aria-labelledby="sw5e-sotg-tab-features" id="sw5e-sotg-panel-features" hidden>
+        <div class="sw5e-starship-sotg-features-body sw5e-starship-panel-features" data-application-part="sw5e-starship-sotg-features">
+          <header class="sw5e-starship-section-header sw5e-starship-sotg-features-header">
+            <div>
+              <span class="sw5e-starship-kicker">{{featureTitle}}</span>
+              <h2>{{featureTitle}}</h2>
+              <p class="sw5e-starship-sotg-features-lede">{{featureSubtitle}}</p>
+            </div>
+          </header>
+
+          <section class="sw5e-starship-groups sw5e-starship-groups-stacked">
+            {{#each featureGroups}}
+              <article class="sw5e-starship-group">
+                <header class="sw5e-starship-group-header">
+                  <div class="sw5e-starship-group-title">
+                    <h3>{{label}}</h3>
+                    <p>Use the icon to roll or post to chat, open details when needed, or remove items directly from this tab.</p>
+                  </div>
+                  <div class="sw5e-starship-group-tools">
+                    <span class="sw5e-starship-group-count">{{count}}</span>
+                    {{#if supportsSheetNavigation}}
+                      <button
+                        type="button"
+                        class="sw5e-starship-group-link"
+                        data-sw5e-action="open-tab"
+                        data-first-item-id="{{firstItemId}}"
+                      >
+                        Manage in {{manageLabel}}
+                      </button>
+                    {{/if}}
+                  </div>
+                </header>
+
+                <div class="sw5e-starship-item-list">
+                  {{#each items}}
+                    <article class="sw5e-starship-item-row">
+                      <div class="sw5e-starship-item-main">
+                        {{#if img}}
+                          <button
+                            type="button"
+                            class="sw5e-starship-item-icon-button"
+                            data-sw5e-action="use-item"
+                            data-item-id="{{id}}"
+                            title="Roll or post to chat"
+                            aria-label="Roll or post {{name}} to chat"
+                          >
+                            <img class="sw5e-starship-item-image" src="{{img}}" alt="" />
+                          </button>
+                        {{/if}}
+
+                        <div class="sw5e-starship-item-copy">
+                          <strong class="sw5e-starship-item-name">{{name}}</strong>
+                          {{#if meta}}
+                            <span class="sw5e-starship-item-meta">{{meta}}</span>
+                          {{/if}}
+                        </div>
+                      </div>
+
+                      <div class="sw5e-starship-item-actions">
+                        <button
+                          type="button"
+                          class="sw5e-starship-item-button"
+                          data-sw5e-action="open-item"
+                          data-item-id="{{id}}"
+                        >
+                          Open
+                        </button>
+                        <button
+                          type="button"
+                          class="sw5e-starship-item-button sw5e-starship-item-button-danger"
+                          data-sw5e-action="delete-item"
+                          data-item-id="{{id}}"
+                        >
+                          Delete
+                        </button>
+                        {{#if ../supportsSheetNavigation}}
+                          <button
+                            type="button"
+                            class="sw5e-starship-item-button sw5e-starship-item-button-secondary"
+                            data-sw5e-action="focus-item"
+                            data-item-id="{{id}}"
+                            data-tab="{{defaultTab}}"
+                          >
+                            Find in Sheet
+                          </button>
+                        {{/if}}
+                      </div>
+                    </article>
+                  {{/each}}
                 </div>
-              </div>
-
-              <div class="sw5e-starship-item-actions">
-                <button
-                  type="button"
-                  class="sw5e-starship-item-button"
-                  data-sw5e-action="open-item"
-                  data-item-id="{{id}}"
-                >
-                  Open
-                </button>
-                <button
-                  type="button"
-                  class="sw5e-starship-item-button sw5e-starship-item-button-danger"
-                  data-sw5e-action="delete-item"
-                  data-item-id="{{id}}"
-                >
-                  Delete
-                </button>
-                {{#if ../supportsSheetNavigation}}
-                  <button
-                    type="button"
-                    class="sw5e-starship-item-button sw5e-starship-item-button-secondary"
-                    data-sw5e-action="focus-item"
-                    data-item-id="{{id}}"
-                    data-tab="{{defaultTab}}"
-                  >
-                    Find in Sheet
-                  </button>
-                {{/if}}
-              </div>
-            </article>
-          {{/each}}
+              </article>
+            {{/each}}
+          </section>
         </div>
-      </article>
-    {{/each}}
-  </section>
-</div>
+      </section>
+    </div>
+  </div>
+</section>

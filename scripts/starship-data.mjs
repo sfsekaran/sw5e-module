@@ -564,6 +564,23 @@ export function normalizeLegacyStarshipActorData(data) {
 	return true;
 }
 
+export function createBlankLegacyStarshipActorData(data = {}) {
+	const source = cloneData(data) ?? {};
+	source.type = "vehicle";
+	source.items = Array.isArray(source.items) ? source.items : [];
+	source.system = cloneData(source.system ?? {});
+
+	const flags = ensureSw5eFlags(source);
+	delete flags.createStarship;
+	flags.legacyStarshipActor = {
+		type: "starship",
+		system: cloneData(flags.legacyStarshipActor?.system ?? source.system ?? {})
+	};
+
+	normalizeLegacyStarshipActorData(source);
+	return source;
+}
+
 function getStoredLegacyStarshipActorSystem(actor) {
 	return actor?.flags?.sw5e?.legacyStarshipActor?.system ?? {};
 }
