@@ -651,7 +651,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -1428,7 +1428,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/143_-_74-Z_Speeder_Bike/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/143_-_74-Z_Speeder_Bike/Avatar.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

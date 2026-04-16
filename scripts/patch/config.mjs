@@ -1,6 +1,10 @@
 import { applySw5eCurrencyConfig } from "../currencies.mjs";
 import { getModulePath, normalizeCompendiumUuid } from "../module-support.mjs";
 
+function normalizeCompendiumRecord(record = {}) {
+	return Object.fromEntries(Object.entries(record).map(([key, uuid]) => [key, normalizeCompendiumUuid(uuid)]));
+}
+
 export function patchConfig(config, strict = true) {
 	const preLocalize = game.dnd5e.utils.preLocalize;
 	const getConditionReference = reference => normalizeCompendiumUuid(reference);
@@ -122,14 +126,23 @@ export function patchConfig(config, strict = true) {
 	if (strict) config.weaponProficienciesMap = {};
 	config.weaponProficienciesMap = {
 		...config.weaponProficienciesMap,
+		simpleB: "sbl",
 		simpleBL: "sbl",
 		simpleLW: "slw",
+		simpleV: "svb",
+		simpleVB: "svb",
 		simpleVW: "svb",
+		martialB: "mbl",
 		martialBL: "mbl",
 		martialLW: "mlw",
+		martialV: "mvb",
+		martialVB: "mvb",
 		martialVW: "mvb",
+		exoticB: "ebl",
 		exoticBL: "ebl",
 		exoticLW: "elw",
+		exoticV: "evw",
+		exoticVB: "evw",
 		exoticVW: "evw"
 	};
 	if (strict) config.weaponIds = {
@@ -354,6 +367,7 @@ export function patchConfig(config, strict = true) {
 		"warsword": "Compendium.sw5e.vibroweapons.Item.VzCZvULJMfoY1f5P",
 		"wristblade": "Compendium.sw5e.vibroweapons.Item.p8AoTEx9ySGHmJZu",
 	};
+	config.weaponIds = normalizeCompendiumRecord(config.weaponIds);
 	if (strict) config.ammoIds = {
 		arrow: "Compendium.sw5e.ammo.Item.kW97lhvo8rYMypG0",
 		arrowcombustive: "Compendium.sw5e.ammo.Item.n1gjy0mheXViYfsE",
@@ -571,6 +585,7 @@ export function patchConfig(config, strict = true) {
 		battlearmor: "Compendium.sw5e.armor.Item.wafF3SF4zQBOs34y",
 		heavyexoskeleton: "Compendium.sw5e.armor.Item.ggFMzbQrwkGZCoaQ",
 	};
+	config.armorIds = normalizeCompendiumRecord(config.armorIds);
 	if (strict) config.shieldIds = {
 		lightphysicalshield: "Compendium.sw5e.armor.Item.k1pOOCzZoWEr5Dia",
 		lightshieldgenerator: "Compendium.sw5e.armor.Item.eMXpw3HIVMnaNFQ1",
@@ -581,6 +596,7 @@ export function patchConfig(config, strict = true) {
 		heavyphysicalshield: "Compendium.sw5e.armor.Item.KvzKRKNWATwdzxjz",
 		heavyshieldgenerator: "Compendium.sw5e.armor.Item.2u9493AUhrh2AfES",
 	};
+	config.shieldIds = normalizeCompendiumRecord(config.shieldIds);
 	config.armorClasses.unarmoredMonk.formula = "10 + @abilities.dex.mod + max(@abilities.wis.mod, @abilities.cha.mod)"
 	// Consumables
 	if (strict) {
@@ -2138,6 +2154,29 @@ export function patchConfig(config, strict = true) {
 	// Traits
 	config.traits = {
 		...config.traits,
+		armor: {
+			...config.traits.armor,
+			labels: {
+				...(config.traits.armor?.labels ?? {}),
+				title: "SW5E.TraitArmorProf",
+				localization: "SW5E.TraitArmorPlural"
+			},
+			actorKeyPath: "system.traits.armorProf",
+			configKey: "armorProficiencies",
+			subtypes: { keyPath: "armor.type", ids: ["armorIds", "shieldIds"] }
+		},
+		weapon: {
+			...config.traits.weapon,
+			labels: {
+				...(config.traits.weapon?.labels ?? {}),
+				title: "SW5E.TraitWeaponProf",
+				localization: "SW5E.TraitWeaponPlural"
+			},
+			actorKeyPath: "system.traits.weaponProf",
+			configKey: "weaponProficiencies",
+			subtypes: { keyPath: "weaponType", ids: ["weaponIds"] },
+			mastery: true
+		},
 		tool: {
 			...config.traits.tool,
 			labels: {

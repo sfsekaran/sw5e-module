@@ -12,6 +12,8 @@ import {
 	normalizeDnd5eItemSource,
 	normalizeEmbeddedDnd5eItemSources
 } from "../scripts/dnd5e-source-normalization.mjs";
+import { normalizeAdvancementGrants } from "../scripts/proficiency-utils.mjs";
+import { backfillNpcWeapons, getNpcWeaponBackfillStats, resetNpcWeaponBackfillStats } from "./npc-weapon-backfill.mjs";
 import {
 	normalizeLegacyStarshipActorSource,
 	normalizeLegacyStarshipItemSource
@@ -285,6 +287,10 @@ function normalizeAdvancements(data, moduleId=CANONICAL_MODULE_ID) {
 	for ( const adv of data.system.advancement ) {
 		for ( const field of ["pool", "items", "grants"] ) {
 			if ( !adv?.configuration?.[field] ) continue;
+			if ( field === "grants" ) {
+				adv.configuration.grants = normalizeAdvancementGrants(adv.configuration.grants).grants;
+				continue;
+			}
 			adv.configuration[field] = adv.configuration[field].map(item => normalizeAdvancementLink(item, field, moduleId).item);
 		}
 
@@ -305,14 +311,23 @@ function normalizeAdvancements(data, moduleId=CANONICAL_MODULE_ID) {
 	}
 }
 
-function cleanImage(path) {
+function normalizeModuleImagePath(path) {
+	path = path?.replace("systems/sw5e/packs/Icons", "modules/sw5e-module/icons/packs");
+	path = path?.replace("modules/sw5e/icons/packs", "modules/sw5e-module/icons/packs");
+	path = path?.replace("modules/sw5e-module-test/icons/packs", "modules/sw5e-module/icons/packs");
+	return path;
+}
+
+function cleanImage(path, { avatarPath="" }={}) {
 		const normalized = typeof path === "string" ? path.trim() : path;
 		const lower = typeof normalized === "string" ? normalized.toLowerCase() : "";
 		const isBrokenExternal = /^https?:\/\/(?:static\.wikia\.nocookie\.net|cdn[ab]\.artstation\.com)\//.test(lower);
 		if ( ["", "undefined", "null", "nan"].includes(lower) || lower.startsWith("tokenizer/") || isBrokenExternal ) return "";
-		path = normalized?.replace("systems/sw5e/packs/Icons", "modules/sw5e-module/icons/packs");
-		path = path?.replace("modules/sw5e/icons/packs", "modules/sw5e-module/icons/packs");
-		path = path?.replace("modules/sw5e-module-test/icons/packs", "modules/sw5e-module/icons/packs");
+		path = normalizeModuleImagePath(normalized);
+		if ( /^modules\/sw5e-module\/icons\/packs\/monsters\/.+\/Token\.webp$/i.test(path ?? "") ) {
+			const normalizedAvatar = normalizeModuleImagePath(typeof avatarPath === "string" ? avatarPath.trim() : avatarPath);
+			path = normalizedAvatar || path.replace(/\/Token\.webp$/i, "/Avatar.webp");
+		}
 		return path;
 }
 
@@ -498,6 +513,7 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
 	if ( data.img ) data.img = cleanImage(data.img);
 	if ( data.icon ) data.icon = cleanImage(data.icon);
 	if ( data.texture?.src ) data.texture.src = cleanImage(data.texture.src);
+	if ( data.prototypeToken?.texture?.src ) data.prototypeToken.texture.src = cleanImage(data.prototypeToken.texture.src, { avatarPath: data.img });
 	normalizeDnd5eItemSource(data);
 	normalizeEmbeddedDnd5eItemSources(data.items);
 	normalizeCompendiumReferences(data);
@@ -514,8 +530,9 @@ function convertSW5EPackEntry(data, { forceConvert=false }={}) {
  * @param {boolean} [options.clearSourceId=true]  Should the core sourceId flag be deleted.
  * @param {number} [options.ownership=0]          Value to reset default ownership to.
  */
-function cleanPackEntry(data, { clearSourceId=true, ownership=0, forceConvert=true }={}) {
+function cleanPackEntry(data, { clearSourceId=true, ownership=0, forceConvert=true, packName="" }={}) {
 	forceConvert = convertSW5EPackEntry(data, { forceConvert });
+	backfillNpcWeapons(data, { packName });
 
 	if ( data.ownership ) data.ownership = { default: ownership };
 	if ( clearSourceId ) {
@@ -548,7 +565,7 @@ function cleanPackEntry(data, { clearSourceId=true, ownership=0, forceConvert=tr
 	// Remove mystery-man.svg from Actors
 	if ( ["character", "npc"].includes(data.type) && data.img === "icons/svg/mystery-man.svg" ) {
 		data.img = "";
-		data.prototypeToken.texture.src = "";
+		if ( data.prototypeToken?.texture ) data.prototypeToken.texture.src = "";
 	}
 
 	if ( data.effects ) data.effects.forEach(i => cleanPackEntry(i, { clearSourceId: false, forceConvert }));
@@ -602,6 +619,7 @@ async function cleanPacks(packName, entryName) {
 
 	for ( const folder of folders ) {
 		logger.info(`Cleaning pack ${folder.name}`);
+		resetNpcWeaponBackfillStats();
 		for await ( const src of _walkDir(path.join(PACK_SRC, folder.name)) ) {
 			const json = JSON.parse(await readFile(src, { encoding: "utf8" }));
 			if ( entryName && (entryName !== json.name.toLowerCase()) ) continue;
@@ -609,9 +627,13 @@ async function cleanPacks(packName, entryName) {
 				console.log(`Failed to clean \x1b[31m${src}\x1b[0m, must have _id and _key.`);
 				continue;
 			}
-			cleanPackEntry(json);
+			cleanPackEntry(json, { packName: folder.name });
 			fs.rmSync(src, { force: true });
 			writeFile(src, `${JSON.stringify(json, null, 2)}\n`, { mode: 0o664 });
+		}
+		const stats = getNpcWeaponBackfillStats();
+		if ( stats.matchedEntries ) {
+			logger.info(`NPC weapon backfill for ${folder.name}: ${stats.matchedEntries} matched entries, ${stats.actorsChanged} actors changed, ${stats.weaponsAdded} weapons added, ${stats.weaponsUpdated} weapons updated, ${stats.ammoAdded} ammo items added`);
 		}
 	}
 }
@@ -638,7 +660,16 @@ async function compilePacks(packName) {
 		const src = path.join(PACK_SRC, folder.name);
 		const dest = path.join(PACK_DEST, folder.name);
 		logger.info(`Compiling pack ${folder.name}`);
-		await compileClassicLevelSafe(src, dest, { recursive: true, log: true, transformEntry: cleanPackEntry });
+		resetNpcWeaponBackfillStats();
+		await compileClassicLevelSafe(src, dest, {
+			recursive: true,
+			log: true,
+			transformEntry: doc => cleanPackEntry(doc, { packName: folder.name })
+		});
+		const stats = getNpcWeaponBackfillStats();
+		if ( stats.matchedEntries ) {
+			logger.info(`NPC weapon backfill for ${folder.name}: ${stats.matchedEntries} matched entries, ${stats.actorsChanged} actors changed, ${stats.weaponsAdded} weapons added, ${stats.weaponsUpdated} weapons updated, ${stats.ammoAdded} ammo items added`);
+		}
 	}
 }
 
@@ -786,7 +817,7 @@ async function extractPacks(packName, entryName) {
 		await extractPack(src, dest, {
 			log: false, transformEntry: entry => {
 				if ( entryName && (entryName !== entry.name.toLowerCase()) ) return false;
-				cleanPackEntry(entry);
+				cleanPackEntry(entry, { packName: packInfo.name });
 				const name = path.join(dest, transformName(entry, packInfo.name)) + ".json";
 				if (!checkChanges(entry, name)) return false;
 			}, transformName: entry => transformName(entry, packInfo.name) + ".json"

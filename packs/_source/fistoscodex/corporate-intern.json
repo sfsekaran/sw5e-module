@@ -249,7 +249,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -401,7 +401,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -624,7 +624,9 @@
         },
         "enchantment": null,
         "summons": null,
-        "properties": []
+        "properties": [],
+        "method": "powerCasting",
+        "prepared": true
       },
       "ownership": {
         "default": 0
@@ -745,7 +747,9 @@
         },
         "enchantment": null,
         "summons": null,
-        "properties": []
+        "properties": [],
+        "method": "powerCasting",
+        "prepared": true
       },
       "ownership": {
         "default": 0
@@ -866,7 +870,9 @@
         },
         "enchantment": null,
         "summons": null,
-        "properties": []
+        "properties": [],
+        "method": "powerCasting",
+        "prepared": true
       },
       "ownership": {
         "default": 0
@@ -982,7 +988,9 @@
         },
         "enchantment": null,
         "summons": null,
-        "properties": []
+        "properties": [],
+        "method": "powerCasting",
+        "prepared": true
       },
       "ownership": {
         "default": 0
@@ -1103,7 +1111,9 @@
         },
         "enchantment": null,
         "summons": null,
-        "properties": []
+        "properties": [],
+        "method": "powerCasting",
+        "prepared": true
       },
       "ownership": {
         "default": 0
@@ -1222,7 +1232,9 @@
         },
         "enchantment": null,
         "summons": null,
-        "properties": []
+        "properties": [],
+        "method": "powerCasting",
+        "prepared": true
       },
       "ownership": {
         "default": 0
@@ -1266,7 +1278,7 @@
         },
         "price": {
           "value": 100,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -2054,7 +2066,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/291_-_Corporate_Intern/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/291_-_Corporate_Intern/Avatar.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

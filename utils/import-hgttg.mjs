@@ -2,6 +2,7 @@ import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { normalizeWeaponProficiencyValue } from "../scripts/proficiency-utils.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -532,7 +533,7 @@ function parseLegacyEffects(legacyItem, featureTexts) {
 			}
 
 			if ( key === "system.traits.weaponProf.custom" && value ) {
-				grants.add(`weapon:${String(value)}`);
+				grants.add(`weapon:${normalizeWeaponProficiencyValue(String(value))}`);
 				continue;
 			}
 

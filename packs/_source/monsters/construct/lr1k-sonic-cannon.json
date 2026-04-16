@@ -994,7 +994,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/154_-_LR1K_Sonic_Cannon/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/154_-_LR1K_Sonic_Cannon/Avatar.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

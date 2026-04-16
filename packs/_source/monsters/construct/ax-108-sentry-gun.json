@@ -1052,7 +1052,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/150_-_Ax-108_Sentry_Gun/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/150_-_Ax-108_Sentry_Gun/Avatar.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

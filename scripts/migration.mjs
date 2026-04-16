@@ -16,6 +16,7 @@ import {
 	normalizeLegacyStarshipActorSource,
 	normalizeLegacyStarshipItemSource
 } from "./starship-data.mjs";
+import { normalizeAdvancementGrants } from "./proficiency-utils.mjs";
 
 const MIGRATABLE_COMPENDIUM_DOCUMENTS = ["Actor", "Item", "Scene", "JournalEntry", "RollTable"];
 
@@ -898,6 +899,7 @@ function _migrateImage(objectData, updateData) {
 	const isActorAvatarTarget = actorTypesWithBlankAvatarFallback.has(objectData?.type);
 	const isLegacyDndIcon = path => /^systems\/dnd5e\/icons\/.+$/.test(path ?? "");
 	const isLootBagFallback = path => path === "icons/svg/item-bag.svg";
+	const isLegacyMonsterToken = path => /^modules\/sw5e-module\/icons\/packs\/monsters\/.+\/Token\.webp$/i.test(path ?? "");
 	const isKnownBrokenExternalImage = path => /^https?:\/\/(?:static\.wikia\.nocookie\.net|cdn[ab]\.artstation\.com)\//.test(path ?? "");
 	const isInvalidImageValue = path => {
 		if ( typeof path !== "string" ) return false;
@@ -921,6 +923,13 @@ function _migrateImage(objectData, updateData) {
 		let newPath = path?.replace("systems/sw5e/packs/Icons", getModulePath("icons/packs"));
 		newPath = newPath?.replace("modules/sw5e/icons/", `${getModulePath("icons")}/`);
 		newPath = newPath?.replace("modules/sw5e-module-test/icons/", `${getModulePath("icons")}/`);
+		if ( (prop === "prototypeToken.texture.src") && isLegacyMonsterToken(newPath) ) {
+			const actorAvatar = foundry.utils.getProperty(objectData, "img")
+				?.replace("systems/sw5e/packs/Icons", getModulePath("icons/packs"))
+				?.replace("modules/sw5e/icons/", `${getModulePath("icons")}/`)
+				?.replace("modules/sw5e-module-test/icons/", `${getModulePath("icons")}/`);
+			newPath = actorAvatar || newPath.replace(/\/Token\.webp$/i, "/Avatar.webp");
+		}
 		if ( isActorAvatarTarget && (prop !== "icon") && (isLegacyDndIcon(newPath) || isLootBagFallback(newPath)) ) {
 			newPath = "";
 		} else {
@@ -998,6 +1007,12 @@ function _migrateDescriptionLinks(itemData, updateData) {
 
 function _normalizeAdvancementLink(item, field, moduleId) {
 	if ( typeof item === "string" ) {
+		if ( field === "grants" ) {
+			const normalizedGrant = normalizeAdvancementGrants([item]);
+			return normalizedGrant.changed
+				? { item: normalizedGrant.grants[0], changed: true }
+				: { item, changed: false };
+		}
 		if ( item === "languages:standard:basic" ) return { item: "languages:standard:common", changed: true };
 		const normalizedUuid = normalizeCompendiumUuid(item, { moduleId });
 		if ( field === "pool" && normalizedUuid.startsWith("Compendium.") ) {
@@ -1274,6 +1289,14 @@ function _migrateAdvancements(itemData, updateData) {
 	for (const adv of itemData.system.advancement) {
 		for (const field of ["pool", "items", "grants"]) {
 			if ( !adv?.configuration?.[field] ) continue;
+			if ( field === "grants" ) {
+				const normalizedGrants = normalizeAdvancementGrants(adv.configuration.grants);
+				if ( normalizedGrants.changed ) {
+					adv.configuration.grants = normalizedGrants.grants;
+					changed = true;
+				}
+				continue;
+			}
 			adv.configuration[field] = adv.configuration[field].map(item => {
 				const normalized = _normalizeAdvancementLink(item, field, moduleId);
 				changed ||= normalized.changed;

@@ -36,6 +36,12 @@ function hasOwnKeys(value) {
 	return isObjectLike(value) && Object.keys(value).length > 0
 }
 
+function isManeuverItem(item) {
+	if ( typeof item?.type !== "string" ) return false
+	const normalizedType = item.type.split(".").at(-1) ?? item.type
+	return normalizedType === "maneuver"
+}
+
 function normalizeActivityEntry(activity, fallbackId) {
 	if ( !isObjectLike(activity) ) return null
 	activity._id ??= fallbackId
@@ -100,7 +106,14 @@ function normalizePowerCastingDefaults(item) {
 function activityHasMeasuredTemplate(activity) {
 	const template = activity?.target?.template
 	if ( template === true ) return true
-	if ( hasOwnKeys(template) ) return true
+	if ( isObjectLike(template) ) {
+		const templateType = template.type
+		if ( typeof templateType === "string" && templateType && (templateType in (globalThis.CONFIG?.DND5E?.areaTargetTypes ?? {})) ) return true
+		const templateSize = Number(template.size ?? template.value)
+		if ( Number.isFinite(templateSize) && (templateSize > 0) ) return true
+		const templateWidth = Number(template.width)
+		if ( Number.isFinite(templateWidth) && (templateWidth > 0) ) return true
+	}
 	if ( activity?.target?.affects?.type === "area" ) return true
 	return false
 }
@@ -111,6 +124,34 @@ function normalizeLegacyWeaponPromptDefaults(item) {
 	if ( Object.values(item.system.activities).some(activityHasMeasuredTemplate) ) return false
 	if ( !isObjectLike(item.system.target) || item.system.target.prompt !== true ) return false
 	item.system.target.prompt = false
+	return true
+}
+
+function normalizeLegacyManeuverPromptDefaults(item) {
+	if ( !isManeuverItem(item) ) return false
+	if ( !hasOwnKeys(item?.system?.activities) ) return false
+	if ( Object.values(item.system.activities).some(activityHasMeasuredTemplate) ) return false
+	if ( !isObjectLike(item.system.target) || item.system.target.prompt !== true ) return false
+	item.system.target.prompt = false
+	return true
+}
+
+function normalizeLegacyManeuverSourceClass(item) {
+	if ( !isManeuverItem(item) ) return false
+	if ( !item?.system || !("sourceClass" in item.system) ) return false
+
+	const current = item.system.sourceClass
+	let normalized = current
+
+	if ( current === "[object Object]" ) normalized = ""
+	else if ( isObjectLike(current) ) normalized = current.system?.identifier ?? current.identifier ?? current.value ?? ""
+	else if ( (current !== undefined) && (current !== null) && (typeof current !== "string") ) normalized = ""
+
+	if ( (normalized === undefined) || (normalized === null) ) normalized = ""
+	if ( typeof normalized !== "string" ) normalized = ""
+	if ( normalized === current ) return false
+
+	item.system.sourceClass = normalized
 	return true
 }
 
@@ -260,6 +301,8 @@ export function normalizeDnd5eItemSource(item, { targetSystemVersion=TARGET_DND5
 	changed = normalizeLegacyItemAdvancement(item) || changed
 	changed = normalizeLegacyToolShape(item) || changed
 	changed = normalizeLegacyWeaponPromptDefaults(item) || changed
+	changed = normalizeLegacyManeuverPromptDefaults(item) || changed
+	changed = normalizeLegacyManeuverSourceClass(item) || changed
 	changed = normalizePowerCastingDefaults(item) || changed
 
 	if ( changed ) changed = normalizeSystemStats(item, { targetSystemVersion }) || changed

@@ -37,11 +37,6 @@ export function patchStarshipPrepare() {
 				const mergedAbilities = mergeVehicleAbilityValues(this.abilities, legacyAbilities);
 				if ( mergedAbilities ) {
 					this.abilities = mergedAbilities;
-					if ( actorSource.system && (typeof actorSource.system === "object") ) {
-						actorSource.system.abilities = mergedAbilities;
-					}
-					const legacySnapshot = actorSource.flags?.sw5e?.legacyStarshipActor?.system;
-					if ( legacySnapshot && (typeof legacySnapshot === "object") ) legacySnapshot.abilities = mergedAbilities;
 				}
 			}
 

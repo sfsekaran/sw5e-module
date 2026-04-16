@@ -435,7 +435,9 @@
         },
         "enchantment": null,
         "summons": null,
-        "properties": []
+        "properties": [],
+        "method": "powerCasting",
+        "prepared": true
       },
       "ownership": {
         "default": 0
@@ -551,7 +553,9 @@
         },
         "enchantment": null,
         "summons": null,
-        "properties": []
+        "properties": [],
+        "method": "powerCasting",
+        "prepared": true
       },
       "ownership": {
         "default": 0
@@ -667,7 +671,9 @@
         },
         "enchantment": null,
         "summons": null,
-        "properties": []
+        "properties": [],
+        "method": "powerCasting",
+        "prepared": true
       },
       "ownership": {
         "default": 0
@@ -788,7 +794,9 @@
         },
         "enchantment": null,
         "summons": null,
-        "properties": []
+        "properties": [],
+        "method": "powerCasting",
+        "prepared": true
       },
       "ownership": {
         "default": 0
@@ -909,7 +917,9 @@
         },
         "enchantment": null,
         "summons": null,
-        "properties": []
+        "properties": [],
+        "method": "powerCasting",
+        "prepared": true
       },
       "ownership": {
         "default": 0
@@ -1030,7 +1040,9 @@
         },
         "enchantment": null,
         "summons": null,
-        "properties": []
+        "properties": [],
+        "method": "powerCasting",
+        "prepared": true
       },
       "ownership": {
         "default": 0
@@ -1696,7 +1708,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/219_-_Jawa_Tinkerer/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/219_-_Jawa_Tinkerer/Avatar.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

@@ -249,7 +249,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -1361,7 +1361,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/412_-_Sith_Zombie/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/412_-_Sith_Zombie/Avatar.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

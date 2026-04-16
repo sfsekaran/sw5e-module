@@ -1211,7 +1211,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/413_-_Landspeeder_2C_X-34/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/413_-_Landspeeder_2C_X-34/Avatar.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

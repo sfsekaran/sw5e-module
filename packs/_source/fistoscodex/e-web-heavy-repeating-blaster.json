@@ -1776,7 +1776,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/418_-_E-Web_Heavy_Repeating_Blaster/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/418_-_E-Web_Heavy_Repeating_Blaster/Avatar.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,
