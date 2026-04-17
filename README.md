@@ -63,6 +63,41 @@ For the current beta coverage checklist spanning `1.2.9` and `1.3.0`, see [1.2.9
 
 ## Changelog
 
+### [1.3.2] - 2026-04-17
+
+### Added
+
+- Actor creation option to make a **Starship** as a **vehicle** actor with SW5E starship identity and seeded `legacyStarshipActor` data so new hulls open cleanly on the starship sheet workflow.
+
+### Changed
+
+- Starship skill **inline configure (cog)**: Save uses DialogV2’s `submit(result, dialog)` contract and reads **Ability** and **Check bonus** from the dialog form (`FormData` / `dialog.form`). **Proficiency level** was removed from the cog UI and save path so it no longer overwrites persisted skill tier (`skill.value`); existing stored tiers remain for roll math.
+- Starship **skill list / modifiers**: per-skill **ability** from saved data is preferred over `CONFIG.DND5E.starshipSkills` defaults; proficiency **multiplier** uses tier numbers **0**, **0.5**, **1–5** (dnd5e 5.2 `proficiencyLevels` are labels without `.mult`); proficiency tier **hover** text localizes CONFIG string entries; merged **vehicle proficiency** for display prefers `actor.system.attributes.prof` when present.
+- Starship **legacy skill merge** on vehicle actors: flag-backed `skills` are not clobbered by prepared or empty `actor.system.skills`.
+
+### Fixed
+
+- Starship skill **rolls** apply **proficiency bonus × skill tier** using the **rolling user’s** assigned **character** when that actor is on this ship’s **deployment** roster (pilot, active station, crew, or passenger). If the roller has no assigned character or is not deployed, the proficiency term is **zero** (vehicles are not treated as carrying their own PB for this path). Roll configuration preview and `@prof` substitution in roll data use the same deployed character bonus.
+
+### [1.3.1] - 2026-04-09
+
+### Added
+
+- **Crew management UI** on the **SotG** (Song of the Galaxy) tab for vehicle starships.
+- **SotG sidebar** readouts for **hull / shield dice**, **power routing**, and **mod slot** usage.
+- Beta testing checklist documentation and a **README** link (starship / beta coverage).
+
+### Changed
+
+- Removed dead **character-backed** starship paths in favor of the vehicle starship workflow.
+- **Power routing** summary text aligned between the **sidebar** and the **Overview** card.
+- `starship-character.mjs` cleanup and hardening from review feedback.
+
+### Fixed
+
+- Starship **vehicle movement** type no longer displays as **air** when it should be **space**.
+- **Edit mode** no longer resets the active sheet tab from **SotG** to **Cargo** after toggling.
+
 ### [1.3.0] - 2026-04-03
 
 ### Added
