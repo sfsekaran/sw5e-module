@@ -2,7 +2,7 @@
   "_id": "Gc58wD4Yv0HoMsZW",
   "name": "M3-A Scyk Fighter",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/m3_a_scyk_fighter.Avatar.webp?1661170454193",
+  "img": "modules/sw5e-module/icons/packs/Starship/m3_a_scyk_fighter.Avatar.webp?1661170454193",
   "items": [
     {
       "_id": "BwoXcmT8a1KBksKO",
@@ -5164,7 +5164,7 @@
     "randomImg": false,
     "name": "M3-A Scyk Fighter",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/m3_a_scyk_fighter.Token.webp?1661170454193",
+      "src": "modules/sw5e-module/icons/packs/Starship/m3_a_scyk_fighter.Token.webp?1661170454193",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

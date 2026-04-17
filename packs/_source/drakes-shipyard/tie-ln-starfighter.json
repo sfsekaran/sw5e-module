@@ -5058,7 +5058,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/tie_ln_starfighter.Token.webp?1660046457625",
+      "src": "modules/sw5e-module/icons/packs/Starship/tie_ln_starfighter.Token.webp?1660046457625",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

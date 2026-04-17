@@ -2,7 +2,7 @@
   "_id": "ajAHTOE1nFbXxusm",
   "name": "TIE/IN Interceptor",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/tie_in_interceptor.Avatar.webp?1661173163020",
+  "img": "modules/sw5e-module/icons/packs/Starship/tie_in_interceptor.Avatar.webp?1661173163020",
   "items": [
     {
       "_id": "FvgGMzGQBMgD67iv",
@@ -6726,7 +6726,7 @@
     "randomImg": false,
     "name": "TIE/IN Interceptor",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/tie_in_interceptor.Token.webp?1661173163020",
+      "src": "modules/sw5e-module/icons/packs/Starship/tie_in_interceptor.Token.webp?1661173163020",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

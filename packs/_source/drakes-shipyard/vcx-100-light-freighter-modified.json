@@ -3856,7 +3856,7 @@
           "_id": "jg01GHFOrEq9Irhs",
           "changes": [
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "-50",
               "priority": 20
@@ -13015,7 +13015,7 @@
       "_id": "jwfMsHNzr9jS83Tx",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "-50",
           "priority": 20
@@ -14231,7 +14231,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/vcx_100_light_freighter.Token.webp?1660057293466",
+      "src": "modules/sw5e-module/icons/packs/Starship/vcx_100_light_freighter.Token.webp?1660057293466",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

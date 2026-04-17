@@ -2,7 +2,7 @@
   "_id": "9pA2rg6Eme3DtR1h",
   "name": "M22-T Krayt Gunship",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/m22_t_krayt_gunship.Avatar.webp?1661170373375",
+  "img": "modules/sw5e-module/icons/packs/Starship/m22_t_krayt_gunship.Avatar.webp?1661170373375",
   "items": [
     {
       "_id": "eLZaxzLAqkkvcChV",
@@ -10058,7 +10058,7 @@
     "randomImg": false,
     "name": "M22-T Krayt Gunship",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/m22_t_krayt_gunship.Token.webp?1661170373375",
+      "src": "modules/sw5e-module/icons/packs/Starship/m22_t_krayt_gunship.Token.webp?1661170373375",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

@@ -2,7 +2,7 @@
   "_id": "Y0qIHIctfGjGcgmI",
   "name": "Z-95 Headhunter",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/z_95_headhunter.Avatar.webp?1661166906027",
+  "img": "modules/sw5e-module/icons/packs/Starship/z_95_headhunter.Avatar.webp?1661166906027",
   "items": [
     {
       "_id": "oGVFZQUMEfqqMS42",
@@ -5746,7 +5746,7 @@
     "randomImg": false,
     "name": "Z-95 Headhunter",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/z_95_headhunter.Token.webp?1661166906027",
+      "src": "modules/sw5e-module/icons/packs/Starship/z_95_headhunter.Token.webp?1661166906027",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

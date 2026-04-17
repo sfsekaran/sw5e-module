@@ -9,7 +9,7 @@
         {
           "key": "system.attributes.movement.swim",
           "mode": 2,
-          "value": "@attributes.movement.space/2",
+          "value": "@attributes.movement.fly/2",
           "priority": 20
         }
       ],

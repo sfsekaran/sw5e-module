@@ -5455,7 +5455,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/clutch_tri_fighter.Token.webp?1660051912927",
+      "src": "modules/sw5e-module/icons/packs/Starship/clutch_tri_fighter.Token.webp?1660051912927",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

@@ -2,7 +2,7 @@
   "_id": "xAvg4N6BLjZ1AW8x",
   "name": "TIE/HU Hunter Multi-role Starfighter",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/tie_hu_hunter_multi_role_starfighter.Avatar.webp?1661173141205",
+  "img": "modules/sw5e-module/icons/packs/Starship/tie_hu_hunter_multi_role_starfighter.Avatar.webp?1661173141205",
   "items": [
     {
       "_id": "nLoHlxPuRSazh9zD",
@@ -3179,7 +3179,7 @@
             {
               "key": "system.attributes.movement.swim",
               "mode": 2,
-              "value": "system.attributes.movement.space/2",
+              "value": "@attributes.movement.fly/2",
               "priority": 20
             }
           ],
@@ -6250,7 +6250,7 @@
               "priority": 20
             },
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "50",
               "priority": 20
@@ -7056,7 +7056,7 @@
       "changes": [
         {
           "key": "system.attributes.movement.swim",
-          "value": "system.attributes.movement.space/2",
+          "value": "@attributes.movement.fly/2",
           "mode": 2,
           "priority": 20
         }
@@ -7308,7 +7308,7 @@
           "priority": 20
         },
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "value": "50",
           "mode": 2,
           "priority": 20
@@ -7893,7 +7893,7 @@
     "randomImg": false,
     "name": "TIE/HU Hunter Multi-role Starfighter",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/tie_hu_hunter_multi_role_starfighter.Token.webp?1661173141205",
+      "src": "modules/sw5e-module/icons/packs/Starship/tie_hu_hunter_multi_role_starfighter.Token.webp?1661173141205",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

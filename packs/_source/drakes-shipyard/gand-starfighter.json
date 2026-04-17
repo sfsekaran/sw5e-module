@@ -2,7 +2,7 @@
   "_id": "DiyflQC8xEhqvrzp",
   "name": "Gand Starfighter",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/gand_starfighter.Avatar.webp?1661168558865",
+  "img": "modules/sw5e-module/icons/packs/Starship/gand_starfighter.Avatar.webp?1661168558865",
   "items": [
     {
       "_id": "8FL5dU68evYZCNPC",
@@ -8896,7 +8896,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/gand_starfighter.Token.webp?1661168558865",
+      "src": "modules/sw5e-module/icons/packs/Starship/gand_starfighter.Token.webp?1661168558865",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

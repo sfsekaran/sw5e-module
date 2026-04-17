@@ -2,7 +2,7 @@
   "_id": "qiAPxTVe39l5Su3w",
   "name": "V-wing Starfighter - Alpha-3 Nimbus-class",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/v_wing_starfighter_alpha_3_nimbus_class.Avatar.webp?1661173389090",
+  "img": "modules/sw5e-module/icons/packs/Starship/v_wing_starfighter_alpha_3_nimbus_class.Avatar.webp?1661173389090",
   "items": [
     {
       "_id": "7AH5yeIVAExuxxcW",
@@ -5540,7 +5540,7 @@
     "randomImg": false,
     "name": "V-wing Starfighter - Alpha-3 Nimbus-class",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/v_wing_starfighter_alpha_3_nimbus_class.Token.webp?1661173389090",
+      "src": "modules/sw5e-module/icons/packs/Starship/v_wing_starfighter_alpha_3_nimbus_class.Token.webp?1661173389090",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

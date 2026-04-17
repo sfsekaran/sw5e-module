@@ -2,7 +2,7 @@
   "_id": "8uUUatfcGjYMSKZr",
   "name": "EF76 Nebulon-B Escort Frigate (Medical)",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/ef76_nebulon_b_escort_frigate_medical_.Avatar.webp?1661167635266",
+  "img": "modules/sw5e-module/icons/packs/Starship/ef76_nebulon_b_escort_frigate_medical_.Avatar.webp?1661167635266",
   "items": [
     {
       "_id": "jSHQCd8jBqnRFPGN",
@@ -8302,7 +8302,7 @@
           "_id": "jg01GHFOrEq9Irhs",
           "changes": [
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "-50",
               "priority": 20
@@ -16198,7 +16198,7 @@
           "priority": 20
         },
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "50",
           "priority": 20
@@ -16387,7 +16387,7 @@
       "_id": "ZZ11ZM7nB5W2ipRE",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "value": "-50",
           "mode": 2,
           "priority": 20
@@ -17162,7 +17162,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/ef76_nebulon_b_escort_frigate_medical_.Token.webp?1661167635266",
+      "src": "modules/sw5e-module/icons/packs/Starship/ef76_nebulon_b_escort_frigate_medical_.Token.webp?1661167635266",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

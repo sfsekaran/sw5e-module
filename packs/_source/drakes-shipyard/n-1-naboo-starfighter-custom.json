@@ -2991,7 +2991,7 @@
               "priority": 20
             },
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "50",
               "priority": 20
@@ -4911,7 +4911,7 @@
           "_id": "5NT4IF3E7iHlj8bR",
           "changes": [
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "50",
               "priority": null
@@ -5217,7 +5217,7 @@
           "_id": "aox9hA3SJo66l6cy",
           "changes": [
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "50",
               "priority": null
@@ -7828,7 +7828,7 @@
           "priority": null
         },
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "50",
           "priority": null
@@ -8118,7 +8118,7 @@
       "_id": "iYUIGuVODDVzxwDp",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "50",
           "priority": null
@@ -8165,7 +8165,7 @@
       "_id": "kaWQFSK8CfGVGqtJ",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "50",
           "priority": null
@@ -8805,7 +8805,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/n_1_naboo_starfighter_custom.Token.webp?1660046409865",
+      "src": "modules/sw5e-module/icons/packs/Starship/n_1_naboo_starfighter_custom.Token.webp?1660046409865",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

@@ -6438,7 +6438,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/baudo_class_star_yacht.Token.webp?1660044987239",
+      "src": "modules/sw5e-module/icons/packs/Starship/baudo_class_star_yacht.Token.webp?1660044987239",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

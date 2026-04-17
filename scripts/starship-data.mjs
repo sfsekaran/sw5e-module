@@ -426,9 +426,14 @@ function buildVehicleSystem(legacySystem = {}, items = [], existingSystem = {}) 
 			hover: runtimeSystem.attributes?.movement?.hover ?? true
 		}
 	});
+	const tierFromDetails = toFiniteNumber(runtimeSystem.details?.tier, null);
+	const tierFromSize = toFiniteNumber(sizeSystem?.tier, null);
+	const resolvedTier = tierFromDetails !== null ? tierFromDetails : tierFromSize;
+
 	system.details = mergeStarshipSystemData(runtimeSystem.details, {
 		source: normalizeSourceField(runtimeSystem.details?.source),
-		type: runtimeSystem.details?.type ?? "space"
+		type: runtimeSystem.details?.type ?? "space",
+		...(resolvedTier !== null ? { tier: resolvedTier } : {})
 	});
 	system.traits = mergeStarshipSystemData(runtimeSystem.traits, {
 		size: sizeSystem.size ?? runtimeSystem.traits?.size ?? "med",
@@ -578,6 +583,10 @@ export function createBlankLegacyStarshipActorData(data = {}) {
 	};
 
 	normalizeLegacyStarshipActorData(source);
+	// Blank starship creation: seed the same dnd5e vehicle-sheet flag so the first paint matches sheet-side defaulting (see `ensureStarshipDefaultShowVehicleAbilities`).
+	source.flags ??= {};
+	source.flags.dnd5e = { ...(source.flags.dnd5e ?? {}) };
+	if ( source.flags.dnd5e.showVehicleAbilities === undefined ) source.flags.dnd5e.showVehicleAbilities = true;
 	return source;
 }
 

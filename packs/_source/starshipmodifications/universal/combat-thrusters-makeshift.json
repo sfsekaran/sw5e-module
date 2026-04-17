@@ -20,7 +20,7 @@
       "_id": "ObB9jLyRo2EAcAuO",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "-50",
           "priority": 20

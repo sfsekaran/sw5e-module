@@ -5884,7 +5884,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/baradium_missile.Token.webp?1660044842971",
+      "src": "modules/sw5e-module/icons/packs/Starship/baradium_missile.Token.webp?1660044842971",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

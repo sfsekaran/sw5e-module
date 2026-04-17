@@ -2,7 +2,7 @@
   "_id": "O5nM5NhXI4h9WW9P",
   "name": "StarViper-class Attack Platform",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/starviper_class_attack_platform.Avatar.webp?1661173044874",
+  "img": "modules/sw5e-module/icons/packs/Starship/starviper_class_attack_platform.Avatar.webp?1661173044874",
   "items": [
     {
       "_id": "92mFujeWgGoN2FdB",
@@ -7548,7 +7548,7 @@
     "randomImg": false,
     "name": "StarViper-class Attack Platform",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/starviper_class_attack_platform.Token.webp?1661173044874",
+      "src": "modules/sw5e-module/icons/packs/Starship/starviper_class_attack_platform.Token.webp?1661173044874",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

@@ -6637,7 +6637,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/yt_1300f_light_freighter.Token.webp?1660046466364",
+      "src": "modules/sw5e-module/icons/packs/Starship/yt_1300f_light_freighter.Token.webp?1660046466364",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

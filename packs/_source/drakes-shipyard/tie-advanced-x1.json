@@ -2,7 +2,7 @@
   "_id": "4LttOGkwmXWfxQhQ",
   "name": "TIE Advanced x1",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/tie_advanced_x1.Avatar.webp?1661173093926",
+  "img": "modules/sw5e-module/icons/packs/Starship/tie_advanced_x1.Avatar.webp?1661173093926",
   "items": [
     {
       "_id": "vkOs3e8lqodEYnRB",
@@ -7879,7 +7879,7 @@
     "randomImg": false,
     "name": "TIE Advanced x1",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/tie_advanced_x1.Token.webp?1661173093926",
+      "src": "modules/sw5e-module/icons/packs/Starship/tie_advanced_x1.Token.webp?1661173093926",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

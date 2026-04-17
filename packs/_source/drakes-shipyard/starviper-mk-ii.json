@@ -2,7 +2,7 @@
   "_id": "CvOvBLzu6qwpXdBM",
   "name": "StarViper Mk. II",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/starviper_mk._ii.Avatar.webp?1661173021556",
+  "img": "modules/sw5e-module/icons/packs/Starship/starviper_mk._ii.Avatar.webp?1661173021556",
   "items": [
     {
       "_id": "ktlthdAfYVcd4Rhp",
@@ -7464,7 +7464,7 @@
     "randomImg": false,
     "name": "StarViper Mk. II",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/starviper_mk._ii.Token.webp?1661173021556",
+      "src": "modules/sw5e-module/icons/packs/Starship/starviper_mk._ii.Token.webp?1661173021556",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

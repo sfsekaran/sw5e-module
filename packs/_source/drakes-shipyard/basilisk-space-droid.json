@@ -5838,7 +5838,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/basilisk_space_droid.Token.webp?1660044974265",
+      "src": "modules/sw5e-module/icons/packs/Starship/basilisk_space_droid.Token.webp?1660044974265",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

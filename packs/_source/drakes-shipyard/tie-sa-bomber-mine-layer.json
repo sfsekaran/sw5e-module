@@ -2,7 +2,7 @@
   "_id": "PgRFaYvoWARHlfUS",
   "name": "TIE/sa Bomber (Mine Layer)",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/tie_sa_bomber_mine_layer_.Avatar.webp?1661173209099",
+  "img": "modules/sw5e-module/icons/packs/Starship/tie_sa_bomber_mine_layer_.Avatar.webp?1661173209099",
   "items": [
     {
       "_id": "jYGgTjaniz3eiqTr",
@@ -5995,7 +5995,7 @@
     "randomImg": false,
     "name": "TIE/sa Bomber (Mine Layer)",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/tie_sa_bomber_mine_layer_.Token.webp?1661173209099",
+      "src": "modules/sw5e-module/icons/packs/Starship/tie_sa_bomber_mine_layer_.Token.webp?1661173209099",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

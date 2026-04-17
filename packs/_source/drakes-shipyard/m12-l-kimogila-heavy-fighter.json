@@ -2,7 +2,7 @@
   "_id": "zEXFY5OjrHTSUdjm",
   "name": "M12-L Kimogila Heavy Fighter",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/m12_l_kimogila_heavy_fighter.Avatar.webp?1661170357325",
+  "img": "modules/sw5e-module/icons/packs/Starship/m12_l_kimogila_heavy_fighter.Avatar.webp?1661170357325",
   "items": [
     {
       "_id": "oES4132e6gDJ1x8n",
@@ -8596,7 +8596,7 @@
     "randomImg": false,
     "name": "M12-L Kimogila Heavy Fighter",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/m12_l_kimogila_heavy_fighter.Token.webp?1661170357325",
+      "src": "modules/sw5e-module/icons/packs/Starship/m12_l_kimogila_heavy_fighter.Token.webp?1661170357325",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

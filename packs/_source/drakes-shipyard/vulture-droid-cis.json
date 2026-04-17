@@ -2,7 +2,7 @@
   "_id": "8yjv1R0XJQ7QPbmy",
   "name": "Vulture Droid - CIS",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/vulture_droid_cis.Avatar.webp?1661173467529",
+  "img": "modules/sw5e-module/icons/packs/Starship/vulture_droid_cis.Avatar.webp?1661173467529",
   "items": [
     {
       "_id": "31EhVQhUL2jQoAlm",
@@ -6269,7 +6269,7 @@
     "randomImg": false,
     "name": "Vulture Droid - CIS",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/vulture_droid_cis.Token.webp?1661173467529",
+      "src": "modules/sw5e-module/icons/packs/Starship/vulture_droid_cis.Token.webp?1661173467529",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

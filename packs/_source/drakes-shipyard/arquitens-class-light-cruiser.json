@@ -3846,7 +3846,7 @@
           "_id": "jg01GHFOrEq9Irhs",
           "changes": [
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "-50",
               "priority": 20
@@ -4029,7 +4029,7 @@
           "_id": "jg01GHFOrEq9Irhs",
           "changes": [
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "-50",
               "priority": 20
@@ -10789,7 +10789,7 @@
       "_id": "vLp3C1Bvck5g4iKb",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "-50",
           "priority": 20
@@ -10842,7 +10842,7 @@
       "_id": "64netGwwFqttZW0X",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "-50",
           "priority": 20
@@ -11633,7 +11633,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/arquitens_class_light_cruiser.Token.webp?1660030232037",
+      "src": "modules/sw5e-module/icons/packs/Starship/arquitens_class_light_cruiser.Token.webp?1660030232037",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

@@ -2,7 +2,7 @@
   "_id": "pzL1SI9raUYuSpv8",
   "name": "Z-TIE Fighter",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/z_tie_fighter.Avatar.webp?1661167285991",
+  "img": "modules/sw5e-module/icons/packs/Starship/z_tie_fighter.Avatar.webp?1661167285991",
   "items": [
     {
       "_id": "nesM4V0z0u6KeIQK",
@@ -4824,7 +4824,7 @@
     "randomImg": false,
     "name": "Z-TIE Fighter",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/z_tie_fighter.Token.webp?1661167285991",
+      "src": "modules/sw5e-module/icons/packs/Starship/z_tie_fighter.Token.webp?1661167285991",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

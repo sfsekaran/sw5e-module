@@ -4382,7 +4382,7 @@
             {
               "key": "system.attributes.movement.swim",
               "mode": 2,
-              "value": "system.attributes.movement.space/2",
+              "value": "@attributes.movement.fly/2",
               "priority": 20
             }
           ],
@@ -6936,7 +6936,7 @@
         {
           "key": "system.attributes.movement.swim",
           "mode": 2,
-          "value": "system.attributes.movement.space/2",
+          "value": "@attributes.movement.fly/2",
           "priority": 20
         }
       ],
@@ -7719,7 +7719,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/deepwater_class_light_freighter.Token.webp?1660394729073",
+      "src": "modules/sw5e-module/icons/packs/Starship/deepwater_class_light_freighter.Token.webp?1660394729073",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

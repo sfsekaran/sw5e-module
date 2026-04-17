@@ -2,7 +2,7 @@
   "_id": "lHFf29mWBxshx6HO",
   "name": "Y-Wing Starfighter - BTL-B/S3",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/y_wing_starfighter_btl_b_s3.Avatar.webp?1661173634297",
+  "img": "modules/sw5e-module/icons/packs/Starship/y_wing_starfighter_btl_b_s3.Avatar.webp?1661173634297",
   "items": [
     {
       "_id": "R8Wot6Yxm5XSVVEq",
@@ -6834,7 +6834,7 @@
               "priority": 20
             },
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "50",
               "priority": 20
@@ -7609,7 +7609,7 @@
           "priority": 20
         },
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "50",
           "priority": 20
@@ -8117,7 +8117,7 @@
     "randomImg": false,
     "name": "Y-Wing Starfighter - BTL-B/S3",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/y_wing_starfighter_btl_b_s3.Token.webp?1661173634297",
+      "src": "modules/sw5e-module/icons/packs/Starship/y_wing_starfighter_btl_b_s3.Token.webp?1661173634297",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

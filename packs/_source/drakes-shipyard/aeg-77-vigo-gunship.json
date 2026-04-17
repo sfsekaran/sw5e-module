@@ -12489,7 +12489,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/aeg_77_vigo_gunship.Token.webp?1660030024791",
+      "src": "modules/sw5e-module/icons/packs/Starship/aeg_77_vigo_gunship.Token.webp?1660030024791",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

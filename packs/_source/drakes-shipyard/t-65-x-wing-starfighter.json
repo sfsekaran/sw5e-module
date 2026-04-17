@@ -8100,7 +8100,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/t_65_x_wing_starfighter.Token.webp?1660046451557",
+      "src": "modules/sw5e-module/icons/packs/Starship/t_65_x_wing_starfighter.Token.webp?1660046451557",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

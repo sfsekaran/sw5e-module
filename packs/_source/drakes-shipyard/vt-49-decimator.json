@@ -2,7 +2,7 @@
   "_id": "0PlzcuyrY9qaDM4q",
   "name": "VT-49 Decimator",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/vt_49_decimator.Avatar.webp?1661173413706",
+  "img": "modules/sw5e-module/icons/packs/Starship/vt_49_decimator.Avatar.webp?1661173413706",
   "items": [
     {
       "_id": "1LhEreuGdPnN61CY",
@@ -4421,7 +4421,7 @@
           "_id": "jg01GHFOrEq9Irhs",
           "changes": [
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "-50",
               "priority": 20
@@ -9189,7 +9189,7 @@
       "_id": "PO6xTzJ5jreh3cEj",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "value": "-50",
           "mode": 2,
           "priority": 20
@@ -9539,7 +9539,7 @@
           "priority": 20
         },
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 5,
           "value": "300",
           "priority": 20
@@ -10053,7 +10053,7 @@
     "randomImg": false,
     "name": "VT-49 Decimator",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/vt_49_decimator.Token.webp?1661173413706",
+      "src": "modules/sw5e-module/icons/packs/Starship/vt_49_decimator.Token.webp?1661173413706",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

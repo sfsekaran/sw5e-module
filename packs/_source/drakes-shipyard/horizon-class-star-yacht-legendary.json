@@ -12539,7 +12539,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/horizon_class_star_yacht_legendary.Token.webp?1660046381889",
+      "src": "modules/sw5e-module/icons/packs/Starship/horizon_class_star_yacht_legendary.Token.webp?1660046381889",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

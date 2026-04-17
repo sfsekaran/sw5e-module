@@ -7854,7 +7854,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/c_wing_corellian_b_wing.Token.webp?1660050505537",
+      "src": "modules/sw5e-module/icons/packs/Starship/c_wing_corellian_b_wing.Token.webp?1660050505537",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

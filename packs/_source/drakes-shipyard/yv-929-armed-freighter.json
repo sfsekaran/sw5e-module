@@ -2,7 +2,7 @@
   "_id": "LY8lY6F9nVqz7Km1",
   "name": "YV-929 Armed Freighter",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/yv_929_armed_freighter.Avatar.webp?1661174004790",
+  "img": "modules/sw5e-module/icons/packs/Starship/yv_929_armed_freighter.Avatar.webp?1661174004790",
   "items": [
     {
       "_id": "hhOGUVpAhcl783H6",
@@ -7585,7 +7585,7 @@
       "_id": "OpwEjg658THj3164",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 5,
           "value": "350",
           "priority": 20
@@ -8099,7 +8099,7 @@
     "randomImg": false,
     "name": "YV-929 Armed Freighter",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/yv_929_armed_freighter.Token.webp?1661174004790",
+      "src": "modules/sw5e-module/icons/packs/Starship/yv_929_armed_freighter.Token.webp?1661174004790",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

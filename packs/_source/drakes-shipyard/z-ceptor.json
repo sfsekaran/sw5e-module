@@ -2,7 +2,7 @@
   "_id": "pzpo8Hny7SqtrP7C",
   "name": "Z-'ceptor",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/z_ceptor.Avatar.webp?1661174021281",
+  "img": "modules/sw5e-module/icons/packs/Starship/z_ceptor.Avatar.webp?1661174021281",
   "items": [
     {
       "_id": "8Yijm2B3kyqRRdZt",
@@ -5428,7 +5428,7 @@
     "randomImg": false,
     "name": "Z-'ceptor",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/z_ceptor.Token.webp?1661174021281",
+      "src": "modules/sw5e-module/icons/packs/Starship/z_ceptor.Token.webp?1661174021281",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,
