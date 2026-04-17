@@ -32,7 +32,7 @@ const STOCK_STARSHIP_TAB_ORDER = [STOCK_CARGO_TAB_ID, "effects", "description"];
 const CUSTOM_STARSHIP_TAB_IDS = new Set([STARSHIP_TAB_ID]);
 
 const SOTG_SUB_TAB_IDS = new Set([
-	"overview", "crew", "skills", "features", "equipment", "modifications", "systems"
+	"overview", "crew", "features", "equipment", "modifications", "systems"
 ]);
 
 /** Set `true` to enable verbose submit/mode diagnostics for starship vehicle sheets. */
@@ -41,6 +41,7 @@ const SW5E_STARSHIP_SHEET_DIAG_PREFIX = "SW5E MODULE | StarshipSheetDiag";
 
 function getSotgSubTab(app) {
 	const v = app?._sw5eSotgSubTab;
+	if ( v === "skills" ) return "overview";
 	if ( SOTG_SUB_TAB_IDS.has(v) ) return v;
 	return "overview";
 }
@@ -51,7 +52,7 @@ function setSotgSubTab(app, tabId) {
 }
 
 /**
- * SotG inner tabs (Overview / Crew / Skills / Features / Equipment / Modifications / Systems): show one panel, update nav, persist on the sheet app.
+ * SotG inner tabs (Overview / Crew / Features / Equipment / Modifications / Systems): show one panel, update nav, persist on the sheet app. Starship skills render on Overview.
  */
 /**
  * Align SotG item-list chrome with dnd5e sheet mode: PLAY = compact rows; EDIT = full row actions.
@@ -605,6 +606,193 @@ async function ensureWarningsDialog(root, app, actor) {
 function localizeOrFallback(key, fallback) {
 	const localized = game.i18n.localize(key);
 	return localized === key ? fallback : localized;
+}
+
+function formatSignedSkillMod(value) {
+	const n = Number(value);
+	if ( !Number.isFinite(n) ) return "+0";
+	return n >= 0 ? `+${n}` : `${n}`;
+}
+
+/**
+ * Presentation fields for the Overview skills list (ability abbreviation, signed modifier, passive total).
+ * Passive uses {@link CONFIG.DND5E.skillPassive} base (default 10) + prepared skill modifier, matching core 5e passive notation.
+ */
+function enrichStarshipSkillsForSheet(actor) {
+	const passiveCfg = CONFIG?.DND5E?.skillPassive;
+	const passiveBase = Number.isFinite(Number(passiveCfg?.base)) ? Number(passiveCfg.base) : 10;
+	return getStarshipSkillEntries(actor).map(entry => {
+		const abil = CONFIG?.DND5E?.abilities?.[entry.ability];
+		let abilityAbbr = entry.ability?.toUpperCase?.() ?? "";
+		if ( abil?.abbreviation ) {
+			const loc = game.i18n.localize(abil.abbreviation);
+			abilityAbbr = loc && loc !== abil.abbreviation ? loc : abilityAbbr;
+		}
+		const passiveTotal = passiveBase + Number(entry.total);
+		return {
+			...entry,
+			abilityAbbr,
+			modDisplay: formatSignedSkillMod(entry.total),
+			passiveDisplay: Number.isFinite(passiveTotal) ? String(passiveTotal) : ""
+		};
+	});
+}
+
+/**
+ * Render a dnd5e ApplicationV2 config sheet when possible (no console noise on failure).
+ */
+async function renderDnd5eConfigApp(app) {
+	if ( !app || typeof app.render !== "function" ) return false;
+	try {
+		const r = app.render({ force: true });
+		if ( r && typeof r.then === "function" ) await r;
+		return true;
+	} catch {
+		/* ApplicationV2 may throw during prepare when actor schema lacks expected fields (e.g. vehicles). */
+	}
+	try {
+		const r2 = app.render(true);
+		if ( r2 && typeof r2.then === "function" ) await r2;
+		return true;
+	} catch {
+		return false;
+	}
+}
+
+function actorSchemaHasSkillsField(actor) {
+	try {
+		return Boolean(actor?.system?.schema?.getField?.("skills"));
+	} catch {
+		return false;
+	}
+}
+
+/**
+ * Minimal per-skill editor for SW5E starship skills on vehicle actors.
+ * dnd5e 5.2.x {@link SkillToolConfig} resolves labels from `CONFIG.DND5E.skills[key]` only; starship keys live in
+ * `CONFIG.DND5E.starshipSkills`. {@link SkillsConfig} prepares trait data via `system.skills` schema fields that
+ * vehicle actors typically do not define. This dialog edits ability + ship check bonus only; proficiency tier for
+ * starship skills is not edited here (ships use crew proficiency on rolls — see `rollStarshipSkill`).
+ */
+async function openStarshipSkillInlineConfigDialog(actor, skillId) {
+	const entry = getStarshipSkillEntries(actor).find(s => s.id === skillId);
+	if ( !entry ) return;
+
+	const legacy = getLegacyStarshipActorSystem(actor);
+	const raw = legacy.skills?.[skillId] ?? {};
+	const abilityVal = typeof raw.ability === "string" && raw.ability ? raw.ability : entry.ability;
+	const bonusVal = typeof raw.bonuses?.check === "string" ? raw.bonuses.check : "";
+
+	const abilOptions = Object.entries(CONFIG?.DND5E?.abilities ?? {}).map(([key, cfg]) => {
+		const lab = typeof cfg?.label === "string" ? game.i18n.localize(cfg.label) : key;
+		return `<option value="${escapeHtml(key)}"${key === abilityVal ? " selected" : ""}>${escapeHtml(lab)}</option>`;
+	}).join("");
+
+	const bonusLabel = game.i18n.localize("DND5E.CheckBonus");
+	const content = `
+<div class="standard-form sw5e-starship-skill-inline-config">
+  <div class="form-group">
+    <label>${escapeHtml(localizeOrFallback("DND5E.Ability", "Ability"))}</label>
+    <select name="sw5e-starship-skill-ability">${abilOptions}</select>
+  </div>
+  <div class="form-group">
+    <label>${escapeHtml(bonusLabel)}</label>
+    <input type="text" name="sw5e-starship-skill-bonus" value="${escapeHtml(bonusVal)}" autocomplete="off" />
+  </div>
+</div>`;
+
+	const title = `${localizeOrFallback("SW5E.SkillConfigure", "Configure skill")}: ${entry.label}`;
+
+	await foundry.applications.api.DialogV2.wait({
+		window: { title },
+		content,
+		position: { width: 400 },
+		buttons: [
+			{
+				action: "save",
+				label: game.i18n.localize("Save"),
+				icon: "fas fa-check",
+				default: true
+			},
+			{
+				action: "cancel",
+				label: game.i18n.localize("Cancel"),
+				icon: "fas fa-times"
+			}
+		],
+		// DialogV2 `submit` is `(result, dialog)` — the clicked button’s `action` (or callback return), not `(event, dialog, button)`.
+		submit: async (result, dialog) => {
+			if ( result !== "save" ) return;
+
+			const form = dialog.form ?? dialog.element?.querySelector?.("form");
+			if ( !form ) return;
+
+			const fd = new FormData(form);
+			const abilRaw = fd.get("sw5e-starship-skill-ability");
+			const bonusRaw = fd.get("sw5e-starship-skill-bonus") ?? "";
+
+			const abilStr = typeof abilRaw === "string" ? abilRaw : "";
+			const abilKeys = Object.keys(CONFIG?.DND5E?.abilities ?? {});
+			const abilFinal = abilStr && abilKeys.includes(abilStr) ? abilStr : abilityVal;
+
+			const bonusStr = String(bonusRaw).trim();
+
+			try {
+				// Authoritative store for starship vehicle actors is `flags.sw5e.legacyStarshipActor.system.skills`
+				// (same snapshot `normalizeLegacyStarshipActorData` maintains). `system.skills` is mirrored when the
+				// system accepts it so exports / tooling stay aligned; vehicle data models may drop unknown skill paths.
+				// Skill proficiency tier (`value`) is intentionally not written here — it remains whatever is already stored.
+				await actor.update({
+					[`flags.sw5e.legacyStarshipActor.system.skills.${skillId}.ability`]: abilFinal,
+					[`flags.sw5e.legacyStarshipActor.system.skills.${skillId}.bonuses.check`]: bonusStr,
+					[`system.skills.${skillId}.ability`]: abilFinal,
+					[`system.skills.${skillId}.bonuses.check`]: bonusStr
+				});
+			} catch ( err ) {
+				ui.notifications?.error(localizeOrFallback(
+					"SW5E.StarshipSheet.SkillConfigUpdateFailed",
+					"Could not save skill changes. Check console for details."
+				));
+				console.error("SW5E MODULE | Starship skill inline config update failed.", err);
+			}
+		}
+	});
+}
+
+/**
+ * Starship skill cog: use core dialogs only when they match this actor's schema and skill key; otherwise inline config.
+ */
+async function openStarshipSkillConfiguration(actor, skillId) {
+	const apps = globalThis.dnd5e?.applications?.actor ?? globalThis.game?.dnd5e?.applications?.actor;
+
+	const coreSkillDef = CONFIG?.DND5E?.skills?.[skillId];
+	const SkillToolConfig = apps?.SkillToolConfig;
+	if ( SkillToolConfig && coreSkillDef ) {
+		try {
+			const inst = new SkillToolConfig({ document: actor, trait: "skills", key: skillId });
+			if ( await renderDnd5eConfigApp(inst) ) return;
+		} catch {
+			/* prepare/render failure — fall through */
+		}
+	}
+
+	const SkillsConfig = apps?.SkillsConfig;
+	if ( SkillsConfig && actorSchemaHasSkillsField(actor) ) {
+		try {
+			const inst = new SkillsConfig({ document: actor });
+			if ( await renderDnd5eConfigApp(inst) ) {
+				ui.notifications?.info(localizeOrFallback(
+					"SW5E.StarshipSheet.SkillsConfigOpened",
+					"Opened the actor’s skills configuration."
+				));
+				return;
+			}
+		} catch {
+			/* vehicle / schema mismatch */
+		}
+	}
+
+	await openStarshipSkillInlineConfigDialog(actor, skillId);
 }
 
 function isSw5eStarshipActor(actor) {
@@ -1498,7 +1686,7 @@ async function renderStarshipLayer(app, html, data) {
 		systemsGroups,
 		crewRoleGroups
 	} = partitionStarshipGroups(actor);
-	const skills = getStarshipSkillEntries(actor);
+	const skills = enrichStarshipSkillsForSheet(actor);
 
 	const withIntegrated = arr => arr.map(group => ({ ...group, supportsSheetNavigation: integrated }));
 
@@ -1594,8 +1782,17 @@ async function renderStarshipLayer(app, html, data) {
 		overviewLandingTitle: localizeOrFallback("SW5E.StarshipSheet.OverviewTitle", "Starship at a glance"),
 		overviewLandingLede: localizeOrFallback(
 			"SW5E.StarshipSheet.OverviewLede",
-			"Use the tabs for crew, skills, operations, equipment, modifications, and systems configuration. Live statistics remain in the sidebar."
-		)
+			"Use this overview for starship skills and the tabs for crew, operations, equipment, modifications, and systems configuration. Live statistics remain in the sidebar."
+		),
+		overviewSkillsAriaLabel: localizeOrFallback("SW5E.StarshipSheet.OverviewSkillsAria", "Starship skills"),
+		overviewSkillsKicker: localizeOrFallback("SW5E.StarshipSheet.OverviewSkillsKicker", "Skills"),
+		overviewSkillsTitle: localizeOrFallback("SW5E.StarshipSheet.OverviewSkillsTitle", "Starship skills"),
+		overviewSkillsLede: localizeOrFallback(
+			"SW5E.StarshipSheet.OverviewSkillsLede",
+			"Roll a skill from the row. In edit mode, use the cog to adjust proficiency, ability, and check bonus (starship skills use a compact editor compatible with vehicle actors)."
+		),
+		overviewPassiveHint: localizeOrFallback("DND5E.PassiveScore", "Passive score"),
+		overviewSkillConfigureTitle: localizeOrFallback("SW5E.SkillConfigure", "Configure skill")
 	});
 
 	// If our tab wrappers are already in the DOM, update their content in place.
@@ -1687,7 +1884,12 @@ async function renderStarshipLayer(app, html, data) {
 		}
 
 		if ( action === "roll-skill" ) {
-			await rollStarshipSkill(actor, actionNode.dataset.skillId, event);
+			await rollStarshipSkill(actor, actionNode.dataset.skillId, event, game.user);
+			return;
+		}
+
+		if ( action === "configure-skill" ) {
+			await openStarshipSkillConfiguration(actor, actionNode.dataset.skillId);
 		}
 	};
 

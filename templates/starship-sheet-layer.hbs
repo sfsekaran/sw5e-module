@@ -1,4 +1,4 @@
-{{!-- SotG: Overview | Crew | Skills | Features | Equipment | Modifications | Systems. Systems tab includes bindable actor.system fields (see systemsCore). --}}
+{{!-- SotG: Overview (skills) | Crew | Features | Equipment | Modifications | Systems. Systems tab includes bindable actor.system fields (see systemsCore). --}}
 {{#*inline "sw5e-sotg-item-row"}}
 <article class="sw5e-starship-item-row sw5e-starship-item-row--sotg" data-item-id="{{id}}">
   <div class="sw5e-starship-item-row--sotg-inner">
@@ -76,9 +76,6 @@
       {{#if crew}}
       <button type="button" class="sw5e-starship-sotg-tab" role="tab" data-sw5e-sotg-tab="crew" aria-selected="false" id="sw5e-sotg-tab-crew">Crew</button>
       {{/if}}
-      {{#if skills.length}}
-      <button type="button" class="sw5e-starship-sotg-tab" role="tab" data-sw5e-sotg-tab="skills" aria-selected="false" id="sw5e-sotg-tab-skills">Skills</button>
-      {{/if}}
       <button type="button" class="sw5e-starship-sotg-tab" role="tab" data-sw5e-sotg-tab="features" aria-selected="false" id="sw5e-sotg-tab-features">Features</button>
       <button type="button" class="sw5e-starship-sotg-tab" role="tab" data-sw5e-sotg-tab="equipment" aria-selected="false" id="sw5e-sotg-tab-equipment">Equipment</button>
       <button type="button" class="sw5e-starship-sotg-tab" role="tab" data-sw5e-sotg-tab="modifications" aria-selected="false" id="sw5e-sotg-tab-modifications">Modifications</button>
@@ -92,6 +89,50 @@
           <h2 class="sw5e-starship-overview-workspace-title">{{overviewLandingTitle}}</h2>
           <p class="sw5e-starship-overview-landing-lede">{{overviewLandingLede}}</p>
         </div>
+
+        {{#if skills.length}}
+        <section class="sw5e-starship-overview-skills" aria-label="{{overviewSkillsAriaLabel}}">
+          <header class="sw5e-starship-overview-skills-header">
+            <div>
+              <span class="sw5e-starship-kicker">{{overviewSkillsKicker}}</span>
+              <h3 class="sw5e-starship-overview-skills-title">{{overviewSkillsTitle}}</h3>
+              <p class="sw5e-starship-overview-skills-lede">{{overviewSkillsLede}}</p>
+            </div>
+          </header>
+          <ul class="sw5e-starship-skill-list sw5e-starship-skill-list--pc" role="list">
+            {{#each skills}}
+            <li class="sw5e-starship-skill-row sw5e-starship-skill-row--pc" data-skill-id="{{id}}">
+              <button
+                type="button"
+                class="sw5e-starship-skill-roll-area"
+                data-sw5e-action="roll-skill"
+                data-skill-id="{{id}}"
+                title="{{ localize "DND5E.Roll" }} {{label}}"
+              >
+                <span class="sw5e-starship-skill-ability-abbr">{{abilityAbbr}}</span>
+                <span class="sw5e-starship-skill-label">{{label}}</span>
+                <span class="sw5e-starship-skill-mod">{{modDisplay}}</span>
+                {{#if passiveDisplay}}
+                <span class="sw5e-starship-skill-passive" title="{{../overviewPassiveHint}}">{{passiveDisplay}}</span>
+                {{/if}}
+              </button>
+              {{#if ../editable}}
+              <button
+                type="button"
+                class="sw5e-starship-skill-config sw5e-starship-skill-config--edit-only"
+                data-sw5e-action="configure-skill"
+                data-skill-id="{{id}}"
+                title="{{../overviewSkillConfigureTitle}}"
+                aria-label="{{../overviewSkillConfigureTitle}}: {{label}}"
+              >
+                <i class="fas fa-cog" aria-hidden="true"></i>
+              </button>
+              {{/if}}
+            </li>
+            {{/each}}
+          </ul>
+        </section>
+        {{/if}}
       </section>
 
       {{#if crew}}
@@ -189,53 +230,6 @@
             </div>
           </section>
           {{/if}}
-        </section>
-      </section>
-      {{/if}}
-
-      {{#if skills.length}}
-      <section class="sw5e-starship-sotg-panel" data-sw5e-sotg-panel="skills" role="tabpanel" aria-labelledby="sw5e-sotg-tab-skills" id="sw5e-sotg-panel-skills" hidden>
-        <section class="sw5e-starship-skills">
-          <header class="sw5e-starship-section-header sw5e-starship-skills-header">
-            <div class="sw5e-starship-skills-heading">
-              <span class="sw5e-starship-kicker">Starship Skills</span>
-              <h2>Skill Console</h2>
-              <p class="sw5e-starship-skills-lede">Vehicle-backed skill rolls use the ship skill path.</p>
-            </div>
-          </header>
-
-          <div class="sw5e-starship-skill-console">
-            <div class="sw5e-starship-skill-grid-header" aria-hidden="true">
-              <span>Skill</span>
-              <span>Modifier</span>
-              <span>Action</span>
-            </div>
-            <div class="sw5e-starship-skill-grid">
-              {{#each skills}}
-                <article class="sw5e-starship-skill-row">
-                  <div class="sw5e-starship-skill-primary">
-                    <strong class="sw5e-starship-skill-name">{{label}}</strong>
-                    <span class="sw5e-starship-skill-meta">{{abilityLabel}}{{#if hover}} | {{hover}}{{/if}}</span>
-                  </div>
-
-                  <div class="sw5e-starship-skill-total-wrap">
-                    <span class="sw5e-starship-skill-total">{{total}}</span>
-                  </div>
-
-                  <div class="sw5e-starship-skill-actions">
-                    <button
-                      type="button"
-                      class="sw5e-starship-item-button sw5e-starship-skill-roll"
-                      data-sw5e-action="roll-skill"
-                      data-skill-id="{{id}}"
-                    >
-                      Roll
-                    </button>
-                  </div>
-                </article>
-              {{/each}}
-            </div>
-          </div>
         </section>
       </section>
       {{/if}}
