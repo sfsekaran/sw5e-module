@@ -2,7 +2,7 @@
   "_id": "Z9GLGFS5bmGEF188",
   "name": "X-TIE Fighter",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/x_tie_fighter.Avatar.webp?1661173579933",
+  "img": "modules/sw5e-module/icons/packs/Starship/x_tie_fighter.Avatar.webp?1661173579933",
   "items": [
     {
       "_id": "ygivEFicb6NI3d8v",
@@ -5656,7 +5656,7 @@
     "randomImg": false,
     "name": "X-TIE Fighter",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/x_tie_fighter.Token.webp?1661173579933",
+      "src": "modules/sw5e-module/icons/packs/Starship/x_tie_fighter.Token.webp?1661173579933",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

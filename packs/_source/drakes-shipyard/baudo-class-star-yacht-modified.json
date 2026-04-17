@@ -8198,7 +8198,7 @@
           "_id": "jg01GHFOrEq9Irhs",
           "changes": [
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "-50",
               "priority": 20
@@ -11687,7 +11687,7 @@
       "_id": "nELX2h42r2HH6eKW",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "-50",
           "priority": 20
@@ -12654,7 +12654,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/baudo_class_star_yacht.Token.webp?1660044987239",
+      "src": "modules/sw5e-module/icons/packs/Starship/baudo_class_star_yacht.Token.webp?1660044987239",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

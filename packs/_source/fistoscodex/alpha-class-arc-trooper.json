@@ -1280,7 +1280,7 @@
         },
         "price": {
           "value": 525,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -1438,7 +1438,7 @@
         },
         "price": {
           "value": 10,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -1561,7 +1561,7 @@
         },
         "price": {
           "value": 75,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -1724,7 +1724,7 @@
         },
         "price": {
           "value": 525,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -1882,7 +1882,7 @@
         },
         "price": {
           "value": 1800,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -2035,7 +2035,7 @@
         },
         "price": {
           "value": 250,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -2165,7 +2165,7 @@
         },
         "price": {
           "value": 2500,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -2961,7 +2961,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/289_-_Alpha-Class_Arc_Trooper/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

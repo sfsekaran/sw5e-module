@@ -94,7 +94,10 @@
         "source": "PHB",
         "quantity": 1,
         "weight": 20,
-        "price": 500,
+        "price": {
+          "value": 500,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -360,7 +363,10 @@
         "source": "PHB",
         "quantity": 1,
         "weight": 0,
-        "price": 125,
+        "price": {
+          "value": 125,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -966,7 +972,10 @@
         "source": "PHB",
         "quantity": 1,
         "weight": null,
-        "price": 525,
+        "price": {
+          "value": 525,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -1127,7 +1136,10 @@
         "source": "PHB",
         "quantity": 1,
         "weight": 1,
-        "price": 75,
+        "price": {
+          "value": 75,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -1287,7 +1299,10 @@
         "source": "WH",
         "quantity": 1,
         "weight": 1,
-        "price": 250,
+        "price": {
+          "value": 250,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -1393,7 +1408,10 @@
         "source": "PHB",
         "quantity": 1,
         "weight": 1,
-        "price": 10,
+        "price": {
+          "value": 10,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",

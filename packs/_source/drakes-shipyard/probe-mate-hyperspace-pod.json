@@ -2,7 +2,7 @@
   "_id": "eMVRexg9Xh6wKFUe",
   "name": "Probe-Mate Hyperspace Pod",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/probe_mate_hyperspace_pod.Avatar.webp?1661172773582",
+  "img": "modules/sw5e-module/icons/packs/Starship/probe_mate_hyperspace_pod.Avatar.webp?1661172773582",
   "items": [
     {
       "_id": "7xMtSlAt2wvrCFNP",
@@ -4724,7 +4724,7 @@
     "randomImg": false,
     "name": "Probe-Mate Hyperspace Pod",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/probe_mate_hyperspace_pod.Token.webp?1661172773582",
+      "src": "modules/sw5e-module/icons/packs/Starship/probe_mate_hyperspace_pod.Token.webp?1661172773582",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

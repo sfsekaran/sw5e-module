@@ -28099,7 +28099,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/executor_i_class_star_dreadnought.Token.webp?1660046372972",
+      "src": "modules/sw5e-module/icons/packs/Starship/executor_i_class_star_dreadnought.Token.webp?1660046372972",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

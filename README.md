@@ -57,6 +57,10 @@ The module includes Heretic's Guide to the Galaxy species content as dedicated b
 - `HGTTG Species`
 - `HGTTG Species Features`
 
+## Beta Testing
+
+For the current beta coverage checklist spanning `1.2.9` and `1.3.0`, see [1.2.9-1.3.0_BetaTestList.md](1.2.9-1.3.0_BetaTestList.md).
+
 ## Changelog
 
 ### [1.3.0] - 2026-04-03

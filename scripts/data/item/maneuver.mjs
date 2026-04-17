@@ -73,6 +73,8 @@ export default class ManeuverData extends ItemDataModel.mixin(ItemDescriptionTem
 		ActivitiesTemplate.migrateActivities(source);
 		ManeuverData.#migrateActivation(source);
 		ManeuverData.#migrateTarget(source);
+		ManeuverData.#migrateSourceClass(source);
+		ManeuverData.#migrateTargetPrompt(source);
 	}
 
 	/**
@@ -107,6 +109,51 @@ export default class ManeuverData extends ItemDataModel.mixin(ItemDescriptionTem
 			if ("type" in source.target) source.target.affects.type = type;
 			if ("value" in source.target) source.target.affects.count = source.target.value;
 		}
+	}
+
+	/* -------------------------------------------- */
+
+	/**
+	 * Migrate malformed source class data.
+	 * @param {object} source  The candidate source data from which the model will be constructed.
+	 */
+	static #migrateSourceClass(source) {
+		if ( !("sourceClass" in source) ) return;
+		const current = source.sourceClass;
+		if ( current === "[object Object]" ) {
+			source.sourceClass = "";
+			return;
+		}
+		if ( current && (typeof current === "object") && !Array.isArray(current) ) {
+			source.sourceClass = current.system?.identifier ?? current.identifier ?? current.value ?? "";
+			return;
+		}
+		if ( (current !== undefined) && (current !== null) && (typeof current !== "string") ) source.sourceClass = "";
+	}
+
+	/* -------------------------------------------- */
+
+	/**
+	 * Clear stale target prompts for non-area maneuvers.
+	 * @param {object} source  The candidate source data from which the model will be constructed.
+	 */
+	static #migrateTargetPrompt(source) {
+		if ( source.target?.prompt !== true ) return;
+		const activities = Array.isArray(source.activities) ? source.activities : Object.values(source.activities ?? {});
+		const hasMeasuredTemplate = activities.some(activity => {
+			const template = activity?.target?.template;
+			if ( template === true ) return true;
+			if ( template && (typeof template === "object") && !Array.isArray(template) ) {
+				const templateType = template.type;
+				if ( typeof templateType === "string" && templateType && (templateType in CONFIG.DND5E.areaTargetTypes) ) return true;
+				const templateSize = Number(template.size ?? template.value);
+				if ( Number.isFinite(templateSize) && (templateSize > 0) ) return true;
+				const templateWidth = Number(template.width);
+				if ( Number.isFinite(templateWidth) && (templateWidth > 0) ) return true;
+			}
+			return activity?.target?.affects?.type === "area";
+		});
+		if ( !hasMeasuredTemplate ) source.target.prompt = false;
 	}
 
 	/* -------------------------------------------- */
@@ -148,6 +195,13 @@ export default class ManeuverData extends ItemDataModel.mixin(ItemDescriptionTem
 		// This custom maneuver subtype is not handled by Item5e's built-in proficiency preparation.
 		if (!this.parent.actor?.system?.attributes?.prof) this.prof = new Proficiency(0, 0);
 		else this.prof = new Proficiency(this.parent.actor.system.attributes.prof, this.proficiencyMultiplier ?? 0);
+
+		const superiorityDc = Number(this.parent.actor?.system?.superiority?.types?.[this.type.value]?.dc);
+		if ( Number.isFinite(superiorityDc) ) {
+			for ( const activity of this.activities.getByType("save") ) {
+				activity.save.dc.value = superiorityDc;
+			}
+		}
 	}
 
 	/* -------------------------------------------- */

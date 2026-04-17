@@ -2,7 +2,7 @@
   "_id": "WUJlWDH4enxYeX4n",
   "name": "TYE-wing",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/tye_wing.Avatar.webp?1661173311365",
+  "img": "modules/sw5e-module/icons/packs/Starship/tye_wing.Avatar.webp?1661173311365",
   "items": [
     {
       "_id": "sw6LXmvM8FO6P504",
@@ -4493,7 +4493,7 @@
     "randomImg": false,
     "name": "TYE-wing",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/tye_wing.Token.webp?1661173311365",
+      "src": "modules/sw5e-module/icons/packs/Starship/tye_wing.Token.webp?1661173311365",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

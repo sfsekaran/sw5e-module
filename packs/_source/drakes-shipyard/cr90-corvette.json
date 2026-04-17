@@ -3419,7 +3419,7 @@
           "_id": "jg01GHFOrEq9Irhs",
           "changes": [
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "-50",
               "priority": 20
@@ -8812,7 +8812,7 @@
       "_id": "Rm71azecWTlhaoQQ",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "-50",
           "priority": 20
@@ -9562,7 +9562,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/cr90_corvette.Token.webp?1660052625792",
+      "src": "modules/sw5e-module/icons/packs/Starship/cr90_corvette.Token.webp?1660052625792",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

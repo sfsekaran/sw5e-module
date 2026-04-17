@@ -2,7 +2,7 @@
   "_id": "2TkLW4TUmB9mulsx",
   "name": "Y-TIE Fighter",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/y_tie_fighter.Avatar.webp?1661173606680",
+  "img": "modules/sw5e-module/icons/packs/Starship/y_tie_fighter.Avatar.webp?1661173606680",
   "items": [
     {
       "_id": "oNfrryIvNGvgS0Vv",
@@ -5173,7 +5173,7 @@
     "randomImg": false,
     "name": "Y-TIE Fighter",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/y_tie_fighter.Token.webp?1661173606680",
+      "src": "modules/sw5e-module/icons/packs/Starship/y_tie_fighter.Token.webp?1661173606680",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

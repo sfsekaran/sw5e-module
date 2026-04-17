@@ -5946,7 +5946,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/delta_7_aethersprite_class_light_interceptor.Token.webp?1660417775274",
+      "src": "modules/sw5e-module/icons/packs/Starship/delta_7_aethersprite_class_light_interceptor.Token.webp?1660417775274",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

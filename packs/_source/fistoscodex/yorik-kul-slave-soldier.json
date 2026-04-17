@@ -471,7 +471,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -1244,7 +1244,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/448_-_Yorik-Kul_Slave_Soldier/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/448_-_Yorik-Kul_Slave_Soldier/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

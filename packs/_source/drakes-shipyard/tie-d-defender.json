@@ -2,7 +2,7 @@
   "_id": "SuqAQa6LsY1hNJnI",
   "name": "TIE/D Defender",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/tie_d_defender.Avatar.webp?1661173115015",
+  "img": "modules/sw5e-module/icons/packs/Starship/tie_d_defender.Avatar.webp?1661173115015",
   "items": [
     {
       "_id": "iof9F94MZPtQzDYO",
@@ -7555,7 +7555,7 @@
               "priority": 20
             },
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "50",
               "priority": 20
@@ -9164,7 +9164,7 @@
           "priority": 20
         },
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "value": "50",
           "mode": 2,
           "priority": 20
@@ -9764,7 +9764,7 @@
     "randomImg": false,
     "name": "TIE/D Defender",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/tie_d_defender.Token.webp?1661173115015",
+      "src": "modules/sw5e-module/icons/packs/Starship/tie_d_defender.Token.webp?1661173115015",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

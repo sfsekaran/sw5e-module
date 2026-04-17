@@ -888,7 +888,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/151_-_B_27omarr_Brain_Walker/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/151_-_B_27omarr_Brain_Walker/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

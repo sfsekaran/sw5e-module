@@ -426,9 +426,14 @@ function buildVehicleSystem(legacySystem = {}, items = [], existingSystem = {}) 
 			hover: runtimeSystem.attributes?.movement?.hover ?? true
 		}
 	});
+	const tierFromDetails = toFiniteNumber(runtimeSystem.details?.tier, null);
+	const tierFromSize = toFiniteNumber(sizeSystem?.tier, null);
+	const resolvedTier = tierFromDetails !== null ? tierFromDetails : tierFromSize;
+
 	system.details = mergeStarshipSystemData(runtimeSystem.details, {
 		source: normalizeSourceField(runtimeSystem.details?.source),
-		type: runtimeSystem.details?.type ?? "space"
+		type: runtimeSystem.details?.type ?? "space",
+		...(resolvedTier !== null ? { tier: resolvedTier } : {})
 	});
 	system.traits = mergeStarshipSystemData(runtimeSystem.traits, {
 		size: sizeSystem.size ?? runtimeSystem.traits?.size ?? "med",
@@ -564,16 +569,48 @@ export function normalizeLegacyStarshipActorData(data) {
 	return true;
 }
 
+export function createBlankLegacyStarshipActorData(data = {}) {
+	const source = cloneData(data) ?? {};
+	source.type = "vehicle";
+	source.items = Array.isArray(source.items) ? source.items : [];
+	source.system = cloneData(source.system ?? {});
+
+	const flags = ensureSw5eFlags(source);
+	delete flags.createStarship;
+	flags.legacyStarshipActor = {
+		type: "starship",
+		system: cloneData(flags.legacyStarshipActor?.system ?? source.system ?? {})
+	};
+
+	normalizeLegacyStarshipActorData(source);
+	// Blank starship creation: seed the same dnd5e vehicle-sheet flag so the first paint matches sheet-side defaulting (see `ensureStarshipDefaultShowVehicleAbilities`).
+	source.flags ??= {};
+	source.flags.dnd5e = { ...(source.flags.dnd5e ?? {}) };
+	if ( source.flags.dnd5e.showVehicleAbilities === undefined ) source.flags.dnd5e.showVehicleAbilities = true;
+	return source;
+}
+
 function getStoredLegacyStarshipActorSystem(actor) {
 	return actor?.flags?.sw5e?.legacyStarshipActor?.system ?? {};
 }
 
+function isStarshipFlagVehicle(actor) {
+	return actor?.type === "vehicle" && actor?.flags?.sw5e?.legacyStarshipActor?.type === "starship";
+}
+
 export function getLegacyStarshipActorSystem(actor) {
-	return mergeStarshipSystemData(
-		getStoredLegacyStarshipActorSystem(actor),
-		actor?._source?.system ?? {},
-		actor?.system ?? {}
-	);
+	const flagSystem = getStoredLegacyStarshipActorSystem(actor);
+	const srcSystem = actor?._source?.system ?? {};
+	const liveSystem = actor?.system ?? {};
+	const merged = mergeStarshipSystemData(flagSystem, srcSystem, liveSystem);
+
+	if ( isStarshipFlagVehicle(actor) ) {
+		// Vehicle `actor.system.skills` is not part of the stock dnd5e vehicle schema; prepared data can be empty or
+		// out of sync. A three-way merge would apply that object last and clobber real skill data from flags/_source.
+		merged.skills = mergeStarshipSystemData(flagSystem.skills ?? {}, srcSystem.skills ?? {});
+	}
+
+	return merged;
 }
 
 function getAbilityModifier(abilities = {}, legacyAbilities = {}, abilityId) {
@@ -802,21 +839,90 @@ function getSkillBonus(skill = {}) {
 	return toFiniteNumber(skill?.bonuses?.check, 0) ?? 0;
 }
 
+/**
+ * dnd5e 5.2 `CONFIG.DND5E.proficiencyLevels` is localized label strings (0, 0.5, 1, 2) with no `.mult`.
+ * SW5E adds Wretched Hives starship tiers 3–5 the same way. Starship skills store the tier number in
+ * `skill.value`; that number is the proficiency multiplier applied to the ship’s proficiency bonus.
+ */
+function getStarshipSkillProficiencyMultiplier(proficiencyMode) {
+	const levels = getProficiencyLevels();
+	const entry = levels?.[proficiencyMode];
+	if ( isRecord(entry) && Number.isFinite(Number(entry.mult)) ) return Number(entry.mult);
+	const n = toFiniteNumber(proficiencyMode, NaN);
+	if ( !Number.isFinite(n) || n < 0 || n > 5 ) return 0;
+	return n;
+}
+
+function resolveStarshipSkillAbility(skill, config) {
+	const abilityKeys = Object.keys(CONFIG?.DND5E?.abilities ?? CONFIG?.SW5E?.abilities ?? {});
+	const fromSkill = typeof skill?.ability === "string" ? skill.ability.trim() : "";
+	if ( fromSkill && abilityKeys.includes(fromSkill) ) return fromSkill;
+	const fromConfig = typeof config?.ability === "string" ? config.ability.trim() : "";
+	if ( fromConfig && abilityKeys.includes(fromConfig) ) return fromConfig;
+	return abilityKeys.includes("int") ? "int" : (abilityKeys[0] ?? "int");
+}
+
+function proficiencyLevelHoverLabel(mode) {
+	const levels = getProficiencyLevels();
+	const entry = levels?.[mode];
+	if ( typeof entry === "string" ) {
+		const loc = globalThis.game?.i18n?.localize?.(entry);
+		return loc && loc !== entry ? loc : entry;
+	}
+	if ( isRecord(entry) && entry.label ) {
+		const lab = entry.label;
+		const loc = globalThis.game?.i18n?.localize?.(lab);
+		return loc && loc !== lab ? loc : String(lab ?? "");
+	}
+	return "";
+}
+
+function getStarshipActorProficiencyBonus(actor, legacySystem) {
+	return toFiniteNumber(
+		actor?.system?.attributes?.prof,
+		toFiniteNumber(legacySystem?.attributes?.prof, 0)
+	) ?? 0;
+}
+
+/** UUIDs assigned to this starship’s deployment (pilot, active station, crew, passenger). */
+function collectStarshipDeploymentUuids(starshipActor) {
+	const legacy = getLegacyStarshipActorSystem(starshipActor);
+	const deployment = legacy.attributes?.deployment ?? {};
+	const pilot = deployment.pilot?.value ?? deployment.pilot ?? null;
+	const active = deployment.active?.value ?? deployment.active ?? null;
+	const crew = getDeploymentUuidList(deployment.crew);
+	const passenger = getDeploymentUuidList(deployment.passenger);
+	return new Set([pilot, active, ...crew, ...passenger].filter(Boolean));
+}
+
+/**
+ * SotG: starship skill proficiency comes from a crewmember, not the vehicle. Use the rolling user’s assigned
+ * character when (and only when) that actor is on this ship’s deployment roster.
+ */
+function resolveRollingActorForStarshipSkill(starshipActor, user) {
+	const char = user?.character;
+	if ( !char || char.documentName !== "Actor" ) return null;
+	const uuid = char.uuid;
+	if ( !uuid ) return null;
+	if ( !collectStarshipDeploymentUuids(starshipActor).has(uuid) ) return null;
+	return char;
+}
+
+/** Prepared skill rows for the sheet sidebar; proficiency uses the merged vehicle `attributes.prof` × tier (often 0). Rolls use the clicking user’s deployed character — see {@link rollStarshipSkill}. */
 export function getStarshipSkillEntries(actor) {
 	const legacySystem = getLegacyStarshipActorSystem(actor);
 	const runtime = getDerivedStarshipRuntime(actor);
 	const skillConfig = getStarshipSkillsConfig();
-	const proficiencyLevels = getProficiencyLevels();
-	const baseProficiency = toFiniteNumber(legacySystem.attributes?.prof, 0) ?? 0;
+	const baseProficiency = getStarshipActorProficiencyBonus(actor, legacySystem);
 	const pilotSkill = toFiniteNumber(runtime.crew?.pilotSkill, 0) ?? 0;
 
 	return Object.entries(skillConfig).map(([key, config]) => {
 		const skill = legacySystem.skills?.[key] ?? {};
-		const ability = config.ability ?? skill.ability ?? "int";
+		const ability = resolveStarshipSkillAbility(skill, config);
 		const abilityValue = toFiniteNumber(actor?.system?.abilities?.[ability]?.value, toFiniteNumber(legacySystem.abilities?.[ability]?.value, 10)) ?? 10;
 		const abilityMod = Math.floor((abilityValue - 10) / 2);
 		const proficiencyMode = toFiniteNumber(skill.value, 0) ?? 0;
-		const multiplier = Number(proficiencyLevels?.[proficiencyMode]?.mult ?? 0);
+		const multiplier = getStarshipSkillProficiencyMultiplier(proficiencyMode);
 		const proficiency = Math.round(baseProficiency * multiplier);
 		let bonus = getSkillBonus(skill);
 		const baseTotal = abilityMod + proficiency + bonus;
@@ -827,7 +933,7 @@ export function getStarshipSkillEntries(actor) {
 			ability,
 			abilityLabel: CONFIG?.DND5E?.abilities?.[ability]?.label ?? ability.toUpperCase(),
 			proficiencyMode,
-			hover: proficiencyLevels?.[proficiencyMode]?.label ?? "",
+			hover: proficiencyLevelHoverLabel(proficiencyMode),
 			total: abilityMod + proficiency + bonus,
 			parts: {
 				abilityMod,
@@ -873,7 +979,7 @@ function buildStarshipRollAbilities(actor) {
 	}, {});
 }
 
-function getStarshipRollData(actor, selectedAbility, chosenAbility) {
+function getStarshipRollData(actor, selectedAbility, chosenAbility, proficiencyBonusForData = null) {
 	const rollData = foundry.utils.deepClone(actor?.getRollData?.() ?? {});
 	rollData.abilities ??= {};
 	rollData.abilities[selectedAbility] ??= {};
@@ -881,10 +987,11 @@ function getStarshipRollData(actor, selectedAbility, chosenAbility) {
 	rollData.abilities[selectedAbility].bonuses ??= {};
 	rollData.abilities[selectedAbility].bonuses.check = chosenAbility?.bonuses?.check ?? "";
 	rollData.mod = rollData.abilities[selectedAbility].mod;
-	rollData.prof = toFiniteNumber(
-		rollData.prof,
-		toFiniteNumber(getLegacyStarshipActorSystem(actor).attributes?.prof, 0)
-	) ?? 0;
+	const shipProf = getStarshipActorProficiencyBonus(actor, getLegacyStarshipActorSystem(actor));
+	const profSource = proficiencyBonusForData !== null && proficiencyBonusForData !== undefined
+		? proficiencyBonusForData
+		: shipProf;
+	rollData.prof = toFiniteNumber(rollData.prof, profSource) ?? 0;
 	return rollData;
 }
 
@@ -923,21 +1030,54 @@ function buildRollFormula(terms=[]) {
 	return formula;
 }
 
-function buildStarshipSkillFormula(actor, entry, selectedAbility, chosenAbility, situationalBonus="") {
-	const rollData = getStarshipRollData(actor, selectedAbility, chosenAbility);
+function buildStarshipSkillFormula(
+	actor,
+	entry,
+	selectedAbility,
+	chosenAbility,
+	situationalBonus="",
+	{ rollProficiencyPoints = null, rollDataProficiency = null } = {}
+) {
+	const rollData = getStarshipRollData(actor, selectedAbility, chosenAbility, rollDataProficiency);
+	const profPoints = rollProficiencyPoints !== null && rollProficiencyPoints !== undefined
+		? rollProficiencyPoints
+		: entry.parts.proficiency;
 	const terms = [
 		normalizeFormulaTerm(chosenAbility?.mod ?? entry.parts.abilityMod, rollData),
 		normalizeFormulaTerm(chosenAbility?.bonuses?.check, rollData),
-		normalizeFormulaTerm(entry.parts.proficiency, rollData),
+		normalizeFormulaTerm(profPoints, rollData),
 		normalizeFormulaTerm(entry.parts.bonus, rollData),
 		normalizeFormulaTerm(situationalBonus, rollData)
 	].filter(Boolean);
 	return buildRollFormula(terms);
 }
 
-export async function rollStarshipSkill(actor, skillId, event) {
+/**
+ * @param {Actor} actor Starship (vehicle) actor
+ * @param {string} skillId Starship skill key
+ * @param {Event} [event] Click / key modifiers for fast-forward rolls
+ * @param {User} [rollingUser] User performing the roll (defaults to `game.user`). Proficiency uses `rollingUser.character`
+ *                            when that actor is deployed on this starship; otherwise the proficiency term is 0.
+ */
+export async function rollStarshipSkill(actor, skillId, event, rollingUser) {
 	const entry = getStarshipSkillEntries(actor).find(skill => skill.id === skillId);
 	if ( !entry ) return null;
+
+	const roller = rollingUser ?? game.user;
+	const deployedRoller = resolveRollingActorForStarshipSkill(actor, roller);
+	const rollerPb = toFiniteNumber(deployedRoller?.system?.attributes?.prof, 0) ?? 0;
+	const rollProficiencyPoints = deployedRoller
+		? Math.round(rollerPb * getStarshipSkillProficiencyMultiplier(entry.proficiencyMode))
+		: 0;
+	const rollDataProficiency = deployedRoller ? rollerPb : 0;
+	const dialogEntry = {
+		...entry,
+		parts: {
+			...entry.parts,
+			proficiency: rollProficiencyPoints
+		},
+		total: entry.parts.abilityMod + rollProficiencyPoints + entry.parts.bonus
+	};
 
 	const fastForward = isStarshipFastForward(event);
 	const defaultRollMode = game.settings.get("core", "rollMode");
@@ -951,7 +1091,7 @@ export async function rollStarshipSkill(actor, skillId, event) {
 		}
 		: await (await import("./starship-skill-roll-config.mjs")).promptStarshipSkillRoll({
 			actor,
-			entry,
+			entry: dialogEntry,
 			abilities,
 			defaultRollMode,
 			initialMode: getStarshipAdvantageMode(event)
@@ -960,7 +1100,14 @@ export async function rollStarshipSkill(actor, skillId, event) {
 
 	const selectedAbility = dialogSelection.ability in abilities ? dialogSelection.ability : entry.ability;
 	const chosenAbility = abilities[selectedAbility] ?? { mod: entry.parts.abilityMod, bonuses: { check: "" } };
-	const formula = buildStarshipSkillFormula(actor, entry, selectedAbility, chosenAbility, dialogSelection.bonus);
+	const formula = buildStarshipSkillFormula(
+		actor,
+		entry,
+		selectedAbility,
+		chosenAbility,
+		dialogSelection.bonus,
+		{ rollProficiencyPoints, rollDataProficiency }
+	);
 	const roll = new CONFIG.Dice.D20Roll(formula, {}, {
 		flavor: `${actor.name}: ${entry.label}`,
 		advantageMode: dialogSelection.advantageMode,

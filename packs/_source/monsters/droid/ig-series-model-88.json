@@ -529,7 +529,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -735,7 +735,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -1737,7 +1737,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/178_-_IG_Series_2C_Model_88/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/178_-_IG_Series_2C_Model_88/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

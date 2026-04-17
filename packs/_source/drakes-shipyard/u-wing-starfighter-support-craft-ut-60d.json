@@ -2,7 +2,7 @@
   "_id": "8rxZGWKJJ2XbyhNl",
   "name": "U-wing Starfighter/Support Craft - UT-60D",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/u_wing_starfighter_support_craft_ut_60d.Avatar.webp?1661173344983",
+  "img": "modules/sw5e-module/icons/packs/Starship/u_wing_starfighter_support_craft_ut_60d.Avatar.webp?1661173344983",
   "items": [
     {
       "_id": "5iXdYHRXsUjVaH43",
@@ -8303,7 +8303,7 @@
     "randomImg": false,
     "name": "U-wing Starfighter/Support Craft - UT-60D",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/u_wing_starfighter_support_craft_ut_60d.Token.webp?1661173344983",
+      "src": "modules/sw5e-module/icons/packs/Starship/u_wing_starfighter_support_craft_ut_60d.Token.webp?1661173344983",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

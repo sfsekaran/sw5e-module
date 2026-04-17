@@ -2,7 +2,7 @@
   "_id": "Y36w1nGrrDghf1bq",
   "name": "TIE/sa Bomber",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/tie_sa_bomber.Avatar.webp?1661173188737",
+  "img": "modules/sw5e-module/icons/packs/Starship/tie_sa_bomber.Avatar.webp?1661173188737",
   "items": [
     {
       "_id": "8fSvRbjVePA0tCpf",
@@ -6380,7 +6380,7 @@
     "randomImg": false,
     "name": "TIE/sa Bomber",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/tie_sa_bomber.Token.webp?1661173188737",
+      "src": "modules/sw5e-module/icons/packs/Starship/tie_sa_bomber.Token.webp?1661173188737",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

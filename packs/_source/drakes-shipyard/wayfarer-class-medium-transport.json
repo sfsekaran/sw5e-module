@@ -2,7 +2,7 @@
   "_id": "edvK3te9EEg9kZcU",
   "name": "Wayfarer-class Medium Transport",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/wayfarer_class_medium_transport.Avatar.webp?1661173515799",
+  "img": "modules/sw5e-module/icons/packs/Starship/wayfarer_class_medium_transport.Avatar.webp?1661173515799",
   "items": [
     {
       "_id": "4BhhJthD1H3K0WhG",
@@ -7960,7 +7960,7 @@
     "randomImg": false,
     "name": "Wayfarer-class Medium Transport",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/wayfarer_class_medium_transport.Token.webp?1661173515799",
+      "src": "modules/sw5e-module/icons/packs/Starship/wayfarer_class_medium_transport.Token.webp?1661173515799",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

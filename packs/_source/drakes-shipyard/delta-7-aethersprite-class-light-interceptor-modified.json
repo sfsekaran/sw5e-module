@@ -6920,7 +6920,7 @@
               "priority": 20
             },
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "50",
               "priority": 20
@@ -10939,7 +10939,7 @@
           "priority": 20
         },
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "50",
           "priority": 20
@@ -11643,7 +11643,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/delta_7_aethersprite_class_light_interceptor_modified.Token.webp?1660417787639",
+      "src": "modules/sw5e-module/icons/packs/Starship/delta_7_aethersprite_class_light_interceptor_modified.Token.webp?1660417787639",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

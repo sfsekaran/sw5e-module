@@ -316,7 +316,10 @@
         "source": "PHB",
         "quantity": 3,
         "weight": 1,
-        "price": 10,
+        "price": {
+          "value": 10,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -2196,7 +2199,10 @@
         "source": "PHB",
         "quantity": 1,
         "weight": 45,
-        "price": 2500,
+        "price": {
+          "value": 2500,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -5036,7 +5042,10 @@
         "source": "PHB",
         "quantity": 1,
         "weight": 4,
-        "price": 300,
+        "price": {
+          "value": 300,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -5196,7 +5205,10 @@
         "source": "PHB",
         "quantity": 1,
         "weight": null,
-        "price": 50,
+        "price": {
+          "value": 50,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -5345,7 +5357,10 @@
         "source": "",
         "quantity": 1,
         "weight": 0,
-        "price": 0,
+        "price": {
+          "value": 0,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -5469,7 +5484,10 @@
         "source": "",
         "quantity": 1,
         "weight": 0,
-        "price": 0,
+        "price": {
+          "value": 0,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -5593,7 +5611,10 @@
         "source": "",
         "quantity": 1,
         "weight": 0,
-        "price": 0,
+        "price": {
+          "value": 0,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -5717,7 +5738,10 @@
         "source": "",
         "quantity": 1,
         "weight": 0,
-        "price": 0,
+        "price": {
+          "value": 0,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",
@@ -5841,7 +5865,10 @@
         "source": "",
         "quantity": 1,
         "weight": 0,
-        "price": 0,
+        "price": {
+          "value": 0,
+          "denomination": "gc"
+        },
         "attunement": 0,
         "equipped": true,
         "rarity": "",

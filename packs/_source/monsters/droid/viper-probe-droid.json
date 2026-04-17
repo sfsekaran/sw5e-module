@@ -307,7 +307,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -1282,7 +1282,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/195_-_Viper_Probe_Droid/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/195_-_Viper_Probe_Droid/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

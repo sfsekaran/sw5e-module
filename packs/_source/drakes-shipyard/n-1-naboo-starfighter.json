@@ -2,7 +2,7 @@
   "_id": "lKELcx2njLSJrP5Q",
   "name": "N-1 Naboo Starfighter",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/n_1_naboo_starfighter.Avatar.webp?1661171556797",
+  "img": "modules/sw5e-module/icons/packs/Starship/n_1_naboo_starfighter.Avatar.webp?1661171556797",
   "items": [
     {
       "_id": "15xnOzJZPE3xiODH",
@@ -8008,7 +8008,7 @@
     "randomImg": false,
     "name": "N-1 Naboo Starfighter",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/n_1_naboo_starfighter.Token.webp?1661171556797",
+      "src": "modules/sw5e-module/icons/packs/Starship/n_1_naboo_starfighter.Token.webp?1661171556797",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

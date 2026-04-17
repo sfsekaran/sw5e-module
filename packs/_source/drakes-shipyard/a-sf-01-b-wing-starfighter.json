@@ -9953,7 +9953,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/a_sf_01_b_wing_starfighter.Token.webp?1660029998028",
+      "src": "modules/sw5e-module/icons/packs/Starship/a_sf_01_b_wing_starfighter.Token.webp?1660029998028",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

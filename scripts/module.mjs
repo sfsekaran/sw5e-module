@@ -9,6 +9,7 @@ import { patchBlasterReload } from "./patch/blaster-reload.mjs";
 import { patchPowercasting } from "./patch/powercasting.mjs";
 import { patchProficiencyInit, patchProficiencyReady } from "./patch/proficiency.mjs";
 import { patchProperties } from "./patch/properties.mjs";
+import { patchStarshipCreate } from "./patch/starship-create.mjs";
 import { patchStarshipPrepare } from "./patch/starship-prepare.mjs";
 import { patchStarshipSheet } from "./patch/starship-sheet.mjs";
 import * as migrations from "./migration.mjs";
@@ -40,6 +41,7 @@ Hooks.once('init', async function() {
 	patchPowercasting();
 	patchProficiencyInit();
 	patchProperties();
+	patchStarshipCreate();
 	patchStarshipPrepare();
 	patchStarshipSheet();
 });

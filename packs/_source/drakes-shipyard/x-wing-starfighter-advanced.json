@@ -2,7 +2,7 @@
   "_id": "1iE0TPVtIaqWPKRH",
   "name": "X-Wing Starfighter - Advanced",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/x_wing_starfighter_advanced.Avatar.webp?1661173953079",
+  "img": "modules/sw5e-module/icons/packs/Starship/x_wing_starfighter_advanced.Avatar.webp?1661173953079",
   "items": [
     {
       "_id": "bO0XECSmU6B491ia",
@@ -9005,7 +9005,7 @@
     "randomImg": false,
     "name": "X-Wing Starfighter - Advanced",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/x_wing_starfighter_advanced.Token.webp?1661173953079",
+      "src": "modules/sw5e-module/icons/packs/Starship/x_wing_starfighter_advanced.Token.webp?1661173953079",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

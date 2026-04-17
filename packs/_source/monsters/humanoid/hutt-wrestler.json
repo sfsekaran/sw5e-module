@@ -360,7 +360,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -508,7 +508,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -1196,6 +1196,315 @@
         "duplicateSource": null
       },
       "_key": "!actors.items!egk01iV7aoP3Eboj.MDJiMDRhNDQ2NWEy"
+    },
+    {
+      "_id": "809cd63a307569bb",
+      "name": "Hold-out",
+      "type": "weapon",
+      "sort": 0,
+      "flags": {
+        "sw5e-importer": {
+          "timestamp": "2023-03-09T01:51:54.3905058+00:00",
+          "importer_version": 3,
+          "uid": "Weapon.name-hold_out.equipmentCategory-weapon"
+        },
+        "sw5e": {
+          "properties": {
+            "powerCell": "range 30/120",
+            "rel": 8,
+            "hidden": true,
+            "lgt": true,
+            "reload": 8
+          },
+          "reload": {
+            "types": [
+              "powerCell"
+            ]
+          }
+        },
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        },
+        "core": {
+          "sourceId": "Compendium.sw5e-module.blasters.Item.V7uuRrAqCINlkgFk"
+        }
+      },
+      "img": "modules/sw5e-module/icons/packs/monsters/206_-_Hutt_Wrestler/Avatar.webp",
+      "effects": [],
+      "folder": null,
+      "system": {
+        "description": {
+          "value": "<p><p><strong></strong><em>Ranged Weapon Attack </em>+3, Range 30/120 ft., One target. <em>Hit : </em>1 (1d4-1) energy damage.</p><p>Hutt Crime Lord makes one hold-out blaster attack.</p></p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "PHB"
+        },
+        "quantity": 1,
+        "weight": {
+          "value": 0,
+          "units": "lb"
+        },
+        "price": {
+          "value": 225,
+          "denomination": "gc"
+        },
+        "attunement": "",
+        "equipped": true,
+        "rarity": "",
+        "identified": true,
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": ""
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "cover": null,
+        "crewed": false,
+        "target": {
+          "value": "",
+          "width": null,
+          "units": "",
+          "type": "",
+          "prompt": true
+        },
+        "range": {
+          "value": 30,
+          "long": 120,
+          "units": "ft"
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": null,
+          "recovery": "",
+          "prompt": true
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null,
+          "scale": false
+        },
+        "ability": "wis",
+        "actionType": "rwak",
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [
+            [
+              "1d4-1",
+              "energy"
+            ]
+          ],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "armor": {
+          "value": 10
+        },
+        "hp": {
+          "value": 0,
+          "max": 0,
+          "dt": null,
+          "conditions": ""
+        },
+        "modify": {
+          "chassis": "none",
+          "augmentSlots": 0,
+          "modSlots": 4,
+          "items": [],
+          "changes": {}
+        },
+        "weaponClass": "sidearm",
+        "ammo": {
+          "target": null,
+          "value": null,
+          "use": null,
+          "types": [
+            "powerCell"
+          ]
+        },
+        "properties": [
+          "hidden",
+          "lgt",
+          "powerCell",
+          "rel"
+        ],
+        "proficient": 1,
+        "type": {
+          "value": "simpleBL",
+          "subtype": "",
+          "baseItem": "hold-out"
+        },
+        "unidentified": {
+          "description": ""
+        },
+        "attack": {
+          "bonus": "",
+          "flat": false
+        },
+        "container": null,
+        "attuned": false,
+        "enchantment": null,
+        "summons": null,
+        "magicalBonus": null,
+        "firingArc": ""
+      },
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "systemId": null,
+        "systemVersion": null,
+        "coreVersion": "12.330",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!egk01iV7aoP3Eboj.809cd63a307569bb"
+    },
+    {
+      "_id": "5ef28397102241b7",
+      "name": "Power cell",
+      "type": "consumable",
+      "sort": 0,
+      "flags": {
+        "sw5e-importer": {
+          "timestamp": "2023-03-09T01:51:54.5933886+00:00",
+          "importer_version": 3,
+          "uid": "Consumable.name-power_cell.equipmentCategory-ammunition"
+        },
+        "core": {
+          "sourceId": "Compendium.sw5e-module.ammo.Item.oeJaLYngzLX0x6Yj"
+        }
+      },
+      "img": "modules/sw5e-module/icons/packs/Ammunition/PowerCell.webp",
+      "effects": [],
+      "folder": null,
+      "system": {
+        "description": {
+          "value": "<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "PHB"
+        },
+        "quantity": 1,
+        "weight": {
+          "value": 1,
+          "units": "lb"
+        },
+        "price": {
+          "value": 10,
+          "denomination": "gc"
+        },
+        "attunement": "",
+        "equipped": false,
+        "rarity": "",
+        "identified": true,
+        "activation": {
+          "type": "",
+          "cost": 1,
+          "condition": ""
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "cover": null,
+        "crewed": false,
+        "target": {
+          "value": "",
+          "width": null,
+          "units": "",
+          "type": "",
+          "prompt": true
+        },
+        "range": {
+          "value": null,
+          "long": null,
+          "units": ""
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": null,
+          "recovery": "",
+          "autoDestroy": true,
+          "prompt": true
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null,
+          "scale": false
+        },
+        "ability": "",
+        "actionType": "other",
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "properties": [],
+        "type": {
+          "value": "ammo",
+          "subtype": "powerCell"
+        },
+        "unidentified": {
+          "description": ""
+        },
+        "attack": {
+          "bonus": "",
+          "flat": false
+        },
+        "container": null,
+        "attuned": false,
+        "enchantment": null,
+        "summons": null,
+        "magicalBonus": null
+      },
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "systemId": null,
+        "systemVersion": null,
+        "coreVersion": "12.330",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!egk01iV7aoP3Eboj.5ef28397102241b7"
     }
   ],
   "effects": [],
@@ -1853,7 +2162,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/206_-_Hutt_Wrestler/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/206_-_Hutt_Wrestler/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

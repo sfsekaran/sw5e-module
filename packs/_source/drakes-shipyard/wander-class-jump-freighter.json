@@ -2,7 +2,7 @@
   "_id": "otFcy4156sFvukFS",
   "name": "Wander-class Jump Freighter",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/wander_class_jump_freighter.Avatar.webp?1661173499179",
+  "img": "modules/sw5e-module/icons/packs/Starship/wander_class_jump_freighter.Avatar.webp?1661173499179",
   "items": [
     {
       "_id": "ly0ds8Wkuq74DXXf",
@@ -5980,7 +5980,7 @@
     "randomImg": false,
     "name": "Wander-class Jump Freighter",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/wander_class_jump_freighter.Token.webp?1661173499179",
+      "src": "modules/sw5e-module/icons/packs/Starship/wander_class_jump_freighter.Token.webp?1661173499179",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

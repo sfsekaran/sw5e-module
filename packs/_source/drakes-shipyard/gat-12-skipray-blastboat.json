@@ -2,7 +2,7 @@
   "_id": "Bgqr4WNQpTzEIepj",
   "name": "GAT-12 Skipray Blastboat",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/gat_12_skipray_blastboat.Avatar.webp?1661168677999",
+  "img": "modules/sw5e-module/icons/packs/Starship/gat_12_skipray_blastboat.Avatar.webp?1661168677999",
   "items": [
     {
       "_id": "D2zzYDHY8Hmj66kp",
@@ -10885,7 +10885,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/gat_12_skipray_blastboat.Token.webp?1661168677999",
+      "src": "modules/sw5e-module/icons/packs/Starship/gat_12_skipray_blastboat.Token.webp?1661168677999",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

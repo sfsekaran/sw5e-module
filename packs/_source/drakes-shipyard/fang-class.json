@@ -2,7 +2,7 @@
   "_id": "uAzqh6bUJ4ZfKcol",
   "name": "Fang-class",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/fang_class.Avatar.webp?1661168339104",
+  "img": "modules/sw5e-module/icons/packs/Starship/fang_class.Avatar.webp?1661168339104",
   "items": [
     {
       "_id": "Fa22TCfkfuIlYW9T",
@@ -9232,7 +9232,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/fang_class.Token.webp?1661168339104",
+      "src": "modules/sw5e-module/icons/packs/Starship/fang_class.Token.webp?1661168339104",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

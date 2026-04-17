@@ -4962,7 +4962,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/aka_jor_class_shuttle.Token.webp?1660030083262",
+      "src": "modules/sw5e-module/icons/packs/Starship/aka_jor_class_shuttle.Token.webp?1660030083262",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

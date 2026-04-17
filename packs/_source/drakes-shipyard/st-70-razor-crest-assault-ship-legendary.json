@@ -9416,7 +9416,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/st_70_razor_crest_assault_ship_legendary.Token.webp?1660046441339",
+      "src": "modules/sw5e-module/icons/packs/Starship/st_70_razor_crest_assault_ship_legendary.Token.webp?1660046441339",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

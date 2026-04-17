@@ -2,7 +2,7 @@
   "_id": "CXI1rlrERTsjeoSo",
   "name": "X-70B Phantom-class Prototype",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/x_70b_phantom_class_prototype.Avatar.webp?1661173530803",
+  "img": "modules/sw5e-module/icons/packs/Starship/x_70b_phantom_class_prototype.Avatar.webp?1661173530803",
   "items": [
     {
       "_id": "rvPocItNs6xHrGOL",
@@ -11155,7 +11155,7 @@
     "randomImg": false,
     "name": "X-70B Phantom-class Prototype",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/x_70b_phantom_class_prototype.Token.webp?1661173530803",
+      "src": "modules/sw5e-module/icons/packs/Starship/x_70b_phantom_class_prototype.Token.webp?1661173530803",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

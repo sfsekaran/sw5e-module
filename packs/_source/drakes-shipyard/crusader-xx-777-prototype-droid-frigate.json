@@ -12482,7 +12482,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/crusader_xx_777_prototype_droid_frigate.Token.webp?1660053185740",
+      "src": "modules/sw5e-module/icons/packs/Starship/crusader_xx_777_prototype_droid_frigate.Token.webp?1660053185740",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

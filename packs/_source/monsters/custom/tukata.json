@@ -486,7 +486,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -637,7 +637,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -788,7 +788,7 @@
         },
         "price": {
           "value": 0,
-          "denomination": "gp"
+          "denomination": "gc"
         },
         "attunement": "",
         "equipped": true,
@@ -1546,7 +1546,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/011_-_Tuk_27ata/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/011_-_Tuk_27ata/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,

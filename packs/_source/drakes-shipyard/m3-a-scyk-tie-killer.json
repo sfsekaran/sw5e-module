@@ -2,7 +2,7 @@
   "_id": "ZDQ7jvM0EdDgQCoy",
   "name": "M3-A Scyk \"TIE Killer\"",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/m3_a_scyk_tie_killer_.Avatar.webp?1661170429392",
+  "img": "modules/sw5e-module/icons/packs/Starship/m3_a_scyk_tie_killer_.Avatar.webp?1661170429392",
   "items": [
     {
       "_id": "W7Ef1zkINWg1YwDR",
@@ -8781,7 +8781,7 @@
     "randomImg": false,
     "name": "M3-A Scyk \"TIE Killer\"",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/m3_a_scyk_tie_killer_.Token.webp?1661170429392",
+      "src": "modules/sw5e-module/icons/packs/Starship/m3_a_scyk_tie_killer_.Token.webp?1661170429392",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

@@ -7766,7 +7766,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/dynamic_class_light_freighter.Token.webp?1660513928658",
+      "src": "modules/sw5e-module/icons/packs/Starship/dynamic_class_light_freighter.Token.webp?1660513928658",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

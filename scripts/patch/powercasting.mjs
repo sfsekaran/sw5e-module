@@ -17,6 +17,71 @@ function formatSuperiorityPool(superiority) {
 	return `${current}/${max}d${die}`;
 }
 
+function getPreparedPowercastingCards(actor) {
+	const abilities = actor?.system?.abilities ?? {};
+	const powercasting = actor?.system?.powercasting ?? {};
+	const superiority = actor?.system?.superiority ?? {};
+	const superiorityPool = formatSuperiorityPool(superiority);
+
+	const makeAbilityAttack = ability => {
+		const attack = abilities?.[ability]?.attack;
+		if ( !Number.isFinite(Number(attack)) ) return "-";
+		return attack >= 0 ? `+${attack}` : `${attack}`;
+	};
+
+	return {
+		force: [
+			{
+				name: "Forcecasting (Light)",
+				attr: powercasting.force?.schools?.lgt?.attr ?? "wis",
+				save: powercasting.force?.schools?.lgt?.dc ?? null
+			},
+			{
+				name: "Forcecasting (Dark)",
+				attr: powercasting.force?.schools?.drk?.attr ?? "cha",
+				save: powercasting.force?.schools?.drk?.dc ?? null
+			},
+			{
+				name: "Forcecasting (Neutral)",
+				attr: powercasting.force?.schools?.uni?.attr ?? getBestAbility(actor, ["wis", "cha"], 0)?.id ?? "wis",
+				save: powercasting.force?.schools?.uni?.dc ?? null
+			}
+		].map(card => ({
+			...card,
+			attack: makeAbilityAttack(card.attr)
+		})),
+		superiority: [
+			{
+				name: "Superiority (Mental)",
+				attr: superiority.types?.mental?.attr ?? getBestAbility(actor, CONFIG.DND5E.superiority.types.mental.attr, 0)?.id ?? "int",
+				save: superiority.types?.mental?.dc ?? null,
+				resource: superiorityPool
+			},
+			{
+				name: "Superiority (Physical)",
+				attr: superiority.types?.physical?.attr ?? getBestAbility(actor, CONFIG.DND5E.superiority.types.physical.attr, 0)?.id ?? "str",
+				save: superiority.types?.physical?.dc ?? null,
+				resource: superiorityPool
+			},
+			{
+				name: "Superiority (General)",
+				attr: superiority.types?.general?.attr ?? getBestAbility(actor, CONFIG.DND5E.superiority.types.general.attr, 0)?.id ?? "int",
+				save: superiority.types?.general?.dc ?? null,
+				resource: superiorityPool
+			}
+		].map(card => ({
+			...card,
+			attack: makeAbilityAttack(card.attr)
+		})),
+		tech: {
+			name: "Techcasting",
+			attr: powercasting.tech?.schools?.tec?.attr ?? "int",
+			save: powercasting.tech?.schools?.tec?.dc ?? null,
+			attack: makeAbilityAttack(powercasting.tech?.schools?.tec?.attr ?? "int")
+		}
+	};
+}
+
 function getPowercastingTypeFromItem(item) {
 	return item?.system?.school === "tec" ? "tech" : "force";
 }
@@ -526,62 +591,12 @@ function showPowercastingStats() {
 		const root = getHtmlRoot(html);
 		if ( !root || !context?.actor ) return;
 		const actorItems = context.actor.toObject().items;
-		const actorAbilities = context.actor.system.abilities;
 		const superiorityData = context.actor.system.superiority;
-		const superiorityPool = formatSuperiorityPool(superiorityData);
+		const preparedCards = getPreparedPowercastingCards(context.actor);
 		const powercastingCardsSection = root.querySelector(`section.tab[data-tab="spells"] section.top`);
 		if ( !powercastingCardsSection ) return;
 		const dndSpellcastingCards = powercastingCardsSection.querySelectorAll("div.spellcasting.card:not(.sw5e)");
 		dndSpellcastingCards.forEach(card => card.remove());
-
-		// Powercasting Cards (Name + Ability Used)
-		const forcecastingCards = [
-			{ name: "Forcecasting (Light)", getAbility: () => "wis" },
-			{ name: "Forcecasting (Dark)", getAbility: () => "cha" },
-			{ name: "Forcecasting (Neutral)", getAbility: () => {
-				if (actorAbilities.wis.value > actorAbilities.cha.value) return "wis";
-				else return "cha";
-			}},
-		];
-		const superiorityCards = [
-			{ name: "Superiority (Mental)", getAbility: () => {
-				const mentalAbilities = ["int", "wis", "cha"];
-				const greater = {name: mentalAbilities[0], value: actorAbilities[mentalAbilities[0]].value};
-				for (let i=1; i<mentalAbilities.length; i++) {
-					const ability = mentalAbilities[i];
-					if (actorAbilities[ability].value > greater.value) {
-						greater.name = ability;
-						greater.value = actorAbilities[ability].value;
-					}
-				}
-				return greater.name;
-			}, getResource: () => superiorityPool},
-			{ name: "Superiority (Physical)", getAbility: () => {
-				const physicalAbilities = ["str", "dex", "con"];
-				const greater = {name: physicalAbilities[0], value: actorAbilities[physicalAbilities[0]].value};
-				for (let i=1; i<physicalAbilities.length; i++) {
-					const ability = physicalAbilities[i];
-					if (actorAbilities[ability].value > greater.value) {
-						greater.name = ability;
-						greater.value = actorAbilities[ability].value;
-					}
-				}
-				return greater.name;
-			}, getResource: () => superiorityPool},
-			{ name: "Superiority (General)", getAbility: () => {
-				const allAbilities = ["str", "dex", "con", "int", "wis", "cha"];
-				const greater = {name: allAbilities[0], value: actorAbilities[allAbilities[0]].value};
-				for (let i=1; i<allAbilities.length; i++) {
-					const ability = allAbilities[i];
-					if (actorAbilities[ability].value > greater.value) {
-						greater.name = ability;
-						greater.value = actorAbilities[ability].value;
-					}
-				}
-				return greater.name;
-			}, getResource: () => superiorityPool},
-		];
-		const techcastingCard = { name: "Techcasting", getAbility: () => "int" };
 
 		const actorPowers = actorItems.filter(item => item.type === "spell");
 		const actorClasses = actorItems.filter(item => item.type === "class");
@@ -606,17 +621,16 @@ function showPowercastingStats() {
 
 		// Rendering
 		const powercastingCardsToRenderize = [];
-		if (hasSuperiority) powercastingCardsToRenderize.push(...superiorityCards);
-		if (hasForcecasting) powercastingCardsToRenderize.push(...forcecastingCards);
-		if (hasTechcasting) powercastingCardsToRenderize.push(techcastingCard);
+		if (hasSuperiority) powercastingCardsToRenderize.push(...preparedCards.superiority);
+		if (hasForcecasting) powercastingCardsToRenderize.push(...preparedCards.force);
+		if (hasTechcasting) powercastingCardsToRenderize.push(preparedCards.tech);
 
 		powercastingCardsToRenderize.forEach(powercasting => {
 			const powercastingCard = document.createElement("div");
 			powercastingCard.classList.add("spellcasting", "card", "sw5e");
-			const ability = powercasting.getAbility();
-			const resource = powercasting.getResource?.();
+			const ability = powercasting.attr;
+			const resource = powercasting.resource;
 			powercastingCard.dataset.ability = ability;
-			const powercastingAttackWithSymbol = actorAbilities[ability].attack >= 0 ? `+${actorAbilities[ability].attack}` : actorAbilities[ability].attack;
 			powercastingCard.innerHTML = `
 				<div class="header">
 					<h3>${powercasting.name}</h3>
@@ -633,11 +647,11 @@ function showPowercastingStats() {
 					</div>
 					<div class="attack">
 						<span class="label">Attack</span>
-						<span class="value">${powercastingAttackWithSymbol}</span>
+						<span class="value">${powercasting.attack}</span>
 					</div>
 					<div class="save">
 						<span class="label">Save</span>
-						<span class="value">${actorAbilities[ability].dc}</span>
+						<span class="value">${powercasting.save ?? "-"}</span>
 					</div>
 				</div>
 			`;

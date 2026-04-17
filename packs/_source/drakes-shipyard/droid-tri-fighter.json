@@ -5911,7 +5911,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/droid_tri_fighter.Token.webp?1660513009107",
+      "src": "modules/sw5e-module/icons/packs/Starship/droid_tri_fighter.Token.webp?1660513009107",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

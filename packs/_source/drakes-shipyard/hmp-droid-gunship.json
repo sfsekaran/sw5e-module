@@ -2,7 +2,7 @@
   "_id": "reNHgyibXInPuEMz",
   "name": "HMP Droid Gunship",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/hmp_droid_gunship.Avatar.webp?1661169266928",
+  "img": "modules/sw5e-module/icons/packs/Starship/hmp_droid_gunship.Avatar.webp?1661169266928",
   "items": [
     {
       "_id": "cwtpLrn3LbZX9thM",
@@ -10447,7 +10447,7 @@
     "randomImg": false,
     "name": "HMP Droid Gunship",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/hmp_droid_gunship.Token.webp?1661169266928",
+      "src": "modules/sw5e-module/icons/packs/Starship/hmp_droid_gunship.Token.webp?1661169266928",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

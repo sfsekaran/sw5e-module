@@ -2,7 +2,7 @@
   "_id": "2YtJawA2uITnhq6V",
   "name": "Escape Pod",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/escape_pod.Avatar.webp?1661168169428",
+  "img": "modules/sw5e-module/icons/packs/Starship/escape_pod.Avatar.webp?1661168169428",
   "items": [
     {
       "_id": "rE8aDLqcX27PVpgs",
@@ -6961,7 +6961,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/escape_pod.Token.webp?1661168169428",
+      "src": "modules/sw5e-module/icons/packs/Starship/escape_pod.Token.webp?1661168169428",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

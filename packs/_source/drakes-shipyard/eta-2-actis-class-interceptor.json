@@ -2,7 +2,7 @@
   "_id": "kxOYt1pVQc0rh1OP",
   "name": "ETA-2 Actis-class Interceptor",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/eta_2_actis_class_interceptor.Avatar.webp?1661168129664",
+  "img": "modules/sw5e-module/icons/packs/Starship/eta_2_actis_class_interceptor.Avatar.webp?1661168129664",
   "items": [
     {
       "_id": "mvQ2A4njyUOzRNA8",
@@ -4737,7 +4737,7 @@
               "priority": 20
             },
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "50",
               "priority": 20
@@ -7993,7 +7993,7 @@
           "priority": 20
         },
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "value": "50",
           "mode": 2,
           "priority": 20
@@ -8627,7 +8627,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/eta_2_actis_class_interceptor.Token.webp?1661168129664",
+      "src": "modules/sw5e-module/icons/packs/Starship/eta_2_actis_class_interceptor.Token.webp?1661168129664",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

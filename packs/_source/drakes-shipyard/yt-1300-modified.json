@@ -2,7 +2,7 @@
   "_id": "t5oz29L2QV5lFlYr",
   "name": "YT-1300, Modified",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/yt_1300_modified.Avatar.webp?1661173989544",
+  "img": "modules/sw5e-module/icons/packs/Starship/yt_1300_modified.Avatar.webp?1661173989544",
   "items": [
     {
       "_id": "rfkUOCZWvS6V59Z1",
@@ -8658,7 +8658,7 @@
     "randomImg": false,
     "name": "YT-1300, Modified",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/yt_1300_modified.Token.webp?1661173989544",
+      "src": "modules/sw5e-module/icons/packs/Starship/yt_1300_modified.Token.webp?1661173989544",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

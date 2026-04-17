@@ -2,7 +2,7 @@
   "_id": "QqgnknDyNxtsaImK",
   "name": "YT-1300, Heavily Modified",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/yt_1300_heavily_modified.Avatar.webp?1661173975255",
+  "img": "modules/sw5e-module/icons/packs/Starship/yt_1300_heavily_modified.Avatar.webp?1661173975255",
   "items": [
     {
       "_id": "Me4PkXGAAbGgZQwu",
@@ -4748,7 +4748,7 @@
           "_id": "jg01GHFOrEq9Irhs",
           "changes": [
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "-50",
               "priority": 20
@@ -10972,7 +10972,7 @@
       "_id": "mbDCMRw1mb1LNrzM",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "value": "-50",
           "mode": 2,
           "priority": 20
@@ -11631,7 +11631,7 @@
       "_id": "qSl5ltd7udAKjzBX",
       "changes": [
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 5,
           "value": "400",
           "priority": 20
@@ -12181,7 +12181,7 @@
     "randomImg": false,
     "name": "YT-1300, Heavily Modified",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/yt_1300_heavily_modified.Token.webp?1661173975255",
+      "src": "modules/sw5e-module/icons/packs/Starship/yt_1300_heavily_modified.Token.webp?1661173975255",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

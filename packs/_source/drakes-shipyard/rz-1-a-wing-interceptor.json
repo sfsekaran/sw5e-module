@@ -6447,7 +6447,7 @@
               "priority": 20
             },
             {
-              "key": "system.attributes.movement.space",
+              "key": "system.attributes.movement.fly",
               "mode": 2,
               "value": "50",
               "priority": 20
@@ -7163,7 +7163,7 @@
           "priority": 20
         },
         {
-          "key": "system.attributes.movement.space",
+          "key": "system.attributes.movement.fly",
           "mode": 2,
           "value": "50",
           "priority": 20
@@ -7671,7 +7671,7 @@
     "flags": {},
     "randomImg": false,
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/rz_1_a_wing_interceptor.Token.webp?1660046416374",
+      "src": "modules/sw5e-module/icons/packs/Starship/rz_1_a_wing_interceptor.Token.webp?1660046416374",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

@@ -2,7 +2,7 @@
   "_id": "U7Pstus7Kt5jGaxq",
   "name": "X-ceptor",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/x_ceptor.Avatar.webp?1661173933705",
+  "img": "modules/sw5e-module/icons/packs/Starship/x_ceptor.Avatar.webp?1661173933705",
   "items": [
     {
       "_id": "PlrVsY2oK4bUnZwx",
@@ -5722,7 +5722,7 @@
     "randomImg": false,
     "name": "X-ceptor",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/x_ceptor.Token.webp?1661173933705",
+      "src": "modules/sw5e-module/icons/packs/Starship/x_ceptor.Token.webp?1661173933705",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

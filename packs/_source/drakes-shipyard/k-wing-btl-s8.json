@@ -2,7 +2,7 @@
   "_id": "vuT2zQ9MkT4bl9sX",
   "name": "K-wing - BTL-S8",
   "type": "starship",
-  "img": "modules/sw5e/icons/packs/Starship/k_wing_btl_s8.Avatar.webp?1661170259443",
+  "img": "modules/sw5e-module/icons/packs/Starship/k_wing_btl_s8.Avatar.webp?1661170259443",
   "items": [
     {
       "_id": "imPBoCBoFJDeqWJi",
@@ -10816,7 +10816,7 @@
     "randomImg": false,
     "name": "K-wing - BTL-S8",
     "texture": {
-      "src": "modules/sw5e/icons/packs/Starship/k_wing_btl_s8.Token.webp?1661170259443",
+      "src": "modules/sw5e-module/icons/packs/Starship/k_wing_btl_s8.Token.webp?1661170259443",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,

@@ -1211,7 +1211,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "modules/sw5e/icons/packs/monsters/415_-_Joben_T-85_Speeder_Bike/Token.webp",
+      "src": "modules/sw5e-module/icons/packs/monsters/415_-_Joben_T-85_Speeder_Bike/Token.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,
