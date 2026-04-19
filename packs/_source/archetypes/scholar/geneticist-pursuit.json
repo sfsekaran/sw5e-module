@@ -109,7 +109,7 @@
             }
           ],
           "grants": [
-            "tool:geneticistsimplements"
+            "tool:artisan:geneticistsimplements"
           ],
           "mode": "default",
           "allowReplacements": false

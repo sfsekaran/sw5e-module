@@ -118,7 +118,7 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "tool:demolitionskit"
+            "tool:specialist:demolitionskit"
           ],
           "mode": "default",
           "allowReplacements": false

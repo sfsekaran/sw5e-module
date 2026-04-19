@@ -124,9 +124,9 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "weapon:vibroaxe",
-            "weapon:vibromace",
-            "weapon:vibrosword"
+            "weapon:mvb:vibroaxe",
+            "weapon:svb:vibromace",
+            "weapon:mvb:vibrosword"
           ],
           "mode": "default",
           "allowReplacements": false

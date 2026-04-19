@@ -137,7 +137,7 @@
           "choices": [],
           "grants": [
             "skills:acr",
-            "weapon:vibroknife"
+            "weapon:mvb:vibroknife"
           ],
           "mode": "default",
           "allowReplacements": false

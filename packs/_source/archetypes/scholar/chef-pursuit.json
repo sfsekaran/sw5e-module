@@ -109,7 +109,7 @@
             }
           ],
           "grants": [
-            "tool:chefskit"
+            "tool:specialist:chefskit"
           ],
           "mode": "default",
           "allowReplacements": false

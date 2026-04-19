@@ -129,9 +129,9 @@
             {
               "count": 1,
               "pool": [
-                "tool:constructorsimplements",
-                "tool:scavengingkit",
-                "tool:surveyorsimplements"
+                "tool:artisan:constructorsimplements",
+                "tool:specialist:scavengingkit",
+                "tool:artisan:surveyorsimplements"
               ]
             }
           ],

@@ -137,7 +137,7 @@
             }
           ],
           "grants": [
-            "tool:spicerskit"
+            "tool:specialist:spicerskit"
           ],
           "mode": "default",
           "allowReplacements": false

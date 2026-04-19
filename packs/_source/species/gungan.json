@@ -142,8 +142,8 @@
           "grants": [
             "armor:lgt",
             "armor:med",
-            "weapon:techstaff",
-            "weapon:vibropike"
+            "weapon:mvb:techstaff",
+            "weapon:mvb:vibropike"
           ],
           "mode": "default",
           "allowReplacements": false

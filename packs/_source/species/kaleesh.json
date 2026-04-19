@@ -128,10 +128,10 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "weapon:blaster carbine",
-            "weapon:vibroblade",
-            "weapon:vibropike",
-            "weapon:vibrospear",
+            "weapon:sbl:blastercarbine",
+            "weapon:mvb:vibroblade",
+            "weapon:mvb:vibropike",
+            "weapon:svb:vibrospear",
             "skills:sur"
           ],
           "mode": "default",

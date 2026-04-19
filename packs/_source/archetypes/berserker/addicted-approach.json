@@ -103,8 +103,8 @@
             {
               "count": 1,
               "pool": [
-                "tool:brewerskit",
-                "tool:spicerskit"
+                "tool:specialist:brewerskit",
+                "tool:specialist:spicerskit"
               ]
             }
           ],

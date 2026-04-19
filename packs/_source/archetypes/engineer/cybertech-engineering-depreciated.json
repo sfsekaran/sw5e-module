@@ -101,7 +101,7 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "tool:cybertechsimplements"
+            "tool:artisan:cybertechsimplements"
           ],
           "mode": "default",
           "allowReplacements": false

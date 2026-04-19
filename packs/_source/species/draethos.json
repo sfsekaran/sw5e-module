@@ -126,8 +126,8 @@
           "grants": [
             "armor:lgt",
             "armor:med",
-            "weapon:vibroblade",
-            "weapon:vibrosword"
+            "weapon:mvb:vibroblade",
+            "weapon:mvb:vibrosword"
           ],
           "mode": "default",
           "allowReplacements": false

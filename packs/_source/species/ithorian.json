@@ -129,7 +129,7 @@
           "choices": [],
           "grants": [
             "skills:nat",
-            "tool:bioanalysiskit"
+            "tool:specialist:bioanalysiskit"
           ],
           "mode": "default",
           "allowReplacements": false

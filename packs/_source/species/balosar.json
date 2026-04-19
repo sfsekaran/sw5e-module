@@ -128,7 +128,7 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "tool:spicerskit",
+            "tool:specialist:spicerskit",
             "dr:poison"
           ],
           "mode": "default",

@@ -433,10 +433,10 @@ function collectChoicePools(featureTexts) {
 		if ( /one skill of your choice/.test(plain) ) addChoice(1, ["skills:*"]);
 		if ( /one tool of your choice/.test(plain) ) addChoice(1, ["tool:*"]);
 		if ( /one weapon of your choice/.test(plain) ) addChoice(1, ["weapon:*"]);
-		if ( /one artisan'?s implements of your choice/.test(plain) ) addChoice(1, ["tool:art:*"]);
+		if ( /one artisan'?s implements of your choice/.test(plain) ) addChoice(1, ["tool:artisan:*"]);
 		if ( /one musical instrument of your choice/.test(plain) ) addChoice(1, ["tool:music:*"]);
 		if ( /one gaming set of your choice/.test(plain) ) addChoice(1, ["tool:game:*"]);
-		if ( /one kit of your choice/.test(plain) ) addChoice(1, ["tool:kit:*"]);
+		if ( /one kit of your choice/.test(plain) ) addChoice(1, ["tool:specialist:*"]);
 
 		const skillMatch = plain.match(/proficiency in ([a-z' -]+?) or ([a-z' -]+?)(?: skill)?(?: \(your choice\))?[.]/);
 		if ( skillMatch ) {
