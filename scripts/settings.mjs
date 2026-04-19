@@ -6,6 +6,7 @@ import {
 	getDefaultCustomCurrencyRates,
 	getDefaultEnabledCurrencyMap
 } from "./currencies.mjs";
+import { CHASSIS_SETTING_KEYS, CHASSIS_RULES_MODES } from "./chassis.mjs";
 import { LEGACY_SETTINGS_NAMESPACE, SETTINGS_NAMESPACE } from "./module-support.mjs";
 
 function registerHiddenWorldSetting(namespace, key, data) {
@@ -48,6 +49,47 @@ export function registerModuleSettings() {
 		name: "SW5E.CurrencySettingsExchangeRate",
 		type: Object,
 		default: getDefaultCustomCurrencyRates()
+	});
+
+	const chassisRulesChoices = Object.fromEntries(
+		CHASSIS_RULES_MODES.map(id => [id, game.i18n.localize(`SW5E.ChassisRulesModeChoice.${id}`)])
+	);
+
+	game.settings.register(SETTINGS_NAMESPACE, CHASSIS_SETTING_KEYS.rulesMode, {
+		name: "SW5E.ChassisRulesMode",
+		hint: "SW5E.ChassisRulesModeHint",
+		scope: "world",
+		config: true,
+		type: String,
+		choices: chassisRulesChoices,
+		default: "guided"
+	});
+
+	game.settings.register(SETTINGS_NAMESPACE, CHASSIS_SETTING_KEYS.enforceTools, {
+		name: "SW5E.ChassisEnforceTools",
+		hint: "SW5E.ChassisEnforceToolsHint",
+		scope: "world",
+		config: true,
+		type: Boolean,
+		default: true
+	});
+
+	game.settings.register(SETTINGS_NAMESPACE, CHASSIS_SETTING_KEYS.enforceRarity, {
+		name: "SW5E.ChassisEnforceRarity",
+		hint: "SW5E.ChassisEnforceRarityHint",
+		scope: "world",
+		config: true,
+		type: Boolean,
+		default: true
+	});
+
+	game.settings.register(SETTINGS_NAMESPACE, CHASSIS_SETTING_KEYS.enforceSlots, {
+		name: "SW5E.ChassisEnforceSlots",
+		hint: "SW5E.ChassisEnforceSlotsHint",
+		scope: "world",
+		config: true,
+		type: Boolean,
+		default: true
 	});
 
 	// // Allow 'feat + 1 ASI' variant rule

@@ -1,0 +1,40 @@
+<div class="chassis-install-browser">
+	{{#if contextLine}}
+		<p class="chassis-browser-context subdued">{{contextLine}}</p>
+	{{/if}}
+	<div class="form-group">
+		<input type="search" class="chassis-browser-search" name="chassisBrowserQ" placeholder="{{localize "SW5E.Chassis.InstallBrowserSearch"}}" autocomplete="off"/>
+	</div>
+	{{#if candidates.length}}
+		<ul class="chassis-browser-list">
+			{{#each candidates}}
+				<li class="chassis-browser-row chassis-browser-row--{{tier}}" data-name-lower="{{nameLower}}">
+					<label class="chassis-browser-pick">
+						<input type="radio" name="chassisPick" value="{{uuid}}" {{#unless selectable}}disabled{{/unless}}/>
+						<img class="chassis-browser-img" src="{{img}}" alt="" />
+						<span class="chassis-browser-main">
+							<span class="chassis-browser-name">{{name}}</span>
+							<span class="chassis-browser-meta subdued">{{metaLine}}</span>
+							{{#if infoHintLine}}
+								<span class="chassis-browser-info-hint subdued" title="{{infoHintLine}}">{{infoHintLine}}</span>
+							{{/if}}
+							{{#if warningLine}}
+								<span class="chassis-browser-warn-hint subdued" title="{{warningLine}}">{{warningLine}}</span>
+							{{/if}}
+						</span>
+						<span class="chassis-browser-badge chassis-browser-badge--{{tier}}">{{tierLabel}}</span>
+					</label>
+				</li>
+			{{/each}}
+		</ul>
+	{{else}}
+		<p class="chassis-browser-empty notes">{{localize "SW5E.Chassis.InstallBrowserEmpty"}}</p>
+	{{/if}}
+	<details class="chassis-browser-advanced">
+		<summary>{{localize "SW5E.Chassis.InstallBrowserAdvanced"}}</summary>
+		<div class="form-group">
+			<label>{{localize "SW5E.Chassis.InstallUuidFallback"}}</label>
+			<input type="text" class="chassis-browser-uuid-fallback" name="uuidFallback" placeholder="Compendium or world item UUID" autocomplete="off"/>
+		</div>
+	</details>
+</div>

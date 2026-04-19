@@ -10,6 +10,8 @@ async function preloadHandlebarsTemplates() {
 	const partials = [
 		// Item Sheet Partials
 		getModulePath("templates/items/details/details-maneuver.hbs"),
+		getModulePath("templates/items/chassis-panel.hbs"),
+		getModulePath("templates/items/chassis-install-browser.hbs")
 	];
 
 	const paths = {};

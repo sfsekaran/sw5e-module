@@ -6,6 +6,7 @@ import { patchPacks } from "./patch/packs.mjs";
 import { patchManeuver } from "./patch/maneuver.mjs";
 import { patchMedpac } from "./patch/medpac.mjs";
 import { patchBlasterReload } from "./patch/blaster-reload.mjs";
+import { patchChassisItemSheet } from "./patch/chassis-item-sheet.mjs";
 import { patchPowercasting } from "./patch/powercasting.mjs";
 import { patchProficiencyInit, patchProficiencyReady } from "./patch/proficiency.mjs";
 import { patchProperties } from "./patch/properties.mjs";
@@ -14,10 +15,12 @@ import { patchStarshipPrepare } from "./patch/starship-prepare.mjs";
 import { patchStarshipSheet } from "./patch/starship-sheet.mjs";
 import * as migrations from "./migration.mjs";
 import { handleTemplates } from "./templates.mjs";
+import { chassisApi } from "./chassis.mjs";
 import { registerModuleSettings } from "./settings.mjs";
 
 globalThis.sw5e = {
-	migrations
+	migrations,
+	chassis: chassisApi
 };
 
 const strict = true;
@@ -41,6 +44,7 @@ Hooks.once('init', async function() {
 	patchPowercasting();
 	patchProficiencyInit();
 	patchProperties();
+	patchChassisItemSheet();
 	patchStarshipCreate();
 	patchStarshipPrepare();
 	patchStarshipSheet();

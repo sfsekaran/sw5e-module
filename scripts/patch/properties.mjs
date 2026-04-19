@@ -75,7 +75,7 @@ function restoreItemSheetScrollSnapshots(root, snaps) {
  * older deferred restore ran — users saw a bounce. Hide the sheet body synchronously in `renderItemSheet5e`,
  * restore scroll while hidden, then reveal on the next animation frame.
  */
-function withPreservedItemSheetScroll(app, runUpdate) {
+export function withPreservedItemSheetScroll(app, runUpdate) {
 	const root = app.element;
 	const snaps = captureItemSheetScrollSnapshots(root);
 	const itemUuid = app.item?.uuid;

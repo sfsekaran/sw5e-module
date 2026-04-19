@@ -1496,3 +1496,562 @@
   white-space: nowrap;
   cursor: pointer;
 }
+
+/* Item sheet — modification chassis (native-style panel, Phase 3.5) */
+
+.sw5e-chassis-panel-host {
+  margin: 0.35rem 0 0.65rem;
+}
+
+.sheet.item .sw5e-chassis-panel,
+.dnd5e2.sheet.item .sw5e-chassis-panel {
+  position: relative;
+  padding: 0.45rem 0.55rem 0.55rem;
+  border: 1px solid var(--dnd5e-color-dark-3, var(--color-border-dark-3, rgba(0, 0, 0, 0.35)));
+  border-radius: 4px;
+  background: var(
+    --dnd5e-background-card,
+    linear-gradient(180deg, rgba(0, 0, 0, 0.14) 0%, rgba(0, 0, 0, 0.22) 100%)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 1px 2px rgba(0, 0, 0, 0.18);
+  font-size: var(--font-size-12);
+  color: inherit;
+}
+
+.sheet.item .sw5e-chassis-panel .subdued,
+.dnd5e2.sheet.item .sw5e-chassis-panel .subdued {
+  opacity: 0.78;
+  font-size: var(--font-size-11);
+}
+
+.sheet.item .sw5e-chassis-header,
+.dnd5e2.sheet.item .sw5e-chassis-header {
+  margin: 0 0 0.4rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--dnd5e-color-dark-4, rgba(255, 255, 255, 0.08));
+}
+
+.sheet.item .sw5e-chassis-title,
+.dnd5e2.sheet.item .sw5e-chassis-title {
+  margin: 0;
+  font-family: var(--dnd5e-font-tertiary, var(--font-primary));
+  font-size: var(--font-size-14);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--dnd5e-color-gold, var(--color-text-light-highlight, inherit));
+}
+
+.sheet.item .sw5e-chassis-hint,
+.dnd5e2.sheet.item .sw5e-chassis-hint {
+  margin: 0 0 0.45rem;
+  line-height: 1.35;
+}
+
+/* Summary key/value grid */
+.sheet.item .sw5e-chassis-summary,
+.dnd5e2.sheet.item .sw5e-chassis-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 0.35rem 0.85rem;
+  margin: 0 0 0.2rem;
+}
+
+.sheet.item .sw5e-chassis-kv,
+.dnd5e2.sheet.item .sw5e-chassis-kv {
+  margin: 0;
+  min-width: 0;
+}
+
+.sheet.item .sw5e-chassis-kv--wide,
+.dnd5e2.sheet.item .sw5e-chassis-kv--wide {
+  grid-column: 1 / -1;
+}
+
+.sheet.item .sw5e-chassis-kv dt,
+.dnd5e2.sheet.item .sw5e-chassis-kv dt {
+  margin: 0 0 0.1rem;
+  font-size: var(--font-size-10);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+}
+
+.sheet.item .sw5e-chassis-kv dd,
+.dnd5e2.sheet.item .sw5e-chassis-kv dd {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+.sheet.item .sw5e-chassis-rules-value.is-override,
+.dnd5e2.sheet.item .sw5e-chassis-rules-value.is-override {
+  color: var(--dnd5e-color-gold, inherit);
+}
+
+.sheet.item .sw5e-chassis-slots-stat,
+.dnd5e2.sheet.item .sw5e-chassis-slots-stat {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.sheet.item .sw5e-chassis-slots-detail,
+.dnd5e2.sheet.item .sw5e-chassis-slots-detail {
+  margin: 0 0 0.45rem;
+  line-height: 1.3;
+}
+
+/* Chassis — install browser */
+.chassis-install-browser .chassis-browser-context {
+  margin: 0 0 0.5rem;
+  line-height: 1.35;
+}
+
+.chassis-install-browser .chassis-browser-search {
+  width: 100%;
+  margin-bottom: 0.35rem;
+}
+
+.chassis-install-browser .chassis-browser-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 340px;
+  overflow: auto;
+  border: 1px solid var(--dnd5e-color-dark-4, rgba(255, 255, 255, 0.08));
+  border-radius: 3px;
+}
+
+.chassis-install-browser .chassis-browser-row {
+  border-bottom: 1px solid var(--dnd5e-color-dark-4, rgba(255, 255, 255, 0.06));
+}
+
+.chassis-install-browser .chassis-browser-row:last-child {
+  border-bottom: none;
+}
+
+.chassis-install-browser .chassis-browser-row.is-filtered-out {
+  display: none;
+}
+
+.chassis-install-browser .chassis-browser-pick {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.4rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+.chassis-install-browser .chassis-browser-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.chassis-install-browser .chassis-browser-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.chassis-install-browser .chassis-browser-name {
+  font-weight: 600;
+}
+
+.chassis-install-browser .chassis-browser-info-hint {
+	display: block;
+	font-size: 0.85em;
+	margin-top: 0.15rem;
+	line-height: 1.25;
+	opacity: 0.88;
+}
+
+.chassis-install-browser .chassis-browser-warn-hint {
+	display: block;
+	font-size: 0.85em;
+	margin-top: 0.15rem;
+	line-height: 1.25;
+}
+
+.chassis-install-browser .chassis-browser-meta {
+  font-size: var(--font-size-11);
+  line-height: 1.25;
+}
+
+.chassis-install-browser .chassis-browser-badge {
+  flex-shrink: 0;
+  font-size: var(--font-size-11);
+  font-weight: 600;
+  padding: 0.1rem 0.35rem;
+  border-radius: 2px;
+}
+
+.chassis-install-browser .chassis-browser-badge--valid {
+  background: rgba(40, 120, 60, 0.35);
+}
+
+.chassis-install-browser .chassis-browser-badge--warn {
+  background: rgba(160, 120, 40, 0.35);
+}
+
+.chassis-install-browser .chassis-browser-badge--blocked {
+  background: rgba(140, 50, 50, 0.35);
+}
+
+.chassis-install-browser .chassis-browser-advanced {
+  margin-top: 0.5rem;
+}
+
+.chassis-install-browser .chassis-browser-empty {
+  margin: 0.35rem 0;
+}
+
+.sheet.item .sw5e-chassis-btn--slot-install,
+.dnd5e2.sheet.item .sw5e-chassis-btn--slot-install {
+  margin-top: 0.35rem;
+  width: 100%;
+  font-size: var(--font-size-11);
+  padding: 0.2rem 0.35rem;
+}
+
+/* Rules override field */
+.sheet.item .sw5e-chassis-rules-field,
+.dnd5e2.sheet.item .sw5e-chassis-rules-field {
+  margin: 0.35rem 0 0.5rem;
+  padding: 0.35rem 0.4rem;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--dnd5e-color-dark-4, rgba(255, 255, 255, 0.06));
+}
+
+.sheet.item .sw5e-chassis-rules-field-label,
+.dnd5e2.sheet.item .sw5e-chassis-rules-field-label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: var(--font-size-11);
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.sheet.item .sw5e-chassis-select,
+.dnd5e2.sheet.item .sw5e-chassis-select {
+  width: 100%;
+  max-width: 100%;
+}
+
+.sheet.item .sw5e-chassis-field-hint,
+.dnd5e2.sheet.item .sw5e-chassis-field-hint {
+  margin: 0.25rem 0 0;
+  line-height: 1.3;
+}
+
+/* Slot layout — visual center */
+.sheet.item .sw5e-chassis-slots-core,
+.dnd5e2.sheet.item .sw5e-chassis-slots-core {
+  margin: 0.45rem 0 0.5rem;
+  padding: 0.4rem 0.45rem 0.45rem;
+  border-radius: 3px;
+  border: 1px solid var(--dnd5e-color-dark-4, rgba(255, 255, 255, 0.07));
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.sheet.item .sw5e-chassis-section-title,
+.dnd5e2.sheet.item .sw5e-chassis-section-title {
+  margin: 0 0 0.4rem;
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0.88;
+}
+
+.sheet.item .sw5e-chassis-slot-group,
+.dnd5e2.sheet.item .sw5e-chassis-slot-group {
+  margin-bottom: 0.45rem;
+}
+
+.sheet.item .sw5e-chassis-slot-group:last-child,
+.dnd5e2.sheet.item .sw5e-chassis-slot-group:last-child {
+  margin-bottom: 0;
+}
+
+.sheet.item .sw5e-chassis-slot-group-head,
+.dnd5e2.sheet.item .sw5e-chassis-slot-group-head {
+  margin: 0 0 0.3rem;
+  font-size: var(--font-size-11);
+  font-weight: 600;
+  opacity: 0.72;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sheet.item .sw5e-chassis-slot-grid,
+.dnd5e2.sheet.item .sw5e-chassis-slot-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7.25rem, 1fr));
+  gap: 0.35rem;
+}
+
+.sheet.item .sw5e-chassis-slot-cell,
+.dnd5e2.sheet.item .sw5e-chassis-slot-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-height: 3.25rem;
+  padding: 0.3rem 0.35rem;
+  border-radius: 3px;
+  border: 1px solid var(--dnd5e-color-dark-4, rgba(255, 255, 255, 0.07));
+  background: rgba(0, 0, 0, 0.12);
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+
+.sheet.item .sw5e-chassis-slot-cell.is-empty,
+.dnd5e2.sheet.item .sw5e-chassis-slot-cell.is-empty {
+  border-style: dashed;
+  opacity: 0.72;
+}
+
+.sheet.item .sw5e-chassis-slot-cell.is-occupied,
+.dnd5e2.sheet.item .sw5e-chassis-slot-cell.is-occupied {
+  border-color: var(--dnd5e-color-gold, rgba(180, 160, 100, 0.45));
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px rgba(180, 160, 100, 0.12);
+}
+
+.sheet.item .sw5e-chassis-slot-label,
+.dnd5e2.sheet.item .sw5e-chassis-slot-label {
+  font-size: var(--font-size-10);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+}
+
+.sheet.item .sw5e-chassis-slot-body,
+.dnd5e2.sheet.item .sw5e-chassis-slot-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.sheet.item .sw5e-chassis-slot-mod,
+.dnd5e2.sheet.item .sw5e-chassis-slot-mod {
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.sheet.item .sw5e-chassis-slot-cost,
+.dnd5e2.sheet.item .sw5e-chassis-slot-cost {
+  font-size: var(--font-size-10);
+}
+
+.sheet.item .sw5e-chassis-slot-empty,
+.dnd5e2.sheet.item .sw5e-chassis-slot-empty {
+  font-size: var(--font-size-11);
+  font-style: italic;
+  margin-top: auto;
+}
+
+/* Installed mods */
+.sheet.item .sw5e-chassis-installed,
+.dnd5e2.sheet.item .sw5e-chassis-installed {
+  margin: 0.35rem 0 0.45rem;
+}
+
+.sheet.item .sw5e-chassis-mod-list,
+.dnd5e2.sheet.item .sw5e-chassis-mod-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sheet.item .sw5e-chassis-mod-card,
+.dnd5e2.sheet.item .sw5e-chassis-mod-card {
+  padding: 0.35rem 0.4rem;
+  border-radius: 3px;
+  border: 1px solid var(--dnd5e-color-dark-4, rgba(255, 255, 255, 0.08));
+  background: rgba(0, 0, 0, 0.14);
+}
+
+.sheet.item .sw5e-chassis-mod-title,
+.dnd5e2.sheet.item .sw5e-chassis-mod-title {
+  font-size: var(--font-size-13);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0.2rem;
+}
+
+.sheet.item .sw5e-chassis-mod-tags,
+.dnd5e2.sheet.item .sw5e-chassis-mod-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.sheet.item .sw5e-chassis-tag,
+.dnd5e2.sheet.item .sw5e-chassis-tag {
+  display: inline-block;
+  padding: 0.08rem 0.35rem;
+  border-radius: 2px;
+  font-size: var(--font-size-10);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--dnd5e-color-dark-4, rgba(255, 255, 255, 0.08));
+  opacity: 0.92;
+}
+
+.sheet.item .sw5e-chassis-mod-foot,
+.dnd5e2.sheet.item .sw5e-chassis-mod-foot {
+  margin-top: 0.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.sheet.item .sw5e-chassis-empty,
+.dnd5e2.sheet.item .sw5e-chassis-empty {
+  margin: 0;
+  font-style: italic;
+}
+
+/* Actions — hierarchy */
+.sheet.item .sw5e-chassis-actions,
+.dnd5e2.sheet.item .sw5e-chassis-actions {
+  margin-top: 0.45rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--dnd5e-color-dark-4, rgba(255, 255, 255, 0.08));
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sheet.item .sw5e-chassis-actions-row,
+.dnd5e2.sheet.item .sw5e-chassis-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sheet.item .sw5e-chassis-actions-row--primary .sw5e-chassis-btn,
+.dnd5e2.sheet.item .sw5e-chassis-actions-row--primary .sw5e-chassis-btn {
+  flex: 1 1 auto;
+  min-width: 10rem;
+  justify-content: center;
+}
+
+.sheet.item .sw5e-chassis-actions-row--secondary,
+.dnd5e2.sheet.item .sw5e-chassis-actions-row--secondary {
+  justify-content: flex-start;
+}
+
+.sheet.item .sw5e-chassis-actions-row--utility,
+.dnd5e2.sheet.item .sw5e-chassis-actions-row--utility {
+  justify-content: flex-end;
+  gap: 0.45rem;
+  opacity: 0.92;
+}
+
+.sheet.item .sw5e-chassis-btn,
+.dnd5e2.sheet.item .sw5e-chassis-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.55rem;
+  min-height: 1.75rem;
+  border-radius: 3px;
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--dnd5e-color-dark-3, rgba(0, 0, 0, 0.4));
+  background: var(--dnd5e-color-dark-6, rgba(0, 0, 0, 0.35));
+  color: inherit;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.sheet.item .sw5e-chassis-btn:hover:not(:disabled),
+.dnd5e2.sheet.item .sw5e-chassis-btn:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.sheet.item .sw5e-chassis-btn:disabled,
+.dnd5e2.sheet.item .sw5e-chassis-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sheet.item .sw5e-chassis-btn--primary,
+.dnd5e2.sheet.item .sw5e-chassis-btn--primary {
+  border-color: var(--dnd5e-color-gold, rgba(180, 160, 100, 0.65));
+  background: linear-gradient(180deg, rgba(90, 78, 50, 0.55) 0%, rgba(40, 36, 24, 0.75) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.sheet.item .sw5e-chassis-btn--quiet,
+.dnd5e2.sheet.item .sw5e-chassis-btn--quiet {
+  background: transparent;
+  border-color: var(--dnd5e-color-dark-4, rgba(255, 255, 255, 0.12));
+  font-weight: 500;
+  opacity: 0.88;
+}
+
+.sheet.item .sw5e-chassis-btn--danger,
+.dnd5e2.sheet.item .sw5e-chassis-btn--danger {
+  border-color: rgba(140, 50, 50, 0.55);
+  background: rgba(80, 28, 28, 0.35);
+}
+
+/* Chassis workflow dialogs (Phase 3) */
+
+.chassis-val-report ul {
+  margin: 0.35rem 0 0 1.1rem;
+  padding: 0;
+}
+
+.chassis-val-block {
+  color: var(--color-text-dark, #191813);
+}
+
+.chassis-val-warn {
+  color: var(--color-text-dark-secondary, #4b4a44);
+}
+
+.chassis-placement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0.5rem 0;
+}
+
+.chassis-placement-opt {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sw5e-chassis-install-dialog .notes,
+form .notes {
+  font-size: var(--font-size-12);
+  color: var(--color-text-dark-secondary, #4b4a44);
+}
