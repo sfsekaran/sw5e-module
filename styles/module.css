@@ -2055,3 +2055,428 @@ form .notes {
   font-size: var(--font-size-12);
   color: var(--color-text-dark-secondary, #4b4a44);
 }
+
+/* ——— Cybernetic augmentations: inline actor sheet summary (dark, sheet-native) ——— */
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline {
+  margin: 0.45rem 0 0.55rem;
+  padding: 0.4rem 0.5rem 0.48rem;
+  border: 1px solid var(--dnd5e-color-dark-4, rgb(255 255 255 / 10%));
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at top left, rgb(98 121 170 / 10%), transparent 42%),
+    linear-gradient(180deg, rgb(14 18 28 / 88%), rgb(20 25 36 / 82%));
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 4%),
+    0 1px 2px rgb(0 0 0 / 18%);
+  font-size: var(--font-size-12);
+  color: color-mix(in oklab, var(--dnd5e-color-parchment, var(--dnd5e-color-tan)), transparent 6%);
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-title {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0 0.3rem;
+  padding-bottom: 0.28rem;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+  font-family: var(--dnd5e-font-tertiary, var(--font-primary));
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--dnd5e-color-gold), transparent 8%);
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-title i {
+  color: color-mix(in oklab, var(--dnd5e-color-gold), transparent 22%);
+  font-size: 0.92em;
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-title .roboto-upper {
+  letter-spacing: inherit;
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-count {
+  margin: 0.18rem 0 0.08rem;
+  font-size: var(--font-size-12);
+  font-variant-numeric: tabular-nums;
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-count strong {
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 5%);
+  font-weight: 600;
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-slots {
+  margin: 0.08rem 0 0.28rem;
+  font-size: var(--font-size-11);
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-slots.subdued,
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .subdued {
+  opacity: 1;
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 12%);
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-fx {
+  margin: 0.2rem 0 0.28rem;
+  padding-left: 1.1rem;
+  font-size: var(--font-size-11);
+  line-height: 1.35;
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 8%);
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-fx-none {
+  list-style: none;
+  margin-left: -1.1rem;
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 18%);
+  font-style: italic;
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-override-hint {
+  margin: 0.15rem 0 0.12rem;
+  font-size: var(--font-size-11);
+  font-style: italic;
+  color: color-mix(in oklab, var(--dnd5e-color-gold), transparent 18%);
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-target-hint {
+  margin: 0 0 0.32rem;
+  font-size: var(--font-size-11);
+  line-height: 1.35;
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 10%);
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-manage {
+  margin: 0.3rem 0 0;
+  padding-top: 0.28rem;
+  border-top: 1px solid rgb(255 255 255 / 7%);
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-manage-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-size: var(--font-size-11);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--dnd5e-color-gold), transparent 6%);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-manage-btn:hover {
+  color: var(--dnd5e-color-gold);
+  filter: brightness(1.06);
+}
+
+.dnd5e2.sheet.actor .sw5e-augmentations-inline .sw5e-aug-inline-manage-btn:focus-visible {
+  outline: 2px solid var(--dnd5e-color-gold);
+  outline-offset: 2px;
+}
+
+/* ——— Cybernetic augmentations manager (ApplicationV2): dark shell, sheet-like controls ——— */
+
+.window-app:has(> .window-content > section.sw5e-augmentations-manager) .window-content,
+.window-app:has(section.sw5e-augmentations-manager) .window-content {
+  color-scheme: dark;
+  background:
+    radial-gradient(circle at top left, rgb(98 121 170 / 14%), transparent 38%),
+    linear-gradient(180deg, rgb(16 20 30 / 98%), rgb(22 28 40 / 96%));
+  color: color-mix(in oklab, var(--dnd5e-color-parchment, var(--dnd5e-color-tan)), transparent 5%);
+}
+
+section.sw5e-augmentations-manager {
+  color-scheme: dark;
+  padding: 0.5rem 0.65rem 0.65rem;
+}
+
+section.sw5e-augmentations-manager .sw5e-augmentations-app .notification {
+  margin: 0 0 0.65rem;
+}
+
+section.sw5e-augmentations-manager .notification.warning {
+  border: 1px solid rgb(230 171 72 / 35%);
+  background: rgb(230 171 72 / 10%);
+  color: color-mix(in oklab, var(--dnd5e-color-parchment), transparent 4%);
+}
+
+section.sw5e-augmentations-manager h3 {
+  margin: 0.65rem 0 0.4rem;
+  font-family: var(--dnd5e-font-tertiary, var(--font-primary));
+  font-size: var(--font-size-13);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--dnd5e-color-gold), transparent 5%);
+  border-bottom: 1px solid rgb(230 171 72 / 28%);
+  padding-bottom: 0.32rem;
+}
+
+section.sw5e-augmentations-manager .sw5e-augmentations-summary h3 {
+  margin-top: 0;
+}
+
+section.sw5e-augmentations-manager h4.sw5e-aug-subheading {
+  margin: 0.5rem 0 0.28rem;
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 8%);
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-kv {
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+  margin: 0.2rem 0 0.45rem;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-kv-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-kv-row dt {
+  font-weight: 600;
+  min-width: 10rem;
+  margin: 0;
+  font-size: var(--font-size-11);
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 10%);
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-kv-row dd {
+  margin: 0;
+  color: color-mix(in oklab, var(--dnd5e-color-parchment), transparent 4%);
+  font-variant-numeric: tabular-nums;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--font-size-12);
+  margin: 0.32rem 0 0.6rem;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-table th,
+section.sw5e-augmentations-manager .sw5e-aug-table td {
+  border: none;
+  border-bottom: 1px solid rgb(255 255 255 / 7%);
+  border-right: 1px solid rgb(255 255 255 / 5%);
+  padding: 0.35rem 0.45rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-table th:last-child,
+section.sw5e-augmentations-manager .sw5e-aug-table td:last-child {
+  border-right: none;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-table thead th {
+  background: rgb(0 0 0 / 28%);
+  font-size: var(--font-size-11);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 6%);
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-table tbody tr:nth-child(even) td {
+  background: rgb(0 0 0 / 12%);
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-table tbody tr:nth-child(odd) td {
+  background: rgb(0 0 0 / 6%);
+}
+
+section.sw5e-augmentations-manager tr.sw5e-aug-differs td {
+  background: rgb(230 171 72 / 10%) !important;
+  box-shadow: inset 0 0 0 1px rgb(230 171 72 / 18%);
+}
+
+section.sw5e-augmentations-manager .sw5e-augmentations-gm {
+  margin: 0.15rem 0 0.35rem;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 6px;
+  background: rgb(0 0 0 / 14%);
+}
+
+section.sw5e-augmentations-manager .sw5e-augmentations-gm .hint {
+  margin-top: 0;
+}
+
+section.sw5e-augmentations-manager .form-group {
+  margin: 0.35rem 0;
+}
+
+section.sw5e-augmentations-manager .form-group label {
+  display: block;
+  margin-bottom: 0.22rem;
+  font-size: var(--font-size-11);
+  font-weight: 600;
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 6%);
+}
+
+section.sw5e-augmentations-manager .checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-size: var(--font-size-11);
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 8%);
+}
+
+section.sw5e-augmentations-manager .checkbox input {
+  margin-top: 0.12rem;
+}
+
+section.sw5e-augmentations-manager select,
+section.sw5e-augmentations-manager input[type="text"] {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.28rem 0.4rem;
+  font-size: var(--font-size-12);
+  border-radius: 4px;
+  border: 1px solid rgb(255 255 255 / 14%);
+  background: rgb(12 14 20 / 92%);
+  color: color-mix(in oklab, var(--dnd5e-color-parchment), transparent 6%);
+}
+
+section.sw5e-augmentations-manager select:focus-visible,
+section.sw5e-augmentations-manager input[type="text"]:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--dnd5e-color-gold), transparent 25%);
+  outline-offset: 1px;
+}
+
+section.sw5e-augmentations-manager .hint {
+  margin: 0.25rem 0 0.35rem;
+  font-size: var(--font-size-11);
+  line-height: 1.4;
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 12%);
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-validation {
+  margin-top: 0.5rem;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 6px;
+  background: rgb(0 0 0 / 22%);
+  max-height: 240px;
+  overflow: auto;
+  font-size: var(--font-size-11);
+  line-height: 1.38;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-validation ul {
+  margin: 0.25rem 0 0.35rem 1.1rem;
+  padding: 0;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-val-blocking {
+  color: rgb(255 186 178);
+  font-weight: 600;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-val-warn {
+  color: color-mix(in oklab, var(--dnd5e-color-gold), transparent 12%);
+  font-weight: 600;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-info-dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.75rem;
+  margin: 0.25rem 0;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-info-dl dt {
+  font-weight: 600;
+  margin: 0;
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 8%);
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-info-dl dd {
+  margin: 0;
+  color: color-mix(in oklab, var(--dnd5e-color-parchment), transparent 5%);
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-install-submit {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.42rem;
+  padding: 0.38rem 0.85rem;
+  min-height: 1.85rem;
+  border-radius: 4px;
+  font: inherit;
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid color-mix(in oklab, var(--dnd5e-color-gold), transparent 35%);
+  background: linear-gradient(180deg, rgb(80 70 45 / 55%), rgb(40 36 26 / 78%));
+  color: color-mix(in oklab, var(--dnd5e-color-parchment), transparent 4%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 10%),
+    0 1px 2px rgb(0 0 0 / 28%);
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-install-submit:hover {
+  filter: brightness(1.08);
+  border-color: var(--dnd5e-color-gold);
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-install-submit:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--dnd5e-color-gold), transparent 20%);
+  outline-offset: 2px;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-actions .sw5e-aug-remove {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.22rem 0.45rem;
+  font: inherit;
+  font-size: var(--font-size-11);
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid rgb(140 50 50 / 45%);
+  background: rgb(60 22 24 / 55%);
+  color: rgb(255 210 205);
+  white-space: nowrap;
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-actions .sw5e-aug-remove:hover {
+  border-color: rgb(200 90 90 / 55%);
+  background: rgb(80 28 30 / 62%);
+}
+
+section.sw5e-augmentations-manager .sw5e-aug-actions .sw5e-aug-remove:focus-visible {
+  outline: 2px solid rgb(255 150 140 / 55%);
+  outline-offset: 1px;
+}

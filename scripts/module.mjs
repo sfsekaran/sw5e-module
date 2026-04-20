@@ -13,14 +13,21 @@ import { patchProperties } from "./patch/properties.mjs";
 import { patchStarshipCreate } from "./patch/starship-create.mjs";
 import { patchStarshipPrepare } from "./patch/starship-prepare.mjs";
 import { patchStarshipSheet } from "./patch/starship-sheet.mjs";
+import { patchAugmentationsSheet } from "./patch/augmentations-sheet.mjs";
 import * as migrations from "./migration.mjs";
 import { handleTemplates } from "./templates.mjs";
 import { chassisApi } from "./chassis.mjs";
+import { augmentationsApi } from "./augmentations.mjs";
+import { AugmentationsApp } from "./augmentations-app.mjs";
 import { registerModuleSettings } from "./settings.mjs";
 
 globalThis.sw5e = {
 	migrations,
-	chassis: chassisApi
+	chassis: chassisApi,
+	augmentations: {
+		...augmentationsApi,
+		openManager: actor => AugmentationsApp.openForActor(actor)
+	}
 };
 
 const strict = true;
@@ -48,6 +55,7 @@ Hooks.once('init', async function() {
 	patchStarshipCreate();
 	patchStarshipPrepare();
 	patchStarshipSheet();
+	patchAugmentationsSheet();
 });
 
 Hooks.once('ready', async function() {

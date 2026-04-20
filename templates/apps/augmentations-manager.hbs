@@ -1,0 +1,142 @@
+<div class="sw5e-augmentations-app standard-form">
+	{{#unless actorPresent}}
+		<p class="notification warning">{{localize "SW5E.Augmentations.ActorMissing"}}</p>
+	{{else}}
+		{{#unless eligibleKind}}
+			<p class="notification warning">{{localize "SW5E.Augmentations.IneligibleActorType"}}</p>
+		{{/unless}}
+		{{#if eligibleKind}}
+			{{#unless validTarget}}
+				<p class="notification warning">{{localize "SW5E.Augmentations.InvalidCreatureType"}}</p>
+			{{/unless}}
+		{{/if}}
+
+		<section class="sw5e-augmentations-summary">
+			<h3>{{localize "SW5E.Augmentations.SummaryTitle"}}</h3>
+			<dl class="sw5e-aug-kv">
+				<div class="sw5e-aug-kv-row">
+					<dt>{{localize "SW5E.Augmentations.Count"}}</dt>
+					<dd>{{currentCount}} / {{maxCount}}</dd>
+				</div>
+				<div class="sw5e-aug-kv-row sw5e-aug-kv-row--wide">
+					<dt>{{localize "SW5E.Augmentations.BodySlotsOccupied"}}</dt>
+					<dd>{{occupiedSlotsText}}</dd>
+				</div>
+			</dl>
+
+			<h4 class="sw5e-aug-subheading">{{localize "SW5E.Augmentations.SideEffectsTitle"}}</h4>
+			<table class="sw5e-aug-table">
+				<thead>
+					<tr>
+						<th scope="col">{{localize "SW5E.Augmentations.ColEffect"}}</th>
+						<th scope="col">{{localize "SW5E.Augmentations.ColDerived"}}</th>
+						<th scope="col">{{localize "SW5E.Augmentations.ColEffective"}}</th>
+						<th scope="col">{{localize "SW5E.Augmentations.ColOverride"}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each sideEffectRows}}
+						<tr class="{{#if differs}}sw5e-aug-differs{{/if}}">
+							<td>{{label}}</td>
+							<td>{{derivedText}}</td>
+							<td>{{effectiveText}}</td>
+							<td>{{overrideText}}</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</section>
+
+		{{#if showGmOverrides}}
+			<section class="sw5e-augmentations-gm">
+				<h3>{{localize "SW5E.Augmentations.GmOverridesTitle"}}</h3>
+				<p class="hint">{{localize "SW5E.Augmentations.GmOverridesHint"}}</p>
+				{{#each overrideControls}}
+					<div class="form-group">
+						<label for="sw5e-aug-ov-{{key}}">{{label}}</label>
+						<select id="sw5e-aug-ov-{{key}}" name="sw5e-aug-override" data-sw5e-aug-override-key="{{key}}">
+							{{#each options}}
+								<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+							{{/each}}
+						</select>
+					</div>
+				{{/each}}
+			</section>
+		{{/if}}
+
+		<section class="sw5e-augmentations-installed">
+			<h3>{{localize "SW5E.Augmentations.InstalledTitle"}}</h3>
+			{{#if installedRows.length}}
+				<table class="sw5e-aug-table">
+					<thead>
+						<tr>
+							<th>{{localize "SW5E.Augmentations.ColName"}}</th>
+							<th>{{localize "SW5E.Augmentations.ColCategory"}}</th>
+							<th>{{localize "SW5E.Augmentations.ColRarity"}}</th>
+							<th>{{localize "SW5E.Augmentations.ColSlots"}}</th>
+							<th>{{localize "SW5E.Augmentations.ColSlotless"}}</th>
+							<th>{{localize "SW5E.Augmentations.ColSource"}}</th>
+							<th>{{localize "SW5E.Augmentations.ColInstalled"}}</th>
+							{{#if canEdit}}<th></th>{{/if}}
+						</tr>
+					</thead>
+					<tbody>
+						{{#each installedRows}}
+							<tr>
+								<td>{{name}}</td>
+								<td>{{category}}</td>
+								<td>{{rarity}}</td>
+								<td>{{bodySlotsText}}</td>
+								<td>{{slotlessText}}</td>
+								<td>{{sourceType}}</td>
+								<td>{{installedAtText}}</td>
+								{{#if ../canEdit}}
+									<td class="sw5e-aug-actions">
+										<button type="button" class="sw5e-aug-remove" data-sw5e-aug-remove="{{uuid}}" data-sw5e-aug-remove-name="{{name}}">
+											<i class="fas fa-trash" aria-hidden="true"></i> {{localize "SW5E.Augmentations.Remove"}}
+										</button>
+									</td>
+								{{/if}}
+							</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			{{else}}
+				<p class="hint">{{localize "SW5E.Augmentations.NoneInstalled"}}</p>
+			{{/if}}
+		</section>
+
+		{{#if canEdit}}
+			<section class="sw5e-augmentations-install">
+				<h3>{{localize "SW5E.Augmentations.InstallTitle"}}</h3>
+				{{#if showInstallWorkflow}}
+					<div class="form-group">
+						<label for="sw5e-aug-install-select">{{localize "SW5E.Augmentations.InstallSelectLabel"}}</label>
+						<select id="sw5e-aug-install-select" name="sw5e-aug-install-uuid">
+							<option value="">{{localize "SW5E.Augmentations.InstallSelectPlaceholder"}}</option>
+							{{#each installChoices}}
+								<option value="{{uuid}}">{{sourceLabel}} — {{name}}</option>
+							{{/each}}
+						</select>
+					</div>
+					{{#if isGm}}
+						<div class="form-group">
+							<label class="checkbox">
+								<input type="checkbox" name="sw5e-aug-force-install" />
+								{{localize "SW5E.Augmentations.ForceInstallGm"}}
+							</label>
+						</div>
+					{{/if}}
+					<button type="button" class="sw5e-aug-install-submit">
+						<i class="fas fa-plus" aria-hidden="true"></i> {{localize "SW5E.Augmentations.InstallSubmit"}}
+					</button>
+				{{else}}
+					<p class="hint">{{localize "SW5E.Augmentations.InstallUnavailable"}}</p>
+				{{/if}}
+				<div class="sw5e-aug-validation" data-sw5e-aug-validation hidden></div>
+			</section>
+		{{else}}
+			<p class="hint">{{localize "SW5E.Augmentations.ReadOnlyHint"}}</p>
+		{{/if}}
+	{{/unless}}
+</div>
