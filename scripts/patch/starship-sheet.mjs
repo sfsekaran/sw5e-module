@@ -101,6 +101,135 @@ function getSheetForm(root, app) {
 		?? (root instanceof HTMLFormElement ? root : root.querySelector("form"));
 }
 
+/**
+ * Read sidebar / main scroll from the live sheet element. Call **before** `renderStarshipSidebarSummary`
+ * replaces the sidebar so values reflect the user’s prior view.
+ * @param {object} app
+ * @returns {{ sidebarScrollTop: number, mainScrollTop: number }}
+ */
+function readStarshipSheetScrollSnapshot(app) {
+	let sidebarScrollTop = 0;
+	let mainScrollTop = 0;
+	let sotgPanelScrollTop = 0;
+	const shell = app?.element;
+	if ( !(shell instanceof HTMLElement) ) return { sidebarScrollTop, mainScrollTop, sotgPanelScrollTop };
+
+	const sidebar = shell.querySelector("[data-application-part=\"sidebar\"]")
+		?? shell.querySelector(".sheet-sidebar")
+		?? shell.querySelector(".sidebar");
+	if ( sidebar instanceof HTMLElement ) sidebarScrollTop = sidebar.scrollTop;
+
+	const main = shell.querySelector(".window-content")
+		?? shell.querySelector(".standard-form")
+		?? shell.querySelector("form.application");
+	if ( main instanceof HTMLElement ) mainScrollTop = main.scrollTop;
+
+	const sotgPanel = shell.querySelector(".sw5e-starship-panel");
+	if ( sotgPanel instanceof HTMLElement ) sotgPanelScrollTop = sotgPanel.scrollTop;
+
+	return { sidebarScrollTop, mainScrollTop, sotgPanelScrollTop };
+}
+
+/**
+ * Capture starship sheet view state for restore after `renderActorSheetV2` refreshes the DOM.
+ * Pass scroll positions from {@link readStarshipSheetScrollSnapshot} taken at render start (before sidebar re-mount).
+ * Call after default-tab init so `sw5ePrimary` / `stockPrimary` reflect the post-init app tab state.
+ * @param {object} app
+ * @param {{ sidebarScrollTop?: number, mainScrollTop?: number, sotgPanelScrollTop?: number }} [scrollSnapshot]
+ * @returns {StarshipSheetViewState}
+ */
+function captureStarshipSheetViewState(app, scrollSnapshot) {
+	const scroll = scrollSnapshot ?? readStarshipSheetScrollSnapshot(app);
+	return {
+		sidebarScrollTop: Number(scroll.sidebarScrollTop) || 0,
+		mainScrollTop: Number(scroll.mainScrollTop) || 0,
+		sotgPanelScrollTop: Number(scroll.sotgPanelScrollTop) || 0,
+		sw5ePrimary: getStarshipActiveTab(app),
+		stockPrimary: typeof app?.tabGroups?.primary === "string" ? app.tabGroups.primary : null,
+		sotgSub: getSotgSubTab(app)
+	};
+}
+
+/**
+ * @param {string} tabId
+ * @returns {string}
+ */
+function escapeTabSelectorValue(tabId) {
+	const s = String(tabId ?? "");
+	if ( typeof CSS !== "undefined" && typeof CSS.escape === "function" ) return CSS.escape(s);
+	return s.replace(/\\/g, "\\\\").replace(/"/g, "\\\"");
+}
+
+/**
+ * Reapply primary tab, SotG sub-tab, and scroll after a full starship layer render.
+ * @param {object} app
+ * @param {StarshipSheetViewState|null|undefined} state
+ * @param {HTMLElement} root
+ */
+function restoreStarshipSheetViewState(app, state, root) {
+	if ( !state || !app || !root ) return;
+	try {
+		const wantsSotg = state.sw5ePrimary === STARSHIP_TAB_ID || state.sw5ePrimary === true;
+		if ( wantsSotg ) {
+			activateSheetTab(root, app, STARSHIP_TAB_ID);
+			const wrapper = root.querySelector(`.sw5e-starship-tab[data-tab="${STARSHIP_TAB_ID}"]`);
+			const sub = SOTG_SUB_TAB_IDS.has(state.sotgSub) ? state.sotgSub : "overview";
+			if ( wrapper ) activateSotgSubTab(wrapper, app, sub);
+		}
+		else if ( state.stockPrimary && typeof state.stockPrimary === "string" && !CUSTOM_STARSHIP_TAB_IDS.has(state.stockPrimary) ) {
+			const nav = getPrimaryTabNav(root);
+			const safe = escapeTabSelectorValue(state.stockPrimary);
+			const tabBtn = nav?.querySelector(`[data-tab="${safe}"]`);
+			if ( tabBtn ) activateSheetTab(root, app, state.stockPrimary);
+			else {
+				activateSheetTab(root, app, STARSHIP_TAB_ID);
+				const wrapper = root.querySelector(`.sw5e-starship-tab[data-tab="${STARSHIP_TAB_ID}"]`);
+				const sub = SOTG_SUB_TAB_IDS.has(state.sotgSub) ? state.sotgSub : "overview";
+				if ( wrapper ) activateSotgSubTab(wrapper, app, sub);
+			}
+		}
+		else {
+			activateSheetTab(root, app, STARSHIP_TAB_ID);
+			const wrapper = root.querySelector(`.sw5e-starship-tab[data-tab="${STARSHIP_TAB_ID}"]`);
+			const sub = SOTG_SUB_TAB_IDS.has(state.sotgSub) ? state.sotgSub : "overview";
+			if ( wrapper ) activateSotgSubTab(wrapper, app, sub);
+		}
+	} catch ( err ) {
+		console.warn("SW5E MODULE | Starship sheet tab restore failed.", err);
+		try {
+			activateSheetTab(root, app, STARSHIP_TAB_ID);
+			const wrapper = root.querySelector(`.sw5e-starship-tab[data-tab="${STARSHIP_TAB_ID}"]`);
+			if ( wrapper ) activateSotgSubTab(wrapper, app, "overview");
+		} catch {
+			/* sheet still usable */
+		}
+	}
+
+	const applyScroll = () => {
+		try {
+			const shell = app.element;
+			if ( !(shell instanceof HTMLElement) ) return;
+			const sidebar = shell.querySelector("[data-application-part=\"sidebar\"]")
+				?? shell.querySelector(".sheet-sidebar")
+				?? shell.querySelector(".sidebar");
+			if ( sidebar instanceof HTMLElement && state.sidebarScrollTop > 0 ) sidebar.scrollTop = state.sidebarScrollTop;
+			const main = shell.querySelector(".window-content")
+				?? shell.querySelector(".standard-form")
+				?? shell.querySelector("form.application");
+			if ( main instanceof HTMLElement && state.mainScrollTop > 0 ) main.scrollTop = state.mainScrollTop;
+			const sotgPanel = shell.querySelector(".sw5e-starship-panel");
+			if ( sotgPanel instanceof HTMLElement && state.sotgPanelScrollTop > 0 ) {
+				sotgPanel.scrollTop = state.sotgPanelScrollTop;
+			}
+		} catch {
+			/* ignore */
+		}
+	};
+	window.requestAnimationFrame(() => window.requestAnimationFrame(applyScroll));
+}
+
+/** @typedef {{ sidebarScrollTop: number, mainScrollTop: number, sotgPanelScrollTop: number, sw5ePrimary: string|null|boolean, stockPrimary: string|null, sotgSub: string }} StarshipSheetViewState */
+
 const STARSHIP_SYSTEMS_AUTHORITATIVE_SIZE_ID = "sw5e-systems-size";
 
 /**
@@ -543,6 +672,7 @@ function activateSheetTab(root, app, tabId) {
 	if ( CUSTOM_STARSHIP_TAB_IDS.has(tabId) ) {
 		setStarshipActiveTab(app, tabId);
 		activatePrimaryTab(root, tabId);
+		desyncStaleStockTabGroupWhileSotgVisible(app);
 		return;
 	}
 
@@ -557,6 +687,64 @@ function activateSheetTab(root, app, tabId) {
 	} else {
 		activatePrimaryTab(root, tabId);
 	}
+}
+
+/**
+ * While SotG is the visible custom primary tab, dnd5e often still has `tabGroups.primary === "inventory"`
+ * (last stock tab). After EDIT/PLAY rerender that can mark the Cargo nav as `.active` even though SotG
+ * is showing — stock click handlers then no-op. Nudge tabGroups off the default so `changeTab("inventory")`
+ * reliably runs on the next Cargo click.
+ * @param {object} app
+ */
+function desyncStaleStockTabGroupWhileSotgVisible(app) {
+	if ( !app?.tabGroups || typeof app.tabGroups !== "object" ) return;
+	if ( app.tabGroups.primary !== STOCK_CARGO_TAB_ID ) return;
+	app.tabGroups.primary = "effects";
+}
+
+/**
+ * Single capture-phase bridge for stock primary tabs on integrated vehicle sheets.
+ * Re-bound each render so it survives nav replacement after EDIT/PLAY toggles.
+ * @param {object} app
+ * @param {HTMLElement} root
+ * @param {HTMLElement|null} nav
+ */
+function attachIntegratedStockPrimaryTabBridge(app, root, nav) {
+	if ( !nav ) return;
+	if ( app._sw5eStockTabBridgeAbort ) app._sw5eStockTabBridgeAbort.abort();
+	const ac = new AbortController();
+	app._sw5eStockTabBridgeAbort = ac;
+
+	nav.addEventListener("click", event => {
+		const item = event.target.closest("[data-tab]");
+		if ( !item || !nav.contains(item) ) return;
+		const tabId = item.dataset.tab;
+		if ( !tabId || CUSTOM_STARSHIP_TAB_IDS.has(tabId) ) return;
+
+		const sotgIsEffectivePrimary = Boolean(getStarshipActiveTab(app));
+
+		// After mode-toggle rerender, Cargo can be `.active` while SotG is still the effective tab — do not no-op.
+		if ( !sotgIsEffectivePrimary && item.classList.contains("active") ) {
+			event.preventDefault();
+			return;
+		}
+
+		event.preventDefault();
+		event.stopImmediatePropagation();
+
+		setStarshipActiveTab(app, null);
+		root.querySelectorAll(".sw5e-starship-tab").forEach(panel => {
+			panel.classList.remove("active");
+			panel.hidden = true;
+		});
+		if ( typeof app?.changeTab === "function" ) {
+			try {
+				app.changeTab(tabId, "primary", { force: true, updatePosition: false });
+			} catch ( e ) {
+				activatePrimaryTab(root, tabId);
+			}
+		} else activatePrimaryTab(root, tabId);
+	}, { capture: true, signal: ac.signal });
 }
 
 function ensureStarshipTabTargets(root) {
@@ -1660,6 +1848,8 @@ async function renderStarshipLayer(app, html, data) {
 	const root = getHtmlRoot(html);
 	if ( !root ) return;
 	try {
+	const scrollSnap = readStarshipSheetScrollSnapshot(app);
+
 	root.classList.add("sw5e-starship-sheet");
 	if ( SW5E_STARSHIP_SHEET_DIAG_ENABLED ) root.dataset.sw5eStarshipDiagSheet = "1";
 
@@ -1689,6 +1879,8 @@ if (app._sw5eStarshipActiveTab === undefined) {
         }
     });
 }
+
+	const starshipViewState = captureStarshipSheetViewState(app, scrollSnap);
 
 	const {
 		featuresOperationalGroups,
@@ -1815,7 +2007,6 @@ if (app._sw5eStarshipActiveTab === undefined) {
 	if ( existingWrapper ) {
 		existingWrapper.innerHTML = rendered;
 		syncSotgSheetPhaseClasses(app, existingWrapper.querySelector(".sw5e-starship-panel"));
-		activateSotgSubTab(existingWrapper, app, getSotgSubTab(app));
 		// dnd5e may re-render the nav in edit mode, removing our custom tab buttons.
 		// Re-insert them if they're gone, and re-hide the stock features tab if needed.
 		if ( !nav.querySelector(`[data-tab="${STARSHIP_TAB_ID}"]`) ) {
@@ -1828,8 +2019,8 @@ if (app._sw5eStarshipActiveTab === undefined) {
 			insertCustomTabButtons(nav, [tabButton]);
 			hideStockFeaturesTab(root, app, nav);
 		}
-		const activeTab = getStarshipActiveTab(app);
-		if ( activeTab ) activateSheetTab(root, app, activeTab);
+		restoreStarshipSheetViewState(app, starshipViewState, root);
+		if ( integrated ) attachIntegratedStockPrimaryTabBridge(app, root, nav);
 		scheduleStarshipDuplicateSizeNeutralize(root, app, actor);
 		queueMicrotask(() => runStarshipSheetDiagnostics(root, app, actor, "render:updateSotgLayer"));
 		return;
@@ -1950,38 +2141,8 @@ if (app._sw5eStarshipActiveTab === undefined) {
 		}
 	});
 
-	if ( integrated ) {
-		nav.querySelectorAll("[data-tab]").forEach(item => {
-			if ( item === tabButton ) return;
-			if ( CUSTOM_STARSHIP_TAB_IDS.has(item.dataset.tab) ) return;
-			item.addEventListener("click", (event) => {
-				// Prevent no-op clicks when stock tab already has 'active' class
-				if ( item.classList.contains("active") ) {
-					event.preventDefault();
-					return;
-				}
-				// Reset SW5E state
-				setStarshipActiveTab(app, null);
-				// Hide SW5E wrapper panels
-				root.querySelectorAll(".sw5e-starship-tab").forEach(panel => {
-					panel.classList.remove("active");
-					panel.hidden = true;
-				});
-				// Call stock tab's changeTab to actually switch to it
-				const tabId = item.dataset.tab;
-				if ( typeof app?.changeTab === "function" ) {
-					try {
-						app.changeTab(tabId, "primary", { force: true, updatePosition: false });
-					} catch(e) {
-						activatePrimaryTab(root, tabId);
-					}
-				}
-				});
-		});
-		if ( activeTab ) activateSheetTab(root, app, activeTab);
-	}
-
-	activateSotgSubTab(wrapper, app, getSotgSubTab(app));
+	restoreStarshipSheetViewState(app, starshipViewState, root);
+	if ( integrated ) attachIntegratedStockPrimaryTabBridge(app, root, nav);
 	scheduleStarshipDuplicateSizeNeutralize(root, app, actor);
 	queueMicrotask(() => runStarshipSheetDiagnostics(root, app, actor, "render:firstMountSotgLayer"));
 	} finally {
