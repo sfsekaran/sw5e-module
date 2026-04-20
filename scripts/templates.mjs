@@ -12,7 +12,8 @@ async function preloadHandlebarsTemplates() {
 		getModulePath("templates/items/details/details-maneuver.hbs"),
 		getModulePath("templates/items/chassis-panel.hbs"),
 		getModulePath("templates/items/chassis-install-browser.hbs"),
-		getModulePath("templates/apps/augmentations-manager.hbs")
+		getModulePath("templates/apps/augmentations-manager.hbs"),
+		getModulePath("templates/apps/droid-customizations-manager.hbs")
 	];
 
 	const paths = {};

@@ -3,9 +3,8 @@ import {
 	collectOccupiedBodySlots,
 	getMaxAugmentationsForActor,
 	getInstalledAugmentationCount,
-	isActorAugmentationCandidate,
+	isActorCyberneticAugmentationsManagerAllowed,
 	isActorValidAugmentationTarget,
-	isLegacyStarshipActor,
 	normalizeActorAugmentations
 } from "../augmentations.mjs";
 
@@ -136,8 +135,7 @@ function insertAugmentationsIntoSheetBody(root, actor, section) {
 function injectAugmentationsBodySection(app, html) {
 	const actor = app.actor ?? app.document;
 	if ( !actor || (actor.type !== "character" && actor.type !== "npc") ) return;
-	if ( actor.type === "vehicle" || isLegacyStarshipActor(actor) ) return;
-	if ( !isActorAugmentationCandidate(actor) ) return;
+	if ( !isActorCyberneticAugmentationsManagerAllowed(actor) ) return;
 
 	const root = getHtmlRoot(html);
 	if ( !root ) return;

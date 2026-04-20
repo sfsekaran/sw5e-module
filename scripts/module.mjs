@@ -14,10 +14,13 @@ import { patchStarshipCreate } from "./patch/starship-create.mjs";
 import { patchStarshipPrepare } from "./patch/starship-prepare.mjs";
 import { patchStarshipSheet } from "./patch/starship-sheet.mjs";
 import { patchAugmentationsSheet } from "./patch/augmentations-sheet.mjs";
+import { patchDroidCustomizationsSheet } from "./patch/droid-customizations-sheet.mjs";
 import * as migrations from "./migration.mjs";
 import { handleTemplates } from "./templates.mjs";
 import { chassisApi } from "./chassis.mjs";
 import { augmentationsApi } from "./augmentations.mjs";
+import { droidCustomizationsApi } from "./droid-customizations.mjs";
+import { DroidCustomizationsApp } from "./droid-customizations-app.mjs";
 import { AugmentationsApp } from "./augmentations-app.mjs";
 import { registerModuleSettings } from "./settings.mjs";
 
@@ -27,6 +30,10 @@ globalThis.sw5e = {
 	augmentations: {
 		...augmentationsApi,
 		openManager: actor => AugmentationsApp.openForActor(actor)
+	},
+	droidCustomizations: {
+		...droidCustomizationsApi,
+		openManager: actor => DroidCustomizationsApp.openForActor(actor)
 	}
 };
 
@@ -56,6 +63,7 @@ Hooks.once('init', async function() {
 	patchStarshipPrepare();
 	patchStarshipSheet();
 	patchAugmentationsSheet();
+	patchDroidCustomizationsSheet();
 });
 
 Hooks.once('ready', async function() {

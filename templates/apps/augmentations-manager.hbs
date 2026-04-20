@@ -74,8 +74,6 @@
 							<th>{{localize "SW5E.Augmentations.ColCategory"}}</th>
 							<th>{{localize "SW5E.Augmentations.ColRarity"}}</th>
 							<th>{{localize "SW5E.Augmentations.ColSlots"}}</th>
-							<th>{{localize "SW5E.Augmentations.ColSlotless"}}</th>
-							<th>{{localize "SW5E.Augmentations.ColSource"}}</th>
 							<th>{{localize "SW5E.Augmentations.ColInstalled"}}</th>
 							{{#if canEdit}}<th></th>{{/if}}
 						</tr>
@@ -83,12 +81,16 @@
 					<tbody>
 						{{#each installedRows}}
 							<tr>
-								<td>{{name}}</td>
+								<td>
+									{{#if uuid}}
+										<button type="button" class="unbutton sw5e-aug-installed-name" data-sw5e-aug-open-item="{{uuid}}" aria-label="{{localize "SW5E.Augmentations.OpenItemSheetAria"}}" {{#if descriptionPreview}}title="{{descriptionPreview}}"{{/if}}>{{name}}</button>
+									{{else}}
+										{{name}}
+									{{/if}}
+								</td>
 								<td>{{category}}</td>
 								<td>{{rarity}}</td>
 								<td>{{bodySlotsText}}</td>
-								<td>{{slotlessText}}</td>
-								<td>{{sourceType}}</td>
 								<td>{{installedAtText}}</td>
 								{{#if ../canEdit}}
 									<td class="sw5e-aug-actions">
@@ -115,7 +117,7 @@
 						<select id="sw5e-aug-install-select" name="sw5e-aug-install-uuid">
 							<option value="">{{localize "SW5E.Augmentations.InstallSelectPlaceholder"}}</option>
 							{{#each installChoices}}
-								<option value="{{uuid}}">{{sourceLabel}} — {{name}}</option>
+								<option value="{{uuid}}">{{pickerLabel}}</option>
 							{{/each}}
 						</select>
 					</div>

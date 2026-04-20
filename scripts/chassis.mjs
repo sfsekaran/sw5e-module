@@ -4,6 +4,8 @@
  */
 
 import { getModuleId, getModuleSettingValue } from "./module-support.mjs";
+import { isCyberneticAugmentationSourceCustom } from "./augmentations.mjs";
+import { isDroidCustomizationItem } from "./droid-customizations.mjs";
 
 /**
  * Item compendium pack names (within this module) used as the authoritative modification source for the install browser and related helpers.
@@ -24,6 +26,7 @@ const CHASSIS_MOD_COMPENDIUM_INDEX_FIELDS = /** @type {const} */ ([
 	"folder",
 	"system.rarity",
 	"system.type",
+	"system.source",
 	"system.description",
 	"system.attunement",
 	"system.attack",
@@ -902,6 +905,8 @@ export function filterChassisPlacementsForPreference(preferred, _cost, placement
  */
 function pushChassisInstallCandidateRow(rows, hostItem, browserCtx, p) {
 	const { chassis, mode, toggles, actor, modItemLike, item, uuid, name, img, sourceLabel, systemRarity, allowModificationsPackInference } = p;
+	if ( isCyberneticAugmentationSourceCustom(modItemLike) ) return;
+	if ( isDroidCustomizationItem(modItemLike) ) return;
 	if ( uuid === hostItem.uuid ) return;
 	const meta = resolveChassisModMetaForInstall(/** @type {*} */ (modItemLike), {
 		allowModificationsPackInference: allowModificationsPackInference === true

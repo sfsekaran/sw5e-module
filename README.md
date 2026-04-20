@@ -46,6 +46,75 @@ The `packs/` folder is generated output and should not be edited by hand. The so
 
 For a plain-English walkthrough of what is safe to edit, when to rebuild, and a copy/paste template for reporting a bug or requesting a change, see [docs/local-setup.md](docs/local-setup.md).
 
+## Cybernetic Augmentations
+
+**What it is:** Cybernetic augmentations are an **actor-level** implant system for **non-droid** characters and NPCs. They are separate from normal **item chassis / modifications** and from editing species on the sheet.
+
+**Where it appears:** On eligible **character** and **NPC** sheets (not vehicles or legacy starships), an inline **Cybernetic Augmentations** block sits in the details area (near background / senses). Use **Manage…** to open the full **manager** window. In **Play** mode the inline block is shown only when **at least one** augmentation is installed **or** the sheet is in **Edit** mode (so empty characters are not cluttered in play).
+
+**Routing:** Right now, who uses this UI is decided by **species only**: actors whose species is one of **Droid, Class I** through **Droid, Class V** are **not** shown cybernetic augmentations (they use **Droid Customizations** instead). Everyone else eligible uses cybernetic augmentations here. This does **not** follow creature type or the augmentation **count as droid** side effect for that choice.
+
+**What you can do today:**
+
+- **Install** and **remove** augmentations from the manager, with validation feedback (blocking issues, warnings, and details such as tool and DC when present).
+- See **installed** entries in a table; **click a name** to open the source item sheet when Foundry can resolve it (otherwise you may see a short saved text preview when available).
+- See **derived** side effects from install count (RAW thresholds) and **effective** values after GM overrides.
+- **GM:** force an install past blocking validation when appropriate; adjust per-side-effect **overrides** (derived vs forced on/off).
+- **Body slots** and **capacity** (max installs vs proficiency-based cap) are enforced according to the current rules implementation. Default **creature type** eligibility (e.g. humanoid/beast) applies unless an item supplies its own valid targets.
+
+**Pack / routing signal:** Items in the **Modifications** compendium (and homebrew) can be treated as cybernetic content when **Custom Label** (`system.source.custom`) is exactly **`Cybernetic Augmentation`**. Native `flags.sw5e.augmentation` on an item is also supported for authored items.
+
+**Enhancement vs replacement:** That distinction is **not** driven by a dedicated Configure Sheet field for this workflow. Pack items usually express it in the description (and legacy importer metadata where present). For routing, **Custom Label** is what matters for label-routed items.
+
+**Homebrew cybernetics:** Create a **Loot** item (or another item type your table uses). Under **Source**, set **Custom Label** to **`Cybernetic Augmentation`**. It can appear in the manager’s install list (world items). Compendium edits still go through `packs/_source/` and `npm run build:db` when you change pack JSON.
+
+**API:** `globalThis.sw5e.augmentations` (includes `openManager(actor)` for the manager window).
+
+## Droid Customizations
+
+**What it is:** Droid Customizations are an **actor-level** modification system for **droid-class** characters and NPCs. They are separate from **Cybernetic Augmentations** and from normal **chassis / item modifications**.
+
+**Routing (species only):** An actor is a droid customization host if their **species name** is exactly one of:
+
+- Droid, Class I  
+- Droid, Class II  
+- Droid, Class III  
+- Droid, Class IV  
+- Droid, Class V  
+
+Vehicles, legacy starships, and non-droid species do not get this UI. More nuanced host rules may come later; today it is **species only**.
+
+**Where it appears:** Droid hosts see a **Droid Customizations** block on the sheet (same general area as cybernetics). **Manage…** opens the **Droid Customizations** manager. The inline block stays visible in play mode even when empty, so the section is always there for droids.
+
+**What you can do today:**
+
+- **Install** and **remove** customizations using the manager (validation, then commit).
+- See **motor slot** usage (used vs total), **parts** and **protocols** counts vs allowed caps, and short notes on whether caps use a **stored ability** or the **highest modifier fallback** when none is set yet.
+- **Upgrade motor capacity** (supported totals **3–6** slots) with shown **credit cost** and **install time** by size; **GM** can force past blocking validation when needed.
+- **Click an installed name** to open the source item when Foundry can resolve the UUID.
+
+**Pack / routing signal:** Items can be recognized via native `flags.sw5e.droidCustomization` **or** **Custom Label** **`Droid Customization`**. **Part vs Protocol** still comes from item data (metadata and/or description/importer patterns for routed pack items—not from a new Configure Sheet field in this workflow).
+
+**Homebrew droid parts:** Same pattern as pack routing: **Loot** (or your table’s item type), **Custom Label** **`Droid Customization`**, then pick it in the droid manager. Compendium changes use `packs/_source/` + `npm run build:db` as usual.
+
+**API:** `globalThis.sw5e.droidCustomizations` (includes `openManager(actor)` and helpers such as `isActorDroidCustomizationHost` / `isDroidCustomizationItem`).
+
+## Body-mod content routing (pickers)
+
+Practical rules today:
+
+1. **Normal chassis / modification install browser** (item modifications on chassis): lists modifications that belong in that workflow. It **does not** list items whose **Custom Label** is **`Cybernetic Augmentation`** or **`Droid Customization`** (and stays separate from **Enhanced Items** as before).
+2. **Cybernetic Augmentations** install list: **native** `flags.sw5e.augmentation` items **or** **Custom Label** **`Cybernetic Augmentation`**. It **does not** include droid customization items (Custom Label or native droid flag).
+3. **Droid Customizations** install list: **native** `flags.sw5e.droidCustomization` items **or** **Custom Label** **`Droid Customization`**. It **does not** include cybernetic augmentation items.
+
+Same item should not need to appear in more than one of those pools; the Custom Labels (or native flags) keep the workflows apart.
+
+## Current limitations (body-mod systems)
+
+- **Automation:** There is **no** full astrotech (or equivalent) **install check rolling** pipeline, **failure consequence** automation, or complete **runtime mechanical effect** application for every implant/customization in Foundry yet. What you get now is **routing**, **install/remove**, **capacity and side-effect tracking** (augmentations), **motor slots / parts-protocol caps / upgrades** (droids), and the **manager UIs** described above.
+- **Routing:** Droid vs cybernetic **sheet** choice is **species-only** for now; that may expand later.
+- **Droid caps:** Choosing which **ability** governs parts vs protocols on the sheet is **visibility-only** in the manager today unless you set the underlying flag fields (future UI may make that easier).
+
 ## Developer Documentation
 
 For a contributor-focused overview of the repo layout, runtime entrypoints, compendium build pipeline, and release packaging, see [docs/developer-guide.md](docs/developer-guide.md).
@@ -69,9 +138,12 @@ For the current beta coverage checklist spanning `1.2.9` and `1.3.0`, see [1.2.9
 
 - Actor creation option to make a **Starship** as a **vehicle** actor with SW5E starship identity and seeded `legacyStarshipActor` data so new hulls open cleanly on the starship sheet workflow.
 - Chassis **Install Modification** browser: subdued **informational hint** line (template + styling) for legacy pack metadata, low-confidence inference, missing slot-role / tool–DC notes, etc., separate from the **Warning** badge.
+- **Cybernetic Augmentations:** Actor-level implant data and validation; inline section and **manager** on eligible character/NPC sheets with **install/remove**, installed list, **derived** and **effective** side effects, **GM overrides**, body-slot and capacity checks; routing via **Custom Label** `Cybernetic Augmentation` and native `flags.sw5e.augmentation`; routed items **excluded** from the chassis modification browser; **clickable** installed names when the source item resolves (with snapshot preview fallback when available).
+- **Droid Customizations:** Actor-level customization data with **motor slots** (including **upgrades** toward a maximum of 6), **parts/protocol** limits, validation, inline sheet summary, and **manager** for droid-class species; routing via **Custom Label** `Droid Customization` and native `flags.sw5e.droidCustomization`; **species-only** separation from cybernetic augmentations; routed items **excluded** from the chassis browser and from the cybernetic picker; **clickable** installed names when the source item resolves.
 
 ### Changed
 
+- **Cybernetic Augmentations** and **Droid Customizations** manager windows (ApplicationV2): fixed window height with **scrollable** inner body and **dark-themed** shell consistent with the augmentations UX.
 - Starship skill **inline configure (cog)**: Save uses DialogV2’s `submit(result, dialog)` contract and reads **Ability** and **Check bonus** from the dialog form (`FormData` / `dialog.form`). **Proficiency level** was removed from the cog UI and save path so it no longer overwrites persisted skill tier (`skill.value`); existing stored tiers remain for roll math.
 - Starship **skill list / modifiers**: per-skill **ability** from saved data is preferred over `CONFIG.DND5E.starshipSkills` defaults; proficiency **multiplier** uses tier numbers **0**, **0.5**, **1–5** (dnd5e 5.2 `proficiencyLevels` are labels without `.mult`); proficiency tier **hover** text localizes CONFIG string entries; merged **vehicle proficiency** for display prefers `actor.system.attributes.prof` when present.
 - Starship **legacy skill merge** on vehicle actors: flag-backed `skills` are not clobbered by prepared or empty `actor.system.skills`.

@@ -2184,20 +2184,182 @@ form .notes {
   outline-offset: 2px;
 }
 
+.dnd5e2.sheet.actor .sw5e-droid-customizations-inline {
+  margin: 0.65rem 0 0.5rem;
+  padding: 0.45rem 0.5rem 0.5rem;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 6px;
+  background: rgb(0 0 0 / 12%);
+}
+
+.dnd5e2.sheet.actor .sw5e-droid-customizations-inline .sw5e-droid-inline-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.35rem;
+  font-family: var(--dnd5e-font-tertiary, var(--font-primary));
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--dnd5e-color-gold), transparent 8%);
+}
+
+.dnd5e2.sheet.actor .sw5e-droid-customizations-inline .sw5e-droid-inline-title i {
+  opacity: 0.85;
+}
+
+.dnd5e2.sheet.actor .sw5e-droid-customizations-inline .sw5e-droid-inline-line {
+  margin: 0.2rem 0;
+  font-size: var(--font-size-12);
+  line-height: 1.35;
+}
+
+.dnd5e2.sheet.actor .sw5e-droid-customizations-inline .sw5e-droid-inline-line strong {
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
+.dnd5e2.sheet.actor .sw5e-droid-customizations-inline .subdued,
+.dnd5e2.sheet.actor .sw5e-droid-customizations-inline .sw5e-droid-inline-policy {
+  font-size: var(--font-size-11);
+  opacity: 0.88;
+}
+
+.dnd5e2.sheet.actor .sw5e-droid-customizations-inline .sw5e-droid-inline-manage {
+  margin: 0.4rem 0 0;
+}
+
+.dnd5e2.sheet.actor .sw5e-droid-customizations-inline .sw5e-droid-inline-manage-btn {
+  appearance: none;
+  padding: 0;
+  font: inherit;
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  color: color-mix(in oklab, var(--dnd5e-color-gold), transparent 5%);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.dnd5e2.sheet.actor .sw5e-droid-customizations-inline .sw5e-droid-inline-manage-btn:hover {
+  color: var(--dnd5e-color-gold);
+}
+
 /* ——— Cybernetic augmentations manager (ApplicationV2): dark shell, sheet-like controls ——— */
 
+.window-app:has(section.sw5e-augmentations-manager) {
+  display: flex;
+  flex-direction: column;
+  max-height: min(92vh, 920px);
+  min-height: 0;
+}
+
+/*
+ * AppV2 chain: .window-content → section.sw5e-augmentations-manager → (optional [data-application-part]) → .sw5e-augmentations-app
+ * Prior bug: section used flex: 0 0 auto, so it always grew to full content height and .window-content never gained scrollHeight > clientHeight.
+ * Fix: constrain the flex column (overflow hidden on ancestors) and scroll on .sw5e-augmentations-app only.
+ */
 .window-app:has(> .window-content > section.sw5e-augmentations-manager) .window-content,
 .window-app:has(section.sw5e-augmentations-manager) .window-content {
   color-scheme: dark;
-  background:
-    radial-gradient(circle at top left, rgb(98 121 170 / 14%), transparent 38%),
-    linear-gradient(180deg, rgb(16 20 30 / 98%), rgb(22 28 40 / 96%));
-  color: color-mix(in oklab, var(--dnd5e-color-parchment, var(--dnd5e-color-tan)), transparent 5%);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+  background: transparent;
 }
 
 section.sw5e-augmentations-manager {
   color-scheme: dark;
+  color: color-mix(in oklab, var(--dnd5e-color-parchment, var(--dnd5e-color-tan)), transparent 5%);
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+section.sw5e-augmentations-manager [data-application-part] {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+section.sw5e-augmentations-manager .sw5e-augmentations-app.standard-form {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding: 0.5rem 0.65rem 0.65rem;
+  background:
+    radial-gradient(circle at top left, rgb(98 121 170 / 14%), transparent 38%),
+    linear-gradient(180deg, rgb(16 20 30 / 98%), rgb(22 28 40 / 96%));
+}
+
+/* Scrollbar appearance only (manager scroll body); does not change overflow/flex. */
+.window-app:has(section.sw5e-augmentations-manager) section.sw5e-augmentations-manager .sw5e-augmentations-app.standard-form {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(118 104 78 / 72%) rgb(10 14 22 / 92%);
+}
+
+.window-app:has(section.sw5e-augmentations-manager) section.sw5e-augmentations-manager .sw5e-augmentations-app.standard-form::-webkit-scrollbar {
+  width: 9px;
+}
+
+.window-app:has(section.sw5e-augmentations-manager) section.sw5e-augmentations-manager .sw5e-augmentations-app.standard-form::-webkit-scrollbar-track {
+  background: rgb(10 14 22 / 88%);
+  border-radius: 5px;
+}
+
+.window-app:has(section.sw5e-augmentations-manager) section.sw5e-augmentations-manager .sw5e-augmentations-app.standard-form::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgb(98 121 170 / 38%), rgb(92 82 58 / 52%));
+  border-radius: 5px;
+  border: 2px solid rgb(10 14 22 / 55%);
+}
+
+.window-app:has(section.sw5e-augmentations-manager) section.sw5e-augmentations-manager .sw5e-augmentations-app.standard-form::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgb(118 138 178 / 48%), rgb(118 104 72 / 62%));
+}
+
+.window-app:has(section.sw5e-augmentations-manager) section.sw5e-augmentations-manager .sw5e-augmentations-app.standard-form::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+section.sw5e-augmentations-manager button.sw5e-aug-installed-name {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  font: inherit;
+  line-height: inherit;
+  text-align: left;
+  color: color-mix(in oklab, var(--dnd5e-color-gold), transparent 6%);
+  text-decoration: underline;
+  text-decoration-color: rgb(230 171 72 / 32%);
+  text-underline-offset: 0.12em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+
+section.sw5e-augmentations-manager button.sw5e-aug-installed-name:hover {
+  color: var(--dnd5e-color-gold);
+  text-decoration-color: rgb(230 171 72 / 55%);
+}
+
+section.sw5e-augmentations-manager button.sw5e-aug-installed-name:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--dnd5e-color-gold), transparent 25%);
+  outline-offset: 2px;
 }
 
 section.sw5e-augmentations-manager .sw5e-augmentations-app .notification {
@@ -2479,4 +2641,283 @@ section.sw5e-augmentations-manager .sw5e-aug-actions .sw5e-aug-remove:hover {
 section.sw5e-augmentations-manager .sw5e-aug-actions .sw5e-aug-remove:focus-visible {
   outline: 2px solid rgb(255 150 140 / 55%);
   outline-offset: 1px;
+}
+
+/* ——— Droid customizations manager (ApplicationV2): parallel shell to augmentations ——— */
+
+.window-app:has(section.sw5e-droid-customizations-manager) {
+  display: flex;
+  flex-direction: column;
+  max-height: min(92vh, 920px);
+  min-height: 0;
+}
+
+.window-app:has(> .window-content > section.sw5e-droid-customizations-manager) .window-content,
+.window-app:has(section.sw5e-droid-customizations-manager) .window-content {
+  color-scheme: dark;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+  background: transparent;
+}
+
+section.sw5e-droid-customizations-manager {
+  color-scheme: dark;
+  color: color-mix(in oklab, var(--dnd5e-color-parchment, var(--dnd5e-color-tan)), transparent 5%);
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+section.sw5e-droid-customizations-manager [data-application-part] {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-droid-customizations-app.standard-form {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0.5rem 0.65rem 0.65rem;
+  background:
+    radial-gradient(circle at top left, rgb(98 121 170 / 14%), transparent 38%),
+    linear-gradient(180deg, rgb(16 20 30 / 98%), rgb(22 28 40 / 96%));
+}
+
+.window-app:has(section.sw5e-droid-customizations-manager) section.sw5e-droid-customizations-manager .sw5e-droid-customizations-app.standard-form {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(118 104 78 / 72%) rgb(10 14 22 / 92%);
+}
+
+.window-app:has(section.sw5e-droid-customizations-manager) section.sw5e-droid-customizations-manager .sw5e-droid-customizations-app.standard-form::-webkit-scrollbar {
+  width: 9px;
+}
+
+.window-app:has(section.sw5e-droid-customizations-manager) section.sw5e-droid-customizations-manager .sw5e-droid-customizations-app.standard-form::-webkit-scrollbar-track {
+  background: rgb(10 14 22 / 88%);
+  border-radius: 5px;
+}
+
+.window-app:has(section.sw5e-droid-customizations-manager) section.sw5e-droid-customizations-manager .sw5e-droid-customizations-app.standard-form::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgb(98 121 170 / 38%), rgb(92 82 58 / 52%));
+  border-radius: 5px;
+  border: 2px solid rgb(10 14 22 / 55%);
+}
+
+section.sw5e-droid-customizations-manager button.sw5e-droid-installed-name {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  font: inherit;
+  line-height: inherit;
+  text-align: left;
+  color: color-mix(in oklab, var(--dnd5e-color-gold), transparent 6%);
+  text-decoration: underline;
+  text-decoration-color: rgb(230 171 72 / 32%);
+  text-underline-offset: 0.12em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+
+section.sw5e-droid-customizations-manager button.sw5e-droid-installed-name:hover {
+  color: var(--dnd5e-color-gold);
+}
+
+section.sw5e-droid-customizations-manager .sw5e-droid-customizations-app .notification {
+  margin: 0 0 0.65rem;
+}
+
+section.sw5e-droid-customizations-manager h3 {
+  margin: 0.65rem 0 0.4rem;
+  font-family: var(--dnd5e-font-tertiary, var(--font-primary));
+  font-size: var(--font-size-13);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--dnd5e-color-gold), transparent 5%);
+  border-bottom: 1px solid rgb(230 171 72 / 28%);
+  padding-bottom: 0.32rem;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-droid-customizations-summary h3 {
+  margin-top: 0;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-kv {
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+  margin: 0.2rem 0 0.45rem;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-kv-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-kv-row dt {
+  font-weight: 600;
+  min-width: 10rem;
+  margin: 0;
+  font-size: var(--font-size-11);
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 10%);
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-kv-row dd {
+  margin: 0;
+  color: color-mix(in oklab, var(--dnd5e-color-parchment), transparent 4%);
+  font-variant-numeric: tabular-nums;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--font-size-12);
+  margin: 0.32rem 0 0.6rem;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-table th,
+section.sw5e-droid-customizations-manager .sw5e-aug-table td {
+  border: none;
+  border-bottom: 1px solid rgb(255 255 255 / 7%);
+  border-right: 1px solid rgb(255 255 255 / 5%);
+  padding: 0.35rem 0.45rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-table th:last-child,
+section.sw5e-droid-customizations-manager .sw5e-aug-table td:last-child {
+  border-right: none;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-table thead th {
+  background: rgb(0 0 0 / 28%);
+  font-size: var(--font-size-11);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 6%);
+}
+
+section.sw5e-droid-customizations-manager .form-group {
+  margin: 0.35rem 0;
+}
+
+section.sw5e-droid-customizations-manager .checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-size: var(--font-size-11);
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 8%);
+}
+
+section.sw5e-droid-customizations-manager .checkbox input {
+  margin-top: 0.12rem;
+}
+
+section.sw5e-droid-customizations-manager select {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.28rem 0.4rem;
+  font-size: var(--font-size-12);
+  border-radius: 4px;
+  border: 1px solid rgb(255 255 255 / 14%);
+  background: rgb(12 14 20 / 92%);
+  color: color-mix(in oklab, var(--dnd5e-color-parchment), transparent 6%);
+}
+
+section.sw5e-droid-customizations-manager .hint {
+  margin: 0.25rem 0 0.35rem;
+  font-size: var(--font-size-11);
+  line-height: 1.4;
+  color: color-mix(in oklab, var(--dnd5e-color-tan), transparent 12%);
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-validation {
+  margin-top: 0.5rem;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 6px;
+  background: rgb(0 0 0 / 22%);
+  max-height: 240px;
+  overflow: auto;
+  font-size: var(--font-size-11);
+  line-height: 1.38;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-val-blocking {
+  color: rgb(255 186 178);
+  font-weight: 600;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-val-warn {
+  color: color-mix(in oklab, var(--dnd5e-color-gold), transparent 12%);
+  font-weight: 600;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-info-dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.75rem;
+  margin: 0.25rem 0;
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-install-submit {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.42rem;
+  padding: 0.38rem 0.85rem;
+  min-height: 1.85rem;
+  border-radius: 4px;
+  font: inherit;
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid color-mix(in oklab, var(--dnd5e-color-gold), transparent 35%);
+  background: linear-gradient(180deg, rgb(80 70 45 / 55%), rgb(40 36 26 / 78%));
+  color: color-mix(in oklab, var(--dnd5e-color-parchment), transparent 4%);
+}
+
+section.sw5e-droid-customizations-manager .sw5e-aug-actions .sw5e-aug-remove {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.22rem 0.45rem;
+  font: inherit;
+  font-size: var(--font-size-11);
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid rgb(140 50 50 / 45%);
+  background: rgb(60 22 24 / 55%);
+  color: rgb(255 210 205);
+  white-space: nowrap;
 }

@@ -1,16 +1,19 @@
 import { getModulePath } from "./module-support.mjs";
+import { isActorDroidCustomizationHost } from "./droid-customizations.mjs";
 import {
 	AUGMENTATION_SIDE_EFFECT_KEYS,
 	addAugmentationToActor,
 	collectOccupiedBodySlots,
-	getAugmentationItemMeta,
+	getEffectiveAugmentationItemMeta,
 	getMaxAugmentationsForActor,
 	getInstalledAugmentationCount,
 	isActorAugmentationCandidate,
+	isActorCyberneticAugmentationsManagerAllowed,
 	isActorValidAugmentationTarget,
 	isLegacyStarshipActor,
 	isValidAugmentationItemMeta,
 	normalizeActorAugmentations,
+	plainTextExcerptFromItemDescriptionHtml,
 	removeAugmentationFromActor,
 	setAugmentationSideEffectOverride,
 	validateAugmentationInstall,
@@ -47,31 +50,116 @@ function sideEffectLabel(key) {
 	return localizeOrFallback(SIDE_EFFECT_LABEL_KEYS[key] ?? key, key);
 }
 
+/**
+ * @param {import("@league/foundry").documents.Actor|null} actor
+ * @param {string} uuid
+ */
+async function openInstalledAugmentationSource(actor, uuid) {
+	const id = String(uuid ?? "").trim();
+	if ( !id ) {
+		ui.notifications.warn(localizeOrFallback("SW5E.Augmentations.OpenItemMissingUuid", "This installed entry has no item reference."));
+		return;
+	}
+	try {
+		const doc = await fromUuid(id);
+		if ( doc?.documentName === "Item" && typeof doc.sheet?.render === "function" ) {
+			const rendered = doc.sheet.render(true);
+			if ( rendered instanceof Promise ) await rendered;
+			return;
+		}
+	} catch ( err ) {
+		console.warn("SW5E | Augmentations: open source item failed", err);
+	}
+	let excerpt = "";
+	if ( actor ) {
+		const entry = normalizeActorAugmentations(actor).installed.find(e => e?.uuid === id);
+		excerpt = entry?.snapshot?.descriptionSnippet ?? "";
+	}
+	if ( excerpt ) {
+		await DialogV2.wait({
+			window: { title: game.i18n.localize("SW5E.Augmentations.SnapshotPreviewTitle") },
+			content: `<p class="notes" style="white-space: pre-wrap;">${foundry.utils.escapeHTML(excerpt)}</p>`,
+			buttons: [
+				{ action: "ok", label: game.i18n.localize("SW5E.Augmentations.PreviewClose"), default: true }
+			]
+		});
+		return;
+	}
+	ui.notifications.warn(localizeOrFallback("SW5E.Augmentations.OpenItemNotFound", "Could not open that item. It may have been deleted, the pack is unavailable, or you lack permission."));
+}
+
+/**
+ * Single-line label for the install select (name first; compact category · rarity).
+ * @param {string} name
+ * @param {object} meta
+ */
+function formatAugmentationInstallPickerLabel(name, meta) {
+	const n = typeof name === "string" ? name.trim() : "";
+	const base = n || "—";
+	if ( !meta || typeof meta !== "object" ) return base;
+
+	const catRaw = meta.category;
+	const catLabel = catRaw === "replacement"
+		? localizeOrFallback("SW5E.Augmentations.PickerCategoryReplacement", "Replacement")
+		: catRaw === "enhancement"
+			? localizeOrFallback("SW5E.Augmentations.PickerCategoryEnhancement", "Enhancement")
+			: "";
+
+	let rarLabel = "";
+	const rar = meta.rarity;
+	if ( typeof rar === "string" && rar ) {
+		rarLabel = rar.charAt(0).toUpperCase() + rar.slice(1);
+	}
+
+	if ( catLabel && rarLabel ) return `${base} — ${catLabel} · ${rarLabel}`;
+	if ( catLabel ) return `${base} — ${catLabel}`;
+	return base;
+}
+
 async function collectAugmentationInstallChoices() {
 	const choices = [];
 	const seen = new Set();
-	const worldLabel = localizeOrFallback("SW5E.Augmentations.SourceWorld", "World");
 
-	const push = (uuid, name, sourceLabel) => {
+	const push = (uuid, name, meta) => {
 		if ( !uuid || seen.has(uuid) ) return;
 		seen.add(uuid);
-		choices.push({ uuid, name, sourceLabel });
+		choices.push({
+			uuid,
+			name,
+			pickerLabel: formatAugmentationInstallPickerLabel(name, meta)
+		});
 	};
 
 	for ( const item of game.items ) {
-		const meta = getAugmentationItemMeta(item);
+		const meta = getEffectiveAugmentationItemMeta(item);
 		if ( !meta || !isValidAugmentationItemMeta(meta) ) continue;
-		push(item.uuid, item.name, worldLabel);
+		push(item.uuid, item.name, meta);
 	}
 
 	for ( const pack of game.packs ) {
 		if ( pack.documentName !== "Item" ) continue;
 		try {
-			const index = await pack.getIndex({ fields: ["flags.sw5e.augmentation", "name"] });
+			const index = await pack.getIndex({
+				fields: [
+					"flags.sw5e.augmentation",
+					"flags.sw5e-importer",
+					"name",
+					"type",
+					"system.source",
+					"system.description"
+				]
+			});
 			for ( const row of index ) {
-				if ( !row.flags?.sw5e?.augmentation ) continue;
+				const stub = {
+					flags: row.flags,
+					system: row.system !== null && typeof row.system === "object" ? row.system : {},
+					type: row.type,
+					name: row.name
+				};
+				const meta = getEffectiveAugmentationItemMeta(stub);
+				if ( !meta || !isValidAugmentationItemMeta(meta) ) continue;
 				const uuid = pack.getUuid(row._id);
-				push(uuid, row.name, pack.metadata.label);
+				push(uuid, row.name, meta);
 			}
 		} catch {
 			/* locked / unavailable pack */
@@ -144,6 +232,16 @@ export class AugmentationsApp extends HandlebarsApplicationMixin(ApplicationV2) 
 	}
 
 	static openForActor(actor) {
+		if ( !actor?.id ) throw new Error("AugmentationsApp requires a persisted actor with an id.");
+		if ( !isActorCyberneticAugmentationsManagerAllowed(actor) ) {
+			if ( isActorDroidCustomizationHost(actor) && isActorAugmentationCandidate(actor) && !isLegacyStarshipActor(actor) ) {
+				ui.notifications.warn(localizeOrFallback("SW5E.Augmentations.OpenBlockedDroidSpecies", "Cybernetic augmentations are not used for droid-class species (use Droid Customizations when available)."));
+			}
+			else {
+				ui.notifications.warn(localizeOrFallback("SW5E.Augmentations.OpenBlockedNotCandidate", "This actor cannot use the augmentations manager."));
+			}
+			return null;
+		}
 		const id = `sw5e-augmentations-${actor.id}`;
 		const existing = foundry.applications.instances.get(id);
 		if ( existing instanceof AugmentationsApp ) {
@@ -164,7 +262,8 @@ export class AugmentationsApp extends HandlebarsApplicationMixin(ApplicationV2) 
 		},
 		position: {
 			width: 560,
-			height: "auto"
+			/** Numeric height so the window body can scroll; avoids auto-height growth past the viewport with no scrollbar. */
+			height: 520
 		}
 	};
 
@@ -190,7 +289,7 @@ export class AugmentationsApp extends HandlebarsApplicationMixin(ApplicationV2) 
 	async _prepareContext() {
 		const actor = this.actor;
 		const actorPresent = Boolean(actor);
-		const eligibleKind = Boolean(actor && isActorAugmentationCandidate(actor) && !isLegacyStarshipActor(actor));
+		const eligibleKind = Boolean(actor && isActorCyberneticAugmentationsManagerAllowed(actor));
 		const validTarget = Boolean(actor && isActorValidAugmentationTarget(actor));
 		const state = actor ? normalizeActorAugmentations(actor) : null;
 		const derived = state?.derived?.sideEffects ?? {};
@@ -224,17 +323,34 @@ export class AugmentationsApp extends HandlebarsApplicationMixin(ApplicationV2) 
 			? occupied.join(", ")
 			: localizeOrFallback("SW5E.Augmentations.NoBodySlots", "—");
 
-		const installedRows = (state?.installed ?? []).map(entry => ({
-			uuid: entry.uuid ?? "",
-			name: entry.name ?? entry.snapshot?.name ?? "—",
-			category: entry.category ?? "—",
-			rarity: entry.rarity ?? "—",
-			bodySlotsText: Array.isArray(entry.bodySlots) && entry.bodySlots.length ? entry.bodySlots.join(", ") : "—",
-			slotlessText: entry.slotless ? formatYesNo(true) : formatYesNo(false),
-			sourceType: entry.sourceType ?? "—",
-			installedAtText: entry.installedAt
-				? new Date(entry.installedAt).toLocaleString(game.i18n.lang)
-				: "—"
+		const installedList = state?.installed ?? [];
+		const installedRows = await Promise.all(installedList.map(async (entry) => {
+			const uuid = entry.uuid ?? "";
+			const snapshotSnippet = entry.snapshot?.descriptionSnippet ?? "";
+			let descriptionPreview = snapshotSnippet;
+			if ( uuid ) {
+				try {
+					const doc = await fromUuid(uuid);
+					const html = doc?.system?.description?.value;
+					if ( typeof html === "string" && html )
+						descriptionPreview = plainTextExcerptFromItemDescriptionHtml(html, 320);
+				} catch {
+					/* keep snapshot / empty */
+				}
+			}
+			if ( !descriptionPreview ) descriptionPreview = snapshotSnippet;
+			const previewOneLine = descriptionPreview ? descriptionPreview.replace(/\s+/g, " ").trim() : "";
+			return {
+				uuid,
+				name: entry.name ?? entry.snapshot?.name ?? "—",
+				category: entry.category ?? "—",
+				rarity: entry.rarity ?? "—",
+				bodySlotsText: Array.isArray(entry.bodySlots) && entry.bodySlots.length ? entry.bodySlots.join(", ") : "—",
+				installedAtText: entry.installedAt
+					? new Date(entry.installedAt).toLocaleDateString(game.i18n.lang)
+					: "—",
+				descriptionPreview: previewOneLine
+			};
 		}));
 
 		const overrideControls = AUGMENTATION_SIDE_EFFECT_KEYS.map(key => {
@@ -352,6 +468,13 @@ export class AugmentationsApp extends HandlebarsApplicationMixin(ApplicationV2) 
 				} else {
 					setValidation(result.validation);
 				}
+			});
+		}
+
+		for ( const btn of root.querySelectorAll("[data-sw5e-aug-open-item]") ) {
+			btn.addEventListener("click", async (ev) => {
+				ev.preventDefault();
+				await openInstalledAugmentationSource(this.actor, btn.getAttribute("data-sw5e-aug-open-item") ?? "");
 			});
 		}
 

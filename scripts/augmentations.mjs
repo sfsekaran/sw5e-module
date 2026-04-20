@@ -1,8 +1,10 @@
 /**
  * Actor-level cybernetic augmentations (`flags.sw5e.augmentations`) — data model, validation, mutations,
  * and derived vs effective side-effect resolution (Phase 1 + 1.5 overrides).
- * Not species-based; no sheet UI or roll automation in this phase.
+ * Body-mod **UI routing** (cybernetic vs droid customization host) is species-only; see {@link isActorEligibleForCyberneticAugmentationsUI}.
  */
+
+import { isActorDroidCustomizationHost, isDroidCustomizationItem } from "./droid-customizations.mjs";
 
 // ——— Types / constants ———
 
@@ -78,6 +80,12 @@ const ITEM_SYSTEM_RARITY_TO_AUGMENTATION = Object.freeze({
 const FLAG_ROOT = "flags.sw5e.augmentations";
 const ITEM_META_FLAG = "augmentation";
 
+/**
+ * dnd5e `system.source.custom` value that routes an item into the augmentations workflow
+ * (picker + install) when native `flags.sw5e.augmentation` is absent.
+ */
+export const CYBERNETIC_AUGMENTATION_CUSTOM_LABEL = "Cybernetic Augmentation";
+
 /** @type {readonly ["ionSaveDisadvantage","ionVulnerability","countAsDroid"]} */
 export const AUGMENTATION_SIDE_EFFECT_KEYS = /** @type {const} */ ([
 	"ionSaveDisadvantage",
@@ -87,6 +95,22 @@ export const AUGMENTATION_SIDE_EFFECT_KEYS = /** @type {const} */ ([
 
 function isRecord(value) {
 	return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+/**
+ * Plain excerpt from dnd5e item description HTML (client DOM). Used for snapshot snippets and UI previews.
+ * @param {string} html
+ * @param {number} [maxLen]
+ */
+export function plainTextExcerptFromItemDescriptionHtml(html, maxLen = 400) {
+	if ( typeof html !== "string" || !html ) return "";
+	if ( typeof document === "undefined" ) return "";
+	const div = document.createElement("div");
+	div.innerHTML = html;
+	let t = (div.textContent || div.innerText || "").replace(/\s+/g, " ").trim();
+	if ( !t ) return "";
+	if ( t.length <= maxLen ) return t;
+	return `${t.slice(0, Math.max(0, maxLen - 1))}…`;
 }
 
 function issue(code, message, data) {
@@ -277,6 +301,61 @@ export function getAugmentationItemMeta(item) {
 }
 
 /**
+ * dnd5e item source “Custom Label” (`system.source.custom`), trimmed.
+ * @param {object} item
+ * @returns {string}
+ */
+export function getItemSourceCustom(item) {
+	const c = item?.system?.source?.custom;
+	return typeof c === "string" ? c.trim() : "";
+}
+
+/**
+ * @param {object} item
+ */
+export function isCyberneticAugmentationSourceCustom(item) {
+	return getItemSourceCustom(item) === CYBERNETIC_AUGMENTATION_CUSTOM_LABEL;
+}
+
+/**
+ * Infer enhancement vs replacement for Custom Label–routed items using legacy importer uid or description heading.
+ * @param {object} item
+ * @returns {AugmentationCategory}
+ */
+function inferAugmentationCategoryForSourceRoutedItem(item) {
+	const uid = item?.flags?.["sw5e-importer"]?.uid;
+	if ( typeof uid === "string" ) {
+		if ( uid.includes("subtype-replacement") ) return /** @type {AugmentationCategory} */ ("replacement");
+		if ( uid.includes("subtype-enhancement") ) return /** @type {AugmentationCategory} */ ("enhancement");
+	}
+	const html = item?.system?.description?.value;
+	if ( typeof html === "string" ) {
+		if ( /Cybernetic Augmentation \(Replacement\)/i.test(html) ) return /** @type {AugmentationCategory} */ ("replacement");
+		if ( /Cybernetic Augmentation \(Enhancement\)/i.test(html) ) return /** @type {AugmentationCategory} */ ("enhancement");
+	}
+	return /** @type {AugmentationCategory} */ ("enhancement");
+}
+
+/**
+ * Native `flags.sw5e.augmentation` when valid; otherwise minimal metadata when `system.source.custom` is
+ * {@link CYBERNETIC_AUGMENTATION_CUSTOM_LABEL} so routing works without Configure Sheet subtype.
+ * @param {object} item
+ * @returns {object|null}
+ */
+export function getEffectiveAugmentationItemMeta(item) {
+	if ( isDroidCustomizationItem(item) ) return null;
+	const native = getAugmentationItemMeta(item);
+	if ( isValidAugmentationItemMeta(native) ) return native;
+	if ( !isCyberneticAugmentationSourceCustom(item) ) return null;
+	return {
+		category: inferAugmentationCategoryForSourceRoutedItem(item),
+		rarity: inferAugmentationRarityFromItem(item),
+		slotless: true,
+		bodySlots: []
+	};
+}
+
+/**
  * @param {object|null|undefined} meta
  * @returns {meta is object}
  */
@@ -367,11 +446,29 @@ export function isActorAugmentationCandidate(actor) {
 }
 
 /**
+ * Character/NPC actors that may use the cybernetic augmentations sheet/manager (excludes SW5E droid-class species).
+ * Does not exclude legacy starships — use {@link isActorCyberneticAugmentationsManagerAllowed} for the full gate.
+ * @param {import("@league/foundry").documents.Actor} actor
+ */
+export function isActorEligibleForCyberneticAugmentationsUI(actor) {
+	return isActorAugmentationCandidate(actor) && !isActorDroidCustomizationHost(actor);
+}
+
+/**
+ * Whether the augmentations manager / inline sheet should be available (candidate, not a starship, not a droid species host).
+ * @param {import("@league/foundry").documents.Actor} actor
+ */
+export function isActorCyberneticAugmentationsManagerAllowed(actor) {
+	return isActorEligibleForCyberneticAugmentationsUI(actor) && !isLegacyStarshipActor(actor);
+}
+
+/**
  * @param {import("@league/foundry").documents.Actor} actor
  * @param {string[]} [validTypes]
  */
 export function isActorValidAugmentationTarget(actor, validTypes = DEFAULT_VALID_AUGMENTATION_CREATURE_TYPES) {
 	if ( !isActorAugmentationCandidate(actor) ) return false;
+	if ( isActorDroidCustomizationHost(actor) ) return false;
 	const t = getActorCreatureTypeKey(actor);
 	if ( !t || t === "custom" ) return false;
 	return validTypes.includes(t);
@@ -456,7 +553,7 @@ export function getAugmentationRemovalTimeHours(actor) {
  * @param {object} [partial]
  */
 export function createInstalledAugmentationEntry(item, partial = {}) {
-	const meta = getAugmentationItemMeta(item);
+	const meta = getEffectiveAugmentationItemMeta(item);
 	const category = partial.category ?? meta?.category;
 	const rarity = partial.rarity ?? meta?.rarity ?? inferAugmentationRarityFromItem(item);
 	const bodySlots = partial.bodySlots ?? augmentationMetaBodySlots(meta);
@@ -473,6 +570,8 @@ export function createInstalledAugmentationEntry(item, partial = {}) {
 		if ( isRecord(aug) ) snapshotFlags.sw5e = { [ITEM_META_FLAG]: foundry.utils.deepClone(aug) };
 	}
 
+	const descriptionSnippet = plainTextExcerptFromItemDescriptionHtml(item?.system?.description?.value ?? "", 400);
+
 	return {
 		uuid: partial.uuid ?? item?.uuid ?? "",
 		name: partial.name ?? item?.name ?? "",
@@ -486,7 +585,8 @@ export function createInstalledAugmentationEntry(item, partial = {}) {
 			type: partial.snapshot?.type ?? typeKey,
 			img: partial.snapshot?.img ?? item?.img ?? "",
 			rarity: partial.snapshot?.rarity ?? raritySnapshot,
-			flags: partial.snapshot?.flags ?? (Object.keys(snapshotFlags).length ? snapshotFlags : {})
+			flags: partial.snapshot?.flags ?? (Object.keys(snapshotFlags).length ? snapshotFlags : {}),
+			...(descriptionSnippet ? { descriptionSnippet } : {})
 		},
 		sourceType: partial.sourceType ?? inferAugmentationSourceType(item)
 	};
@@ -505,7 +605,7 @@ export function validateAugmentationInstall(actor, item, ctx = {}) {
 	const blocking = [];
 	const warnings = [];
 	const state = normalizeActorAugmentations(actor);
-	const meta = getAugmentationItemMeta(item);
+	const meta = getEffectiveAugmentationItemMeta(item);
 
 	const actorTargetType = getActorCreatureTypeKey(actor);
 	const validTargetTypes = Array.isArray(meta?.validTargetTypes) && meta.validTargetTypes.length
@@ -542,12 +642,17 @@ export function validateAugmentationInstall(actor, item, ctx = {}) {
 		return augmentationValidationResult({ blocking, warnings, info, force });
 	}
 
+	if ( isActorDroidCustomizationHost(actor) ) {
+		blocking.push(issue("droid-species-body-mod-routing", "Droid species use the Droid Customizations workflow, not cybernetic augmentations."));
+		return augmentationValidationResult({ blocking, warnings, info, force });
+	}
+
 	if ( !isActorAugmentationCandidate(actor) ) {
 		blocking.push(issue("actor-not-supported", "This actor type cannot receive cybernetic augmentations.", { actorType: actor.type }));
 	}
 
 	if ( !isValidAugmentationItemMeta(meta) ) {
-		blocking.push(issue("invalid-augmentation-meta", "Item is missing valid `flags.sw5e.augmentation` metadata.", { flag: `flags.sw5e.${ITEM_META_FLAG}` }));
+		blocking.push(issue("invalid-augmentation-meta", `Item is not a valid cybernetic augmentation. Add flags.sw5e.${ITEM_META_FLAG} or set Source Custom Label to "${CYBERNETIC_AUGMENTATION_CUSTOM_LABEL}".`, { flag: `flags.sw5e.${ITEM_META_FLAG}` }));
 	}
 
 	if ( isValidAugmentationItemMeta(meta) && !isActorValidAugmentationTarget(actor, validTargetTypes) ) {
@@ -666,6 +771,16 @@ function assertAugmentationSideEffectKey(key) {
 }
 
 /**
+ * Persist `flags.sw5e.augmentations` without {@link Actor#setFlag}(`"sw5e"`, …): that scope is not registered; the module id is `sw5e-module`.
+ * @param {import("@league/foundry").documents.Actor} actor
+ * @param {object} augmentationsData Plain state passed through {@link normalizeAugmentationsState}.
+ */
+async function persistActorAugmentationsState(actor, augmentationsData) {
+	const payload = normalizeAugmentationsState(augmentationsData);
+	await actor.update({ "flags.sw5e.augmentations": payload });
+}
+
+/**
  * @param {import("@league/foundry").documents.Actor} actor
  * @param {typeof AUGMENTATION_SIDE_EFFECT_KEYS[number]} key
  * @param {boolean|null} value
@@ -685,7 +800,7 @@ export async function setAugmentationSideEffectOverride(actor, key, value) {
 			sideEffects: { ...state.overrides.sideEffects, [key]: value }
 		}
 	};
-	await actor.setFlag("sw5e", "augmentations", normalizeAugmentationsState(merged));
+	await persistActorAugmentationsState(actor, merged);
 }
 
 /**
@@ -720,7 +835,7 @@ export async function updateAugmentationSideEffectOverrides(actor, partialOverri
 		derived: foundry.utils.deepClone(state.derived),
 		overrides: { sideEffects: next }
 	};
-	await actor.setFlag("sw5e", "augmentations", normalizeAugmentationsState(merged));
+	await persistActorAugmentationsState(actor, merged);
 }
 
 /**
@@ -747,7 +862,7 @@ export async function addAugmentationToActor(actor, item, ctx = {}) {
 
 	const nextInstalled = [...state.installed, entry];
 	const nextState = buildAugmentationsStateForPersist(actor, nextInstalled);
-	await actor.setFlag("sw5e", "augmentations", nextState);
+	await persistActorAugmentationsState(actor, nextState);
 	return { ok: true, validation, entry };
 }
 
@@ -765,7 +880,7 @@ export async function removeAugmentationFromActor(actor, installedUuid, ctx = {}
 	const entry = state.installed.find(e => e?.uuid === id);
 	const nextInstalled = state.installed.filter(e => e?.uuid !== id);
 	const nextState = buildAugmentationsStateForPersist(actor, nextInstalled);
-	await actor.setFlag("sw5e", "augmentations", nextState);
+	await persistActorAugmentationsState(actor, nextState);
 	return { ok: true, validation, removed: entry };
 }
 
@@ -782,7 +897,7 @@ export async function recordAugmentationFailure(actor, kind, at = Date.now()) {
 		? { lastRemoveFailureAt: ts }
 		: { lastInstallFailureAt: ts };
 	const workflowState = foundry.utils.mergeObject(state.workflowState, patch, { inplace: false });
-	await actor.setFlag("sw5e", "augmentations", {
+	await persistActorAugmentationsState(actor, {
 		...state,
 		workflowState
 	});
@@ -809,6 +924,11 @@ export const augmentationsApi = {
 	clearAugmentationSideEffectOverride,
 	updateAugmentationSideEffectOverrides,
 	getAugmentationItemMeta,
+	plainTextExcerptFromItemDescriptionHtml,
+	CYBERNETIC_AUGMENTATION_CUSTOM_LABEL,
+	getItemSourceCustom,
+	isCyberneticAugmentationSourceCustom,
+	getEffectiveAugmentationItemMeta,
 	isValidAugmentationItemMeta,
 	inferAugmentationRarityFromItem,
 	getActorCreatureTypeKey,
@@ -816,6 +936,9 @@ export const augmentationsApi = {
 	getActorProficiencyBonus,
 	isLegacyStarshipActor,
 	isActorAugmentationCandidate,
+	isActorEligibleForCyberneticAugmentationsUI,
+	isActorCyberneticAugmentationsManagerAllowed,
+	isActorDroidCustomizationHost,
 	isActorValidAugmentationTarget,
 	getMaxAugmentationsForActor,
 	getInstalledAugmentationCount,
