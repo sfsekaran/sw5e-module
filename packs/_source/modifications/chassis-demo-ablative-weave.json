@@ -9,8 +9,12 @@
 	"flags": {
 		"sw5e": {
 			"chassisMod": {
-				"compatibleChassisTypes": ["equipment"],
-				"compatibleSlotKinds": ["plating"],
+				"compatibleChassisTypes": [
+					"equipment"
+				],
+				"compatibleSlotKinds": [
+					"plating"
+				],
 				"modRarity": "standard",
 				"maxHostRarity": "prototype",
 				"slotCost": 1,
@@ -27,7 +31,11 @@
 					"damageBonus": "",
 					"descriptionAppend": "<p><strong>Chassis (ablative weave):</strong> Reinforced fibers bleed kinetic energy into the suit’s field projectors. While installed, the host armor gains +1 magical bonus to AC and <strong>requires attunement</strong> if it did not already.</p>",
 					"attunementRequired": true,
-					"displayTags": ["Plating", "Attunement", "Demo"]
+					"displayTags": [
+						"Plating",
+						"Attunement",
+						"Demo"
+					]
 				}
 			}
 		}
@@ -38,7 +46,9 @@
 			"chat": ""
 		},
 		"source": {
-			"custom": "SW5E Chassis Demo"
+			"custom": "Modification",
+			"book": "WH",
+			"page": "Ch. 7 Pg. 74"
 		},
 		"quantity": 1,
 		"weight": {

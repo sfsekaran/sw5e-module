@@ -9,8 +9,12 @@
 	"flags": {
 		"sw5e": {
 			"chassisMod": {
-				"compatibleChassisTypes": ["weapon"],
-				"compatibleSlotKinds": ["barrel"],
+				"compatibleChassisTypes": [
+					"weapon"
+				],
+				"compatibleSlotKinds": [
+					"barrel"
+				],
 				"modRarity": "standard",
 				"maxHostRarity": "premium",
 				"slotCost": 1,
@@ -18,7 +22,9 @@
 				"installDC": 13,
 				"addsAttunement": false,
 				"effects": {
-					"addProperties": ["rapid"],
+					"addProperties": [
+						"rapid"
+					],
 					"removeProperties": [],
 					"attackBonus": 0,
 					"magicalBonus": 0,
@@ -27,7 +33,11 @@
 					"damageBonus": "",
 					"descriptionAppend": "<p><strong>Chassis (vented barrel):</strong> This weapon vents excess heat and cycles faster—treat the host as having the <strong>Rapid</strong> property while the mod is installed.</p>",
 					"attunementRequired": false,
-					"displayTags": ["Barrel", "Rapid", "Demo"]
+					"displayTags": [
+						"Barrel",
+						"Rapid",
+						"Demo"
+					]
 				}
 			}
 		}
@@ -38,7 +48,9 @@
 			"chat": ""
 		},
 		"source": {
-			"custom": "SW5E Chassis Demo"
+			"custom": "Modification",
+			"book": "WH",
+			"page": "Ch. 7 Pg. 74"
 		},
 		"quantity": 1,
 		"weight": {
