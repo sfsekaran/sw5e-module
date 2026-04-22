@@ -83,6 +83,183 @@
   padding: 0;
 }
 
+/* Powers tab — sheet-integrated summary panel; school accents on segments only */
+.dnd5e2.sheet.actor .sw5e-powers-summary.sw5e-powers-banner {
+  --sw5e-powers-banner-surface: color-mix(in oklab, var(--color-canvas-2, #2c2620) 88%, transparent);
+  --sw5e-powers-banner-border: color-mix(in oklab, var(--color-border-light-tertiary, #c9c7b8) 38%, transparent);
+  --sw5e-powers-banner-text: var(--color-text-primary, var(--dnd5e-color-parchment, #f0ebe0));
+  --sw5e-powers-banner-muted: var(--color-text-secondary, var(--dnd5e-color-tan, #b0a080));
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  align-self: stretch;
+  margin: 0 0 0.55rem 0;
+  padding: 0.6rem 0.85rem 0.65rem;
+  border: 1px solid var(--sw5e-powers-banner-border);
+  border-radius: 6px;
+  background: var(--sw5e-powers-banner-surface);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, var(--color-canvas-5, #fff) 6%, transparent),
+    0 1px 3px rgba(0, 0, 0, 0.22);
+  color: var(--sw5e-powers-banner-text);
+  font-size: var(--font-size-12, 0.85rem);
+  line-height: 1.45;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-block {
+  position: relative;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.35rem 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-head--single {
+  margin-bottom: 0.35rem;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-head-left {
+  flex: 1 1 auto;
+  min-width: 8rem;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-head-right {
+  flex: 0 1 auto;
+  text-align: right;
+  margin-left: auto;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-head .sw5e-powers-banner-kicker {
+  margin-bottom: 0;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-kicker {
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary, var(--dnd5e-color-tan, #b0a080));
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-head-right .sw5e-powers-known-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid var(--sw5e-powers-banner-border);
+  background: color-mix(in oklab, var(--color-canvas-1, #1e1a16) 55%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--color-canvas-5, #fff) 5%, transparent);
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-known-label {
+  font-weight: 600;
+  color: var(--sw5e-powers-banner-muted);
+  font-size: 0.76em;
+  letter-spacing: 0.02em;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-known-pair {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--sw5e-powers-banner-text);
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-known-pair.sw5e-powers-known--over {
+  color: color-mix(in oklab, var(--dnd5e-color-gold, #d4b060) 88%, var(--sw5e-powers-banner-text));
+  font-weight: 800;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-block + .sw5e-powers-banner-block {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--sw5e-powers-banner-border);
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0;
+  row-gap: 0.3rem;
+  font-size: 0.9em;
+  border-top: 1px solid var(--sw5e-powers-banner-border);
+  margin-top: 0;
+  padding-top: 0.45rem;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-head--single + .sw5e-powers-banner-flow {
+  margin-top: 0;
+  padding-top: 0.45rem;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-seg {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.15rem;
+  font-weight: 500;
+  padding: 0.08rem 0.35rem 0.1rem;
+  margin: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 0 color-mix(in srgb, var(--sw5e-powers-seg-accent, transparent) 65%, transparent);
+  background: color-mix(in srgb, var(--sw5e-powers-seg-accent, transparent) 10%, transparent);
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-seg-label {
+  font-weight: 700;
+  color: color-mix(in oklab, var(--sw5e-powers-seg-accent, var(--sw5e-powers-banner-text)) 82%, var(--sw5e-powers-banner-text));
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-seg--lgt {
+  --sw5e-powers-seg-accent: #7eb8d8;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-seg--drk {
+  --sw5e-powers-seg-accent: #c45a5a;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-seg--uni {
+  --sw5e-powers-seg-accent: #9d86d4;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-seg--tec {
+  --sw5e-powers-seg-accent: #9aa3ad;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-seg--mental {
+  --sw5e-powers-seg-accent: #7a9ab8;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-seg--physical {
+  --sw5e-powers-seg-accent: #c4916b;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-seg--general {
+  --sw5e-powers-seg-accent: #a89878;
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-abbr {
+  font-weight: 700;
+  color: var(--sw5e-powers-banner-text);
+}
+
+.dnd5e2.sheet.actor .sw5e-powers-banner-sep {
+  display: inline;
+  opacity: 0.55;
+  font-weight: 300;
+  padding: 0 0.4rem;
+  user-select: none;
+  color: var(--sw5e-powers-banner-muted);
+}
+
 .power-point-config .final-value {
   margin-bottom: 0.75rem;
   font-size: var(--font-size-28);

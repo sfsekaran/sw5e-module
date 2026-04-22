@@ -586,77 +586,202 @@ function makeProgOption(config) {
 	return option;
 }
 
+const FORCE_SUMMARY_SCHOOL_LABEL_KEYS = [
+	"SW5E.Powercasting.Force.School.Lgt.Label",
+	"SW5E.Powercasting.Force.School.Drk.Label",
+	"SW5E.Powercasting.Force.School.Uni.Label"
+];
+
+/** Theme keys for force summary segments (order matches `preparedCards.force`). */
+const FORCE_SUMMARY_SEGMENT_THEME = ["lgt", "drk", "uni"];
+
+const SUPERIORITY_SUMMARY_TYPE_LABEL_KEYS = [
+	"SW5E.Superiority.Type.Mental.Label",
+	"SW5E.Superiority.Type.Physical.Label",
+	"SW5E.Superiority.Type.General.Label"
+];
+
+const SUPERIORITY_SUMMARY_SEGMENT_THEME = ["mental", "physical", "general"];
+
+const POWERS_BANNER_SEGMENT_THEMES = new Set([
+	...FORCE_SUMMARY_SEGMENT_THEME,
+	...SUPERIORITY_SUMMARY_SEGMENT_THEME,
+	"tec"
+]);
+
+/**
+ * One compact segment for the Powers tab banner (horizontal flow, pipe-separated).
+ * @param {string} label
+ * @param {string} attr
+ * @param {string} attack
+ * @param {number|null|undefined} saveDc
+ * @param {string} [themeKey] Optional CSS modifier for school/type accent (e.g. lgt, drk, uni).
+ */
+function formatPowersTabBannerSegment(label, attr, attack, saveDc, themeKey) {
+	const ab = String(attr ?? "").toUpperCase();
+	const atk = attack ?? "—";
+	const sv = (saveDc != null && Number.isFinite(Number(saveDc))) ? String(saveDc) : "—";
+	const L = foundry.utils.escapeHTML(label);
+	const atkLbl = game.i18n.localize("SW5E.Powercasting.PowersTabSummary.AtkAbbr");
+	const saveLbl = game.i18n.localize("SW5E.Powercasting.PowersTabSummary.SaveAbbr");
+	const themeMod = (themeKey && POWERS_BANNER_SEGMENT_THEMES.has(themeKey))
+		? ` sw5e-powers-banner-seg--${themeKey}`
+		: "";
+	return `<span class="sw5e-powers-banner-seg${themeMod}">`
+		+ `<span class="sw5e-powers-banner-seg-label">${L}</span>`
+		+ ` — <span class="sw5e-powers-banner-abbr">${ab}</span> - ${foundry.utils.escapeHTML(atkLbl)} ${foundry.utils.escapeHTML(atk)} - ${foundry.utils.escapeHTML(saveLbl)} ${sv}</span>`;
+}
+
+/** @param {string[]} segments */
+function joinPowersBannerSegments(segments) {
+	const sep = `<span class="sw5e-powers-banner-sep" aria-hidden="true">|</span>`;
+	return segments.filter(Boolean).join(sep);
+}
+
+/**
+ * @param {import("@league/foundry").documents.Actor} actor
+ * @param {"force"|"tech"} castType
+ * @param {string} labelKey
+ */
+function buildPowersKnownSummaryRow(actor, castType, labelKey) {
+	const known = actor.system?.powercasting?.[castType]?.known;
+	const hint = game.i18n.localize("SW5E.Powercasting.PowersTabSummary.KnownHint");
+	const label = game.i18n.localize(labelKey);
+	if ( !known ) {
+		return `<div class="sw5e-powers-known-badge" title="${foundry.utils.escapeHTML(hint)}">`
+			+ `<span class="sw5e-powers-known-label">${foundry.utils.escapeHTML(label)}</span>`
+			+ `<span class="sw5e-powers-known-pair">— / —</span>`
+			+ `</div>`;
+	}
+
+	const curRaw = known.value;
+	const cur = Number.isFinite(Number(curRaw)) ? Number(curRaw) : 0;
+	const maxRaw = known.max;
+	let pairText;
+	let over = false;
+
+	if ( maxRaw === null || maxRaw === undefined || maxRaw === "" ) {
+		pairText = `${cur} / —`;
+	} else {
+		const maxN = Number(maxRaw);
+		if ( Number.isFinite(maxN) ) {
+			pairText = `${cur} / ${maxN}`;
+			over = cur > maxN;
+		} else {
+			pairText = `${cur} / ${maxRaw}`;
+		}
+	}
+
+	const overClass = over ? " sw5e-powers-known--over" : "";
+	return `<div class="sw5e-powers-known-badge" title="${foundry.utils.escapeHTML(hint)}">`
+		+ `<span class="sw5e-powers-known-label">${foundry.utils.escapeHTML(label)}</span>`
+		+ `<span class="sw5e-powers-known-pair${overClass}">${foundry.utils.escapeHTML(pairText)}</span>`
+		+ `</div>`;
+}
+
+/**
+ * @param {HTMLElement} root
+ * @param {import("@league/foundry").documents.Actor} actor
+ */
+function injectPowersTabPowercastingSummary(root, actor) {
+	const powercastingCardsSection = root.querySelector(`section.tab[data-tab="spells"] section.top`);
+	if ( !powercastingCardsSection || !actor ) return;
+
+	powercastingCardsSection.querySelectorAll("div.spellcasting.card:not(.sw5e)").forEach(card => card.remove());
+	powercastingCardsSection.querySelectorAll(".spellcasting.card.sw5e, .sw5e-powers-summary").forEach(el => el.remove());
+
+	const actorPowers = actor.itemTypes?.spell ?? [];
+	const actorClasses = actor.itemTypes?.class ?? [];
+	const actorManeuvers = Array.from(actor.items ?? []).filter(i => isModuleType(i.type, "maneuver"));
+	const superiorityData = actor.system.superiority;
+
+	const hasSuperiority = (
+		actorClasses.some(clss => clss.system?.spellcasting?.superiorityProgression && (clss.system.spellcasting.superiorityProgression !== "none"))
+		|| actorManeuvers.length > 0
+		|| (superiorityData?.level > 0)
+	);
+	const hasForcecasting = (
+		actorClasses.some(clss => ["consular", "guardian", "sentinel"].includes(clss.system.identifier))
+		||
+		actorPowers.some(power => ["lgt", "drk", "uni"].includes(power.system.school))
+	);
+	const hasTechcasting = (
+		actorClasses.some(clss => ["engineer", "scout"].includes(clss.system.identifier))
+		||
+		actorPowers.some(power => power.system.school === "tec")
+	);
+
+	if ( !hasSuperiority && !hasForcecasting && !hasTechcasting ) return;
+
+	const preparedCards = getPreparedPowercastingCards(actor);
+	const blocks = [];
+
+	if ( hasForcecasting ) {
+		const title = game.i18n.localize("SW5E.Powercasting.Force.Label");
+		const forceKnown = buildPowersKnownSummaryRow(actor, "force", "SW5E.Powercasting.PowersTabSummary.PowersKnownForce");
+		const segs = preparedCards.force.map((card, i) => {
+			const lab = game.i18n.localize(FORCE_SUMMARY_SCHOOL_LABEL_KEYS[i] ?? FORCE_SUMMARY_SCHOOL_LABEL_KEYS[0]);
+			const theme = FORCE_SUMMARY_SEGMENT_THEME[i] ?? FORCE_SUMMARY_SEGMENT_THEME[0];
+			return formatPowersTabBannerSegment(lab, card.attr, card.attack, card.save, theme);
+		});
+		blocks.push(`<div class="sw5e-powers-banner-block" data-sw5e-summary="force">`
+			+ `<div class="sw5e-powers-banner-head">`
+			+ `<div class="sw5e-powers-banner-head-left"><div class="sw5e-powers-banner-kicker">${foundry.utils.escapeHTML(title)}</div></div>`
+			+ `<div class="sw5e-powers-banner-head-right">${forceKnown}</div>`
+			+ `</div>`
+			+ `<div class="sw5e-powers-banner-flow">${joinPowersBannerSegments(segs)}</div></div>`);
+	}
+
+	if ( hasTechcasting ) {
+		const t = preparedCards.tech;
+		const title = game.i18n.localize("SW5E.Powercasting.Tech.Label");
+		const school = game.i18n.localize("SW5E.Powercasting.Tech.School.Tec.Label");
+		const seg = formatPowersTabBannerSegment(school, t.attr, t.attack, t.save, "tec");
+		const techKnown = buildPowersKnownSummaryRow(actor, "tech", "SW5E.Powercasting.PowersTabSummary.PowersKnownTech");
+		blocks.push(`<div class="sw5e-powers-banner-block" data-sw5e-summary="tech">`
+			+ `<div class="sw5e-powers-banner-head">`
+			+ `<div class="sw5e-powers-banner-head-left"><div class="sw5e-powers-banner-kicker">${foundry.utils.escapeHTML(title)}</div></div>`
+			+ `<div class="sw5e-powers-banner-head-right">${techKnown}</div>`
+			+ `</div>`
+			+ `<div class="sw5e-powers-banner-flow">${seg}</div></div>`);
+	}
+
+	if ( hasSuperiority ) {
+		const dice = preparedCards.superiority[0]?.resource;
+		const kicker = foundry.utils.escapeHTML(game.i18n.localize("SW5E.Superiority.Label"))
+			+ (dice ? ` · ${foundry.utils.escapeHTML(dice)}` : "");
+		const segs = preparedCards.superiority.map((card, i) => {
+			const lab = game.i18n.localize(SUPERIORITY_SUMMARY_TYPE_LABEL_KEYS[i] ?? SUPERIORITY_SUMMARY_TYPE_LABEL_KEYS[0]);
+			const theme = SUPERIORITY_SUMMARY_SEGMENT_THEME[i] ?? SUPERIORITY_SUMMARY_SEGMENT_THEME[0];
+			return formatPowersTabBannerSegment(lab, card.attr, card.attack, card.save, theme);
+		});
+		blocks.push(`<div class="sw5e-powers-banner-block" data-sw5e-summary="superiority">`
+			+ `<div class="sw5e-powers-banner-head sw5e-powers-banner-head--single">`
+			+ `<div class="sw5e-powers-banner-head-left"><div class="sw5e-powers-banner-kicker">${kicker}</div></div>`
+			+ `</div>`
+			+ `<div class="sw5e-powers-banner-flow">${joinPowersBannerSegments(segs)}</div></div>`);
+	}
+
+	const wrap = document.createElement("div");
+	wrap.className = "sw5e-powers-summary sw5e-powers-banner";
+	wrap.innerHTML = blocks.join("");
+	powercastingCardsSection.prepend(wrap);
+}
+
 function showPowercastingStats() {
 	Hooks.on("renderBaseActorSheet", function (app, html, context, options) {
 		const root = getHtmlRoot(html);
-		if ( !root || !context?.actor ) return;
-		const actorItems = context.actor.toObject().items;
-		const superiorityData = context.actor.system.superiority;
-		const preparedCards = getPreparedPowercastingCards(context.actor);
-		const powercastingCardsSection = root.querySelector(`section.tab[data-tab="spells"] section.top`);
-		if ( !powercastingCardsSection ) return;
-		const dndSpellcastingCards = powercastingCardsSection.querySelectorAll("div.spellcasting.card:not(.sw5e)");
-		dndSpellcastingCards.forEach(card => card.remove());
+		const actor = context?.actor ?? app.actor;
+		if ( !root || !actor ) return;
+		injectPowersTabPowercastingSummary(root, actor);
+	});
 
-		const actorPowers = actorItems.filter(item => item.type === "spell");
-		const actorClasses = actorItems.filter(item => item.type === "class");
-		const actorManeuvers = actorItems.filter(item => isModuleType(item.type, "maneuver"));
-
-		// Verification
-		const hasSuperiority = (
-			actorClasses.some(clss => clss.system?.spellcasting?.superiorityProgression && (clss.system.spellcasting.superiorityProgression !== "none"))
-			|| actorManeuvers.length > 0
-			|| (superiorityData?.level > 0)
-		);
-		const hasForcecasting = (
-			actorClasses.some(clss => ["consular", "guardian", "sentinel"].includes(clss.system.identifier))
-			||
-			actorPowers.some(power => ["lgt", "drk", "uni"].includes(power.system.school))
-		);
-		const hasTechcasting = (
-			actorClasses.some(clss => ["engineer", "scout"].includes(clss.system.identifier))
-			||
-			actorPowers.some(power => power.system.school === "tec")
-		);
-
-		// Rendering
-		const powercastingCardsToRenderize = [];
-		if (hasSuperiority) powercastingCardsToRenderize.push(...preparedCards.superiority);
-		if (hasForcecasting) powercastingCardsToRenderize.push(...preparedCards.force);
-		if (hasTechcasting) powercastingCardsToRenderize.push(preparedCards.tech);
-
-		powercastingCardsToRenderize.forEach(powercasting => {
-			const powercastingCard = document.createElement("div");
-			powercastingCard.classList.add("spellcasting", "card", "sw5e");
-			const ability = powercasting.attr;
-			const resource = powercasting.resource;
-			powercastingCard.dataset.ability = ability;
-			powercastingCard.innerHTML = `
-				<div class="header">
-					<h3>${powercasting.name}</h3>
-				</div>
-				<div class="info">
-					${resource ? `
-					<div class="resource">
-						<span class="label">${game.i18n.localize("SW5E.Superiority.Dice.Label")}</span>
-						<span class="value">${resource}</span>
-					</div>` : ""}
-					<div class="ability">
-						<span class="label">Ability</span>
-						<span class="value">${ability.toUpperCase()}</span>
-					</div>
-					<div class="attack">
-						<span class="label">Attack</span>
-						<span class="value">${powercasting.attack}</span>
-					</div>
-					<div class="save">
-						<span class="label">Save</span>
-						<span class="value">${powercasting.save ?? "-"}</span>
-					</div>
-				</div>
-			`;
-			powercastingCardsSection.appendChild(powercastingCard);
-		});
+	Hooks.on("renderActorSheetV2", function (app, html, data) {
+		const root = getHtmlRoot(html);
+		const actor = data?.actor ?? app.actor;
+		if ( !root || !actor ) return;
+		if ( actor.type !== "character" && actor.type !== "npc" ) return;
+		injectPowersTabPowercastingSummary(root, actor);
 	});
 
 	/* // Old One:

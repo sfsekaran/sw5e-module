@@ -813,6 +813,13 @@
 	"SW5E.GrandMastery": "Grand Mastery",
 	"SW5E.Powercasting": {
 		"Label": "Powercasting",
+		"PowersTabSummary": {
+			"PowersKnownForce": "Force powers known",
+			"PowersKnownTech": "Tech powers known",
+			"KnownHint": "The second number is the base maximum from class progression. Species, feats, and other features can increase how many powers you actually know.",
+			"AtkAbbr": "Atk",
+			"SaveAbbr": "Save"
+		},
 		"NoLevelsAvailable": "You have no available cast levels with which to cast {name}.",
 		"NoPoints": "You do not have enough {resource} to cast {name} at any available level.",
 		"Force": {
