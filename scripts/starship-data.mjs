@@ -608,6 +608,19 @@ export function getLegacyStarshipActorSystem(actor) {
 		// Vehicle `actor.system.skills` is not part of the stock dnd5e vehicle schema; prepared data can be empty or
 		// out of sync. A three-way merge would apply that object last and clobber real skill data from flags/_source.
 		merged.skills = mergeStarshipSystemData(flagSystem.skills ?? {}, srcSystem.skills ?? {});
+		// SW5e fuel + power routing live on `system.attributes` in legacy data, but dnd5e's vehicle DataModel does not
+		// retain those keys on `actor.system` / may leave stale copies in `_source`. Sidebar + Systems tab mirror edits
+		// into `flags.sw5e.legacyStarshipActor.system`; re-apply that snapshot last so it wins over `_source` noise.
+		if ( hasOwnKeys(flagSystem.attributes?.fuel) ) {
+			merged.attributes ??= {};
+			merged.attributes.fuel = mergeStarshipSystemData(merged.attributes.fuel ?? {}, flagSystem.attributes.fuel);
+		}
+		const flagRouting = flagSystem.attributes?.power?.routing;
+		if ( flagRouting !== undefined && flagRouting !== null && flagRouting !== "" ) {
+			merged.attributes ??= {};
+			merged.attributes.power ??= {};
+			merged.attributes.power.routing = flagRouting;
+		}
 	}
 
 	return merged;

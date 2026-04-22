@@ -67,12 +67,46 @@ function isStarshipSheetEditMode(app) {
 	return app.isEditable === true;
 }
 
+/**
+ * Systems subtab: tier/size/hull/shields/fuel follow sheet EDIT mode; power routing follows actor edit permission (PLAY+EDIT).
+ * Runs on each sync so PLAY/EDIT toggles work without a full SotG template re-render.
+ */
+function applySystemsSubtabControlState(app, starshipPanel) {
+	if ( !(starshipPanel instanceof HTMLElement) ) return;
+	const systemsBody = starshipPanel.querySelector("[data-application-part=\"sw5e-starship-sotg-systems\"]");
+	if ( !systemsBody ) return;
+
+	const setupEditable = isStarshipSheetEditMode(app) && app.isEditable !== false;
+	const routingEditable = app.isEditable !== false;
+
+	const setupControlIds = [
+		"sw5e-systems-fuel-value",
+		"sw5e-systems-fuel-cap",
+		"sw5e-systems-fuel-cost"
+	];
+
+	for ( const id of setupControlIds ) {
+		const el = systemsBody.querySelector(`#${id}`);
+		if ( el instanceof HTMLInputElement || el instanceof HTMLSelectElement ) {
+			el.disabled = !setupEditable;
+			el.closest(".sw5e-starship-systems-field")?.classList.toggle("sw5e-starship-systems-field--locked", !setupEditable);
+		}
+	}
+
+	const routing = systemsBody.querySelector("#sw5e-systems-routing");
+	if ( routing instanceof HTMLSelectElement ) {
+		routing.disabled = !routingEditable;
+		routing.closest(".sw5e-starship-systems-field")?.classList.toggle("sw5e-starship-systems-field--locked", !routingEditable);
+	}
+}
+
 function syncSotgSheetPhaseClasses(app, starshipPanel) {
 	if ( !starshipPanel ) return;
 	const isEditMode = isStarshipSheetEditMode(app);
 	starshipPanel.classList.toggle("sw5e-starship-sotg--mode-edit", isEditMode);
 	starshipPanel.classList.toggle("sw5e-starship-sotg--mode-play", !isEditMode);
 	starshipPanel.classList.toggle("sw5e-starship-sotg--readonly", app.isEditable === false);
+	applySystemsSubtabControlState(app, starshipPanel);
 }
 
 function activateSotgSubTab(wrapper, app, tabId) {
@@ -101,6 +135,74 @@ function getSheetForm(root, app) {
 		?? (root instanceof HTMLFormElement ? root : root.querySelector("form"));
 }
 
+function starshipScrollOverflowYAllowsScroll(overflowY) {
+	return overflowY === "auto" || overflowY === "scroll" || overflowY === "overlay";
+}
+
+/**
+ * Scroll container for the starship sidebar summary: prefer the inner element that actually scrolls
+ * (dnd5e/AppV2 often nests overflow on a child of `[data-application-part="sidebar"]`).
+ * @param {HTMLElement} shell
+ * @returns {HTMLElement|null}
+ */
+function getStarshipSheetSidebarScrollHost(shell) {
+	if ( !(shell instanceof HTMLElement) ) return null;
+	const summary = shell.querySelector(".sw5e-starship-sidebar-summary");
+	let el = summary?.parentElement ?? null;
+	while ( el && shell.contains(el) ) {
+		if ( el.scrollHeight > el.clientHeight ) {
+			const oy = globalThis.getComputedStyle(el).overflowY;
+			if ( starshipScrollOverflowYAllowsScroll(oy) ) return el;
+		}
+		el = el.parentElement;
+	}
+	const fallback = shell.querySelector("[data-application-part=\"sidebar\"]")
+		?? shell.querySelector(".sheet-sidebar")
+		?? shell.querySelector(".sidebar");
+	return fallback instanceof HTMLElement ? fallback : null;
+}
+
+/**
+ * @param {HTMLElement} shell
+ * @param {EventTarget|null} editTarget
+ */
+function getStarshipSidebarScrollTopFromEditTarget(shell, editTarget) {
+	const hostFromTarget = (() => {
+		if ( !(editTarget instanceof HTMLElement) ) return null;
+		const summary = editTarget.closest(".sw5e-starship-sidebar-summary");
+		if ( !summary || !shell.contains(summary) ) return null;
+		let el = summary.parentElement;
+		while ( el && shell.contains(el) ) {
+			if ( el.scrollHeight > el.clientHeight ) {
+				const oy = globalThis.getComputedStyle(el).overflowY;
+				if ( starshipScrollOverflowYAllowsScroll(oy) ) return el;
+			}
+			el = el.parentElement;
+		}
+		return null;
+	})();
+	const host = hostFromTarget ?? getStarshipSheetSidebarScrollHost(shell);
+	return host instanceof HTMLElement ? host.scrollTop : 0;
+}
+
+/** Set when a sidebar quick-edit runs so the next sheet render can restore scroll after DOM replacement. */
+const STARSHIP_PENDING_SIDEBAR_SCROLL_KEY = "_sw5eStarshipPendingSidebarScroll";
+
+function stashStarshipPendingSidebarScroll(app, editTarget) {
+	if ( !app ) return;
+	const shell = app.element;
+	if ( !(shell instanceof HTMLElement) ) return;
+	app[STARSHIP_PENDING_SIDEBAR_SCROLL_KEY] = getStarshipSidebarScrollTopFromEditTarget(shell, editTarget);
+}
+
+/** @returns {number|null} */
+function consumeStarshipPendingSidebarScroll(app) {
+	if ( !app || !Object.prototype.hasOwnProperty.call(app, STARSHIP_PENDING_SIDEBAR_SCROLL_KEY) ) return null;
+	const v = app[STARSHIP_PENDING_SIDEBAR_SCROLL_KEY];
+	delete app[STARSHIP_PENDING_SIDEBAR_SCROLL_KEY];
+	return typeof v === "number" && Number.isFinite(v) ? v : null;
+}
+
 /**
  * Read sidebar / main scroll from the live sheet element. Call **before** `renderStarshipSidebarSummary`
  * replaces the sidebar so values reflect the user’s prior view.
@@ -114,9 +216,7 @@ function readStarshipSheetScrollSnapshot(app) {
 	const shell = app?.element;
 	if ( !(shell instanceof HTMLElement) ) return { sidebarScrollTop, mainScrollTop, sotgPanelScrollTop };
 
-	const sidebar = shell.querySelector("[data-application-part=\"sidebar\"]")
-		?? shell.querySelector(".sheet-sidebar")
-		?? shell.querySelector(".sidebar");
+	const sidebar = getStarshipSheetSidebarScrollHost(shell);
 	if ( sidebar instanceof HTMLElement ) sidebarScrollTop = sidebar.scrollTop;
 
 	const main = shell.querySelector(".window-content")
@@ -158,6 +258,31 @@ function escapeTabSelectorValue(tabId) {
 	const s = String(tabId ?? "");
 	if ( typeof CSS !== "undefined" && typeof CSS.escape === "function" ) return CSS.escape(s);
 	return s.replace(/\\/g, "\\\\").replace(/"/g, "\\\"");
+}
+
+/**
+ * Apply saved scroll positions to the sheet shell. Pass `mainScrollTop` / `sotgPanelScrollTop` as 0 to skip those axes.
+ * @param {object} app
+ * @param {{ sidebarScrollTop?: number, mainScrollTop?: number, sotgPanelScrollTop?: number }} state
+ */
+function applyStarshipSheetScrollPositions(app, state) {
+	if ( !state || !app ) return;
+	try {
+		const shell = app.element;
+		if ( !(shell instanceof HTMLElement) ) return;
+		const sidebar = getStarshipSheetSidebarScrollHost(shell);
+		if ( sidebar instanceof HTMLElement && state.sidebarScrollTop > 0 ) sidebar.scrollTop = state.sidebarScrollTop;
+		const main = shell.querySelector(".window-content")
+			?? shell.querySelector(".standard-form")
+			?? shell.querySelector("form.application");
+		if ( main instanceof HTMLElement && state.mainScrollTop > 0 ) main.scrollTop = state.mainScrollTop;
+		const sotgPanel = shell.querySelector(".sw5e-starship-panel");
+		if ( sotgPanel instanceof HTMLElement && state.sotgPanelScrollTop > 0 ) {
+			sotgPanel.scrollTop = state.sotgPanelScrollTop;
+		}
+	} catch {
+		/* ignore */
+	}
 }
 
 /**
@@ -205,36 +330,17 @@ function restoreStarshipSheetViewState(app, state, root) {
 		}
 	}
 
-	const applyScroll = () => {
-		try {
-			const shell = app.element;
-			if ( !(shell instanceof HTMLElement) ) return;
-			const sidebar = shell.querySelector("[data-application-part=\"sidebar\"]")
-				?? shell.querySelector(".sheet-sidebar")
-				?? shell.querySelector(".sidebar");
-			if ( sidebar instanceof HTMLElement && state.sidebarScrollTop > 0 ) sidebar.scrollTop = state.sidebarScrollTop;
-			const main = shell.querySelector(".window-content")
-				?? shell.querySelector(".standard-form")
-				?? shell.querySelector("form.application");
-			if ( main instanceof HTMLElement && state.mainScrollTop > 0 ) main.scrollTop = state.mainScrollTop;
-			const sotgPanel = shell.querySelector(".sw5e-starship-panel");
-			if ( sotgPanel instanceof HTMLElement && state.sotgPanelScrollTop > 0 ) {
-				sotgPanel.scrollTop = state.sotgPanelScrollTop;
-			}
-		} catch {
-			/* ignore */
-		}
-	};
-	window.requestAnimationFrame(() => window.requestAnimationFrame(applyScroll));
+	// Sync: avoid painting scrollTop 0 before restore (double rAF deferred too late and caused a visible flash).
+	applyStarshipSheetScrollPositions(app, state);
+	// One follow-up frame after tab/layout work settles (stock dnd5e can reflow when toggling tab panels).
+	window.requestAnimationFrame(() => applyStarshipSheetScrollPositions(app, state));
 }
 
 /** @typedef {{ sidebarScrollTop: number, mainScrollTop: number, sotgPanelScrollTop: number, sw5ePrimary: string|null|boolean, stockPrimary: string|null, sotgSub: string }} StarshipSheetViewState */
 
-const STARSHIP_SYSTEMS_AUTHORITATIVE_SIZE_ID = "sw5e-systems-size";
-
 /**
  * dnd5e vehicle sheet can inject a second native `[name="system.traits.size"]` in EDIT mode.
- * Keep the SW5E Systems-tab select as the sole named submit control; strip `name` from duplicates.
+ * Prefer a marked Systems control when present; otherwise keep the first match so submit stays unambiguous.
  */
 function neutralizeDuplicateNativeTraitsSizeControls(root, app, actor) {
 	if ( !isSw5eStarshipActor(actor) ) return;
@@ -243,13 +349,9 @@ function neutralizeDuplicateNativeTraitsSizeControls(root, app, actor) {
 	const matches = Array.from(form.querySelectorAll("[name=\"system.traits.size\"]"));
 	if ( matches.length <= 1 ) return;
 
-	const canonical = form.querySelector("[data-sw5e-systems-authoritative-size][name=\"system.traits.size\"]")
-		?? form.querySelector(`#${STARSHIP_SYSTEMS_AUTHORITATIVE_SIZE_ID}`)
+	let canonical = form.querySelector("[data-sw5e-systems-authoritative-size][name=\"system.traits.size\"]")
 		?? form.querySelector(".sw5e-starship-systems-core [name=\"system.traits.size\"]");
-	if ( !canonical || !matches.includes(canonical) ) {
-		console.warn("SW5E MODULE | Starship sheet: authoritative Systems size control not found; duplicate native size fields not neutralized.");
-		return;
-	}
+	if ( !canonical || !matches.includes(canonical) ) canonical = matches[0];
 
 	for ( const el of matches ) {
 		if ( el === canonical ) continue;
@@ -271,8 +373,8 @@ const STARSHIP_HP_FIELD_AUTH = [
 ];
 
 /**
- * dnd5e vehicle sheet can surface duplicate `[name="system.attributes.hp.*"]` in EDIT mode (e.g. header meter + Systems tab).
- * Keep SW5E Systems-tab inputs as the only named controls; strip duplicates to avoid blank/non-integer submit on Edit/Play toggle.
+ * dnd5e vehicle sheet can surface duplicate `[name="system.attributes.hp.*"]` in EDIT mode (e.g. header meter + Systems fuel).
+ * Prefer marked Systems controls when present; otherwise keep the first named match.
  */
 function neutralizeDuplicateNativeHpControls(root, app, actor) {
 	if ( !isSw5eStarshipActor(actor) ) return;
@@ -283,12 +385,9 @@ function neutralizeDuplicateNativeHpControls(root, app, actor) {
 		const matches = Array.from(form.querySelectorAll(`[name="${path}"]`));
 		if ( matches.length <= 1 ) continue;
 
-		const canonical = form.querySelector(`${authSel}[name="${path}"]`)
+		let canonical = form.querySelector(`${authSel}[name="${path}"]`)
 			?? form.querySelector(`.sw5e-starship-systems-core [name="${path}"]`);
-		if ( !canonical || !matches.includes(canonical) ) {
-			console.warn("SW5E MODULE | Starship sheet: authoritative HP field not found; duplicate native HP fields not neutralized.", path);
-			continue;
-		}
+		if ( !canonical || !matches.includes(canonical) ) canonical = matches[0];
 
 		for ( const el of matches ) {
 			if ( el === canonical ) continue;
@@ -302,12 +401,40 @@ function neutralizeDuplicateNativeHpControls(root, app, actor) {
 	}
 }
 
+/**
+ * Hide stock dnd5e vehicle Hit Points UI so starships only show SW5E Hull + Shield in the custom sidebar.
+ * dnd5e 5.2.x vehicle `sidebar.hbs` uses `div.pills-group` + heart icon for Hit Points (not `.meter-group`).
+ * PLAY: hidden `input[name^="system.attributes.hp."]` exists inside the block.
+ * EDIT: that block has no HP inputs until inline expand — it only exposes `button[data-config="hitPoints"]` on the header.
+ */
+function suppressStockVehicleHpMeterForStarship(root, actor, app = null) {
+	if ( !isSw5eStarshipActor(actor) ) return;
+	const shell = (app?.element instanceof HTMLElement ? app.element : null) ?? root;
+	if ( !(shell instanceof HTMLElement) ) return;
+
+	const markIfStockHpContainer = el => {
+		if ( !(el instanceof HTMLElement) ) return;
+		if ( el.classList.contains("sw5e-starship-sidebar-summary") ) return;
+		if ( el.closest(".sw5e-starship-sidebar-summary") ) return;
+		if ( el.closest(".sw5e-starship-panel") ) return;
+		const hasHpNamedField = !!el.querySelector("[name^=\"system.attributes.hp.\"]");
+		const isStockHitPointsHeader = !!el.querySelector("button[data-config=\"hitPoints\"]");
+		if ( !hasHpNamedField && !isStockHitPointsHeader ) return;
+		el.classList.add("sw5e-starship-suppress-stock-hp");
+		el.setAttribute("hidden", "");
+	};
+
+	for ( const meter of shell.querySelectorAll(".meter-group") ) markIfStockHpContainer(meter);
+	for ( const group of shell.querySelectorAll(".pills-group") ) markIfStockHpContainer(group);
+}
+
 /** Stock sheet may insert duplicates after paint — retry through the next frames + short delays. */
 function scheduleStarshipDuplicateSizeNeutralize(root, app, actor) {
 	if ( !isSw5eStarshipActor(actor) ) return;
 	const run = () => {
 		neutralizeDuplicateNativeTraitsSizeControls(root, app, actor);
 		neutralizeDuplicateNativeHpControls(root, app, actor);
+		suppressStockVehicleHpMeterForStarship(root, actor, app);
 	};
 	queueMicrotask(run);
 	window.setTimeout(run, 0);
@@ -315,6 +442,7 @@ function scheduleStarshipDuplicateSizeNeutralize(root, app, actor) {
 		window.requestAnimationFrame(() => {
 			run();
 			window.setTimeout(run, 48);
+			window.setTimeout(run, 160);
 		});
 	});
 }
@@ -475,6 +603,43 @@ const SIDEBAR_QUICK_EDIT_PATHS = new Set([
 	"system.attributes.power.routing"
 ]);
 
+/** SoTG Systems subtab: `name=` controls sit inside the vehicle sheet form; persist on `change` via trusted update (see delegate). */
+const STARSHIP_SYSTEMS_CORE_DIRECT_PATHS = new Set([
+	"system.attributes.power.routing",
+	"system.attributes.fuel.value",
+	"system.attributes.fuel.fuelCap",
+	"system.attributes.fuel.cost"
+]);
+
+/** Mirror target: dnd5e vehicle schema drops SW5e `attributes.fuel` / `attributes.power.routing` from persisted `system`. */
+const STARSHIP_FUEL_POWER_LEGACY_FLAG_BASE = "flags.sw5e.legacyStarshipActor.system.attributes";
+
+function shouldMirrorStarshipFuelPowerToLegacyFlag(systemPath) {
+	return systemPath === "system.attributes.power.routing"
+		|| systemPath === "system.attributes.fuel.value"
+		|| systemPath === "system.attributes.fuel.fuelCap"
+		|| systemPath === "system.attributes.fuel.cost";
+}
+
+function buildStarshipFuelPowerMirrorUpdate(systemPath, value) {
+	const update = { [systemPath]: value };
+	if ( systemPath === "system.attributes.power.routing" ) {
+		update[`${STARSHIP_FUEL_POWER_LEGACY_FLAG_BASE}.power.routing`] = value;
+	} else if ( systemPath.startsWith("system.attributes.fuel.") ) {
+		const tail = systemPath.slice("system.attributes.fuel.".length);
+		update[`${STARSHIP_FUEL_POWER_LEGACY_FLAG_BASE}.fuel.${tail}`] = value;
+	}
+	return update;
+}
+
+/** @returns {Promise<void>} */
+async function persistStarshipFuelPowerSystemPath(act, systemPath, value) {
+	const payload = shouldMirrorStarshipFuelPowerToLegacyFlag(systemPath) && isSw5eStarshipActor(act)
+		? buildStarshipFuelPowerMirrorUpdate(systemPath, value)
+		: { [systemPath]: value };
+	await act.update(payload);
+}
+
 function coerceSidebarTier(actor, raw) {
 	const prev = Number(actor?.system?.details?.tier);
 	const fallback = Number.isFinite(prev) ? Math.max(0, Math.trunc(prev)) : 0;
@@ -495,6 +660,17 @@ function coerceSidebarFuelValue(actor, raw) {
 	return Math.max(0, Math.trunc(n));
 }
 
+/** @param {"fuelCap"|"cost"} subKey */
+function coerceStarshipFuelCapOrCost(actor, subKey, raw) {
+	const prev = Number(actor?.system?.attributes?.fuel?.[subKey]);
+	const fallback = Number.isFinite(prev) ? Math.max(0, Math.trunc(prev)) : 0;
+	const trimmed = String(raw ?? "").trim();
+	if ( trimmed === "" ) return fallback;
+	const n = Number(trimmed);
+	if ( !Number.isFinite(n) ) return fallback;
+	return Math.max(0, Math.trunc(n));
+}
+
 function isValidSidebarTraitsSize(value) {
 	return typeof value === "string"
 		&& value !== ""
@@ -502,9 +678,10 @@ function isValidSidebarTraitsSize(value) {
 }
 
 /**
- * Systems tab: native `name="system...."` when inside the sheet form (dnd5e — skipped here).
- * Fallback only for Systems controls outside the form. Sidebar: `data-sw5e-system-path` only + whitelist;
- * never participates in form serialization (Edit/Play toggle safe).
+ * Sidebar: `data-sw5e-system-path` + `actor.update` on change (no `name=`).
+ * SoTG Systems subtab: whitelisted `name="system...."` fields inside the vehicle form call `actor.update` on change
+ * (the in-form early return would otherwise skip them; dnd5e does not persist these paths reliably from the sheet form).
+ * Fallback: other Systems `name=` controls outside the form only.
  */
 function ensureStarshipTrustedSystemPathDelegate(root, app) {
 	if ( !root || root.dataset.sw5eTrustedSystemDelegate === "1" ) return;
@@ -542,9 +719,34 @@ function ensureStarshipTrustedSystemPathDelegate(root, app) {
 			}
 
 			try {
-				await act.update({ [path]: value });
+				stashStarshipPendingSidebarScroll(app, el);
+				await persistStarshipFuelPowerSystemPath(act, path, value);
 			} catch ( err ) {
+				consumeStarshipPendingSidebarScroll(app);
 				console.error("SW5E MODULE | Starship sidebar quick-edit update failed.", err);
+			}
+			return;
+		}
+
+		if ( inSystems && el.name && STARSHIP_SYSTEMS_CORE_DIRECT_PATHS.has(el.name) ) {
+			const path = el.name;
+			let value;
+			if ( path === "system.attributes.power.routing" ) {
+				if ( !STARSHIP_ROUTING_KEYS.includes(el.value) ) return;
+				value = el.value;
+			} else if ( path === "system.attributes.fuel.value" ) {
+				value = coerceSidebarFuelValue(act, el.value);
+			} else if ( path === "system.attributes.fuel.fuelCap" ) {
+				value = coerceStarshipFuelCapOrCost(act, "fuelCap", el.value);
+			} else if ( path === "system.attributes.fuel.cost" ) {
+				value = coerceStarshipFuelCapOrCost(act, "cost", el.value);
+			} else {
+				return;
+			}
+			try {
+				await persistStarshipFuelPowerSystemPath(act, path, value);
+			} catch ( err ) {
+				console.error("SW5E MODULE | Starship Systems subtab update failed.", err);
 			}
 			return;
 		}
@@ -1162,6 +1364,11 @@ function formatPool(current, max) {
 	return `${currentValue ?? 0} / ${maxValue}`;
 }
 
+/** Live dnd5e vehicle HP object (hull value/max, shield temp/tempmax) — same source as stock vehicle Hit Points UI. */
+function getStarshipLiveVehicleHp(actor) {
+	return actor?.system?.attributes?.hp ?? {};
+}
+
 function formatMovement(actor, legacySystem) {
 	const runtime = getDerivedStarshipRuntime(actor);
 	const derivedMovement = runtime.movement;
@@ -1307,7 +1514,7 @@ function buildSystemsCoreContext(actor) {
 	const legacySystem = getLegacyStarshipActorSystem(actor);
 	const runtime = getDerivedStarshipRuntime(actor);
 	const pools = deriveStarshipPools(actor);
-	const hp = actor.system?.attributes?.hp ?? {};
+	const hp = getStarshipLiveVehicleHp(actor);
 	const fuel = legacySystem.attributes?.fuel ?? {};
 	const power = legacySystem.attributes?.power ?? {};
 	const movement = runtime.movement ?? {};
@@ -1348,37 +1555,29 @@ function buildSystemsCoreContext(actor) {
 		fuelValue: Number.isFinite(Number(fuel.value)) ? Number(fuel.value) : 0,
 		fuelCap: Number.isFinite(Number(fuel.fuelCap)) ? Number(fuel.fuelCap) : 0,
 		fuelCost: Number.isFinite(Number(fuel.cost)) ? Number(fuel.cost) : 0,
-		hullDiceDisplay: formatDicePool(pools.hull.current, pools.hull.max, pools.hull.die),
-		shieldDiceDisplay: formatDicePool(pools.shld.current, pools.shld.max, pools.shld.die),
-		dicePoolHint: localizeOrFallback(
-			"SW5E.StarshipSheet.DicePoolReadOnlyHint",
-			"Hull and shield dice pools are computed from the Starship Size item and tier (advancement / hull dice used)."
-		),
-		shieldHpHint: localizeOrFallback(
-			"SW5E.StarshipSheet.ShieldHpHint",
-			"Shield points use the vehicle hit point temporary fields (temp / tempmax), same as the sidebar summary."
-		),
 		configSectionLede: localizeOrFallback(
 			"SW5E.StarshipSheet.SystemsConfigSectionLede",
-			"Editable fields use standard vehicle system paths where the rules engine expects them. Values also appear in the sidebar."
+			"Tier, size, hull, shields, and dice pools are edited from the sidebar. Fuel fields below require sheet Edit mode."
 		),
+		sectionOperationsKicker: localizeOrFallback("SW5E.StarshipSheet.SystemsSectionOperationsKicker", "Operations"),
+		powerRoutingHint: localizeOrFallback(
+			"SW5E.StarshipSheet.PowerRoutingSystemsHint",
+			"Chooses which subsystem receives boosted reactor output; other systems run at reduced capacity until you change routing."
+		),
+		sectionSupportingKicker: localizeOrFallback("SW5E.StarshipSheet.SystemsSectionSupportingKicker", "Power state & kinematics"),
 		labels: {
 			turningSpeed: localizeOrFallback("SW5E.TurnSpeed", "Turning speed"),
 			spaceSpeed: localizeOrFallback("SW5E.SpeedSpace", "Space speed"),
 			powerRouting: localizeOrFallback("SW5E.PowerRouting", "Power routing"),
-			tier: localizeOrFallback("SW5E.StarshipTier", "Tier"),
-			size: localizeOrFallback("SW5E.Size", "Size"),
-			hullPoints: localizeOrFallback("SW5E.HullPoints", "Hull points"),
-			hullCurrent: localizeOrFallback("DND5E.CurrentHP", "Current"),
-			hullMax: localizeOrFallback("DND5E.MaxHP", "Max"),
-			shieldPoints: localizeOrFallback("SW5E.ShieldPoints", "Shield points"),
+			hullCurrent: localizeOrFallback("SW5E.StarshipHullFieldCurrent", "Current hull points"),
+			hullMax: localizeOrFallback("SW5E.StarshipHullFieldMax", "Maximum hull points"),
+			shieldCurrent: localizeOrFallback("SW5E.StarshipShieldFieldCurrent", "Current shield points"),
+			shieldMax: localizeOrFallback("SW5E.StarshipShieldFieldMax", "Maximum shield points"),
 			fuel: localizeOrFallback("SW5E.Fuel", "Fuel"),
+			fuelCurrent: localizeOrFallback("SW5E.StarshipFuelFieldCurrent", "Current fuel"),
 			fuelCap: localizeOrFallback("SW5E.FuelCap", "Fuel cap"),
 			fuelCost: localizeOrFallback("SW5E.FuelCost", "Regeneration cost"),
-			hullDice: localizeOrFallback("SW5E.HullDice", "Hull dice"),
-			shieldDice: localizeOrFallback("SW5E.ShieldDice", "Shield dice"),
-			derived: localizeOrFallback("SW5E.Derived", "Derived"),
-			editable: localizeOrFallback("SW5E.Editable", "Editable")
+			derived: localizeOrFallback("SW5E.Derived", "Derived")
 		}
 	};
 }
@@ -1401,8 +1600,7 @@ function makeSidebarSummary(actor) {
 	const legacySystem = getLegacyStarshipActorSystem(actor);
 	const runtime = getDerivedStarshipRuntime(actor);
 	const pools = deriveStarshipPools(actor);
-	const hp = actor.system?.attributes?.hp ?? {};
-	const shields = legacySystem.attributes?.hp ?? {};
+	const hp = getStarshipLiveVehicleHp(actor);
 	const fuel = legacySystem.attributes?.fuel?.value;
 	const routing = legacySystem.attributes?.power?.routing ?? "none";
 
@@ -1433,7 +1631,7 @@ function makeSidebarSummary(actor) {
 		{
 			label: localizeOrFallback("SW5E.HullPoints", "Hull Points"),
 			value: formatPool(hp.value, hp.max),
-			note: localizeOrFallback("SW5E.VehicleCrew", "Vehicle"),
+			note: localizeOrFallback("SW5E.StarshipHullSummaryNote", "Main hull integrity"),
 			sidebarTier: false,
 			sidebarSize: false,
 			sidebarHull: true,
@@ -1455,8 +1653,8 @@ function makeSidebarSummary(actor) {
 		},
 		{
 			label: localizeOrFallback("SW5E.ShieldPoints", "Shield Points"),
-			value: formatPool(shields.temp, shields.tempmax),
-			note: null,
+			value: formatPool(hp.temp, hp.tempmax),
+			note: localizeOrFallback("SW5E.StarshipShieldSummaryNote", "Absorbs damage before hull"),
 			sidebarTier: false,
 			sidebarSize: false,
 			sidebarHull: false,
@@ -1849,6 +2047,8 @@ async function renderStarshipLayer(app, html, data) {
 	if ( !root ) return;
 	try {
 	const scrollSnap = readStarshipSheetScrollSnapshot(app);
+	const pendingSidebarScroll = consumeStarshipPendingSidebarScroll(app);
+	if ( pendingSidebarScroll !== null ) scrollSnap.sidebarScrollTop = pendingSidebarScroll;
 
 	root.classList.add("sw5e-starship-sheet");
 	if ( SW5E_STARSHIP_SHEET_DIAG_ENABLED ) root.dataset.sw5eStarshipDiagSheet = "1";
@@ -1858,6 +2058,13 @@ async function renderStarshipLayer(app, html, data) {
 
 	await ensureWarningsDialog(root, app, actor);
 	await renderStarshipSidebarSummary(root, actor, app);
+	// Same task as sidebar mount: set scroll before the browser paints the new summary at 0 (async gap below would flash).
+	applyStarshipSheetScrollPositions(app, {
+		sidebarScrollTop: Number(scrollSnap.sidebarScrollTop) || 0,
+		mainScrollTop: 0,
+		sotgPanelScrollTop: 0
+	});
+	suppressStockVehicleHpMeterForStarship(root, actor, app);
 
 	const { nav, panelParent, integrated } = ensureStarshipTabTargets(root);
 	if ( !nav || !panelParent ) return;
@@ -1950,6 +2157,8 @@ if (app._sw5eStarshipActiveTab === undefined) {
 		}
 	];
 
+	const sheetEditMode = isStarshipSheetEditMode(app);
+	const actorEditable = app.isEditable !== false;
 	const rendered = await foundry.applications.handlebars.renderTemplate(getModulePath("templates/starship-sheet-layer.hbs"), {
 		actorName: actor.name,
 		actorImage: resolveStarshipSheetImageUrl(actor.img),
@@ -1961,18 +2170,21 @@ if (app._sw5eStarshipActiveTab === undefined) {
 		skills,
 		crew: buildVehicleStarshipCrewContext(actor),
 		sotgItemTabs,
-		editable: app.isEditable !== false,
+		editable: actorEditable,
+		/** Systems subtab: setup fields (tier, hull, etc.) only in sheet EDIT mode; routing stays usable in PLAY when `actorEditable`. */
+		systemsSetupEditable: sheetEditMode && actorEditable,
+		systemsRoutingEditable: actorEditable,
 		systemsCore: buildSystemsCoreContext(actor),
 		systemsGroups: withIntegrated(systemsGroups),
 		systemsTabKicker: localizeOrFallback("DOCUMENT.TagsSystems", "Systems"),
-		systemsTabTitle: localizeOrFallback("SW5E.StarshipSheet.SystemsTabTitle", "Ship configuration"),
+		systemsTabTitle: localizeOrFallback("SW5E.StarshipSheet.SystemsTabTitle", "Ship systems"),
 		systemsItemsSectionTitle: localizeOrFallback(
 			"SW5E.StarshipSheet.SystemsItemsSectionTitle",
-			"Classification and starship feature items"
+			"Classification & installed features"
 		),
 		systemsPlaceholderLede: localizeOrFallback(
 			"SW5E.StarshipSheet.SystemsPlaceholderLede",
-			"Item groups below list size classification and passive starship feature items. Core numbers are editable in the configuration section above when you have permission to edit this actor."
+			"Use Operations for power routing during play. Supporting fields cover fuel and derived speeds. Classification groups list size and passive starship features—use sheet Edit mode to manage items; hull, shields, tier, and size stay in the sidebar."
 		),
 		crewRoleGroups: withIntegrated(crewRoleGroups),
 		crewRolesKicker: localizeOrFallback("SW5E.Feature.Deployment.Label", "Deployments"),
@@ -2103,6 +2315,8 @@ if (app._sw5eStarshipActiveTab === undefined) {
 		if ( !row ) return;
 		const panel = row.closest(".sw5e-starship-panel");
 		if ( !panel?.classList.contains("sw5e-starship-sotg--mode-play") ) return;
+		/* Systems subtab: setup/classification rows stay non-editable in PLAY (no sheet open from row). */
+		if ( row.closest(".sw5e-starship-systems-groups") ) return;
 		if ( event.target.closest("button, [data-sw5e-action], a") ) return;
 		const id = row.dataset.itemId;
 		if ( !id ) return;
