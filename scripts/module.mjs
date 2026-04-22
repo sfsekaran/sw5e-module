@@ -8,6 +8,7 @@ import { patchMedpac } from "./patch/medpac.mjs";
 import { patchBlasterReload } from "./patch/blaster-reload.mjs";
 import { patchChassisItemSheet } from "./patch/chassis-item-sheet.mjs";
 import { patchPowercasting } from "./patch/powercasting.mjs";
+import { patchForceRecovery } from "./patch/force-recovery.mjs";
 import { patchProficiencyInit, patchProficiencyReady } from "./patch/proficiency.mjs";
 import { patchProperties } from "./patch/properties.mjs";
 import { patchStarshipCreate } from "./patch/starship-create.mjs";
@@ -56,6 +57,7 @@ Hooks.once('init', async function() {
 	patchMedpac();
 	patchBlasterReload();
 	patchPowercasting();
+	patchForceRecovery();
 	patchProficiencyInit();
 	patchProperties();
 	patchChassisItemSheet();
