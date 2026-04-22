@@ -106,8 +106,8 @@
           "choices": [],
           "grants": [
             "skills:med",
-            "tool:biochemistskit",
-            "tool:poisonerskit"
+            "tool:specialist:biochemistskit",
+            "tool:specialist:poisonerskit"
           ],
           "mode": "default",
           "allowReplacements": false

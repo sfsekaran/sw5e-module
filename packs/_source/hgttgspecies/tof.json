@@ -134,9 +134,20 @@
       {
         "_id": "1cLeJeUrGDAeiQQa",
         "configuration": {
-          "choices": [],
+          "choices": [
+            {
+              "count": 1,
+              "pool": [
+                "weapon:mbl:slugthrower",
+                "weapon:svb:vibromace"
+              ]
+            }
+          ],
           "grants": [
-            "weapon:vibroblades"
+            "weapon:mvb:direvibroblade",
+            "weapon:mvb:hookedvibroblade",
+            "weapon:mvb:jaggedvibroblade",
+            "weapon:mvb:vibroblade"
           ],
           "mode": "default",
           "allowReplacements": false

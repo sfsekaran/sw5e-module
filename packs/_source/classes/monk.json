@@ -367,7 +367,7 @@
           "choices": [],
           "grants": [
             "weapon:svb",
-            "weapon:techblade"
+            "weapon:mvb:techblade"
           ],
           "mode": "default",
           "allowReplacements": false

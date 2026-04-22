@@ -105,7 +105,7 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "tool:armormechsimplements",
+            "tool:artisan:armormechsimplements",
             "armor:med",
             "armor:hvy"
           ],

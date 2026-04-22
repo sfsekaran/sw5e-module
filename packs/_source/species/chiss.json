@@ -130,8 +130,8 @@
           "grants": [
             "armor:lgt",
             "armor:med",
-            "weapon:heavy pistol",
-            "weapon:sniper rifle",
+            "weapon:mbl:heavypistol",
+            "weapon:mbl:sniperrifle",
             "skills:ins"
           ],
           "mode": "default",

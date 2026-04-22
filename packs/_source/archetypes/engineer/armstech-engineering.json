@@ -118,7 +118,7 @@
             }
           ],
           "grants": [
-            "tool:armstechsimplements",
+            "tool:artisan:armstechsimplements",
             "armor:med"
           ],
           "mode": "default",

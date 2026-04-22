@@ -134,7 +134,7 @@
           "grants": [
             "skills:pil",
             "skills:lor",
-            "tool:surveyorsimplements"
+            "tool:artisan:surveyorsimplements"
           ],
           "mode": "default",
           "allowReplacements": false

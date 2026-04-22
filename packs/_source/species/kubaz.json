@@ -146,7 +146,7 @@
           ],
           "grants": [
             "skills:tec",
-            "tool:slicerskit"
+            "tool:specialist:slicerskit"
           ],
           "mode": "default",
           "allowReplacements": false

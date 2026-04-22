@@ -138,9 +138,9 @@
             {
               "count": 1,
               "pool": [
-                "tool:jewelersimplements",
-                "tool:scavengingkit",
-                "tool:archaeologistkit"
+                "tool:artisan:jewelersimplements",
+                "tool:specialist:scavengingkit",
+                "tool:specialist:archaeologistkit"
               ]
             }
           ],

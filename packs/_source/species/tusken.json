@@ -141,8 +141,8 @@
           "grants": [
             "skills:ani",
             "skills:sur",
-            "weapon:cycler rifle",
-            "weapon:vibroaxe"
+            "weapon:mbl:cyclerrifle",
+            "weapon:mvb:vibroaxe"
           ],
           "mode": "default",
           "allowReplacements": false
