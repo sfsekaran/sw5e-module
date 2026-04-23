@@ -50,6 +50,12 @@ Only one custom item type is registered: `sw5e-module.maneuver` (declared in `mo
 
 Starship actors use the stock `vehicle` type, not a custom type. The module identifies them via `actor.flags.sw5e.legacyStarshipActor.type === "starship"`.
 
+### Starship sheet: stock travel UI
+
+Starship vehicle sheets use the same dnd5e sidebar **Travel Speed** and **Travel Pace** rows as other vehicles (no module suppression). **Stock Hit Points** remain hidden in favor of the custom Hull + Shield summary.
+
+**Design note:** If the project later adds SW5E-specific campaign-scale travel fields, prefer **custom SW5E data/UI** that is **manual by default** rather than auto-derived from tactical space/flying/turning speed.
+
 ### Compendium Workflow
 
 `packs/_source/` is the source of truth — one JSON file per document, organized by pack name. `packs/` contains generated LevelDB databases and is never edited by hand.

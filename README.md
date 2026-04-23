@@ -132,6 +132,25 @@ For the current beta coverage checklist spanning `1.2.9` and `1.3.0`, see [1.2.9
 
 ## Changelog
 
+### [1.3.3] - 2026-04-23
+
+### Added
+
+- Starship **Overview** ability score cards on the **SotG** tab, with a compact two-row layout for the six core ship abilities and copy aligned to the rest of the starship overview presentation.
+- Starship **Systems** tab status copy for setup-vs-play behavior, including a **Usable in Play mode** badge for power routing and an edit-mode hint for fuel/supporting fields.
+
+### Changed
+
+- Starship **SotG item groups and rows** now use dnd5e-style inventory/cargo presentation more closely, including primary name-strip interaction, grouped card headers, right-side icon controls, and dnd5e context-menu parity for supported item actions.
+- Starship **Overview ability editing** now follows the expected base-vs-effective split: **PLAY** continues to show effective/live values, while **EDIT** presents the stored base score for direct editing.
+- Starship sheet layout now fully treats **SotG + Cargo** as the main starship workflow by collapsing the stock vehicle **stations** rail and moving starship ability presentation into the custom SW5E overview experience.
+
+### Fixed
+
+- Starship **SotG row actions** now behave consistently: the primary action in **PLAY** uses/posts the item, **EDIT** opens the item sheet, and the **ellipsis/context menu** and **delete** controls work reliably without overlapping hit targets.
+- Starship **Overview ability** inputs no longer compete with duplicate stock vehicle controls during form submission, preventing invalid integer submits and other starship ability serialization conflicts.
+- Starship ability score editing no longer accumulates repeated drift when toggling **EDIT -> PLAY**; base values persist correctly, active effects are no longer baked back into the actor by the toggle path, and **DEX/WIS/CON** no longer step upward or downward on each mode change.
+
 ### [1.3.2] - 2026-04-17
 
 ### Added
