@@ -112,7 +112,7 @@
             }
           ],
           "grants": [
-            "tool:audiotechsimplements"
+            "tool:artisan:audiotechsimplements"
           ],
           "mode": "default",
           "allowReplacements": false

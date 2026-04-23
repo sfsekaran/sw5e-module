@@ -134,7 +134,7 @@
             {
               "count": 1,
               "pool": [
-                "tool:art:*"
+                "tool:artisan:*"
               ]
             }
           ],

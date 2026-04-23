@@ -134,8 +134,8 @@
             {
               "count": 1,
               "pool": [
-                "tool:mechanicskit",
-                "tool:scavengingkit"
+                "tool:specialist:mechanicskit",
+                "tool:specialist:scavengingkit"
               ]
             }
           ],

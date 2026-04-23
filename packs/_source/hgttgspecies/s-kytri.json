@@ -131,8 +131,8 @@
             }
           ],
           "grants": [
-            "weapon:vibrospear",
-            "weapon:vibroblade"
+            "weapon:svb:vibrospear",
+            "weapon:mvb:vibroblade"
           ],
           "mode": "default",
           "allowReplacements": false

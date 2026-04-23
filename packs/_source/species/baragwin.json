@@ -138,8 +138,8 @@
             {
               "count": 2,
               "pool": [
-                "tool:armstechsimplements",
-                "tool:munitionskit",
+                "tool:artisan:armstechsimplements",
+                "tool:specialist:munitionskit",
                 "weapon:*"
               ]
             }

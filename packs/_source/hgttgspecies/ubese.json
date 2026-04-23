@@ -133,8 +133,8 @@
           "grants": [
             "skills:ste",
             "skills:sur",
-            "weapon:blaster pistol",
-            "weapon:blaster rifle"
+            "weapon:sbl:blasterpistol",
+            "weapon:mbl:blasterrifle"
           ],
           "mode": "default",
           "allowReplacements": false

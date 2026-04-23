@@ -134,8 +134,8 @@
           "grants": [
             "skills:acr",
             "skills:itm",
-            "weapon:saberwhip",
-            "weapon:vibrowhip"
+            "weapon:mlw:saberwhip",
+            "weapon:mvb:vibrowhip"
           ],
           "mode": "default",
           "allowReplacements": false

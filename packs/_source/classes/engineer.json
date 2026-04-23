@@ -234,7 +234,7 @@
             }
           ],
           "grants": [
-            "tool:tinkersimplements"
+            "tool:artisan:tinkersimplements"
           ],
           "mode": "default",
           "allowReplacements": false

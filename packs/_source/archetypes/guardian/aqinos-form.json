@@ -109,7 +109,7 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "tool:astrotechsimplements",
+            "tool:artisan:astrotechsimplements",
             "skills:tec"
           ],
           "mode": "default",

@@ -97,7 +97,7 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "tool:armormechsimplements"
+            "tool:artisan:armormechsimplements"
           ],
           "mode": "default",
           "allowReplacements": false

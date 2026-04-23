@@ -97,11 +97,11 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "weapon:blaster pistol",
-            "weapon:blaster rifle",
-            "weapon:ion pistol",
-            "weapon:ion rifle",
-            "weapon:lightbow"
+            "weapon:sbl:blasterpistol",
+            "weapon:mbl:blasterrifle",
+            "weapon:sbl:ionpistol",
+            "weapon:mbl:ionrifle",
+            "weapon:mbl:lightbow"
           ],
           "mode": "default",
           "allowReplacements": false

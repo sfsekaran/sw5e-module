@@ -105,7 +105,7 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "tool:artificersimplements"
+            "tool:artisan:artificersimplements"
           ],
           "mode": "default",
           "allowReplacements": false

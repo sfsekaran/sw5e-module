@@ -98,7 +98,7 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "tool:poisonerskit"
+            "tool:specialist:poisonerskit"
           ],
           "mode": "default",
           "allowReplacements": false

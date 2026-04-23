@@ -142,8 +142,8 @@
           "grants": [
             "skills:ani",
             "skills:ath",
-            "weapon:electroprod",
-            "weapon:electrostaff"
+            "weapon:svb:electroprod",
+            "weapon:mvb:electrostaff"
           ],
           "mode": "default",
           "allowReplacements": false

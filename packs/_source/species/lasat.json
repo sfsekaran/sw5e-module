@@ -132,9 +132,9 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "weapon:blaster rifle",
-            "weapon:bo-rifle",
-            "weapon:vibrostaff"
+            "weapon:mbl:blasterrifle",
+            "weapon:ebl:bo-rifle",
+            "weapon:svb:vibrostaff"
           ],
           "mode": "default",
           "allowReplacements": false

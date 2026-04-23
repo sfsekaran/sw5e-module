@@ -144,7 +144,7 @@
         "configuration": {
           "choices": [],
           "grants": [
-            "tool:scavengingkit",
+            "tool:specialist:scavengingkit",
             "skills:ste"
           ],
           "mode": "default",

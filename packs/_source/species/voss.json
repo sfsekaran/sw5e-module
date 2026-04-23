@@ -133,8 +133,8 @@
           "choices": [],
           "grants": [
             "skills:med",
-            "weapon:blaster rifle",
-            "weapon:techblade"
+            "weapon:mbl:blasterrifle",
+            "weapon:mvb:techblade"
           ],
           "mode": "default",
           "allowReplacements": false

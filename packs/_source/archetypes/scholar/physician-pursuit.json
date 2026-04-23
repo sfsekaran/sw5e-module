@@ -109,7 +109,7 @@
             }
           ],
           "grants": [
-            "tool:biochemistskit"
+            "tool:specialist:biochemistskit"
           ],
           "mode": "default",
           "allowReplacements": false

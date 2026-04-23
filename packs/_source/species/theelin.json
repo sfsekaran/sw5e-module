@@ -129,9 +129,9 @@
             {
               "count": 1,
               "pool": [
-                "tool:artistsimplements",
-                "tool:disguisekit",
-                "tool:synthweaversimplements",
+                "tool:artisan:artistsimplements",
+                "tool:specialist:disguisekit",
+                "tool:artisan:synthweaversimplements",
                 "tool:music:*"
               ]
             },

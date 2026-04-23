@@ -269,7 +269,7 @@
             {
               "count": 1,
               "pool": [
-                "tool:kit:*"
+                "tool:specialist:*"
               ]
             }
           ],

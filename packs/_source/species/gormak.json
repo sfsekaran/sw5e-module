@@ -144,11 +144,11 @@
             {
               "count": 1,
               "pool": [
-                "tool:armstechsimplements",
-                "tool:biotechsimplements",
-                "tool:constructorsimplements",
-                "tool:mechanicskit",
-                "tool:tinkersimplements"
+                "tool:artisan:armstechsimplements",
+                "tool:artisan:biotechsimplements",
+                "tool:artisan:constructorsimplements",
+                "tool:specialist:mechanicskit",
+                "tool:artisan:tinkersimplements"
               ]
             }
           ],
