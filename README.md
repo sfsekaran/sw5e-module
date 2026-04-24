@@ -136,20 +136,31 @@ For the current beta coverage checklist spanning `1.2.9` and `1.3.0`, see [1.2.9
 
 ### Added
 
-- Starship **Overview** ability score cards on the **SotG** tab, with a compact two-row layout for the six core ship abilities and copy aligned to the rest of the starship overview presentation.
-- Starship **Systems** tab status copy for setup-vs-play behavior, including a **Usable in Play mode** badge for power routing and an edit-mode hint for fuel/supporting fields.
+- Starship **Core** dashboard on the **SotG** tab, with character-sheet-aligned ability and skill presentation for both **PLAY** and **EDIT** modes.
+- Dedicated starship **Weapons** subtab for mounted weapons and starship ordnance, separated from **Actions**.
+- Starship **Systems** subtab status copy for setup-vs-play behavior, including a **Usable in Play mode** badge for power routing and edit-mode hints for fuel/supporting fields.
+- Starship ability tiles now open a check-or-save prompt, matching the expected character sheet interaction.
 
 ### Changed
 
-- Starship **SotG item groups and rows** now use dnd5e-style inventory/cargo presentation more closely, including primary name-strip interaction, grouped card headers, right-side icon controls, and dnd5e context-menu parity for supported item actions.
-- Starship **Overview ability editing** now follows the expected base-vs-effective split: **PLAY** continues to show effective/live values, while **EDIT** presents the stored base score for direct editing.
-- Starship sheet layout now fully treats **SotG + Cargo** as the main starship workflow by collapsing the stock vehicle **stations** rail and moving starship ability presentation into the custom SW5E overview experience.
+- Starship **Overview** is now labeled **Core**, and the former **Features** subtab is now labeled **Actions**.
+- Starship **SotG** no longer shows the old **Starship at a Glance** heading/description block.
+- Starship **SotG item groups and rows** now use dnd5e-style inventory/cargo presentation more closely, including primary name-strip interaction, grouped card headers, right-side icon controls, context-menu parity, and visible **Price** / **Weight** columns where the subtab stands on its own.
+- Starship **Core ability editing** now follows the expected base-vs-effective split: **PLAY** shows effective/live values, while **EDIT** presents the stored base score for direct editing.
+- Starship **Cargo** filters out items already surfaced in SotG **Actions**, **Weapons**, **Equipment**, or **Modifications**, while preserving true cargo and uncategorized items.
+- Starship sheet layout now treats **SotG + Cargo** as the main starship workflow by suppressing duplicate stock vehicle ability/features presentation and moving starship ability/skill presentation into the custom SW5E Core experience.
 
 ### Fixed
 
 - Starship **SotG row actions** now behave consistently: the primary action in **PLAY** uses/posts the item, **EDIT** opens the item sheet, and the **ellipsis/context menu** and **delete** controls work reliably without overlapping hit targets.
-- Starship **Overview ability** inputs no longer compete with duplicate stock vehicle controls during form submission, preventing invalid integer submits and other starship ability serialization conflicts.
+- Starship **Core ability** inputs no longer compete with duplicate stock vehicle controls during form submission, preventing invalid integer submits and other starship ability serialization conflicts.
 - Starship ability score editing no longer accumulates repeated drift when toggling **EDIT -> PLAY**; base values persist correctly, active effects are no longer baked back into the actor by the toggle path, and **DEX/WIS/CON** no longer step upward or downward on each mode change.
+- Starship ability checks and saving throws now roll through a starship-safe prompt path, include the correct ability modifier and bonuses, and avoid the dnd5e `mergeObject` crash seen on vehicle-backed starships.
+- Starship Cargo filtering no longer walks broad dnd5e config objects, avoiding deprecated `CONFIG.DND5E.spellPreparationModes` / `spellcastingTypes` compatibility warnings.
+
+### Migration
+
+- No new persisted schema migration is required for the 1.3.3 starship sheet work. Existing vehicle-backed starships continue through the current `legacyStarshipActor` normalization path, while new ability edits are sanitized and mirrored to the legacy starship flag during actor updates.
 
 ### [1.3.2] - 2026-04-17
 

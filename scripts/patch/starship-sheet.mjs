@@ -1,5 +1,6 @@
 import { getModulePath, getModuleId } from "../module-support.mjs";
-import { getDerivedStarshipRuntime, getLegacyStarshipActorSystem, getStarshipSkillEntries, rollStarshipSkill, deriveStarshipPools } from "../starship-data.mjs";
+import { getCurrencyRegistry, normalizeSwPriceDenomination } from "../currencies.mjs";
+import { getDerivedStarshipRuntime, getLegacyStarshipActorSystem, getStarshipSkillEntries, rollStarshipSkill, rollStarshipAbility, deriveStarshipPools } from "../starship-data.mjs";
 import { buildVehicleStarshipCrewContext, buildVehicleAvailableActors, deployStarshipCrew, undeployStarshipCrew, toggleStarshipActiveCrew } from "../starship-character.mjs";
 
 /**
@@ -33,7 +34,7 @@ const STOCK_STARSHIP_TAB_ORDER = [STOCK_CARGO_TAB_ID, "effects", "description"];
 const CUSTOM_STARSHIP_TAB_IDS = new Set([STARSHIP_TAB_ID]);
 
 const SOTG_SUB_TAB_IDS = new Set([
-	"overview", "crew", "features", "equipment", "modifications", "systems"
+	"overview", "crew", "features", "weapons", "equipment", "modifications", "systems"
 ]);
 
 /** Set `true` to enable verbose submit/mode diagnostics for starship vehicle sheets. */
@@ -1137,6 +1138,12 @@ function formatSignedSkillMod(value) {
 	return n >= 0 ? `+${n}` : `${n}`;
 }
 
+function getStarshipProficiencyIcon(level) {
+	const levels = CONFIG?.SW5E?.proficiencyLevels ?? CONFIG?.DND5E?.proficiencyLevels ?? {};
+	const icon = levels?.[level]?.icon ?? levels?.[0]?.icon ?? "far fa-circle";
+	return `<i class="${icon}"></i>`;
+}
+
 /**
  * Presentation fields for the Overview skills list (ability abbreviation, signed modifier, passive total).
  * Passive uses {@link CONFIG.DND5E.skillPassive} base (default 10) + prepared skill modifier, matching core 5e passive notation.
@@ -1154,7 +1161,11 @@ function enrichStarshipSkillsForSheet(actor) {
 		const passiveTotal = passiveBase + Number(entry.total);
 		return {
 			...entry,
+			value: entry.proficiencyMode,
+			baseValue: entry.proficiencyMode,
+			icon: getStarshipProficiencyIcon(entry.proficiencyMode),
 			abilityAbbr,
+			abbreviation: abilityAbbr,
 			modDisplay: formatSignedSkillMod(entry.total),
 			passiveDisplay: Number.isFinite(passiveTotal) ? String(passiveTotal) : ""
 		};
@@ -1369,6 +1380,11 @@ function suppressNativeStarshipStationsAbilityAndFeatures() {
 			context = await wrapped(partId, context, options);
 			const actor = this.actor;
 			if ( !isSw5eStarshipActor(actor) ) return context;
+			if ( partId === "inventory" ) {
+				const hiddenIds = getStarshipCargoHiddenItemIds(actor);
+				if ( hiddenIds.size ) filterStarshipCargoContext(context, hiddenIds);
+				return context;
+			}
 			if ( partId !== "stations" ) return context;
 
 			context.options ??= {};
@@ -1379,6 +1395,72 @@ function suppressNativeStarshipStationsAbilityAndFeatures() {
 	} catch ( err ) {
 		console.warn("SW5E MODULE | Could not wrap VehicleActorSheet _preparePartContext for starship stations suppression.", err);
 	}
+}
+
+function getPreparedInventoryItemId(entry) {
+	if ( !entry || typeof entry !== "object" ) return null;
+	if ( typeof entry.id === "string" ) return entry.id;
+	if ( typeof entry._id === "string" ) return entry._id;
+	if ( typeof entry.item?.id === "string" ) return entry.item.id;
+	if ( typeof entry.item?._id === "string" ) return entry.item._id;
+	if ( typeof entry.document?.id === "string" ) return entry.document.id;
+	if ( typeof entry.document?._id === "string" ) return entry.document._id;
+	if ( typeof entry.object?.id === "string" ) return entry.object.id;
+	if ( typeof entry.object?._id === "string" ) return entry.object._id;
+	if ( typeof entry.data?.id === "string" ) return entry.data.id;
+	if ( typeof entry.data?._id === "string" ) return entry.data._id;
+	return null;
+}
+
+function getIterableValues(collection) {
+	if ( !collection || typeof collection !== "object" ) return [];
+	if ( collection instanceof Map ) return collection.values();
+	return Object.values(collection);
+}
+
+function filterPreparedInventoryEntries(entries, hiddenIds) {
+	if ( !Array.isArray(entries) ) return entries;
+	for ( let i = entries.length - 1; i >= 0; i -= 1 ) {
+		const entry = entries[i];
+		const itemId = getPreparedInventoryItemId(entry);
+		if ( itemId && hiddenIds.has(itemId) ) {
+			entries.splice(i, 1);
+			continue;
+		}
+		filterPreparedInventoryEntries(entry?.items, hiddenIds);
+		filterPreparedInventoryEntries(entry?.contents, hiddenIds);
+		filterPreparedInventoryEntries(entry?.children, hiddenIds);
+	}
+	return entries;
+}
+
+function filterStarshipCargoContext(context, hiddenIds) {
+	if ( !context || typeof context !== "object" ) return context;
+
+	filterPreparedInventoryEntries(context.items, hiddenIds);
+	filterPreparedInventoryEntries(context.containers, hiddenIds);
+	filterPreparedInventoryEntries(context.inventory, hiddenIds);
+
+	for ( const section of getIterableValues(context.sections) ) filterPreparedInventoryEntries(section?.items, hiddenIds);
+	for ( const section of getIterableValues(context.features) ) filterPreparedInventoryEntries(section?.items, hiddenIds);
+	for ( const section of getIterableValues(context.cargo) ) filterPreparedInventoryEntries(section?.items, hiddenIds);
+
+	for ( const category of getIterableValues(context.itemCategories) ) {
+		filterPreparedInventoryEntries(category?.items, hiddenIds);
+		for ( const section of getIterableValues(category) ) filterPreparedInventoryEntries(section?.items, hiddenIds);
+	}
+
+	const itemContext = context.itemContext;
+	if ( itemContext && typeof itemContext === "object" ) {
+		for ( const itemId of hiddenIds ) delete itemContext[itemId];
+	}
+
+	return context;
+}
+
+function getStarshipCargoHiddenItemIds(actor) {
+	const groups = categorizeStarshipItems(actor);
+	return new Set(["actions", "weapons", "equipment", "modifications"].flatMap(key => groups[key]?.items?.map(item => item.id) ?? []));
 }
 
 function getFoundryResolvedAssetUrl(relativePath) {
@@ -1952,45 +2034,88 @@ function getItemMeta(item, actor = null) {
 	return pack ? pack.replace(/-/g, " ") : "";
 }
 
-function makeItemEntry(item, defaultTab = STOCK_CARGO_TAB_ID, actor = null) {
+function getItemSystemData(item) {
+	return item?.system ?? item?._source?.system ?? {};
+}
+
+function formatSheetNumber(value, maximumFractionDigits = 2) {
+	const numeric = Number(value);
+	if ( !Number.isFinite(numeric) ) return "";
+	return game?.dnd5e?.utils?.formatNumber?.(numeric, {
+		minimumFractionDigits: 0,
+		maximumFractionDigits
+	}) ?? String(numeric);
+}
+
+function getItemWeightLabel(item) {
+	const weight = getItemSystemData(item)?.weight ?? {};
+	const rawValue = typeof weight === "object" ? weight.value : weight;
+	const value = Number(rawValue);
+	if ( !Number.isFinite(value) ) return "";
+	const units = typeof weight === "object" ? weight.units : "";
+	return [formatSheetNumber(value), units].filter(Boolean).join(" ").trim();
+}
+
+function getItemPriceLabel(item) {
+	const price = getItemSystemData(item)?.price ?? {};
+	const rawValue = typeof price === "object" ? price.value : price;
+	const value = Number(rawValue);
+	if ( !Number.isFinite(value) ) return "";
+
+	const registry = getCurrencyRegistry();
+	const denomKey = normalizeSwPriceDenomination(typeof price === "object" ? price.denomination : undefined, { fallbackToBase: false });
+	const abbrKey = registry?.[denomKey]?.abbreviation;
+	const abbr = abbrKey ? game.i18n.localize(abbrKey) : (typeof denomKey === "string" ? denomKey.toUpperCase() : "");
+	return [formatSheetNumber(value), abbr].filter(Boolean).join(" ").trim();
+}
+
+function makeItemEntry(item, defaultTab = STOCK_CARGO_TAB_ID, actor = null, { sotgPanel = null } = {}) {
 	return {
 		id: item.id,
 		name: item.name,
 		meta: getItemMeta(item, actor),
 		img: resolveStarshipSheetImageUrl(item.img),
-		defaultTab
+		defaultTab,
+		sotgPanel,
+		weightLabel: getItemWeightLabel(item),
+		priceLabel: getItemPriceLabel(item)
 	};
 }
 
 function categorizeStarshipItems(actor) {
 	const groups = {
-		size: { label: localizeOrFallback("TYPES.Item.starshipsizePl", "Starship Size"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
-		actions: { label: localizeOrFallback("SW5E.Feature.StarshipAction.Label", "Starship Actions"), items: [], defaultTab: null, manageLabel: "SotG", scrollTo: "stations" },
-		roles: { label: localizeOrFallback("SW5E.Feature.Deployment.Label", "Crew Roles"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
-		features: { label: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"), items: [], defaultTab: null, manageLabel: "SotG", scrollTo: "stations" },
-		equipment: { label: localizeOrFallback("SW5E.Equipment", "Equipment"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
-		modifications: { label: localizeOrFallback("TYPES.Item.starshipmodPl", "Modifications"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" },
-		weapons: { label: localizeOrFallback("SW5E.Weapon", "Weapons"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory" }
+		size: { label: localizeOrFallback("TYPES.Item.starshipsizePl", "Starship Size"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory", sotgPanel: "systems", showEconomy: false },
+		actions: { label: localizeOrFallback("SW5E.Feature.StarshipAction.Label", "Starship Actions"), items: [], defaultTab: null, manageLabel: "SotG", scrollTo: "features", sotgPanel: "features", showEconomy: true },
+		roles: { label: localizeOrFallback("SW5E.Feature.Deployment.Label", "Crew Roles"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory", sotgPanel: "crew", showEconomy: false },
+		features: { label: localizeOrFallback("SW5E.Feature.Starship.Label", "Starship Features"), items: [], defaultTab: STOCK_CARGO_TAB_ID, manageLabel: "Cargo", scrollTo: "inventory", sotgPanel: "systems", showEconomy: false },
+		equipment: { label: localizeOrFallback("SW5E.Equipment", "Equipment"), items: [], defaultTab: null, manageLabel: "SotG", scrollTo: "equipment", sotgPanel: "equipment", showEconomy: true },
+		modifications: { label: localizeOrFallback("TYPES.Item.starshipmodPl", "Modifications"), items: [], defaultTab: null, manageLabel: "SotG", scrollTo: "modifications", sotgPanel: "modifications", showEconomy: true },
+		weapons: { label: localizeOrFallback("SW5E.Weapon", "Weapons"), items: [], defaultTab: null, manageLabel: "SotG", scrollTo: "weapons", sotgPanel: "weapons", showEconomy: true }
 	};
 
 	for ( const item of actor.items ) {
 		const pack = getCompendiumPack(item);
 		const featType = item.system?.type?.value;
 		const role = item.flags?.sw5e?.starshipCharacter?.role;
+		const isStarshipWeapon = pack === "starshipweapons" || item.type === "weapon";
+		const isStarshipEquipment = pack === "starshiparmor" || pack === "starshipequipment";
 
 		if ( item.flags?.sw5e?.legacyStarshipSize || role === "classification" ) groups.size.items.push(item);
 		else if ( item.flags?.sw5e?.legacyStarshipMod || role === "modification" || pack === "starshipmodifications" ) groups.modifications.items.push(item);
 		else if ( featType === "starshipAction" || pack === "starshipactions" ) groups.actions.items.push(item);
 		else if ( featType === "deployment" || role === "deployment" || role === "venture" || pack === "deployments" || pack === "deploymentfeatures" || pack === "ventures" ) groups.roles.items.push(item);
 		else if ( featType === "starship" || pack === "starshipfeatures" ) groups.features.items.push(item);
-		else if ( pack === "starshipweapons" || item.type === "weapon" ) groups.weapons.items.push(item);
-		else if ( pack === "starshiparmor" || pack === "starshipequipment" || item.type === "equipment" ) groups.equipment.items.push(item);
+		else if ( isStarshipWeapon ) groups.weapons.items.push(item);
+		else if ( isStarshipEquipment || item.type === "equipment" ) groups.equipment.items.push(item);
 	}
 
 	return groups;
 }
 
 function buildGroupContext(group) {
+	const items = group.items
+		.sort((left, right) => left.name.localeCompare(right.name))
+		.map(item => makeItemEntry(item, group.defaultTab, group.actor, { sotgPanel: group.sotgPanel }));
 	return {
 		label: group.label,
 		count: group.items.length,
@@ -1998,7 +2123,9 @@ function buildGroupContext(group) {
 		manageLabel: group.manageLabel,
 		scrollTo: group.scrollTo,
 		firstItemId: group.items[0]?.id ?? null,
-		items: group.items.sort((left, right) => left.name.localeCompare(right.name)).map(item => makeItemEntry(item, group.defaultTab, group.actor))
+		showEconomy: Boolean(group.showEconomy) && items.some(item => item.weightLabel || item.priceLabel),
+		sotgPanel: group.sotgPanel,
+		items
 	};
 }
 
@@ -2007,8 +2134,9 @@ function partitionStarshipGroups(actor) {
 	for ( const group of Object.values(groups) ) group.actor = actor;
 	const build = keys => keys.map(key => buildGroupContext(groups[key])).filter(group => group.items.length);
 	return {
-		/** Starship Actions + Weapons — operational/tab "Features" */
-		featuresOperationalGroups: build(["actions", "weapons"]),
+		/** Starship Actions — operational/tab visible as "Actions". */
+		actionsGroups: build(["actions"]),
+		weaponsGroups: build(["weapons"]),
 		equipmentGroups: build(["equipment"]),
 		modificationsGroups: build(["modifications"]),
 		/** Size classification item(s) + passive Starship Features feats — tab "Systems" */
@@ -2046,7 +2174,6 @@ function makeHeaderBadges(actor) {
 
 function buildOverviewAbilitiesContext(actor, editable = false) {
 	const configured = CONFIG?.DND5E?.abilities ?? CONFIG?.SW5E?.abilities ?? {};
-	const legacyAbilities = getLegacyStarshipActorSystem(actor).abilities ?? {};
 	const liveAbilities = actor?.system?.abilities ?? {};
 	const preferredOrder = STARSHIP_ABILITY_KEYS;
 	const keys = preferredOrder.filter(key => key in configured)
@@ -2060,6 +2187,8 @@ function buildOverviewAbilitiesContext(actor, editable = false) {
 		const value = Number.isFinite(liveValue) ? liveValue : sourceValue;
 		const currentMod = Number(live?.mod);
 		const mod = Number.isFinite(currentMod) ? currentMod : Math.floor((value - 10) / 2);
+		const saveValue = Number(live?.save);
+		const proficient = Number.isFinite(Number(live?.proficient)) ? Number(live.proficient) : 0;
 		const abbrKey = typeof cfg.abbreviation === "string" ? cfg.abbreviation : "";
 		const abbr = abbrKey ? game.i18n.localize(abbrKey) : key.toUpperCase();
 		const labelKey = typeof cfg.label === "string" ? cfg.label : "";
@@ -2070,18 +2199,17 @@ function buildOverviewAbilitiesContext(actor, editable = false) {
 			label: label && label !== labelKey ? label : key.toUpperCase(),
 			value,
 			mod,
+			save: Number.isFinite(saveValue) ? saveValue : mod,
 			sourceValue,
+			proficient,
+			icon: getStarshipProficiencyIcon(proficient),
+			hover: (CONFIG?.SW5E?.proficiencyLevels ?? CONFIG?.DND5E?.proficiencyLevels ?? {})?.[proficient]?.label ?? "",
 			inputName: `system.abilities.${key}.value`,
 			editable
 		};
 	};
 
-	const entries = keys.map(buildEntry);
-	return {
-		top: entries.slice(0, 3),
-		bottom: entries.slice(3, 6),
-		optional: Math.max(entries.length - 6, 0)
-	};
+	return keys.map(buildEntry);
 }
 
 function getStarshipSidebarMountPoint(root) {
@@ -2143,11 +2271,23 @@ async function renderStarshipSidebarSummary(root, actor, app = null) {
 function focusSheetItem(root, app, itemId, tabId = STOCK_CARGO_TAB_ID) {
 	window.setTimeout(() => {
 		const candidates = root.querySelectorAll(`[data-item-id="${itemId}"]`);
-		const target = Array.from(candidates).find(node => !node.closest(".sw5e-starship-tab"));
+		const stockTarget = Array.from(candidates).find(node => !node.closest(".sw5e-starship-tab"));
+		const target = stockTarget ?? Array.from(candidates).find(node => node.closest(".sw5e-starship-tab"));
 		if ( !target ) return;
-		// Only switch tabs if the item is inside a named tab panel; non-tab sections (e.g. stations sidebar) are always visible.
-		const panel = target.closest(".tab[data-group='primary']");
-		if ( panel?.dataset.tab ) activateSheetTab(root, app, panel.dataset.tab);
+
+		if ( stockTarget ) {
+			// Only switch tabs if the item is inside a named tab panel; non-tab sections (e.g. stations sidebar) are always visible.
+			const panel = target.closest(".tab[data-group='primary']");
+			if ( panel?.dataset.tab ) activateSheetTab(root, app, panel.dataset.tab);
+		} else {
+			activateSheetTab(root, app, STARSHIP_TAB_ID);
+			const sotgWrapper = target.closest(".sw5e-starship-tab");
+			const sotgPanel = target.getAttribute("data-sotg-panel")
+				?? target.closest("[data-sw5e-sotg-panel]")?.getAttribute("data-sw5e-sotg-panel")
+				?? "overview";
+			if ( sotgWrapper ) activateSotgSubTab(sotgWrapper, app, sotgPanel);
+		}
+
 		// Defer scroll to next frame so the tab panel is visible (display:none → display:block) before scrollIntoView runs.
 		window.requestAnimationFrame(() => target.scrollIntoView({ behavior: "smooth", block: "center" }));
 		target.classList.add("sw5e-starship-item-pulse");
@@ -2534,7 +2674,8 @@ if (app._sw5eStarshipActiveTab === undefined) {
 	const starshipViewState = captureStarshipSheetViewState(app, scrollSnap);
 
 	const {
-		featuresOperationalGroups,
+		actionsGroups,
+		weaponsGroups,
 		equipmentGroups,
 		modificationsGroups,
 		systemsGroups,
@@ -2542,7 +2683,10 @@ if (app._sw5eStarshipActiveTab === undefined) {
 	} = partitionStarshipGroups(actor);
 	const skills = enrichStarshipSkillsForSheet(actor);
 
-	const withIntegrated = arr => arr.map(group => ({ ...group, supportsSheetNavigation: integrated }));
+	const withIntegrated = arr => arr.map(group => ({
+		...group,
+		supportsSheetNavigation: integrated && group.defaultTab !== null
+	}));
 
 	const sotgItemTabs = [
 		{
@@ -2551,18 +2695,32 @@ if (app._sw5eStarshipActiveTab === undefined) {
 			bodyClasses: "sw5e-starship-sotg-features-body sw5e-starship-panel-features",
 			dataAppPart: "sw5e-starship-sotg-features",
 			kicker: localizeOrFallback("SW5E.StarshipSheet.OperationsKicker", "Operations"),
-			title:
-				`${localizeOrFallback("SW5E.Feature.StarshipAction.Label", "Starship Actions")}`
-				+ " & "
-				+ `${localizeOrFallback("SW5E.Weapon", "Weapons")}`,
+			title: localizeOrFallback("SW5E.Feature.StarshipAction.Label", "Starship Actions"),
 			lede: localizeOrFallback(
 				"SW5E.StarshipSheet.FeaturesTabLede",
-				"Ship combat actions and mounted weapons. Open an item for full details or use the stock vehicle sheet to assign or remove items."
+				"Ship combat actions and operational maneuvers. Open an item for full details or use edit mode to manage them here."
 			),
-			groups: withIntegrated(featuresOperationalGroups),
+			groups: withIntegrated(actionsGroups),
 			emptyMessage: localizeOrFallback(
 				"SW5E.StarshipSheet.NoActionsWeapons",
-				"No starship actions or weapons are assigned to this vessel."
+				"No starship actions are assigned to this vessel."
+			)
+		},
+		{
+			panel: "weapons",
+			ariaLabelledBy: "sw5e-sotg-tab-weapons",
+			bodyClasses: "sw5e-starship-sotg-weapons-body",
+			dataAppPart: "sw5e-starship-sotg-weapons",
+			kicker: localizeOrFallback("SW5E.Weapon", "Weapons"),
+			title: localizeOrFallback("SW5E.Weapon", "Weapons"),
+			lede: localizeOrFallback(
+				"SW5E.StarshipSheet.WeaponsTabLede",
+				"Mounted weapon systems and turret hardpoints assigned to this vessel."
+			),
+			groups: withIntegrated(weaponsGroups),
+			emptyMessage: localizeOrFallback(
+				"SW5E.StarshipSheet.NoWeapons",
+				"No starship weapons are assigned to this vessel."
 			)
 		},
 		{
@@ -2657,7 +2815,7 @@ if (app._sw5eStarshipActiveTab === undefined) {
 			"SW5E.StarshipSheet.OverviewAbilitiesLede",
 			"Core ship abilities shown in a compact score-card layout. In edit mode, adjust the base score directly here."
 		),
-		overviewAbilityRows: buildOverviewAbilitiesContext(actor, actorEditable),
+		overviewAbilities: buildOverviewAbilitiesContext(actor, actorEditable),
 		overviewPassiveHint: localizeOrFallback("DND5E.PassiveScore", "Passive score"),
 		overviewSkillConfigureTitle: localizeOrFallback("SW5E.SkillConfigure", "Configure skill"),
 		sotgSheetEditMode: sheetEditMode,
@@ -2760,6 +2918,11 @@ if (app._sw5eStarshipActiveTab === undefined) {
 
 		if ( action === "roll-skill" ) {
 			await rollStarshipSkill(sheetActor, actionNode.dataset.skillId, event, game.user);
+			return;
+		}
+
+		if ( action === "roll-ability" ) {
+			await rollStarshipAbility(sheetActor, actionNode.dataset.ability, event);
 			return;
 		}
 

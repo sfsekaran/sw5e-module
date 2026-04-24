@@ -41,6 +41,20 @@ function toFiniteNumber(value, fallback = null) {
 	return Number.isFinite(number) ? number : fallback;
 }
 
+function localizeWithFallback(key, fallback) {
+	const localized = game?.i18n?.localize?.(key);
+	return localized && localized !== key ? localized : fallback;
+}
+
+function escapeHtml(value) {
+	return String(value ?? "")
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/"/g, "&quot;")
+		.replace(/'/g, "&#039;");
+}
+
 function getLegacyPackHint(item) {
 	const sourceId = item?.flags?.core?.sourceId;
 	const match = /^Compendium\.[^.]+\.([^.]+)\./.exec(sourceId ?? "");
@@ -990,6 +1004,118 @@ function buildStarshipRollAbilities(actor) {
 		};
 		return abilities;
 	}, {});
+}
+
+function getStarshipAbilityRollEntry(actor, abilityId) {
+	const configuredAbilities = CONFIG?.DND5E?.abilities ?? CONFIG?.SW5E?.abilities ?? {};
+	if ( !(abilityId in configuredAbilities) ) return null;
+
+	const currentAbility = actor?.system?.abilities?.[abilityId] ?? {};
+	const legacyAbility = getLegacyStarshipActorSystem(actor).abilities?.[abilityId] ?? {};
+	const value = toFiniteNumber(currentAbility?.value, toFiniteNumber(legacyAbility?.value, 10)) ?? 10;
+	const mod = toFiniteNumber(currentAbility?.mod, Math.floor((value - 10) / 2)) ?? 0;
+	const checkBonus = currentAbility?.bonuses?.check ?? legacyAbility?.bonuses?.check ?? "";
+	const saveBonus = currentAbility?.bonuses?.save ?? legacyAbility?.bonuses?.save ?? "";
+	const cfg = configuredAbilities[abilityId] ?? {};
+	const labelKey = typeof cfg?.label === "string" ? cfg.label : "";
+	const localizedLabel = labelKey ? game.i18n.localize(labelKey) : abilityId.toUpperCase();
+	return {
+		id: abilityId,
+		label: localizedLabel && localizedLabel !== labelKey ? localizedLabel : abilityId.toUpperCase(),
+		mod,
+		checkBonus,
+		saveBonus
+	};
+}
+
+function getStarshipAbilityRollData(actor, abilityId, entry, mode) {
+	const rollData = foundry.utils.deepClone(actor?.getRollData?.() ?? {});
+	const shipProf = getStarshipActorProficiencyBonus(actor, getLegacyStarshipActorSystem(actor));
+	rollData.abilities ??= {};
+	rollData.abilities[abilityId] ??= {};
+	rollData.abilities[abilityId].mod = entry.mod;
+	rollData.abilities[abilityId].bonuses ??= {};
+	rollData.abilities[abilityId].bonuses.check = entry.checkBonus;
+	rollData.abilities[abilityId].bonuses.save = entry.saveBonus;
+	rollData.mod = entry.mod;
+	rollData.prof = toFiniteNumber(rollData.prof, shipProf) ?? 0;
+	return rollData;
+}
+
+function buildStarshipAbilityRollFormula(actor, abilityId, entry, mode) {
+	const rollData = getStarshipAbilityRollData(actor, abilityId, entry, mode);
+	const bonus = mode === "save" ? entry.saveBonus : entry.checkBonus;
+	const formula = buildRollFormula([
+		normalizeFormulaTerm(entry.mod, rollData),
+		normalizeFormulaTerm(bonus, rollData)
+	]);
+	return { formula, rollData };
+}
+
+async function executeStarshipAbilityRoll(actor, abilityId, mode, event) {
+	const entry = getStarshipAbilityRollEntry(actor, abilityId);
+	if ( !entry ) return null;
+
+	const { formula, rollData } = buildStarshipAbilityRollFormula(actor, abilityId, entry, mode);
+	const defaultRollMode = game.settings.get("core", "rollMode");
+	const rollLabel = mode === "save"
+		? localizeWithFallback("SW5E.ActionSave", "Saving Throw")
+		: localizeWithFallback("SW5E.ActionAbil", "Ability Check");
+	const roll = new CONFIG.Dice.D20Roll(formula, rollData, {
+		flavor: `${actor.name}: ${entry.label} ${rollLabel}`,
+		advantageMode: getStarshipAdvantageMode(event),
+		defaultRollMode,
+		rollMode: defaultRollMode
+	});
+
+	await roll.evaluate();
+	await roll.toMessage({
+		speaker: ChatMessage.getSpeaker({ actor }),
+		flavor: `${entry.label} (${rollLabel})`
+	});
+	return roll;
+}
+
+export async function rollStarshipAbility(actor, abilityId, event) {
+	const entry = getStarshipAbilityRollEntry(actor, abilityId);
+	if ( !entry ) return null;
+
+	const localizedPromptTitle = game?.i18n?.format?.("SW5E.AbilityPromptTitle", { ability: entry.label });
+	const localizedPromptBody = game?.i18n?.format?.("SW5E.AbilityPromptText", { ability: entry.label });
+	const promptTitleBase = localizedPromptTitle && localizedPromptTitle !== "SW5E.AbilityPromptTitle"
+		? localizedPromptTitle
+		: entry.label;
+	const promptBody = localizedPromptBody && localizedPromptBody !== "SW5E.AbilityPromptText"
+		? localizedPromptBody
+		: `Choose whether to roll an ability check or saving throw for ${entry.label}.`;
+	const promptTitle = `${promptTitleBase}: ${actor?.name ?? localizeWithFallback("TYPES.Actor.vehicle", "Vehicle Actor")}`;
+	const selection = await foundry.applications.api.DialogV2.wait({
+		window: { title: promptTitle },
+		content: `<p>${escapeHtml(promptBody)}</p>`,
+		buttons: [
+			{
+				action: "check",
+				label: localizeWithFallback("SW5E.ActionAbil", "Ability Check"),
+				icon: "fas fa-dice-d20",
+				default: true
+			},
+			{
+				action: "save",
+				label: localizeWithFallback("SW5E.ActionSave", "Saving Throw"),
+				icon: "fas fa-shield-alt"
+			},
+			{
+				action: "cancel",
+				label: localizeWithFallback("Cancel", "Cancel"),
+				icon: "fas fa-times"
+			}
+		],
+		rejectClose: false
+	});
+
+	if ( selection === "check" ) return executeStarshipAbilityRoll(actor, abilityId, "check", event);
+	if ( selection === "save" ) return executeStarshipAbilityRoll(actor, abilityId, "save", event);
+	return null;
 }
 
 function getStarshipRollData(actor, selectedAbility, chosenAbility, proficiencyBonusForData = null) {
